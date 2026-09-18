@@ -250,5 +250,8 @@ function fixit_update_status_box() {
 		<button type="submit" class="button"><?php esc_html_e( 'Yeniləməni indi yoxla', 'fixit' ); ?></button>
 	</form>
 	<?php
+
+	// Diaqnostika bloku (inc/updater-package.php).
+	do_action( 'fixit_update_status_after' );
 }
 add_action( 'fixit_setup_page_after', 'fixit_update_status_box' );

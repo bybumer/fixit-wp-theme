@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.5.0' );
+define( 'FIXIT_VERSION', '1.5.1' );
 
 /* ============================================================
    1. Tema dəstəkləri
@@ -119,6 +119,7 @@ require_once get_template_directory() . '/inc/faq.php';           // Sual-cavab 
 require_once get_template_directory() . '/inc/seo.php';           // Meta teqlər və Schema.org
 require_once get_template_directory() . '/inc/seo-admin.php';     // Admin paneldə SEO izləmə lövhəsi
 require_once get_template_directory() . '/inc/updater.php';       // GitHub relizlərindən avtomatik yeniləmə
+require_once get_template_directory() . '/inc/updater-package.php'; // Paketin yoxlanması, ehtiyat mənbə, diaqnostika
 
 /* ============================================================
    4. Kiçik yardımçı funksiyalar
