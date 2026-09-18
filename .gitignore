@@ -1,0 +1,17 @@
+# Gizli məlumatlar
+.env
+
+# Yığılan arxiv — relizə əlavə olunur, repoda saxlanılmır
+fixit-theme.zip
+_test.zip
+
+# İş faylları
+logo-ish/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# Şəxsi mənbə şəkilləri və hazır loqolar — açıq repoya düşmür
+OneDrive_*/
+logo-hazir/

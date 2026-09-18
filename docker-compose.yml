@@ -1,0 +1,81 @@
+# ============================================================
+# FIXIT saytı — LOKAL TEST mühiti
+#
+# Bu stek tamamilə ayrıdır: öz layihə adı (fixitweb), öz şəbəkəsi,
+# öz volume-ları və öz portu (8090). Ticket sisteminə heç bir təsiri yoxdur.
+#
+# Parollar .env faylındadır (git-ə düşmür). İlk dəfə: .env.example → .env
+#
+# İşə salmaq:   docker compose -p fixitweb up -d
+# Dayandırmaq:  docker compose -p fixitweb down
+# Tam silmək:   docker compose -p fixitweb down -v
+# ============================================================
+
+name: fixitweb
+
+services:
+  db:
+    image: mariadb:10.11
+    container_name: fixitweb-db
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: fixitwp
+      MARIADB_USER: fixit
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    # Port xaricə açılmır — yalnız daxili şəbəkədə görünür.
+    networks:
+      - fixitweb
+
+  wordpress:
+    image: wordpress:6.7-php8.2-apache
+    container_name: fixitweb-wp
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "8090:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: fixitwp
+      WORDPRESS_DB_USER: fixit
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_DEBUG_DISPLAY', true);
+        define('DISALLOW_FILE_EDIT', false);
+    volumes:
+      - wp_data:/var/www/html
+      # Tema birbaşa lokal qovluqdan bağlanır — faylı dəyişdirdikdə dərhal görünür.
+      - ./fixit-theme:/var/www/html/wp-content/themes/fixit-theme
+    networks:
+      - fixitweb
+
+  cli:
+    image: wordpress:cli-php8.2
+    container_name: fixitweb-cli
+    restart: unless-stopped
+    depends_on:
+      - wordpress
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: fixitwp
+      WORDPRESS_DB_USER: fixit
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - wp_data:/var/www/html
+      - ./fixit-theme:/var/www/html/wp-content/themes/fixit-theme
+    entrypoint: ["tail", "-f", "/dev/null"]
+    networks:
+      - fixitweb
+
+volumes:
+  db_data:
+  wp_data:
+
+networks:
+  fixitweb:
+    driver: bridge
