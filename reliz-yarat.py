@@ -22,6 +22,11 @@ import subprocess
 import sys
 import zipfile
 
+# Windows konsolu (cp1252) Azərbaycan hərflərini çap edə bilmir — UTF-8-ə keçirik.
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
 BASE = os.path.dirname(os.path.abspath(__file__))
 THEME = os.path.join(BASE, 'fixit-theme')
 ZIP = os.path.join(BASE, 'fixit-theme.zip')
