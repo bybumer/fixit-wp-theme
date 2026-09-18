@@ -140,4 +140,72 @@
 			}, 200);
 		}
 	}
+
+	/* ---------------------------------------------
+	   6. Ekran görüntüləri — şəkil böyüdücü
+	   --------------------------------------------- */
+	var galleries = doc.querySelectorAll('[data-lightbox]');
+
+	if (galleries.length) {
+		var lb = doc.createElement('div');
+		lb.className = 'lightbox';
+		lb.setAttribute('role', 'dialog');
+		lb.setAttribute('aria-modal', 'true');
+		lb.innerHTML =
+			'<button type="button" class="lightbox__close" aria-label="Bağla">&times;</button>' +
+			'<button type="button" class="lightbox__prev" aria-label="Əvvəlki">&#8249;</button>' +
+			'<img alt="">' +
+			'<button type="button" class="lightbox__next" aria-label="Növbəti">&#8250;</button>' +
+			'<div class="lightbox__cap"></div>';
+		doc.body.appendChild(lb);
+
+		var lbImg = lb.querySelector('img');
+		var lbCap = lb.querySelector('.lightbox__cap');
+		var items = [];
+		var current = 0;
+
+		function show(i) {
+			current = (i + items.length) % items.length;
+			lbImg.src = items[current].href;
+			lbCap.textContent = items[current].getAttribute('data-caption') || '';
+			lb.querySelector('.lightbox__prev').style.display = items.length > 1 ? '' : 'none';
+			lb.querySelector('.lightbox__next').style.display = items.length > 1 ? '' : 'none';
+		}
+
+		function open(list, i) {
+			items = list;
+			show(i);
+			lb.classList.add('is-open');
+			doc.body.style.overflow = 'hidden';
+		}
+
+		function close() {
+			lb.classList.remove('is-open');
+			lbImg.src = '';
+			doc.body.style.overflow = '';
+		}
+
+		Array.prototype.forEach.call(galleries, function (g) {
+			var links = Array.prototype.slice.call(g.querySelectorAll('a[href]'));
+			links.forEach(function (a, i) {
+				a.addEventListener('click', function (e) {
+					e.preventDefault();
+					open(links, i);
+				});
+			});
+		});
+
+		lb.addEventListener('click', function (e) {
+			if (e.target === lb || e.target.classList.contains('lightbox__close')) close();
+			if (e.target.classList.contains('lightbox__prev')) show(current - 1);
+			if (e.target.classList.contains('lightbox__next')) show(current + 1);
+		});
+
+		doc.addEventListener('keydown', function (e) {
+			if (!lb.classList.contains('is-open')) return;
+			if (e.key === 'Escape') close();
+			if (e.key === 'ArrowLeft') show(current - 1);
+			if (e.key === 'ArrowRight') show(current + 1);
+		});
+	}
 })();

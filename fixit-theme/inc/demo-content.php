@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Başlanğıc mətnlərin revizyası.
  * Mətni dəyişəndə bu rəqəmi artırın — toxunulmamış məzmun yenilənir.
  */
-define( 'FIXIT_SEED_REV', 3 );
+define( 'FIXIT_SEED_REV', 4 );
 
 /**
  * Quraşdırmanı icra edir.
@@ -30,6 +30,7 @@ function fixit_run_setup() {
 	fixit_create_services();
 	fixit_create_products();
 	fixit_refresh_seeded_products();
+	fixit_fix_encoded_slugs();
 	fixit_create_reviews();
 	fixit_create_menu();
 
@@ -228,39 +229,67 @@ function fixit_create_services() {
  * Mətn dəyişdikdə FIXIT_SEED_REV artırılır — onda admin paneldə
  * ƏL İLƏ redaktə edilməmiş məhsullar yeni mətnlə yenilənir.
  * Siz mətni admin paneldən dəyişsəniz, o məhsula bir daha toxunulmur.
+ *
+ * `slug` — səhifənin ünvanı: /mehsul/<slug>/ (inc/product-data.php ilə eyni olmalıdır).
  */
 function fixit_product_seed() {
 	return array(
 		array(
 			'title' => 'FIXIT Sorğu Sistemi',
+			'slug'  => 'sorgu-sistemi',
+			'order' => 1,
 			'icon'  => 'ticket',
 			'short' => 'Müraciətləri e-poçt, müştəri portalı və daxili kanallardan bir mərkəzdə toplayan helpdesk sistemi. Tam öz kodumuzdur, kənar sistemə bağlılıq yoxdur.',
 			'chips' => 'On-premise, E-poçt inteqrasiyası, Müştəri portalı, Rol icazələri, Azərbaycan dilində',
-			'feat'  => "Ticket yaradılması, təyinatı və statuslar; rol və qrup əsaslı icazələr
-"
-				. "E-poçt inteqrasiyası: gələn məktub avtomatik ticket olur, agentin cavabı müştəriyə mail kimi gedir
-"
-				. "Yazışma zəncirinin düzgün tanınması
-"
-				. "Müştəri portalı: qeydiyyat, e-poçt təsdiqi, parol bərpası, öz müraciətlərini izləmə
-"
-				. "Təhlükəsiz giriş: sessiyalar server tərəfdə saxlanılır
-"
-				. "İnterfeys və bildirişlər tam Azərbaycan dilindədir",
+			'feat'  => implode(
+				"\n",
+				array(
+					'Ticket yaradılması, təyinatı və statuslar; rol və qrup əsaslı icazələr',
+					'E-poçt inteqrasiyası: gələn məktub avtomatik ticket olur, agentin cavabı müştəriyə mail kimi gedir',
+					'Yazışma zəncirinin düzgün tanınması',
+					'Müştəri portalı: qeydiyyat, e-poçt təsdiqi, parol bərpası, öz müraciətlərini izləmə',
+					'Təhlükəsiz giriş: sessiyalar server tərəfdə saxlanılır',
+					'İnterfeys və bildirişlər tam Azərbaycan dilindədir',
+				)
+			),
 			'body'  => 'Şirkətə gələn bütün müraciətlərin bir yerdə toplandığı sistemdir. Müştəri istəsə e-poçt yazır, istəsə portala daxil olur — hər iki halda müraciət eyni ticketə düşür. Sistem tamamilə bizim kodumuzdur, ona görə şirkətinizin iş axınına uyğun dəyişikliklər etmək mümkündür.',
 		),
 		array(
+			'title' => 'Fixit Remote',
+			'slug'  => 'remote',
+			'order' => 2,
+			'icon'  => 'computer',
+			'short' => 'Şirkət kompüterlərinə uzaqdan qoşulma, dəstək və idarəetmə sistemi. Sizin serverinizdə işləyir — bağlantı və jurnal şirkətdən kənara çıxmır.',
+			'chips' => 'On-premise, Windows agent, Mobil tətbiq, Çat, Fayl ötürmə, Sessiya jurnalı',
+			'feat'  => implode(
+				"\n",
+				array(
+					'Ekrana baxmaq və idarə etmək — siçan və klaviatura',
+					'Sessiya zamanı yazışma və fayl ötürmə',
+					'Agent serverə özü qoşulur — kompüterlərdə port açmaq lazım deyil',
+					'İstifadəçidən icazə soruşmaq və ekranda gizlədilə bilməyən qoşulma zolağı',
+					'Hər sessiya jurnala yazılır; CSV və PDF kimi yüklənir',
+					'Telefondan idarəetmə üçün mobil tətbiq',
+				)
+			),
+			'body'  => 'Şirkət kompüterlərinə uzaqdan qoşulmaq, istifadəçiyə kömək etmək və kimin hansı kompüterə qoşulduğunu nəzarətdə saxlamaq üçün sistemdir. Server sizin şirkətinizdə qurulur, agentlər isə ona özü qoşulur — işçi kompüterlərində heç bir port açmaq lazım gəlmir.',
+		),
+		array(
 			'title' => 'FIXIT Şəbəkə Monitorinqi',
+			'slug'  => 'sebeke-monitorinqi',
+			'order' => 3,
 			'icon'  => 'activity',
 			'short' => 'Cihazları, interfeysləri və VPN tunellərini fasiləsiz izləyən, kəsintini siz bilməmişdən əvvəl xəbər verən monitorinq və analitika aləti.',
 			'chips' => 'On-premise, SNMP, FortiGate, Telegram, WhatsApp, E-poçt',
-			'feat'  => "Cihaz, interfeys və VPN tunellərinin fasiləsiz izlənməsi
-"
-				. "Uptime statistikası, kəsintilərin vaxt xətti və ən problemli nöqtələrin hesabatı
-"
-				. "Modulyar analitika lövhəsi: hər istifadəçi özünə lazım olan blokları düzür
-"
-				. "Bildiriş kanalları: Telegram, e-poçt (SMTP), WhatsApp və masaüstü — hər hadisə ayrıca açılıb-bağlanır",
+			'feat'  => implode(
+				"\n",
+				array(
+					'Cihaz, interfeys və VPN tunellərinin fasiləsiz izlənməsi',
+					'Uptime statistikası, kəsintilərin vaxt xətti və ən problemli nöqtələrin hesabatı',
+					'Modulyar analitika lövhəsi: hər istifadəçi özünə lazım olan blokları düzür',
+					'Bildiriş kanalları: Telegram, e-poçt (SMTP), WhatsApp və masaüstü — hər hadisə ayrıca açılıb-bağlanır',
+				)
+			),
 			'body'  => 'Şəbəkənizdə nəyin nə vaxt və nə qədər müddət dayandığını dəqiq göstərən alətdir. Kəsinti baş verən kimi seçdiyiniz kanala bildiriş gedir, hadisə tarixçəyə yazılır və uptime hesabatında görünür.',
 		),
 	);
@@ -277,37 +306,67 @@ function fixit_apply_product_meta( $id, $prod ) {
 	update_post_meta( $id, '_fixit_seeded', FIXIT_SEED_REV );
 }
 
+/**
+ * Çatışmayan başlanğıc məhsulları yaradır.
+ *
+ * Hər məhsul YALNIZ BİR DƏFƏ yaradılır: yaradılanlar `fixit_seeded_products`
+ * opsiyasında qeyd olunur. Məhsulu admin paneldən silsəniz, geri gəlmir.
+ */
 function fixit_create_products() {
-	if ( ! empty( fixit_get_products( 1 ) ) ) {
-		return; // Artıq var.
+	$created = (array) get_option( 'fixit_seeded_products', array() );
+
+	// Səbətdəkilər də daxil — silinmiş məhsulu təkrar yaratmayaq.
+	$existing = array();
+	$all      = get_posts(
+		array(
+			'post_type'      => 'fixit_product',
+			'post_status'    => array( 'publish', 'draft', 'pending', 'private', 'future', 'trash' ),
+			'posts_per_page' => -1,
+		)
+	);
+	foreach ( $all as $p ) {
+		$existing[ $p->post_title ] = true;
 	}
 
-	$order = 0;
 	foreach ( fixit_product_seed() as $prod ) {
-		++$order;
+		if ( in_array( $prod['title'], $created, true ) ) {
+			continue;
+		}
+
+		if ( isset( $existing[ $prod['title'] ] ) ) {
+			$created[] = $prod['title']; // Əvvəlki versiyalarda yaradılıb.
+			continue;
+		}
 
 		$id = wp_insert_post(
 			array(
 				'post_type'    => 'fixit_product',
 				'post_status'  => 'publish',
 				'post_title'   => $prod['title'],
+				'post_name'    => $prod['slug'],
 				'post_content' => $prod['body'],
 				'post_excerpt' => $prod['short'],
-				'menu_order'   => $order,
+				'menu_order'   => $prod['order'],
 			)
 		);
 
 		if ( $id && ! is_wp_error( $id ) ) {
 			fixit_apply_product_meta( $id, $prod );
+			$created[] = $prod['title'];
 		}
 	}
+
+	update_option( 'fixit_seeded_products', $created, false );
 }
 
 /**
- * Mətnlər yeniləndikdə toxunulmamış məhsulları təzələyir.
+ * Başlanğıc məhsulları güncəl saxlayır.
  *
- * Admin paneldə redaktə edilmiş məhsula (_fixit_user_edited) toxunmuruq —
- * sizin əl ilə yazdığınız mətn heç vaxt üstündən yazılmır.
+ * 1) Ünvan: WordPress "ə" hərfini ünvanda çevirə bilmir və
+ *    `fixit-s%c9%99b%c9%99k%c9%99-...` kimi ünvan yaradır. Avtomatik yaranmış
+ *    ünvan təmiz ünvanla əvəz olunur (köhnə ünvan yenisinə yönləndirilir).
+ *    Sizin əl ilə yazdığınız ünvana toxunulmur.
+ * 2) Mətn: admin paneldə redaktə edilməmiş məhsullar yeni mətnlə yenilənir.
  */
 function fixit_refresh_seeded_products() {
 	$seed = array();
@@ -316,11 +375,28 @@ function fixit_refresh_seeded_products() {
 	}
 
 	foreach ( fixit_get_products() as $post ) {
-		if ( get_post_meta( $post->ID, '_fixit_user_edited', true ) ) {
-			continue; // Əl ilə redaktə olunub — toxunmuruq.
-		}
 		if ( ! isset( $seed[ $post->post_title ] ) ) {
 			continue; // Bizim başlanğıc məhsulumuz deyil.
+		}
+
+		$prod = $seed[ $post->post_title ];
+
+		// 1) Ünvan.
+		$auto_slug = sanitize_title( $post->post_title );
+		$is_auto   = ( $post->post_name === $auto_slug ) || ( false !== strpos( $post->post_name, '%' ) );
+
+		if ( $is_auto && $post->post_name !== $prod['slug'] ) {
+			wp_update_post(
+				array(
+					'ID'        => $post->ID,
+					'post_name' => $prod['slug'],
+				)
+			);
+		}
+
+		// 2) Mətn.
+		if ( get_post_meta( $post->ID, '_fixit_user_edited', true ) ) {
+			continue; // Əl ilə redaktə olunub — toxunmuruq.
 		}
 
 		// Nişanı olmayanlar köhnə versiyada yaradılıb — onlar da yenilənir.
@@ -329,18 +405,137 @@ function fixit_refresh_seeded_products() {
 			continue; // Onsuz da güncəldir.
 		}
 
-		$prod = $seed[ $post->post_title ];
-
 		wp_update_post(
 			array(
 				'ID'           => $post->ID,
 				'post_content' => $prod['body'],
 				'post_excerpt' => $prod['short'],
+				'menu_order'   => $prod['order'],
 			)
 		);
 
 		fixit_apply_product_meta( $post->ID, $prod );
 	}
+}
+
+/**
+ * Menyu bəndlərinin sıra nömrələrini ağac qaydasında düzür.
+ *
+ * WordPress menyunu düz siyahı kimi saxlayır: alt bənd valideynindən SONRA
+ * gəlməlidir. Əks halda admin paneldəki menyu redaktoru alt bəndi səhv yerdə
+ * göstərir və yadda saxlayanda quruluş pozulur. Görünən sıra dəyişmir.
+ *
+ * @param int $menu_id Menyu.
+ */
+function fixit_menu_normalize_order( $menu_id ) {
+	$items = wp_get_nav_menu_items( $menu_id );
+	if ( ! $items ) {
+		return;
+	}
+
+	/*
+	 * Diqqət: wp_get_nav_menu_items() $item->menu_order dəyərini öz sıra
+	 * nömrəsi (1, 2, 3…) ilə ƏVƏZ EDİR — bazadakı həqiqi dəyəri yox.
+	 * Müqayisə üçün həqiqi dəyəri bazadan oxuyuruq.
+	 */
+	$children = array();
+	foreach ( $items as $item ) {
+		$item->fixit_db_order = (int) get_post_field( 'menu_order', $item->ID );
+		$children[ (int) $item->menu_item_parent ][] = $item;
+	}
+
+	foreach ( $children as $parent => $list ) {
+		usort(
+			$list,
+			function ( $a, $b ) {
+				return ( $a->fixit_db_order - $b->fixit_db_order ) ?: ( (int) $a->ID - (int) $b->ID );
+			}
+		);
+		$children[ $parent ] = $list;
+	}
+
+	$seq  = 0;
+	$walk = function ( $parent ) use ( &$walk, &$seq, $children ) {
+		if ( empty( $children[ $parent ] ) ) {
+			return;
+		}
+		foreach ( $children[ $parent ] as $item ) {
+			++$seq;
+			if ( $item->fixit_db_order !== $seq ) {
+				wp_update_post(
+					array(
+						'ID'         => $item->ID,
+						'menu_order' => $seq,
+					)
+				);
+			}
+			$walk( (int) $item->ID );
+		}
+	};
+
+	$walk( 0 );
+}
+
+/**
+ * Menyuda "Məhsullar" bəndinin altına hər məhsulu əlavə edir (açılan menyu).
+ *
+ * - "Məhsullar" bəndi menyudan silinibsə, heç nə edilmir.
+ * - Hər məhsul YALNIZ BİR DƏFƏ əlavə olunur (`fixit_menu_products`):
+ *   menyudan çıxardığınız bənd geri gəlmir.
+ *
+ * @param int   $menu_id  Menyu.
+ * @param array $page_ids Səhifə ID-ləri (slug => ID).
+ */
+function fixit_menu_add_products( $menu_id, $page_ids ) {
+	if ( empty( $page_ids['mehsullar'] ) ) {
+		return;
+	}
+
+	$items  = wp_get_nav_menu_items( $menu_id );
+	$items  = $items ? $items : array();
+	$parent = 0;
+	$have   = array();
+
+	foreach ( $items as $item ) {
+		if ( 'post_type' === $item->type && 'page' === $item->object && (int) $item->object_id === (int) $page_ids['mehsullar'] ) {
+			$parent = (int) $item->ID;
+		}
+		if ( 'fixit_product' === $item->object ) {
+			$have[] = (int) $item->object_id;
+		}
+	}
+
+	if ( ! $parent ) {
+		return;
+	}
+
+	$added = array_map( 'intval', (array) get_option( 'fixit_menu_products', array() ) );
+	$pos   = 0;
+
+	foreach ( fixit_get_products() as $prod ) {
+		++$pos;
+
+		if ( in_array( (int) $prod->ID, $have, true ) || in_array( (int) $prod->ID, $added, true ) ) {
+			continue;
+		}
+
+		wp_update_nav_menu_item(
+			$menu_id,
+			0,
+			array(
+				'menu-item-object-id' => $prod->ID,
+				'menu-item-object'    => 'fixit_product',
+				'menu-item-type'      => 'post_type',
+				'menu-item-parent-id' => $parent,
+				'menu-item-status'    => 'publish',
+				'menu-item-position'  => $pos,
+			)
+		);
+
+		$added[] = (int) $prod->ID;
+	}
+
+	update_option( 'fixit_menu_products', $added, false );
 }
 
 /* ============================================================
@@ -483,6 +678,10 @@ function fixit_create_menu() {
 			}
 		}
 	}
+
+	// "Məhsullar" altında hər məhsul — başlıqda açılan menyu.
+	fixit_menu_add_products( $menu_id, $page_ids );
+	fixit_menu_normalize_order( $menu_id );
 
 	$locations            = get_theme_mod( 'nav_menu_locations', array() );
 	$locations['primary'] = $menu_id;

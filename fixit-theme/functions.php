@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.4.0' );
+define( 'FIXIT_VERSION', '1.5.0' );
 
 /* ============================================================
    1. Tema dəstəkləri
@@ -108,8 +108,11 @@ add_action( 'wp_head', 'fixit_theme_boot_script', 1 );
    3. Yardımçı fayllar
    ============================================================ */
 require_once get_template_directory() . '/inc/icons.php';         // SVG ikon kitabxanası
+require_once get_template_directory() . '/inc/slugs.php';         // Ünvanlarda ə → e (təmiz URL)
 require_once get_template_directory() . '/inc/customizer.php';    // Fərdiləşdirmə (əlaqə, sosial şəbəkə)
 require_once get_template_directory() . '/inc/cpt.php';           // Xidmət və rəy post növləri
+require_once get_template_directory() . '/inc/product-demo.php';  // Məhsul: demo ayarları və ekran görüntüləri
+require_once get_template_directory() . '/inc/product-data.php';  // Məhsul səhifələrinin detallı məzmunu
 require_once get_template_directory() . '/inc/contact-form.php';  // Əlaqə formu (plagin tələb etmir)
 require_once get_template_directory() . '/inc/demo-content.php';  // İlk quraşdırmada səhifə/menyu yaradılması
 require_once get_template_directory() . '/inc/faq.php';           // Sual-cavab məzmunu (səhifə + schema)

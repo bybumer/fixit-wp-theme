@@ -139,7 +139,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 				<p><?php esc_html_e( 'Sizin öz serverinizdə işləyir, interfeysi Azərbaycan dilindədir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
 			</div>
 
-			<div class="grid grid--2">
+			<div class="grid <?php echo count( $fixit_products ) > 2 ? 'grid--3' : 'grid--2'; ?>">
 				<?php foreach ( $fixit_products as $fixit_prod ) : ?>
 					<?php
 					$fixit_p_icon  = get_post_meta( $fixit_prod->ID, '_fixit_icon', true );
@@ -150,7 +150,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 						$fixit_p_short = wp_trim_words( $fixit_prod->post_content, 26 );
 					}
 					?>
-					<a class="card reveal" href="<?php echo esc_url( $fixit_products_url . '#mehsul-' . $fixit_prod->ID ); ?>">
+					<a class="card reveal" href="<?php echo esc_url( get_permalink( $fixit_prod ) ); ?>">
 						<span class="badge"><?php fixit_icon( 'award' ); ?><?php esc_html_e( 'FIXIT məhsulu', 'fixit' ); ?></span>
 						<span class="card__icon"><?php fixit_icon( $fixit_p_icon ? $fixit_p_icon : 'server' ); ?></span>
 						<h3><?php echo esc_html( $fixit_prod->post_title ); ?></h3>

@@ -4,7 +4,7 @@ Theme URI: https://fixit.az
 Author: FIXIT
 Author URI: https://fixit.az
 Description: FIXIT şirkəti üçün hazırlanmış peşəkar İKT xidmətləri teması. Tam responsiv, işıqlı/qaranlıq rejim, daxili əlaqə formu, SEO və sürət üçün optimallaşdırılmışdır.
-Version: 1.4.0
+Version: 1.5.0
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -675,4 +675,151 @@ html.fixit-js .reveal.is-in{opacity:1;transform:none}
   .cta{text-align:center;justify-content:center}
   .cta__actions{justify-content:center;width:100%}
   .hero__cta .btn,.cta__actions .btn{width:100%}
+}
+
+/* ============================================================
+   21. Məhsulun detallı səhifəsi
+   ============================================================ */
+.prod-hero{
+  position:relative;overflow:hidden;color:#fff;
+  background:
+    radial-gradient(900px 440px at 88% -6%,rgba(34,211,238,.32),transparent 60%),
+    radial-gradient(700px 380px at 4% 106%,rgba(11,99,229,.46),transparent 62%),
+    linear-gradient(140deg,#071630 0%,#0b2a56 48%,#0a3f74 100%);
+  padding:clamp(40px,5vw,64px) 0 clamp(60px,7vw,96px);
+}
+.prod-hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.45;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(circle at 60% 40%,#000,transparent 78%);
+  mask-image:radial-gradient(circle at 60% 40%,#000,transparent 78%);
+}
+.prod-hero__inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4.5vw,60px);align-items:center}
+.prod-hero .eyebrow{color:#bfe6ff;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22)}
+.prod-hero h1{font-size:clamp(2rem,4.4vw,3.3rem);margin:18px 0 10px;letter-spacing:-.035em}
+.prod-hero__tagline{font-size:clamp(1.1rem,1.8vw,1.35rem);font-weight:700;margin-bottom:14px;
+  background:linear-gradient(100deg,#6fd0ff,#7bf7d8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.prod-hero .lead{color:#c4d8f0;font-size:1.03rem;max-width:58ch}
+.prod-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.prod-badges li{
+  display:inline-flex;align-items:center;gap:7px;font-size:.86rem;font-weight:600;
+  padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#dbeafe;
+}
+.prod-badges svg{width:15px;height:15px;color:#7bf7d8}
+.prod-hero__mark{
+  width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:none;
+  background:linear-gradient(135deg,var(--brand-600),var(--accent-500));box-shadow:0 8px 20px rgba(11,99,229,.35);
+}
+.prod-hero__mark svg{width:21px;height:21px;color:#fff}
+.hero-list__sub{display:block;font-size:.8rem;font-weight:500;color:#a9c4e2;margin-top:1px}
+
+/* Ekran görüntüsü — brauzer pəncərəsi çərçivəsi */
+.shot{
+  margin:0;border-radius:14px;overflow:hidden;background:var(--bg-elev);
+  border:1px solid var(--surface-line);box-shadow:var(--shadow-md);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.shot:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.shot__bar{display:flex;gap:6px;padding:10px 12px;background:var(--bg-soft);border-bottom:1px solid var(--surface-line)}
+.shot__bar i{width:10px;height:10px;border-radius:50%;background:#d0d7e2}
+.shot__bar i:nth-child(1){background:#ff5f57}
+.shot__bar i:nth-child(2){background:#febc2e}
+.shot__bar i:nth-child(3){background:#28c840}
+.shot img{width:100%;height:auto;display:block}
+.shot a{display:block;cursor:zoom-in}
+.shot figcaption{padding:10px 14px;font-size:.88rem;color:var(--text-soft);border-top:1px solid var(--surface-line)}
+.shot--hero{box-shadow:0 30px 70px rgba(0,0,0,.4);border-color:rgba(255,255,255,.18)}
+.shot--hero:hover{transform:none}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+
+/* Xüsusiyyət qrupu kartı */
+.feature-group h3{margin-bottom:14px}
+.feature-group .bullets{gap:9px}
+.feature-group .bullets li{font-size:.93rem}
+
+/* İş prinsipi — addımlar oxlarla birləşir */
+.flow{
+  list-style:none;margin:0;padding:0;display:grid;gap:18px;
+  grid-template-columns:repeat(var(--flow-count,4),1fr);position:relative;
+}
+.flow__step{
+  position:relative;text-align:center;padding:26px 16px 22px;border-radius:var(--radius);
+  background:var(--bg-elev);border:1px solid var(--surface-line);box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.flow__step strong{font-size:1rem}
+.flow__step span:last-child{font-size:.88rem;color:var(--text-soft)}
+.flow__icon{
+  width:56px;height:56px;border-radius:16px;display:grid;place-items:center;margin-bottom:8px;color:#fff;
+  background:linear-gradient(135deg,var(--brand-600),var(--accent-500));box-shadow:0 10px 24px rgba(11,99,229,.3);
+}
+.flow__icon svg{width:26px;height:26px}
+.flow__step:not(:last-child)::after{
+  content:"";position:absolute;top:50%;right:-15px;width:12px;height:12px;z-index:2;
+  border-top:2.5px solid var(--brand-500);border-right:2.5px solid var(--brand-500);
+  transform:translateY(-50%) rotate(45deg);
+}
+
+/* Demo bloku */
+.demo-box{
+  display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(24px,4vw,48px);align-items:center;
+  padding:clamp(26px,4vw,48px);border-radius:var(--radius-lg);
+  background:
+    radial-gradient(600px 300px at 0% 0%,color-mix(in srgb,var(--brand-500) 12%,transparent),transparent 70%),
+    var(--bg-elev);
+  border:1px solid color-mix(in srgb,var(--brand-500) 22%,var(--surface-line));box-shadow:var(--shadow-md);
+}
+.demo-box h2{font-size:clamp(1.6rem,3vw,2.3rem);margin:16px 0 12px}
+.demo-box__text p{color:var(--text-soft)}
+.demo-steps{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px;counter-reset:demo}
+.demo-steps li{display:flex;align-items:center;gap:12px;font-weight:600;counter-increment:demo}
+.demo-steps li::before{
+  content:counter(demo);width:30px;height:30px;border-radius:9px;flex:none;display:grid;place-items:center;
+  font-size:.9rem;color:#fff;background:linear-gradient(135deg,var(--brand-600),var(--accent-500));
+}
+.demo-form .field{margin-bottom:14px}
+
+/* Xidmətlər səhifəsindən məhsullara keçid zolağı */
+.prod-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.prod-strip a{
+  display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:var(--radius);
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);transition:background .2s,transform .2s;
+}
+.prod-strip a:hover{background:rgba(255,255,255,.13);transform:translateY(-2px)}
+.prod-strip .card__icon{width:42px;height:42px;margin:0;border-radius:12px;flex:none}
+.prod-strip strong{display:block;font-size:.98rem}
+.prod-strip small{color:#a9c4e2;font-size:.83rem}
+
+/* Şəkil böyüdücü (lightbox) */
+.lightbox{
+  position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+  background:rgba(4,10,22,.92);padding:56px 64px;
+}
+.lightbox.is-open{display:flex}
+.lightbox img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lightbox__cap{position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#c4d8f0;font-size:.92rem}
+.lightbox button{
+  position:absolute;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(255,255,255,.12);color:#fff;font-size:24px;line-height:1;
+}
+.lightbox button:hover{background:rgba(255,255,255,.22)}
+.lightbox__close{top:16px;right:16px}
+.lightbox__prev{left:12px;top:50%;transform:translateY(-50%)}
+.lightbox__next{right:12px;top:50%;transform:translateY(-50%)}
+
+@media (max-width:1024px){
+  .prod-hero__inner{grid-template-columns:1fr}
+  .flow{grid-template-columns:repeat(2,1fr)}
+  .flow__step:not(:last-child)::after{display:none}
+  .prod-strip{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .demo-box{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .flow{grid-template-columns:1fr}
+  .lightbox{padding:56px 10px}
 }

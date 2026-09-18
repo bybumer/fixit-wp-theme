@@ -20,7 +20,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 	<div class="container">
 		<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Öz məhsullarımız', 'fixit' ); ?></span>
 		<h1><?php esc_html_e( 'Bizim hazırladığımız proqram təminatı', 'fixit' ); ?></h1>
-		<p><?php esc_html_e( 'Xidmətlərimizlə yanaşı, öz komandamızın sıfırdan yazdığı iki məhsulu təqdim edirik. Hər ikisi Azərbaycan dilindədir, sizin öz serverinizdə işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
+		<p><?php esc_html_e( 'Xidmətlərimizlə yanaşı, öz komandamızın sıfırdan yazdığı məhsulları təqdim edirik. Hər ikisi Azərbaycan dilindədir, sizin öz serverinizdə işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
 
 		<nav class="crumbs" aria-label="<?php esc_attr_e( 'Naviqasiya', 'fixit' ); ?>">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Ana səhifə', 'fixit' ); ?></a>
@@ -71,7 +71,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 				<div class="svc__icon"><?php fixit_icon( $fixit_icon_key ? $fixit_icon_key : 'server' ); ?></div>
 
 				<div>
-					<h2><?php echo esc_html( $fixit_prod->post_title ); ?></h2>
+					<h2><a href="<?php echo esc_url( get_permalink( $fixit_prod ) ); ?>"><?php echo esc_html( $fixit_prod->post_title ); ?></a></h2>
 
 					<?php if ( $fixit_prod->post_content ) : ?>
 						<p><?php echo esc_html( wp_strip_all_tags( $fixit_prod->post_content ) ); ?></p>
@@ -94,11 +94,11 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 					<?php endif; ?>
 
 					<div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
-						<a class="btn btn--primary" href="<?php echo esc_url( add_query_arg( 'mehsul', rawurlencode( $fixit_prod->post_title ), $fixit_contact_url ) ); ?>#elaqe-form">
-							<?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Demo təyin et', 'fixit' ); ?>
+						<a class="btn btn--primary" href="<?php echo esc_url( get_permalink( $fixit_prod ) ); ?>">
+							<?php esc_html_e( 'Ətraflı və demo', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
 						</a>
-						<a class="btn btn--ghost" href="tel:<?php echo esc_attr( fixit_tel( $fixit_phone ) ); ?>">
-							<?php fixit_icon( 'phone' ); ?><?php esc_html_e( 'Danışaq', 'fixit' ); ?>
+						<a class="btn btn--ghost" href="<?php echo esc_url( add_query_arg( 'mehsul', rawurlencode( $fixit_prod->post_title ), $fixit_contact_url ) ); ?>#elaqe-form">
+							<?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Təklif istə', 'fixit' ); ?>
 						</a>
 					</div>
 				</div>

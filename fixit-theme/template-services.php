@@ -84,6 +84,33 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 	</div>
 </section>
 
+<!-- Öz proqram məhsullarımız -->
+<?php $fixit_strip_products = fixit_get_products(); ?>
+<?php if ( $fixit_strip_products ) : ?>
+	<section class="section section--dark">
+		<div class="container">
+			<div class="section-head reveal" style="margin-bottom:0">
+				<span class="eyebrow"><?php fixit_icon( 'award' ); ?><?php esc_html_e( 'Öz məhsullarımız', 'fixit' ); ?></span>
+				<h2><?php esc_html_e( 'Xidmətlə yanaşı — öz proqram təminatımız', 'fixit' ); ?></h2>
+				<p><?php esc_html_e( 'Komandamızın hazırladığı sistemlər sizin serverinizdə işləyir. Hər biri üçün onlayn demo mövcuddur.', 'fixit' ); ?></p>
+			</div>
+
+			<div class="prod-strip">
+				<?php foreach ( $fixit_strip_products as $fixit_sp ) : ?>
+					<?php $fixit_sp_icon = get_post_meta( $fixit_sp->ID, '_fixit_icon', true ); ?>
+					<a class="reveal" href="<?php echo esc_url( get_permalink( $fixit_sp ) ); ?>">
+						<span class="card__icon"><?php fixit_icon( $fixit_sp_icon ? $fixit_sp_icon : 'server' ); ?></span>
+						<span>
+							<strong><?php echo esc_html( $fixit_sp->post_title ); ?></strong>
+							<small><?php esc_html_e( 'Ətraflı və demo →', 'fixit' ); ?></small>
+						</span>
+					</a>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+<?php endif; ?>
+
 <!-- Səhifə redaktorundan gələn əlavə məzmun -->
 <?php
 while ( have_posts() ) :

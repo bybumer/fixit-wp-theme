@@ -25,7 +25,8 @@ fixit-web/
     ├── footer.php            ← alt hissə, üzən düymələr (WhatsApp / zəng)
     ├── front-page.php        ← ANA SƏHİFƏ (hero, xidmətlər, proses, rəylər, FAQ)
     ├── template-services.php ← Xidmətlər səhifəsi
-    ├── template-products.php ← Məhsullar səhifəsi (öz proqram təminatımız + satış şərtləri)
+    ├── template-products.php ← Məhsullar siyahısı + satış şərtləri
+    ├── single-fixit_product.php ← HƏR MƏHSULUN detallı səhifəsi (/mehsul/<ad>/)
     ├── template-about.php    ← Haqqımızda səhifəsi
     ├── template-contact.php  ← Əlaqə səhifəsi + form
     ├── page.php              ← adi səhifələr
@@ -33,11 +34,15 @@ fixit-web/
     ├── single.php            ← tək məqalə
     ├── 404.php               ← səhifə tapılmadı
     ├── searchform.php        ← axtarış formu
-    ├── assets/js/main.js     ← tema dəyişdirici, mobil menyu, animasiyalar
+    ├── assets/js/main.js     ← tema dəyişdirici, mobil menyu, animasiyalar, şəkil böyüdücü
+    ├── assets/js/admin-gallery.js ← admin: məhsul ekran görüntülərinin seçilməsi
     └── inc/
         ├── icons.php         ← SVG ikon kitabxanası
         ├── customizer.php    ← admin paneldəki ayarlar (telefon, ünvan, sosial)
-        ├── cpt.php           ← "Xidmətlər" və "Rəylər" bölmələri
+        ├── cpt.php           ← "Xidmətlər", "Məhsullar" və "Rəylər" bölmələri
+        ├── product-data.php  ← məhsul səhifələrinin detallı məzmunu (imkanlar, iş prinsipi, suallar)
+        ├── product-demo.php  ← məhsulun demo ayarları və ekran görüntüləri qalereyası
+        ├── slugs.php         ← ünvanlarda ə → e (təmiz URL)
         ├── faq.php           ← sual-cavab məzmunu (səhifə + Google schema)
         ├── contact-form.php  ← əlaqə formu (plagin yoxdur)
         ├── demo-content.php  ← ilk aktivləşdirmədə səhifə/menyu yaradır
@@ -89,7 +94,10 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Ana səhifədəki böyük başlıq və statistika | Fərdiləşdir → **Ana səhifə (Hero)** |
 | Loqo | Fərdiləşdir → **Sayt kimliyi → Loqo** |
 | Xidmət mətnləri, ikonlar, üstünlüklər | Admin → **Xidmətlər** |
-| Məhsul mətnləri (Sorğu Sistemi, Şəbəkə Monitorinqi) | Admin → **Məhsullar** |
+| Məhsul adı, qısa təsvir, əsas xüsusiyyətlər | Admin → **Məhsullar** |
+| Məhsulun demo ünvanı, demo rejimi, **ekran görüntüləri** | Admin → Məhsullar → məhsulu açın → **Demo və ekran görüntüləri** |
+| Məhsul səhifəsinin detallı bölmələri (imkan qrupları, iş prinsipi, təhlükəsizlik, suallar) | `inc/product-data.php` |
+| Demo sorğuları | Admin → **Form mesajları** ("Növ: Demo") |
 | Məhsulların satış şərtləri, qiymət mətni, FAQ | `template-products.php` |
 | Müştəri rəyləri | Admin → **Müştəri rəyləri** |
 | Formdan gələn müraciətlər | Admin → **Form mesajları** |
@@ -177,6 +185,14 @@ açıq API-sindən son relizi oxuyur və arxivi WordPress-in öz quraşdırıcı
 ## 6. Nə edilib
 
 - 5 tam səhifə: Ana səhifə, Xidmətlər, **Məhsullar**, Haqqımızda, Əlaqə
+- **Hər məhsulun ayrıca səhifəsi** (`/mehsul/sorgu-sistemi/`, `/mehsul/remote/`,
+  `/mehsul/sebeke-monitorinqi/`): problem → həll, imkan qrupları, ekran
+  görüntüləri qalereyası, iş prinsipi diaqramı, təhlükəsizlik, demo bloku və suallar
+- **Demo:** üç rejim — *sorğu ilə* (müştəri formu doldurur, girişi siz göndərirsiniz),
+  *açıq* (düymə birbaşa demo ünvanına aparır), *söndürülüb*
+- Menyuda *Məhsullar* altında hər məhsul (açılan menyu)
+- Təmiz ünvanlar: WordPress "ə" hərfini kodlayırdı (`%c9%99`) — indi `e` olur,
+  köhnə ünvanlar yeniyə yönləndirilir
 - Məhsullar bölməsi: FIXIT Sorğu Sistemi və FIXIT Şəbəkə Monitorinqi —
   xüsusiyyətlər, on-premise satış şərtləri, demo prosesi və FAQ
   (qiymət yazılmır, "Təklif üçün əlaqə" modeli)

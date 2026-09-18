@@ -167,7 +167,7 @@ function fixit_template_description( $post_id ) {
 			return __( 'Kompüter servisi, video müşahidə, IP telefoniya, korporativ mail, bulud serverlər və İT dəstək — şirkətiniz üçün tam İKT xidmətləri.', 'fixit' );
 
 		case 'template-products.php':
-			return __( 'FIXIT Sorğu Sistemi və FIXIT Şəbəkə Monitorinqi — öz komandamızın hazırladığı, sizin serverinizdə işləyən proqram təminatı. Demo üçün əlaqə saxlayın.', 'fixit' );
+			return __( 'Sorğu Sistemi, Fixit Remote və Şəbəkə Monitorinqi — öz komandamızın hazırladığı, sizin serverinizdə işləyən proqram təminatı. Onlayn demo mövcuddur.', 'fixit' );
 
 		case 'template-about.php':
 			return __( '2017-ci ildən İT sahəsində fəaliyyət göstəririk: 40-dan çox şirkətlə əməkdaşlıq, 30-dan çox tamamlanmış layihə. Bakı və Cəlilabadda xidmətinizdəyik.', 'fixit' );
@@ -297,6 +297,13 @@ add_filter( 'wp_resource_hints', 'fixit_resource_hints', 10, 2 );
 function fixit_share_image() {
 	if ( is_singular() && has_post_thumbnail() ) {
 		return get_the_post_thumbnail_url( null, 'full' );
+	}
+
+	if ( is_singular( 'fixit_product' ) && function_exists( 'fixit_product_gallery_ids' ) ) {
+		$gallery = fixit_product_gallery_ids( get_queried_object_id() );
+		if ( $gallery ) {
+			return wp_get_attachment_image_url( $gallery[0], 'full' );
+		}
 	}
 
 	$logo_id = get_theme_mod( 'custom_logo' );
@@ -465,24 +472,60 @@ function fixit_schema_breadcrumb() {
 		return null;
 	}
 
+	$trail = array(
+		array( __( 'Ana səhifə', 'fixit' ), home_url( '/' ) ),
+	);
+
+	// Məhsul səhifəsi: Ana səhifə → Məhsullar → Məhsul.
+	if ( is_singular( 'fixit_product' ) ) {
+		$trail[] = array( __( 'Məhsullar', 'fixit' ), fixit_page_url( 'template-products.php' ) );
+	}
+
+	$trail[] = array( get_the_title(), get_permalink() );
+
+	$items = array();
+	foreach ( $trail as $i => $crumb ) {
+		$items[] = array(
+			'@type'    => 'ListItem',
+			'position' => $i + 1,
+			'name'     => $crumb[0],
+			'item'     => $crumb[1],
+		);
+	}
+
 	return array(
 		'@context'        => 'https://schema.org',
 		'@type'           => 'BreadcrumbList',
-		'itemListElement' => array(
-			array(
-				'@type'    => 'ListItem',
-				'position' => 1,
-				'name'     => __( 'Ana səhifə', 'fixit' ),
-				'item'     => home_url( '/' ),
-			),
-			array(
-				'@type'    => 'ListItem',
-				'position' => 2,
-				'name'     => get_the_title(),
-				'item'     => get_permalink(),
-			),
-		),
+		'itemListElement' => $items,
 	);
+}
+
+/**
+ * Məhsul səhifəsi — proqram kartı.
+ */
+function fixit_schema_software() {
+	if ( ! is_singular( 'fixit_product' ) ) {
+		return null;
+	}
+
+	$post   = get_queried_object();
+	$schema = array(
+		'@context'            => 'https://schema.org',
+		'@type'               => 'SoftwareApplication',
+		'name'                => $post->post_title,
+		'description'         => wp_strip_all_tags( get_post_meta( $post->ID, '_fixit_short', true ) ),
+		'url'                 => get_permalink( $post ),
+		'applicationCategory' => 'BusinessApplication',
+		'operatingSystem'     => 'Web',
+		'publisher'           => array( '@id' => home_url( '/#organization' ) ),
+	);
+
+	$gallery = function_exists( 'fixit_product_gallery_ids' ) ? fixit_product_gallery_ids( $post->ID ) : array();
+	if ( $gallery ) {
+		$schema['screenshot'] = wp_get_attachment_image_url( $gallery[0], 'full' );
+	}
+
+	return $schema;
 }
 
 /**
@@ -523,6 +566,7 @@ function fixit_output_schema() {
 		fixit_schema_organization(),
 		fixit_schema_website(),
 		fixit_schema_breadcrumb(),
+		fixit_schema_software(),
 		fixit_schema_faq(),
 	);
 

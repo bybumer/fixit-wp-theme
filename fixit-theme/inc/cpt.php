@@ -34,7 +34,7 @@ function fixit_register_post_types() {
 			'menu_icon'     => 'dashicons-shield-alt',
 			'menu_position' => 21,
 			'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes' ),
-			'rewrite'       => array( 'slug' => 'xidmet' ),
+			'rewrite'       => array( 'slug' => 'xidmet', 'with_front' => false ),
 			'show_in_rest'  => true,
 		)
 	);
@@ -56,7 +56,7 @@ function fixit_register_post_types() {
 			'menu_icon'     => 'dashicons-archive',
 			'menu_position' => 20,
 			'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes' ),
-			'rewrite'       => array( 'slug' => 'mehsul' ),
+			'rewrite'       => array( 'slug' => 'mehsul', 'with_front' => false ),
 			'show_in_rest'  => true,
 		)
 	);
