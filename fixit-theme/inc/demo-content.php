@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Başlanğıc mətnlərin revizyası.
  * Mətni dəyişəndə bu rəqəmi artırın — toxunulmamış məzmun yenilənir.
  */
-define( 'FIXIT_SEED_REV', 4 );
+define( 'FIXIT_SEED_REV', 5 );
 
 /**
  * Quraşdırmanı icra edir.
@@ -93,6 +93,10 @@ function fixit_create_pages() {
 		'haqqimizda' => array(
 			'title'    => 'Haqqımızda',
 			'template' => 'template-about.php',
+		),
+		'uzaqdan-destek' => array(
+			'title'    => 'Uzaqdan dəstək',
+			'template' => 'template-remote.php',
 		),
 		'elaqe'      => array(
 			'title'    => 'Əlaqə',
@@ -615,7 +619,7 @@ function fixit_create_menu() {
 	}
 
 	$page_ids = get_option( 'fixit_page_ids', array() );
-	$order    = array( 'ana-sehife', 'xidmetler', 'mehsullar', 'haqqimizda', 'elaqe' );
+	$order    = array( 'ana-sehife', 'xidmetler', 'mehsullar', 'uzaqdan-destek', 'haqqimizda', 'elaqe' );
 	$pos      = count( $items );
 
 	foreach ( $order as $slug ) {

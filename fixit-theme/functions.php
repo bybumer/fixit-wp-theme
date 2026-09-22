@@ -12,7 +12,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.5.1' );
+define( 'FIXIT_VERSION', '1.6.0' );
+
+/*
+ * Fixit Remote yükləmə ünvanları.
+ *
+ * Fayl adında versiya YOXDUR: "latest" hər dəfə ən son relizi verir,
+ * ona görə yeni buraxılışdan sonra saytda heç nəyi dəyişmək lazım
+ * gəlmir. Telefon tətbiqi ayrıca kanalda saxlanılır — serverlər onu
+ * öz yenilənməsi sanmasın deyə.
+ */
+define( 'FIXIT_REMOTE_WINDOWS', 'https://github.com/bybumer/fixit-remote-releases/releases/latest/download/FixitRemoteAgent.msi' );
+define( 'FIXIT_REMOTE_ANDROID', 'https://github.com/bybumer/fixit-remote-releases/releases/download/mobile/fixit-remote.apk' );
 
 /* ============================================================
    1. Tema dəstəkləri
@@ -143,6 +154,18 @@ function fixit_tel( $phone ) {
 /**
  * Şablona görə səhifə linkini tapır (menyu/düymələr üçün).
  */
+/**
+ * Məhsul səhifəsinin ünvanı (slug ilə). Tapılmasa boş sətir.
+ *
+ * @param string $slug Məhsulun qısa adı, məs. 'remote'.
+ * @return string
+ */
+function fixit_product_url( $slug ) {
+	$product = get_page_by_path( $slug, OBJECT, 'fixit_product' );
+
+	return $product ? (string) get_permalink( $product ) : '';
+}
+
 function fixit_page_url( $template ) {
 	$cache_key = 'fixit_page_' . sanitize_key( $template );
 	$cached    = wp_cache_get( $cache_key );

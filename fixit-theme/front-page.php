@@ -14,6 +14,7 @@ $fixit_contact_url  = fixit_page_url( 'template-contact.php' );
 $fixit_services_url = fixit_page_url( 'template-services.php' );
 $fixit_products_url = fixit_page_url( 'template-products.php' );
 $fixit_about_url    = fixit_page_url( 'template-about.php' );
+$fixit_remote_url   = fixit_page_url( 'template-remote.php' );
 $fixit_phone        = fixit_get( 'fixit_phone' );
 ?>
 
@@ -177,6 +178,37 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 		</div>
 	</section>
 <?php endif; ?>
+
+<!-- ============================ UZAQDAN DƏSTƏK ============================ -->
+<section class="section">
+	<div class="container">
+		<div class="demo-box reveal">
+			<div class="demo-box__text">
+				<span class="eyebrow"><?php fixit_icon( 'support' ); ?><?php esc_html_e( 'Kömək indi lazımdır?', 'fixit' ); ?></span>
+				<h2><?php esc_html_e( 'Uzaqdan dəstək', 'fixit' ); ?> — <span class="grad-text"><?php esc_html_e( 'bir neçə dəqiqəyə', 'fixit' ); ?></span></h2>
+				<p><?php esc_html_e( 'Proqramı yükləyin, pəncərədəki nömrə və şifrəni bizə deyin — mütəxəssisimiz kompüterinizə qoşulub problemi yerindəcə həll etsin. Qeydiyyat və ayar lazım deyil, qoşulma isə ekranınızda görünür.', 'fixit' ); ?></p>
+
+				<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
+					<a class="btn btn--primary" href="<?php echo esc_url( FIXIT_REMOTE_WINDOWS ); ?>" rel="nofollow">
+						<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Windows üçün yüklə', 'fixit' ); ?>
+					</a>
+
+					<?php if ( $fixit_remote_url ) : ?>
+						<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_remote_url ); ?>">
+							<?php esc_html_e( 'Necə işləyir', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
+						</a>
+					<?php endif; ?>
+				</div>
+			</div>
+
+			<ol class="demo-steps">
+				<li><?php esc_html_e( 'Proqramı yükləyib açın', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'ID və şifrəni bizə deyin', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'Biz qoşulub kömək edirik', 'fixit' ); ?></li>
+			</ol>
+		</div>
+	</div>
+</section>
 
 <!-- ============================ NİYƏ BİZ ============================ -->
 <section class="section section--soft">
