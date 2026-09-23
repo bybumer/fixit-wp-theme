@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.6.0' );
+define( 'FIXIT_VERSION', '1.6.1' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -24,6 +24,13 @@ define( 'FIXIT_VERSION', '1.6.0' );
  */
 define( 'FIXIT_REMOTE_WINDOWS', 'https://github.com/bybumer/fixit-remote-releases/releases/latest/download/FixitRemoteAgent.msi' );
 define( 'FIXIT_REMOTE_ANDROID', 'https://github.com/bybumer/fixit-remote-releases/releases/download/mobile/fixit-remote.apk' );
+
+/*
+ * Telefon tətbiqi hələ sınaqdadır: saytda YÜKLƏMƏ DÜYMƏSİ görünmür,
+ * yalnız bölmənin özü və izahı qalır. Hazır olanda bu dəyəri true
+ * etmək kifayətdir - yuxarıdakı ünvan onsuz da ən son yığımı verir.
+ */
+define( 'FIXIT_REMOTE_ANDROID_READY', false );
 
 /* ============================================================
    1. Tema dəstəkləri

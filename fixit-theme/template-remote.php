@@ -56,19 +56,37 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 
 			<article class="card reveal" style="cursor:default">
 				<span class="card__icon"><?php fixit_icon( 'phone' ); ?></span>
-				<h3><?php esc_html_e( 'Android üçün', 'fixit' ); ?></h3>
-				<p><?php esc_html_e( 'Telefonunuzdan kompüterə qoşulmaq üçün tətbiq. Android 7 və yuxarı.', 'fixit' ); ?></p>
+				<h3><?php esc_html_e( 'Telefon üçün', 'fixit' ); ?></h3>
 
-				<div style="margin-top:18px">
-					<a class="btn btn--ghost" href="<?php echo esc_url( FIXIT_REMOTE_ANDROID ); ?>" rel="nofollow">
-						<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Tətbiqi yüklə (APK)', 'fixit' ); ?>
-					</a>
-				</div>
+				<?php if ( FIXIT_REMOTE_ANDROID_READY ) : ?>
+					<p><?php esc_html_e( 'Telefonunuzdan kompüterə qoşulmaq üçün tətbiq. Android 7 və yuxarı.', 'fixit' ); ?></p>
 
-				<ul class="bullets" style="margin-top:18px">
-					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Kompüterin ekranını telefondan idarə edin', 'fixit' ); ?></span></li>
-					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Quraşdırarkən telefon "naməlum mənbə" icazəsi soruşur', 'fixit' ); ?></span></li>
-				</ul>
+					<div style="margin-top:18px">
+						<a class="btn btn--ghost" href="<?php echo esc_url( FIXIT_REMOTE_ANDROID ); ?>" rel="nofollow">
+							<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Tətbiqi yüklə', 'fixit' ); ?>
+						</a>
+					</div>
+
+					<ul class="bullets" style="margin-top:18px">
+						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Kompüterin ekranını telefondan idarə edin', 'fixit' ); ?></span></li>
+						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Android 7 və yuxarı', 'fixit' ); ?></span></li>
+					</ul>
+				<?php else : ?>
+					<p><?php esc_html_e( 'Telefondan kompüterə qoşulmaq üçün tətbiq üzərində işləyirik. Hazır olanda buradan yükləmək mümkün olacaq.', 'fixit' ); ?></p>
+
+					<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+						<span class="chip"><?php fixit_icon( 'clock' ); ?><?php esc_html_e( 'Tezliklə', 'fixit' ); ?></span>
+
+						<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_contact_url ); ?>">
+							<?php esc_html_e( 'Hazır olanda xəbər verin', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
+						</a>
+					</div>
+
+					<ul class="bullets" style="margin-top:18px">
+						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Kompüterin ekranına telefondan baxmaq və idarə etmək', 'fixit' ); ?></span></li>
+						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'İndilik dəstək üçün Windows proqramı kifayətdir', 'fixit' ); ?></span></li>
+					</ul>
+				<?php endif; ?>
 			</article>
 
 		</div>
