@@ -2,12 +2,15 @@
 /**
  * Template Name: Uzaqdan qoşulma
  *
- * Bu səhifə PULSUZ proqramı təqdim edir: adam onu yükləyib başqa bir
- * kompüterə qoşulur — dostuna, valideyninə kömək edir, ya da öz
- * maşınına uzaqdan çıxır.
+ * Səhifə İKİ AUDİTORİYAYA baxır və ona görə iki hissəyə bölünüb:
  *
- * Bizim öz dəstək xidmətimiz AYRI məsələdir və ən aşağıda yazılıb:
- * səhifə "bizə müraciət edin" deyə başlasa, proqramın öz faydası itər.
+ *   · Fərdi — proqram pulsuzdur, adam onu yükləyib dostuna, valideyninə
+ *     qoşulur. Burada ən vacibi yükləmə düyməsidir.
+ *   · Biznes — şirkət sistemi öz serverində qurur: icazələr, jurnal,
+ *     kütləvi quraşdırma. Burada ən vacibi bizimlə əlaqədir.
+ *
+ * İkisi bir mətnə yığılsaydı, hər iki tərəf özünə aid olmayan şeyi
+ * oxumalı olardı.
  *
  * @package FIXIT
  */
@@ -23,7 +26,7 @@ $fixit_release     = fixit_remote_release();
 <!-- Səhifə başlığı -->
 <section class="page-hero">
 	<div class="container">
-		<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Şəxsi istifadə üçün pulsuz', 'fixit' ); ?></span>
+		<span class="eyebrow"><?php fixit_icon( 'computer' ); ?><?php esc_html_e( 'Uzaqdan qoşulma', 'fixit' ); ?></span>
 		<h1><?php the_title(); ?></h1>
 		<p><?php esc_html_e( 'Olduğunuz yerdən lazım olan kompüterə qoşulun. Uzaqdakı ekranı görün, siçanı və klaviaturanı idarə edin — sanki onun qarşısında oturmusunuz.', 'fixit' ); ?></p>
 
@@ -35,9 +38,23 @@ $fixit_release     = fixit_remote_release();
 	</div>
 </section>
 
-<!-- ============================ YÜKLƏMƏ ============================ -->
-<section class="section">
+<!-- Hansı hissə kimə aiddir -->
+<div class="marquee" style="padding:16px 0">
+	<div class="container" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+		<a class="chip" href="#ferdi"><?php esc_html_e( 'Fərdi istifadə — pulsuz', 'fixit' ); ?></a>
+		<a class="chip" href="#biznes"><?php esc_html_e( 'Biznes — öz serverinizdə', 'fixit' ); ?></a>
+	</div>
+</div>
+
+<!-- ============================ FƏRDİ ============================ -->
+<section class="section" id="ferdi">
 	<div class="container">
+
+		<div class="section-head reveal">
+			<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Fərdi istifadə', 'fixit' ); ?></span>
+			<h2><?php esc_html_e( 'Pulsuz yükləyin və qoşulun', 'fixit' ); ?></h2>
+			<p><?php esc_html_e( 'Yaxınınıza kömək edin, evdə qalan kompüterinizə çıxın, iş yoldaşınızla eyni ekrana baxın. Qeydiyyat yoxdur, abunə yoxdur, məhdudiyyət yoxdur.', 'fixit' ); ?></p>
+		</div>
 
 		<div class="grid grid--2">
 
@@ -68,6 +85,7 @@ $fixit_release     = fixit_remote_release();
 				<ul class="bullets" style="margin-top:18px">
 					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Qeydiyyat, hesab və ödəniş yoxdur', 'fixit' ); ?></span></li>
 					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Quraşdırma bir neçə saniyə çəkir', 'fixit' ); ?></span></li>
+					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'İstədiyiniz vaxt tamamilə dayandıra bilərsiniz', 'fixit' ); ?></span></li>
 				</ul>
 			</article>
 
@@ -105,48 +123,8 @@ $fixit_release     = fixit_remote_release();
 	</div>
 </section>
 
-<!-- ============================ NƏYƏ YARAYIR ============================ -->
+<!-- Fərdi: üç addım -->
 <section class="section section--soft">
-	<div class="container">
-		<div class="section-head section-head--center reveal">
-			<span class="eyebrow"><?php esc_html_e( 'Nəyə yarayır', 'fixit' ); ?></span>
-			<h2><?php esc_html_e( 'Məsafə problem olmaqdan çıxır', 'fixit' ); ?></h2>
-		</div>
-
-		<div class="grid grid--3">
-			<?php
-			$fixit_uses = array(
-				array(
-					'icon'  => 'support',
-					'title' => __( 'Yaxınlarınıza kömək', 'fixit' ),
-					'text'  => __( 'Valideyninizin və ya dostunuzun kompüterində nəyisə düzəltmək üçün yanına getməyə ehtiyac qalmır — ekranını görüb özünüz edirsiniz.', 'fixit' ),
-				),
-				array(
-					'icon'  => 'network',
-					'title' => __( 'Öz kompüterinizə çıxış', 'fixit' ),
-					'text'  => __( 'Evdə və ya ofisdə qalan maşın əlinizin altında olur: sənədinizi götürün, proqramı işə salın, yarımçıq işi bitirin.', 'fixit' ),
-				),
-				array(
-					'icon'  => 'users',
-					'title' => __( 'Birlikdə işləmək', 'fixit' ),
-					'text'  => __( 'Ekranı göstərin, izah edin, yazışın. Eyni ekrana baxmaq telefonla izah etməkdən qat-qat asandır.', 'fixit' ),
-				),
-			);
-
-			foreach ( $fixit_uses as $fixit_use ) :
-				?>
-				<article class="card reveal" style="cursor:default">
-					<span class="card__icon"><?php fixit_icon( $fixit_use['icon'] ); ?></span>
-					<h3><?php echo esc_html( $fixit_use['title'] ); ?></h3>
-					<p><?php echo esc_html( $fixit_use['text'] ); ?></p>
-				</article>
-			<?php endforeach; ?>
-		</div>
-	</div>
-</section>
-
-<!-- ============================ NECƏ İŞLƏYİR ============================ -->
-<section class="section">
 	<div class="container">
 		<div class="section-head section-head--center reveal">
 			<span class="eyebrow"><?php esc_html_e( 'Üç addım', 'fixit' ); ?></span>
@@ -170,7 +148,7 @@ $fixit_release     = fixit_remote_release();
 				array(
 					'icon'  => 'check-c',
 					'title' => __( '3. O, icazə verir', 'fixit' ),
-					'text'  => __( 'Qarşı tərəfin ekranında sual çıxır: icazə verir və ya rədd edir. İstəsə şifrəsini deyər — onda sual verilmir.', 'fixit' ),
+					'text'  => __( 'Qarşı tərəfin ekranında sual çıxır: yalnız baxmağa, yoxsa idarə etməyə icazə verir. İstəsə şifrəsini deyər — onda sual verilmir.', 'fixit' ),
 				),
 			);
 
@@ -186,8 +164,8 @@ $fixit_release     = fixit_remote_release();
 	</div>
 </section>
 
-<!-- ============================ TƏHLÜKƏSİZLİK ============================ -->
-<section class="section section--soft">
+<!-- Fərdi: təhlükəsizlik -->
+<section class="section">
 	<div class="container split">
 
 		<div class="reveal">
@@ -199,9 +177,9 @@ $fixit_release     = fixit_remote_release();
 			<ul class="feature-list">
 				<?php
 				$fixit_notes = array(
-					array( __( 'İcazəsiz qoşulmaq olmur', 'fixit' ), __( 'Ya ekrandakı suala "icazə verirəm" deyirsiniz, ya da şifrənizi özünüz bildirirsiniz.', 'fixit' ) ),
+					array( __( 'İcazəsiz qoşulmaq olmur', 'fixit' ), __( 'Ya ekrandakı suala cavab verirsiniz, ya da şifrənizi özünüz bildirirsiniz.', 'fixit' ) ),
+					array( __( 'Baxış və idarəetmə ayrıdır', 'fixit' ), __( '"Yalnız baxsın" deyəndə qarşı tərəf ekranı görür, amma klaviatura və siçana toxuna bilmir.', 'fixit' ) ),
 					array( __( 'Qoşulma gizli ola bilmir', 'fixit' ), __( 'Sessiya boyu ekranınızda kimin qoşulduğunu göstərən zolaq durur.', 'fixit' ) ),
-					array( __( 'Bağlantını istənilən an kəsirsiniz', 'fixit' ), __( 'Bir düymə ilə sessiya dayanır; proqramı tamamilə dayandırmaq da mümkündür.', 'fixit' ) ),
 					array( __( 'Şifrə yalnız sizdədir', 'fixit' ), __( 'Şifrəni istədiyiniz vaxt yeniləyirsiniz — köhnəsini bilən bir daha qoşula bilmir.', 'fixit' ) ),
 				);
 
@@ -220,38 +198,141 @@ $fixit_release     = fixit_remote_release();
 
 		<div class="reveal">
 			<div class="card" style="cursor:default">
-				<span class="badge"><?php fixit_icon( 'server' ); ?><?php esc_html_e( 'Şirkətlər üçün', 'fixit' ); ?></span>
-				<h3 style="margin-top:12px"><?php esc_html_e( 'Öz serverinizdə quraşdırma', 'fixit' ); ?></h3>
-				<p><?php esc_html_e( 'Şirkətinizdə çox sayda kompüter varsa, sistemi tam sizin serverinizdə qura bilərik: bağlantı, icazələr və sessiya jurnalı şirkətdən kənara çıxmır.', 'fixit' ); ?></p>
+				<span class="card__icon"><?php fixit_icon( 'users' ); ?></span>
+				<h3><?php esc_html_e( 'Nəyə yarayır', 'fixit' ); ?></h3>
 
-				<ul class="bullets" style="margin-top:16px">
-					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Kim hansı kompüterə qoşula bilər — mərkəzdən idarə', 'fixit' ); ?></span></li>
-					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Hər sessiya jurnalda; CSV və PDF kimi yüklənir', 'fixit' ); ?></span></li>
-					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'İşçi kompüterlərində port açmaq lazım deyil', 'fixit' ); ?></span></li>
+				<ul class="bullets" style="margin-top:14px">
+					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Valideyninizin kompüterində problemi yanına getmədən düzəldin', 'fixit' ); ?></span></li>
+					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Evdə qalan maşından sənədinizi götürün', 'fixit' ); ?></span></li>
+					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'İş yoldaşınıza ekranı göstərib izah edin', 'fixit' ); ?></span></li>
+					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Qoşulma zamanı yazışın — telefonla danışmaq şərt deyil', 'fixit' ); ?></span></li>
 				</ul>
-
-				<div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
-					<?php if ( $fixit_remote_page ) : ?>
-						<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_remote_page ); ?>">
-							<?php esc_html_e( 'Məhsul haqqında', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
-						</a>
-					<?php endif; ?>
-
-					<a class="btn btn--primary" href="<?php echo esc_url( $fixit_contact_url ); ?>">
-						<?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Bizə yazın', 'fixit' ); ?>
-					</a>
-				</div>
 			</div>
 		</div>
 
 	</div>
 </section>
 
+<!-- ============================ BİZNES ============================ -->
+<section class="section section--dark" id="biznes">
+	<div class="container">
+
+		<div class="section-head reveal">
+			<span class="eyebrow"><?php fixit_icon( 'server' ); ?><?php esc_html_e( 'Biznes üçün', 'fixit' ); ?></span>
+			<h2><?php esc_html_e( 'Şirkət versiyası —', 'fixit' ); ?> <span style="background:linear-gradient(100deg,#6fd0ff,#7bf7d8);-webkit-background-clip:text;background-clip:text;color:transparent"><?php esc_html_e( 'öz serverinizdə', 'fixit' ); ?></span></h2>
+			<p style="color:rgba(255,255,255,.78)"><?php esc_html_e( 'Şirkətdə uzaqdan dəstək başqa cür qurulur: kimin hansı kompüterə qoşulduğu bilinməlidir, qoşulma kənar şirkətin serverindən keçməməlidir, hər sessiya jurnalda qalmalıdır.', 'fixit' ); ?></p>
+		</div>
+
+		<div class="grid grid--3">
+			<?php
+			$fixit_business = array(
+				array(
+					'icon'  => 'lock',
+					'title' => __( 'Məlumat şirkətdən çıxmır', 'fixit' ),
+					'text'  => __( 'Server sizin infrastrukturunuzda qurulur. Ekran görüntüsü, fayllar, yazışma və jurnal kənar buluda getmir.', 'fixit' ),
+				),
+				array(
+					'icon'  => 'users',
+					'title' => __( 'Kim kimə qoşula bilər', 'fixit' ),
+					'text'  => __( 'İstifadəçilər, rollar və qruplar. Hər operatorun hansı kompüterlərə çıxışı olduğu mərkəzdən təyin olunur.', 'fixit' ),
+				),
+				array(
+					'icon'  => 'chart',
+					'title' => __( 'Tam jurnal və hesabat', 'fixit' ),
+					'text'  => __( 'Hər sessiya, hər qoşulma cəhdi, fayl köçürmə və uzaqdan əmr yazılır. CSV və PDF kimi yüklənir.', 'fixit' ),
+				),
+				array(
+					'icon'  => 'network',
+					'title' => __( 'Port açmaq lazım deyil', 'fixit' ),
+					'text'  => __( 'Agent serverə özü qoşulur. İşçi kompüterlərində heç bir port açılmır, fərqli VLAN-lar problem yaratmır.', 'fixit' ),
+				),
+				array(
+					'icon'  => 'shield',
+					'title' => __( 'Girişin qorunması', 'fixit' ),
+					'text'  => __( 'Panelə giriş iki mərhələli doğrulama ilə, agentlər isə sertifikat barmaq izi ilə yoxlanılır; hər yeni kompüter admin təsdiqindən keçir.', 'fixit' ),
+				),
+				array(
+					'icon'  => 'wrench',
+					'title' => __( 'Kütləvi quraşdırma', 'fixit' ),
+					'text'  => __( 'MSI quraşdırıcısı parametrlərlə sakitcə quraşdırılır, agentlər sonra özləri yenilənir — hər maşına ayrıca getmək lazım gəlmir.', 'fixit' ),
+				),
+			);
+
+			foreach ( $fixit_business as $fixit_item ) :
+				?>
+				<article class="card reveal" style="cursor:default">
+					<span class="card__icon"><?php fixit_icon( $fixit_item['icon'] ); ?></span>
+					<h3><?php echo esc_html( $fixit_item['title'] ); ?></h3>
+					<p><?php echo esc_html( $fixit_item['text'] ); ?></p>
+				</article>
+			<?php endforeach; ?>
+		</div>
+
+		<div style="text-align:center;margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+			<a class="btn btn--white" href="<?php echo esc_url( $fixit_contact_url ); ?>">
+				<?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Təklif istəyin', 'fixit' ); ?>
+			</a>
+
+			<?php if ( $fixit_remote_page ) : ?>
+				<a class="btn btn--light" href="<?php echo esc_url( $fixit_remote_page ); ?>">
+					<?php esc_html_e( 'Məhsul haqqında ətraflı', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
+				</a>
+			<?php endif; ?>
+		</div>
+	</div>
+</section>
+
+<!-- Biznes: fərqlər cədvəli -->
+<section class="section section--soft">
+	<div class="container">
+		<div class="section-head section-head--center reveal">
+			<span class="eyebrow"><?php esc_html_e( 'Müqayisə', 'fixit' ); ?></span>
+			<h2><?php esc_html_e( 'Hansı variant sizə uyğundur', 'fixit' ); ?></h2>
+		</div>
+
+		<div class="panel reveal">
+			<div class="wrap">
+				<table>
+					<thead>
+						<tr>
+							<th><?php esc_html_e( 'Xüsusiyyət', 'fixit' ); ?></th>
+							<th><?php esc_html_e( 'Fərdi (pulsuz)', 'fixit' ); ?></th>
+							<th><?php esc_html_e( 'Biznes', 'fixit' ); ?></th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						$fixit_rows = array(
+							array( __( 'Ekrana baxmaq və idarə etmək', 'fixit' ), __( 'var', 'fixit' ), __( 'var', 'fixit' ) ),
+							array( __( 'Yazışma və fayl ötürmə', 'fixit' ), __( 'var', 'fixit' ), __( 'var', 'fixit' ) ),
+							array( __( 'Qoşulma üsulu', 'fixit' ), __( 'nömrə və şifrə', 'fixit' ), __( 'nömrə, şifrə və ya mərkəzi icazə', 'fixit' ) ),
+							array( __( 'Server', 'fixit' ), __( 'bizim mərkəzi server', 'fixit' ), __( 'sizin öz serveriniz', 'fixit' ) ),
+							array( __( 'İstifadəçilər və icazələr', 'fixit' ), __( 'yoxdur', 'fixit' ), __( 'rollar, qruplar, cihaz təsdiqi', 'fixit' ) ),
+							array( __( 'Sessiya jurnalı', 'fixit' ), __( 'yalnız cihazın öz siyahısı', 'fixit' ), __( 'tam jurnal, CSV və PDF', 'fixit' ) ),
+							array( __( 'Kütləvi quraşdırma', 'fixit' ), __( 'əl ilə', 'fixit' ), __( 'MSI ilə sakit quraşdırma', 'fixit' ) ),
+							array( __( 'Dəstək', 'fixit' ), __( 'ictimai', 'fixit' ), __( 'müqavilə ilə', 'fixit' ) ),
+						);
+
+						foreach ( $fixit_rows as $fixit_row ) :
+							?>
+							<tr>
+								<td><b><?php echo esc_html( $fixit_row[0] ); ?></b></td>
+								<td><?php echo esc_html( $fixit_row[1] ); ?></td>
+								<td><?php echo esc_html( $fixit_row[2] ); ?></td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- ============================ BİZİM DƏSTƏK ============================ -->
-<section class="section section--dark">
+<section class="section">
 	<div class="container" style="text-align:center">
 		<h2 style="margin-bottom:12px"><?php esc_html_e( 'Problemi mütəxəssis həll etsin?', 'fixit' ); ?></h2>
-		<p style="max-width:680px;margin:0 auto 24px;color:rgba(255,255,255,.78)">
+		<p style="max-width:680px;margin:0 auto 24px;color:var(--text-soft)">
 			<?php esc_html_e( 'Proqram pulsuzdur və hər kəs onu istədiyi kimi işlədə bilər. Kompüterinizdəki problemi özünüz həll etmək istəmirsinizsə — eyni proqramla bizim mütəxəssis qoşulub kömək edər. Bu, ayrıca xidmətdir.', 'fixit' ); ?>
 		</p>
 
@@ -262,12 +343,12 @@ $fixit_release     = fixit_remote_release();
 				// biz də söhbətin hansı səhifədən gəldiyini bilək.
 				$fixit_wa_text = rawurlencode( __( 'Salam! Uzaqdan dəstək lazımdır.', 'fixit' ) );
 				?>
-				<a class="btn btn--white" href="https://wa.me/<?php echo esc_attr( fixit_tel( $fixit_whatsapp ) ); ?>?text=<?php echo esc_attr( $fixit_wa_text ); ?>" target="_blank" rel="noopener noreferrer">
+				<a class="btn btn--primary" href="https://wa.me/<?php echo esc_attr( fixit_tel( $fixit_whatsapp ) ); ?>?text=<?php echo esc_attr( $fixit_wa_text ); ?>" target="_blank" rel="noopener noreferrer">
 					<?php fixit_icon( 'whatsapp' ); ?><?php esc_html_e( 'WhatsApp-dan yazın', 'fixit' ); ?>
 				</a>
 			<?php endif; ?>
 
-			<a class="btn btn--light" href="<?php echo esc_url( $fixit_contact_url ); ?>">
+			<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_contact_url ); ?>">
 				<?php esc_html_e( 'Əlaqə formu', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
 			</a>
 		</div>
