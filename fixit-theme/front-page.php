@@ -184,13 +184,13 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 	<div class="container">
 		<div class="demo-box reveal">
 			<div class="demo-box__text">
-				<span class="eyebrow"><?php fixit_icon( 'support' ); ?><?php esc_html_e( 'Kömək indi lazımdır?', 'fixit' ); ?></span>
-				<h2><?php esc_html_e( 'Uzaqdan dəstək', 'fixit' ); ?> — <span class="grad-text"><?php esc_html_e( 'bir neçə dəqiqəyə', 'fixit' ); ?></span></h2>
-				<p><?php esc_html_e( 'Proqramı yükləyin, pəncərədəki nömrə və şifrəni bizə deyin — mütəxəssisimiz kompüterinizə qoşulub problemi yerindəcə həll etsin. Qeydiyyat və ayar lazım deyil, qoşulma isə ekranınızda görünür.', 'fixit' ); ?></p>
+				<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Pulsuz proqram', 'fixit' ); ?></span>
+				<h2><?php esc_html_e( 'Uzaqdan qoşulma', 'fixit' ); ?> — <span class="grad-text"><?php esc_html_e( 'öz proqramımız', 'fixit' ); ?></span></h2>
+				<p><?php esc_html_e( 'Olduğunuz yerdən başqa kompüterə qoşulun: yaxınınıza kömək edin, evdə qalan maşınınıza çıxın, iş yoldaşınızla eyni ekrana baxın. Qeydiyyat yoxdur, ödəniş yoxdur — qoşulmağa isə hər dəfə qarşı tərəf icazə verir.', 'fixit' ); ?></p>
 
 				<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
 					<a class="btn btn--primary" href="<?php echo esc_url( FIXIT_REMOTE_WINDOWS ); ?>" rel="nofollow">
-						<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Windows üçün yüklə', 'fixit' ); ?>
+						<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Pulsuz yüklə', 'fixit' ); ?>
 					</a>
 
 					<?php if ( $fixit_remote_url ) : ?>
@@ -202,9 +202,9 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 			</div>
 
 			<ol class="demo-steps">
-				<li><?php esc_html_e( 'Proqramı yükləyib açın', 'fixit' ); ?></li>
-				<li><?php esc_html_e( 'ID və şifrəni bizə deyin', 'fixit' ); ?></li>
-				<li><?php esc_html_e( 'Biz qoşulub kömək edirik', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'Hər iki tərəf proqramı yükləyir', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'Qarşı tərəfin nömrəsini yazırsınız', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'O, icazə verir — ekran açılır', 'fixit' ); ?></li>
 			</ol>
 		</div>
 	</div>

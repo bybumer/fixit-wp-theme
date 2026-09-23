@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Başlanğıc mətnlərin revizyası.
  * Mətni dəyişəndə bu rəqəmi artırın — toxunulmamış məzmun yenilənir.
  */
-define( 'FIXIT_SEED_REV', 5 );
+define( 'FIXIT_SEED_REV', 6 );
 
 /**
  * Quraşdırmanı icra edir.
@@ -95,8 +95,13 @@ function fixit_create_pages() {
 			'template' => 'template-about.php',
 		),
 		'uzaqdan-destek' => array(
-			'title'    => 'Uzaqdan dəstək',
+			'title'    => 'Uzaqdan qoşulma',
 			'template' => 'template-remote.php',
+			// Səhifə əvvəl "Uzaqdan dəstək" adlanırdı. Proqram hər kəs
+			// üçün pulsuzdur, bizim dəstək isə ayrıca xidmətdir - ad da
+			// buna uyğun dəyişdi. Yalnız BİZİM qoyduğumuz ad dəyişdirilir;
+			// admin özü başqa ad yazıbsa toxunulmur.
+			'rename'   => 'Uzaqdan dəstək',
 		),
 		'elaqe'      => array(
 			'title'    => 'Əlaqə',
@@ -124,6 +129,15 @@ function fixit_create_pages() {
 		}
 
 		if ( $id && ! is_wp_error( $id ) ) {
+			if ( ! empty( $data['rename'] ) && $existing && $existing->post_title === $data['rename'] ) {
+				wp_update_post(
+					array(
+						'ID'         => $id,
+						'post_title' => $data['title'],
+					)
+				);
+			}
+
 			if ( $data['template'] ) {
 				update_post_meta( $id, '_wp_page_template', $data['template'] );
 			}
