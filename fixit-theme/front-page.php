@@ -15,6 +15,7 @@ $fixit_services_url = fixit_page_url( 'template-services.php' );
 $fixit_products_url = fixit_page_url( 'template-products.php' );
 $fixit_about_url    = fixit_page_url( 'template-about.php' );
 $fixit_remote_url   = fixit_page_url( 'template-remote.php' );
+$fixit_clients      = fixit_get_clients();
 $fixit_phone        = fixit_get( 'fixit_phone' );
 ?>
 
@@ -100,6 +101,39 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 		?>
 	</div>
 </div>
+
+<!-- ============================ MÜŞTƏRİLƏR ============================ -->
+<?php if ( $fixit_clients ) : ?>
+	<section class="section section--tight">
+		<div class="container">
+			<div class="section-head section-head--center reveal">
+				<span class="eyebrow"><?php fixit_icon( 'users' ); ?><?php esc_html_e( 'Bizə etibar edirlər', 'fixit' ); ?></span>
+				<h2><?php esc_html_e( 'Bizimlə işləyən şirkətlər', 'fixit' ); ?></h2>
+			</div>
+
+			<div class="clients reveal">
+				<?php foreach ( $fixit_clients as $fixit_client ) : ?>
+					<div class="clients__item" title="<?php echo esc_attr( $fixit_client->post_title ); ?>">
+						<?php if ( has_post_thumbnail( $fixit_client ) ) : ?>
+							<?php
+							echo get_the_post_thumbnail(
+								$fixit_client,
+								'medium',
+								array(
+									'alt'     => esc_attr( $fixit_client->post_title ),
+									'loading' => 'lazy',
+								)
+							);
+							?>
+						<?php else : ?>
+							<span><?php echo esc_html( $fixit_client->post_title ); ?></span>
+						<?php endif; ?>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+<?php endif; ?>
 
 <!-- ============================ XİDMƏTLƏR ============================ -->
 <section class="section">

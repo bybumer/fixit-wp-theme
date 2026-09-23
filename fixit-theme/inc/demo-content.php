@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Başlanğıc mətnlərin revizyası.
  * Mətni dəyişəndə bu rəqəmi artırın — toxunulmamış məzmun yenilənir.
  */
-define( 'FIXIT_SEED_REV', 6 );
+define( 'FIXIT_SEED_REV', 7 );
 
 /**
  * Quraşdırmanı icra edir.
@@ -32,6 +32,7 @@ function fixit_run_setup() {
 	fixit_refresh_seeded_products();
 	fixit_fix_encoded_slugs();
 	fixit_create_reviews();
+	fixit_create_clients();
 	fixit_create_menu();
 
 	flush_rewrite_rules();
@@ -72,6 +73,37 @@ function fixit_maybe_install() {
 	fixit_run_setup();
 }
 add_action( 'init', 'fixit_maybe_install', 20 );
+
+/* ============================================================
+   0. Müştəri sətirləri (nümunə)
+   ============================================================
+   15 boş sətir QARALAMA kimi yaradılır: admin adını yazır, loqonu
+   yükləyir və dərc edir.
+
+   Nə üçün qaralama: saytda "müştərimizdir" yazısı yalnız həqiqət
+   olanda görünməlidir. Dərc olunmayan sətir ana səhifədə çıxmır.
+
+   Bir dəfə yaradılır - sonra silinsə də geri qayıtmır. */
+function fixit_create_clients() {
+	if ( ! add_option( 'fixit_clients_seeded', FIXIT_SEED_REV, '', false ) ) {
+		return;
+	}
+
+	for ( $i = 1; $i <= 15; $i++ ) {
+		wp_insert_post(
+			array(
+				'post_type'   => 'fixit_client',
+				'post_status' => 'draft',
+				'post_title'  => sprintf(
+					/* translators: %d: sıra nömrəsi */
+					__( 'Müştəri %d — adını yazın, loqo yükləyin', 'fixit' ),
+					$i
+				),
+				'menu_order'  => $i,
+			)
+		);
+	}
+}
 
 /* ============================================================
    1. Səhifələr

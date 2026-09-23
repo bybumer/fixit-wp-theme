@@ -61,6 +61,32 @@ function fixit_register_post_types() {
 		)
 	);
 
+	/*
+	 * Müştərilər: yalnız ad və loqo.
+	 *
+	 * Ayrıca səhifəsi yoxdur ('public' => false) - loqo ana səhifədə
+	 * göstərilir, içəri girməyə bir şey yoxdur.
+	 */
+	register_post_type(
+		'fixit_client',
+		array(
+			'labels'        => array(
+				'name'          => __( 'Müştərilər', 'fixit' ),
+				'singular_name' => __( 'Müştəri', 'fixit' ),
+				'add_new'       => __( 'Yeni müştəri', 'fixit' ),
+				'add_new_item'  => __( 'Yeni müştəri əlavə et', 'fixit' ),
+				'edit_item'     => __( 'Müştərini redaktə et', 'fixit' ),
+				'not_found'     => __( 'Müştəri əlavə olunmayıb', 'fixit' ),
+				'menu_name'     => __( 'Müştərilər', 'fixit' ),
+			),
+			'public'        => false,
+			'show_ui'       => true,
+			'menu_icon'     => 'dashicons-groups',
+			'menu_position' => 23,
+			'supports'      => array( 'title', 'thumbnail', 'page-attributes' ),
+		)
+	);
+
 	register_post_type(
 		'fixit_review',
 		array(
@@ -270,6 +296,24 @@ function fixit_get_reviews( $limit = 3 ) {
 }
 
 /**
+ * Ana səhifədəki müştəri loqoları.
+ *
+ * @param int $limit Ən çox neçə ədəd.
+ * @return WP_Post[]
+ */
+function fixit_get_clients( $limit = 24 ) {
+	return get_posts(
+		array(
+			'post_type'      => 'fixit_client',
+			'posts_per_page' => $limit,
+			'orderby'        => 'menu_order',
+			'order'          => 'ASC',
+			'post_status'    => 'publish',
+		)
+	);
+}
+
+/**
  * Sətirlərə bölünmüş meta dəyəri massiv kimi qaytarır.
  */
 function fixit_meta_lines( $post_id, $key ) {
@@ -280,3 +324,36 @@ function fixit_meta_lines( $post_id, $key ) {
 	$lines = preg_split( '/\r\n|\r|\n/', $raw );
 	return array_values( array_filter( array_map( 'trim', $lines ) ) );
 }
+
+/* ============================================================
+   5. Müştəri siyahısında loqo sütunu
+   ============================================================
+   Ad tək başına az şey deyir: admin siyahıda loqonu görməsə hansının
+   hansı olduğunu açmadan bilmir. */
+add_filter(
+	'manage_fixit_client_posts_columns',
+	function ( $columns ) {
+		return array_merge(
+			array( 'cb' => isset( $columns['cb'] ) ? $columns['cb'] : '' ),
+			array( 'fixit_logo' => __( 'Loqo', 'fixit' ) ),
+			$columns
+		);
+	}
+);
+
+add_action(
+	'manage_fixit_client_posts_custom_column',
+	function ( $column, $post_id ) {
+		if ( 'fixit_logo' !== $column ) {
+			return;
+		}
+
+		if ( has_post_thumbnail( $post_id ) ) {
+			echo get_the_post_thumbnail( $post_id, array( 80, 40 ), array( 'style' => 'max-width:80px;height:auto' ) );
+		} else {
+			echo '<span style="color:#a00">' . esc_html__( 'loqo yoxdur', 'fixit' ) . '</span>';
+		}
+	},
+	10,
+	2
+);
