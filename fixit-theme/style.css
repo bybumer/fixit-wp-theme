@@ -4,7 +4,7 @@ Theme URI: https://fixit.az
 Author: FIXIT
 Author URI: https://fixit.az
 Description: FIXIT şirkəti üçün hazırlanmış peşəkar İKT xidmətləri teması. Tam responsiv, işıqlı/qaranlıq rejim, daxili əlaqə formu, SEO və sürət üçün optimallaşdırılmışdır.
-Version: 1.8.0
+Version: 1.8.1
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -843,4 +843,30 @@ html.fixit-js .reveal.is-in{opacity:1;transform:none}
   .clients{grid-template-columns:repeat(auto-fill,minmax(118px,1fr))}
   .clients__item{min-height:70px;padding:10px 12px}
   .clients__item img{max-height:40px}
+}
+
+/* ============================================================
+   Müqayisə cədvəli (fərdi / biznes)
+   ============================================================
+   Sadə <table> mobil ekranda sıxılıb oxunmaz olur: buradakı sarğı onu
+   yan sürüşdürməyə imkan verir, sətirlər isə bir-birindən ayrılır. */
+.compare{background:var(--bg-elev);border:1px solid var(--surface-line);
+  border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}
+.compare__scroll{overflow-x:auto}
+.compare table{width:100%;border-collapse:collapse;min-width:620px}
+.compare th,.compare td{padding:14px 18px;text-align:left;vertical-align:top;
+  border-bottom:1px solid var(--surface-line);font-size:.95rem}
+.compare thead th{background:var(--bg-soft);color:var(--text);font-weight:800;
+  font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.compare tbody tr:last-child th,.compare tbody tr:last-child td{border-bottom:0}
+.compare tbody tr:hover{background:var(--bg-soft)}
+.compare td:first-child{color:var(--text)}
+.compare td:not(:first-child){color:var(--text-soft)}
+
+/* Biznes sütununu vurğulayırıq: müqayisənin mənası odur. */
+.compare th:last-child,.compare td:last-child{background:rgba(11,99,229,.045)}
+.compare th:last-child{color:var(--brand-600)}
+
+@media (max-width:560px){
+  .compare th,.compare td{padding:11px 13px;font-size:.9rem}
 }

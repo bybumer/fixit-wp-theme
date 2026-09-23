@@ -290,8 +290,8 @@ $fixit_release     = fixit_remote_release();
 			<h2><?php esc_html_e( 'Hansı variant sizə uyğundur', 'fixit' ); ?></h2>
 		</div>
 
-		<div class="panel reveal">
-			<div class="wrap">
+		<div class="compare reveal">
+			<div class="compare__scroll">
 				<table>
 					<thead>
 						<tr>
