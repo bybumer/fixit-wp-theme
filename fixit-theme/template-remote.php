@@ -13,7 +13,7 @@ get_header();
 
 $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 $fixit_remote_page = fixit_product_url( 'remote' );
-$fixit_phone       = fixit_get( 'fixit_phone' );
+$fixit_whatsapp    = fixit_get( 'fixit_whatsapp' );
 $fixit_release     = fixit_remote_release();
 ?>
 
@@ -213,13 +213,18 @@ $fixit_release     = fixit_remote_release();
 	<div class="container" style="text-align:center">
 		<h2 style="margin-bottom:12px"><?php esc_html_e( 'Yükləmədə çətinlik var?', 'fixit' ); ?></h2>
 		<p style="max-width:640px;margin:0 auto 24px;color:rgba(255,255,255,.78)">
-			<?php esc_html_e( 'Zəng edin — birlikdə addım-addım keçək. Proqramı yükləmək və açmaq bir neçə dəqiqə çəkir.', 'fixit' ); ?>
+			<?php esc_html_e( 'WhatsApp-dan yazın — birlikdə addım-addım keçək. Proqramı yükləmək və açmaq bir neçə dəqiqə çəkir.', 'fixit' ); ?>
 		</p>
 
 		<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-			<?php if ( $fixit_phone ) : ?>
-				<a class="btn btn--white" href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $fixit_phone ) ); ?>">
-					<?php fixit_icon( 'phone' ); ?><?php echo esc_html( $fixit_phone ); ?>
+			<?php if ( $fixit_whatsapp ) : ?>
+				<?php
+				// Hazır mətnlə açılır: müştəri nə yazacağını düşünməsin,
+				// biz də söhbətin hansı səhifədən gəldiyini bilək.
+				$fixit_wa_text = rawurlencode( __( 'Salam! Uzaqdan dəstək proqramını yükləməkdə kömək lazımdır.', 'fixit' ) );
+				?>
+				<a class="btn btn--white" href="https://wa.me/<?php echo esc_attr( fixit_tel( $fixit_whatsapp ) ); ?>?text=<?php echo esc_attr( $fixit_wa_text ); ?>" target="_blank" rel="noopener noreferrer">
+					<?php fixit_icon( 'whatsapp' ); ?><?php esc_html_e( 'WhatsApp-dan yazın', 'fixit' ); ?>
 				</a>
 			<?php endif; ?>
 
