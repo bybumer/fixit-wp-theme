@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.8.1' );
+define( 'FIXIT_VERSION', '1.8.2' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -24,6 +24,13 @@ define( 'FIXIT_VERSION', '1.8.1' );
  */
 define( 'FIXIT_REMOTE_WINDOWS', 'https://github.com/bybumer/fixit-remote-releases/releases/latest/download/FixitRemoteAgent.msi' );
 define( 'FIXIT_REMOTE_ANDROID', 'https://github.com/bybumer/fixit-remote-releases/releases/download/mobile/fixit-remote.apk' );
+
+/*
+ * Windows proqramı da hazırda yüklənmir: bölmə, izah və "tezliklə"
+ * nişanı qalır, düymə görünmür. Hazır olanda bu dəyəri true etmək
+ * kifayətdir - ünvan onsuz da ən son buraxılışı verir.
+ */
+define( 'FIXIT_REMOTE_WINDOWS_READY', false );
 
 /*
  * Telefon tətbiqi hələ sınaqdadır: saytda YÜKLƏMƏ DÜYMƏSİ görünmür,

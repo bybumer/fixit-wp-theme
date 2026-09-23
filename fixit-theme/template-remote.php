@@ -61,26 +61,38 @@ $fixit_release     = fixit_remote_release();
 			<article class="card reveal" style="cursor:default">
 				<span class="card__icon"><?php fixit_icon( 'computer' ); ?></span>
 				<h3><?php esc_html_e( 'Windows üçün', 'fixit' ); ?></h3>
-				<p><?php esc_html_e( 'Windows 10 və 11 (64-bit). Quraşdırıldıqdan sonra proqram həm qoşulmaq, həm də qoşulmağa icazə vermək üçün hazırdır.', 'fixit' ); ?></p>
+				<?php if ( FIXIT_REMOTE_WINDOWS_READY ) : ?>
+					<p><?php esc_html_e( 'Windows 10 və 11 (64-bit). Quraşdırıldıqdan sonra proqram həm qoşulmaq, həm də qoşulmağa icazə vermək üçün hazırdır.', 'fixit' ); ?></p>
 
-				<div style="margin-top:18px">
-					<a class="btn btn--primary" href="<?php echo esc_url( FIXIT_REMOTE_WINDOWS ); ?>" rel="nofollow">
-						<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Pulsuz yüklə', 'fixit' ); ?>
-					</a>
+					<div style="margin-top:18px">
+						<a class="btn btn--primary" href="<?php echo esc_url( FIXIT_REMOTE_WINDOWS ); ?>" rel="nofollow">
+							<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Pulsuz yüklə', 'fixit' ); ?>
+						</a>
 
-					<?php if ( $fixit_release['version'] ) : ?>
-						<p style="margin:10px 0 0;font-size:13px;color:var(--text-mute)">
-							<?php
-							printf(
-								/* translators: 1: versiya, 2: faylın həcmi */
-								esc_html__( 'Versiya %1$s · %2$s', 'fixit' ),
-								esc_html( $fixit_release['version'] ),
-								esc_html( $fixit_release['size'] ? size_format( $fixit_release['size'], 1 ) : '' )
-							);
-							?>
-						</p>
-					<?php endif; ?>
-				</div>
+						<?php if ( $fixit_release['version'] ) : ?>
+							<p style="margin:10px 0 0;font-size:13px;color:var(--text-mute)">
+								<?php
+								printf(
+									/* translators: 1: versiya, 2: faylın həcmi */
+									esc_html__( 'Versiya %1$s · %2$s', 'fixit' ),
+									esc_html( $fixit_release['version'] ),
+									esc_html( $fixit_release['size'] ? size_format( $fixit_release['size'], 1 ) : '' )
+								);
+								?>
+							</p>
+						<?php endif; ?>
+					</div>
+				<?php else : ?>
+					<p><?php esc_html_e( 'Windows 10 və 11 (64-bit) üçün proqram üzərində işləyirik. Hazır olanda buradan yükləmək mümkün olacaq.', 'fixit' ); ?></p>
+
+					<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+						<span class="chip"><?php fixit_icon( 'clock' ); ?><?php esc_html_e( 'Tezliklə', 'fixit' ); ?></span>
+
+						<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_contact_url ); ?>">
+							<?php esc_html_e( 'Xəbər verin', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
+						</a>
+					</div>
+				<?php endif; ?>
 
 				<ul class="bullets" style="margin-top:18px">
 					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Qeydiyyat, hesab və ödəniş yoxdur', 'fixit' ); ?></span></li>

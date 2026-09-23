@@ -214,10 +214,14 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 				<h2><?php esc_html_e( 'Uzaqdan qoşulma', 'fixit' ); ?> — <span class="grad-text"><?php esc_html_e( 'öz proqramımız', 'fixit' ); ?></span></h2>
 				<p><?php esc_html_e( 'Olduğunuz yerdən başqa kompüterə qoşulun: yaxınınıza kömək edin, evdə qalan maşınınıza çıxın, iş yoldaşınızla eyni ekrana baxın. Qeydiyyat yoxdur, ödəniş yoxdur — qoşulmağa isə hər dəfə qarşı tərəf icazə verir.', 'fixit' ); ?></p>
 
-				<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
-					<a class="btn btn--primary" href="<?php echo esc_url( FIXIT_REMOTE_WINDOWS ); ?>" rel="nofollow">
-						<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Pulsuz yüklə', 'fixit' ); ?>
-					</a>
+				<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;align-items:center">
+					<?php if ( FIXIT_REMOTE_WINDOWS_READY ) : ?>
+						<a class="btn btn--primary" href="<?php echo esc_url( FIXIT_REMOTE_WINDOWS ); ?>" rel="nofollow">
+							<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Pulsuz yüklə', 'fixit' ); ?>
+						</a>
+					<?php else : ?>
+						<span class="chip"><?php fixit_icon( 'clock' ); ?><?php esc_html_e( 'Tezliklə', 'fixit' ); ?></span>
+					<?php endif; ?>
 
 					<?php if ( $fixit_remote_url ) : ?>
 						<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_remote_url ); ?>">
