@@ -14,6 +14,7 @@ get_header();
 $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 $fixit_remote_page = fixit_product_url( 'remote' );
 $fixit_phone       = fixit_get( 'fixit_phone' );
+$fixit_release     = fixit_remote_release();
 ?>
 
 <!-- Səhifə başlığı -->
@@ -46,6 +47,19 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 					<a class="btn btn--primary" href="<?php echo esc_url( FIXIT_REMOTE_WINDOWS ); ?>" rel="nofollow">
 						<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Proqramı yüklə', 'fixit' ); ?>
 					</a>
+
+					<?php if ( $fixit_release['version'] ) : ?>
+						<p style="margin:10px 0 0;font-size:13px;color:var(--text-mute)">
+							<?php
+							printf(
+								/* translators: 1: versiya, 2: faylın həcmi */
+								esc_html__( 'Versiya %1$s · %2$s', 'fixit' ),
+								esc_html( $fixit_release['version'] ),
+								esc_html( $fixit_release['size'] ? size_format( $fixit_release['size'], 1 ) : '' )
+							);
+							?>
+						</p>
+					<?php endif; ?>
 				</div>
 
 				<ul class="bullets" style="margin-top:18px">

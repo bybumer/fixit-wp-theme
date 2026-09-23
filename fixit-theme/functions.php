@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.6.1' );
+define( 'FIXIT_VERSION', '1.6.2' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -31,6 +31,59 @@ define( 'FIXIT_REMOTE_ANDROID', 'https://github.com/bybumer/fixit-remote-release
  * etmək kifayətdir - yuxarıdakı ünvan onsuz da ən son yığımı verir.
  */
 define( 'FIXIT_REMOTE_ANDROID_READY', false );
+
+/**
+ * Yüklənən proqramın son versiyası (nömrə və həcm).
+ *
+ * Fayl ünvanı onsuz da həmişə ən sonu verir; bu, yalnız ziyarətçiyə
+ * "nə yükləyirəm?" sualının cavabıdır. Məlumat 6 saat saxlanılır:
+ * hər səhifə açılışında kənar serverə getmək səhifəni yavaşladır.
+ *
+ * Alınmasa boş qaytarır — düymə yenə işləyir, sadəcə altında yazı olmur.
+ *
+ * @return array{version:string,size:int}
+ */
+function fixit_remote_release() {
+	$cached = get_transient( 'fixit_remote_release' );
+
+	if ( is_array( $cached ) ) {
+		return $cached;
+	}
+
+	$info = array(
+		'version' => '',
+		'size'    => 0,
+	);
+
+	$response = wp_remote_get(
+		'https://api.github.com/repos/bybumer/fixit-remote-releases/releases/latest',
+		array(
+			'timeout' => 8,
+			'headers' => array( 'Accept' => 'application/vnd.github+json' ),
+		)
+	);
+
+	if ( ! is_wp_error( $response ) && 200 === (int) wp_remote_retrieve_response_code( $response ) ) {
+		$data = json_decode( wp_remote_retrieve_body( $response ), true );
+
+		if ( ! empty( $data['tag_name'] ) ) {
+			$info['version'] = ltrim( (string) $data['tag_name'], 'v' );
+
+			foreach ( (array) ( isset( $data['assets'] ) ? $data['assets'] : array() ) as $asset ) {
+				if ( isset( $asset['name'] ) && 'FixitRemoteAgent.msi' === $asset['name'] ) {
+					$info['size'] = (int) $asset['size'];
+					break;
+				}
+			}
+		}
+	}
+
+	// Alınmayanda qısa müddətə saxlanılır ki, növbəti açılışda yenidən
+	// cəhd olunsun.
+	set_transient( 'fixit_remote_release', $info, $info['version'] ? 6 * HOUR_IN_SECONDS : 15 * MINUTE_IN_SECONDS );
+
+	return $info;
+}
 
 /* ============================================================
    1. Tema dəstəkləri
