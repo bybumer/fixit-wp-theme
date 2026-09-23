@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Başlanğıc mətnlərin revizyası.
  * Mətni dəyişəndə bu rəqəmi artırın — toxunulmamış məzmun yenilənir.
  */
-define( 'FIXIT_SEED_REV', 7 );
+define( 'FIXIT_SEED_REV', 8 );
 
 /**
  * Quraşdırmanı icra edir.
@@ -89,7 +89,43 @@ function fixit_create_clients() {
 		return;
 	}
 
-	for ( $i = 1; $i <= 15; $i++ ) {
+	// Loqo faylları temanın içindədir: media kitabxanasına yükləmək
+	// lazım gəlmir, yeni saytda da hazır gəlir. Admin istəsə öz şəklini
+	// "Seçilmiş şəkil" kimi qoyur - o, fayldan üstün tutulur.
+	$clients = array(
+		array( 'booo.az', 'booo.png' ),
+		array( 'BSC', 'bsc.svg' ),
+		array( 'SOBSAN', 'sobsan.png' ),
+		array( 'DOST Lombard', 'dost-lombard.png' ),
+		array( 'FRM Software', 'frm-software.png' ),
+		array( 'LADY SHARM', 'lady-sharm.png' ),
+		array( 'Maxofest', 'maxofest.svg' ),
+	);
+
+	$order = 0;
+
+	foreach ( $clients as $client ) {
+		++$order;
+
+		$id = wp_insert_post(
+			array(
+				'post_type'   => 'fixit_client',
+				'post_status' => 'publish',
+				'post_title'  => $client[0],
+				'menu_order'  => $order,
+			)
+		);
+
+		if ( $id && ! is_wp_error( $id ) ) {
+			update_post_meta( $id, '_fixit_logo_file', $client[1] );
+		}
+	}
+
+	// Qalanı boş sətirlərdir: adını yazıb loqonu yükləyəndən sonra
+	// dərc olunur. Dərc olunmayan sətir saytda görünmür.
+	for ( $i = 1; $i <= 8; $i++ ) {
+		++$order;
+
 		wp_insert_post(
 			array(
 				'post_type'   => 'fixit_client',
@@ -99,7 +135,7 @@ function fixit_create_clients() {
 					__( 'Müştəri %d — adını yazın, loqo yükləyin', 'fixit' ),
 					$i
 				),
-				'menu_order'  => $i,
+				'menu_order'  => $order,
 			)
 		);
 	}

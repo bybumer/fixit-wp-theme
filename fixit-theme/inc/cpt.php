@@ -314,6 +314,49 @@ function fixit_get_clients( $limit = 24 ) {
 }
 
 /**
+ * Müştərinin loqosu.
+ *
+ * Əvvəl "Seçilmiş şəkil"ə baxılır (admin özü yükləyibsə), sonra temanın
+ * içindəki fayla. Heç biri yoxdursa boş qaytarır - o halda şirkətin adı
+ * yazı kimi göstərilir.
+ *
+ * @param WP_Post $client Müştəri.
+ * @return string HTML və ya boş sətir.
+ */
+function fixit_client_logo( $client ) {
+	if ( has_post_thumbnail( $client ) ) {
+		return get_the_post_thumbnail(
+			$client,
+			'medium',
+			array(
+				'alt'     => esc_attr( $client->post_title ),
+				'loading' => 'lazy',
+			)
+		);
+	}
+
+	$file = get_post_meta( $client->ID, '_fixit_logo_file', true );
+
+	if ( ! $file ) {
+		return '';
+	}
+
+	// Fayl adı metadan gəlir - yol ayırıcısı və ".." ola bilməz.
+	$file = basename( (string) $file );
+	$path = get_template_directory() . '/assets/img/clients/' . $file;
+
+	if ( ! file_exists( $path ) ) {
+		return '';
+	}
+
+	return sprintf(
+		'<img src="%1$s" alt="%2$s" loading="lazy" width="260" height="130">',
+		esc_url( get_template_directory_uri() . '/assets/img/clients/' . $file ),
+		esc_attr( $client->post_title )
+	);
+}
+
+/**
  * Sətirlərə bölünmüş meta dəyəri massiv kimi qaytarır.
  */
 function fixit_meta_lines( $post_id, $key ) {
@@ -348,8 +391,12 @@ add_action(
 			return;
 		}
 
-		if ( has_post_thumbnail( $post_id ) ) {
-			echo get_the_post_thumbnail( $post_id, array( 80, 40 ), array( 'style' => 'max-width:80px;height:auto' ) );
+		$logo = fixit_client_logo( get_post( $post_id ) );
+
+		if ( $logo ) {
+			echo '<span style="display:inline-block;max-width:90px">'
+				. wp_kses_post( str_replace( '<img ', '<img style="max-width:90px;height:auto" ', $logo ) )
+				. '</span>';
 		} else {
 			echo '<span style="color:#a00">' . esc_html__( 'loqo yoxdur', 'fixit' ) . '</span>';
 		}

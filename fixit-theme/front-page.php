@@ -113,18 +113,10 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 
 			<div class="clients reveal">
 				<?php foreach ( $fixit_clients as $fixit_client ) : ?>
+					<?php $fixit_logo = fixit_client_logo( $fixit_client ); ?>
 					<div class="clients__item" title="<?php echo esc_attr( $fixit_client->post_title ); ?>">
-						<?php if ( has_post_thumbnail( $fixit_client ) ) : ?>
-							<?php
-							echo get_the_post_thumbnail(
-								$fixit_client,
-								'medium',
-								array(
-									'alt'     => esc_attr( $fixit_client->post_title ),
-									'loading' => 'lazy',
-								)
-							);
-							?>
+						<?php if ( $fixit_logo ) : ?>
+							<?php echo wp_kses_post( $fixit_logo ); ?>
 						<?php else : ?>
 							<span><?php echo esc_html( $fixit_client->post_title ); ?></span>
 						<?php endif; ?>
