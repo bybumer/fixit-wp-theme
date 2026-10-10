@@ -30,12 +30,15 @@ function fixit_product_details() {
 		   FIXIT Sorğu Sistemi
 		   ====================================================== */
 		'sorgu-sistemi' => array(
-			'tagline'  => __( 'Bütün müraciətlər bir yerdə — heç biri unudulmur', 'fixit' ),
+			'tagline'  => __( 'Müştəri müraciətləri və komandanın daxili işləri — bir platformada', 'fixit' ),
 			'badges'   => array(
+				__( 'Ticket + Task', 'fixit' ),
 				__( 'Öz serverinizdə', 'fixit' ),
 				__( 'Azərbaycan · English · Русский', 'fixit' ),
 				__( 'Avtomatik yenilənmə', 'fixit' ),
 			),
+
+			'intro'    => __( 'İki modul, bir sistem: kənardan gələn müraciətlər (Ticket) və komandanın öz işləri (Task) eyni mühərrik üzərində — eyni axtarış, hesabat, vaxt uçotu. Hər ikisini birlikdə və ya ayrıca işlədə bilərsiniz.', 'fixit' ),
 
 			'problems' => array(
 				array(
@@ -44,14 +47,14 @@ function fixit_product_details() {
 					'text'  => __( 'Kimisi e-poçt yazır, kimisi Telegram-dan, kimisi zəng edir. Nəticədə kimin nəyə cavab verdiyi bəlli olmur.', 'fixit' ),
 				),
 				array(
-					'icon'  => 'clock',
-					'title' => __( 'Cavab vaxtı nəzarətsizdir', 'fixit' ),
-					'text'  => __( 'Hansı müraciətin gecikdiyini ancaq müştəri şikayət edəndə bilirsiniz.', 'fixit' ),
+					'icon'  => 'task',
+					'title' => __( 'Daxili işlər ayrı yerdədir', 'fixit' ),
+					'text'  => __( 'Komandanın tapşırıqları Excel-də, mesajlarda, ağılda qalır. Müştəri işi ilə daxili iş iki ayrı alətdədir.', 'fixit' ),
 				),
 				array(
 					'icon'  => 'chart',
 					'title' => __( 'Görülən iş görünmür', 'fixit' ),
-					'text'  => __( 'Ay sonunda hansı şirkətə nə qədər vaxt sərf olunduğunu hesablamaq saatlar aparır.', 'fixit' ),
+					'text'  => __( 'Ay sonunda kimin nəyə, hansı şirkətə nə qədər vaxt sərf etdiyini hesablamaq saatlar aparır.', 'fixit' ),
 				),
 			),
 
@@ -76,6 +79,17 @@ function fixit_product_details() {
 						__( 'Sol paneldə hazır görünüşlər — lazım olan siyahı bir kliklə', 'fixit' ),
 						__( 'Axtarış: nömrə, mövzu, müştəri və mesaj mətni üzrə', 'fixit' ),
 						__( 'Layihələr — şirkətdaxili şöbələr üçün ayrıca axın', 'fixit' ),
+					),
+				),
+				array(
+					'icon'  => 'task',
+					'title' => __( 'Task — komandanın daxili işləri', 'fixit' ),
+					'items' => array(
+						__( 'Layihələr və komandalar, lövhə (Ediləcək → İcrada → Hazır)', 'fixit' ),
+						__( 'Yoxlama siyahısı (checklist), alt tapşırıqlar, asılılıqlar', 'fixit' ),
+						__( 'Başlama və son tarix, qiymətləndirmə (planlanan vaxt)', 'fixit' ),
+						__( 'Təkrarlanan işlər — gündəlik/həftəlik/aylıq avtomatik yaranır', 'fixit' ),
+						__( 'Müraciətdən bir kliklə tapşırıq; hər ikisi bir-birinə bağlı qalır', 'fixit' ),
 					),
 				),
 				array(
@@ -129,6 +143,10 @@ function fixit_product_details() {
 				array( 'chart', __( 'Hesabat', 'fixit' ), __( 'ay sonu şirkət və agent üzrə', 'fixit' ) ),
 			),
 
+
+			// Demo düyməsinin defoltu - admin paneldə dəyişmək olar (bax product-demo.php)
+			'demo'     => array( 'mode' => 'open', 'url' => 'https://demo.fixit.az/portal' ),
+
 			'security' => array(
 				__( 'Proqram və verilənlər bazası sizin serverinizdədir', 'fixit' ),
 				__( 'Sessiyalar server tərəfdə saxlanılır', 'fixit' ),
@@ -148,6 +166,10 @@ function fixit_product_details() {
 				array(
 					__( 'SLA necə hesablanır?', 'fixit' ),
 					__( 'İş saatlarına və iş günlərinə görə. "8 saat" deyəndə gecə və həftəsonu sayılmır. Müddət keçəndə məsul şəxsə məktub gedir və müraciət "Vaxtı keçib" siyahısına düşür.', 'fixit' ),
+				),
+				array(
+					__( 'Ticket və Task fərqi nədir?', 'fixit' ),
+					__( 'Ticket — kənardan, müştəridən gələn müraciətdir: cavab ona e-poçt və ya Telegram ilə gedir, SLA sayğacı işləyir. Task — komandanın öz daxili işidir: son tarix, checklist, asılılıq. Hər ikisi eyni sistemdədir; bir müraciətdən bir kliklə tapşırıq yarada bilərsiniz. Yalnız biri və ya hər ikisi açıq ola bilər.', 'fixit' ),
 				),
 				array(
 					__( 'İnterfeys hansı dillərdədir?', 'fixit' ),

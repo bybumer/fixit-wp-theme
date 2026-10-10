@@ -169,10 +169,28 @@ function fixit_product_gallery_ids( $post_id ) {
  */
 function fixit_product_demo( $post_id ) {
 	$mode = get_post_meta( $post_id, '_fixit_demo_mode', true );
+	$url  = (string) get_post_meta( $post_id, '_fixit_demo_url', true );
+	$note = (string) get_post_meta( $post_id, '_fixit_demo_note', true );
+
+	// Admin paneldə ayar verilməyibsə, məhsulun kodundakı defolt işlədilir
+	// (bax product-data.php → 'demo'). Beləliklə tema yenilənən kimi demo
+	// düyməsi işləyir, əlavə ayar tələb etmədən. Meta dəyəri həmişə üstündür.
+	if ( '' === $mode || '' === $url ) {
+		$post    = get_post( $post_id );
+		$details = $post ? fixit_product_details() : array();
+		$fallback = ( $post && isset( $details[ $post->post_name ]['demo'] ) )
+			? $details[ $post->post_name ]['demo'] : array();
+		if ( '' === $mode && ! empty( $fallback['mode'] ) ) {
+			$mode = $fallback['mode'];
+		}
+		if ( '' === $url && ! empty( $fallback['url'] ) ) {
+			$url = $fallback['url'];
+		}
+	}
 
 	return array(
 		'mode' => array_key_exists( $mode, fixit_demo_modes() ) ? $mode : 'request',
-		'url'  => (string) get_post_meta( $post_id, '_fixit_demo_url', true ),
-		'note' => (string) get_post_meta( $post_id, '_fixit_demo_note', true ),
+		'url'  => $url,
+		'note' => $note,
 	);
 }

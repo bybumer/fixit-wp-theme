@@ -70,6 +70,8 @@ while ( have_posts() ) :
 
 				<?php if ( $fixit_post->post_content ) : ?>
 					<p class="lead"><?php echo esc_html( wp_strip_all_tags( $fixit_post->post_content ) ); ?></p>
+				<?php elseif ( ! empty( $fixit_detail['intro'] ) ) : ?>
+					<p class="lead"><?php echo esc_html( $fixit_detail['intro'] ); ?></p>
 				<?php endif; ?>
 
 				<?php if ( $fixit_badges ) : ?>

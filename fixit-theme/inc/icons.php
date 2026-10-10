@@ -34,6 +34,7 @@ function fixit_icon_list() {
 		'database'  => '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
 
 		'ticket'    => '<path d="M3 9V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2.5 2.5 0 0 0 0 6v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2.5 2.5 0 0 0 0-6z"/><path d="M13 5v2m0 4v2m0 4v2"/>',
+		'task'      => '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18"/><path d="m7.5 14 2 2 4-4.5"/>',
 		'activity'  => '<path d="M3 12h4l3 8 4-16 3 8h4"/>',
 		'gauge'     => '<path d="M3.5 18a9 9 0 1 1 17 0"/><path d="m12 14 4-4"/><circle cx="12" cy="14" r="1.6"/>',
 
