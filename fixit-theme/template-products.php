@@ -2,7 +2,7 @@
 /**
  * Template Name: Məhsullar səhifəsi
  *
- * Öz proqram təminatımızın (Sorğu Sistemi və Şəbəkə Monitorinqi)
+ * Öz proqram təminatımızın (Sorğu Sistemi, Fixit Remote, Şəbəkə Monitorinqi)
  * təqdimatı və satış şərtləri.
  *
  * @package FIXIT
@@ -20,7 +20,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 	<div class="container">
 		<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Öz məhsullarımız', 'fixit' ); ?></span>
 		<h1><?php esc_html_e( 'Bizim hazırladığımız proqram təminatı', 'fixit' ); ?></h1>
-		<p><?php esc_html_e( 'Xidmətlərimizlə yanaşı, öz komandamızın sıfırdan yazdığı məhsulları təqdim edirik. Hər ikisi Azərbaycan dilindədir, sizin öz serverinizdə işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
+		<p><?php esc_html_e( 'Xidmətlərimizlə yanaşı, öz komandamızın sıfırdan yazdığı məhsulları təqdim edirik. Hamısı Azərbaycan dilindədir, sizin öz serverinizdə işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
 
 		<nav class="crumbs" aria-label="<?php esc_attr_e( 'Naviqasiya', 'fixit' ); ?>">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Ana səhifə', 'fixit' ); ?></a>
@@ -66,12 +66,17 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 			$fixit_features = fixit_meta_lines( $fixit_prod->ID, '_fixit_features' );
 			$fixit_chips    = get_post_meta( $fixit_prod->ID, '_fixit_chips', true );
 			$fixit_chips    = $fixit_chips ? array_filter( array_map( 'trim', explode( ',', $fixit_chips ) ) ) : array();
+			$fixit_detail   = fixit_product_detail( $fixit_prod );
+			$fixit_demo_url = fixit_product_open_demo_url( $fixit_prod->ID );
 			?>
 			<article class="svc reveal" id="mehsul-<?php echo esc_attr( $fixit_prod->ID ); ?>">
 				<div class="svc__icon"><?php fixit_icon( $fixit_icon_key ? $fixit_icon_key : 'server' ); ?></div>
 
 				<div>
 					<h2><a href="<?php echo esc_url( get_permalink( $fixit_prod ) ); ?>"><?php echo esc_html( $fixit_prod->post_title ); ?></a></h2>
+					<?php if ( ! empty( $fixit_detail['tagline'] ) ) : ?>
+						<p class="svc__tagline"><?php echo esc_html( $fixit_detail['tagline'] ); ?></p>
+					<?php endif; ?>
 
 					<?php if ( $fixit_prod->post_content ) : ?>
 						<p><?php echo esc_html( wp_strip_all_tags( $fixit_prod->post_content ) ); ?></p>
@@ -97,6 +102,11 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 						<a class="btn btn--primary" href="<?php echo esc_url( get_permalink( $fixit_prod ) ); ?>">
 							<?php esc_html_e( 'Ətraflı və demo', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
 						</a>
+						<?php if ( $fixit_demo_url ) : ?>
+							<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_demo_url ); ?>" target="_blank" rel="noopener">
+								<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Canlı demo', 'fixit' ); ?><?php fixit_icon( 'external' ); ?>
+							</a>
+						<?php endif; ?>
 						<a class="btn btn--ghost" href="<?php echo esc_url( add_query_arg( 'mehsul', rawurlencode( $fixit_prod->post_title ), $fixit_contact_url ) ); ?>#elaqe-form">
 							<?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Təklif istə', 'fixit' ); ?>
 						</a>
@@ -116,7 +126,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 				<?php esc_html_e( 'Lisenziya', 'fixit' ); ?> <span class="grad-text"><?php esc_html_e( 'öz serverinizdə', 'fixit' ); ?></span>
 			</h2>
 			<p style="color:var(--text-soft)">
-				<?php esc_html_e( 'Hər iki məhsul on-premise modeldə təqdim olunur: proqram sizin öz serverinizdə quraşdırılır və bütün məlumat şirkətinizin daxilində qalır. Kənar bulud xidmətindən asılılıq yoxdur.', 'fixit' ); ?>
+				<?php esc_html_e( 'Bütün məhsullarımız on-premise modeldə təqdim olunur: proqram sizin öz serverinizdə quraşdırılır və bütün məlumat şirkətinizin daxilində qalır. Kənar bulud xidmətindən asılılıq yoxdur.', 'fixit' ); ?>
 			</p>
 
 			<ul class="feature-list">
@@ -188,7 +198,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 		<div class="steps">
 			<?php
 			$fixit_buy_steps = array(
-				array( __( 'Demo', 'fixit' ), __( 'Məhsulu canlı göstəririk, suallarınızı cavablandırırıq.', 'fixit' ) ),
+				array( __( 'Demo', 'fixit' ), __( 'Onlayn demonu özünüz sınayırsınız və ya məhsulu canlı göstəririk.', 'fixit' ) ),
 				array( __( 'Təhlil və təklif', 'fixit' ), __( 'Ehtiyaclarınızı öyrənib yazılı kommersiya təklifi hazırlayırıq.', 'fixit' ) ),
 				array( __( 'Quraşdırma', 'fixit' ), __( 'Sistemi serverinizə qurur, məlumatları köçürür, ayarlayırıq.', 'fixit' ) ),
 				array( __( 'Təlim və dəstək', 'fixit' ), __( 'Komandanıza istifadəni öyrədir, sonra da yanınızda oluruq.', 'fixit' ) ),

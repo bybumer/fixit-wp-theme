@@ -167,7 +167,7 @@ function fixit_template_description( $post_id ) {
 			return __( 'Kompüter servisi, video müşahidə, IP telefoniya, korporativ mail, bulud serverlər və İT dəstək — şirkətiniz üçün tam İKT xidmətləri.', 'fixit' );
 
 		case 'template-products.php':
-			return __( 'Sorğu Sistemi, Fixit Remote və Şəbəkə Monitorinqi — öz komandamızın hazırladığı, sizin serverinizdə işləyən proqram təminatı. Onlayn demo mövcuddur.', 'fixit' );
+			return __( 'Sorğu Sistemi (Ticket + Task), Fixit Remote və Şəbəkə Monitorinqi — öz komandamızın hazırladığı, sizin serverinizdə işləyən proqram təminatı. Onlayn demo var.', 'fixit' );
 
 		case 'template-about.php':
 			return __( '2017-ci ildən İT sahəsində fəaliyyət göstəririk: 40-dan çox şirkətlə əməkdaşlıq, 30-dan çox tamamlanmış layihə. Bakı və Cəlilabadda xidmətinizdəyik.', 'fixit' );
@@ -303,6 +303,12 @@ function fixit_share_image() {
 		$gallery = fixit_product_gallery_ids( get_queried_object_id() );
 		if ( $gallery ) {
 			return wp_get_attachment_image_url( $gallery[0], 'full' );
+		}
+
+		// Temanın içindəki ekran görüntüsü - paylaşımda loqo yox, məhsulun özü görünsün.
+		$screens = fixit_product_screens( get_queried_object() );
+		if ( $screens ) {
+			return $screens[0]['src'];
 		}
 	}
 
@@ -523,6 +529,11 @@ function fixit_schema_software() {
 	$gallery = function_exists( 'fixit_product_gallery_ids' ) ? fixit_product_gallery_ids( $post->ID ) : array();
 	if ( $gallery ) {
 		$schema['screenshot'] = wp_get_attachment_image_url( $gallery[0], 'full' );
+	} else {
+		$screens = fixit_product_screens( $post );
+		if ( $screens ) {
+			$schema['screenshot'] = $screens[0]['src'];
+		}
 	}
 
 	return $schema;

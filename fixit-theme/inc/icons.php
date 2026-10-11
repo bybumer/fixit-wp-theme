@@ -42,6 +42,7 @@ function fixit_icon_list() {
 		'check'     => '<path d="m4 12 5 5L20 6"/>',
 		'check-c'   => '<circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/>',
 		'arrow-r'   => '<path d="M5 12h14m-6-6 6 6-6 6"/>',
+		'external'  => '<path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
 		'arrow-up'  => '<path d="M12 19V5m-6 6 6-6 6 6"/>',
 		'star'      => '<path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.6l6.5-.9z" fill="currentColor" stroke="none"/>',
 		'pin'       => '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>',

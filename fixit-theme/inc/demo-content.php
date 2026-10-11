@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Başlanğıc mətnlərin revizyası.
  * Mətni dəyişəndə bu rəqəmi artırın — toxunulmamış məzmun yenilənir.
  */
-define( 'FIXIT_SEED_REV', 8 );
+define( 'FIXIT_SEED_REV', 9 );
 
 /**
  * Quraşdırmanı icra edir.
@@ -325,20 +325,45 @@ function fixit_product_seed() {
 			'slug'  => 'sorgu-sistemi',
 			'order' => 1,
 			'icon'  => 'ticket',
-			'short' => 'Müraciətləri e-poçt, müştəri portalı və daxili kanallardan bir mərkəzdə toplayan helpdesk sistemi. Tam öz kodumuzdur, kənar sistemə bağlılıq yoxdur.',
-			'chips' => 'On-premise, E-poçt inteqrasiyası, Müştəri portalı, Rol icazələri, Azərbaycan dilində',
+			// Kartlarda ilk üç üstünlük görünür - Ticket, Task və ortaq imkanlar
+			// ona görə məhz bu sıradadır.
+			'short' => 'Müştəri müraciətləri (Ticket) və komandanın daxili işləri (Task) bir platformada: e-poçt, portal, Telegram, SLA, lövhə və vaxt uçotu. Öz serverinizdə.',
+			'chips' => 'Ticket + Task, On-premise, E-poçt və Telegram, Müştəri portalı, SLA, Kanban lövhə, Vaxt uçotu, Azərbaycan dilində',
 			'feat'  => implode(
 				"\n",
 				array(
-					'Ticket yaradılması, təyinatı və statuslar; rol və qrup əsaslı icazələr',
-					'E-poçt inteqrasiyası: gələn məktub avtomatik ticket olur, agentin cavabı müştəriyə mail kimi gedir',
-					'Yazışma zəncirinin düzgün tanınması',
-					'Müştəri portalı: qeydiyyat, e-poçt təsdiqi, parol bərpası, öz müraciətlərini izləmə',
-					'Təhlükəsiz giriş: sessiyalar server tərəfdə saxlanılır',
-					'İnterfeys və bildirişlər tam Azərbaycan dilindədir',
+					'Ticket: e-poçt, müştəri portalı, Telegram və veb formadan gələn müraciətlər bir yerdə',
+					'Task: komandanın daxili işləri — lövhə, checklist, asılılıq, təkrarlanan işlər',
+					'SLA iş saatına görə, vaxt uçotu və aylıq hesabat',
+					'Müraciətdən bir kliklə tapşırıq — hər ikisi bir-birinə bağlı qalır',
+					'Rol və qrup əsaslı icazələr, iki mərhələli giriş, audit jurnalı',
+					'İnterfeys Azərbaycan, ingilis və rus dillərində',
 				)
 			),
-			'body'  => 'Şirkətə gələn bütün müraciətlərin bir yerdə toplandığı sistemdir. Müştəri istəsə e-poçt yazır, istəsə portala daxil olur — hər iki halda müraciət eyni ticketə düşür. Sistem tamamilə bizim kodumuzdur, ona görə şirkətinizin iş axınına uyğun dəyişikliklər etmək mümkündür.',
+			'body'  => 'Müştəridən gələn müraciətlər (Ticket) və komandanın öz işləri (Task) eyni sistemdə: müştəri e-poçt, portal və ya Telegram ilə yazır, komanda cavab verir, görüləcək işi tapşırıq kimi bölüşdürür və sərf olunan vaxtı qeyd edir. Sistem tamamilə bizim kodumuzdur — şirkətinizin iş axınına uyğunlaşdırmaq mümkündür.',
+
+			/*
+			 * Əvvəlki revizyanın mətnləri. Admin məhsulu bir dəfə yadda saxlayıbsa
+			 * (məs. yalnız SEO və ya şəkil üçün), yazı "əl ilə redaktə olunub"
+			 * sayılır və yeni mətn ora düşmür. Sahə bu köhnə mətnlə hərfbəhərf
+			 * eynidirsə, deməli ona toxunulmayıb - həmin sahə yenilənir.
+			 */
+			'was'   => array(
+				'short' => 'Müraciətləri e-poçt, müştəri portalı və daxili kanallardan bir mərkəzdə toplayan helpdesk sistemi. Tam öz kodumuzdur, kənar sistemə bağlılıq yoxdur.',
+				'chips' => 'On-premise, E-poçt inteqrasiyası, Müştəri portalı, Rol icazələri, Azərbaycan dilində',
+				'feat'  => implode(
+					"\n",
+					array(
+						'Ticket yaradılması, təyinatı və statuslar; rol və qrup əsaslı icazələr',
+						'E-poçt inteqrasiyası: gələn məktub avtomatik ticket olur, agentin cavabı müştəriyə mail kimi gedir',
+						'Yazışma zəncirinin düzgün tanınması',
+						'Müştəri portalı: qeydiyyat, e-poçt təsdiqi, parol bərpası, öz müraciətlərini izləmə',
+						'Təhlükəsiz giriş: sessiyalar server tərəfdə saxlanılır',
+						'İnterfeys və bildirişlər tam Azərbaycan dilindədir',
+					)
+				),
+				'body'  => 'Şirkətə gələn bütün müraciətlərin bir yerdə toplandığı sistemdir. Müştəri istəsə e-poçt yazır, istəsə portala daxil olur — hər iki halda müraciət eyni ticketə düşür. Sistem tamamilə bizim kodumuzdur, ona görə şirkətinizin iş axınına uyğun dəyişikliklər etmək mümkündür.',
+			),
 		),
 		array(
 			'title' => 'Fixit Remote',
@@ -482,7 +507,9 @@ function fixit_refresh_seeded_products() {
 
 		// 2) Mətn.
 		if ( get_post_meta( $post->ID, '_fixit_user_edited', true ) ) {
-			continue; // Əl ilə redaktə olunub — toxunmuruq.
+			// Əl ilə redaktə olunub — yalnız köhnə mətnlə eyni qalan sahələr.
+			fixit_refresh_unchanged_fields( $post, $prod );
+			continue;
 		}
 
 		// Nişanı olmayanlar köhnə versiyada yaradılıb — onlar da yenilənir.
@@ -501,6 +528,56 @@ function fixit_refresh_seeded_products() {
 		);
 
 		fixit_apply_product_meta( $post->ID, $prod );
+	}
+}
+
+/**
+ * Əl ilə yadda saxlanmış məhsulda yalnız toxunulmamış sahələri yeniləyir.
+ *
+ * "Yenilə" düyməsi mətnə dəyməsə də yazını "redaktə olunmuş" kimi işarələyir.
+ * Sahənin dəyəri əvvəlki başlanğıc mətnlə (`was`) eynidirsə, onu admin
+ * yazmayıb — yeni mətnlə əvəz etmək təhlükəsizdir. Fərqlidirsə toxunulmur.
+ *
+ * Boşluq və HTML fərqləri nəzərə alınmır: redaktor mətni <p> ilə sara və ya
+ * sətir sonlarını dəyişə bilər, mənası isə eyni qalır.
+ *
+ * @param WP_Post $post Məhsul.
+ * @param array   $prod Başlanğıc mətn (fixit_product_seed sətri).
+ */
+function fixit_refresh_unchanged_fields( $post, $prod ) {
+	if ( empty( $prod['was'] ) ) {
+		return;
+	}
+
+	$was  = $prod['was'];
+	$same = function ( $current, $old ) {
+		$norm = function ( $s ) {
+			return trim( preg_replace( '/\s+/u', ' ', wp_strip_all_tags( (string) $s ) ) );
+		};
+		return $norm( $current ) === $norm( $old );
+	};
+
+	$meta = array(
+		'short' => '_fixit_short',
+		'feat'  => '_fixit_features',
+		'chips' => '_fixit_chips',
+	);
+	foreach ( $meta as $key => $meta_key ) {
+		if ( isset( $was[ $key ] ) && $same( get_post_meta( $post->ID, $meta_key, true ), $was[ $key ] ) ) {
+			update_post_meta( $post->ID, $meta_key, $prod[ $key ] );
+		}
+	}
+
+	$update = array();
+	if ( isset( $was['body'] ) && $same( $post->post_content, $was['body'] ) ) {
+		$update['post_content'] = $prod['body'];
+	}
+	if ( isset( $was['short'] ) && $same( $post->post_excerpt, $was['short'] ) ) {
+		$update['post_excerpt'] = $prod['short'];
+	}
+	if ( $update ) {
+		$update['ID'] = $post->ID;
+		wp_update_post( $update );
 	}
 }
 

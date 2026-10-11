@@ -90,8 +90,9 @@ function fixit_product_demo_box( $post ) {
 		</select>
 
 		<label for="fixit_demo_url"><?php esc_html_e( 'Demo ünvanı', 'fixit' ); ?></label>
-		<input type="url" name="fixit_demo_url" id="fixit_demo_url" value="<?php echo esc_attr( $demo['url'] ); ?>" placeholder="https://ticket-demo.fixit.az">
+		<input type="url" name="fixit_demo_url" id="fixit_demo_url" value="<?php echo esc_attr( $demo['url'] ); ?>" placeholder="https://demo.fixit.az/portal">
 		<p class="hint"><?php esc_html_e( '"Sorğu ilə" rejimində bu ünvan saytda görünmür — yalnız sizə gələn sorğu məktubunda xatırlatma kimi yazılır.', 'fixit' ); ?></p>
+		<p class="hint"><?php esc_html_e( 'Ünvan boş qalsa və temada bu məhsul üçün hazır demo varsa, o işlədilir (məs. Sorğu Sistemi → açıq demo). "Sorğu ilə" rejimini saxlamaq üçün ünvanı da yazın.', 'fixit' ); ?></p>
 
 		<label for="fixit_demo_note"><?php esc_html_e( 'Açıq demo üçün qeyd', 'fixit' ); ?></label>
 		<input type="text" name="fixit_demo_note" id="fixit_demo_note" value="<?php echo esc_attr( $demo['note'] ); ?>" placeholder="<?php esc_attr_e( 'Məs: Məlumatlar hər gecə sıfırlanır', 'fixit' ); ?>">
@@ -172,25 +173,62 @@ function fixit_product_demo( $post_id ) {
 	$url  = (string) get_post_meta( $post_id, '_fixit_demo_url', true );
 	$note = (string) get_post_meta( $post_id, '_fixit_demo_note', true );
 
-	// Admin paneldə ayar verilməyibsə, məhsulun kodundakı defolt işlədilir
-	// (bax product-data.php → 'demo'). Beləliklə tema yenilənən kimi demo
-	// düyməsi işləyir, əlavə ayar tələb etmədən. Meta dəyəri həmişə üstündür.
-	if ( '' === $mode || '' === $url ) {
-		$post    = get_post( $post_id );
-		$details = $post ? fixit_product_details() : array();
-		$fallback = ( $post && isset( $details[ $post->post_name ]['demo'] ) )
-			? $details[ $post->post_name ]['demo'] : array();
-		if ( '' === $mode && ! empty( $fallback['mode'] ) ) {
+	// Məhsulun kodundakı defolt (bax product-data.php → 'demo'): tema
+	// yenilənən kimi demo düyməsi işləsin, əlavə ayar tələb etmədən.
+	$post     = get_post( $post_id );
+	$details  = $post ? fixit_product_details() : array();
+	$fallback = ( $post && isset( $details[ $post->post_name ]['demo'] ) )
+		? $details[ $post->post_name ]['demo'] : array();
+
+	if ( $fallback && '' === $url ) {
+		/*
+		 * Ünvan heç vaxt yazılmayıbsa, demo ayarlanmayıb sayılır. 1.9.0-dan
+		 * əvvəl seçim qutusu defolt olaraq "Sorğu ilə" göstərirdi və məhsulu
+		 * hər hansı səbəbdən (SEO, şəkil) yadda saxlamaq bu dəyəri bazaya
+		 * yazırdı - "request" + boş ünvan çox vaxt şüurlu seçim deyil. Belə
+		 * halda kodun defoltu işləyir. "Söndürülüb" isə həmişə hörmət olunur;
+		 * ünvan yazılıbsa admin seçimi tam üstündür.
+		 */
+		if ( ( '' === $mode || 'request' === $mode ) && ! empty( $fallback['mode'] ) ) {
 			$mode = $fallback['mode'];
 		}
-		if ( '' === $url && ! empty( $fallback['url'] ) ) {
-			$url = $fallback['url'];
-		}
+		$url = ! empty( $fallback['url'] ) ? $fallback['url'] : '';
+	} elseif ( '' === $mode && ! empty( $fallback['mode'] ) ) {
+		$mode = $fallback['mode'];
+	}
+
+	// İzah, addımlar və rollar konkret demonu (məs. demo.fixit.az-ın giriş
+	// səhifəsini) təsvir edir - admin başqa ünvan yazıbsa onlar uyğun gəlmir.
+	$own = $fallback && ! empty( $fallback['url'] ) && $url === $fallback['url'];
+	if ( ! $own ) {
+		$fallback = array();
+	}
+
+	if ( '' === $note && ! empty( $fallback['note'] ) ) {
+		$note = $fallback['note'];
 	}
 
 	return array(
-		'mode' => array_key_exists( $mode, fixit_demo_modes() ) ? $mode : 'request',
-		'url'  => $url,
-		'note' => $note,
+		'mode'  => array_key_exists( $mode, fixit_demo_modes() ) ? $mode : 'request',
+		'url'   => $url,
+		'note'  => $note,
+		// Məhsula xas izah və addımlar (yalnız kodda) - yoxdursa ümumi mətn.
+		'text'  => ! empty( $fallback['text'] ) ? $fallback['text'] : '',
+		'steps' => ! empty( $fallback['steps'] ) ? $fallback['steps'] : array(),
+		'roles' => ! empty( $fallback['roles'] ) ? $fallback['roles'] : array(),
 	);
+}
+
+/**
+ * Demo birbaşa açılırmı (açıq rejim + ünvan var)?
+ *
+ * Ana səhifə və məhsullar siyahısı "Canlı demo" düyməsini yalnız bu halda
+ * göstərir; sorğu rejimində düymə məhsul səhifəsindəki formaya aparır.
+ *
+ * @param int $post_id Məhsul.
+ * @return string Demo ünvanı və ya boş sətir.
+ */
+function fixit_product_open_demo_url( $post_id ) {
+	$demo = fixit_product_demo( $post_id );
+	return ( 'open' === $demo['mode'] && $demo['url'] ) ? $demo['url'] : '';
 }

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.9.0' );
+define( 'FIXIT_VERSION', '1.10.0' );
 
 /*
  * Fixit Remote yükləmə ünvanları.

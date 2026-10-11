@@ -24,6 +24,10 @@ while ( have_posts() ) :
 	$fixit_gallery  = fixit_product_gallery_ids( $fixit_post->ID );
 	$fixit_demo     = fixit_product_demo( $fixit_post->ID );
 
+	// Admin qalereyası boşdursa, temanın içindəki hazır ekran görüntüləri.
+	$fixit_screens = $fixit_gallery ? array() : fixit_product_screens( $fixit_post );
+	$fixit_modules = ! empty( $fixit_detail['modules'] ) ? $fixit_detail['modules'] : array();
+
 	$fixit_contact_url  = fixit_page_url( 'template-contact.php' );
 	$fixit_products_url = fixit_page_url( 'template-products.php' );
 	$fixit_offer_url    = add_query_arg( 'mehsul', rawurlencode( $fixit_post->post_title ), $fixit_contact_url ) . '#elaqe-form';
@@ -45,6 +49,14 @@ while ( have_posts() ) :
 	}
 
 	$fixit_show_demo = ( 'off' !== $fixit_demo['mode'] ) && ( 'open' !== $fixit_demo['mode'] || $fixit_demo['url'] );
+	$fixit_demo_open = $fixit_show_demo && 'open' === $fixit_demo['mode'];
+
+	// Məzmun bölmələri növbə ilə ağ/boz fonda: hansı bölmənin olub-olmamasından
+	// asılı olmayaraq iki eyni fonlu bölmə yan-yana düşmür.
+	$fixit_zebra = 0;
+	$fixit_bg    = function () use ( &$fixit_zebra ) {
+		return ( $fixit_zebra++ % 2 ) ? 'section--soft' : '';
+	};
 	?>
 
 	<!-- ============================ HERO ============================ -->
@@ -83,7 +95,12 @@ while ( have_posts() ) :
 				<?php endif; ?>
 
 				<div class="hero__cta">
-					<?php if ( $fixit_show_demo ) : ?>
+					<?php if ( $fixit_demo_open ) : ?>
+						<?php // Açıq demo - bir klik bəsdir: aşağıdakı bölməyə yox, birbaşa demoya. ?>
+						<a class="btn btn--primary" href="<?php echo esc_url( $fixit_demo['url'] ); ?>" target="_blank" rel="noopener">
+							<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Canlı demonu aç', 'fixit' ); ?><?php fixit_icon( 'external' ); ?>
+						</a>
+					<?php elseif ( $fixit_show_demo ) : ?>
 						<a class="btn btn--primary" href="#demo">
 							<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Demonu sına', 'fixit' ); ?>
 						</a>
@@ -110,6 +127,11 @@ while ( have_posts() ) :
 							)
 						);
 						?>
+					</figure>
+				<?php elseif ( $fixit_screens ) : ?>
+					<figure class="shot shot--hero">
+						<span class="shot__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+						<?php echo fixit_product_screen_img( $fixit_screens[0], '(max-width: 1024px) 100vw, 600px', true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</figure>
 				<?php else : ?>
 					<div class="hero-card">
@@ -158,7 +180,7 @@ while ( have_posts() ) :
 
 	<!-- ============================ PROBLEM → HƏLL ============================ -->
 	<?php if ( ! empty( $fixit_detail['problems'] ) ) : ?>
-		<section class="section">
+		<section class="section <?php echo esc_attr( $fixit_bg() ); ?>">
 			<div class="container">
 				<div class="section-head section-head--center reveal">
 					<span class="eyebrow"><?php esc_html_e( 'Nəyi həll edir', 'fixit' ); ?></span>
@@ -178,9 +200,53 @@ while ( have_posts() ) :
 		</section>
 	<?php endif; ?>
 
+	<!-- ============================ MODULLAR ============================ -->
+	<?php if ( $fixit_modules && ! empty( $fixit_modules['items'] ) ) : ?>
+		<section class="section <?php echo esc_attr( $fixit_bg() ); ?>">
+			<div class="container">
+				<div class="section-head section-head--center reveal">
+					<span class="eyebrow"><?php esc_html_e( 'Modullar', 'fixit' ); ?></span>
+					<h2><?php echo esc_html( $fixit_modules['title'] ); ?></h2>
+					<?php if ( ! empty( $fixit_modules['lead'] ) ) : ?>
+						<p><?php echo esc_html( $fixit_modules['lead'] ); ?></p>
+					<?php endif; ?>
+				</div>
+
+				<div class="modules reveal">
+					<?php foreach ( $fixit_modules['items'] as $fixit_mod ) : ?>
+						<div class="module">
+							<div class="module__head">
+								<span class="module__icon"><?php fixit_icon( $fixit_mod['icon'] ); ?></span>
+								<span>
+									<strong class="module__name"><?php echo esc_html( $fixit_mod['name'] ); ?></strong>
+									<span class="module__label"><?php echo esc_html( $fixit_mod['label'] ); ?></span>
+								</span>
+							</div>
+							<p><?php echo esc_html( $fixit_mod['text'] ); ?></p>
+							<ul class="bullets">
+								<?php foreach ( $fixit_mod['points'] as $fixit_point ) : ?>
+									<li><?php fixit_icon( 'check-c' ); ?><span><?php echo esc_html( $fixit_point ); ?></span></li>
+								<?php endforeach; ?>
+							</ul>
+						</div>
+					<?php endforeach; ?>
+				</div>
+
+				<?php if ( ! empty( $fixit_modules['shared'] ) ) : ?>
+					<div class="modules__shared reveal">
+						<strong><?php esc_html_e( 'Ortaq mühərrik:', 'fixit' ); ?></strong>
+						<?php foreach ( $fixit_modules['shared'] as $fixit_shared ) : ?>
+							<span class="chip"><?php echo esc_html( $fixit_shared ); ?></span>
+						<?php endforeach; ?>
+					</div>
+				<?php endif; ?>
+			</div>
+		</section>
+	<?php endif; ?>
+
 	<!-- ============================ İMKANLAR ============================ -->
 	<?php if ( $fixit_groups ) : ?>
-		<section class="section section--soft">
+		<section class="section <?php echo esc_attr( $fixit_bg() ); ?>">
 			<div class="container">
 				<div class="section-head section-head--center reveal">
 					<span class="eyebrow"><?php esc_html_e( 'İmkanlar', 'fixit' ); ?></span>
@@ -205,15 +271,28 @@ while ( have_posts() ) :
 	<?php endif; ?>
 
 	<!-- ============================ EKRAN GÖRÜNTÜLƏRİ ============================ -->
-	<?php if ( $fixit_gallery ) : ?>
-		<section class="section">
+	<?php if ( $fixit_gallery || $fixit_screens ) : ?>
+		<section class="section <?php echo esc_attr( $fixit_bg() ); ?>">
 			<div class="container">
 				<div class="section-head section-head--center reveal">
 					<span class="eyebrow"><?php esc_html_e( 'Ekran görüntüləri', 'fixit' ); ?></span>
 					<h2><?php esc_html_e( 'Necə görünür', 'fixit' ); ?></h2>
+					<?php if ( $fixit_screens && $fixit_demo_open ) : ?>
+						<p><?php esc_html_e( 'Şəkillər onlayn demodan çəkilib — eyni ekranları özünüz də aça bilərsiniz.', 'fixit' ); ?></p>
+					<?php endif; ?>
 				</div>
 
 				<div class="gallery" data-lightbox>
+					<?php foreach ( $fixit_screens as $fixit_screen ) : ?>
+						<figure class="shot reveal">
+							<span class="shot__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+							<a href="<?php echo esc_url( $fixit_screen['src'] ); ?>" data-caption="<?php echo esc_attr( $fixit_screen['caption'] ); ?>">
+								<?php echo fixit_product_screen_img( $fixit_screen ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							</a>
+							<figcaption><?php echo esc_html( $fixit_screen['caption'] ); ?></figcaption>
+						</figure>
+					<?php endforeach; ?>
+
 					<?php foreach ( $fixit_gallery as $fixit_img_id ) : ?>
 						<?php
 						$fixit_full    = wp_get_attachment_image_url( $fixit_img_id, 'full' );
@@ -236,7 +315,7 @@ while ( have_posts() ) :
 
 	<!-- ============================ İŞ PRİNSİPİ ============================ -->
 	<?php if ( $fixit_flow ) : ?>
-		<section class="section <?php echo $fixit_gallery ? 'section--soft' : ''; ?>">
+		<section class="section <?php echo esc_attr( $fixit_bg() ); ?>">
 			<div class="container">
 				<div class="section-head section-head--center reveal">
 					<span class="eyebrow"><?php esc_html_e( 'İş prinsipi', 'fixit' ); ?></span>
@@ -291,13 +370,25 @@ while ( have_posts() ) :
 						<h2><?php esc_html_e( 'Özünüz sınayın', 'fixit' ); ?></h2>
 
 						<?php if ( 'open' === $fixit_demo['mode'] ) : ?>
-							<p><?php esc_html_e( 'Demo nüsxəsi nümunə məlumatlarla doldurulub. Brauzerdə açın və sərbəst yoxlayın — heç nə quraşdırmaq lazım deyil.', 'fixit' ); ?></p>
+							<p>
+								<?php
+								echo esc_html(
+									$fixit_demo['text']
+										? $fixit_demo['text']
+										: __( 'Demo nüsxəsi nümunə məlumatlarla doldurulub. Brauzerdə açın və sərbəst yoxlayın — heç nə quraşdırmaq lazım deyil.', 'fixit' )
+								);
+								?>
+							</p>
 						<?php else : ?>
 							<p><?php esc_html_e( 'Formu doldurun — sizə şəxsi demo girişi göndərək. Nümunə məlumatlarla doldurulmuş sistemdə sərbəst işləyə bilərsiniz; istəsəniz mütəxəssisimiz canlı da göstərər.', 'fixit' ); ?></p>
 						<?php endif; ?>
 
 						<ol class="demo-steps">
-							<?php if ( 'open' === $fixit_demo['mode'] ) : ?>
+							<?php if ( 'open' === $fixit_demo['mode'] && $fixit_demo['steps'] ) : ?>
+								<?php foreach ( $fixit_demo['steps'] as $fixit_demo_step ) : ?>
+									<li><?php echo esc_html( $fixit_demo_step ); ?></li>
+								<?php endforeach; ?>
+							<?php elseif ( 'open' === $fixit_demo['mode'] ) : ?>
 								<li><?php esc_html_e( 'Demonu açın', 'fixit' ); ?></li>
 								<li><?php esc_html_e( 'Nümunə məlumatlarla sərbəst işləyin', 'fixit' ); ?></li>
 								<li><?php esc_html_e( 'Sualınız olsa — bizə yazın', 'fixit' ); ?></li>
@@ -311,8 +402,20 @@ while ( have_posts() ) :
 
 					<div class="demo-box__action">
 						<?php if ( 'open' === $fixit_demo['mode'] ) : ?>
+							<?php if ( $fixit_demo['roles'] ) : ?>
+								<?php // Rol demonun öz giriş səhifəsində seçilir - hər kart oraya aparır. ?>
+								<div class="demo-roles">
+									<?php foreach ( $fixit_demo['roles'] as $fixit_role ) : ?>
+										<a class="demo-role" href="<?php echo esc_url( $fixit_demo['url'] ); ?>" target="_blank" rel="noopener">
+											<span class="demo-role__icon"><?php fixit_icon( $fixit_role[0] ); ?></span>
+											<strong><?php echo esc_html( $fixit_role[1] ); ?></strong>
+											<small><?php echo esc_html( $fixit_role[2] ); ?></small>
+										</a>
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
 							<a class="btn btn--primary btn--block" href="<?php echo esc_url( $fixit_demo['url'] ); ?>" target="_blank" rel="noopener">
-								<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Demonu aç', 'fixit' ); ?>
+								<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Demonu aç', 'fixit' ); ?><?php fixit_icon( 'external' ); ?>
 							</a>
 							<?php if ( $fixit_demo['note'] ) : ?>
 								<p class="form-note"><?php echo esc_html( $fixit_demo['note'] ); ?></p>

@@ -36,6 +36,7 @@ fixit-web/
     ├── searchform.php        ← axtarış formu
     ├── assets/js/main.js     ← tema dəyişdirici, mobil menyu, animasiyalar, şəkil böyüdücü
     ├── assets/js/admin-gallery.js ← admin: məhsul ekran görüntülərinin seçilməsi
+    ├── assets/img/products/  ← məhsulların hazır ekran görüntüləri (demodan çəkilib)
     └── inc/
         ├── icons.php         ← SVG ikon kitabxanası
         ├── customizer.php    ← admin paneldəki ayarlar (telefon, ünvan, sosial)
@@ -96,6 +97,7 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Xidmət mətnləri, ikonlar, üstünlüklər | Admin → **Xidmətlər** |
 | Məhsul adı, qısa təsvir, əsas xüsusiyyətlər | Admin → **Məhsullar** |
 | Məhsulun demo ünvanı, demo rejimi, **ekran görüntüləri** | Admin → Məhsullar → məhsulu açın → **Demo və ekran görüntüləri** |
+| Sorğu Sistemi-nin hazır ekran görüntülərini demodan yenidən çəkmək | `python tools/demo-ekranlar.py` (Chrome + Node 22+; admin qalereyası boşdursa bunlar göstərilir) |
 | Məhsul səhifəsinin detallı bölmələri (imkan qrupları, iş prinsipi, təhlükəsizlik, suallar) | `inc/product-data.php` |
 | Demo sorğuları | Admin → **Form mesajları** ("Növ: Demo") |
 | Məhsulların satış şərtləri, qiymət mətni, FAQ | `template-products.php` |

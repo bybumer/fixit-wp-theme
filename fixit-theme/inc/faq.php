@@ -53,15 +53,15 @@ function fixit_faq_products() {
 		),
 		array(
 			__( 'Məlumatlarımız harada saxlanılacaq?', 'fixit' ),
-			__( 'Sizin öz serverinizdə. Hər iki məhsul on-premise modeldə təqdim olunur — məlumat şirkətinizin infrastrukturundan kənara çıxmır.', 'fixit' ),
+			__( 'Sizin öz serverinizdə. Bütün məhsullarımız on-premise modeldə təqdim olunur — məlumat şirkətinizin infrastrukturundan kənara çıxmır.', 'fixit' ),
 		),
 		array(
 			__( 'Almazdan əvvəl sınaya bilərəmmi?', 'fixit' ),
-			__( 'Bəli. Əvvəlcə canlı demo təşkil edirik, razılaşma olarsa sınaq quraşdırması da mümkündür.', 'fixit' ),
+			__( 'Bəli. Sorğu Sistemi üçün açıq onlayn demo var (demo.fixit.az): qeydiyyat yoxdur, Admin, Agent, Menecer və ya Müştəri kimi bir kliklə daxil olursunuz. Digər məhsullar üçün canlı demo təşkil edirik; razılaşma olarsa sınaq quraşdırması da mümkündür.', 'fixit' ),
 		),
 		array(
 			__( 'Şirkətimizin iş axınına uyğunlaşdırıla bilərmi?', 'fixit' ),
-			__( 'Bəli. Hər iki məhsul tamamilə bizim kodumuzdur, kənar sistemə bağlılıq yoxdur. Ona görə əlavə modul və dəyişikliklər mümkündür.', 'fixit' ),
+			__( 'Bəli. Bütün məhsullarımız tamamilə bizim kodumuzdur, kənar sistemə bağlılıq yoxdur. Ona görə əlavə modul və dəyişikliklər mümkündür.', 'fixit' ),
 		),
 		array(
 			__( 'Quraşdırmadan sonra dəstək verilirmi?', 'fixit' ),
@@ -70,6 +70,10 @@ function fixit_faq_products() {
 		array(
 			__( 'Sorğu Sistemi mövcud e-poçt qutumuzla işləyirmi?', 'fixit' ),
 			__( 'Bəli. Şirkət poçt qutunuz sistemə qoşulur: gələn məktublar avtomatik müraciətə çevrilir, agentin cavabı isə müştəriyə adi e-poçt kimi gedir.', 'fixit' ),
+		),
+		array(
+			__( 'Sorğu Sistemi yalnız müştəri müraciətləri üçündür?', 'fixit' ),
+			__( 'Xeyr. Sistemdə iki modul var: Ticket — müştəridən gələn müraciətlər, Task — komandanın daxili işləri (lövhə, checklist, son tarix, təkrarlanan işlər). İkisini birlikdə və ya ayrıca işlədə bilərsiniz.', 'fixit' ),
 		),
 	);
 }

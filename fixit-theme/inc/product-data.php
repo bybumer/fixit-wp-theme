@@ -4,8 +4,8 @@
  *
  * Qısa təsvir, əsas xüsusiyyətlər, teqlər, demo ünvanı və ekran görüntüləri
  * admin paneldən (Məhsullar) idarə olunur. Bu fayl isə səhifənin daha zəngin
- * bölmələrini saxlayır: problem → həll, xüsusiyyət qrupları, iş prinsipi,
- * təhlükəsizlik və suallar.
+ * bölmələrini saxlayır: problem → həll, modullar, xüsusiyyət qrupları,
+ * hazır ekran görüntüləri, iş prinsipi, demo, təhlükəsizlik və suallar.
  *
  * Açar — məhsulun ünvanı (slug): /mehsul/<slug>/
  *
@@ -39,6 +39,65 @@ function fixit_product_details() {
 			),
 
 			'intro'    => __( 'İki modul, bir sistem: kənardan gələn müraciətlər (Ticket) və komandanın öz işləri (Task) eyni mühərrik üzərində — eyni axtarış, hesabat, vaxt uçotu. Hər ikisini birlikdə və ya ayrıca işlədə bilərsiniz.', 'fixit' ),
+
+			/*
+			 * Ticket və Task yan-yana. Məhsulun əsas fərqi məhz budur: iki ayrı
+			 * alət yox, eyni mühərrikdə iki iş növü. Ona görə səhifədə FAQ-da
+			 * gizlənmir, ayrıca bölmə kimi göstərilir.
+			 */
+			'modules'  => array(
+				'title'  => __( 'İki modul — bir platforma', 'fixit' ),
+				'lead'   => __( 'Ticket kənardan gələn müraciət üçündür, Task komandanın öz işi üçün. Hər ikisi eyni mühərrikdə işləyir: birini və ya ikisini birlikdə açırsınız.', 'fixit' ),
+				'items'  => array(
+					array(
+						'icon'   => 'ticket',
+						'name'   => 'Ticket',
+						'label'  => __( 'Müştəri müraciətləri', 'fixit' ),
+						'text'   => __( 'Müştəri yazır, komanda cavab verir, SLA sayğacı işləyir.', 'fixit' ),
+						'points' => array(
+							__( 'E-poçt, müştəri portalı, Telegram və veb forma', 'fixit' ),
+							__( 'SLA iş saatına görə; müddət keçəndə eskalasiya', 'fixit' ),
+							__( 'Cavab müştəriyə adi e-poçt kimi gedir', 'fixit' ),
+							__( 'Müştəri öz müraciətini portalda izləyir', 'fixit' ),
+						),
+					),
+					array(
+						'icon'   => 'task',
+						'name'   => 'Task',
+						'label'  => __( 'Komandanın daxili işləri', 'fixit' ),
+						'text'   => __( 'Kim, nəyi, nə vaxta qədər edir — hamısı lövhədə görünür.', 'fixit' ),
+						'points' => array(
+							__( 'Lövhə: Ediləcək → İcrada → Hazır', 'fixit' ),
+							__( 'Checklist, alt tapşırıqlar və asılılıqlar', 'fixit' ),
+							__( 'Son tarix və planlanan vaxt', 'fixit' ),
+							__( 'Təkrarlanan işlər özü yaranır', 'fixit' ),
+						),
+					),
+				),
+				'shared' => array(
+					__( 'Müraciətdən bir kliklə tapşırıq', 'fixit' ),
+					__( 'Vahid axtarış', 'fixit' ),
+					__( 'Dashboard və hesabatlar', 'fixit' ),
+					__( 'Vaxt uçotu', 'fixit' ),
+					__( 'Rollar və icazələr', 'fixit' ),
+					__( 'Audit jurnalı', 'fixit' ),
+				),
+			),
+
+			/*
+			 * Ekran görüntüləri temanın içindədir (assets/img/products/<slug>/):
+			 * yeni saytda da hazır gəlir, media kitabxanasına yükləmək lazım
+			 * deyil. Admin paneldə qalereya doldurulsa, o üstün tutulur.
+			 * Şəkillər demo.fixit.az-dan çəkilib (tools/demo-ekranlar.py).
+			 */
+			'screens'  => array(
+				array( '01-sorgular.webp', __( 'Sorğular: hazır görünüşlər, süzgəc və axtarış', 'fixit' ) ),
+				array( '02-sorgu.webp', __( 'Müraciət: müştəri ilə yazışma, daxili qeyd və vaxt uçotu', 'fixit' ) ),
+				array( '03-lovhe.webp', __( 'Ticket lövhəsi: statusu sürüşdürməklə dəyişin', 'fixit' ) ),
+				array( '04-tapsiriqlar.webp', __( 'Task lövhəsi: gecikən iş dərhal seçilir', 'fixit' ) ),
+				array( '05-vaxt-hesabati.webp', __( 'Vaxt hesabatı: şirkət və agent üzrə, fakturaya düşən vaxt ayrıca', 'fixit' ) ),
+				array( '06-hesabatlar.webp', __( 'Hesabatlar: iş yükü, həll müddəti, SLA və status keçidləri', 'fixit' ) ),
+			),
 
 			'problems' => array(
 				array(
@@ -81,17 +140,8 @@ function fixit_product_details() {
 						__( 'Layihələr — şirkətdaxili şöbələr üçün ayrıca axın', 'fixit' ),
 					),
 				),
-				array(
-					'icon'  => 'task',
-					'title' => __( 'Task — komandanın daxili işləri', 'fixit' ),
-					'items' => array(
-						__( 'Layihələr və komandalar, lövhə (Ediləcək → İcrada → Hazır)', 'fixit' ),
-						__( 'Yoxlama siyahısı (checklist), alt tapşırıqlar, asılılıqlar', 'fixit' ),
-						__( 'Başlama və son tarix, qiymətləndirmə (planlanan vaxt)', 'fixit' ),
-						__( 'Təkrarlanan işlər — gündəlik/həftəlik/aylıq avtomatik yaranır', 'fixit' ),
-						__( 'Müraciətdən bir kliklə tapşırıq; hər ikisi bir-birinə bağlı qalır', 'fixit' ),
-					),
-				),
+				// Task-ın imkanları yuxarıdakı 'modules' bölməsindədir - burada
+				// təkrarlanmır, qruplar da 3×2 tor kimi düz düzülür.
 				array(
 					'icon'  => 'clock',
 					'title' => __( 'SLA və nəzarət', 'fixit' ),
@@ -138,17 +188,39 @@ function fixit_product_details() {
 			'flow'       => array(
 				array( 'mail', __( 'Müraciət gəlir', 'fixit' ), __( 'e-poçt, portal, Telegram və ya veb forma', 'fixit' ) ),
 				array( 'ticket', __( 'Ticket yaranır', 'fixit' ), __( 'nömrə alır, doğru qrupa düşür', 'fixit' ) ),
-				array( 'users', __( 'Agent işləyir', 'fixit' ), __( 'təyinat, SLA sayğacı, vaxt uçotu', 'fixit' ) ),
+				array( 'users', __( 'Komanda işləyir', 'fixit' ), __( 'təyinat, SLA, lazım olsa — tapşırıq', 'fixit' ) ),
 				array( 'send', __( 'Cavab gedir', 'fixit' ), __( 'müştəri adi e-poçt alır', 'fixit' ) ),
 				array( 'chart', __( 'Hesabat', 'fixit' ), __( 'ay sonu şirkət və agent üzrə', 'fixit' ) ),
 			),
 
 
-			// Demo düyməsinin defoltu - admin paneldə dəyişmək olar (bax product-demo.php)
-			'demo'     => array( 'mode' => 'open', 'url' => 'https://demo.fixit.az/portal' ),
+			// Demo düyməsinin defoltu - admin paneldə dəyişmək olar (bax product-demo.php).
+			// Addımlar demo.fixit.az-ın giriş səhifəsini təsvir edir: orada
+			// qeydiyyat yoxdur, rollar bir kliklə seçilir.
+			'demo'     => array(
+				'mode'  => 'open',
+				'url'   => 'https://demo.fixit.az/portal',
+				'text'  => __( 'Demo 250 nümunə sorğu və 250 tapşırıqla doldurulub. Qeydiyyat yoxdur — istədiyiniz rolu seçib dərhal işə başlayın.', 'fixit' ),
+				'note'  => __( 'Demo məlumatları hər gecə sıfırlanır.', 'fixit' ),
+				'steps' => array(
+					__( 'Demonu açın — qeydiyyat tələb olunmur', 'fixit' ),
+					__( 'Rol seçin: Admin, Agent, Menecer və ya Müştəri', 'fixit' ),
+					__( 'Sorğu və tapşırıqlarla sərbəst işləyin', 'fixit' ),
+				),
+				// Demonun giriş səhifəsindəki düymələrlə eyni: ziyarətçi orada
+				// nə görəcəyini əvvəlcədən bilir.
+				'roles' => array(
+					array( 'shield', __( 'Admin', 'fixit' ), __( 'sistemin tam görünüşü', 'fixit' ) ),
+					array( 'ticket', __( 'Agent', 'fixit' ), __( 'sorğulara cavab, tapşırıqlar', 'fixit' ) ),
+					array( 'chart', __( 'Menecer', 'fixit' ), __( 'hesabatlar və komanda yükü', 'fixit' ) ),
+					array( 'users', __( 'Müştəri', 'fixit' ), __( 'portal: müraciət və izləmə', 'fixit' ) ),
+				),
+			),
 
 			'security' => array(
 				__( 'Proqram və verilənlər bazası sizin serverinizdədir', 'fixit' ),
+				__( 'İki mərhələli giriş (2FA) — autentifikator tətbiqi ilə', 'fixit' ),
+				__( 'Parol təxmininə qarşı qoruma: səhv cəhdlərdə IP müvəqqəti bloklanır', 'fixit' ),
 				__( 'Sessiyalar server tərəfdə saxlanılır', 'fixit' ),
 				__( 'Mail qəbulu siyasəti: icazəli domenlər və qara siyahı', 'fixit' ),
 				__( 'Hər əməliyyat audit jurnalına yazılır', 'fixit' ),
@@ -383,4 +455,66 @@ function fixit_product_details() {
 function fixit_product_detail( $post ) {
 	$all = fixit_product_details();
 	return isset( $all[ $post->post_name ] ) ? $all[ $post->post_name ] : array();
+}
+
+/**
+ * Temanın içindəki hazır ekran görüntüləri.
+ *
+ * Hər şəklin yanında "-800" adlı kiçik nüsxəsi var: mobil ekran və kartlar
+ * 1600 px-lik faylı yükləməsin. Fayl yoxdursa həmin sətir buraxılır.
+ *
+ * @param WP_Post $post Məhsul.
+ * @return array[] Hər biri: src, small, caption, width, height.
+ */
+function fixit_product_screens( $post ) {
+	$detail = fixit_product_detail( $post );
+	if ( empty( $detail['screens'] ) ) {
+		return array();
+	}
+
+	$dir     = '/assets/img/products/' . $post->post_name . '/';
+	$screens = array();
+
+	foreach ( $detail['screens'] as $screen ) {
+		$file = basename( $screen[0] );
+		if ( ! file_exists( get_template_directory() . $dir . $file ) ) {
+			continue;
+		}
+
+		$small = preg_replace( '/(\.\w+)$/', '-800$1', $file );
+
+		$screens[] = array(
+			'src'     => get_template_directory_uri() . $dir . $file,
+			'small'   => file_exists( get_template_directory() . $dir . $small ) ? get_template_directory_uri() . $dir . $small : '',
+			'caption' => $screen[1],
+			'width'   => 1600,
+			'height'  => 1000,
+		);
+	}
+
+	return $screens;
+}
+
+/**
+ * Hazır ekran görüntüsünün <img> teqi.
+ *
+ * @param array  $screen  fixit_product_screens() sətri.
+ * @param string $sizes   Brauzerə ipucu: şəkil səhifədə nə enində görünür.
+ * @param bool   $eager   Birinci ekranda görünən şəkil gecikmədən yüklənsin.
+ * @return string
+ */
+function fixit_product_screen_img( $screen, $sizes = '(max-width: 900px) 100vw, 50vw', $eager = false ) {
+	$srcset = $screen['small']
+		? sprintf( '%s 800w, %s 1600w', esc_url( $screen['small'] ), esc_url( $screen['src'] ) )
+		: '';
+
+	return sprintf(
+		'<img src="%1$s"%2$s alt="%3$s" width="%4$d" height="%5$d" loading="%6$s" decoding="async">',
+		esc_url( $screen['src'] ),
+		$srcset ? sprintf( ' srcset="%s" sizes="%s"', esc_attr( $srcset ), esc_attr( $sizes ) ) : '',
+		esc_attr( $screen['caption'] ),
+		(int) $screen['width'],
+		(int) $screen['height'],
+		$eager ? 'eager' : 'lazy'
+	);
 }

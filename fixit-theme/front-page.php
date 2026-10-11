@@ -166,6 +166,68 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 				<p><?php esc_html_e( 'Sizin öz serverinizdə işləyir, interfeysi Azərbaycan dilindədir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
 			</div>
 
+			<?php
+			/*
+			 * Birinci məhsul (sıra 1) flaqmandır: geniş blok, ekran görüntüsü və
+			 * birbaşa "Canlı demo" düyməsi. Kartın özü link olduğu üçün içinə
+			 * ikinci link (demo) qoymaq olmur - ona görə ayrıca blokdur.
+			 */
+			$fixit_flag        = array_shift( $fixit_products );
+			$fixit_flag_detail = fixit_product_detail( $fixit_flag );
+			$fixit_flag_demo   = fixit_product_open_demo_url( $fixit_flag->ID );
+			$fixit_flag_short  = get_post_meta( $fixit_flag->ID, '_fixit_short', true );
+			$fixit_flag_shots  = fixit_product_screens( $fixit_flag );
+			$fixit_flag_mods   = ! empty( $fixit_flag_detail['modules']['items'] ) ? $fixit_flag_detail['modules']['items'] : array();
+			?>
+			<article class="prod-feature reveal">
+				<div class="prod-feature__text">
+					<span class="badge"><?php fixit_icon( 'award' ); ?><?php esc_html_e( 'Flaqman məhsul', 'fixit' ); ?></span>
+					<h3><a href="<?php echo esc_url( get_permalink( $fixit_flag ) ); ?>"><?php echo esc_html( $fixit_flag->post_title ); ?></a></h3>
+					<?php if ( ! empty( $fixit_flag_detail['tagline'] ) ) : ?>
+						<p class="prod-feature__tagline"><?php echo esc_html( $fixit_flag_detail['tagline'] ); ?></p>
+					<?php endif; ?>
+					<?php if ( $fixit_flag_short ) : ?>
+						<p><?php echo esc_html( $fixit_flag_short ); ?></p>
+					<?php endif; ?>
+
+					<?php if ( $fixit_flag_mods ) : ?>
+						<div class="prod-feature__mods">
+							<?php foreach ( $fixit_flag_mods as $fixit_fm ) : ?>
+								<div>
+									<span class="card__icon"><?php fixit_icon( $fixit_fm['icon'] ); ?></span>
+									<span>
+										<strong><?php echo esc_html( $fixit_fm['name'] ); ?></strong>
+										<small><?php echo esc_html( $fixit_fm['label'] ); ?></small>
+									</span>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
+
+					<div class="prod-feature__cta">
+						<?php if ( $fixit_flag_demo ) : ?>
+							<a class="btn btn--primary" href="<?php echo esc_url( $fixit_flag_demo ); ?>" target="_blank" rel="noopener">
+								<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Canlı demo', 'fixit' ); ?><?php fixit_icon( 'external' ); ?>
+							</a>
+						<?php endif; ?>
+						<a class="btn btn--light" href="<?php echo esc_url( get_permalink( $fixit_flag ) ); ?>">
+							<?php esc_html_e( 'Ətraflı', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
+						</a>
+					</div>
+					<?php if ( $fixit_flag_demo ) : ?>
+						<p class="prod-feature__note"><?php esc_html_e( 'Qeydiyyatsız: Admin, Agent, Menecer və ya Müştəri kimi bir kliklə daxil olun.', 'fixit' ); ?></p>
+					<?php endif; ?>
+				</div>
+
+				<?php if ( $fixit_flag_shots ) : ?>
+					<a class="shot shot--hero prod-feature__shot" href="<?php echo esc_url( get_permalink( $fixit_flag ) ); ?>" tabindex="-1" aria-hidden="true">
+						<span class="shot__bar"><i></i><i></i><i></i></span>
+						<?php echo fixit_product_screen_img( $fixit_flag_shots[0], '(max-width: 900px) 100vw, 640px' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					</a>
+				<?php endif; ?>
+			</article>
+
+			<?php if ( $fixit_products ) : ?>
 			<div class="grid <?php echo count( $fixit_products ) > 2 ? 'grid--3' : 'grid--2'; ?>">
 				<?php foreach ( $fixit_products as $fixit_prod ) : ?>
 					<?php
@@ -195,6 +257,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 					</a>
 				<?php endforeach; ?>
 			</div>
+			<?php endif; ?>
 
 			<div style="text-align:center;margin-top:34px">
 				<a class="btn btn--white" href="<?php echo esc_url( $fixit_products_url ); ?>">
@@ -380,7 +443,8 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 </section>
 
 <!-- ============================ CTA ============================ -->
-<section class="section" style="padding-top:0">
+<?php // id="elaqe": demo.fixit.az-dakı "Tam versiya" linki fixit.az/#elaqe ünvanına gəlir. ?>
+<section class="section" id="elaqe" style="padding-top:0">
 	<div class="container">
 		<div class="cta reveal">
 			<div>
