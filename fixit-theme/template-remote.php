@@ -56,81 +56,122 @@ $fixit_release     = fixit_remote_release();
 			<p><?php esc_html_e( 'Yaxınınıza kömək edin, evdə qalan kompüterinizə çıxın, iş yoldaşınızla eyni ekrana baxın. Qeydiyyat yoxdur, abunə yoxdur, məhdudiyyət yoxdur.', 'fixit' ); ?></p>
 		</div>
 
-		<div class="grid grid--2">
+		<?php
+		// Hansı OS-un hazır olduğunu seçicinin üstündə bir dəfə hesablayırıq.
+		$fixit_playstore = FIXIT_REMOTE_PLAYSTORE;
+		?>
 
-			<article class="card reveal" style="cursor:default">
-				<span class="card__icon"><?php fixit_icon( 'computer' ); ?></span>
-				<h3><?php esc_html_e( 'Windows üçün', 'fixit' ); ?></h3>
-				<?php if ( FIXIT_REMOTE_WINDOWS_READY ) : ?>
-					<p><?php esc_html_e( 'Windows 10 və 11 (64-bit). Quraşdırıldıqdan sonra proqram həm qoşulmaq, həm də qoşulmağa icazə vermək üçün hazırdır.', 'fixit' ); ?></p>
+		<!--
+			OS seçicisi: brauzerdə JS olmadan işləyir (gizli radio + CSS).
+			Hər tabın altındakı panel yalnız o OS seçiləndə görünür.
+		-->
+		<div class="os-pick reveal">
+			<input class="os-radio" type="radio" name="fixit-os" id="fixit-os-win" checked>
+			<input class="os-radio" type="radio" name="fixit-os" id="fixit-os-mac">
+			<input class="os-radio" type="radio" name="fixit-os" id="fixit-os-and">
 
-					<div style="margin-top:18px">
-						<a class="btn btn--primary" href="<?php echo esc_url( FIXIT_REMOTE_WINDOWS ); ?>" rel="nofollow">
-							<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Pulsuz yüklə', 'fixit' ); ?>
-						</a>
+			<div class="os-tabs" role="tablist">
+				<label for="fixit-os-win"><?php fixit_icon( 'computer' ); ?><span>Windows</span></label>
+				<label for="fixit-os-mac"><?php fixit_icon( 'computer' ); ?><span>macOS</span></label>
+				<label for="fixit-os-and"><?php fixit_icon( 'phone' ); ?><span>Android</span></label>
+			</div>
 
-						<?php if ( $fixit_release['version'] ) : ?>
-							<p style="margin:10px 0 0;font-size:13px;color:var(--text-mute)">
-								<?php
-								printf(
-									/* translators: 1: versiya, 2: faylın həcmi */
-									esc_html__( 'Versiya %1$s · %2$s', 'fixit' ),
-									esc_html( $fixit_release['version'] ),
-									esc_html( $fixit_release['size'] ? size_format( $fixit_release['size'], 1 ) : '' )
-								);
-								?>
-							</p>
-						<?php endif; ?>
-					</div>
-				<?php else : ?>
-					<p><?php esc_html_e( 'Windows 10 və 11 (64-bit) üçün proqram üzərində işləyirik. Hazır olanda buradan yükləmək mümkün olacaq.', 'fixit' ); ?></p>
+			<div class="os-panels">
 
-					<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-						<span class="chip"><?php fixit_icon( 'clock' ); ?><?php esc_html_e( 'Tezliklə', 'fixit' ); ?></span>
+				<!-- Windows -->
+				<div class="os-panel os-panel--win">
+					<h3><?php esc_html_e( 'Windows üçün', 'fixit' ); ?></h3>
+					<?php if ( FIXIT_REMOTE_WINDOWS_READY ) : ?>
+						<p><?php esc_html_e( 'Windows 10 və 11 (64-bit). Quraşdırıldıqdan sonra proqram həm qoşulmaq, həm də qoşulmağa icazə vermək üçün hazırdır.', 'fixit' ); ?></p>
 
-						<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_contact_url ); ?>">
-							<?php esc_html_e( 'Xəbər verin', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
-						</a>
-					</div>
-				<?php endif; ?>
+						<div style="margin-top:18px">
+							<a class="btn btn--primary" href="<?php echo esc_url( FIXIT_REMOTE_WINDOWS ); ?>" rel="nofollow">
+								<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Pulsuz yüklə', 'fixit' ); ?>
+							</a>
 
-				<ul class="bullets" style="margin-top:18px">
-					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Qeydiyyat, hesab və ödəniş yoxdur', 'fixit' ); ?></span></li>
-					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Quraşdırma bir neçə saniyə çəkir', 'fixit' ); ?></span></li>
-					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'İstədiyiniz vaxt tamamilə dayandıra bilərsiniz', 'fixit' ); ?></span></li>
-				</ul>
-			</article>
+							<?php if ( $fixit_release['version'] ) : ?>
+								<p style="margin:10px 0 0;font-size:13px;color:var(--text-mute)">
+									<?php
+									printf(
+										/* translators: 1: versiya, 2: faylın həcmi */
+										esc_html__( 'Versiya %1$s · %2$s', 'fixit' ),
+										esc_html( $fixit_release['version'] ),
+										esc_html( $fixit_release['size'] ? size_format( $fixit_release['size'], 1 ) : '' )
+									);
+									?>
+								</p>
+							<?php endif; ?>
+						</div>
+					<?php else : ?>
+						<p><?php esc_html_e( 'Windows 10 və 11 (64-bit) üçün proqram üzərində işləyirik. Hazır olanda buradan yükləmək mümkün olacaq.', 'fixit' ); ?></p>
 
-			<article class="card reveal" style="cursor:default">
-				<span class="card__icon"><?php fixit_icon( 'phone' ); ?></span>
-				<h3><?php esc_html_e( 'Telefon üçün', 'fixit' ); ?></h3>
+						<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+							<span class="chip"><?php fixit_icon( 'clock' ); ?><?php esc_html_e( 'Tezliklə', 'fixit' ); ?></span>
+							<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_contact_url ); ?>"><?php esc_html_e( 'Xəbər verin', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?></a>
+						</div>
+					<?php endif; ?>
 
-				<?php if ( FIXIT_REMOTE_ANDROID_READY ) : ?>
-					<p><?php esc_html_e( 'Telefondan kompüterə qoşulmaq üçün tətbiq. Android 7 və yuxarı.', 'fixit' ); ?></p>
+					<ul class="bullets" style="margin-top:18px">
+						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Qeydiyyat, hesab və ödəniş yoxdur', 'fixit' ); ?></span></li>
+						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Quraşdırma bir neçə saniyə çəkir', 'fixit' ); ?></span></li>
+						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'İstədiyiniz vaxt tamamilə dayandıra bilərsiniz', 'fixit' ); ?></span></li>
+					</ul>
+				</div>
 
-					<div style="margin-top:18px">
-						<a class="btn btn--ghost" href="<?php echo esc_url( FIXIT_REMOTE_ANDROID ); ?>" rel="nofollow">
-							<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Tətbiqi yüklə', 'fixit' ); ?>
-						</a>
-					</div>
-				<?php else : ?>
-					<p><?php esc_html_e( 'Telefondan kompüterə qoşulmaq üçün tətbiq üzərində işləyirik. Hazır olanda buradan yükləmək mümkün olacaq.', 'fixit' ); ?></p>
+				<!-- macOS -->
+				<div class="os-panel os-panel--mac">
+					<h3><?php esc_html_e( 'macOS üçün', 'fixit' ); ?></h3>
+					<?php if ( FIXIT_REMOTE_MAC_READY ) : ?>
+						<p><?php esc_html_e( 'macOS üçün proqram. Quraşdırıldıqdan sonra qoşulmaq və qoşulmağa icazə vermək mümkündür.', 'fixit' ); ?></p>
+					<?php else : ?>
+						<p><?php esc_html_e( 'Mac üçün versiya üzərində işləyirik.', 'fixit' ); ?></p>
 
-					<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-						<span class="chip"><?php fixit_icon( 'clock' ); ?><?php esc_html_e( 'Tezliklə', 'fixit' ); ?></span>
+						<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+							<span class="chip"><?php fixit_icon( 'clock' ); ?><?php esc_html_e( 'Tezliklə paylaşılacaq', 'fixit' ); ?></span>
+							<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_contact_url ); ?>"><?php esc_html_e( 'Hazır olanda xəbər verin', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?></a>
+						</div>
+					<?php endif; ?>
 
-						<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_contact_url ); ?>">
-							<?php esc_html_e( 'Hazır olanda xəbər verin', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
-						</a>
-					</div>
-				<?php endif; ?>
+					<ul class="bullets" style="margin-top:18px">
+						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'İndilik Windows proqramı ilə qoşulmaq olar', 'fixit' ); ?></span></li>
+					</ul>
+				</div>
 
-				<ul class="bullets" style="margin-top:18px">
-					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Kompüterin ekranına telefondan baxmaq və idarə etmək', 'fixit' ); ?></span></li>
-					<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'İndilik Windows proqramı kifayətdir', 'fixit' ); ?></span></li>
-				</ul>
-			</article>
+				<!-- Android -->
+				<div class="os-panel os-panel--and">
+					<h3><?php esc_html_e( 'Android üçün', 'fixit' ); ?></h3>
+					<?php if ( $fixit_playstore ) : ?>
+						<p><?php esc_html_e( 'Telefondan kompüterə qoşulmaq üçün tətbiq. Android 7 və yuxarı.', 'fixit' ); ?></p>
 
+						<div style="margin-top:18px">
+							<a class="btn btn--primary" href="<?php echo esc_url( $fixit_playstore ); ?>" target="_blank" rel="noopener nofollow">
+								<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Google Play-dən yüklə', 'fixit' ); ?>
+							</a>
+						</div>
+					<?php elseif ( FIXIT_REMOTE_ANDROID_READY ) : ?>
+						<p><?php esc_html_e( 'Telefondan kompüterə qoşulmaq üçün tətbiq. Android 7 və yuxarı.', 'fixit' ); ?></p>
+
+						<div style="margin-top:18px">
+							<a class="btn btn--ghost" href="<?php echo esc_url( FIXIT_REMOTE_ANDROID ); ?>" rel="nofollow">
+								<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Tətbiqi yüklə', 'fixit' ); ?>
+							</a>
+						</div>
+					<?php else : ?>
+						<p><?php esc_html_e( 'Telefon tətbiqi üzərində işləyirik — tezliklə Google Play-də.', 'fixit' ); ?></p>
+
+						<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+							<span class="chip"><?php fixit_icon( 'clock' ); ?><?php esc_html_e( 'Tezliklə paylaşılacaq', 'fixit' ); ?></span>
+							<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_contact_url ); ?>"><?php esc_html_e( 'Hazır olanda xəbər verin', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?></a>
+						</div>
+					<?php endif; ?>
+
+					<ul class="bullets" style="margin-top:18px">
+						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Kompüterin ekranına telefondan baxmaq və idarə etmək', 'fixit' ); ?></span></li>
+						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'İndilik Windows proqramı kifayətdir', 'fixit' ); ?></span></li>
+					</ul>
+				</div>
+
+			</div>
 		</div>
 	</div>
 </section>

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.11.1' );
+define( 'FIXIT_VERSION', '1.11.2' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -26,11 +26,24 @@ define( 'FIXIT_REMOTE_WINDOWS', 'https://github.com/bybumer/fixit-remote-release
 define( 'FIXIT_REMOTE_ANDROID', 'https://github.com/bybumer/fixit-remote-releases/releases/download/mobile/fixit-remote.apk' );
 
 /*
- * Windows proqramı da hazırda yüklənmir: bölmə, izah və "tezliklə"
- * nişanı qalır, düymə görünmür. Hazır olanda bu dəyəri true etmək
- * kifayətdir - ünvan onsuz da ən son buraxılışı verir.
+ * Android tətbiqi Google Play-də dərc olunanda bu ünvan doldurulur.
+ * Boş olanda Android bölməsi birbaşa APK verir (hazırdırsa), yoxsa
+ * "tezliklə" göstərir.
  */
-define( 'FIXIT_REMOTE_WINDOWS_READY', false );
+define( 'FIXIT_REMOTE_PLAYSTORE', '' );
+
+/*
+ * Windows proqramı hazırdır: yükləmə düyməsi görünür. Ünvan onsuz da
+ * ən son buraxılışı verir, ona görə yeni relizdən sonra saytda heç nə
+ * dəyişmək lazım gəlmir.
+ */
+define( 'FIXIT_REMOTE_WINDOWS_READY', true );
+
+/*
+ * macOS versiyası hələ yoxdur: OS seçimində görünür, amma "tezliklə
+ * paylaşılacaq" yazılır, yükləmə düyməsi olmur.
+ */
+define( 'FIXIT_REMOTE_MAC_READY', false );
 
 /*
  * Telefon tətbiqi hələ sınaqdadır: saytda YÜKLƏMƏ DÜYMƏSİ görünmür,
