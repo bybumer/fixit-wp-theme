@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.11.2' );
+define( 'FIXIT_VERSION', '1.11.3' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -31,6 +31,12 @@ define( 'FIXIT_REMOTE_ANDROID', 'https://github.com/bybumer/fixit-remote-release
  * "tezliklə" göstərir.
  */
 define( 'FIXIT_REMOTE_PLAYSTORE', '' );
+
+/*
+ * iOS tətbiqi App Store-da dərc olunanda bu ünvan doldurulur. Boş olanda
+ * "iPhone / iPad" bölməsi "tezliklə" göstərir.
+ */
+define( 'FIXIT_REMOTE_APPSTORE', '' );
 
 /*
  * Windows proqramı hazırdır: yükləmə düyməsi görünür. Ünvan onsuz da

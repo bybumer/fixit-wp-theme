@@ -4,7 +4,7 @@ Theme URI: https://fixit.az
 Author: FIXIT
 Author URI: https://fixit.az
 Description: FIXIT şirkəti üçün hazırlanmış peşəkar İKT xidmətləri teması. Tam responsiv, işıqlı/qaranlıq rejim, daxili əlaqə formu, SEO və sürət üçün optimallaşdırılmışdır.
-Version: 1.11.2
+Version: 1.11.3
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -975,3 +975,21 @@ html[data-theme="dark"] .svc__tagline{color:var(--accent-400)}
 @media(max-width:560px){.os-tabs label{padding:10px 8px;font-size:14px}}
 .os-panel .chip{display:inline-flex;align-items:center;gap:7px}
 .os-panel .chip svg{width:15px;height:15px;flex:none}
+
+/* ---- Telefon tətbiqləri (Android + iOS, QR) ---- */
+.mobile-apps{max-width:720px;margin:28px auto 0}
+.mobile-apps__head{text-align:center;margin-bottom:18px}
+.mobile-apps__head h3{margin:0 0 6px}
+.mobile-apps__head p{color:var(--text-soft);margin:0}
+.app-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.app-card{display:flex;gap:16px;align-items:center;background:var(--bg-elev);border:1px solid var(--surface-line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-sm)}
+.app-card__qr{flex:none;width:96px;height:96px;border-radius:var(--radius-sm);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;overflow:hidden}
+.app-card__qr img{width:96px;height:96px;display:block;border-radius:var(--radius-sm)}
+.app-card__qr--soon{background:var(--bg-soft);border:1px dashed var(--surface-line);color:var(--text-mute);font-size:12px;font-weight:600}
+.app-card__qr--soon svg{width:26px;height:26px;opacity:.7}
+.app-card__text h4{margin:0 0 8px;font-size:17px}
+.app-card__store{display:block;color:var(--text-soft);font-weight:600;margin-bottom:8px}
+.btn--sm{padding:9px 14px;font-size:14px}
+@media(max-width:560px){.app-cards{grid-template-columns:1fr}}
+/* "Tezliklə" nişanlarında ikon kiçik qalsın (hər yerdə). */
+.chip svg{width:15px;height:15px;flex:none}

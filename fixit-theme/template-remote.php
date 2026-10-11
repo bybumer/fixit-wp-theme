@@ -56,11 +56,6 @@ $fixit_release     = fixit_remote_release();
 			<p><?php esc_html_e( 'Yaxınınıza kömək edin, evdə qalan kompüterinizə çıxın, iş yoldaşınızla eyni ekrana baxın. Qeydiyyat yoxdur, abunə yoxdur, məhdudiyyət yoxdur.', 'fixit' ); ?></p>
 		</div>
 
-		<?php
-		// Hansı OS-un hazır olduğunu seçicinin üstündə bir dəfə hesablayırıq.
-		$fixit_playstore = FIXIT_REMOTE_PLAYSTORE;
-		?>
-
 		<!--
 			OS seçicisi: brauzerdə JS olmadan işləyir (gizli radio + CSS).
 			Hər tabın altındakı panel yalnız o OS seçiləndə görünür.
@@ -68,12 +63,10 @@ $fixit_release     = fixit_remote_release();
 		<div class="os-pick reveal">
 			<input class="os-radio" type="radio" name="fixit-os" id="fixit-os-win" checked>
 			<input class="os-radio" type="radio" name="fixit-os" id="fixit-os-mac">
-			<input class="os-radio" type="radio" name="fixit-os" id="fixit-os-and">
 
 			<div class="os-tabs" role="tablist">
 				<label for="fixit-os-win"><?php fixit_icon( 'computer' ); ?><span>Windows</span></label>
 				<label for="fixit-os-mac"><?php fixit_icon( 'computer' ); ?><span>macOS</span></label>
-				<label for="fixit-os-and"><?php fixit_icon( 'phone' ); ?><span>Android</span></label>
 			</div>
 
 			<div class="os-panels">
@@ -137,40 +130,66 @@ $fixit_release     = fixit_remote_release();
 					</ul>
 				</div>
 
-				<!-- Android -->
-				<div class="os-panel os-panel--and">
-					<h3><?php esc_html_e( 'Android üçün', 'fixit' ); ?></h3>
-					<?php if ( $fixit_playstore ) : ?>
-						<p><?php esc_html_e( 'Telefondan kompüterə qoşulmaq üçün tətbiq. Android 7 və yuxarı.', 'fixit' ); ?></p>
+			</div>
+		</div>
 
-						<div style="margin-top:18px">
-							<a class="btn btn--primary" href="<?php echo esc_url( $fixit_playstore ); ?>" target="_blank" rel="noopener nofollow">
-								<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Google Play-dən yüklə', 'fixit' ); ?>
-							</a>
+		<!-- Telefon və planşet: Android + iOS (gələcəkdə QR ilə) -->
+		<div class="mobile-apps reveal">
+			<div class="mobile-apps__head">
+				<h3><?php esc_html_e( 'Telefon və planşet üçün', 'fixit' ); ?></h3>
+				<p><?php esc_html_e( 'Android və iOS tətbiqləri hazırlanır. Hazır olanda bu QR kodları telefonla skan edib birbaşa mağazadan yükləyəcəksiniz.', 'fixit' ); ?></p>
+			</div>
+
+			<div class="app-cards">
+				<?php
+				$fixit_apps = array(
+					array(
+						'os'    => __( 'Android', 'fixit' ),
+						'store' => __( 'Google Play', 'fixit' ),
+						'url'   => FIXIT_REMOTE_PLAYSTORE,
+						'qr'    => 'qr-android.png',
+					),
+					array(
+						'os'    => __( 'iPhone / iPad', 'fixit' ),
+						'store' => __( 'App Store', 'fixit' ),
+						'url'   => FIXIT_REMOTE_APPSTORE,
+						'qr'    => 'qr-ios.png',
+					),
+				);
+
+				$fixit_qr_dir     = get_stylesheet_directory() . '/assets/img/';
+				$fixit_qr_dir_uri = get_stylesheet_directory_uri() . '/assets/img/';
+
+				foreach ( $fixit_apps as $fixit_app ) :
+					$fixit_has_qr = $fixit_app['url'] && file_exists( $fixit_qr_dir . $fixit_app['qr'] );
+					?>
+					<article class="app-card">
+						<div class="app-card__qr<?php echo $fixit_has_qr ? '' : ' app-card__qr--soon'; ?>">
+							<?php if ( $fixit_has_qr ) : ?>
+								<img src="<?php echo esc_url( $fixit_qr_dir_uri . $fixit_app['qr'] ); ?>" width="150" height="150" loading="lazy"
+									alt="<?php echo esc_attr( sprintf( /* translators: %s: mağaza adı */ __( '%s QR kodu', 'fixit' ), $fixit_app['store'] ) ); ?>">
+							<?php else : ?>
+								<?php fixit_icon( 'phone' ); ?>
+								<span><?php esc_html_e( 'Tezliklə', 'fixit' ); ?></span>
+							<?php endif; ?>
 						</div>
-					<?php elseif ( FIXIT_REMOTE_ANDROID_READY ) : ?>
-						<p><?php esc_html_e( 'Telefondan kompüterə qoşulmaq üçün tətbiq. Android 7 və yuxarı.', 'fixit' ); ?></p>
 
-						<div style="margin-top:18px">
-							<a class="btn btn--ghost" href="<?php echo esc_url( FIXIT_REMOTE_ANDROID ); ?>" rel="nofollow">
-								<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Tətbiqi yüklə', 'fixit' ); ?>
-							</a>
+						<div class="app-card__text">
+							<h4><?php echo esc_html( $fixit_app['os'] ); ?></h4>
+							<?php if ( $fixit_app['url'] ) : ?>
+								<a class="btn btn--primary btn--sm" href="<?php echo esc_url( $fixit_app['url'] ); ?>" target="_blank" rel="noopener nofollow">
+									<?php
+									/* translators: %s: mağaza adı (Google Play / App Store) */
+									printf( esc_html__( '%s-dən yüklə', 'fixit' ), esc_html( $fixit_app['store'] ) );
+									?>
+								</a>
+							<?php else : ?>
+								<span class="app-card__store"><?php echo esc_html( $fixit_app['store'] ); ?></span>
+								<span class="chip"><?php fixit_icon( 'clock' ); ?><?php esc_html_e( 'Tezliklə paylaşılacaq', 'fixit' ); ?></span>
+							<?php endif; ?>
 						</div>
-					<?php else : ?>
-						<p><?php esc_html_e( 'Telefon tətbiqi üzərində işləyirik — tezliklə Google Play-də.', 'fixit' ); ?></p>
-
-						<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-							<span class="chip"><?php fixit_icon( 'clock' ); ?><?php esc_html_e( 'Tezliklə paylaşılacaq', 'fixit' ); ?></span>
-							<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_contact_url ); ?>"><?php esc_html_e( 'Hazır olanda xəbər verin', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?></a>
-						</div>
-					<?php endif; ?>
-
-					<ul class="bullets" style="margin-top:18px">
-						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Kompüterin ekranına telefondan baxmaq və idarə etmək', 'fixit' ); ?></span></li>
-						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'İndilik Windows proqramı kifayətdir', 'fixit' ); ?></span></li>
-					</ul>
-				</div>
-
+					</article>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</div>
