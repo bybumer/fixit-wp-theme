@@ -138,6 +138,10 @@ $fixit_release     = fixit_remote_release();
 			<div class="mobile-apps__head">
 				<h3><?php esc_html_e( 'Telefon və planşet üçün', 'fixit' ); ?></h3>
 				<p><?php esc_html_e( 'Android və iOS tətbiqləri hazırlanır. Hazır olanda bu QR kodları telefonla skan edib birbaşa mağazadan yükləyəcəksiniz.', 'fixit' ); ?></p>
+				<?php $fixit_privacy_url = fixit_page_url( 'template-remote-privacy.php' ); ?>
+				<?php if ( $fixit_privacy_url ) : ?>
+					<p style="margin-top:6px;font-size:13px"><a href="<?php echo esc_url( $fixit_privacy_url ); ?>"><?php esc_html_e( 'Tətbiqin məxfilik siyasəti', 'fixit' ); ?></a></p>
+				<?php endif; ?>
 			</div>
 
 			<div class="app-cards">

@@ -175,6 +175,13 @@ function fixit_create_pages() {
 			'title'    => 'Əlaqə',
 			'template' => 'template-contact.php',
 		),
+		// Mobil tətbiqin məxfilik siyasəti: Google Play / App Store
+		// listinqi ictimai URL tələb edir. Menyuya düşmür (menyu yalnız
+		// $order siyahısından qurulur) — birbaşa keçidlə açılır.
+		'fixit-remote-mexfilik' => array(
+			'title'    => 'Fixit Remote — Məxfilik siyasəti',
+			'template' => 'template-remote-privacy.php',
+		),
 	);
 
 	$ids = array();
