@@ -49,6 +49,7 @@ fixit-web/
         ├── demo-content.php  ← ilk aktivləşdirmədə səhifə/menyu yaradır
         ├── seo.php           ← meta teqlər + Google struktur məlumatları
         ├── seo-admin.php     ← admin paneldəki SEO izləmə lövhəsi
+        ├── demo-stats.php    ← admin paneldə demo.fixit.az ziyarət statistikası
         └── updater.php       ← GitHub relizlərindən avtomatik yeniləmə
 ```
 
@@ -97,6 +98,7 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Xidmət mətnləri, ikonlar, üstünlüklər | Admin → **Xidmətlər** |
 | Məhsul adı, qısa təsvir, əsas xüsusiyyətlər | Admin → **Məhsullar** |
 | Məhsulun demo ünvanı, demo rejimi, **ekran görüntüləri** | Admin → Məhsullar → məhsulu açın → **Demo və ekran görüntüləri** |
+| Demoya kim gəldi, hansı rolu seçdi, nə etdi | Admin → **Demo statistikası** (bir dəfəlik: «Ayarlar» → açar yarat → demo serverinin `.env`-inə `DEMO_STATS_TOKEN`; bax Fixit-Ticket-System `DEPLOY-DEMO.md` §9) |
 | Sorğu Sistemi-nin hazır ekran görüntülərini demodan yenidən çəkmək | `python tools/demo-ekranlar.py` (Chrome + Node 22+; admin qalereyası boşdursa bunlar göstərilir) |
 | Məhsul səhifəsinin detallı bölmələri (imkan qrupları, iş prinsipi, təhlükəsizlik, suallar) | `inc/product-data.php` |
 | Demo sorğuları | Admin → **Form mesajları** ("Növ: Demo") |

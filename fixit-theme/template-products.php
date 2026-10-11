@@ -103,7 +103,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 							<?php esc_html_e( 'Ətraflı və demo', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
 						</a>
 						<?php if ( $fixit_demo_url ) : ?>
-							<a class="btn btn--ghost" href="<?php echo esc_url( $fixit_demo_url ); ?>" target="_blank" rel="noopener">
+							<a class="btn btn--ghost" href="<?php echo esc_url( fixit_demo_link( $fixit_demo_url, 'mehsullar' ) ); ?>" target="_blank" rel="noopener">
 								<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Canlı demo', 'fixit' ); ?><?php fixit_icon( 'external' ); ?>
 							</a>
 						<?php endif; ?>

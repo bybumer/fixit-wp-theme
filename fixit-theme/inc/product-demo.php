@@ -232,3 +232,17 @@ function fixit_product_open_demo_url( $post_id ) {
 	$demo = fixit_product_demo( $post_id );
 	return ( 'open' === $demo['mode'] && $demo['url'] ) ? $demo['url'] : '';
 }
+
+/**
+ * Demo linkinə mənbə əlavə edir: `?src=home` və s.
+ *
+ * Demo serveri bunu ziyarətə yazır və «Demo statistikası» səhifəsində hansı
+ * düymənin işlədiyi görünür (bax inc/demo-stats.php → 'source' adları).
+ *
+ * @param string $url Demo ünvanı.
+ * @param string $src Saytdakı yer: home, mehsul-hero, mehsul-demo, mehsul-rol, mehsullar.
+ * @return string
+ */
+function fixit_demo_link( $url, $src ) {
+	return $url ? add_query_arg( 'src', rawurlencode( $src ), $url ) : $url;
+}

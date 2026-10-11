@@ -206,7 +206,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 
 					<div class="prod-feature__cta">
 						<?php if ( $fixit_flag_demo ) : ?>
-							<a class="btn btn--primary" href="<?php echo esc_url( $fixit_flag_demo ); ?>" target="_blank" rel="noopener">
+							<a class="btn btn--primary" href="<?php echo esc_url( fixit_demo_link( $fixit_flag_demo, 'home' ) ); ?>" target="_blank" rel="noopener">
 								<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Canlı demo', 'fixit' ); ?><?php fixit_icon( 'external' ); ?>
 							</a>
 						<?php endif; ?>

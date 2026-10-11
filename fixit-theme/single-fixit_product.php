@@ -97,7 +97,7 @@ while ( have_posts() ) :
 				<div class="hero__cta">
 					<?php if ( $fixit_demo_open ) : ?>
 						<?php // Açıq demo - bir klik bəsdir: aşağıdakı bölməyə yox, birbaşa demoya. ?>
-						<a class="btn btn--primary" href="<?php echo esc_url( $fixit_demo['url'] ); ?>" target="_blank" rel="noopener">
+						<a class="btn btn--primary" href="<?php echo esc_url( fixit_demo_link( $fixit_demo['url'], 'mehsul-hero' ) ); ?>" target="_blank" rel="noopener">
 							<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Canlı demonu aç', 'fixit' ); ?><?php fixit_icon( 'external' ); ?>
 						</a>
 					<?php elseif ( $fixit_show_demo ) : ?>
@@ -406,7 +406,7 @@ while ( have_posts() ) :
 								<?php // Rol demonun öz giriş səhifəsində seçilir - hər kart oraya aparır. ?>
 								<div class="demo-roles">
 									<?php foreach ( $fixit_demo['roles'] as $fixit_role ) : ?>
-										<a class="demo-role" href="<?php echo esc_url( $fixit_demo['url'] ); ?>" target="_blank" rel="noopener">
+										<a class="demo-role" href="<?php echo esc_url( fixit_demo_link( $fixit_demo['url'], 'mehsul-rol' ) ); ?>" target="_blank" rel="noopener">
 											<span class="demo-role__icon"><?php fixit_icon( $fixit_role[0] ); ?></span>
 											<strong><?php echo esc_html( $fixit_role[1] ); ?></strong>
 											<small><?php echo esc_html( $fixit_role[2] ); ?></small>
@@ -414,7 +414,7 @@ while ( have_posts() ) :
 									<?php endforeach; ?>
 								</div>
 							<?php endif; ?>
-							<a class="btn btn--primary btn--block" href="<?php echo esc_url( $fixit_demo['url'] ); ?>" target="_blank" rel="noopener">
+							<a class="btn btn--primary btn--block" href="<?php echo esc_url( fixit_demo_link( $fixit_demo['url'], 'mehsul-demo' ) ); ?>" target="_blank" rel="noopener">
 								<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Demonu aç', 'fixit' ); ?><?php fixit_icon( 'external' ); ?>
 							</a>
 							<?php if ( $fixit_demo['note'] ) : ?>
