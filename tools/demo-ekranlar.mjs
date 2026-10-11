@@ -13,19 +13,10 @@ mkdirSync(out, { recursive: true });
 
 const BASE = 'https://demo.fixit.az/portal';
 
-// Demo məlumatlarında real şirkət adları var. Marketinq şəklində onlar
-// "bizim müştərimizdir" kimi oxunar - ona görə uydurma adlarla əvəz olunur.
-const RENAME = [
-  ['Azərenerji ASC', 'Günəş Enerji'], ['Azerenerji ASC', 'Günəş Enerji'],
-  ['Kapital Bank', 'Mavi Bank'],
-  ['Bravo Supermarket', 'Bərəkət Market'],
-  ['Azərsu ASC', 'Dağ Su MMC'], ['Azersu ASC', 'Dağ Su MMC'],
-  ['SOCAR', 'Xəzər Logistika'],
-  ['Pasha Holding', 'Atlas Holding'],
-  ['azerenerji.az', 'gunesenerji.az'], ['kapitalbank.az', 'mavibank.az'],
-  ['bravo.az', 'bereketmarket.az'], ['azersu.az', 'dagsu.az'],
-  ['socar.az', 'xezerlogistika.az'], ['pasha.az', 'atlasholding.az'],
-];
+// Demo əvvəl real şirkət adları işlədirdi (tk1.20.5-də uydurma adlarla əvəz
+// olundu). Marketinq şəklində real ad «bizim müştərimizdir» kimi oxunar -
+// ona görə səhifədə bunlardan biri görünsə şəkil ÇƏKİLMİR, skript dayanır.
+const FORBIDDEN = /SOCAR|Pasha Holding|Kapital Bank|Azərenerji|Azerenerji|Bravo Supermarket|Azərsu|Azersu|socar\.az|pasha\.az|kapitalbank\.az/i;
 
 // [fayl adı, ünvan, gözləmə ms] - adlar demo-ekranlar.py-dəki sıra ilə eynidir.
 // Demo hər gecə yenidən yaranır və ID-lər dəyişir - ona görə tək sorğu
@@ -85,16 +76,6 @@ if (!clicked) {
 await sleep(3000);
 
 const polish = `(() => {
-  const map = ${JSON.stringify(RENAME)};
-  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-  let n; while ((n = w.nextNode())) {
-    let t = n.nodeValue; const o = t;
-    for (const [a, b] of map) t = t.split(a).join(b);
-    if (t !== o) n.nodeValue = t;
-  }
-  document.querySelectorAll('input,textarea').forEach(el => {
-    for (const [a, b] of map) if (el.value && el.value.includes(a)) el.value = el.value.split(a).join(b);
-  });
   // Yuxarıdakı "demo versiyasıdır" zolağı məhsulun hissəsi deyil. Ən dərin
   // uyğun element götürülür - əks halda bütün tətbiqin kökü (#root) tutulur.
   const banner = [...document.querySelectorAll('body *')]
@@ -129,6 +110,12 @@ for (const [name, path, wait] of SHOTS) {
   const broken = await evaluate(`/tapılmadı|not found/i.test(document.body.innerText) || document.body.innerText.trim().length < 200`);
   if (broken) {
     console.error('XETA: ' + name + ' sehifesi bos ve ya tapilmadi - sekil cekilmedi.');
+    process.exit(1);
+  }
+  const text = await evaluate(`document.body.innerText + ' ' + [...document.querySelectorAll('input,textarea,select')].map(e => e.value).join(' ')`);
+  const real = text.match(FORBIDDEN);
+  if (real) {
+    console.error('XETA: ' + name + ' sehifesinde real sirket adi var (' + real[0] + ') - demo_seed.py-ni yoxlayin.');
     process.exit(1);
   }
 

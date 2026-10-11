@@ -10,7 +10,7 @@ təzə nümunə məlumat — bir əmr bəsdir:
 Sonra versiyanı artırıb reliz edin (README → Yeniləmələr).
 
 Tələblər: Google Chrome, Node.js 22+ (daxili WebSocket), Pillow.
-Real şirkət adları şəkildə uydurma adlarla əvəz olunur (demo-ekranlar.mjs).
+Səhifədə real şirkət adı görünsə skript şəkil çəkmədən dayanır (demo-ekranlar.mjs).
 Başlıqlar inc/product-data.php → 'screens' bölməsindədir.
 """
 
