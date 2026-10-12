@@ -3,11 +3,11 @@
  * Template Name: Fixit Remote — Məxfilik siyasəti
  *
  * Mobil tətbiqin məxfilik siyasəti. Google Play və App Store listinqində
- * ictimai URL kimi göstərilir — ona görə ayrıca səhifədir və tema
- * yenilənəndə özü yaranır (inc/demo-content.php).
+ * və tətbiqin öz Ayarlar səhifəsində bu ünvan göstərilir — ona görə
+ * ayrıca səhifədir və tema yenilənəndə özü yaranır (inc/demo-content.php).
  *
- * Mətn mobile/store/privacy-policy.md ilə eynidir; dəyişəndə ikisi də
- * yenilənməlidir.
+ * Mətn Fixit-Remote reposundakı mobile/store/privacy-policy.md ilə
+ * eynidir; dəyişəndə ikisi də yenilənməlidir.
  *
  * @package FIXIT
  */
@@ -21,7 +21,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 	<div class="container">
 		<span class="eyebrow"><?php fixit_icon( 'lock' ); ?><?php esc_html_e( 'Məxfilik', 'fixit' ); ?></span>
 		<h1><?php esc_html_e( 'Fixit Remote — Məxfilik siyasəti', 'fixit' ); ?></h1>
-		<p><?php esc_html_e( 'Mobil tətbiq (Android və iOS) haqqında. Son yenilənmə: 12 sentyabr 2026.', 'fixit' ); ?></p>
+		<p><?php esc_html_e( 'Mobil tətbiq (Android və iOS) haqqında. Son yenilənmə: 12 oktyabr 2026.', 'fixit' ); ?></p>
 
 		<nav class="crumbs" aria-label="<?php esc_attr_e( 'Naviqasiya', 'fixit' ); ?>">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Ana səhifə', 'fixit' ); ?></a>
@@ -41,19 +41,44 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 
 			<!-- ======================= AZ ======================= -->
 			<h2><?php esc_html_e( 'Qısa cavab', 'fixit' ); ?></h2>
-			<p><?php esc_html_e( 'Tətbiq heç bir məlumat toplamır, heç kimə göndərmir və heç bir analitika sistemi ilə işləmir. Bütün məlumat işlədiyiniz şirkətin öz serverində qalır — biz ona çıxış əldə etmirik.', 'fixit' ); ?></p>
-
-			<h2><?php esc_html_e( 'Tətbiq nə göstərir', 'fixit' ); ?></h2>
-			<p><?php esc_html_e( 'Tətbiq yalnız sizin şirkətinizin serverinə qoşulur (ünvanı özünüz yazırsınız) və oradan gələn məlumatı ekranda göstərir:', 'fixit' ); ?></p>
 			<ul>
-				<li><?php esc_html_e( 'əməkdaşın adı və soyadı,', 'fixit' ); ?></li>
-				<li><?php esc_html_e( 'şöbə və komanda adı,', 'fixit' ); ?></li>
-				<li><?php esc_html_e( 'iş telefonu (əgər şirkət onu yazıbsa),', 'fixit' ); ?></li>
-				<li><?php esc_html_e( 'kompüterin həmin anda açıq olub-olmaması və son əlaqə vaxtı.', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'Reklam, analitika, çökmə hesabatı və izləmə vasitəsi yoxdur.', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'Məlumat satılmır və heç bir üçüncü tərəfə verilmir.', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'Tətbiq iki serverlə işləyir:', 'fixit' ); ?>
+					<ul>
+						<li><strong><?php esc_html_e( 'Fixit-in ID serveri', 'fixit' ); ?></strong> (id.fixit.az) — <?php esc_html_e( 'cihazlar arasında qoşulmanı qurmaq üçün. Orada yalnız bunun üçün lazım olan minimum saxlanılır; ekran görüntüsü saxlanılmır.', 'fixit' ); ?></li>
+						<li><strong><?php esc_html_e( 'Şirkətinizin öz serveri', 'fixit' ); ?></strong> (<?php esc_html_e( 'istəyə görə', 'fixit' ); ?>) — <?php esc_html_e( 'komandalar, cihazlar və yazışma. Bu məlumat şirkətinizdə qalır, Fixit-in ona çıxışı yoxdur.', 'fixit' ); ?></li>
+					</ul>
+				</li>
 			</ul>
-			<p><?php esc_html_e( 'Bu məlumatın sahibi şirkətdir. Tətbiq onu yalnız göstərir — saxlamır və başqa yerə ötürmür.', 'fixit' ); ?></p>
 
-			<h2><?php esc_html_e( 'Telefonda nə saxlanılır', 'fixit' ); ?></h2>
+			<h2><?php esc_html_e( '1. ID ilə qoşulma (id.fixit.az)', 'fixit' ); ?></h2>
+			<p><?php esc_html_e( 'Telefonunuzun ekranını paylaşmağı açdığınız zaman telefon ID serverində qeydiyyatdan keçir. Server bunları saxlayır:', 'fixit' ); ?></p>
+			<ul>
+				<li><?php esc_html_e( 'tətbiqin yaratdığı təsadüfi cihaz kimliyi və 9 rəqəmli ID nömrəsi,', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'cihazın adı (telefonun adı və ya modeli) və əməliyyat sisteminin versiyası,', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'qoşulma parolunun hash-i — parolun özü serverə heç vaxt göndərilmir,', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'son əlaqə vaxtı.', 'fixit' ); ?></li>
+			</ul>
+			<p><?php esc_html_e( 'Hər qoşulma cəhdi təhlükəsizlik jurnalına yazılır: vaxt, ID nömrəsi, IP ünvanı və nəticə. Bu, parol təxmin etmə cəhdlərini aşkar edib dayandırmaq üçündür.', 'fixit' ); ?></p>
+			<p><?php esc_html_e( 'Qoşulma zamanı ekran görüntüsü, toxunuş və klaviatura əmrləri server vasitəsilə real vaxtda qarşı tərəfə ötürülür. Server onları saxlamır. Bütün əlaqə şifrəli kanal (HTTPS/TLS) ilə gedir.', 'fixit' ); ?></p>
+
+			<h2><?php esc_html_e( '2. Telefonun ekranını paylaşmaq', 'fixit' ); ?></h2>
+			<ul>
+				<li><?php esc_html_e( 'Yalnız siz açanda işləyir. Bağlı olanda telefon ID serverinə qoşulmur.', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'Kimsə qoşulmaq istəyəndə telefon hər dəfə sizdən icazə soruşur.', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'Ekranı yazmağa Android-in öz icazə pəncərəsi ilə razılıq verirsiniz.', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'Paylaşım davam etdiyi müddətdə bildiriş daim görünür; istənilən an dayandıra bilərsiniz.', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'Qoşulan tərəf ekranınıza yalnız baxır — telefonu idarə edə bilməz.', 'fixit' ); ?></li>
+			</ul>
+
+			<h2><?php esc_html_e( '3. Başqa cihaza qoşulmaq', 'fixit' ); ?></h2>
+			<p><?php esc_html_e( 'Qoşulduğunuz kompüterin ekranı telefona gəlir, toxunuş və klaviatura əmrləriniz oraya gedir. Görüntü telefonda yazılmır və saxlanılmır.', 'fixit' ); ?></p>
+
+			<h2><?php esc_html_e( '4. Şirkətinizin serveri', 'fixit' ); ?></h2>
+			<p><?php esc_html_e( '"Kontaktlar" və yazışma bölmələri işlədiyiniz şirkətin serverinə qoşulur (ünvanı özünüz yazırsınız) və istifadəçi adı ilə parol tələb edir. Komandalar, əməkdaşların adları, cihazlar və mesajlar həmin serverdə saxlanılır. Bu məlumatın sahibi şirkətdir; Fixit-in ona çıxışı yoxdur. Onunla bağlı suallar üçün şirkətinizin administratoruna müraciət edin.', 'fixit' ); ?></p>
+
+			<h2><?php esc_html_e( '5. Telefonda nə saxlanılır', 'fixit' ); ?></h2>
 			<div class="compare__scroll">
 				<table>
 					<thead>
@@ -64,27 +89,39 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td><?php esc_html_e( 'Server ünvanı', 'fixit' ); ?></td><td><?php esc_html_e( 'Tətbiqin öz yaddaşında', 'fixit' ); ?></td><td><?php esc_html_e( 'Hər dəfə yazmamaq üçün', 'fixit' ); ?></td></tr>
-						<tr><td><?php esc_html_e( 'Serverin sertifikat izi', 'fixit' ); ?></td><td><?php esc_html_e( 'Tətbiqin öz yaddaşında', 'fixit' ); ?></td><td><?php esc_html_e( 'Serverin dəyişdiyini tutmaq üçün', 'fixit' ); ?></td></tr>
-						<tr><td><?php esc_html_e( 'Sessiya açarı', 'fixit' ); ?></td><td><?php esc_html_e( 'Sistemin şifrəli anbarında', 'fixit' ); ?></td><td><?php esc_html_e( 'Hər açılışda yenidən giriş olmasın deyə', 'fixit' ); ?></td></tr>
+						<tr><td><?php esc_html_e( 'Server ünvanları və sertifikat izi', 'fixit' ); ?></td><td><?php esc_html_e( 'Tətbiqin öz yaddaşında', 'fixit' ); ?></td><td><?php esc_html_e( 'Hər dəfə yazmamaq və serverin dəyişdiyini tutmaq üçün', 'fixit' ); ?></td></tr>
+						<tr><td><?php esc_html_e( 'Sessiya açarı (12 saat)', 'fixit' ); ?></td><td><?php esc_html_e( 'Sistemin şifrəli anbarında', 'fixit' ); ?></td><td><?php esc_html_e( 'Hər açılışda yenidən daxil olmamaq üçün', 'fixit' ); ?></td></tr>
+						<tr><td><?php esc_html_e( 'İstifadəçi adı', 'fixit' ); ?></td><td><?php esc_html_e( 'Tətbiqin öz yaddaşında', 'fixit' ); ?></td><td><?php esc_html_e( 'Giriş formasını doldurmaq üçün', 'fixit' ); ?></td></tr>
+						<tr><td><?php esc_html_e( 'Hesab parolu', 'fixit' ); ?></td><td><?php esc_html_e( 'Sistemin şifrəli anbarında', 'fixit' ); ?></td><td><?php esc_html_e( 'Yalnız "Parolu yadda saxla" seçilibsə', 'fixit' ); ?></td></tr>
+						<tr><td><?php esc_html_e( 'Qoşulduğunuz cihazların parolları', 'fixit' ); ?></td><td><?php esc_html_e( 'Sistemin şifrəli anbarında', 'fixit' ); ?></td><td><?php esc_html_e( 'Yalnız yadda saxlamağı seçdiyiniz cihazlar üçün', 'fixit' ); ?></td></tr>
+						<tr><td><?php esc_html_e( 'Telefonun öz ID-si və qoşulma parolu', 'fixit' ); ?></td><td><?php esc_html_e( 'Tətbiqin öz yaddaşında', 'fixit' ); ?></td><td><?php esc_html_e( 'Ekran paylaşımı üçün', 'fixit' ); ?></td></tr>
+						<tr><td><?php esc_html_e( 'Son qoşulmalar siyahısı', 'fixit' ); ?></td><td><?php esc_html_e( 'Tətbiqin öz yaddaşında', 'fixit' ); ?></td><td><?php esc_html_e( 'Tez yenidən qoşulmaq üçün', 'fixit' ); ?></td></tr>
+						<tr><td><?php esc_html_e( 'Görünüş ayarları', 'fixit' ); ?></td><td><?php esc_html_e( 'Tətbiqin öz yaddaşında', 'fixit' ); ?></td><td><?php esc_html_e( 'Mövzu və idarə rejimi', 'fixit' ); ?></td></tr>
 					</tbody>
 				</table>
 			</div>
-			<p><strong><?php esc_html_e( 'Parolunuz saxlanılmır.', 'fixit' ); ?></strong> <?php esc_html_e( 'Sessiya açarının müddəti 12 saatdır və şirkətin administratoru hesabı bağladıqda dərhal etibarsız olur. Tətbiqi silmək bu məlumatların hamısını telefondan silir.', 'fixit' ); ?></p>
+			<p><?php esc_html_e( 'Son qoşulmaları Ayarlar → "Qoşulma tarixçəsi" ilə, sertifikatı və saxlanmış parolu Ayarlar → "Serveri unut" ilə silmək olar. Tətbiqi silmək bunların hamısını telefondan silir.', 'fixit' ); ?></p>
 
-			<h2><?php esc_html_e( 'İcazələr', 'fixit' ); ?></h2>
+			<h2><?php esc_html_e( '6. İcazələr', 'fixit' ); ?></h2>
 			<ul>
-				<li><strong><?php esc_html_e( 'İnternet', 'fixit' ); ?></strong> — <?php esc_html_e( 'yalnız sizin yazdığınız server ünvanına qoşulmaq üçün.', 'fixit' ); ?></li>
+				<li><strong><?php esc_html_e( 'İnternet', 'fixit' ); ?></strong> — <?php esc_html_e( 'serverlərə qoşulmaq üçün.', 'fixit' ); ?></li>
 				<li><strong><?php esc_html_e( 'Şəbəkə vəziyyəti', 'fixit' ); ?></strong> — <?php esc_html_e( 'bağlantı olmadıqda düzgün mesaj göstərmək üçün.', 'fixit' ); ?></li>
-				<li><strong><?php esc_html_e( 'Zəng', 'fixit' ); ?></strong> <?php esc_html_e( 'düyməsi telefonun öz zəng ekranını açır — tətbiq özü zəng etmir və zəng jurnalınızı oxumur.', 'fixit' ); ?></li>
+				<li><strong><?php esc_html_e( 'Bildirişlər', 'fixit' ); ?></strong> — <?php esc_html_e( 'ekran paylaşımı açıq olduğunu göstərmək üçün.', 'fixit' ); ?></li>
+				<li><strong><?php esc_html_e( 'Ekran paylaşımı xidməti', 'fixit' ); ?></strong> (Android: FOREGROUND_SERVICE_MEDIA_PROJECTION) — <?php esc_html_e( 'yalnız sizin başlatdığınız paylaşım müddətində ekranı göndərmək üçün.', 'fixit' ); ?></li>
 			</ul>
 			<p><?php esc_html_e( 'Tətbiq kamera, mikrofon, kontaktlar, məkan və fayllara müraciət etmir.', 'fixit' ); ?></p>
 
-			<h2><?php esc_html_e( 'Üçüncü tərəflər', 'fixit' ); ?></h2>
-			<p><?php esc_html_e( 'Yoxdur. Tətbiqdə reklam, analitika, çökmə hesabatı və izləmə vasitəsi istifadə olunmur. Məlumat yalnız telefonla şirkətin serveri arasında hərəkət edir.', 'fixit' ); ?></p>
+			<h2><?php esc_html_e( '7. Üçüncü tərəflər', 'fixit' ); ?></h2>
+			<p><?php esc_html_e( 'Yoxdur. Tətbiqdə reklam, analitika, çökmə hesabatı və izləmə vasitəsi istifadə olunmur.', 'fixit' ); ?></p>
 
-			<h2><?php esc_html_e( 'Uşaqlar', 'fixit' ); ?></h2>
-			<p><?php esc_html_e( 'Tətbiq iş yeri üçündür və uşaqlara ünvanlanmır.', 'fixit' ); ?></p>
+			<h2><?php esc_html_e( '8. Saxlama və silmə', 'fixit' ); ?></h2>
+			<p><?php esc_html_e( 'ID serverindəki cihaz qeydi və qoşulma jurnalı xidmətin işləməsi və təhlükəsizliyi üçün saxlanılır. Onların silinməsini istəyirsinizsə, ID nömrənizi yazaraq bu ünvana müraciət edin:', 'fixit' ); ?> <a href="mailto:info@fixit.az">info@fixit.az</a>. <?php esc_html_e( 'Şirkət serverindəki məlumat üçün şirkətinizin administratoruna müraciət edin.', 'fixit' ); ?></p>
+
+			<h2><?php esc_html_e( '9. Uşaqlar', 'fixit' ); ?></h2>
+			<p><?php esc_html_e( 'Tətbiq iş aləti kimi nəzərdə tutulub və uşaqlara ünvanlanmır.', 'fixit' ); ?></p>
+
+			<h2><?php esc_html_e( '10. Dəyişikliklər', 'fixit' ); ?></h2>
+			<p><?php esc_html_e( 'Bu siyasət dəyişəndə yeni mətn bu ünvanda dərc olunur və yuxarıdakı tarix yenilənir.', 'fixit' ); ?></p>
 
 			<h2><?php esc_html_e( 'Əlaqə', 'fixit' ); ?></h2>
 			<p><?php esc_html_e( 'Sual və müraciətlər üçün:', 'fixit' ); ?> <a href="mailto:info@fixit.az">info@fixit.az</a></p>
@@ -93,40 +130,78 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 
 			<!-- ======================= EN ======================= -->
 			<h2>Privacy Policy (English)</h2>
-			<p><em>Last updated: 12 September 2026. This policy covers the Fixit Remote mobile app (Android and iOS).</em></p>
+			<p><em>Last updated: 12 October 2026. This policy covers the Fixit Remote mobile app (Android and iOS).</em></p>
 
 			<h3>Short answer</h3>
-			<p>The app collects nothing, sends nothing to us, and uses no analytics. All data stays on your company's own server; we have no access to it.</p>
+			<ul>
+				<li>No ads, analytics, crash reporting or tracking.</li>
+				<li>Data is never sold or given to third parties.</li>
+				<li>The app works with two servers:
+					<ul>
+						<li><strong>Fixit's ID server</strong> (id.fixit.az) — to set up connections between devices. It keeps only the minimum needed for that; screen images are not stored.</li>
+						<li><strong>Your company's own server</strong> (optional) — teams, devices and chat. That data stays with your company; Fixit has no access to it.</li>
+					</ul>
+				</li>
+			</ul>
 
-			<h3>What the app shows</h3>
-			<p>The app connects only to your company's server (you enter its address) and displays what that server returns: employee name, department and team, work phone number, whether their computer is currently on, and the time of last contact. That data belongs to your company. The app only displays it — it neither stores nor forwards it.</p>
+			<h3>1. Connecting by ID (id.fixit.az)</h3>
+			<p>When you turn on screen sharing, the phone registers with the ID server, which stores: a random device identifier generated by the app and a 9-digit ID number; the device name (phone name or model) and OS version; a <strong>hash</strong> of the connection password (the password itself is never sent); and the time of last contact.</p>
+			<p>Every connection attempt is logged for security: time, ID number, IP address and result. This is used to detect and stop password-guessing.</p>
+			<p>During a session, screen images and touch/keyboard commands are relayed through the server in real time. The server does <strong>not</strong> store them. All traffic uses an encrypted channel (HTTPS/TLS).</p>
 
-			<h3>What is stored on the phone</h3>
+			<h3>2. Sharing your phone's screen</h3>
+			<ul>
+				<li>It runs only when you turn it on; otherwise the phone does not connect to the ID server.</li>
+				<li>The phone asks for your permission every time someone wants to connect.</li>
+				<li>You grant screen capture through Android's own system dialog.</li>
+				<li>A notification stays visible for as long as sharing is on; you can stop it at any time.</li>
+				<li>The other side can only <strong>view</strong> your screen — it cannot control your phone.</li>
+			</ul>
+
+			<h3>3. Connecting to another device</h3>
+			<p>The remote computer's screen is shown on your phone and your touch and keyboard input is sent to it. The image is not recorded or stored on the phone.</p>
+
+			<h3>4. Your company's server</h3>
+			<p>The Contacts and chat sections connect to your employer's server (you enter its address) and require a username and password. Teams, employee names, devices and messages are stored on that server. That data belongs to your company; Fixit has no access to it. Contact your company's administrator about it.</p>
+
+			<h3>5. What is stored on the phone</h3>
 			<div class="compare__scroll">
 				<table>
 					<thead><tr><th>Data</th><th>Where</th><th>Why</th></tr></thead>
 					<tbody>
-						<tr><td>Server address</td><td>App storage</td><td>So you don't retype it</td></tr>
-						<tr><td>Server certificate fingerprint</td><td>App storage</td><td>To detect if the server changes</td></tr>
-						<tr><td>Session token</td><td>System secure storage</td><td>So you don't sign in on every launch</td></tr>
+						<tr><td>Server addresses and certificate fingerprint</td><td>App storage</td><td>So you don't retype them, and to detect if a server changes</td></tr>
+						<tr><td>Session token (12 hours)</td><td>System secure storage</td><td>So you don't sign in on every launch</td></tr>
+						<tr><td>Username</td><td>App storage</td><td>To pre-fill the sign-in form</td></tr>
+						<tr><td>Account password</td><td>System secure storage</td><td>Only if "Remember password" is on</td></tr>
+						<tr><td>Passwords of devices you connect to</td><td>System secure storage</td><td>Only for devices you chose to remember</td></tr>
+						<tr><td>The phone's own ID and connection password</td><td>App storage</td><td>For screen sharing</td></tr>
+						<tr><td>Recent connections</td><td>App storage</td><td>For quick reconnects</td></tr>
+						<tr><td>Appearance settings</td><td>App storage</td><td>Theme and control mode</td></tr>
 					</tbody>
 				</table>
 			</div>
-			<p><strong>Your password is not stored.</strong> The session lasts 12 hours and becomes invalid immediately if your administrator disables the account. Uninstalling the app removes all of the above.</p>
+			<p>Recent connections can be cleared in Settings → "Connection history"; the certificate and saved password via Settings → "Forget server". Uninstalling the app removes all of the above.</p>
 
-			<h3>Permissions</h3>
+			<h3>6. Permissions</h3>
 			<ul>
-				<li><strong>Internet</strong> — solely to reach the server address you entered.</li>
-				<li><strong>Network state</strong> — to show a correct message when there is no connection.</li>
-				<li>The <strong>Call</strong> button opens the phone's own dialler; the app does not place calls and does not read your call log.</li>
+				<li><strong>Internet</strong> — to reach the servers.</li>
+				<li><strong>Network state</strong> — to show a correct message when offline.</li>
+				<li><strong>Notifications</strong> — to show that screen sharing is on.</li>
+				<li><strong>Screen sharing service</strong> (Android: FOREGROUND_SERVICE_MEDIA_PROJECTION) — to send the screen only while a share you started is running.</li>
 			</ul>
 			<p>The app does not access camera, microphone, contacts, location or files.</p>
 
-			<h3>Third parties</h3>
+			<h3>7. Third parties</h3>
 			<p>None. No ads, no analytics, no crash reporting, no tracking.</p>
 
-			<h3>Children</h3>
+			<h3>8. Retention and deletion</h3>
+			<p>The device record and connection log on the ID server are kept to run the service and keep it secure. To request their deletion, email <a href="mailto:info@fixit.az">info@fixit.az</a> with your ID number. For data on your company's server, contact your company's administrator.</p>
+
+			<h3>9. Children</h3>
 			<p>The app is a workplace tool and is not directed at children.</p>
+
+			<h3>10. Changes</h3>
+			<p>When this policy changes, the new text is published at this address and the date above is updated.</p>
 
 			<h3>Contact</h3>
 			<p><a href="mailto:info@fixit.az">info@fixit.az</a></p>
