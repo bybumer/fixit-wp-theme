@@ -114,8 +114,17 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 			<h2><?php esc_html_e( '7. Üçüncü tərəflər', 'fixit' ); ?></h2>
 			<p><?php esc_html_e( 'Yoxdur. Tətbiqdə reklam, analitika, çökmə hesabatı və izləmə vasitəsi istifadə olunmur.', 'fixit' ); ?></p>
 
-			<h2><?php esc_html_e( '8. Saxlama və silmə', 'fixit' ); ?></h2>
-			<p><?php esc_html_e( 'ID serverindəki cihaz qeydi və qoşulma jurnalı xidmətin işləməsi və təhlükəsizliyi üçün saxlanılır. Onların silinməsini istəyirsinizsə, ID nömrənizi yazaraq bu ünvana müraciət edin:', 'fixit' ); ?> <a href="mailto:info@fixit.az">info@fixit.az</a>. <?php esc_html_e( 'Şirkət serverindəki məlumat üçün şirkətinizin administratoruna müraciət edin.', 'fixit' ); ?></p>
+			<h2 id="silme"><?php esc_html_e( '8. Məlumatın silinməsi', 'fixit' ); ?></h2>
+			<p><?php esc_html_e( 'Fixit Remote tətbiqinin ID serverindəki (id.fixit.az) məlumatınızın silinməsini belə istəyə bilərsiniz:', 'fixit' ); ?></p>
+			<ol>
+				<li><?php esc_html_e( 'Bu ünvana "Məlumatın silinməsi" mövzusu ilə yazın:', 'fixit' ); ?> <a href="mailto:info@fixit.az?subject=M%C9%99lumat%C4%B1n%20silinm%C9%99si">info@fixit.az</a></li>
+				<li><?php esc_html_e( 'Məktubda telefonunuzun 9 rəqəmli ID nömrəsini göstərin — o, tətbiqin "Əsas" səhifəsində görünür.', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'Həmin ID-yə aid məlumat 30 gün ərzində silinir və nəticə barədə sizə cavab yazılır.', 'fixit' ); ?></li>
+			</ol>
+			<p><strong><?php esc_html_e( 'Silinir:', 'fixit' ); ?></strong> <?php esc_html_e( 'cihaz qeydi (cihaz kimliyi, ID nömrəsi, cihazın adı, əməliyyat sisteminin versiyası, parolun hash-i, son əlaqə vaxtı) və həmin ID-yə aid qoşulma jurnalı (vaxt, IP ünvanı, nəticə).', 'fixit' ); ?></p>
+			<p><strong><?php esc_html_e( 'Qalmır:', 'fixit' ); ?></strong> <?php esc_html_e( 'ID serverində bu ID-yə aid heç nə saxlanılmır. Ekran görüntüsü heç vaxt saxlanılmır.', 'fixit' ); ?></p>
+			<p><?php esc_html_e( 'Silmə istəyi olmadıqda cihaz qeydi və qoşulma jurnalı xidmətin işləməsi və təhlükəsizliyi üçün saxlanılır.', 'fixit' ); ?></p>
+			<p><?php esc_html_e( 'Telefonda saxlananları tətbiqi silməklə özünüz silə bilərsiniz (bax: 5-ci bənd). Şirkət serverindəki hesab və mesajlar şirkətinizə məxsusdur — onların silinməsi üçün şirkətinizin administratoruna müraciət edin.', 'fixit' ); ?></p>
 
 			<h2><?php esc_html_e( '9. Uşaqlar', 'fixit' ); ?></h2>
 			<p><?php esc_html_e( 'Tətbiq iş aləti kimi nəzərdə tutulub və uşaqlara ünvanlanmır.', 'fixit' ); ?></p>
@@ -194,8 +203,17 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 			<h3>7. Third parties</h3>
 			<p>None. No ads, no analytics, no crash reporting, no tracking.</p>
 
-			<h3>8. Retention and deletion</h3>
-			<p>The device record and connection log on the ID server are kept to run the service and keep it secure. To request their deletion, email <a href="mailto:info@fixit.az">info@fixit.az</a> with your ID number. For data on your company's server, contact your company's administrator.</p>
+			<h3 id="delete">8. Data deletion</h3>
+			<p>To request deletion of your data on the Fixit Remote ID server (id.fixit.az):</p>
+			<ol>
+				<li>Email <a href="mailto:info@fixit.az?subject=Data%20deletion">info@fixit.az</a> with the subject "Data deletion".</li>
+				<li>Include your phone's 9-digit ID number — it is shown on the app's Home ("Əsas") screen.</li>
+				<li>The data for that ID is deleted within 30 days and we reply to confirm.</li>
+			</ol>
+			<p><strong>Deleted:</strong> the device record (device identifier, ID number, device name, OS version, password hash, time of last contact) and the connection log entries for that ID (time, IP address, result).</p>
+			<p><strong>Kept:</strong> nothing for that ID remains on the ID server. Screen images are never stored.</p>
+			<p>Without a deletion request, the device record and connection log are kept to run the service and keep it secure.</p>
+			<p>Data stored on the phone can be removed by uninstalling the app (see section 5). Accounts and messages on your company's server belong to your company — contact your company's administrator to have them deleted.</p>
 
 			<h3>9. Children</h3>
 			<p>The app is a workplace tool and is not directed at children.</p>
