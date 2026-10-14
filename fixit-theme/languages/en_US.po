@@ -1805,8 +1805,8 @@ msgid "Şirkətimizin iş axınına uyğunlaşdırıla bilərmi?"
 msgstr "Can it be adapted to our company's workflow?"
 
 #: inc/faq.php
-msgid "Bəli. Bütün məhsullarımız tamamilə bizim kodumuzdur, kənar sistemə bağlılıq yoxdur. Ona görə əlavə modul və dəyişikliklər mümkündür."
-msgstr "Yes. All our products are entirely our own code with no dependency on an outside system, so extra modules and changes are possible."
+msgid "Bəli. Şirkətinizin iş axınını öyrənib lazım olan əlavə modulları və dəyişiklikləri hazırlayırıq."
+msgstr "Yes. We study your company's workflow and build the extra modules and changes you need."
 
 #: inc/faq.php
 msgid "Quraşdırmadan sonra dəstək verilirmi?"

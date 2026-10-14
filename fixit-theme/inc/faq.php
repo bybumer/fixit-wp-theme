@@ -61,7 +61,7 @@ function fixit_faq_products() {
 		),
 		array(
 			__( 'Şirkətimizin iş axınına uyğunlaşdırıla bilərmi?', 'fixit' ),
-			__( 'Bəli. Bütün məhsullarımız tamamilə bizim kodumuzdur, kənar sistemə bağlılıq yoxdur. Ona görə əlavə modul və dəyişikliklər mümkündür.', 'fixit' ),
+			__( 'Bəli. Şirkətinizin iş axınını öyrənib lazım olan əlavə modulları və dəyişiklikləri hazırlayırıq.', 'fixit' ),
 		),
 		array(
 			__( 'Quraşdırmadan sonra dəstək verilirmi?', 'fixit' ),

@@ -106,7 +106,7 @@ function fixit_content_translations() {
 						'Interface in Azerbaijani, English and Russian',
 					)
 				),
-				'body'     => 'Customer requests (Ticket) and your team\'s own work (Task) live in the same system: the customer writes by email, through the portal or Telegram, your team answers, splits the work into tasks and records the time spent. The system is entirely our own code, so it can be shaped around the way your company works.',
+				'body'     => 'Customer requests (Ticket) and your team\'s own work (Task) live in the same system: the customer writes by email, through the portal or Telegram, your team answers, splits the work into tasks and records the time spent. The system can be shaped around the way your company works.',
 			),
 			'ru' => array(
 				'title'    => 'FIXIT Служба заявок',
@@ -123,7 +123,7 @@ function fixit_content_translations() {
 						'Интерфейс на азербайджанском, английском и русском',
 					)
 				),
-				'body'     => 'Обращения клиентов (Ticket) и собственные задачи команды (Task) находятся в одной системе: клиент пишет по почте, через портал или Telegram, команда отвечает, распределяет работу в виде задач и фиксирует затраченное время. Система полностью написана нами, поэтому её можно подстроить под рабочие процессы вашей компании.',
+				'body'     => 'Обращения клиентов (Ticket) и собственные задачи команды (Task) находятся в одной системе: клиент пишет по почте, через портал или Telegram, команда отвечает, распределяет работу в виде задач и фиксирует затраченное время. Систему можно подстроить под рабочие процессы вашей компании.',
 			),
 		),
 

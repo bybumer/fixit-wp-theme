@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Başlanğıc mətnlərin revizyası.
  * Mətni dəyişəndə bu rəqəmi artırın — toxunulmamış məzmun yenilənir.
  */
-define( 'FIXIT_SEED_REV', 9 );
+define( 'FIXIT_SEED_REV', 10 );
 
 /**
  * Quraşdırmanı icra edir.
@@ -348,29 +348,35 @@ function fixit_product_seed() {
 					'İnterfeys Azərbaycan, ingilis və rus dillərində',
 				)
 			),
-			'body'  => 'Müştəridən gələn müraciətlər (Ticket) və komandanın öz işləri (Task) eyni sistemdə: müştəri e-poçt, portal və ya Telegram ilə yazır, komanda cavab verir, görüləcək işi tapşırıq kimi bölüşdürür və sərf olunan vaxtı qeyd edir. Sistem tamamilə bizim kodumuzdur — şirkətinizin iş axınına uyğunlaşdırmaq mümkündür.',
+			'body'  => 'Müştəridən gələn müraciətlər (Ticket) və komandanın öz işləri (Task) eyni sistemdə: müştəri e-poçt, portal və ya Telegram ilə yazır, komanda cavab verir, görüləcək işi tapşırıq kimi bölüşdürür və sərf olunan vaxtı qeyd edir. Sistemi şirkətinizin iş axınına uyğunlaşdırmaq mümkündür.',
 
 			/*
-			 * Əvvəlki revizyanın mətnləri. Admin məhsulu bir dəfə yadda saxlayıbsa
-			 * (məs. yalnız SEO və ya şəkil üçün), yazı "əl ilə redaktə olunub"
-			 * sayılır və yeni mətn ora düşmür. Sahə bu köhnə mətnlə hərfbəhərf
-			 * eynidirsə, deməli ona toxunulmayıb - həmin sahə yenilənir.
+			 * Əvvəlki revizyaların mətnləri (yenidən köhnəyə). Admin məhsulu bir
+			 * dəfə yadda saxlayıbsa (məs. yalnız SEO və ya şəkil üçün), yazı "əl
+			 * ilə redaktə olunub" sayılır və yeni mətn ora düşmür. Sahə bu köhnə
+			 * mətnlərdən biri ilə hərfbəhərf eynidirsə, deməli ona toxunulmayıb -
+			 * həmin sahə yenilənir. Yalnız müqayisə üçündür, saytda görünmür.
 			 */
 			'was'   => array(
-				'short' => 'Müraciətləri e-poçt, müştəri portalı və daxili kanallardan bir mərkəzdə toplayan helpdesk sistemi. Tam öz kodumuzdur, kənar sistemə bağlılıq yoxdur.',
-				'chips' => 'On-premise, E-poçt inteqrasiyası, Müştəri portalı, Rol icazələri, Azərbaycan dilində',
-				'feat'  => implode(
-					"\n",
-					array(
-						'Ticket yaradılması, təyinatı və statuslar; rol və qrup əsaslı icazələr',
-						'E-poçt inteqrasiyası: gələn məktub avtomatik ticket olur, agentin cavabı müştəriyə mail kimi gedir',
-						'Yazışma zəncirinin düzgün tanınması',
-						'Müştəri portalı: qeydiyyat, e-poçt təsdiqi, parol bərpası, öz müraciətlərini izləmə',
-						'Təhlükəsiz giriş: sessiyalar server tərəfdə saxlanılır',
-						'İnterfeys və bildirişlər tam Azərbaycan dilindədir',
-					)
+				array(
+					'body' => 'Müştəridən gələn müraciətlər (Ticket) və komandanın öz işləri (Task) eyni sistemdə: müştəri e-poçt, portal və ya Telegram ilə yazır, komanda cavab verir, görüləcək işi tapşırıq kimi bölüşdürür və sərf olunan vaxtı qeyd edir. Sistem tamamilə bizim kodumuzdur — şirkətinizin iş axınına uyğunlaşdırmaq mümkündür.',
 				),
-				'body'  => 'Şirkətə gələn bütün müraciətlərin bir yerdə toplandığı sistemdir. Müştəri istəsə e-poçt yazır, istəsə portala daxil olur — hər iki halda müraciət eyni ticketə düşür. Sistem tamamilə bizim kodumuzdur, ona görə şirkətinizin iş axınına uyğun dəyişikliklər etmək mümkündür.',
+				array(
+					'short' => 'Müraciətləri e-poçt, müştəri portalı və daxili kanallardan bir mərkəzdə toplayan helpdesk sistemi. Tam öz kodumuzdur, kənar sistemə bağlılıq yoxdur.',
+					'chips' => 'On-premise, E-poçt inteqrasiyası, Müştəri portalı, Rol icazələri, Azərbaycan dilində',
+					'feat'  => implode(
+						"\n",
+						array(
+							'Ticket yaradılması, təyinatı və statuslar; rol və qrup əsaslı icazələr',
+							'E-poçt inteqrasiyası: gələn məktub avtomatik ticket olur, agentin cavabı müştəriyə mail kimi gedir',
+							'Yazışma zəncirinin düzgün tanınması',
+							'Müştəri portalı: qeydiyyat, e-poçt təsdiqi, parol bərpası, öz müraciətlərini izləmə',
+							'Təhlükəsiz giriş: sessiyalar server tərəfdə saxlanılır',
+							'İnterfeys və bildirişlər tam Azərbaycan dilindədir',
+						)
+					),
+					'body'  => 'Şirkətə gələn bütün müraciətlərin bir yerdə toplandığı sistemdir. Müştəri istəsə e-poçt yazır, istəsə portala daxil olur — hər iki halda müraciət eyni ticketə düşür. Sistem tamamilə bizim kodumuzdur, ona görə şirkətinizin iş axınına uyğun dəyişikliklər etmək mümkündür.',
+				),
 			),
 		),
 		array(
@@ -543,8 +549,8 @@ function fixit_refresh_seeded_products() {
  * Əl ilə yadda saxlanmış məhsulda yalnız toxunulmamış sahələri yeniləyir.
  *
  * "Yenilə" düyməsi mətnə dəyməsə də yazını "redaktə olunmuş" kimi işarələyir.
- * Sahənin dəyəri əvvəlki başlanğıc mətnlə (`was`) eynidirsə, onu admin
- * yazmayıb — yeni mətnlə əvəz etmək təhlükəsizdir. Fərqlidirsə toxunulmur.
+ * Sahənin dəyəri əvvəlki başlanğıc mətnlərdən biri ilə (`was`) eynidirsə, onu
+ * admin yazmayıb — yeni mətnlə əvəz etmək təhlükəsizdir. Fərqlidirsə toxunulmur.
  *
  * Boşluq və HTML fərqləri nəzərə alınmır: redaktor mətni <p> ilə sara və ya
  * sətir sonlarını dəyişə bilər, mənası isə eyni qalır.
@@ -557,12 +563,19 @@ function fixit_refresh_unchanged_fields( $post, $prod ) {
 		return;
 	}
 
-	$was  = $prod['was'];
-	$same = function ( $current, $old ) {
-		$norm = function ( $s ) {
-			return trim( preg_replace( '/\s+/u', ' ', wp_strip_all_tags( (string) $s ) ) );
-		};
-		return $norm( $current ) === $norm( $old );
+	// Bir və ya bir neçə köhnə versiya (siyahı) ola bilər
+	$versions = isset( $prod['was'][0] ) ? $prod['was'] : array( $prod['was'] );
+	$norm     = function ( $s ) {
+		return trim( preg_replace( '/\s+/u', ' ', wp_strip_all_tags( (string) $s ) ) );
+	};
+	// Sahənin dəyəri köhnə versiyalardan birindəki mətnlə eynidirmi
+	$is_old = function ( $current, $key ) use ( $versions, $norm ) {
+		foreach ( $versions as $was ) {
+			if ( isset( $was[ $key ] ) && $norm( $current ) === $norm( $was[ $key ] ) ) {
+				return true;
+			}
+		}
+		return false;
 	};
 
 	$meta = array(
@@ -571,16 +584,16 @@ function fixit_refresh_unchanged_fields( $post, $prod ) {
 		'chips' => '_fixit_chips',
 	);
 	foreach ( $meta as $key => $meta_key ) {
-		if ( isset( $was[ $key ] ) && $same( get_post_meta( $post->ID, $meta_key, true ), $was[ $key ] ) ) {
+		if ( $is_old( get_post_meta( $post->ID, $meta_key, true ), $key ) ) {
 			update_post_meta( $post->ID, $meta_key, $prod[ $key ] );
 		}
 	}
 
 	$update = array();
-	if ( isset( $was['body'] ) && $same( $post->post_content, $was['body'] ) ) {
+	if ( $is_old( $post->post_content, 'body' ) ) {
 		$update['post_content'] = $prod['body'];
 	}
-	if ( isset( $was['short'] ) && $same( $post->post_excerpt, $was['short'] ) ) {
+	if ( $is_old( $post->post_excerpt, 'short' ) ) {
 		$update['post_excerpt'] = $prod['short'];
 	}
 	if ( $update ) {
