@@ -4,7 +4,7 @@ Theme URI: https://fixit.az
 Author: FIXIT
 Author URI: https://fixit.az
 Description: FIXIT şirkəti üçün hazırlanmış peşəkar İKT xidmətləri teması. Tam responsiv, işıqlı/qaranlıq rejim, daxili əlaqə formu, SEO və sürət üçün optimallaşdırılmışdır.
-Version: 1.11.6
+Version: 1.12.0
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -1006,3 +1006,39 @@ html[data-theme="dark"] .svc__tagline{color:var(--accent-400)}
 .policy table{width:100%;border-collapse:collapse;margin:8px 0 14px}
 .policy th,.policy td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--surface-line);vertical-align:top}
 .policy th{color:var(--text);font-weight:600}
+
+/* ============================================================
+   22. Dil keçidi (AZ / EN / RU)
+   ============================================================ */
+.lang-switch{display:flex;gap:2px;padding:3px;border-radius:999px;border:1px solid var(--surface-line);background:var(--bg-soft)}
+.lang-switch a{
+  display:grid;place-items:center;min-width:34px;height:30px;padding:0 9px;border-radius:999px;
+  font-size:.78rem;font-weight:800;letter-spacing:.04em;color:var(--text-mute);
+  transition:background .2s,color .2s;
+}
+.lang-switch a:hover{color:var(--brand-600)}
+.lang-switch a.is-active{
+  background:linear-gradient(100deg,var(--brand-600),var(--accent-500));color:#fff;
+  box-shadow:0 4px 12px rgba(11,99,229,.3);
+}
+.lang-switch--wide{justify-content:center}
+.lang-switch--wide a{flex:1;height:40px;font-size:.9rem}
+
+/* Yuxarı zolaqda: mavi fonda ağ, yığcam */
+.topbar__right{display:flex;align-items:center;gap:14px}
+.lang-switch--topbar{padding:2px;border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.12)}
+.lang-switch--topbar a{min-width:30px;height:24px;padding:0 8px;font-size:.72rem;color:rgba(255,255,255,.85)}
+.lang-switch--topbar a:hover{color:#fff;text-decoration:none}
+.lang-switch--topbar a.is-active{background:#fff;color:var(--brand-600);box-shadow:none}
+
+/* Başlıq: uzun (EN/RU) menyu adlarında loqo sıxılmasın, adlar bir sətirdə qalsın */
+.nav .logo{flex-shrink:0}
+.nav__links a{white-space:nowrap}
+.nav__actions{flex-shrink:0}
+
+/* Menyuda 6 bənd var — 1100px-dən dar ekranda sığmır (hər üç dildə),
+   ona görə burada burger menyuya keçirik. "Müraciət et" düyməsi 900px-ə qədər qalır. */
+@media (max-width:1099px){
+  .nav__links{display:none}
+  .burger{display:grid}
+}

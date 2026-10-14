@@ -163,12 +163,83 @@ function fixit_customize_register( $wp_customize ) {
 	$add( 'fixit_stat_project', __( 'Statistika: layihə', 'fixit' ), 'fixit_home' );
 	$add( 'fixit_stat_years', __( 'Statistika: təcrübə', 'fixit' ), 'fixit_home' );
 	$add( 'fixit_stat_support', __( 'Statistika: dəstək', 'fixit' ), 'fixit_home' );
+
+	/* ---------- Tərcümələr (EN / RU) ---------- */
+	$wp_customize->add_section(
+		'fixit_i18n',
+		array(
+			'title'       => __( 'Tərcümələr (EN / RU)', 'fixit' ),
+			'panel'       => 'fixit_panel',
+			'description' => __( 'Boş qoyulan sahə üçün hazır tərcümə göstərilir (azərbaycanca mətni dəyişməmisinizsə). Azərbaycanca mətni dəyişmisinizsə, burada da yeni tərcüməni yazın.', 'fixit' ),
+		)
+	);
+
+	foreach ( fixit_translatable_mods() as $mod => $label ) {
+		foreach ( array( 'en' => 'English', 'ru' => 'Русский' ) as $code => $lang_name ) {
+			$id = $mod . '_' . $code;
+			$wp_customize->add_setting(
+				$id,
+				array(
+					'default'           => '',
+					'sanitize_callback' => 'wp_kses_post',
+					'transport'         => 'refresh',
+				)
+			);
+			$wp_customize->add_control(
+				$id,
+				array(
+					'label'   => $label . ' — ' . $lang_name,
+					'section' => 'fixit_i18n',
+					'type'    => in_array( $mod, array( 'fixit_hero_title', 'fixit_hero_text' ), true ) ? 'textarea' : 'text',
+				)
+			);
+		}
+	}
 }
 add_action( 'customize_register', 'fixit_customize_register' );
 
 /**
+ * Dilə görə dəyişən mətn ayarları.
+ *
+ * Telefon, e-poçt, linklər və rəqəmlər bütün dillərdə eynidir; bu
+ * siyahıdakı ayarların isə hər dil üçün ayrıca dəyəri ola bilər.
+ */
+function fixit_translatable_mods() {
+	return array(
+		'fixit_hero_title'   => __( 'Böyük başlıq', 'fixit' ),
+		'fixit_hero_text'    => __( 'Başlıq altı mətn', 'fixit' ),
+		'fixit_address_main' => __( 'Baş ofis ünvanı', 'fixit' ),
+		'fixit_hours_main'   => __( 'Baş ofis iş saatları', 'fixit' ),
+		'fixit_address_br'   => __( 'Filial ünvanı', 'fixit' ),
+		'fixit_hours_br'     => __( 'Filial iş saatları', 'fixit' ),
+	);
+}
+
+/**
  * Dəyər oxumaq üçün qısa funksiya (standart dəyərlə).
+ *
+ * İngilis və rus səhifələrində mətn ayarları üçün sıra:
+ *   1. Fərdiləşdir → "FIXIT: tərcümələr" bölməsində yazılan dəyər
+ *   2. Hazır tərcümə (azərbaycanca dəyər standart mətnlə eynidirsə)
+ *   3. Azərbaycanca dəyər
  */
 function fixit_get( $key ) {
-	return get_theme_mod( $key, fixit_default( $key ) );
+	$value = get_theme_mod( $key, fixit_default( $key ) );
+
+	if ( ! function_exists( 'fixit_lang' ) || fixit_is_default_lang() || is_admin() ) {
+		return $value;
+	}
+
+	if ( ! array_key_exists( $key, fixit_translatable_mods() ) ) {
+		return $value;
+	}
+
+	$own = get_theme_mod( $key . '_' . fixit_lang(), '' );
+	if ( '' !== trim( (string) $own ) ) {
+		return $own;
+	}
+
+	$map = fixit_title_translations();
+
+	return isset( $map[ trim( (string) $value ) ] ) ? $map[ trim( (string) $value ) ] : $value;
 }

@@ -135,6 +135,14 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 			<h2><?php esc_html_e( 'Əlaqə', 'fixit' ); ?></h2>
 			<p><?php esc_html_e( 'Sual və müraciətlər üçün:', 'fixit' ); ?> <a href="mailto:info@fixit.az">info@fixit.az</a></p>
 
+			<?php
+			/*
+			 * İngiliscə nüsxə yalnız azərbaycanca səhifədə göstərilir — Google Play
+			 * yoxlayıcıları üçün (Play-dəki link bu ünvana gedir). İngilis və rus
+			 * səhifələrində mətn onsuz da həmin dildədir.
+			 */
+			if ( fixit_is_default_lang() ) :
+				?>
 			<hr>
 
 			<!-- ======================= EN ======================= -->
@@ -223,6 +231,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 
 			<h3>Contact</h3>
 			<p><a href="mailto:info@fixit.az">info@fixit.az</a></p>
+			<?php endif; ?>
 
 		</div>
 	</div>

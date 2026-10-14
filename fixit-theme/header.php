@@ -46,14 +46,18 @@ $fixit_socials  = array(
 			<?php endif; ?>
 		</div>
 
-		<div class="topbar__socials">
-			<?php foreach ( $fixit_socials as $fixit_net => $fixit_url ) : ?>
-				<?php if ( $fixit_url ) : ?>
-					<a href="<?php echo esc_url( $fixit_url ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( ucfirst( $fixit_net ) ); ?>">
-						<?php fixit_icon( $fixit_net ); ?>
-					</a>
-				<?php endif; ?>
-			<?php endforeach; ?>
+		<div class="topbar__right">
+			<?php fixit_lang_switcher( 'lang-switch--topbar' ); ?>
+
+			<div class="topbar__socials">
+				<?php foreach ( $fixit_socials as $fixit_net => $fixit_url ) : ?>
+					<?php if ( $fixit_url ) : ?>
+						<a href="<?php echo esc_url( $fixit_url ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( ucfirst( $fixit_net ) ); ?>">
+							<?php fixit_icon( $fixit_net ); ?>
+						</a>
+					<?php endif; ?>
+				<?php endforeach; ?>
+			</div>
 		</div>
 	</div>
 </div>
@@ -169,6 +173,8 @@ $fixit_socials  = array(
 	?>
 
 	<div class="mobile-menu__foot">
+		<?php fixit_lang_switcher( 'lang-switch--wide' ); ?>
+
 		<a class="btn btn--primary btn--block" href="tel:<?php echo esc_attr( fixit_tel( $fixit_phone ) ); ?>">
 			<?php fixit_icon( 'phone' ); ?><?php echo esc_html( $fixit_phone ); ?>
 		</a>

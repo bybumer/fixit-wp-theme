@@ -1,0 +1,2693 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FIXIT Pro\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Domain: fixit\n"
+
+#: 404.php
+msgid "Xəta 404"
+msgstr "Ошибка 404"
+
+#: 404.php
+msgid "Belə bir səhifə tapılmadı"
+msgstr "Такая страница не найдена"
+
+#: 404.php
+msgid "Axtardığınız səhifə silinmiş və ya ünvanı dəyişmiş ola bilər."
+msgstr "Искомая страница могла быть удалена или её адрес изменился."
+
+#: 404.php
+msgid "Ana səhifəyə qayıt"
+msgstr "Вернуться на главную"
+
+#: 404.php
+msgid "Bizimlə əlaqə"
+msgstr "Связаться с нами"
+
+#: footer.php
+msgid "İKT Həlləri"
+msgstr "ИКТ-решения"
+
+#: footer.php
+msgid "2017-ci ildən etibarən informasiya texnologiyaları sahəsində peşəkar həllər təqdim edən etibarlı tərəfdaşınız."
+msgstr "С 2017 года — ваш надёжный партнёр в сфере информационных технологий с профессиональными решениями."
+
+#: footer.php
+msgid "Xidmətlər"
+msgstr "Услуги"
+
+#: footer.php
+msgid "Keçidlər"
+msgstr "Разделы"
+
+#: footer.php
+msgid "Ana səhifə"
+msgstr "Главная"
+
+#: footer.php
+msgid "Məhsullar"
+msgstr "Продукты"
+
+#: footer.php
+msgid "Haqqımızda"
+msgstr "О нас"
+
+#: footer.php
+msgid "Əlaqə"
+msgstr "Контакты"
+
+#: footer.php
+msgid "Bütün hüquqlar qorunur."
+msgstr "Все права защищены."
+
+#: footer.php
+msgid "Bakı · Cəlilabad"
+msgstr "Баку · Джалилабад"
+
+#: footer.php
+msgid "Zəng et"
+msgstr "Позвонить"
+
+#: footer.php
+msgid "Yuxarı qalx"
+msgstr "Наверх"
+
+#: front-page.php
+msgid "%s-ci ildən etibarən"
+msgstr "С %s года"
+
+#: front-page.php
+msgid "Pulsuz konsultasiya"
+msgstr "Бесплатная консультация"
+
+#: front-page.php
+msgid "Xidmətlərə bax"
+msgstr "Смотреть услуги"
+
+#: front-page.php
+msgid "korporativ müştəri"
+msgstr "корпоративных клиентов"
+
+#: front-page.php
+msgid "tamamlanmış layihə"
+msgstr "завершённых проектов"
+
+#: front-page.php
+msgid "il təcrübə"
+msgstr "лет опыта"
+
+#: front-page.php
+msgid "Xidmət istiqamətlərimiz"
+msgstr "Наши направления"
+
+#: front-page.php
+msgid "aktiv"
+msgstr "активно"
+
+#: front-page.php
+msgid "Kompüter servisi"
+msgstr "Компьютерный сервис"
+
+#: front-page.php
+msgid "pulsuz analiz"
+msgstr "бесплатный анализ"
+
+#: front-page.php
+msgid "Video müşahidə"
+msgstr "Видеонаблюдение"
+
+#: front-page.php
+msgid "uzaqdan baxış"
+msgstr "удалённый просмотр"
+
+#: front-page.php
+msgid "Bulud serverlər"
+msgstr "Облачные серверы"
+
+#: front-page.php
+msgid "yedəkli"
+msgstr "с резервированием"
+
+#: front-page.php
+msgid "IP telefoniya"
+msgstr "IP-телефония"
+
+#: front-page.php
+msgid "3CX / Yeastar"
+msgstr "3CX / Yeastar"
+
+#: front-page.php
+msgid "İT dəstək"
+msgstr "IT-поддержка"
+
+#: front-page.php
+msgid "abunə"
+msgstr "подписка"
+
+#: front-page.php
+msgid "İşlədiyimiz texnologiyalar və tərəfdaşlar"
+msgstr "Технологии и партнёры, с которыми мы работаем"
+
+#: front-page.php
+msgid "Bizə etibar edirlər"
+msgstr "Нам доверяют"
+
+#: front-page.php
+msgid "Bizimlə işləyən şirkətlər"
+msgstr "Компании, работающие с нами"
+
+#: front-page.php
+msgid "Xidmətlərimiz"
+msgstr "Наши услуги"
+
+#: front-page.php
+msgid "Bir tərəfdaş — "
+msgstr "Один партнёр — "
+
+#: front-page.php
+msgid "bütün İKT ehtiyaclarınız"
+msgstr "все ваши ИКТ-задачи"
+
+#: front-page.php
+msgid "Kiçik və böyük şirkətlər üçün müasir informasiya-kommunikasiya texnologiyaları xidmətləri təqdim edirik."
+msgstr "Предоставляем современные информационно-коммуникационные услуги компаниям любого размера."
+
+#: front-page.php
+msgid "Ətraflı"
+msgstr "Подробнее"
+
+#: front-page.php
+msgid "Öz məhsullarımız"
+msgstr "Наши продукты"
+
+#: front-page.php
+msgid "Sıfırdan özümüzün yazdığı"
+msgstr "Программы, написанные нами"
+
+#: front-page.php
+msgid "proqram təminatı"
+msgstr "с нуля"
+
+#: front-page.php
+msgid "Sizin öz serverinizdə işləyir, interfeysi Azərbaycan dilindədir və şirkətinizin iş axınına uyğunlaşdırıla bilir."
+msgstr "Работает на вашем сервере, интерфейс — на вашем языке, и систему можно подстроить под процессы компании."
+
+#: front-page.php
+msgid "Flaqman məhsul"
+msgstr "Флагманский продукт"
+
+#: front-page.php
+msgid "Canlı demo"
+msgstr "Живое демо"
+
+#: front-page.php
+msgid "Qeydiyyatsız: Admin, Agent, Menecer və ya Müştəri kimi bir kliklə daxil olun."
+msgstr "Без регистрации: вход в один клик как Админ, Агент, Менеджер или Клиент."
+
+#: front-page.php
+msgid "FIXIT məhsulu"
+msgstr "Продукт FIXIT"
+
+#: front-page.php
+msgid "Ətraflı və demo"
+msgstr "Подробнее и демо"
+
+#: front-page.php
+msgid "Məhsullar və satış şərtləri"
+msgstr "Продукты и условия"
+
+#: front-page.php
+msgid "Pulsuz proqram"
+msgstr "Бесплатная программа"
+
+#: front-page.php
+msgid "Uzaqdan qoşulma"
+msgstr "Удалённое подключение"
+
+#: front-page.php
+msgid "öz proqramımız"
+msgstr "наша программа"
+
+#: front-page.php
+msgid "Olduğunuz yerdən başqa kompüterə qoşulun: yaxınınıza kömək edin, evdə qalan maşınınıza çıxın, iş yoldaşınızla eyni ekrana baxın. Qeydiyyat yoxdur, ödəniş yoxdur — qoşulmağa isə hər dəfə qarşı tərəf icazə verir."
+msgstr "Подключайтесь к другому компьютеру откуда угодно: помогите близкому, зайдите на оставленную дома машину, посмотрите на один экран с коллегой. Без регистрации и без оплаты — а на каждое подключение разрешение даёт другая сторона."
+
+#: front-page.php
+msgid "Pulsuz yüklə"
+msgstr "Скачать бесплатно"
+
+#: front-page.php
+msgid "Tezliklə"
+msgstr "Скоро"
+
+#: front-page.php
+msgid "Necə işləyir"
+msgstr "Как это работает"
+
+#: front-page.php
+msgid "Hər iki tərəf proqramı yükləyir"
+msgstr "Обе стороны скачивают программу"
+
+#: front-page.php
+msgid "Qarşı tərəfin nömrəsini yazırsınız"
+msgstr "Вы вводите номер другой стороны"
+
+#: front-page.php
+msgid "O, icazə verir — ekran açılır"
+msgstr "Он подтверждает — экран открывается"
+
+#: front-page.php
+msgid "Niyə FIXIT?"
+msgstr "Почему FIXIT?"
+
+#: front-page.php
+msgid "Texnologiyanı sizin üçün"
+msgstr "Делаем технологии"
+
+#: front-page.php
+msgid "sadə və dayanıqlı"
+msgstr "простыми и надёжными"
+
+#: front-page.php
+msgid "edirik"
+msgstr "для вас"
+
+#: front-page.php
+msgid "Beynəlxalq sertifikatlı mühəndislərdən ibarət komandamız problemi yaranmamışdan qabaq görməyə çalışır. Bizim üçün əsas göstərici — sizin sisteminizin fasiləsiz işləməsidir."
+msgstr "Наша команда инженеров с международными сертификатами старается заметить проблему до её появления. Главный показатель для нас — бесперебойная работа вашей системы."
+
+#: front-page.php
+msgid "Sertifikatlı mühəndis komandası"
+msgstr "Команда сертифицированных инженеров"
+
+#: front-page.php
+msgid "Hər istiqamət üzrə ixtisaslaşmış, təcrübəli mütəxəssislər."
+msgstr "Опытные специалисты по каждому направлению."
+
+#: front-page.php
+msgid "Operativ reaksiya"
+msgstr "Быстрая реакция"
+
+#: front-page.php
+msgid "Uzaqdan dəstək dəqiqələr içində, yerində dəstək razılaşdırılmış müddətdə."
+msgstr "Удалённая поддержка — в течение минут, выезд — в согласованный срок."
+
+#: front-page.php
+msgid "Şəffaf qiymət"
+msgstr "Прозрачная цена"
+
+#: front-page.php
+msgid "Diaqnostika pulsuz, iş başlamazdan əvvəl dəqiq smeta təqdim olunur."
+msgstr "Диагностика бесплатна, точная смета предоставляется до начала работ."
+
+#: front-page.php
+msgid "Vahid məsuliyyət"
+msgstr "Единая ответственность"
+
+#: front-page.php
+msgid "Kamera, server, mail, telefoniya — hamısı bir komandanın nəzarətində."
+msgstr "Камеры, серверы, почта, телефония — всё под контролем одной команды."
+
+#: front-page.php
+msgid "Haqqımızda ətraflı"
+msgstr "Подробнее о нас"
+
+#: front-page.php
+msgid "əməkdaşlıq etdiyimiz şirkət"
+msgstr "компаний-партнёров"
+
+#: front-page.php
+msgid "uğurla tamamlanmış layihə"
+msgstr "успешно завершённых проектов"
+
+#: front-page.php
+msgid "il sahə təcrübəsi"
+msgstr "лет отраслевого опыта"
+
+#: front-page.php
+msgid "monitorinq və dəstək"
+msgstr "мониторинг и поддержка"
+
+#: front-page.php
+msgid "İş prosesi"
+msgstr "Процесс работы"
+
+#: front-page.php
+msgid "Necə işləyirik?"
+msgstr "Как мы работаем?"
+
+#: front-page.php
+msgid "İlk müraciətdən daimi dəstəyə qədər — sadə və şəffaf dörd addım."
+msgstr "От первого обращения до постоянной поддержки — четыре простых и прозрачных шага."
+
+#: front-page.php
+msgid "Müraciət"
+msgstr "Заявка"
+
+#: front-page.php
+msgid "Zəng, mesaj və ya formu doldurursunuz. Ehtiyacınızı dinləyirik."
+msgstr "Вы звоните, пишете или заполняете форму. Мы выслушиваем вашу задачу."
+
+#: front-page.php
+msgid "Analiz"
+msgstr "Анализ"
+
+#: front-page.php
+msgid "Mövcud infrastruktur pulsuz yoxlanılır, problemlər müəyyən edilir."
+msgstr "Бесплатно проверяем текущую инфраструктуру и выявляем проблемы."
+
+#: front-page.php
+msgid "Həll"
+msgstr "Решение"
+
+#: front-page.php
+msgid "Uyğun texniki həll və dəqiq smeta təqdim olunur, iş icra edilir."
+msgstr "Предлагаем подходящее техническое решение с точной сметой и выполняем работу."
+
+#: front-page.php
+msgid "Dəstək"
+msgstr "Поддержка"
+
+#: front-page.php
+msgid "Quraşdırmadan sonra da yanınızdayıq: monitorinq və müntəzəm baxış."
+msgstr "Остаёмся рядом и после внедрения: мониторинг и регулярные проверки."
+
+#: front-page.php
+msgid "Müştəri rəyləri"
+msgstr "Отзывы клиентов"
+
+#: front-page.php
+msgid "Bizə etibar edənlər"
+msgstr "Те, кто нам доверяет"
+
+#: front-page.php
+msgid "Tez-tez verilən suallar"
+msgstr "Частые вопросы"
+
+#: front-page.php
+msgid "Ağlınıza gələn suallar"
+msgstr "Вопросы, которые могут возникнуть"
+
+#: front-page.php
+msgid "İnfrastrukturunuzu pulsuz yoxlayaq"
+msgstr "Бесплатно проверим вашу инфраструктуру"
+
+#: front-page.php
+msgid "Bir zəng və ya mesaj kifayətdir. Mütəxəssisimiz ehtiyacınızı dinləyib uyğun həlli təklif edəcək."
+msgstr "Достаточно одного звонка или сообщения. Наш специалист выслушает и предложит подходящее решение."
+
+#: front-page.php
+msgid "Müraciət göndər"
+msgstr "Отправить заявку"
+
+#: header.php
+msgid "Əsas məzmuna keç"
+msgstr "Перейти к основному содержимому"
+
+#: header.php
+msgid "Əsas menyu"
+msgstr "Главное меню"
+
+#: header.php
+msgid "İşıqlı/qaranlıq rejim"
+msgstr "Светлая/тёмная тема"
+
+#: header.php
+msgid "Müraciət et"
+msgstr "Оставить заявку"
+
+#: header.php
+msgid "Menyu"
+msgstr "Меню"
+
+#: header.php
+msgid "Bağla"
+msgstr "Закрыть"
+
+#: index.php
+msgid "Axtarış: %s"
+msgstr "Поиск: %s"
+
+#: index.php
+msgid "Bloq"
+msgstr "Блог"
+
+#: index.php
+msgid "Naviqasiya"
+msgstr "Навигация"
+
+#: index.php
+msgid "Yazılar"
+msgstr "Записи"
+
+#: index.php
+msgid "Oxu"
+msgstr "Читать"
+
+#: index.php
+msgid "Əvvəlki"
+msgstr "Назад"
+
+#: index.php
+msgid "Növbəti"
+msgstr "Вперёд"
+
+#: index.php
+msgid "Nəticə tapılmadı"
+msgstr "Ничего не найдено"
+
+#: index.php
+msgid "Başqa açar sözlə yenidən cəhd edin."
+msgstr "Попробуйте другое ключевое слово."
+
+#: searchform.php
+msgid "Axtar"
+msgstr "Искать"
+
+#: searchform.php
+msgid "Axtarış…"
+msgstr "Поиск…"
+
+#: single-fixit_product.php
+msgid "Əsas imkanlar"
+msgstr "Основные возможности"
+
+#: single-fixit_product.php
+msgid "Canlı demonu aç"
+msgstr "Открыть живое демо"
+
+#: single-fixit_product.php
+msgid "Demonu sına"
+msgstr "Попробовать демо"
+
+#: single-fixit_product.php
+msgid "Təklif istə"
+msgstr "Запросить предложение"
+
+#: single-fixit_product.php
+msgid "Nəyi həll edir"
+msgstr "Что решает"
+
+#: single-fixit_product.php
+msgid "Tanış gəlir?"
+msgstr "Знакомо?"
+
+#: single-fixit_product.php
+msgid "Modullar"
+msgstr "Модули"
+
+#: single-fixit_product.php
+msgid "Ortaq mühərrik:"
+msgstr "Общий механизм:"
+
+#: single-fixit_product.php
+msgid "İmkanlar"
+msgstr "Возможности"
+
+#: single-fixit_product.php
+msgid "Nələr edə bilirsiniz"
+msgstr "Что вы можете делать"
+
+#: single-fixit_product.php
+msgid "Ekran görüntüləri"
+msgstr "Скриншоты"
+
+#: single-fixit_product.php
+msgid "Necə görünür"
+msgstr "Как это выглядит"
+
+#: single-fixit_product.php
+msgid "Şəkillər onlayn demodan çəkilib — eyni ekranları özünüz də aça bilərsiniz."
+msgstr "Снимки сделаны в онлайн-демо — те же экраны вы можете открыть сами."
+
+#: single-fixit_product.php
+msgid "İş prinsipi"
+msgstr "Принцип работы"
+
+#: single-fixit_product.php
+msgid "Təhlükəsizlik"
+msgstr "Безопасность"
+
+#: single-fixit_product.php
+msgid "Məlumatınız"
+msgstr "Ваши данные"
+
+#: single-fixit_product.php
+msgid "sizdə qalır"
+msgstr "остаются у вас"
+
+#: single-fixit_product.php
+msgid "Proqram sizin öz serverinizdə quraşdırılır. Kənar bulud xidmətindən asılılıq yoxdur."
+msgstr "Программа устанавливается на ваш сервер. Зависимости от сторонних облаков нет."
+
+#: single-fixit_product.php
+msgid "Onlayn demo"
+msgstr "Онлайн-демо"
+
+#: single-fixit_product.php
+msgid "Özünüz sınayın"
+msgstr "Попробуйте сами"
+
+#: single-fixit_product.php
+msgid "Demo nüsxəsi nümunə məlumatlarla doldurulub. Brauzerdə açın və sərbəst yoxlayın — heç nə quraşdırmaq lazım deyil."
+msgstr "Демо заполнено примерными данными. Откройте в браузере и свободно изучайте — ничего устанавливать не нужно."
+
+#: single-fixit_product.php
+msgid "Formu doldurun — sizə şəxsi demo girişi göndərək. Nümunə məlumatlarla doldurulmuş sistemdə sərbəst işləyə bilərsiniz; istəsəniz mütəxəssisimiz canlı da göstərər."
+msgstr "Заполните форму — пришлём персональный доступ к демо. В системе с примерными данными можно работать свободно, а при желании наш специалист всё покажет вживую."
+
+#: single-fixit_product.php
+msgid "Demonu açın"
+msgstr "Откройте демо"
+
+#: single-fixit_product.php
+msgid "Nümunə məlumatlarla sərbəst işləyin"
+msgstr "Свободно работайте с примерными данными"
+
+#: single-fixit_product.php
+msgid "Sualınız olsa — bizə yazın"
+msgstr "Появился вопрос — напишите нам"
+
+#: single-fixit_product.php
+msgid "Formu doldurun"
+msgstr "Заполните форму"
+
+#: single-fixit_product.php
+msgid "E-poçtunuza demo girişi gəlir"
+msgstr "Доступ к демо придёт на почту"
+
+#: single-fixit_product.php
+msgid "Brauzerdə açın və sınayın"
+msgstr "Откройте в браузере и попробуйте"
+
+#: single-fixit_product.php
+msgid "Demonu aç"
+msgstr "Открыть демо"
+
+#: single-fixit_product.php
+msgid "Sayt"
+msgstr "Сайт"
+
+#: single-fixit_product.php
+msgid "Adınız"
+msgstr "Ваше имя"
+
+#: single-fixit_product.php
+msgid "Şirkət"
+msgstr "Компания"
+
+#: single-fixit_product.php
+msgid "E-poçt"
+msgstr "Эл. почта"
+
+#: single-fixit_product.php
+msgid "Telefon"
+msgstr "Телефон"
+
+#: single-fixit_product.php
+msgid "Demo girişi istə"
+msgstr "Запросить доступ к демо"
+
+#: single-fixit_product.php
+msgid "Məlumatlarınız yalnız demo girişi göndərmək və sizinlə əlaqə üçün istifadə olunur."
+msgstr "Ваши данные используются только для отправки доступа к демо и связи с вами."
+
+#: single-fixit_product.php
+msgid "Suallar"
+msgstr "Вопросы"
+
+#: single-fixit_product.php
+msgid "Tez-tez soruşulanlar"
+msgstr "Часто спрашивают"
+
+#: single-fixit_product.php
+msgid "Digər məhsullarımız"
+msgstr "Другие наши продукты"
+
+#: single-fixit_product.php
+msgid "Bunlar da maraqlı ola bilər"
+msgstr "Это тоже может быть интересно"
+
+#: single-fixit_product.php
+msgid "Şirkətinizə uyğun təklif hazırlayaq"
+msgstr "Подготовим предложение для вашей компании"
+
+#: single-fixit_product.php
+msgid "İstifadəçi sayınızı və ehtiyacınızı deyin — konkret və şəffaf təklif göndərək."
+msgstr "Назовите число пользователей и ваши задачи — пришлём конкретное и прозрачное предложение."
+
+#: template-about.php
+msgid "Texnologiyada etibarlı tərəfdaşınız"
+msgstr "Ваш надёжный партнёр в технологиях"
+
+#: template-about.php
+msgid "2017-ci ildən bəri Azərbaycanda müəssisələrin İT infrastrukturunu qururuq, qoruyuruq və inkişaf etdiririk."
+msgstr "С 2017 года мы строим, защищаем и развиваем IT-инфраструктуру компаний в Азербайджане."
+
+#: template-about.php
+msgid "Kimik?"
+msgstr "Кто мы"
+
+#: template-about.php
+msgid "Sizin uğurunuz"
+msgstr "Ваш успех"
+
+#: template-about.php
+msgid "bizim ən böyük nailiyyətimizdir"
+msgstr "— наше главное достижение"
+
+#: template-about.php
+msgid "FixIT olaraq, 2017-ci ildən etibarən informasiya texnologiyaları sahəsində peşəkar həllər təqdim edən etibarlı tərəfdaşıq. Təcrübəli və beynəlxalq sertifikatlı mühəndislərdən ibarət komandamız müştərilərimizin texnoloji tələblərini qarşılamaq üçün daim yeniliklər tətbiq edir və innovativ yanaşmalar təklif edir."
+msgstr "С 2017 года FixIT — надёжный партнёр, предлагающий профессиональные решения в сфере информационных технологий. Наша команда опытных инженеров с международными сертификатами постоянно внедряет новое и предлагает современные подходы для задач наших клиентов."
+
+#: template-about.php
+msgid "Fəaliyyət göstərdiyimiz müddətdə 40-dan çox şirkətlə uğurla əməkdaşlıq etmiş, 30-dan çox layihəni yüksək keyfiyyətlə tamamlamışıq. Xidmətlərimiz arasında İT dəstək, təhlükəsizlik sistemləri, bulud həlləri, server idarəetməsi, video müşahidə sistemləri və bir çox digər texnoloji həllər yer alır."
+msgstr "За время работы мы успешно сотрудничали более чем с 40 компаниями и качественно завершили свыше 30 проектов. В числе наших услуг: IT-поддержка, системы безопасности, облачные решения, администрирование серверов, видеонаблюдение и многое другое."
+
+#: template-about.php
+msgid "FixIT-in əsas məqsədi müştərilərimizə davamlı, təhlükəsiz və effektiv texnoloji həllər təqdim edərək onların biznesinin rəqabət üstünlüyünü artırmaqdır."
+msgstr "Главная цель FixIT — предоставлять клиентам устойчивые, безопасные и эффективные технологические решения, усиливающие конкурентные преимущества их бизнеса."
+
+#: template-about.php
+msgid "fəaliyyətə başlama ili"
+msgstr "год начала работы"
+
+#: template-about.php
+msgid "Dəyərlərimiz"
+msgstr "Наши ценности"
+
+#: template-about.php
+msgid "İşimizin əsasında duran prinsiplər"
+msgstr "Принципы, на которых построена наша работа"
+
+#: template-about.php
+msgid "Etibarlılıq"
+msgstr "Надёжность"
+
+#: template-about.php
+msgid "Verdiyimiz sözü vaxtında və tam yerinə yetiririk."
+msgstr "Выполняем обещанное в срок и полностью."
+
+#: template-about.php
+msgid "Operativlik"
+msgstr "Оперативность"
+
+#: template-about.php
+msgid "Problem böyüməmiş müdaxilə edirik — dayanma vaxtı minimum olur."
+msgstr "Вмешиваемся до того, как проблема вырастет, — простой сводится к минимуму."
+
+#: template-about.php
+msgid "Məlumatlarınızın qorunması hər layihədə birinci prioritetdir."
+msgstr "Защита ваших данных — приоритет номер один в каждом проекте."
+
+#: template-about.php
+msgid "Səmərəlilik"
+msgstr "Эффективность"
+
+#: template-about.php
+msgid "İT xərclərini analiz edib optimallaşdırırıq, artıq xərcə yol vermirik."
+msgstr "Анализируем и оптимизируем IT-расходы — лишних трат не допускаем."
+
+#: template-about.php
+msgid "Ofislərimiz"
+msgstr "Наши офисы"
+
+#: template-about.php
+msgid "Bizi harada tapa bilərsiniz?"
+msgstr "Где нас найти"
+
+#: template-about.php
+msgid "Baş ofis"
+msgstr "Главный офис"
+
+#: template-about.php
+msgid "Cəlilabad filialı"
+msgstr "Филиал в Джалилабаде"
+
+#: template-about.php
+msgid "Komandamızla tanış olmaq istəyirsiniz?"
+msgstr "Хотите познакомиться с нашей командой?"
+
+#: template-about.php
+msgid "Bir görüş təyin edək — infrastrukturunuzu birlikdə nəzərdən keçirək."
+msgstr "Давайте назначим встречу и вместе разберём вашу инфраструктуру."
+
+#: template-about.php
+msgid "Əlaqə saxla"
+msgstr "Связаться"
+
+#: template-contact.php
+msgid "Bizimlə əlaqə saxlayın"
+msgstr "Свяжитесь с нами"
+
+#: template-contact.php
+msgid "Peşəkar xidmətlərimiz üçün bizə yazın və ya zəng edin. Sizin məmnuniyyətiniz bizim prioritetimizdir."
+msgstr "Напишите или позвоните нам по поводу наших услуг. Ваша удовлетворённость — наш приоритет."
+
+#: template-contact.php
+msgid "Birbaşa yazın"
+msgstr "Написать напрямую"
+
+#: template-contact.php
+msgid "Ofislər"
+msgstr "Офисы"
+
+#: template-contact.php
+msgid "Müraciət göndərin"
+msgstr "Отправить заявку"
+
+#: template-contact.php
+msgid "Formu doldurun — iş saatları ərzində sizinlə əlaqə saxlayaq."
+msgstr "Заполните форму — свяжемся с вами в рабочее время."
+
+#: template-contact.php
+msgid "Mövzu"
+msgstr "Тема"
+
+#: template-contact.php
+msgid "— Mövzu seçin —"
+msgstr "— Выберите тему —"
+
+#: template-contact.php
+msgid "Məhsullar (demo / təklif)"
+msgstr "Продукты (демо / предложение)"
+
+#: template-contact.php
+msgid "Digər"
+msgstr "Другое"
+
+#: template-contact.php
+msgid "Mesajınız"
+msgstr "Ваше сообщение"
+
+#: template-contact.php
+msgid "Ehtiyacınızı qısa şəkildə yazın…"
+msgstr "Кратко опишите вашу задачу…"
+
+#: template-contact.php
+msgid "Göndər"
+msgstr "Отправить"
+
+#: template-contact.php
+msgid "Məlumatlarınız yalnız müraciətinizə cavab vermək üçün istifadə olunur."
+msgstr "Ваши данные используются только для ответа на обращение."
+
+#: template-contact.php
+msgid "FIXIT ofisinin xəritədə yeri"
+msgstr "Расположение офиса FIXIT на карте"
+
+#: template-products.php
+msgid "Bizim hazırladığımız proqram təminatı"
+msgstr "Программное обеспечение, которое мы создаём"
+
+#: template-products.php
+msgid "Xidmətlərimizlə yanaşı, öz komandamızın sıfırdan yazdığı məhsulları təqdim edirik. Hamısı Azərbaycan dilindədir, sizin öz serverinizdə işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir."
+msgstr "Помимо услуг мы предлагаем продукты, написанные нашей командой с нуля. Они работают на вашем сервере и настраиваются под процессы вашей компании."
+
+#: template-products.php
+msgid "Məlumat sizdə qalır"
+msgstr "Данные остаются у вас"
+
+#: template-products.php
+msgid "Öz serverinizdə işləyir"
+msgstr "Работает на вашем сервере"
+
+#: template-products.php
+msgid "Fərdiləşdirilə bilir"
+msgstr "Поддаётся доработке"
+
+#: template-products.php
+msgid "Mənbə kod bizimdir"
+msgstr "Исходный код — наш"
+
+#: template-products.php
+msgid "Azərbaycan dilində"
+msgstr "На вашем языке"
+
+#: template-products.php
+msgid "İnterfeys və dəstək"
+msgstr "Интерфейс и поддержка"
+
+#: template-products.php
+msgid "Quraşdırma daxil"
+msgstr "Установка включена"
+
+#: template-products.php
+msgid "Təlim və texniki dəstək"
+msgstr "Обучение и техническая поддержка"
+
+#: template-products.php
+msgid "Satış şərtləri"
+msgstr "Условия продажи"
+
+#: template-products.php
+msgid "Lisenziya"
+msgstr "Лицензия"
+
+#: template-products.php
+msgid "öz serverinizdə"
+msgstr "на вашем сервере"
+
+#: template-products.php
+msgid "Bütün məhsullarımız on-premise modeldə təqdim olunur: proqram sizin öz serverinizdə quraşdırılır və bütün məlumat şirkətinizin daxilində qalır. Kənar bulud xidmətindən asılılıq yoxdur."
+msgstr "Все наши продукты поставляются on-premise: программа устанавливается на ваш сервер, и все данные остаются внутри компании. Зависимости от сторонних облаков нет."
+
+#: template-products.php
+msgid "Öz infrastrukturunuzda"
+msgstr "На вашей инфраструктуре"
+
+#: template-products.php
+msgid "Proqram sizin serverinizə quraşdırılır; məlumat bazası da sizdə saxlanılır."
+msgstr "Программа устанавливается на ваш сервер, база данных тоже хранится у вас."
+
+#: template-products.php
+msgid "Lisenziya ehtiyaca görə"
+msgstr "Лицензия под ваши задачи"
+
+#: template-products.php
+msgid "Qiymət istifadəçi sayı və lazım olan modullara görə hesablanır — hər şirkət üçün ayrıca təklif hazırlayırıq."
+msgstr "Цена рассчитывается по числу пользователей и нужным модулям — для каждой компании готовим отдельное предложение."
+
+#: template-products.php
+msgid "Quraşdırma və köçürmə"
+msgstr "Установка и перенос"
+
+#: template-products.php
+msgid "Sistemin qurulması, mövcud məlumatların köçürülməsi və ilkin ayarlar bizim üzərimizdədir."
+msgstr "Развёртывание системы, перенос имеющихся данных и первичная настройка — на нас."
+
+#: template-products.php
+msgid "Təlim və dəstək"
+msgstr "Обучение и поддержка"
+
+#: template-products.php
+msgid "Komandanız üçün təlim keçirilir, sonrasında texniki dəstək paketi təklif olunur."
+msgstr "Проводим обучение вашей команды, далее предлагаем пакет технической поддержки."
+
+#: template-products.php
+msgid "Yeniliklər"
+msgstr "Обновления"
+
+#: template-products.php
+msgid "Məhsullar daim inkişaf etdirilir; yeni versiyalar dəstək müddəti ərzində təqdim olunur."
+msgstr "Продукты постоянно развиваются; новые версии предоставляются в период поддержки."
+
+#: template-products.php
+msgid "Qiymət"
+msgstr "Цена"
+
+#: template-products.php
+msgid "Təklif fərdi hazırlanır"
+msgstr "Предложение готовится индивидуально"
+
+#: template-products.php
+msgid "Sabit qiymət siyahısı vermirik, çünki hər şirkətin istifadəçi sayı, modul ehtiyacı və mövcud infrastrukturu fərqlidir. Qısa bir söhbətdən sonra sizə konkret və şəffaf təklif təqdim edirik."
+msgstr "Фиксированного прайса у нас нет: у каждой компании своё число пользователей, свой набор модулей и своя инфраструктура. После короткого разговора мы даём конкретное и прозрачное предложение."
+
+#: template-products.php
+msgid "Canlı demo — məhsulu real işdə görürsünüz"
+msgstr "Живое демо — продукт в реальной работе"
+
+#: template-products.php
+msgid "Ehtiyacların birgə təhlili"
+msgstr "Совместный анализ потребностей"
+
+#: template-products.php
+msgid "Yazılı və detallı kommersiya təklifi"
+msgstr "Письменное развёрнутое коммерческое предложение"
+
+#: template-products.php
+msgid "Sınaq quraşdırması imkanı"
+msgstr "Возможность тестовой установки"
+
+#: template-products.php
+msgid "Proses"
+msgstr "Процесс"
+
+#: template-products.php
+msgid "Demodan istifadəyə qədər"
+msgstr "От демо до ежедневной работы"
+
+#: template-products.php
+msgid "Qərar verməzdən əvvəl məhsulu real işdə görürsünüz — sonra addım-addım irəliləyirik."
+msgstr "Вы видите продукт в деле до принятия решения — дальше движемся шаг за шагом."
+
+#: template-products.php
+msgid "Demo"
+msgstr "Демо"
+
+#: template-products.php
+msgid "Onlayn demonu özünüz sınayırsınız və ya məhsulu canlı göstəririk."
+msgstr "Вы сами пробуете онлайн-демо, либо мы показываем продукт вживую."
+
+#: template-products.php
+msgid "Təhlil və təklif"
+msgstr "Анализ и предложение"
+
+#: template-products.php
+msgid "Ehtiyaclarınızı öyrənib yazılı kommersiya təklifi hazırlayırıq."
+msgstr "Изучаем ваши потребности и готовим письменное коммерческое предложение."
+
+#: template-products.php
+msgid "Quraşdırma"
+msgstr "Установка"
+
+#: template-products.php
+msgid "Sistemi serverinizə qurur, məlumatları köçürür, ayarlayırıq."
+msgstr "Устанавливаем систему на ваш сервер, переносим данные и настраиваем."
+
+#: template-products.php
+msgid "Komandanıza istifadəni öyrədir, sonra da yanınızda oluruq."
+msgstr "Обучаем вашу команду работе и остаёмся рядом после запуска."
+
+#: template-products.php
+msgid "Məhsullar haqqında"
+msgstr "О продуктах"
+
+#: template-products.php
+msgid "Məhsulu canlı görmək istəyirsiniz?"
+msgstr "Хотите увидеть продукт вживую?"
+
+#: template-products.php
+msgid "Sizə uyğun vaxtda demo təşkil edək — 20-30 dəqiqə kifayətdir."
+msgstr "Проведём демо в удобное для вас время — хватит 20-30 минут."
+
+#: template-products.php
+msgid "Demo təyin et"
+msgstr "Записаться на демо"
+
+#: template-remote.php
+msgid "Olduğunuz yerdən lazım olan kompüterə qoşulun. Uzaqdakı ekranı görün, siçanı və klaviaturanı idarə edin — sanki onun qarşısında oturmusunuz."
+msgstr "Подключайтесь к нужному компьютеру откуда угодно. Видите удалённый экран, управляете мышью и клавиатурой — будто сидите прямо перед ним."
+
+#: template-remote.php
+msgid "Fərdi istifadə — pulsuz"
+msgstr "Для личного использования — бесплатно"
+
+#: template-remote.php
+msgid "Biznes — öz serverinizdə"
+msgstr "Для бизнеса — на вашем сервере"
+
+#: template-remote.php
+msgid "Fərdi istifadə"
+msgstr "Личное использование"
+
+#: template-remote.php
+msgid "Pulsuz yükləyin və qoşulun"
+msgstr "Скачайте бесплатно и подключайтесь"
+
+#: template-remote.php
+msgid "Yaxınınıza kömək edin, evdə qalan kompüterinizə çıxın, iş yoldaşınızla eyni ekrana baxın. Qeydiyyat yoxdur, abunə yoxdur, məhdudiyyət yoxdur."
+msgstr "Помогите близкому, зайдите на оставленный дома компьютер, смотрите на один экран с коллегой. Без регистрации, без подписки, без ограничений."
+
+#: template-remote.php
+msgid "Windows üçün"
+msgstr "Для Windows"
+
+#: template-remote.php
+msgid "Windows 10 və 11 (64-bit). Quraşdırıldıqdan sonra proqram həm qoşulmaq, həm də qoşulmağa icazə vermək üçün hazırdır."
+msgstr "Windows 10 и 11 (64-bit). После установки программа готова и подключаться, и разрешать подключение к себе."
+
+#: template-remote.php
+msgid "Versiya %1$s · %2$s"
+msgstr "Версия %1$s · %2$s"
+
+#: template-remote.php
+msgid "Windows 10 və 11 (64-bit) üçün proqram üzərində işləyirik. Hazır olanda buradan yükləmək mümkün olacaq."
+msgstr "Мы работаем над программой для Windows 10 и 11 (64-bit). Когда она будет готова, её можно будет скачать здесь."
+
+#: template-remote.php
+msgid "Xəbər verin"
+msgstr "Сообщить мне"
+
+#: template-remote.php
+msgid "Qeydiyyat, hesab və ödəniş yoxdur"
+msgstr "Без регистрации, аккаунта и оплаты"
+
+#: template-remote.php
+msgid "Quraşdırma bir neçə saniyə çəkir"
+msgstr "Установка занимает несколько секунд"
+
+#: template-remote.php
+msgid "İstədiyiniz vaxt tamamilə dayandıra bilərsiniz"
+msgstr "Вы можете полностью остановить её в любой момент"
+
+#: template-remote.php
+msgid "macOS üçün"
+msgstr "Для macOS"
+
+#: template-remote.php
+msgid "macOS üçün proqram. Quraşdırıldıqdan sonra qoşulmaq və qoşulmağa icazə vermək mümkündür."
+msgstr "Программа для macOS. После установки можно подключаться и разрешать подключение к себе."
+
+#: template-remote.php
+msgid "Mac üçün versiya üzərində işləyirik."
+msgstr "Мы работаем над версией для Mac."
+
+#: template-remote.php
+msgid "Tezliklə paylaşılacaq"
+msgstr "Скоро будет доступно"
+
+#: template-remote.php
+msgid "Hazır olanda xəbər verin"
+msgstr "Сообщите, когда будет готово"
+
+#: template-remote.php
+msgid "İndilik Windows proqramı ilə qoşulmaq olar"
+msgstr "Пока можно подключаться через программу для Windows"
+
+#: template-remote.php
+msgid "Telefon və planşet üçün"
+msgstr "Для телефонов и планшетов"
+
+#: template-remote.php
+msgid "Android və iOS tətbiqləri hazırlanır. Hazır olanda bu QR kodları telefonla skan edib birbaşa mağazadan yükləyəcəksiniz."
+msgstr "Приложения для Android и iOS в разработке. Когда они будут готовы, отсканируйте эти QR-коды телефоном и скачайте прямо из магазина."
+
+#: template-remote.php
+msgid "Tətbiqin məxfilik siyasəti"
+msgstr "Политика конфиденциальности приложения"
+
+#: template-remote.php
+msgid "Android"
+msgstr "Android"
+
+#: template-remote.php
+msgid "Google Play"
+msgstr "Google Play"
+
+#: template-remote.php
+msgid "iPhone / iPad"
+msgstr "iPhone / iPad"
+
+#: template-remote.php
+msgid "App Store"
+msgstr "App Store"
+
+#: template-remote.php
+msgid "%s QR kodu"
+msgstr "QR-код %s"
+
+#: template-remote.php
+msgid "%s-dən yüklə"
+msgstr "Скачать в %s"
+
+#: template-remote.php
+msgid "Üç addım"
+msgstr "Три шага"
+
+#: template-remote.php
+msgid "Başqa kompüterə necə qoşulursunuz"
+msgstr "Как подключиться к другому компьютеру"
+
+#: template-remote.php
+msgid "Proqram hər iki kompüterdə olmalıdır: birindən qoşulursunuz, o birində isə qoşulmağa icazə verilir."
+msgstr "Программа должна быть на обоих компьютерах: с одного вы подключаетесь, на другом дают разрешение."
+
+#: template-remote.php
+msgid "1. Hər iki tərəf yükləyir"
+msgstr "1. Обе стороны скачивают программу"
+
+#: template-remote.php
+msgid "Proqramı açan kimi pəncərədə həmin kompüterin nömrəsi (ID) və şifrəsi görünür."
+msgstr "Сразу после запуска в окне видны номер (ID) этого компьютера и пароль."
+
+#: template-remote.php
+msgid "2. Nömrəni yazırsınız"
+msgstr "2. Вы вводите номер"
+
+#: template-remote.php
+msgid "Qarşı tərəfin nömrəsini yazıb \"Qoşul\" basırsınız. Nömrəni o sizə necə rahatdırsa deyir — telefonla, mesajla."
+msgstr "Вы вводите номер другой стороны и нажимаете «Подключиться». Номер вам сообщают любым удобным способом — по телефону или в сообщении."
+
+#: template-remote.php
+msgid "3. O, icazə verir"
+msgstr "3. Он даёт разрешение"
+
+#: template-remote.php
+msgid "Qarşı tərəfin ekranında sual çıxır: yalnız baxmağa, yoxsa idarə etməyə icazə verir. İstəsə şifrəsini deyər — onda sual verilmir."
+msgstr "На экране другой стороны появляется вопрос: разрешить только просмотр или управление. Если удобнее, человек называет пароль — тогда вопрос не появляется."
+
+#: template-remote.php
+msgid "Kompüterinizə kim qoşulur —"
+msgstr "Кто подключается к вашему компьютеру —"
+
+#: template-remote.php
+msgid "qərar sizindir"
+msgstr "решаете вы"
+
+#: template-remote.php
+msgid "İcazəsiz qoşulmaq olmur"
+msgstr "Без разрешения подключиться нельзя"
+
+#: template-remote.php
+msgid "Ya ekrandakı suala cavab verirsiniz, ya da şifrənizi özünüz bildirirsiniz."
+msgstr "Вы либо отвечаете на вопрос на экране, либо сами сообщаете пароль."
+
+#: template-remote.php
+msgid "Baxış və idarəetmə ayrıdır"
+msgstr "Просмотр и управление разделены"
+
+#: template-remote.php
+msgid "\"Yalnız baxsın\" deyəndə qarşı tərəf ekranı görür, amma klaviatura və siçana toxuna bilmir."
+msgstr "В режиме «только просмотр» другая сторона видит экран, но не может пользоваться клавиатурой и мышью."
+
+#: template-remote.php
+msgid "Qoşulma gizli ola bilmir"
+msgstr "Подключение не может быть скрытым"
+
+#: template-remote.php
+msgid "Sessiya boyu ekranınızda kimin qoşulduğunu göstərən zolaq durur."
+msgstr "Всю сессию на экране видна полоса с именем подключившегося."
+
+#: template-remote.php
+msgid "Şifrə yalnız sizdədir"
+msgstr "Пароль есть только у вас"
+
+#: template-remote.php
+msgid "Şifrəni istədiyiniz vaxt yeniləyirsiniz — köhnəsini bilən bir daha qoşula bilmir."
+msgstr "Пароль можно сменить в любой момент — знающий старый больше не подключится."
+
+#: template-remote.php
+msgid "Nəyə yarayır"
+msgstr "Для чего подходит"
+
+#: template-remote.php
+msgid "Valideyninizin kompüterində problemi yanına getmədən düzəldin"
+msgstr "Решите проблему на компьютере родителей, не приезжая к ним"
+
+#: template-remote.php
+msgid "Evdə qalan maşından sənədinizi götürün"
+msgstr "Заберите документ с оставленного дома компьютера"
+
+#: template-remote.php
+msgid "İş yoldaşınıza ekranı göstərib izah edin"
+msgstr "Покажите коллеге экран и объясните"
+
+#: template-remote.php
+msgid "Qoşulma zamanı yazışın — telefonla danışmaq şərt deyil"
+msgstr "Переписывайтесь во время подключения — звонить не обязательно"
+
+#: template-remote.php
+msgid "Biznes üçün"
+msgstr "Для бизнеса"
+
+#: template-remote.php
+msgid "Şirkət versiyası —"
+msgstr "Версия для компаний —"
+
+#: template-remote.php
+msgid "Şirkətdə uzaqdan dəstək başqa cür qurulur: kimin hansı kompüterə qoşulduğu bilinməlidir, qoşulma kənar şirkətin serverindən keçməməlidir, hər sessiya jurnalda qalmalıdır."
+msgstr "В компании удалённая поддержка устроена иначе: нужно знать, кто к какому компьютеру подключался, соединение не должно идти через чужой сервер, а каждая сессия должна оставаться в журнале."
+
+#: template-remote.php
+msgid "Məlumat şirkətdən çıxmır"
+msgstr "Данные не покидают компанию"
+
+#: template-remote.php
+msgid "Server sizin infrastrukturunuzda qurulur. Ekran görüntüsü, fayllar, yazışma və jurnal kənar buluda getmir."
+msgstr "Сервер разворачивается в вашей инфраструктуре. Изображение экрана, файлы, переписка и журналы не уходят в стороннее облако."
+
+#: template-remote.php
+msgid "Kim kimə qoşula bilər"
+msgstr "Кто к кому может подключаться"
+
+#: template-remote.php
+msgid "İstifadəçilər, rollar və qruplar. Hər operatorun hansı kompüterlərə çıxışı olduğu mərkəzdən təyin olunur."
+msgstr "Пользователи, роли и группы. К каким компьютерам есть доступ у каждого оператора, задаётся централизованно."
+
+#: template-remote.php
+msgid "Tam jurnal və hesabat"
+msgstr "Полный журнал и отчётность"
+
+#: template-remote.php
+msgid "Hər sessiya, hər qoşulma cəhdi, fayl köçürmə və uzaqdan əmr yazılır. CSV və PDF kimi yüklənir."
+msgstr "Записываются каждая сессия, попытка подключения, передача файла и удалённая команда. Выгрузка в CSV и PDF."
+
+#: template-remote.php
+msgid "Port açmaq lazım deyil"
+msgstr "Открывать порты не нужно"
+
+#: template-remote.php
+msgid "Agent serverə özü qoşulur. İşçi kompüterlərində heç bir port açılmır, fərqli VLAN-lar problem yaratmır."
+msgstr "Агент сам подключается к серверу. На рабочих компьютерах порты не открываются, разные VLAN не мешают."
+
+#: template-remote.php
+msgid "Girişin qorunması"
+msgstr "Защита входа"
+
+#: template-remote.php
+msgid "Panelə giriş iki mərhələli doğrulama ilə, agentlər isə sertifikat barmaq izi ilə yoxlanılır; hər yeni kompüter admin təsdiqindən keçir."
+msgstr "Вход в панель защищён двухэтапной проверкой, агенты проверяются по отпечатку сертификата; каждый новый компьютер утверждает администратор."
+
+#: template-remote.php
+msgid "Kütləvi quraşdırma"
+msgstr "Массовая установка"
+
+#: template-remote.php
+msgid "MSI quraşdırıcısı parametrlərlə sakitcə quraşdırılır, agentlər sonra özləri yenilənir — hər maşına ayrıca getmək lazım gəlmir."
+msgstr "MSI-установщик ставится в тихом режиме с параметрами, а агенты затем обновляются сами — обходить каждую машину не нужно."
+
+#: template-remote.php
+msgid "Təklif istəyin"
+msgstr "Запросите предложение"
+
+#: template-remote.php
+msgid "Məhsul haqqında ətraflı"
+msgstr "Подробнее о продукте"
+
+#: template-remote.php
+msgid "Müqayisə"
+msgstr "Сравнение"
+
+#: template-remote.php
+msgid "Hansı variant sizə uyğundur"
+msgstr "Какой вариант вам подходит"
+
+#: template-remote.php
+msgid "Xüsusiyyət"
+msgstr "Возможность"
+
+#: template-remote.php
+msgid "Fərdi (pulsuz)"
+msgstr "Личная (бесплатно)"
+
+#: template-remote.php
+msgid "Biznes"
+msgstr "Бизнес"
+
+#: template-remote.php
+msgid "Ekrana baxmaq və idarə etmək"
+msgstr "Просмотр и управление экраном"
+
+#: template-remote.php
+msgid "var"
+msgstr "есть"
+
+#: template-remote.php
+msgid "Yazışma və fayl ötürmə"
+msgstr "Чат и передача файлов"
+
+#: template-remote.php
+msgid "Qoşulma üsulu"
+msgstr "Способ подключения"
+
+#: template-remote.php
+msgid "nömrə və şifrə"
+msgstr "номер и пароль"
+
+#: template-remote.php
+msgid "nömrə, şifrə və ya mərkəzi icazə"
+msgstr "номер, пароль или централизованное разрешение"
+
+#: template-remote.php
+msgid "Server"
+msgstr "Сервер"
+
+#: template-remote.php
+msgid "bizim mərkəzi server"
+msgstr "наш центральный сервер"
+
+#: template-remote.php
+msgid "sizin öz serveriniz"
+msgstr "ваш собственный сервер"
+
+#: template-remote.php
+msgid "İstifadəçilər və icazələr"
+msgstr "Пользователи и права"
+
+#: template-remote.php
+msgid "yoxdur"
+msgstr "нет"
+
+#: template-remote.php
+msgid "rollar, qruplar, cihaz təsdiqi"
+msgstr "роли, группы, подтверждение устройств"
+
+#: template-remote.php
+msgid "Sessiya jurnalı"
+msgstr "Журнал сессий"
+
+#: template-remote.php
+msgid "yalnız cihazın öz siyahısı"
+msgstr "только собственный список устройства"
+
+#: template-remote.php
+msgid "tam jurnal, CSV və PDF"
+msgstr "полный журнал, CSV и PDF"
+
+#: template-remote.php
+msgid "əl ilə"
+msgstr "вручную"
+
+#: template-remote.php
+msgid "MSI ilə sakit quraşdırma"
+msgstr "тихая установка через MSI"
+
+#: template-remote.php
+msgid "ictimai"
+msgstr "общая"
+
+#: template-remote.php
+msgid "müqavilə ilə"
+msgstr "по договору"
+
+#: template-remote.php
+msgid "Problemi mütəxəssis həll etsin?"
+msgstr "Пусть проблему решит специалист?"
+
+#: template-remote.php
+msgid "Proqram pulsuzdur və hər kəs onu istədiyi kimi işlədə bilər. Kompüterinizdəki problemi özünüz həll etmək istəmirsinizsə — eyni proqramla bizim mütəxəssis qoşulub kömək edər. Bu, ayrıca xidmətdir."
+msgstr "Программа бесплатна, и каждый может пользоваться ею как угодно. Если не хотите решать проблему на компьютере сами — наш специалист подключится через ту же программу и поможет. Это отдельная услуга."
+
+#: template-remote.php
+msgid "Salam! Uzaqdan dəstək lazımdır."
+msgstr "Здравствуйте! Нужна удалённая поддержка."
+
+#: template-remote.php
+msgid "WhatsApp-dan yazın"
+msgstr "Написать в WhatsApp"
+
+#: template-remote.php
+msgid "Əlaqə formu"
+msgstr "Форма связи"
+
+#: template-remote-privacy.php
+msgid "Məxfilik"
+msgstr "Конфиденциальность"
+
+#: template-remote-privacy.php
+msgid "Fixit Remote — Məxfilik siyasəti"
+msgstr "Fixit Remote — Политика конфиденциальности"
+
+#: template-remote-privacy.php
+msgid "Mobil tətbiq (Android və iOS) haqqında. Son yenilənmə: 12 oktyabr 2026."
+msgstr "О мобильном приложении (Android и iOS). Последнее обновление: 12 октября 2026 г."
+
+#: template-remote-privacy.php
+msgid "Məxfilik siyasəti"
+msgstr "Политика конфиденциальности"
+
+#: template-remote-privacy.php
+msgid "Qısa cavab"
+msgstr "Коротко"
+
+#: template-remote-privacy.php
+msgid "Reklam, analitika, çökmə hesabatı və izləmə vasitəsi yoxdur."
+msgstr "Нет рекламы, аналитики, отчётов о сбоях и средств отслеживания."
+
+#: template-remote-privacy.php
+msgid "Məlumat satılmır və heç bir üçüncü tərəfə verilmir."
+msgstr "Данные не продаются и не передаются третьим лицам."
+
+#: template-remote-privacy.php
+msgid "Tətbiq iki serverlə işləyir:"
+msgstr "Приложение работает с двумя серверами:"
+
+#: template-remote-privacy.php
+msgid "Fixit-in ID serveri"
+msgstr "ID-сервер Fixit"
+
+#: template-remote-privacy.php
+msgid "cihazlar arasında qoşulmanı qurmaq üçün. Orada yalnız bunun üçün lazım olan minimum saxlanılır; ekran görüntüsü saxlanılmır."
+msgstr "для установки соединения между устройствами. На нём хранится только необходимый для этого минимум; изображение экрана не сохраняется."
+
+#: template-remote-privacy.php
+msgid "Şirkətinizin öz serveri"
+msgstr "Собственный сервер вашей компании"
+
+#: template-remote-privacy.php
+msgid "istəyə görə"
+msgstr "по желанию"
+
+#: template-remote-privacy.php
+msgid "komandalar, cihazlar və yazışma. Bu məlumat şirkətinizdə qalır, Fixit-in ona çıxışı yoxdur."
+msgstr "команды, устройства и переписка. Эти данные остаются в вашей компании, у Fixit к ним нет доступа."
+
+#: template-remote-privacy.php
+msgid "1. ID ilə qoşulma (id.fixit.az)"
+msgstr "1. Подключение по ID (id.fixit.az)"
+
+#: template-remote-privacy.php
+msgid "Telefonunuzun ekranını paylaşmağı açdığınız zaman telefon ID serverində qeydiyyatdan keçir. Server bunları saxlayır:"
+msgstr "Когда вы включаете демонстрацию экрана, телефон регистрируется на ID-сервере. Сервер хранит:"
+
+#: template-remote-privacy.php
+msgid "tətbiqin yaratdığı təsadüfi cihaz kimliyi və 9 rəqəmli ID nömrəsi,"
+msgstr "случайный идентификатор устройства, созданный приложением, и 9-значный ID-номер,"
+
+#: template-remote-privacy.php
+msgid "cihazın adı (telefonun adı və ya modeli) və əməliyyat sisteminin versiyası,"
+msgstr "имя устройства (название или модель телефона) и версию операционной системы,"
+
+#: template-remote-privacy.php
+msgid "qoşulma parolunun hash-i — parolun özü serverə heç vaxt göndərilmir,"
+msgstr "хеш пароля подключения — сам пароль на сервер никогда не отправляется,"
+
+#: template-remote-privacy.php
+msgid "son əlaqə vaxtı."
+msgstr "время последнего соединения."
+
+#: template-remote-privacy.php
+msgid "Hər qoşulma cəhdi təhlükəsizlik jurnalına yazılır: vaxt, ID nömrəsi, IP ünvanı və nəticə. Bu, parol təxmin etmə cəhdlərini aşkar edib dayandırmaq üçündür."
+msgstr "Каждая попытка подключения записывается в журнал безопасности: время, ID-номер, IP-адрес и результат. Это нужно для обнаружения и пресечения попыток подбора пароля."
+
+#: template-remote-privacy.php
+msgid "Qoşulma zamanı ekran görüntüsü, toxunuş və klaviatura əmrləri server vasitəsilə real vaxtda qarşı tərəfə ötürülür. Server onları saxlamır. Bütün əlaqə şifrəli kanal (HTTPS/TLS) ilə gedir."
+msgstr "Во время подключения изображение экрана, касания и команды клавиатуры передаются другой стороне через сервер в реальном времени. Сервер их не сохраняет. Весь обмен идёт по шифрованному каналу (HTTPS/TLS)."
+
+#: template-remote-privacy.php
+msgid "2. Telefonun ekranını paylaşmaq"
+msgstr "2. Демонстрация экрана телефона"
+
+#: template-remote-privacy.php
+msgid "Yalnız siz açanda işləyir. Bağlı olanda telefon ID serverinə qoşulmur."
+msgstr "Работает только когда вы её включаете. В выключенном состоянии телефон к ID-серверу не подключается."
+
+#: template-remote-privacy.php
+msgid "Kimsə qoşulmaq istəyəndə telefon hər dəfə sizdən icazə soruşur."
+msgstr "Когда кто-то хочет подключиться, телефон каждый раз спрашивает ваше разрешение."
+
+#: template-remote-privacy.php
+msgid "Ekranı yazmağa Android-in öz icazə pəncərəsi ilə razılıq verirsiniz."
+msgstr "Согласие на запись экрана вы даёте в стандартном окне разрешения Android."
+
+#: template-remote-privacy.php
+msgid "Paylaşım davam etdiyi müddətdə bildiriş daim görünür; istənilən an dayandıra bilərsiniz."
+msgstr "Пока идёт демонстрация, уведомление постоянно на экране; остановить её можно в любой момент."
+
+#: template-remote-privacy.php
+msgid "Qoşulan tərəf ekranınıza yalnız baxır — telefonu idarə edə bilməz."
+msgstr "Подключившаяся сторона только смотрит на экран — управлять телефоном она не может."
+
+#: template-remote-privacy.php
+msgid "3. Başqa cihaza qoşulmaq"
+msgstr "3. Подключение к другому устройству"
+
+#: template-remote-privacy.php
+msgid "Qoşulduğunuz kompüterin ekranı telefona gəlir, toxunuş və klaviatura əmrləriniz oraya gedir. Görüntü telefonda yazılmır və saxlanılmır."
+msgstr "Экран компьютера, к которому вы подключились, передаётся на телефон, а ваши касания и команды клавиатуры — на компьютер. Изображение на телефоне не записывается и не сохраняется."
+
+#: template-remote-privacy.php
+msgid "4. Şirkətinizin serveri"
+msgstr "4. Сервер вашей компании"
+
+#: template-remote-privacy.php
+msgid "\"Kontaktlar\" və yazışma bölmələri işlədiyiniz şirkətin serverinə qoşulur (ünvanı özünüz yazırsınız) və istifadəçi adı ilə parol tələb edir. Komandalar, əməkdaşların adları, cihazlar və mesajlar həmin serverdə saxlanılır. Bu məlumatın sahibi şirkətdir; Fixit-in ona çıxışı yoxdur. Onunla bağlı suallar üçün şirkətinizin administratoruna müraciət edin."
+msgstr "Разделы «Контакты» и переписка подключаются к серверу компании, в которой вы работаете (адрес вы вводите сами), и требуют имя пользователя и пароль. Команды, имена сотрудников, устройства и сообщения хранятся на этом сервере. Владелец этих данных — компания; у Fixit к ним доступа нет. По вопросам о них обращайтесь к администратору вашей компании."
+
+#: template-remote-privacy.php
+msgid "5. Telefonda nə saxlanılır"
+msgstr "5. Что хранится на телефоне"
+
+#: template-remote-privacy.php
+msgid "Məlumat"
+msgstr "Данные"
+
+#: template-remote-privacy.php
+msgid "Harada"
+msgstr "Где"
+
+#: template-remote-privacy.php
+msgid "Nə üçün"
+msgstr "Зачем"
+
+#: template-remote-privacy.php
+msgid "Server ünvanları və sertifikat izi"
+msgstr "Адреса серверов и отпечаток сертификата"
+
+#: template-remote-privacy.php
+msgid "Tətbiqin öz yaddaşında"
+msgstr "Во внутреннем хранилище приложения"
+
+#: template-remote-privacy.php
+msgid "Hər dəfə yazmamaq və serverin dəyişdiyini tutmaq üçün"
+msgstr "Чтобы не вводить каждый раз и замечать подмену сервера"
+
+#: template-remote-privacy.php
+msgid "Sessiya açarı (12 saat)"
+msgstr "Ключ сессии (12 часов)"
+
+#: template-remote-privacy.php
+msgid "Sistemin şifrəli anbarında"
+msgstr "В зашифрованном хранилище системы"
+
+#: template-remote-privacy.php
+msgid "Hər açılışda yenidən daxil olmamaq üçün"
+msgstr "Чтобы не входить заново при каждом запуске"
+
+#: template-remote-privacy.php
+msgid "İstifadəçi adı"
+msgstr "Имя пользователя"
+
+#: template-remote-privacy.php
+msgid "Giriş formasını doldurmaq üçün"
+msgstr "Для заполнения формы входа"
+
+#: template-remote-privacy.php
+msgid "Hesab parolu"
+msgstr "Пароль учётной записи"
+
+#: template-remote-privacy.php
+msgid "Yalnız \"Parolu yadda saxla\" seçilibsə"
+msgstr "Только если выбрано «Запомнить пароль»"
+
+#: template-remote-privacy.php
+msgid "Qoşulduğunuz cihazların parolları"
+msgstr "Пароли устройств, к которым вы подключаетесь"
+
+#: template-remote-privacy.php
+msgid "Yalnız yadda saxlamağı seçdiyiniz cihazlar üçün"
+msgstr "Только для устройств, которые вы решили запомнить"
+
+#: template-remote-privacy.php
+msgid "Telefonun öz ID-si və qoşulma parolu"
+msgstr "Собственный ID телефона и пароль подключения"
+
+#: template-remote-privacy.php
+msgid "Ekran paylaşımı üçün"
+msgstr "Для демонстрации экрана"
+
+#: template-remote-privacy.php
+msgid "Son qoşulmalar siyahısı"
+msgstr "Список последних подключений"
+
+#: template-remote-privacy.php
+msgid "Tez yenidən qoşulmaq üçün"
+msgstr "Для быстрого повторного подключения"
+
+#: template-remote-privacy.php
+msgid "Görünüş ayarları"
+msgstr "Настройки внешнего вида"
+
+#: template-remote-privacy.php
+msgid "Mövzu və idarə rejimi"
+msgstr "Тема и режим управления"
+
+#: template-remote-privacy.php
+msgid "Son qoşulmaları Ayarlar → \"Qoşulma tarixçəsi\" ilə, sertifikatı və saxlanmış parolu Ayarlar → \"Serveri unut\" ilə silmək olar. Tətbiqi silmək bunların hamısını telefondan silir."
+msgstr "Последние подключения удаляются в Настройках → «История подключений», сертификат и сохранённый пароль — в Настройках → «Забыть сервер». Удаление приложения стирает всё это с телефона."
+
+#: template-remote-privacy.php
+msgid "6. İcazələr"
+msgstr "6. Разрешения"
+
+#: template-remote-privacy.php
+msgid "İnternet"
+msgstr "Интернет"
+
+#: template-remote-privacy.php
+msgid "serverlərə qoşulmaq üçün."
+msgstr "для подключения к серверам."
+
+#: template-remote-privacy.php
+msgid "Şəbəkə vəziyyəti"
+msgstr "Состояние сети"
+
+#: template-remote-privacy.php
+msgid "bağlantı olmadıqda düzgün mesaj göstərmək üçün."
+msgstr "чтобы показать понятное сообщение при отсутствии связи."
+
+#: template-remote-privacy.php
+msgid "Bildirişlər"
+msgstr "Уведомления"
+
+#: template-remote-privacy.php
+msgid "ekran paylaşımı açıq olduğunu göstərmək üçün."
+msgstr "чтобы показывать, что демонстрация экрана включена."
+
+#: template-remote-privacy.php
+msgid "Ekran paylaşımı xidməti"
+msgstr "Служба демонстрации экрана"
+
+#: template-remote-privacy.php
+msgid "yalnız sizin başlatdığınız paylaşım müddətində ekranı göndərmək üçün."
+msgstr "для передачи экрана только во время запущенной вами демонстрации."
+
+#: template-remote-privacy.php
+msgid "Tətbiq kamera, mikrofon, kontaktlar, məkan və fayllara müraciət etmir."
+msgstr "Приложение не обращается к камере, микрофону, контактам, геолокации и файлам."
+
+#: template-remote-privacy.php
+msgid "7. Üçüncü tərəflər"
+msgstr "7. Третьи лица"
+
+#: template-remote-privacy.php
+msgid "Yoxdur. Tətbiqdə reklam, analitika, çökmə hesabatı və izləmə vasitəsi istifadə olunmur."
+msgstr "Отсутствуют. В приложении не используются реклама, аналитика, отчёты о сбоях и средства отслеживания."
+
+#: template-remote-privacy.php
+msgid "8. Məlumatın silinməsi"
+msgstr "8. Удаление данных"
+
+#: template-remote-privacy.php
+msgid "Fixit Remote tətbiqinin ID serverindəki (id.fixit.az) məlumatınızın silinməsini belə istəyə bilərsiniz:"
+msgstr "Запросить удаление ваших данных с ID-сервера Fixit Remote (id.fixit.az) можно так:"
+
+#: template-remote-privacy.php
+msgid "Bu ünvana \"Məlumatın silinməsi\" mövzusu ilə yazın:"
+msgstr "Напишите на этот адрес с темой «Удаление данных»:"
+
+#: template-remote-privacy.php
+msgid "Məktubda telefonunuzun 9 rəqəmli ID nömrəsini göstərin — o, tətbiqin \"Əsas\" səhifəsində görünür."
+msgstr "Укажите в письме 9-значный ID-номер телефона — он виден на странице «Главная» в приложении."
+
+#: template-remote-privacy.php
+msgid "Həmin ID-yə aid məlumat 30 gün ərzində silinir və nəticə barədə sizə cavab yazılır."
+msgstr "Данные по этому ID удаляются в течение 30 дней, и мы сообщаем вам результат."
+
+#: template-remote-privacy.php
+msgid "Silinir:"
+msgstr "Удаляется:"
+
+#: template-remote-privacy.php
+msgid "cihaz qeydi (cihaz kimliyi, ID nömrəsi, cihazın adı, əməliyyat sisteminin versiyası, parolun hash-i, son əlaqə vaxtı) və həmin ID-yə aid qoşulma jurnalı (vaxt, IP ünvanı, nəticə)."
+msgstr "запись устройства (идентификатор устройства, ID-номер, имя устройства, версия ОС, хеш пароля, время последнего соединения) и журнал подключений по этому ID (время, IP-адрес, результат)."
+
+#: template-remote-privacy.php
+msgid "Qalmır:"
+msgstr "Остаётся:"
+
+#: template-remote-privacy.php
+msgid "ID serverində bu ID-yə aid heç nə saxlanılmır. Ekran görüntüsü heç vaxt saxlanılmır."
+msgstr "на ID-сервере ничего по этому ID не сохраняется. Изображение экрана не хранится никогда."
+
+#: template-remote-privacy.php
+msgid "Silmə istəyi olmadıqda cihaz qeydi və qoşulma jurnalı xidmətin işləməsi və təhlükəsizliyi üçün saxlanılır."
+msgstr "Без запроса на удаление запись устройства и журнал подключений хранятся для работы и безопасности сервиса."
+
+#: template-remote-privacy.php
+msgid "Telefonda saxlananları tətbiqi silməklə özünüz silə bilərsiniz (bax: 5-ci bənd). Şirkət serverindəki hesab və mesajlar şirkətinizə məxsusdur — onların silinməsi üçün şirkətinizin administratoruna müraciət edin."
+msgstr "Хранящееся на телефоне вы можете удалить сами, удалив приложение (см. пункт 5). Учётная запись и сообщения на сервере компании принадлежат вашей компании — для их удаления обратитесь к её администратору."
+
+#: template-remote-privacy.php
+msgid "9. Uşaqlar"
+msgstr "9. Дети"
+
+#: template-remote-privacy.php
+msgid "Tətbiq iş aləti kimi nəzərdə tutulub və uşaqlara ünvanlanmır."
+msgstr "Приложение предназначено как рабочий инструмент и не ориентировано на детей."
+
+#: template-remote-privacy.php
+msgid "10. Dəyişikliklər"
+msgstr "10. Изменения"
+
+#: template-remote-privacy.php
+msgid "Bu siyasət dəyişəndə yeni mətn bu ünvanda dərc olunur və yuxarıdakı tarix yenilənir."
+msgstr "При изменении политики новый текст публикуется по этому адресу, а дата выше обновляется."
+
+#: template-remote-privacy.php
+msgid "Sual və müraciətlər üçün:"
+msgstr "По вопросам и обращениям:"
+
+#: template-services.php
+msgid "İKT Xidmətləri"
+msgstr "ИКТ-услуги"
+
+#: template-services.php
+msgid "Kiçik və böyük şirkətlər üçün müasir informasiya-kommunikasiya texnologiyaları xidmətləri təqdim edirik — quraşdırmadan daimi dəstəyə qədər."
+msgstr "Предоставляем современные информационно-коммуникационные услуги для компаний любого размера — от установки до постоянной поддержки."
+
+#: template-services.php
+msgid "Bu xidmət üçün müraciət"
+msgstr "Заказать услугу"
+
+#: template-services.php
+msgid "Xidmətlə yanaşı — öz proqram təminatımız"
+msgstr "Помимо услуг — собственное программное обеспечение"
+
+#: template-services.php
+msgid "Komandamızın hazırladığı sistemlər sizin serverinizdə işləyir. Hər biri üçün onlayn demo mövcuddur."
+msgstr "Системы, созданные нашей командой, работают на вашем сервере. Для каждой доступно онлайн-демо."
+
+#: template-services.php
+msgid "Ətraflı və demo →"
+msgstr "Подробнее и демо →"
+
+#: template-services.php
+msgid "Hansı xidmətin sizə uyğun olduğunu bilmirsiniz?"
+msgstr "Не знаете, какая услуга вам подходит?"
+
+#: template-services.php
+msgid "Ehtiyacınızı danışın — mütəxəssisimiz ən sərfəli və dayanıqlı həlli təklif etsin."
+msgstr "Расскажите о задаче — наш специалист предложит самое выгодное и надёжное решение."
+
+#: inc/faq.php
+msgid "Diaqnostika həqiqətən pulsuzdur?"
+msgstr "Диагностика действительно бесплатная?"
+
+#: inc/faq.php
+msgid "Bəli. Kompüter və noutbuklar üçün ilkin detallı analiz tam pulsuzdur. Analizdən sonra problem, təklif olunan həll və dəqiq qiymət sizə bildirilir — razılığınız olmadan heç bir iş görülmür."
+msgstr "Да. Первичный подробный анализ компьютеров и ноутбуков полностью бесплатный. После анализа мы сообщаем причину, предлагаемое решение и точную цену — без вашего согласия работы не начинаются."
+
+#: inc/faq.php
+msgid "İT dəstək xidməti hansı formada təqdim olunur?"
+msgstr "В каком формате оказывается IT-поддержка?"
+
+#: inc/faq.php
+msgid "Aylıq abunə formasında. Buraya infrastrukturun ilkin tam yoxlanılması, mövcud problemlərin həlli, uzaqdan və yerində dəstək, ayda bir dəfə ümumi baxış, həmçinin İT xərclərinin analizi və optimallaşdırılması daxildir."
+msgstr "По ежемесячной подписке. В неё входят полная первичная проверка инфраструктуры, устранение имеющихся проблем, удалённая поддержка и выезд на место, ежемесячная общая проверка, а также анализ и оптимизация IT-расходов."
+
+#: inc/faq.php
+msgid "Kameralara uzaqdan baxa biləcəyəm?"
+msgstr "Смогу ли я смотреть камеры удалённо?"
+
+#: inc/faq.php
+msgid "Bəli. Quraşdırdığımız sistemlərdə dünyanın istənilən nöqtəsindən telefon və ya kompüter vasitəsilə canlı baxış və arxivə giriş mümkündür."
+msgstr "Да. В системах, которые мы устанавливаем, доступны живой просмотр и архив из любой точки мира — с телефона или компьютера."
+
+#: inc/faq.php
+msgid "Hansı IP telefoniya platformaları ilə işləyirsiniz?"
+msgstr "С какими платформами IP-телефонии вы работаете?"
+
+#: inc/faq.php
+msgid "Əsasən 3CX və Yeastar. Hər iki platforma bulud və ya lokal serverdə qurula bilər; IVR, konfrans zəngləri, zəng qeydiyyatı və hesabatlar dəstəklənir."
+msgstr "В основном 3CX и Yeastar. Обе платформы работают в облаке или на локальном сервере и поддерживают IVR, конференц-связь, запись звонков и отчёты."
+
+#: inc/faq.php
+msgid "Bakıdan kənarda xidmət göstərirsiniz?"
+msgstr "Работаете ли вы за пределами Баку?"
+
+#: inc/faq.php
+msgid "Bəli. Baş ofisimiz Bakıda, filialımız isə Cəlilabaddadır. Regionlarda layihə əsaslı iş və uzaqdan dəstək təmin edirik."
+msgstr "Да. Главный офис — в Баку, филиал — в Джалилабаде. В регионах работаем по проектам и обеспечиваем удалённую поддержку."
+
+#: inc/faq.php
+msgid "Qiymət niyə saytda göstərilmir?"
+msgstr "Почему цена не указана на сайте?"
+
+#: inc/faq.php
+msgid "Çünki qiymət istifadəçi sayından, lazım olan modullardan və quraşdırma həcmindən asılıdır. Sabit siyahı vermək əvəzinə ehtiyacınızı öyrənib dəqiq və şəffaf təklif hazırlayırıq."
+msgstr "Потому что цена зависит от числа пользователей, нужных модулей и объёма внедрения. Вместо фиксированного прайса мы изучаем вашу задачу и готовим точное прозрачное предложение."
+
+#: inc/faq.php
+msgid "Məlumatlarımız harada saxlanılacaq?"
+msgstr "Где будут храниться наши данные?"
+
+#: inc/faq.php
+msgid "Sizin öz serverinizdə. Bütün məhsullarımız on-premise modeldə təqdim olunur — məlumat şirkətinizin infrastrukturundan kənara çıxmır."
+msgstr "На вашем собственном сервере. Все наши продукты поставляются в модели on-premise — данные не покидают инфраструктуру компании."
+
+#: inc/faq.php
+msgid "Almazdan əvvəl sınaya bilərəmmi?"
+msgstr "Можно ли попробовать перед покупкой?"
+
+#: inc/faq.php
+msgid "Bəli. Sorğu Sistemi üçün açıq onlayn demo var (demo.fixit.az): qeydiyyat yoxdur, Admin, Agent, Menecer və ya Müştəri kimi bir kliklə daxil olursunuz. Digər məhsullar üçün canlı demo təşkil edirik; razılaşma olarsa sınaq quraşdırması da mümkündür."
+msgstr "Да. Для Службы заявок есть открытое онлайн-демо (demo.fixit.az): без регистрации, вход в один клик как Админ, Агент, Менеджер или Клиент. По остальным продуктам проводим живое демо; по договорённости возможна и тестовая установка."
+
+#: inc/faq.php
+msgid "Şirkətimizin iş axınına uyğunlaşdırıla bilərmi?"
+msgstr "Можно ли адаптировать под процессы нашей компании?"
+
+#: inc/faq.php
+msgid "Bəli. Bütün məhsullarımız tamamilə bizim kodumuzdur, kənar sistemə bağlılıq yoxdur. Ona görə əlavə modul və dəyişikliklər mümkündür."
+msgstr "Да. Все наши продукты — полностью наш код, без зависимости от сторонних систем, поэтому дополнительные модули и доработки возможны."
+
+#: inc/faq.php
+msgid "Quraşdırmadan sonra dəstək verilirmi?"
+msgstr "Предоставляется ли поддержка после внедрения?"
+
+#: inc/faq.php
+msgid "Bəli. Komandanız üçün təlim keçirilir və texniki dəstək paketi təklif olunur; dəstək müddətində yeni versiyalar da təqdim edilir."
+msgstr "Да. Мы обучаем вашу команду и предлагаем пакет технической поддержки; в период поддержки предоставляются и новые версии."
+
+#: inc/faq.php
+msgid "Sorğu Sistemi mövcud e-poçt qutumuzla işləyirmi?"
+msgstr "Работает ли Служба заявок с нашей текущей почтой?"
+
+#: inc/faq.php
+msgid "Bəli. Şirkət poçt qutunuz sistemə qoşulur: gələn məktublar avtomatik müraciətə çevrilir, agentin cavabı isə müştəriyə adi e-poçt kimi gedir."
+msgstr "Да. Почтовый ящик компании подключается к системе: входящие письма автоматически становятся обращениями, а ответ агента уходит клиенту обычным письмом."
+
+#: inc/faq.php
+msgid "Sorğu Sistemi yalnız müştəri müraciətləri üçündür?"
+msgstr "Служба заявок — только для обращений клиентов?"
+
+#: inc/faq.php
+msgid "Xeyr. Sistemdə iki modul var: Ticket — müştəridən gələn müraciətlər, Task — komandanın daxili işləri (lövhə, checklist, son tarix, təkrarlanan işlər). İkisini birlikdə və ya ayrıca işlədə bilərsiniz."
+msgstr "Нет. В системе два модуля: Ticket — обращения клиентов, Task — внутренние задачи команды (доска, чек-листы, сроки, повторяющиеся работы). Их можно использовать вместе или по отдельности."
+
+#: inc/product-data.php
+msgid "Müştəri müraciətləri və komandanın daxili işləri — bir platformada"
+msgstr "Обращения клиентов и внутренние задачи команды — на одной платформе"
+
+#: inc/product-data.php
+msgid "Ticket + Task"
+msgstr "Ticket + Task"
+
+#: inc/product-data.php
+msgid "Öz serverinizdə"
+msgstr "На вашем сервере"
+
+#: inc/product-data.php
+msgid "Azərbaycan · English · Русский"
+msgstr "Азербайджанский · Английский · Русский"
+
+#: inc/product-data.php
+msgid "Avtomatik yenilənmə"
+msgstr "Автоматические обновления"
+
+#: inc/product-data.php
+msgid "İki modul, bir sistem: kənardan gələn müraciətlər (Ticket) və komandanın öz işləri (Task) eyni mühərrik üzərində — eyni axtarış, hesabat, vaxt uçotu. Hər ikisini birlikdə və ya ayrıca işlədə bilərsiniz."
+msgstr "Два модуля, одна система: входящие обращения (Ticket) и собственные задачи команды (Task) работают на одном движке — общий поиск, отчёты и учёт времени. Используйте вместе или по отдельности."
+
+#: inc/product-data.php
+msgid "İki modul — bir platforma"
+msgstr "Два модуля — одна платформа"
+
+#: inc/product-data.php
+msgid "Ticket kənardan gələn müraciət üçündür, Task komandanın öz işi üçün. Hər ikisi eyni mühərrikdə işləyir: birini və ya ikisini birlikdə açırsınız."
+msgstr "Ticket — для обращений извне, Task — для внутренней работы команды. Оба работают на одном движке: включайте один модуль или оба."
+
+#: inc/product-data.php
+msgid "Müştəri müraciətləri"
+msgstr "Обращения клиентов"
+
+#: inc/product-data.php
+msgid "Müştəri yazır, komanda cavab verir, SLA sayğacı işləyir."
+msgstr "Клиент пишет, команда отвечает, счётчик SLA идёт."
+
+#: inc/product-data.php
+msgid "E-poçt, müştəri portalı, Telegram və veb forma"
+msgstr "Почта, клиентский портал, Telegram и веб-форма"
+
+#: inc/product-data.php
+msgid "SLA iş saatına görə; müddət keçəndə eskalasiya"
+msgstr "SLA по рабочим часам; эскалация при просрочке"
+
+#: inc/product-data.php
+msgid "Cavab müştəriyə adi e-poçt kimi gedir"
+msgstr "Ответ уходит клиенту обычным письмом"
+
+#: inc/product-data.php
+msgid "Müştəri öz müraciətini portalda izləyir"
+msgstr "Клиент отслеживает своё обращение в портале"
+
+#: inc/product-data.php
+msgid "Komandanın daxili işləri"
+msgstr "Внутренние задачи команды"
+
+#: inc/product-data.php
+msgid "Kim, nəyi, nə vaxta qədər edir — hamısı lövhədə görünür."
+msgstr "Кто, что и к какому сроку делает — всё видно на доске."
+
+#: inc/product-data.php
+msgid "Lövhə: Ediləcək → İcrada → Hazır"
+msgstr "Доска: К выполнению → В работе → Готово"
+
+#: inc/product-data.php
+msgid "Checklist, alt tapşırıqlar və asılılıqlar"
+msgstr "Чек-листы, подзадачи и зависимости"
+
+#: inc/product-data.php
+msgid "Son tarix və planlanan vaxt"
+msgstr "Сроки и плановое время"
+
+#: inc/product-data.php
+msgid "Təkrarlanan işlər özü yaranır"
+msgstr "Повторяющиеся работы создаются автоматически"
+
+#: inc/product-data.php
+msgid "Müraciətdən bir kliklə tapşırıq"
+msgstr "Задача из обращения в один клик"
+
+#: inc/product-data.php
+msgid "Vahid axtarış"
+msgstr "Единый поиск"
+
+#: inc/product-data.php
+msgid "Dashboard və hesabatlar"
+msgstr "Дашборд и отчёты"
+
+#: inc/product-data.php
+msgid "Vaxt uçotu"
+msgstr "Учёт времени"
+
+#: inc/product-data.php
+msgid "Rollar və icazələr"
+msgstr "Роли и права"
+
+#: inc/product-data.php
+msgid "Audit jurnalı"
+msgstr "Журнал аудита"
+
+#: inc/product-data.php
+msgid "Sorğular: hazır görünüşlər, süzgəc və axtarış"
+msgstr "Обращения: готовые представления, фильтры и поиск"
+
+#: inc/product-data.php
+msgid "Müraciət: müştəri ilə yazışma, daxili qeyd və vaxt uçotu"
+msgstr "Обращение: переписка с клиентом, внутренние заметки и учёт времени"
+
+#: inc/product-data.php
+msgid "Ticket lövhəsi: statusu sürüşdürməklə dəyişin"
+msgstr "Доска Ticket: меняйте статус перетаскиванием"
+
+#: inc/product-data.php
+msgid "Task lövhəsi: gecikən iş dərhal seçilir"
+msgstr "Доска Task: просроченная работа сразу заметна"
+
+#: inc/product-data.php
+msgid "Vaxt hesabatı: şirkət və agent üzrə, fakturaya düşən vaxt ayrıca"
+msgstr "Отчёт по времени: по компаниям и агентам, оплачиваемое время — отдельно"
+
+#: inc/product-data.php
+msgid "Hesabatlar: iş yükü, həll müddəti, SLA və status keçidləri"
+msgstr "Отчёты: нагрузка, время решения, SLA и переходы статусов"
+
+#: inc/product-data.php
+msgid "Müraciətlər dağınıqdır"
+msgstr "Обращения разрознены"
+
+#: inc/product-data.php
+msgid "Kimisi e-poçt yazır, kimisi Telegram-dan, kimisi zəng edir. Nəticədə kimin nəyə cavab verdiyi bəlli olmur."
+msgstr "Кто-то пишет на почту, кто-то в Telegram, кто-то звонит. В итоге непонятно, кто на что ответил."
+
+#: inc/product-data.php
+msgid "Daxili işlər ayrı yerdədir"
+msgstr "Внутренние задачи — в другом месте"
+
+#: inc/product-data.php
+msgid "Komandanın tapşırıqları Excel-də, mesajlarda, ağılda qalır. Müştəri işi ilə daxili iş iki ayrı alətdədir."
+msgstr "Задачи команды остаются в Excel, в переписке или в голове. Клиентская и внутренняя работа — в двух разных инструментах."
+
+#: inc/product-data.php
+msgid "Görülən iş görünmür"
+msgstr "Проделанная работа не видна"
+
+#: inc/product-data.php
+msgid "Ay sonunda kimin nəyə, hansı şirkətə nə qədər vaxt sərf etdiyini hesablamaq saatlar aparır."
+msgstr "В конце месяца подсчёт того, кто сколько времени и на какую компанию потратил, занимает часы."
+
+#: inc/product-data.php
+msgid "Müraciət kanalları"
+msgstr "Каналы обращений"
+
+#: inc/product-data.php
+msgid "E-poçt: şirkət poçt qutusuna gələn məktub avtomatik ticket olur"
+msgstr "Почта: письмо в ящик компании автоматически становится заявкой"
+
+#: inc/product-data.php
+msgid "Agentin cavabı müştəriyə adi e-poçt kimi gedir"
+msgstr "Ответ агента уходит клиенту обычным письмом"
+
+#: inc/product-data.php
+msgid "Müştəri portalı: qeydiyyat, e-poçt təsdiqi, parol bərpası"
+msgstr "Клиентский портал: регистрация, подтверждение почты, восстановление пароля"
+
+#: inc/product-data.php
+msgid "Telegram və saytınızdakı veb forma"
+msgstr "Telegram и веб-форма на вашем сайте"
+
+#: inc/product-data.php
+msgid "Göndərənin domeninə görə müraciət avtomatik doğru qrupa düşür"
+msgstr "По домену отправителя обращение автоматически попадает в нужную группу"
+
+#: inc/product-data.php
+msgid "Gündəlik iş"
+msgstr "Ежедневная работа"
+
+#: inc/product-data.php
+msgid "Təyinat, statuslar və prioritetlər; bir ticket-ə bir neçə agent"
+msgstr "Назначение, статусы и приоритеты; несколько агентов на одну заявку"
+
+#: inc/product-data.php
+msgid "Kanban lövhə — statusu sürüşdürməklə dəyişmək"
+msgstr "Канбан-доска — смена статуса перетаскиванием"
+
+#: inc/product-data.php
+msgid "Sol paneldə hazır görünüşlər — lazım olan siyahı bir kliklə"
+msgstr "Готовые представления в боковой панели — нужный список в один клик"
+
+#: inc/product-data.php
+msgid "Axtarış: nömrə, mövzu, müştəri və mesaj mətni üzrə"
+msgstr "Поиск по номеру, теме, клиенту и тексту сообщения"
+
+#: inc/product-data.php
+msgid "Layihələr — şirkətdaxili şöbələr üçün ayrıca axın"
+msgstr "Проекты — отдельный поток для внутренних отделов"
+
+#: inc/product-data.php
+msgid "SLA və nəzarət"
+msgstr "SLA и контроль"
+
+#: inc/product-data.php
+msgid "SLA iş saatına görə hesablanır — gecə və həftəsonu sayılmır"
+msgstr "SLA считается по рабочим часам — ночь и выходные не учитываются"
+
+#: inc/product-data.php
+msgid "Müddət keçəndə məsul şəxsə eskalasiya məktubu"
+msgstr "Письмо-эскалация ответственному при просрочке"
+
+#: inc/product-data.php
+msgid "\"Vaxtı keçib\" siyahısı — gecikən heç nə gözdən qaçmır"
+msgstr "Список «Просрочено» — ничего не теряется"
+
+#: inc/product-data.php
+msgid "Yeni müraciət gələn kimi bildiriş"
+msgstr "Уведомление сразу при поступлении обращения"
+
+#: inc/product-data.php
+msgid "Vaxt uçotu və hesabat"
+msgstr "Учёт времени и отчётность"
+
+#: inc/product-data.php
+msgid "Hər ticket üzrə sərf olunan vaxtın qeydi"
+msgstr "Фиксация времени, потраченного на каждую заявку"
+
+#: inc/product-data.php
+msgid "Aylıq hesabat: şirkət və agent üzrə"
+msgstr "Ежемесячный отчёт: по компаниям и агентам"
+
+#: inc/product-data.php
+msgid "Fakturaya düşən vaxt ayrıca göstərilir"
+msgstr "Оплачиваемое время показывается отдельно"
+
+#: inc/product-data.php
+msgid "Analitika və süzgəclər"
+msgstr "Аналитика и фильтры"
+
+#: inc/product-data.php
+msgid "İdarəetmə"
+msgstr "Администрирование"
+
+#: inc/product-data.php
+msgid "Rollar və icazələr — ayrı-ayrı seçilən hüquqlar"
+msgstr "Роли и права — отдельно выбираемые разрешения"
+
+#: inc/product-data.php
+msgid "Qruplar və görünürlük: kim hansı müraciətləri görür"
+msgstr "Группы и видимость: кто какие обращения видит"
+
+#: inc/product-data.php
+msgid "Avtomatik məktub şablonları və agent imzası"
+msgstr "Автоматические шаблоны писем и подпись агента"
+
+#: inc/product-data.php
+msgid "Audit jurnalı — kim nə vaxt nə edib"
+msgstr "Журнал аудита — кто, что и когда сделал"
+
+#: inc/product-data.php
+msgid "Sistem"
+msgstr "Система"
+
+#: inc/product-data.php
+msgid "İnterfeysdən ehtiyat nüsxə — baza və fayllar bir arxivdə"
+msgstr "Резервная копия из интерфейса — база и файлы в одном архиве"
+
+#: inc/product-data.php
+msgid "Yeni versiyalar interfeysdən, avtomatik quraşdırılır"
+msgstr "Новые версии устанавливаются из интерфейса автоматически"
+
+#: inc/product-data.php
+msgid "Mövcud helpdesk sistemindən köçürmə (məs. Zammad)"
+msgstr "Перенос из текущей helpdesk-системы (например, Zammad)"
+
+#: inc/product-data.php
+msgid "Mobil və planşetdə tam işləyir, işıqlı/qaranlıq rejim"
+msgstr "Полноценно работает на телефоне и планшете, светлая и тёмная тема"
+
+#: inc/product-data.php
+msgid "Müraciət necə işlənir"
+msgstr "Как обрабатывается обращение"
+
+#: inc/product-data.php
+msgid "Müraciət gəlir"
+msgstr "Поступает обращение"
+
+#: inc/product-data.php
+msgid "e-poçt, portal, Telegram və ya veb forma"
+msgstr "почта, портал, Telegram или веб-форма"
+
+#: inc/product-data.php
+msgid "Ticket yaranır"
+msgstr "Создаётся заявка"
+
+#: inc/product-data.php
+msgid "nömrə alır, doğru qrupa düşür"
+msgstr "получает номер и попадает в нужную группу"
+
+#: inc/product-data.php
+msgid "Komanda işləyir"
+msgstr "Команда работает"
+
+#: inc/product-data.php
+msgid "təyinat, SLA, lazım olsa — tapşırıq"
+msgstr "назначение, SLA, при необходимости — задача"
+
+#: inc/product-data.php
+msgid "Cavab gedir"
+msgstr "Уходит ответ"
+
+#: inc/product-data.php
+msgid "müştəri adi e-poçt alır"
+msgstr "клиент получает обычное письмо"
+
+#: inc/product-data.php
+msgid "Hesabat"
+msgstr "Отчётность"
+
+#: inc/product-data.php
+msgid "ay sonu şirkət və agent üzrə"
+msgstr "в конце месяца, по компаниям и агентам"
+
+#: inc/product-data.php
+msgid "Demo 250 nümunə sorğu və 250 tapşırıqla doldurulub. Qeydiyyat yoxdur — istədiyiniz rolu seçib dərhal işə başlayın."
+msgstr "Демо заполнено 250 примерами обращений и 250 задачами. Без регистрации — выберите роль и сразу начинайте."
+
+#: inc/product-data.php
+msgid "Demo məlumatları hər gecə sıfırlanır."
+msgstr "Данные демо обнуляются каждую ночь."
+
+#: inc/product-data.php
+msgid "Demonu açın — qeydiyyat tələb olunmur"
+msgstr "Откройте демо — регистрация не нужна"
+
+#: inc/product-data.php
+msgid "Rol seçin: Admin, Agent, Menecer və ya Müştəri"
+msgstr "Выберите роль: Админ, Агент, Менеджер или Клиент"
+
+#: inc/product-data.php
+msgid "Sorğu və tapşırıqlarla sərbəst işləyin"
+msgstr "Свободно работайте с обращениями и задачами"
+
+#: inc/product-data.php
+msgid "Admin"
+msgstr "Админ"
+
+#: inc/product-data.php
+msgid "sistemin tam görünüşü"
+msgstr "полный обзор системы"
+
+#: inc/product-data.php
+msgid "Agent"
+msgstr "Агент"
+
+#: inc/product-data.php
+msgid "sorğulara cavab, tapşırıqlar"
+msgstr "ответы на обращения, задачи"
+
+#: inc/product-data.php
+msgid "Menecer"
+msgstr "Менеджер"
+
+#: inc/product-data.php
+msgid "hesabatlar və komanda yükü"
+msgstr "отчёты и нагрузка команды"
+
+#: inc/product-data.php
+msgid "Müştəri"
+msgstr "Клиент"
+
+#: inc/product-data.php
+msgid "portal: müraciət və izləmə"
+msgstr "портал: обращения и отслеживание"
+
+#: inc/product-data.php
+msgid "Proqram və verilənlər bazası sizin serverinizdədir"
+msgstr "Программа и база данных — на вашем сервере"
+
+#: inc/product-data.php
+msgid "İki mərhələli giriş (2FA) — autentifikator tətbiqi ilə"
+msgstr "Двухэтапный вход (2FA) через приложение-аутентификатор"
+
+#: inc/product-data.php
+msgid "Parol təxmininə qarşı qoruma: səhv cəhdlərdə IP müvəqqəti bloklanır"
+msgstr "Защита от подбора пароля: при неудачных попытках IP временно блокируется"
+
+#: inc/product-data.php
+msgid "Sessiyalar server tərəfdə saxlanılır"
+msgstr "Сессии хранятся на стороне сервера"
+
+#: inc/product-data.php
+msgid "Mail qəbulu siyasəti: icazəli domenlər və qara siyahı"
+msgstr "Политика приёма почты: разрешённые домены и чёрный список"
+
+#: inc/product-data.php
+msgid "Hər əməliyyat audit jurnalına yazılır"
+msgstr "Каждое действие записывается в журнал аудита"
+
+#: inc/product-data.php
+msgid "Mövcud e-poçt qutumuzla işləyəcəkmi?"
+msgstr "Будет ли работать с нашей текущей почтой?"
+
+#: inc/product-data.php
+msgid "Bəli. Şirkət poçt qutunuz sistemə qoşulur: gələn məktublar avtomatik ticket olur, agentin cavabı isə müştəriyə adi e-poçt kimi gedir. Müştəri heç nə quraşdırmır."
+msgstr "Да. Почтовый ящик компании подключается к системе: входящие письма автоматически становятся заявками, а ответ агента уходит клиенту обычным письмом. Клиенту ничего устанавливать не нужно."
+
+#: inc/product-data.php
+msgid "Başqa helpdesk sistemindən keçə bilərikmi?"
+msgstr "Можно ли перейти с другой helpdesk-системы?"
+
+#: inc/product-data.php
+msgid "Bəli. Köhnə müraciətləri tarixçəsi ilə birlikdə köçürürük — məsələn Zammad-dan köçürmə təcrübəmiz var."
+msgstr "Да. Переносим старые обращения вместе с историей — например, у нас есть опыт переноса из Zammad."
+
+#: inc/product-data.php
+msgid "SLA necə hesablanır?"
+msgstr "Как рассчитывается SLA?"
+
+#: inc/product-data.php
+msgid "İş saatlarına və iş günlərinə görə. \"8 saat\" deyəndə gecə və həftəsonu sayılmır. Müddət keçəndə məsul şəxsə məktub gedir və müraciət \"Vaxtı keçib\" siyahısına düşür."
+msgstr "По рабочим часам и рабочим дням. «8 часов» не включают ночь и выходные. При просрочке ответственному уходит письмо, а обращение попадает в список «Просрочено»."
+
+#: inc/product-data.php
+msgid "Ticket və Task fərqi nədir?"
+msgstr "Чем отличаются Ticket и Task?"
+
+#: inc/product-data.php
+msgid "Ticket — kənardan, müştəridən gələn müraciətdir: cavab ona e-poçt və ya Telegram ilə gedir, SLA sayğacı işləyir. Task — komandanın öz daxili işidir: son tarix, checklist, asılılıq. Hər ikisi eyni sistemdədir; bir müraciətdən bir kliklə tapşırıq yarada bilərsiniz. Yalnız biri və ya hər ikisi açıq ola bilər."
+msgstr "Ticket — обращение извне, от клиента: ответ уходит по почте или в Telegram, работает счётчик SLA. Task — внутренняя работа команды: срок, чек-лист, зависимости. Оба модуля в одной системе, и из обращения можно создать задачу в один клик. Можно включить только один модуль или оба."
+
+#: inc/product-data.php
+msgid "İnterfeys hansı dillərdədir?"
+msgstr "На каких языках интерфейс?"
+
+#: inc/product-data.php
+msgid "Azərbaycan, ingilis və rus dillərində. Hər istifadəçi öz dilini seçir."
+msgstr "Азербайджанский, английский и русский. Каждый пользователь выбирает свой язык."
+
+#: inc/product-data.php
+msgid "Şirkət kompüterlərinə uzaqdan qoşulma — öz serverinizdə"
+msgstr "Удалённое подключение к компьютерам компании — на вашем сервере"
+
+#: inc/product-data.php
+msgid "Mobil tətbiq"
+msgstr "Мобильное приложение"
+
+#: inc/product-data.php
+msgid "Tam jurnal"
+msgstr "Полный журнал"
+
+#: inc/product-data.php
+msgid "Ekran başqasının serverindən keçir"
+msgstr "Экран идёт через чужой сервер"
+
+#: inc/product-data.php
+msgid "Adi uzaqdan giriş proqramlarında əlaqə kənar şirkətin serverləri üzərindən qurulur. Fixit Remote-da hər şey sizin serverinizdə qalır."
+msgstr "В обычных программах удалённого доступа соединение идёт через серверы сторонней компании. В Fixit Remote всё остаётся на вашем сервере."
+
+#: inc/product-data.php
+msgid "Port açmaq, VLAN problemi"
+msgstr "Открытие портов, проблемы с VLAN"
+
+#: inc/product-data.php
+msgid "Agent serverə özü qoşulur — işçi kompüterlərində heç bir port açmaq lazım deyil, fərqli VLAN-lar problem yaratmır."
+msgstr "Агент сам подключается к серверу — открывать порты на рабочих компьютерах не нужно, разные VLAN не мешают."
+
+#: inc/product-data.php
+msgid "Kim kimə qoşulub — bilinmir"
+msgstr "Непонятно, кто к кому подключался"
+
+#: inc/product-data.php
+msgid "Hər sessiya, hər qoşulma cəhdi və hər hadisə jurnala yazılır; CSV və PDF kimi yüklənir."
+msgstr "Каждая сессия, каждая попытка подключения и каждое событие пишутся в журнал; выгрузка в CSV и PDF."
+
+#: inc/product-data.php
+msgid "Ekrana baxmaq və idarə etmək — siçan və klaviatura"
+msgstr "Просмотр и управление экраном — мышь и клавиатура"
+
+#: inc/product-data.php
+msgid "Sessiya ayrı pəncərədə açılır, panel yerində qalır"
+msgstr "Сессия открывается в отдельном окне, панель остаётся на месте"
+
+#: inc/product-data.php
+msgid "Sessiya zamanı yazışma (çat)"
+msgstr "Чат во время сессии"
+
+#: inc/product-data.php
+msgid "Fayl ötürmə — ekran axınını dayandırmadan"
+msgstr "Передача файлов — без остановки трансляции экрана"
+
+#: inc/product-data.php
+msgid "Cihazlar"
+msgstr "Устройства"
+
+#: inc/product-data.php
+msgid "Bütün kompüterlər bir siyahıda, onlayn/oflayn vəziyyəti ilə"
+msgstr "Все компьютеры в одном списке со статусом онлайн/офлайн"
+
+#: inc/product-data.php
+msgid "Axtarış: ad, ID, istifadəçi və IP üzrə"
+msgstr "Поиск по имени, ID, пользователю и IP"
+
+#: inc/product-data.php
+msgid "Yeni cihazı təsdiqləmək və ya bloklamaq"
+msgstr "Подтвердить или заблокировать новое устройство"
+
+#: inc/product-data.php
+msgid "Bir kliklə qoşulma"
+msgstr "Подключение в один клик"
+
+#: inc/product-data.php
+msgid "Komandalar və icazələr"
+msgstr "Команды и права"
+
+#: inc/product-data.php
+msgid "Şöbə → komanda → əməkdaş quruluşu"
+msgstr "Структура: отдел → команда → сотрудник"
+
+#: inc/product-data.php
+msgid "Kim işə başlayıb — kompüterin açıq olub-olmaması"
+msgstr "Кто начал работу — включён ли компьютер"
+
+#: inc/product-data.php
+msgid "Qruplar: kim hansı cihazlara qoşula bilər"
+msgstr "Группы: кто к каким устройствам может подключаться"
+
+#: inc/product-data.php
+msgid "Sistem bölmələri yalnız administrator üçün"
+msgstr "Системные разделы — только для администратора"
+
+#: inc/product-data.php
+msgid "Telefondan kompüteri idarə etmək"
+msgstr "Управление компьютером с телефона"
+
+#: inc/product-data.php
+msgid "Siçan jestləri, klaviatura, xüsusi düymələr və böyütmə"
+msgstr "Жесты мыши, клавиатура, специальные клавиши и увеличение"
+
+#: inc/product-data.php
+msgid "Kontaktlar: şöbə, komanda, əməkdaş və bir toxunuşla zəng"
+msgstr "Контакты: отдел, команда, сотрудник и звонок одним касанием"
+
+#: inc/product-data.php
+msgid "Jurnal və hesabat"
+msgstr "Журналы и отчётность"
+
+#: inc/product-data.php
+msgid "Sessiyalar: kim, hansı cihaza, nə vaxt, nə qədər, nə qədər trafik"
+msgstr "Сессии: кто, к какому устройству, когда, сколько времени и трафика"
+
+#: inc/product-data.php
+msgid "Sistem logu — hadisə növünə görə süzgəc"
+msgstr "Системный журнал — фильтр по типу события"
+
+#: inc/product-data.php
+msgid "Logları CSV və PDF kimi yükləmək"
+msgstr "Выгрузка журналов в CSV и PDF"
+
+#: inc/product-data.php
+msgid "Quraşdırma və baxım"
+msgstr "Установка и обслуживание"
+
+#: inc/product-data.php
+msgid "Server və agent üçün hazır quraşdırıcı (MSI)"
+msgstr "Готовые установщики (MSI) для сервера и агента"
+
+#: inc/product-data.php
+msgid "İşçi kompüterinə əvvəlcədən heç nə quraşdırmaq lazım deyil"
+msgstr "На рабочий компьютер заранее ничего устанавливать не нужно"
+
+#: inc/product-data.php
+msgid "Server özü yenilənir və agentlərə yeni versiyanı özü paylayır"
+msgstr "Сервер обновляется сам и сам раздаёт новую версию агентам"
+
+#: inc/product-data.php
+msgid "Ehtiyat nüsxə və köhnə qeydlərin təmizlənməsi paneldən"
+msgstr "Резервные копии и очистка старых записей из панели"
+
+#: inc/product-data.php
+msgid "işçi kompüterində, serverə özü qoşulur"
+msgstr "на рабочем компьютере, сам подключается к серверу"
+
+#: inc/product-data.php
+msgid "Fixit Remote server"
+msgstr "Сервер Fixit Remote"
+
+#: inc/product-data.php
+msgid "sizin serverinizdə — cihazlar, icazələr, jurnal"
+msgstr "на вашем сервере — устройства, права, журналы"
+
+#: inc/product-data.php
+msgid "Operator"
+msgstr "Оператор"
+
+#: inc/product-data.php
+msgid "brauzerdən və ya telefondan qoşulur"
+msgstr "подключается из браузера или с телефона"
+
+#: inc/product-data.php
+msgid "İstifadəçi"
+msgstr "Пользователь"
+
+#: inc/product-data.php
+msgid "icazə verir və qoşulmanı ekranda görür"
+msgstr "даёт разрешение и видит подключение на экране"
+
+#: inc/product-data.php
+msgid "Qoşulmazdan əvvəl istifadəçidən icazə soruşulur; 30 saniyə cavab yoxdursa — rədd"
+msgstr "Перед подключением у пользователя спрашивают разрешение; нет ответа 30 секунд — отказ"
+
+#: inc/product-data.php
+msgid "Ekranda gizlədilə bilməyən \"qoşulma var\" zolağı"
+msgstr "Полоса «идёт подключение» на экране, которую нельзя скрыть"
+
+#: inc/product-data.php
+msgid "İstifadəçi yerində olmayanda — mərkəzdən idarə olunan qoşulma parolu; hər istifadə jurnala yazılır"
+msgstr "Когда пользователя нет на месте — централизованный пароль подключения; каждое использование фиксируется"
+
+#: inc/product-data.php
+msgid "Şifrələnmiş bağlantı (TLS) və sertifikat yoxlaması"
+msgstr "Шифрованное соединение (TLS) и проверка сертификата"
+
+#: inc/product-data.php
+msgid "Parollar heç yerdə açıq saxlanılmır"
+msgstr "Пароли нигде не хранятся в открытом виде"
+
+#: inc/product-data.php
+msgid "Səhv parol cəhdlərində IP müvəqqəti bloklanır"
+msgstr "При неверных попытках ввода пароля IP временно блокируется"
+
+#: inc/product-data.php
+msgid "AnyDesk və ya Supremo-dan əsas fərqi nədir?"
+msgstr "Чем принципиально отличается от AnyDesk или Supremo?"
+
+#: inc/product-data.php
+msgid "Fixit Remote sizin öz serverinizdə işləyir: bağlantı, jurnal və icazələr şirkətinizin daxilində qalır. Kimin hansı kompüterə qoşula biləcəyini mərkəzdən idarə edir, hər sessiyanı jurnalda görürsünüz."
+msgstr "Fixit Remote работает на вашем сервере: соединение, журналы и права остаются внутри компании. Вы централизованно управляете тем, кто к какому компьютеру может подключаться, и видите каждую сессию в журнале."
+
+#: inc/product-data.php
+msgid "İşçi kompüterlərində port açmaq lazımdırmı?"
+msgstr "Нужно ли открывать порты на рабочих компьютерах?"
+
+#: inc/product-data.php
+msgid "Xeyr. Agent serverə özü qoşulur. Kompüterlər fərqli VLAN və ya alt şəbəkələrdə ola bilər — yalnız server əlçatan olmalıdır."
+msgstr "Нет. Агент сам подключается к серверу. Компьютеры могут находиться в разных VLAN или подсетях — доступным должен быть только сервер."
+
+#: inc/product-data.php
+msgid "İşçi bilmədən kompüterinə qoşulmaq olarmı?"
+msgstr "Можно ли подключиться к компьютеру сотрудника без его ведома?"
+
+#: inc/product-data.php
+msgid "Xeyr. Qoşulma zamanı ekranda gizlədilə bilməyən zolaq görünür. İcazə sorğusu açıqdırsa, istifadəçi təsdiq etmədən sessiya başlamır. Qoşulma parolu istifadə olunanda da bu, çatda və jurnalda qeyd olunur."
+msgstr "Нет. Во время подключения на экране видна полоса, которую нельзя скрыть. Если включён запрос разрешения, сессия не начнётся без подтверждения пользователя. Использование пароля подключения также фиксируется в чате и журнале."
+
+#: inc/product-data.php
+msgid "Hansı əməliyyat sistemlərində işləyir?"
+msgstr "На каких операционных системах работает?"
+
+#: inc/product-data.php
+msgid "Agent Windows kompüterlərində işləyir. Operator brauzerdən və ya mobil tətbiqdən qoşulur."
+msgstr "Агент работает на компьютерах с Windows. Оператор подключается из браузера или мобильного приложения."
+
+#: inc/product-data.php
+msgid "Kəsintini müştəridən əvvəl siz bilin"
+msgstr "Узнайте о сбое раньше клиента"
+
+#: inc/product-data.php
+msgid "Telegram · WhatsApp · E-poçt"
+msgstr "Telegram · WhatsApp · Почта"
+
+#: inc/product-data.php
+msgid "Kəsinti gec bilinir"
+msgstr "О сбоях узнают поздно"
+
+#: inc/product-data.php
+msgid "Cihaz və ya tunel düşəndə bunu çox vaxt istifadəçilərin zəngindən öyrənirsiniz."
+msgstr "Когда падает устройство или туннель, вы чаще всего узнаёте об этом от звонка пользователя."
+
+#: inc/product-data.php
+msgid "Tarixçə yoxdur"
+msgstr "Нет истории"
+
+#: inc/product-data.php
+msgid "Hansı nöqtənin nə qədər dayandığını sübut etmək üçün rəqəm lazımdır."
+msgstr "Чтобы доказать, сколько именно простояла та или иная точка, нужны цифры."
+
+#: inc/product-data.php
+msgid "İzləmə"
+msgstr "Наблюдение"
+
+#: inc/product-data.php
+msgid "Cihaz, interfeys və VPN tunellərinin fasiləsiz izlənməsi"
+msgstr "Непрерывный контроль устройств, интерфейсов и VPN-туннелей"
+
+#: inc/product-data.php
+msgid "Uptime statistikası və kəsintilərin vaxt xətti"
+msgstr "Статистика доступности и лента сбоев"
+
+#: inc/product-data.php
+msgid "Ən problemli nöqtələrin hesabatı"
+msgstr "Отчёт по самым проблемным точкам"
+
+#: inc/product-data.php
+msgid "Analitika lövhəsi"
+msgstr "Панель аналитики"
+
+#: inc/product-data.php
+msgid "Modulyar bloklar — hər istifadəçi özünə lazım olanı düzür"
+msgstr "Модульные блоки — каждый пользователь собирает нужное"
+
+#: inc/product-data.php
+msgid "Canlı interfeys trafiki"
+msgstr "Живой трафик интерфейсов"
+
+#: inc/product-data.php
+msgid "Telegram, e-poçt (SMTP), WhatsApp və masaüstü"
+msgstr "Telegram, почта (SMTP), WhatsApp и рабочий стол"
+
+#: inc/product-data.php
+msgid "Hər hadisə ayrıca açılıb-bağlanır"
+msgstr "Каждое событие включается и выключается отдельно"
+
+#: inc/product-data.php
+msgid "Kanal ayarlarını \"Sınaq göndər\" ilə dərhal yoxlamaq"
+msgstr "Мгновенная проверка настроек канала кнопкой «Отправить тест»"
+
+#: inc/product-data.php
+msgid "Şəbəkə"
+msgstr "Сеть"
+
+#: inc/product-data.php
+msgid "cihazlar, interfeyslər, tunellər"
+msgstr "устройства, интерфейсы, туннели"
+
+#: inc/product-data.php
+msgid "Monitorinq"
+msgstr "Мониторинг"
+
+#: inc/product-data.php
+msgid "fasiləsiz yoxlama, tarixçə"
+msgstr "непрерывные проверки, история"
+
+#: inc/product-data.php
+msgid "Bildiriş"
+msgstr "Уведомление"
+
+#: inc/product-data.php
+msgid "seçdiyiniz kanala dərhal"
+msgstr "сразу в выбранный вами канал"
+
+#: inc/product-data.php
+msgid "Proqram və məlumat sizin serverinizdədir"
+msgstr "Программа и данные — на вашем сервере"
+
+#: inc/product-data.php
+msgid "Parol və tokenlər brauzerə göndərilmir"
+msgstr "Пароли и токены не отправляются в браузер"
+
+#: inc/seo.php
+msgid "SEO — axtarış sistemlərində görünüş"
+msgstr "SEO — вид в поисковых системах"
+
+#: inc/seo.php
+msgid "SEO başlığı"
+msgstr "SEO-заголовок"
+
+#: inc/seo.php
+msgid "Google-da görünən başlıq. Boş buraxsanız yazının adı işlədilir."
+msgstr "Заголовок, который показывает Google. Оставьте пустым — возьмётся название записи."
+
+#: inc/seo.php
+msgid "Tövsiyə: %1$d–%2$d simvol."
+msgstr "Рекомендуется: %1$d–%2$d символов."
+
+#: inc/seo.php
+msgid "SEO təsviri"
+msgstr "SEO-описание"
+
+#: inc/seo.php
+msgid "Başlığın altındakı izah mətni. Səhifənin nə haqqında olduğunu bir cümlə ilə yazın."
+msgstr "Текст под заголовком. Опишите одним предложением, о чём страница."
+
+#: inc/seo.php
+msgid "Bu səhifə axtarış nəticələrində göstərilməsin (noindex)"
+msgstr "Не показывать страницу в результатах поиска (noindex)"
+
+#: inc/seo.php
+msgid "Kompüter servisi, video müşahidə, IP telefoniya, korporativ mail, bulud serverlər və İT dəstək — şirkətiniz üçün tam İKT xidmətləri."
+msgstr "Компьютерный сервис, видеонаблюдение, IP-телефония, корпоративная почта, облачные серверы и IT-поддержка — полный спектр ИКТ-услуг для вашей компании."
+
+#: inc/seo.php
+msgid "Sorğu Sistemi (Ticket + Task), Fixit Remote və Şəbəkə Monitorinqi — öz komandamızın hazırladığı, sizin serverinizdə işləyən proqram təminatı. Onlayn demo var."
+msgstr "Служба заявок (Ticket + Task), Fixit Remote и Мониторинг сети — программные продукты нашей команды, работающие на вашем сервере. Доступно онлайн-демо."
+
+#: inc/seo.php
+msgid "2017-ci ildən İT sahəsində fəaliyyət göstəririk: 40-dan çox şirkətlə əməkdaşlıq, 30-dan çox tamamlanmış layihə. Bakı və Cəlilabadda xidmətinizdəyik."
+msgstr "Работаем в сфере IT с 2017 года: более 40 компаний-клиентов и свыше 30 завершённых проектов. Мы к вашим услугам в Баку и Джалилабаде."
+
+#: inc/seo.php
+msgid "FIXIT ilə əlaqə: %s. Bakı və Cəlilabad ofisləri, iş saatları və müraciət formu. İKT xidmətləri üçün bizə yazın."
+msgstr "Связь с FIXIT: %s. Офисы в Баку и Джалилабаде, часы работы и форма заявки. Напишите нам по вопросам ИКТ-услуг."
+
+#: inc/seo.php
+msgid "İKT xidmətləri və məhsulları"
+msgstr "ИКТ-услуги и продукты"
+
+#: inc/contact-form.php
+msgid "Mesajlar"
+msgstr "Сообщения"
+
+#: inc/contact-form.php
+msgid "Mesaj"
+msgstr "Сообщение"
+
+#: inc/contact-form.php
+msgid "Form mesajları"
+msgstr "Сообщения с формы"
+
+#: inc/contact-form.php
+msgid "Mesaja bax"
+msgstr "Просмотр сообщения"
+
+#: inc/contact-form.php
+msgid "Növ"
+msgstr "Тип"
+
+#: inc/contact-form.php
+msgid "Ad"
+msgstr "Имя"
+
+#: inc/contact-form.php
+msgid "Tarix"
+msgstr "Дата"
+
+#: inc/contact-form.php
+msgid "Demo sorğusu: %s"
+msgstr "Запрос демо: %s"
+
+#: inc/contact-form.php
+msgid "Təşəkkür edirik! Müraciətiniz qəbul olundu. Ən qısa zamanda sizinlə əlaqə saxlayacağıq."
+msgstr "Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время."
+
+#: inc/contact-form.php
+msgid "Təşəkkür edirik! Demo sorğunuz qəbul olundu — giriş məlumatlarını e-poçtunuza göndərəcəyik."
+msgstr "Спасибо! Запрос на демо принят — доступ отправим вам на почту."
+
+#: inc/contact-form.php
+msgid "Zəhmət olmasa ad, e-poçt və mesaj sahələrini düzgün doldurun."
+msgstr "Пожалуйста, корректно заполните поля «Имя», «Эл. почта» и «Сообщение»."
+
+#: inc/contact-form.php
+msgid "Texniki xəta baş verdi. Zəhmət olmasa bir daha cəhd edin və ya bizə zəng edin."
+msgstr "Произошла техническая ошибка. Попробуйте ещё раз или позвоните нам."
+
+#: inc/i18n.php
+msgid "Saytın dili"
+msgstr "Язык сайта"

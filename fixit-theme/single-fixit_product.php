@@ -17,10 +17,9 @@ while ( have_posts() ) :
 	$fixit_post     = get_post();
 	$fixit_detail   = fixit_product_detail( $fixit_post );
 	$fixit_icon_key = get_post_meta( $fixit_post->ID, '_fixit_icon', true );
-	$fixit_short    = get_post_meta( $fixit_post->ID, '_fixit_short', true );
-	$fixit_features = fixit_meta_lines( $fixit_post->ID, '_fixit_features' );
-	$fixit_chips    = get_post_meta( $fixit_post->ID, '_fixit_chips', true );
-	$fixit_chips    = $fixit_chips ? array_filter( array_map( 'trim', explode( ',', $fixit_chips ) ) ) : array();
+	$fixit_short    = fixit_t_short( $fixit_post );
+	$fixit_features = fixit_t_features( $fixit_post );
+	$fixit_chips    = fixit_t_chips( $fixit_post );
 	$fixit_gallery  = fixit_product_gallery_ids( $fixit_post->ID );
 	$fixit_demo     = fixit_product_demo( $fixit_post->ID );
 
@@ -81,7 +80,7 @@ while ( have_posts() ) :
 				<?php endif; ?>
 
 				<?php if ( $fixit_post->post_content ) : ?>
-					<p class="lead"><?php echo esc_html( wp_strip_all_tags( $fixit_post->post_content ) ); ?></p>
+					<p class="lead"><?php echo esc_html( wp_strip_all_tags( fixit_t_content( $fixit_post ) ) ); ?></p>
 				<?php elseif ( ! empty( $fixit_detail['intro'] ) ) : ?>
 					<p class="lead"><?php echo esc_html( $fixit_detail['intro'] ); ?></p>
 				<?php endif; ?>
@@ -505,8 +504,8 @@ while ( have_posts() ) :
 						<?php $fixit_o_icon = get_post_meta( $fixit_other->ID, '_fixit_icon', true ); ?>
 						<a class="card reveal" href="<?php echo esc_url( get_permalink( $fixit_other ) ); ?>">
 							<span class="card__icon"><?php fixit_icon( $fixit_o_icon ? $fixit_o_icon : 'server' ); ?></span>
-							<h3><?php echo esc_html( $fixit_other->post_title ); ?></h3>
-							<p><?php echo esc_html( get_post_meta( $fixit_other->ID, '_fixit_short', true ) ); ?></p>
+							<h3><?php echo esc_html( fixit_t_title( $fixit_other ) ); ?></h3>
+							<p><?php echo esc_html( fixit_t_short( $fixit_other ) ); ?></p>
 							<span class="card__link"><?php esc_html_e( 'Ətraflı', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?></span>
 						</a>
 					<?php endforeach; ?>

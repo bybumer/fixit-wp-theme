@@ -208,4 +208,56 @@
 			if (e.key === 'ArrowRight') show(current + 1);
 		});
 	}
+
+	/* ---------------------------------------------
+	   7. Dil: seçim yadda qalır, ilk ziyarətdə ölkəyə görə təklif
+	   --------------------------------------------- */
+	var L = window.fixitLang;
+
+	if (L && L.cookie) {
+		// İstifadəçi dili özü seçdi — seçimi bir il saxlayırıq.
+		doc.addEventListener('click', function (e) {
+			var a = e.target.closest ? e.target.closest('.lang-switch a') : null;
+			if (!a || !a.dataset.lang) return;
+			setLangCookie(a.dataset.lang);
+		});
+
+		/*
+		 * İlk ziyarət: kuki yoxdursa və ünvanda dil göstərilməyibsə,
+		 * ölkəyə görə uyğun dili soruşuruq. Yoxlama brauzerdə aparılır —
+		 * səhifə keşi pozulmur. Axtarış robotları (Google JavaScript-i
+		 * icra edir) yönləndirilmir: hər dili öz ünvanından indeksləyirlər.
+		 */
+		if (!hasLangCookie() && L.current === L.default && location.search.indexOf('nolang') === -1 && !isBot()) {
+			try {
+				fetch(L.api, { credentials: 'omit' })
+					.then(function (r) { return r.json(); })
+					.then(function (d) {
+						var s = d && d.suggested;
+						if (!s || !L.urls[s]) return;
+						setLangCookie(s);
+						if (s !== L.current) location.replace(L.urls[s]);
+					})
+					.catch(function () {});
+			} catch (e) {}
+		}
+	}
+
+	function isBot() {
+		try {
+			return new RegExp(L.bots || 'bot', 'i').test(navigator.userAgent || '');
+		} catch (e) {
+			return false;
+		}
+	}
+
+	function hasLangCookie() {
+		return doc.cookie.indexOf(L.cookie + '=') !== -1;
+	}
+
+	function setLangCookie(code) {
+		try {
+			doc.cookie = L.cookie + '=' + code + ';path=/;max-age=31536000;samesite=lax';
+		} catch (e) {}
+	}
 })();

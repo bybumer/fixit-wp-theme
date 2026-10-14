@@ -139,7 +139,7 @@ $fixit_products  = fixit_get_products();
 							<optgroup label="<?php esc_attr_e( 'Məhsullar (demo / təklif)', 'fixit' ); ?>">
 								<?php foreach ( $fixit_products as $fixit_prod ) : ?>
 									<option value="<?php echo esc_attr( $fixit_prod->post_title ); ?>" <?php selected( $fixit_preselect, $fixit_prod->post_title ); ?>>
-										<?php echo esc_html( $fixit_prod->post_title ); ?>
+										<?php echo esc_html( fixit_t_title( $fixit_prod ) ); ?>
 									</option>
 								<?php endforeach; ?>
 							</optgroup>
@@ -148,7 +148,7 @@ $fixit_products  = fixit_get_products();
 						<optgroup label="<?php esc_attr_e( 'Xidmətlər', 'fixit' ); ?>">
 							<?php foreach ( $fixit_services as $fixit_svc ) : ?>
 								<option value="<?php echo esc_attr( $fixit_svc->post_title ); ?>" <?php selected( $fixit_preselect, $fixit_svc->post_title ); ?>>
-									<?php echo esc_html( $fixit_svc->post_title ); ?>
+									<?php echo esc_html( fixit_t_title( $fixit_svc ) ); ?>
 								</option>
 							<?php endforeach; ?>
 						</optgroup>

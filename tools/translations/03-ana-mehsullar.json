@@ -1,0 +1,630 @@
+{
+"Pulsuz konsultasiya": {
+"en": "Free consultation",
+"ru": "Бесплатная консультация"
+},
+"Xidmətlərə bax": {
+"en": "View services",
+"ru": "Смотреть услуги"
+},
+"korporativ müştəri": {
+"en": "corporate customers",
+"ru": "корпоративных клиентов"
+},
+"il təcrübə": {
+"en": "years of experience",
+"ru": "лет опыта"
+},
+"Xidmət istiqamətlərimiz": {
+"en": "What we do",
+"ru": "Наши направления"
+},
+"aktiv": {
+"en": "active",
+"ru": "активно"
+},
+"Kompüter servisi": {
+"en": "Computer service",
+"ru": "Компьютерный сервис"
+},
+"pulsuz analiz": {
+"en": "free analysis",
+"ru": "бесплатный анализ"
+},
+"Video müşahidə": {
+"en": "Video surveillance",
+"ru": "Видеонаблюдение"
+},
+"uzaqdan baxış": {
+"en": "remote viewing",
+"ru": "удалённый просмотр"
+},
+"Bulud serverlər": {
+"en": "Cloud servers",
+"ru": "Облачные серверы"
+},
+"yedəkli": {
+"en": "with backup",
+"ru": "с резервированием"
+},
+"IP telefoniya": {
+"en": "IP telephony",
+"ru": "IP-телефония"
+},
+"3CX / Yeastar": {
+"en": "3CX / Yeastar",
+"ru": "3CX / Yeastar"
+},
+"İT dəstək": {
+"en": "IT support",
+"ru": "IT-поддержка"
+},
+"abunə": {
+"en": "subscription",
+"ru": "подписка"
+},
+"İşlədiyimiz texnologiyalar və tərəfdaşlar": {
+"en": "Technologies and partners we work with",
+"ru": "Технологии и партнёры, с которыми мы работаем"
+},
+"Bizə etibar edirlər": {
+"en": "They trust us",
+"ru": "Нам доверяют"
+},
+"Bizimlə işləyən şirkətlər": {
+"en": "Companies that work with us",
+"ru": "Компании, работающие с нами"
+},
+"Xidmətlərimiz": {
+"en": "Our services",
+"ru": "Наши услуги"
+},
+"Bir tərəfdaş — ": {
+"en": "One partner — ",
+"ru": "Один партнёр — "
+},
+"bütün İKT ehtiyaclarınız": {
+"en": "all your ICT needs",
+"ru": "все ваши ИКТ-задачи"
+},
+"Kiçik və böyük şirkətlər üçün müasir informasiya-kommunikasiya texnologiyaları xidmətləri təqdim edirik.": {
+"en": "We provide modern information and communication technology services for companies of every size.",
+"ru": "Предоставляем современные информационно-коммуникационные услуги компаниям любого размера."
+},
+"Ətraflı": {
+"en": "Details",
+"ru": "Подробнее"
+},
+"Sıfırdan özümüzün yazdığı": {
+"en": "Software we wrote",
+"ru": "Программы, написанные нами"
+},
+"proqram təminatı": {
+"en": "from scratch",
+"ru": "с нуля"
+},
+"Sizin öz serverinizdə işləyir, interfeysi Azərbaycan dilindədir və şirkətinizin iş axınına uyğunlaşdırıla bilir.": {
+"en": "It runs on your own server, the interface comes in your language and it can be adapted to how your company works.",
+"ru": "Работает на вашем сервере, интерфейс — на вашем языке, и систему можно подстроить под процессы компании."
+},
+"Flaqman məhsul": {
+"en": "Flagship product",
+"ru": "Флагманский продукт"
+},
+"Canlı demo": {
+"en": "Live demo",
+"ru": "Живое демо"
+},
+"Qeydiyyatsız: Admin, Agent, Menecer və ya Müştəri kimi bir kliklə daxil olun.": {
+"en": "No registration: enter in one click as Admin, Agent, Manager or Customer.",
+"ru": "Без регистрации: вход в один клик как Админ, Агент, Менеджер или Клиент."
+},
+"FIXIT məhsulu": {
+"en": "FIXIT product",
+"ru": "Продукт FIXIT"
+},
+"Ətraflı və demo": {
+"en": "Details and demo",
+"ru": "Подробнее и демо"
+},
+"Məhsullar və satış şərtləri": {
+"en": "Products and terms",
+"ru": "Продукты и условия"
+},
+"Pulsuz proqram": {
+"en": "Free program",
+"ru": "Бесплатная программа"
+},
+"Uzaqdan qoşulma": {
+"en": "Remote access",
+"ru": "Удалённое подключение"
+},
+"öz proqramımız": {
+"en": "our own program",
+"ru": "наша программа"
+},
+"Olduğunuz yerdən başqa kompüterə qoşulun: yaxınınıza kömək edin, evdə qalan maşınınıza çıxın, iş yoldaşınızla eyni ekrana baxın. Qeydiyyat yoxdur, ödəniş yoxdur — qoşulmağa isə hər dəfə qarşı tərəf icazə verir.": {
+"en": "Connect to another computer from wherever you are: help a relative, reach the machine you left at home, look at the same screen as a colleague. No registration, no payment — and the other side approves every connection.",
+"ru": "Подключайтесь к другому компьютеру откуда угодно: помогите близкому, зайдите на оставленную дома машину, посмотрите на один экран с коллегой. Без регистрации и без оплаты — а на каждое подключение разрешение даёт другая сторона."
+},
+"Pulsuz yüklə": {
+"en": "Download free",
+"ru": "Скачать бесплатно"
+},
+"Tezliklə": {
+"en": "Coming soon",
+"ru": "Скоро"
+},
+"Necə işləyir": {
+"en": "How it works",
+"ru": "Как это работает"
+},
+"Hər iki tərəf proqramı yükləyir": {
+"en": "Both sides download the program",
+"ru": "Обе стороны скачивают программу"
+},
+"Qarşı tərəfin nömrəsini yazırsınız": {
+"en": "You enter the other side's number",
+"ru": "Вы вводите номер другой стороны"
+},
+"O, icazə verir — ekran açılır": {
+"en": "They approve — the screen opens",
+"ru": "Он подтверждает — экран открывается"
+},
+"Niyə FIXIT?": {
+"en": "Why FIXIT?",
+"ru": "Почему FIXIT?"
+},
+"Texnologiyanı sizin üçün": {
+"en": "We make technology",
+"ru": "Делаем технологии"
+},
+"sadə və dayanıqlı": {
+"en": "simple and dependable",
+"ru": "простыми и надёжными"
+},
+"edirik": {
+"en": "for you",
+"ru": "для вас"
+},
+"Beynəlxalq sertifikatlı mühəndislərdən ibarət komandamız problemi yaranmamışdan qabaq görməyə çalışır. Bizim üçün əsas göstərici — sizin sisteminizin fasiləsiz işləməsidir.": {
+"en": "Our team of internationally certified engineers tries to spot a problem before it appears. The measure that matters to us is your system running without interruption.",
+"ru": "Наша команда инженеров с международными сертификатами старается заметить проблему до её появления. Главный показатель для нас — бесперебойная работа вашей системы."
+},
+"Sertifikatlı mühəndis komandası": {
+"en": "A team of certified engineers",
+"ru": "Команда сертифицированных инженеров"
+},
+"Hər istiqamət üzrə ixtisaslaşmış, təcrübəli mütəxəssislər.": {
+"en": "Experienced specialists for every area.",
+"ru": "Опытные специалисты по каждому направлению."
+},
+"Operativ reaksiya": {
+"en": "Fast response",
+"ru": "Быстрая реакция"
+},
+"Uzaqdan dəstək dəqiqələr içində, yerində dəstək razılaşdırılmış müddətdə.": {
+"en": "Remote support within minutes, on-site support within the agreed time.",
+"ru": "Удалённая поддержка — в течение минут, выезд — в согласованный срок."
+},
+"Şəffaf qiymət": {
+"en": "Transparent pricing",
+"ru": "Прозрачная цена"
+},
+"Diaqnostika pulsuz, iş başlamazdan əvvəl dəqiq smeta təqdim olunur.": {
+"en": "Diagnostics are free and you get an exact quote before work begins.",
+"ru": "Диагностика бесплатна, точная смета предоставляется до начала работ."
+},
+"Vahid məsuliyyət": {
+"en": "One point of responsibility",
+"ru": "Единая ответственность"
+},
+"Kamera, server, mail, telefoniya — hamısı bir komandanın nəzarətində.": {
+"en": "Cameras, servers, mail, telephony — all looked after by one team.",
+"ru": "Камеры, серверы, почта, телефония — всё под контролем одной команды."
+},
+"Haqqımızda ətraflı": {
+"en": "More about us",
+"ru": "Подробнее о нас"
+},
+"uğurla tamamlanmış layihə": {
+"en": "successfully completed projects",
+"ru": "успешно завершённых проектов"
+},
+"il sahə təcrübəsi": {
+"en": "years of industry experience",
+"ru": "лет отраслевого опыта"
+},
+"İş prosesi": {
+"en": "How we work",
+"ru": "Процесс работы"
+},
+"Necə işləyirik?": {
+"en": "How do we work?",
+"ru": "Как мы работаем?"
+},
+"İlk müraciətdən daimi dəstəyə qədər — sadə və şəffaf dörd addım.": {
+"en": "From the first request to ongoing support — four simple, transparent steps.",
+"ru": "От первого обращения до постоянной поддержки — четыре простых и прозрачных шага."
+},
+"Zəng, mesaj və ya formu doldurursunuz. Ehtiyacınızı dinləyirik.": {
+"en": "You call, message or fill in the form. We listen to what you need.",
+"ru": "Вы звоните, пишете или заполняете форму. Мы выслушиваем вашу задачу."
+},
+"Analiz": {
+"en": "Analysis",
+"ru": "Анализ"
+},
+"Mövcud infrastruktur pulsuz yoxlanılır, problemlər müəyyən edilir.": {
+"en": "We review your current infrastructure free of charge and identify the problems.",
+"ru": "Бесплатно проверяем текущую инфраструктуру и выявляем проблемы."
+},
+"Həll": {
+"en": "Solution",
+"ru": "Решение"
+},
+"Uyğun texniki həll və dəqiq smeta təqdim olunur, iş icra edilir.": {
+"en": "We propose a suitable technical solution with an exact quote, then do the work.",
+"ru": "Предлагаем подходящее техническое решение с точной сметой и выполняем работу."
+},
+"Dəstək": {
+"en": "Support",
+"ru": "Поддержка"
+},
+"Quraşdırmadan sonra da yanınızdayıq: monitorinq və müntəzəm baxış.": {
+"en": "We stay with you after installation: monitoring and regular checks.",
+"ru": "Остаёмся рядом и после внедрения: мониторинг и регулярные проверки."
+},
+"Müştəri rəyləri": {
+"en": "Customer reviews",
+"ru": "Отзывы клиентов"
+},
+"Bizə etibar edənlər": {
+"en": "Those who trust us",
+"ru": "Те, кто нам доверяет"
+},
+"Tez-tez verilən suallar": {
+"en": "Frequently asked questions",
+"ru": "Частые вопросы"
+},
+"Ağlınıza gələn suallar": {
+"en": "Questions you may have",
+"ru": "Вопросы, которые могут возникнуть"
+},
+"İnfrastrukturunuzu pulsuz yoxlayaq": {
+"en": "Let us review your infrastructure for free",
+"ru": "Бесплатно проверим вашу инфраструктуру"
+},
+"Bir zəng və ya mesaj kifayətdir. Mütəxəssisimiz ehtiyacınızı dinləyib uyğun həlli təklif edəcək.": {
+"en": "One call or message is enough. Our specialist will listen and propose a suitable solution.",
+"ru": "Достаточно одного звонка или сообщения. Наш специалист выслушает и предложит подходящее решение."
+},
+"Müraciət göndər": {
+"en": "Send a request",
+"ru": "Отправить заявку"
+},
+"Bizim hazırladığımız proqram təminatı": {
+"en": "The software we build",
+"ru": "Программное обеспечение, которое мы создаём"
+},
+"Xidmətlərimizlə yanaşı, öz komandamızın sıfırdan yazdığı məhsulları təqdim edirik. Hamısı Azərbaycan dilindədir, sizin öz serverinizdə işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir.": {
+"en": "Alongside our services we offer products our own team wrote from scratch. They run on your own server and can be adapted to the way your company works.",
+"ru": "Помимо услуг мы предлагаем продукты, написанные нашей командой с нуля. Они работают на вашем сервере и настраиваются под процессы вашей компании."
+},
+"Məlumat sizdə qalır": {
+"en": "Your data stays with you",
+"ru": "Данные остаются у вас"
+},
+"Öz serverinizdə işləyir": {
+"en": "Runs on your own server",
+"ru": "Работает на вашем сервере"
+},
+"Fərdiləşdirilə bilir": {
+"en": "Can be customised",
+"ru": "Поддаётся доработке"
+},
+"Mənbə kod bizimdir": {
+"en": "We own the source code",
+"ru": "Исходный код — наш"
+},
+"Azərbaycan dilində": {
+"en": "In your language",
+"ru": "На вашем языке"
+},
+"İnterfeys və dəstək": {
+"en": "Interface and support",
+"ru": "Интерфейс и поддержка"
+},
+"Quraşdırma daxil": {
+"en": "Installation included",
+"ru": "Установка включена"
+},
+"Təlim və texniki dəstək": {
+"en": "Training and technical support",
+"ru": "Обучение и техническая поддержка"
+},
+"Təklif istə": {
+"en": "Request a quote",
+"ru": "Запросить предложение"
+},
+"Satış şərtləri": {
+"en": "Terms of sale",
+"ru": "Условия продажи"
+},
+"Lisenziya": {
+"en": "Licence",
+"ru": "Лицензия"
+},
+"öz serverinizdə": {
+"en": "on your own server",
+"ru": "на вашем сервере"
+},
+"Bütün məhsullarımız on-premise modeldə təqdim olunur: proqram sizin öz serverinizdə quraşdırılır və bütün məlumat şirkətinizin daxilində qalır. Kənar bulud xidmətindən asılılıq yoxdur.": {
+"en": "All our products are delivered on-premise: the software is installed on your own server and all data stays inside your company. There is no dependency on an outside cloud service.",
+"ru": "Все наши продукты поставляются on-premise: программа устанавливается на ваш сервер, и все данные остаются внутри компании. Зависимости от сторонних облаков нет."
+},
+"Öz infrastrukturunuzda": {
+"en": "On your own infrastructure",
+"ru": "На вашей инфраструктуре"
+},
+"Proqram sizin serverinizə quraşdırılır; məlumat bazası da sizdə saxlanılır.": {
+"en": "The software is installed on your server and the database is kept with you too.",
+"ru": "Программа устанавливается на ваш сервер, база данных тоже хранится у вас."
+},
+"Lisenziya ehtiyaca görə": {
+"en": "Licence to fit your needs",
+"ru": "Лицензия под ваши задачи"
+},
+"Qiymət istifadəçi sayı və lazım olan modullara görə hesablanır — hər şirkət üçün ayrıca təklif hazırlayırıq.": {
+"en": "The price is based on the number of users and the modules you need — we prepare a separate quote for each company.",
+"ru": "Цена рассчитывается по числу пользователей и нужным модулям — для каждой компании готовим отдельное предложение."
+},
+"Quraşdırma və köçürmə": {
+"en": "Installation and migration",
+"ru": "Установка и перенос"
+},
+"Sistemin qurulması, mövcud məlumatların köçürülməsi və ilkin ayarlar bizim üzərimizdədir.": {
+"en": "Setting up the system, migrating existing data and the initial configuration are on us.",
+"ru": "Развёртывание системы, перенос имеющихся данных и первичная настройка — на нас."
+},
+"Təlim və dəstək": {
+"en": "Training and support",
+"ru": "Обучение и поддержка"
+},
+"Komandanız üçün təlim keçirilir, sonrasında texniki dəstək paketi təklif olunur.": {
+"en": "We train your team and then offer a technical support package.",
+"ru": "Проводим обучение вашей команды, далее предлагаем пакет технической поддержки."
+},
+"Yeniliklər": {
+"en": "Updates",
+"ru": "Обновления"
+},
+"Məhsullar daim inkişaf etdirilir; yeni versiyalar dəstək müddəti ərzində təqdim olunur.": {
+"en": "The products are developed continuously; new versions are provided for the duration of support.",
+"ru": "Продукты постоянно развиваются; новые версии предоставляются в период поддержки."
+},
+"Qiymət": {
+"en": "Price",
+"ru": "Цена"
+},
+"Təklif fərdi hazırlanır": {
+"en": "Every quote is individual",
+"ru": "Предложение готовится индивидуально"
+},
+"Sabit qiymət siyahısı vermirik, çünki hər şirkətin istifadəçi sayı, modul ehtiyacı və mövcud infrastrukturu fərqlidir. Qısa bir söhbətdən sonra sizə konkret və şəffaf təklif təqdim edirik.": {
+"en": "We do not publish a fixed price list, because every company differs in user count, modules needed and existing infrastructure. After a short conversation we give you a specific, transparent quote.",
+"ru": "Фиксированного прайса у нас нет: у каждой компании своё число пользователей, свой набор модулей и своя инфраструктура. После короткого разговора мы даём конкретное и прозрачное предложение."
+},
+"Canlı demo — məhsulu real işdə görürsünüz": {
+"en": "A live demo — you see the product in real use",
+"ru": "Живое демо — продукт в реальной работе"
+},
+"Ehtiyacların birgə təhlili": {
+"en": "Analysing your needs together",
+"ru": "Совместный анализ потребностей"
+},
+"Yazılı və detallı kommersiya təklifi": {
+"en": "A written, detailed commercial offer",
+"ru": "Письменное развёрнутое коммерческое предложение"
+},
+"Sınaq quraşdırması imkanı": {
+"en": "The option of a trial installation",
+"ru": "Возможность тестовой установки"
+},
+"Proses": {
+"en": "Process",
+"ru": "Процесс"
+},
+"Demodan istifadəyə qədər": {
+"en": "From demo to daily use",
+"ru": "От демо до ежедневной работы"
+},
+"Qərar verməzdən əvvəl məhsulu real işdə görürsünüz — sonra addım-addım irəliləyirik.": {
+"en": "You see the product in real use before deciding — then we move forward step by step.",
+"ru": "Вы видите продукт в деле до принятия решения — дальше движемся шаг за шагом."
+},
+"Onlayn demonu özünüz sınayırsınız və ya məhsulu canlı göstəririk.": {
+"en": "You try the online demo yourself, or we show the product live.",
+"ru": "Вы сами пробуете онлайн-демо, либо мы показываем продукт вживую."
+},
+"Təhlil və təklif": {
+"en": "Analysis and quote",
+"ru": "Анализ и предложение"
+},
+"Ehtiyaclarınızı öyrənib yazılı kommersiya təklifi hazırlayırıq.": {
+"en": "We learn what you need and prepare a written commercial offer.",
+"ru": "Изучаем ваши потребности и готовим письменное коммерческое предложение."
+},
+"Quraşdırma": {
+"en": "Installation",
+"ru": "Установка"
+},
+"Sistemi serverinizə qurur, məlumatları köçürür, ayarlayırıq.": {
+"en": "We install the system on your server, migrate the data and configure it.",
+"ru": "Устанавливаем систему на ваш сервер, переносим данные и настраиваем."
+},
+"Komandanıza istifadəni öyrədir, sonra da yanınızda oluruq.": {
+"en": "We teach your team how to use it and stay with you afterwards.",
+"ru": "Обучаем вашу команду работе и остаёмся рядом после запуска."
+},
+"Məhsullar haqqında": {
+"en": "About the products",
+"ru": "О продуктах"
+},
+"Məhsulu canlı görmək istəyirsiniz?": {
+"en": "Would you like to see the product live?",
+"ru": "Хотите увидеть продукт вживую?"
+},
+"Sizə uyğun vaxtda demo təşkil edək — 20-30 dəqiqə kifayətdir.": {
+"en": "Let us arrange a demo at a time that suits you — 20-30 minutes is enough.",
+"ru": "Проведём демо в удобное для вас время — хватит 20-30 минут."
+},
+"Demo təyin et": {
+"en": "Book a demo",
+"ru": "Записаться на демо"
+},
+"Əsas imkanlar": {
+"en": "Key capabilities",
+"ru": "Основные возможности"
+},
+"Canlı demonu aç": {
+"en": "Open the live demo",
+"ru": "Открыть живое демо"
+},
+"Demonu sına": {
+"en": "Try the demo",
+"ru": "Попробовать демо"
+},
+"Nəyi həll edir": {
+"en": "What it solves",
+"ru": "Что решает"
+},
+"Tanış gəlir?": {
+"en": "Sound familiar?",
+"ru": "Знакомо?"
+},
+"Modullar": {
+"en": "Modules",
+"ru": "Модули"
+},
+"Ortaq mühərrik:": {
+"en": "Shared engine:",
+"ru": "Общий механизм:"
+},
+"İmkanlar": {
+"en": "Capabilities",
+"ru": "Возможности"
+},
+"Nələr edə bilirsiniz": {
+"en": "What you can do",
+"ru": "Что вы можете делать"
+},
+"Ekran görüntüləri": {
+"en": "Screenshots",
+"ru": "Скриншоты"
+},
+"Necə görünür": {
+"en": "How it looks",
+"ru": "Как это выглядит"
+},
+"Şəkillər onlayn demodan çəkilib — eyni ekranları özünüz də aça bilərsiniz.": {
+"en": "The images are taken from the online demo — you can open the same screens yourself.",
+"ru": "Снимки сделаны в онлайн-демо — те же экраны вы можете открыть сами."
+},
+"İş prinsipi": {
+"en": "How it works",
+"ru": "Принцип работы"
+},
+"Məlumatınız": {
+"en": "Your data",
+"ru": "Ваши данные"
+},
+"sizdə qalır": {
+"en": "stays with you",
+"ru": "остаются у вас"
+},
+"Proqram sizin öz serverinizdə quraşdırılır. Kənar bulud xidmətindən asılılıq yoxdur.": {
+"en": "The software is installed on your own server. There is no dependency on an outside cloud service.",
+"ru": "Программа устанавливается на ваш сервер. Зависимости от сторонних облаков нет."
+},
+"Onlayn demo": {
+"en": "Online demo",
+"ru": "Онлайн-демо"
+},
+"Özünüz sınayın": {
+"en": "Try it yourself",
+"ru": "Попробуйте сами"
+},
+"Demo nüsxəsi nümunə məlumatlarla doldurulub. Brauzerdə açın və sərbəst yoxlayın — heç nə quraşdırmaq lazım deyil.": {
+"en": "The demo is filled with sample data. Open it in your browser and explore freely — nothing to install.",
+"ru": "Демо заполнено примерными данными. Откройте в браузере и свободно изучайте — ничего устанавливать не нужно."
+},
+"Formu doldurun — sizə şəxsi demo girişi göndərək. Nümunə məlumatlarla doldurulmuş sistemdə sərbəst işləyə bilərsiniz; istəsəniz mütəxəssisimiz canlı da göstərər.": {
+"en": "Fill in the form and we will send you personal demo access. You can work freely in a system filled with sample data, and our specialist can walk you through it if you like.",
+"ru": "Заполните форму — пришлём персональный доступ к демо. В системе с примерными данными можно работать свободно, а при желании наш специалист всё покажет вживую."
+},
+"Demonu açın": {
+"en": "Open the demo",
+"ru": "Откройте демо"
+},
+"Nümunə məlumatlarla sərbəst işləyin": {
+"en": "Work freely with the sample data",
+"ru": "Свободно работайте с примерными данными"
+},
+"Sualınız olsa — bizə yazın": {
+"en": "If you have a question — write to us",
+"ru": "Появился вопрос — напишите нам"
+},
+"Formu doldurun": {
+"en": "Fill in the form",
+"ru": "Заполните форму"
+},
+"E-poçtunuza demo girişi gəlir": {
+"en": "Demo access arrives in your email",
+"ru": "Доступ к демо придёт на почту"
+},
+"Brauzerdə açın və sınayın": {
+"en": "Open it in your browser and try it",
+"ru": "Откройте в браузере и попробуйте"
+},
+"Demonu aç": {
+"en": "Open the demo",
+"ru": "Открыть демо"
+},
+"Demo girişi istə": {
+"en": "Request demo access",
+"ru": "Запросить доступ к демо"
+},
+"Məlumatlarınız yalnız demo girişi göndərmək və sizinlə əlaqə üçün istifadə olunur.": {
+"en": "Your details are used only to send the demo access and to contact you.",
+"ru": "Ваши данные используются только для отправки доступа к демо и связи с вами."
+},
+"Suallar": {
+"en": "Questions",
+"ru": "Вопросы"
+},
+"Tez-tez soruşulanlar": {
+"en": "Frequently asked",
+"ru": "Часто спрашивают"
+},
+"Digər məhsullarımız": {
+"en": "Our other products",
+"ru": "Другие наши продукты"
+},
+"Bunlar da maraqlı ola bilər": {
+"en": "These may interest you too",
+"ru": "Это тоже может быть интересно"
+},
+"Şirkətinizə uyğun təklif hazırlayaq": {
+"en": "Let us prepare a quote for your company",
+"ru": "Подготовим предложение для вашей компании"
+},
+"İstifadəçi sayınızı və ehtiyacınızı deyin — konkret və şəffaf təklif göndərək.": {
+"en": "Tell us your user count and what you need — we will send a specific, transparent quote.",
+"ru": "Назовите число пользователей и ваши задачи — пришлём конкретное и прозрачное предложение."
+},
+"%s-ci ildən etibarən": {
+"en": "Since %s",
+"ru": "С %s года"
+}
+}

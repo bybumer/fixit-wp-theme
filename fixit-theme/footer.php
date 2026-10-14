@@ -54,7 +54,7 @@ $fixit_services = fixit_get_services( 6 );
 						<?php foreach ( $fixit_services as $fixit_svc ) : ?>
 							<li>
 								<a href="<?php echo esc_url( fixit_page_url( 'template-services.php' ) . '#xidmet-' . $fixit_svc->ID ); ?>">
-									<?php echo esc_html( $fixit_svc->post_title ); ?>
+									<?php echo esc_html( fixit_t_title( $fixit_svc ) ); ?>
 								</a>
 							</li>
 						<?php endforeach; ?>

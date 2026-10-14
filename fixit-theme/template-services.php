@@ -31,7 +31,7 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 	<div class="marquee" style="padding:16px 0">
 		<div class="container" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
 			<?php foreach ( $fixit_services as $fixit_svc ) : ?>
-				<a class="chip" href="#xidmet-<?php echo esc_attr( $fixit_svc->ID ); ?>"><?php echo esc_html( $fixit_svc->post_title ); ?></a>
+				<a class="chip" href="#xidmet-<?php echo esc_attr( $fixit_svc->ID ); ?>"><?php echo esc_html( fixit_t_title( $fixit_svc ) ); ?></a>
 			<?php endforeach; ?>
 		</div>
 	</div>
@@ -43,18 +43,17 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 		<?php foreach ( $fixit_services as $fixit_svc ) : ?>
 			<?php
 			$fixit_icon_key = get_post_meta( $fixit_svc->ID, '_fixit_icon', true );
-			$fixit_features = fixit_meta_lines( $fixit_svc->ID, '_fixit_features' );
-			$fixit_chips    = get_post_meta( $fixit_svc->ID, '_fixit_chips', true );
-			$fixit_chips    = $fixit_chips ? array_filter( array_map( 'trim', explode( ',', $fixit_chips ) ) ) : array();
+			$fixit_features = fixit_t_features( $fixit_svc );
+			$fixit_chips    = fixit_t_chips( $fixit_svc );
 			?>
 			<article class="svc reveal" id="xidmet-<?php echo esc_attr( $fixit_svc->ID ); ?>">
 				<div class="svc__icon"><?php fixit_icon( $fixit_icon_key ? $fixit_icon_key : 'shield' ); ?></div>
 
 				<div>
-					<h2><?php echo esc_html( $fixit_svc->post_title ); ?></h2>
+					<h2><?php echo esc_html( fixit_t_title( $fixit_svc ) ); ?></h2>
 
 					<?php if ( $fixit_svc->post_content ) : ?>
-						<p><?php echo esc_html( wp_strip_all_tags( $fixit_svc->post_content ) ); ?></p>
+						<p><?php echo esc_html( wp_strip_all_tags( fixit_t_content( $fixit_svc ) ) ); ?></p>
 					<?php endif; ?>
 
 					<?php if ( $fixit_features ) : ?>
@@ -101,7 +100,7 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 					<a class="reveal" href="<?php echo esc_url( get_permalink( $fixit_sp ) ); ?>">
 						<span class="card__icon"><?php fixit_icon( $fixit_sp_icon ? $fixit_sp_icon : 'server' ); ?></span>
 						<span>
-							<strong><?php echo esc_html( $fixit_sp->post_title ); ?></strong>
+							<strong><?php echo esc_html( fixit_t_title( $fixit_sp ) ); ?></strong>
 							<small><?php esc_html_e( 'Ətraflı və demo →', 'fixit' ); ?></small>
 						</span>
 					</a>

@@ -63,9 +63,8 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 		<?php foreach ( $fixit_products as $fixit_prod ) : ?>
 			<?php
 			$fixit_icon_key = get_post_meta( $fixit_prod->ID, '_fixit_icon', true );
-			$fixit_features = fixit_meta_lines( $fixit_prod->ID, '_fixit_features' );
-			$fixit_chips    = get_post_meta( $fixit_prod->ID, '_fixit_chips', true );
-			$fixit_chips    = $fixit_chips ? array_filter( array_map( 'trim', explode( ',', $fixit_chips ) ) ) : array();
+			$fixit_features = fixit_t_features( $fixit_prod );
+			$fixit_chips    = fixit_t_chips( $fixit_prod );
 			$fixit_detail   = fixit_product_detail( $fixit_prod );
 			$fixit_demo_url = fixit_product_open_demo_url( $fixit_prod->ID );
 			?>
@@ -73,13 +72,13 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 				<div class="svc__icon"><?php fixit_icon( $fixit_icon_key ? $fixit_icon_key : 'server' ); ?></div>
 
 				<div>
-					<h2><a href="<?php echo esc_url( get_permalink( $fixit_prod ) ); ?>"><?php echo esc_html( $fixit_prod->post_title ); ?></a></h2>
+					<h2><a href="<?php echo esc_url( get_permalink( $fixit_prod ) ); ?>"><?php echo esc_html( fixit_t_title( $fixit_prod ) ); ?></a></h2>
 					<?php if ( ! empty( $fixit_detail['tagline'] ) ) : ?>
 						<p class="svc__tagline"><?php echo esc_html( $fixit_detail['tagline'] ); ?></p>
 					<?php endif; ?>
 
 					<?php if ( $fixit_prod->post_content ) : ?>
-						<p><?php echo esc_html( wp_strip_all_tags( $fixit_prod->post_content ) ); ?></p>
+						<p><?php echo esc_html( wp_strip_all_tags( fixit_t_content( $fixit_prod ) ) ); ?></p>
 					<?php endif; ?>
 
 					<?php if ( $fixit_features ) : ?>

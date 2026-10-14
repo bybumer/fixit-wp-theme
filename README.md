@@ -17,6 +17,8 @@ fixit-web/
 ├── .env.example              ← lokal parolların şablonu (.env git-ə düşmür)
 ├── reliz-yarat.py            ← yeni versiyanı GitHub-a dərc edir (sayt özü yenilənir)
 ├── arxiv-yarat.py            ← yalnız ZIP yığır (əl ilə yükləmək lazım olsa)
+├── tools/build-translations.py ← EN/RU tərcümə fayllarını (.po/.mo) yığır
+├── tools/translations/*.json ← şablon mətnlərinin tərcümələri (AZ → EN, RU)
 ├── README.md                 ← bu fayl
 └── fixit-theme/              ← WordPress teması (Hostinger-ə bu qovluq yüklənir)
     ├── style.css             ← BÜTÜN dizayn burada (rənglər, ölçülər, adaptivlik)
@@ -37,7 +39,11 @@ fixit-web/
     ├── assets/js/main.js     ← tema dəyişdirici, mobil menyu, animasiyalar, şəkil böyüdücü
     ├── assets/js/admin-gallery.js ← admin: məhsul ekran görüntülərinin seçilməsi
     ├── assets/img/products/  ← məhsulların hazır ekran görüntüləri (demodan çəkilib)
+    ├── languages/            ← en_US / ru_RU tərcümə faylları (əl ilə dəyişmirsiniz — yığılır)
     └── inc/
+        ├── i18n.php          ← dillər: /en/ və /ru/ ünvanları, dil keçidi, ölkəyə görə seçim
+        ├── i18n-content.php  ← məhsul/xidmət/rəy tərcümələri + admin «Tərcümələr» qutusu
+        ├── i18n-data.php     ← hazır tərcümələr (ilk quraşdırmada bazaya yazılır)
         ├── icons.php         ← SVG ikon kitabxanası
         ├── customizer.php    ← admin paneldəki ayarlar (telefon, ünvan, sosial)
         ├── cpt.php           ← "Xidmətlər", "Məhsullar" və "Rəylər" bölmələri
@@ -114,6 +120,10 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Səhifənin SEO başlığı və təsviri | Yazını açın → aşağıdakı **SEO** qutusu |
 | SEO vəziyyətinə baxmaq | Admin → **FIXIT SEO** |
 | Sual-cavab mətnləri | `inc/faq.php` |
+| Məhsul/xidmət/rəyin EN və RU mətni | Yazını açın → **Tərcümələr (EN / RU)** qutusu |
+| Səhifə adının (menyuda) EN və RU variantı | Səhifəni açın → **Tərcümələr (EN / RU)** qutusu |
+| Hero başlığı, ünvan, iş saatlarının EN/RU mətni | Fərdiləşdir → **Tərcümələr (EN / RU)** |
+| Şablondakı sabit mətnlərin tərcüməsi | `tools/translations/*.json` → `python tools/build-translations.py` |
 
 ---
 
@@ -186,7 +196,66 @@ açıq API-sindən son relizi oxuyur və arxivi WordPress-in öz quraşdırıcı
 
 ---
 
-## 6. Nə edilib
+## 6. Dillər (AZ / EN / RU)
+
+Sayt üç dildədir. Azərbaycanca əsas dildir və ünvanı dəyişmir;
+digər dillər ünvanın əvvəlinə prefiks alır:
+
+| Dil | Ünvan nümunəsi |
+|---|---|
+| Azərbaycanca | `fixit.az/mehsullar/` |
+| English | `fixit.az/en/mehsullar/` |
+| Русский | `fixit.az/ru/mehsullar/` |
+
+Ayrıca səhifə yaratmaq lazım deyil — hər səhifə avtomatik üç ünvanda açılır.
+Plagin (Polylang, WPML) istifadə olunmur.
+
+**Dil keçidi:** masaüstündə yuxarı mavi zolaqda (sosial şəbəkələrin yanında),
+mobildə menyunun aşağısında. Seçim brauzerdə bir il yadda qalır.
+
+**Avtomatik seçim:** ziyarətçi sayta ilk dəfə əsas (azərbaycanca) ünvandan
+girəndə ölkəsinə görə dil seçilir:
+
+| Ölkə | Dil |
+|---|---|
+| Azərbaycan, Türkiyə | Azərbaycanca |
+| Rusiya, Belarus, Qazaxıstan, Qırğızıstan, Tacikistan, Türkmənistan, Özbəkistan, Ermənistan, Moldova | Русский |
+| Digər ölkələr | English |
+
+- Ölkə Cloudflare-in `CF-IPCountry` başlığından götürülür
+  (Cloudflare → *Network → IP Geolocation* açıq olmalıdır). Ölkə bilinməsə,
+  brauzerin dili əsas götürülür.
+- Seçim brauzerdə edilir (`/wp-json/fixit/v1/lang`), ona görə səhifə
+  keşi (LiteSpeed) hamıya eyni səhifəni verə bilir — problem yaratmır.
+- Ziyarətçi dili özü seçibsə və ya birbaşa `/en/…`, `/ru/…` linki ilə gəlibsə,
+  heç bir yönləndirmə edilmir. Axtarış botları da yönləndirilmir.
+- Ölkə siyahısı: `inc/i18n.php` → `fixit_ru_countries()` və `fixit_suggest_lang()`.
+
+**Tərcümə harada saxlanılır:**
+
+| Nə | Harada |
+|---|---|
+| Şablondakı sabit mətnlər (başlıqlar, düymələr, FAQ, məhsul detalları) | `tools/translations/*.json` → yığılıb `languages/*.mo` olur |
+| Məhsul, xidmət, rəy mətnləri | Bazada, admin → yazı → **Tərcümələr (EN / RU)** |
+| Səhifə və menyu adları | Admin → səhifə → **Tərcümələr (EN / RU)** (yalnız ad) |
+| Hero başlığı, ünvan, iş saatları | Fərdiləşdir → **Tərcümələr (EN / RU)** |
+
+Hazır tərcümələr tema quraşdırılanda (və yenilənəndə) bu sahələrə yazılır.
+Sahə boş qalsa, azərbaycanca mətn göstərilir (səhifə adlarında — temadakı
+hazır tərcümə). Admin sahəni bir dəfə yadda saxladıqdan sonra tema
+yeniləmələri həmin tərcüməyə toxunmur.
+
+**Şablona yeni mətn əlavə edəndə:**
+1. Mətni `__( '…', 'fixit' )` / `esc_html_e( '…', 'fixit' )` ilə yazın
+2. `tools/translations/` içindəki uyğun JSON fayla `"azərbaycanca": {"en": "…", "ru": "…"}` əlavə edin
+3. `python tools/build-translations.py` — `.po/.mo` yığılır və tərcüməsiz qalan
+   mətnlər siyahı ilə göstərilir
+
+Admin panelin dili dəyişmir — o, WordPress ayarlarındakı dildə qalır.
+
+---
+
+## 7. Nə edilib
 
 - 5 tam səhifə: Ana səhifə, Xidmətlər, **Məhsullar**, Haqqımızda, Əlaqə
 - **Hər məhsulun ayrıca səhifəsi** (`/mehsul/sorgu-sistemi/`, `/mehsul/remote/`,
@@ -219,11 +288,12 @@ açıq API-sindən son relizi oxuyur və arxivi WordPress-in öz quraşdırıcı
 - **Admin paneldə SEO izləmə lövhəsi** (menyu: *FIXIT SEO*):
   sayt ayarlarının yoxlanışı (indeksləşmə, HTTPS, sitemap, loqo, favicon…),
   hər səhifə üzrə bal, başlıq/təsvir uzunluğu və Google önizləməsi
+- **Üç dil (AZ / EN / RU):** dil keçidi, ölkəyə görə avtomatik seçim,
+  hər dil üçün ayrıca ünvan, `hreflang` teqləri, admin paneldə tərcümə qutuları
 - Sürət: xarici kitabxana yoxdur, yalnız Google Fonts
 
-## 7. Sonrakı addımlar üçün ideyalar
+## 8. Sonrakı addımlar üçün ideyalar
 
 - Bloq bölməsi (şablonlar hazırdır — sadəcə yazı əlavə etmək kifayətdir)
 - Real müştəri loqoları ilə "Tərəfdaşlar" bölməsi
-- Çoxdilli dəstək (Polylang və ya WPML)
 - Xidmət səhifələrinin hər biri üçün ayrıca ünvan (SEO üçün faydalı)

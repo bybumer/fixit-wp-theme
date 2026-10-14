@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.11.6' );
+define( 'FIXIT_VERSION', '1.12.0' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -174,6 +174,8 @@ function fixit_assets() {
 		true
 	);
 
+	wp_localize_script( 'fixit-main', 'fixitLang', fixit_lang_js_data() );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -204,6 +206,9 @@ add_action( 'wp_head', 'fixit_theme_boot_script', 1 );
 /* ============================================================
    3. Yardımçı fayllar
    ============================================================ */
+require_once get_template_directory() . '/inc/i18n.php';          // Üç dil: dil seçimi, ünvanlar, keçid
+require_once get_template_directory() . '/inc/i18n-data.php';     // Baza məzmununun hazır tərcümələri
+require_once get_template_directory() . '/inc/i18n-content.php';  // Məhsul/xidmət/rəy tərcümələri
 require_once get_template_directory() . '/inc/icons.php';         // SVG ikon kitabxanası
 require_once get_template_directory() . '/inc/slugs.php';         // Ünvanlarda ə → e (təmiz URL)
 require_once get_template_directory() . '/inc/customizer.php';    // Fərdiləşdirmə (əlaqə, sosial şəbəkə)

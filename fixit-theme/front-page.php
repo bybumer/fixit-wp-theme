@@ -24,7 +24,10 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 	<div class="container hero__inner">
 
 		<div>
-			<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php echo esc_html( fixit_get( 'fixit_year_since' ) ); ?><?php esc_html_e( '-ci ildən etibarən', 'fixit' ); ?></span>
+			<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php
+				/* translators: %s: fəaliyyətə başlama ili */
+				echo esc_html( sprintf( __( '%s-ci ildən etibarən', 'fixit' ), fixit_get( 'fixit_year_since' ) ) );
+				?></span>
 
 			<h1><?php echo wp_kses_post( fixit_get( 'fixit_hero_title' ) ); ?></h1>
 
@@ -118,7 +121,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 						<?php if ( $fixit_logo ) : ?>
 							<?php echo wp_kses_post( $fixit_logo ); ?>
 						<?php else : ?>
-							<span><?php echo esc_html( $fixit_client->post_title ); ?></span>
+							<span><?php echo esc_html( fixit_t_title( $fixit_client ) ); ?></span>
 						<?php endif; ?>
 					</div>
 				<?php endforeach; ?>
@@ -140,14 +143,14 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 			<?php foreach ( $fixit_services as $fixit_svc ) : ?>
 				<?php
 				$fixit_icon_key = get_post_meta( $fixit_svc->ID, '_fixit_icon', true );
-				$fixit_short    = get_post_meta( $fixit_svc->ID, '_fixit_short', true );
+				$fixit_short    = fixit_t_short( $fixit_svc );
 				if ( ! $fixit_short ) {
 					$fixit_short = wp_trim_words( $fixit_svc->post_content, 22 );
 				}
 				?>
 				<a class="card reveal" href="<?php echo esc_url( $fixit_services_url . '#xidmet-' . $fixit_svc->ID ); ?>">
 					<span class="card__icon"><?php fixit_icon( $fixit_icon_key ? $fixit_icon_key : 'shield' ); ?></span>
-					<h3><?php echo esc_html( $fixit_svc->post_title ); ?></h3>
+					<h3><?php echo esc_html( fixit_t_title( $fixit_svc ) ); ?></h3>
 					<p><?php echo esc_html( $fixit_short ); ?></p>
 					<span class="card__link"><?php esc_html_e( 'Ətraflı', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?></span>
 				</a>
@@ -175,14 +178,14 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 			$fixit_flag        = array_shift( $fixit_products );
 			$fixit_flag_detail = fixit_product_detail( $fixit_flag );
 			$fixit_flag_demo   = fixit_product_open_demo_url( $fixit_flag->ID );
-			$fixit_flag_short  = get_post_meta( $fixit_flag->ID, '_fixit_short', true );
+			$fixit_flag_short  = fixit_t_short( $fixit_flag );
 			$fixit_flag_shots  = fixit_product_screens( $fixit_flag );
 			$fixit_flag_mods   = ! empty( $fixit_flag_detail['modules']['items'] ) ? $fixit_flag_detail['modules']['items'] : array();
 			?>
 			<article class="prod-feature reveal">
 				<div class="prod-feature__text">
 					<span class="badge"><?php fixit_icon( 'award' ); ?><?php esc_html_e( 'Flaqman məhsul', 'fixit' ); ?></span>
-					<h3><a href="<?php echo esc_url( get_permalink( $fixit_flag ) ); ?>"><?php echo esc_html( $fixit_flag->post_title ); ?></a></h3>
+					<h3><a href="<?php echo esc_url( get_permalink( $fixit_flag ) ); ?>"><?php echo esc_html( fixit_t_title( $fixit_flag ) ); ?></a></h3>
 					<?php if ( ! empty( $fixit_flag_detail['tagline'] ) ) : ?>
 						<p class="prod-feature__tagline"><?php echo esc_html( $fixit_flag_detail['tagline'] ); ?></p>
 					<?php endif; ?>
@@ -232,8 +235,8 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 				<?php foreach ( $fixit_products as $fixit_prod ) : ?>
 					<?php
 					$fixit_p_icon  = get_post_meta( $fixit_prod->ID, '_fixit_icon', true );
-					$fixit_p_short = get_post_meta( $fixit_prod->ID, '_fixit_short', true );
-					$fixit_p_feat  = array_slice( fixit_meta_lines( $fixit_prod->ID, '_fixit_features' ), 0, 3 );
+					$fixit_p_short = fixit_t_short( $fixit_prod );
+					$fixit_p_feat  = array_slice( fixit_t_features( $fixit_prod ), 0, 3 );
 
 					if ( ! $fixit_p_short ) {
 						$fixit_p_short = wp_trim_words( $fixit_prod->post_content, 26 );
@@ -242,7 +245,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 					<a class="card reveal" href="<?php echo esc_url( get_permalink( $fixit_prod ) ); ?>">
 						<span class="badge"><?php fixit_icon( 'award' ); ?><?php esc_html_e( 'FIXIT məhsulu', 'fixit' ); ?></span>
 						<span class="card__icon"><?php fixit_icon( $fixit_p_icon ? $fixit_p_icon : 'server' ); ?></span>
-						<h3><?php echo esc_html( $fixit_prod->post_title ); ?></h3>
+						<h3><?php echo esc_html( fixit_t_title( $fixit_prod ) ); ?></h3>
 						<p><?php echo esc_html( $fixit_p_short ); ?></p>
 
 						<?php if ( $fixit_p_feat ) : ?>
@@ -415,12 +418,12 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 					?>
 					<div class="quote reveal">
 						<?php echo fixit_stars( $fixit_rev_rating ? $fixit_rev_rating : 5 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-						<p>“<?php echo esc_html( wp_strip_all_tags( $fixit_rev->post_content ) ); ?>”</p>
+						<p>“<?php echo esc_html( wp_strip_all_tags( fixit_t_content( $fixit_rev ) ) ); ?>”</p>
 						<div class="quote__who">
 							<span class="avatar"><?php echo esc_html( mb_substr( $fixit_rev_author, 0, 1 ) ); ?></span>
 							<span>
 								<strong><?php echo esc_html( $fixit_rev_author ); ?></strong>
-								<span><?php echo esc_html( $fixit_rev_city ); ?></span>
+								<span><?php echo esc_html( fixit_translate_title( $fixit_rev_city ) ); ?></span>
 							</span>
 						</div>
 					</div>

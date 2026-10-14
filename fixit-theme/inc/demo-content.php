@@ -31,6 +31,7 @@ function fixit_run_setup() {
 	fixit_create_products();
 	fixit_refresh_seeded_products();
 	fixit_fix_encoded_slugs();
+	fixit_apply_seed_translations();
 	fixit_create_reviews();
 	fixit_create_clients();
 	fixit_create_menu();

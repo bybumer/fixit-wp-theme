@@ -189,7 +189,8 @@ function fixit_template_description( $post_id ) {
 function fixit_meta_description() {
 	if ( is_singular() ) {
 		$id     = get_queried_object_id();
-		$custom = get_post_meta( $id, '_fixit_seo_desc', true );
+		// Əl ilə yazılmış SEO təsviri azərbaycancadır — yalnız AZ səhifəsində işlədilir.
+		$custom = fixit_is_default_lang() ? get_post_meta( $id, '_fixit_seo_desc', true ) : '';
 
 		if ( $custom ) {
 			return $custom;
@@ -204,12 +205,12 @@ function fixit_meta_description() {
 			return $from_template;
 		}
 
-		$excerpt = get_the_excerpt( $id );
+		$excerpt = fixit_is_default_lang() ? get_the_excerpt( $id ) : fixit_t_short( $id );
 		if ( $excerpt ) {
 			return wp_strip_all_tags( $excerpt );
 		}
 
-		$content = get_post_field( 'post_content', $id );
+		$content = fixit_is_default_lang() ? get_post_field( 'post_content', $id ) : fixit_t_content( $id );
 		if ( $content ) {
 			return wp_trim_words( wp_strip_all_tags( $content ), 28, '…' );
 		}
@@ -231,7 +232,7 @@ function fixit_document_title( $parts ) {
 		return $parts;
 	}
 
-	$custom = get_post_meta( get_queried_object_id(), '_fixit_seo_title', true );
+	$custom = fixit_is_default_lang() ? get_post_meta( get_queried_object_id(), '_fixit_seo_title', true ) : '';
 
 	if ( $custom ) {
 		$parts['title'] = $custom;
@@ -418,7 +419,7 @@ function fixit_schema_organization() {
 			'@type'       => 'Offer',
 			'itemOffered' => array(
 				'@type' => 'Service',
-				'name'  => $svc->post_title,
+				'name'  => fixit_t_title( $svc ),
 			),
 		);
 	}
@@ -428,8 +429,8 @@ function fixit_schema_organization() {
 			'@type'       => 'Offer',
 			'itemOffered' => array(
 				'@type'               => 'SoftwareApplication',
-				'name'                => $prod->post_title,
-				'description'         => wp_strip_all_tags( get_post_meta( $prod->ID, '_fixit_short', true ) ),
+				'name'                => fixit_t_title( $prod ),
+				'description'         => wp_strip_all_tags( fixit_t_short( $prod ) ),
 				'applicationCategory' => 'BusinessApplication',
 				'operatingSystem'     => 'Web',
 			),
@@ -518,8 +519,8 @@ function fixit_schema_software() {
 	$schema = array(
 		'@context'            => 'https://schema.org',
 		'@type'               => 'SoftwareApplication',
-		'name'                => $post->post_title,
-		'description'         => wp_strip_all_tags( get_post_meta( $post->ID, '_fixit_short', true ) ),
+		'name'                => fixit_t_title( $post ),
+		'description'         => wp_strip_all_tags( fixit_t_short( $post ) ),
 		'url'                 => get_permalink( $post ),
 		'applicationCategory' => 'BusinessApplication',
 		'operatingSystem'     => 'Web',
