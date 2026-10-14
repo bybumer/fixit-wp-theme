@@ -2161,8 +2161,8 @@ msgid "Demo 250 nümunə sorğu və 250 tapşırıqla doldurulub. Qeydiyyat yoxd
 msgstr "The demo is filled with 250 sample requests and 250 tasks. No registration — pick a role and start right away."
 
 #: inc/product-data.php
-msgid "Demo məlumatları hər gecə sıfırlanır."
-msgstr "The demo data is reset every night."
+msgid "Hər giriş 40 dəqiqəlik ayrıca sessiyadır: dəyişikliklərinizi yalnız siz görürsünüz, sessiya bitəndə silinir."
+msgstr "Each sign-in is a separate 40-minute session: only you see your changes, and they are deleted when the session ends."
 
 #: inc/product-data.php
 msgid "Demonu açın — qeydiyyat tələb olunmur"

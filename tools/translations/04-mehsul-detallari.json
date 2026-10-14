@@ -81,7 +81,7 @@
 "Hesabat": {"en": "Reporting", "ru": "Отчётность"},
 "ay sonu şirkət və agent üzrə": {"en": "end of month, by company and agent", "ru": "в конце месяца, по компаниям и агентам"},
 "Demo 250 nümunə sorğu və 250 tapşırıqla doldurulub. Qeydiyyat yoxdur — istədiyiniz rolu seçib dərhal işə başlayın.": {"en": "The demo is filled with 250 sample requests and 250 tasks. No registration — pick a role and start right away.", "ru": "Демо заполнено 250 примерами обращений и 250 задачами. Без регистрации — выберите роль и сразу начинайте."},
-"Demo məlumatları hər gecə sıfırlanır.": {"en": "The demo data is reset every night.", "ru": "Данные демо обнуляются каждую ночь."},
+"Hər giriş 40 dəqiqəlik ayrıca sessiyadır: dəyişikliklərinizi yalnız siz görürsünüz, sessiya bitəndə silinir.": {"en": "Each sign-in is a separate 40-minute session: only you see your changes, and they are deleted when the session ends.", "ru": "Каждый вход — отдельный сеанс на 40 минут: ваши изменения видите только вы, по окончании сеанса они удаляются."},
 "Demonu açın — qeydiyyat tələb olunmur": {"en": "Open the demo — no registration required", "ru": "Откройте демо — регистрация не нужна"},
 "Rol seçin: Admin, Agent, Menecer və ya Müştəri": {"en": "Choose a role: Admin, Agent, Manager or Customer", "ru": "Выберите роль: Админ, Агент, Менеджер или Клиент"},
 "Sorğu və tapşırıqlarla sərbəst işləyin": {"en": "Work freely with the requests and tasks", "ru": "Свободно работайте с обращениями и задачами"},

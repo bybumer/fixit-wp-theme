@@ -198,18 +198,22 @@ function fixit_product_details() {
 			// Addımlar demo.fixit.az-ın giriş səhifəsini təsvir edir: orada
 			// qeydiyyat yoxdur, rollar bir kliklə seçilir.
 			'demo'     => array(
-				'mode'  => 'open',
-				'url'   => 'https://demo.fixit.az/portal',
-				'text'  => __( 'Demo 250 nümunə sorğu və 250 tapşırıqla doldurulub. Qeydiyyat yoxdur — istədiyiniz rolu seçib dərhal işə başlayın.', 'fixit' ),
-				'note'  => __( 'Demo məlumatları hər gecə sıfırlanır.', 'fixit' ),
-				'steps' => array(
+				'mode'     => 'open',
+				'url'      => 'https://demo.fixit.az/portal',
+				'text'     => __( 'Demo 250 nümunə sorğu və 250 tapşırıqla doldurulub. Qeydiyyat yoxdur — istədiyiniz rolu seçib dərhal işə başlayın.', 'fixit' ),
+				'note'     => __( 'Hər giriş 40 dəqiqəlik ayrıca sessiyadır: dəyişikliklərinizi yalnız siz görürsünüz, sessiya bitəndə silinir.', 'fixit' ),
+				// Əvvəlki defolt qeydlər. Köhnə admin forması qeydi xanaya özü doldururdu
+				// və məhsulu yadda saxlayanda o bazaya düşürdü - belə qeyd admin yazısı
+				// sayılmır, yuxarıdakı (saytın dilinə tərcümə olunan) qeyd göstərilir.
+				'note_was' => array( 'Demo məlumatları hər gecə sıfırlanır.' ),
+				'steps'    => array(
 					__( 'Demonu açın — qeydiyyat tələb olunmur', 'fixit' ),
 					__( 'Rol seçin: Admin, Agent, Menecer və ya Müştəri', 'fixit' ),
 					__( 'Sorğu və tapşırıqlarla sərbəst işləyin', 'fixit' ),
 				),
 				// Demonun giriş səhifəsindəki düymələrlə eyni: ziyarətçi orada
 				// nə görəcəyini əvvəlcədən bilir.
-				'roles' => array(
+				'roles'    => array(
 					array( 'shield', __( 'Admin', 'fixit' ), __( 'sistemin tam görünüşü', 'fixit' ) ),
 					array( 'ticket', __( 'Agent', 'fixit' ), __( 'sorğulara cavab, tapşırıqlar', 'fixit' ) ),
 					array( 'chart', __( 'Menecer', 'fixit' ), __( 'hesabatlar və komanda yükü', 'fixit' ) ),

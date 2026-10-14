@@ -95,8 +95,14 @@ function fixit_product_demo_box( $post ) {
 		<p class="hint"><?php esc_html_e( 'Ünvan boş qalsa və temada bu məhsul üçün hazır demo varsa, o işlədilir (məs. Sorğu Sistemi → açıq demo). "Sorğu ilə" rejimini saxlamaq üçün ünvanı da yazın.', 'fixit' ); ?></p>
 
 		<label for="fixit_demo_note"><?php esc_html_e( 'Açıq demo üçün qeyd', 'fixit' ); ?></label>
-		<input type="text" name="fixit_demo_note" id="fixit_demo_note" value="<?php echo esc_attr( $demo['note'] ); ?>" placeholder="<?php esc_attr_e( 'Məs: Məlumatlar hər gecə sıfırlanır', 'fixit' ); ?>">
-		<p class="hint"><?php esc_html_e( 'Yalnız "Açıq" rejimdə düymənin altında göstərilir.', 'fixit' ); ?></p>
+		<?php
+		// Hazır qeyd xanaya YAZILMIR, nümunə kimi görünür: yazılsaydı, məhsulu
+		// yadda saxlayanda bazaya düşər, tema yenilənəndə köhnə qalar və digər
+		// dillərdə tərcümə olunmazdı.
+		$fixit_note_hint = $demo['default_note'] ? $demo['default_note'] : __( 'Məs: Hər giriş 40 dəqiqəlik ayrıca sessiyadır', 'fixit' );
+		?>
+		<input type="text" name="fixit_demo_note" id="fixit_demo_note" value="<?php echo esc_attr( $demo['own_note'] ); ?>" placeholder="<?php echo esc_attr( $fixit_note_hint ); ?>">
+		<p class="hint"><?php esc_html_e( 'Yalnız "Açıq" rejimdə düymənin altında göstərilir. Boş qalsa, temanın hazır qeydi göstərilir və saytın dilinə tərcümə olunur.', 'fixit' ); ?></p>
 
 		<label><?php esc_html_e( 'Ekran görüntüləri', 'fixit' ); ?></label>
 		<p class="hint"><?php esc_html_e( 'Məhsul səhifəsində qalereya kimi göstərilir; ilk şəkil səhifənin yuxarısında da görünür. Sıranı sürüşdürərək dəyişə bilərsiniz. Real müştəri məlumatı olan ekran şəkli yükləməyin — demo məlumatlarından çəkin.', 'fixit' ); ?></p>
@@ -166,7 +172,7 @@ function fixit_product_gallery_ids( $post_id ) {
  * Məhsulun demo ayarları.
  *
  * @param int $post_id Məhsul.
- * @return array ['mode','url','note']
+ * @return array ['mode','url','note','own_note','default_note', ...]
  */
 function fixit_product_demo( $post_id ) {
 	$mode = get_post_meta( $post_id, '_fixit_demo_mode', true );
@@ -204,18 +210,27 @@ function fixit_product_demo( $post_id ) {
 		$fallback = array();
 	}
 
-	if ( '' === $note && ! empty( $fallback['note'] ) ) {
-		$note = $fallback['note'];
+	// Əvvəlki defolt qeyd bazada qalıbsa - admin yazısı deyil (bax product-data.php → 'note_was')
+	if ( ! empty( $fallback['note_was'] ) && in_array( trim( $note ), $fallback['note_was'], true ) ) {
+		$note = '';
+	}
+	$own_note     = $note;
+	$default_note = ! empty( $fallback['note'] ) ? $fallback['note'] : '';
+	if ( '' === $note ) {
+		$note = $default_note;
 	}
 
 	return array(
-		'mode'  => array_key_exists( $mode, fixit_demo_modes() ) ? $mode : 'request',
-		'url'   => $url,
-		'note'  => $note,
+		'mode'         => array_key_exists( $mode, fixit_demo_modes() ) ? $mode : 'request',
+		'url'          => $url,
+		'note'         => $note,
+		// Admin formu üçün: adminin öz qeydi və boş qalanda göstəriləcək hazır qeyd
+		'own_note'     => $own_note,
+		'default_note' => $default_note,
 		// Məhsula xas izah və addımlar (yalnız kodda) - yoxdursa ümumi mətn.
-		'text'  => ! empty( $fallback['text'] ) ? $fallback['text'] : '',
-		'steps' => ! empty( $fallback['steps'] ) ? $fallback['steps'] : array(),
-		'roles' => ! empty( $fallback['roles'] ) ? $fallback['roles'] : array(),
+		'text'         => ! empty( $fallback['text'] ) ? $fallback['text'] : '',
+		'steps'        => ! empty( $fallback['steps'] ) ? $fallback['steps'] : array(),
+		'roles'        => ! empty( $fallback['roles'] ) ? $fallback['roles'] : array(),
 	);
 }
 
