@@ -1385,8 +1385,8 @@ msgid "Fixit Remote — Məxfilik siyasəti"
 msgstr "Fixit Remote — Privacy policy"
 
 #: template-remote-privacy.php
-msgid "Mobil tətbiq (Android və iOS) haqqında. Son yenilənmə: 12 oktyabr 2026."
-msgstr "About the mobile app (Android and iOS). Last updated: 12 October 2026."
+msgid "Mobil tətbiq (Android və iOS) haqqında. Son yenilənmə: 15 oktyabr 2026."
+msgstr "About the mobile app (Android and iOS). Last updated: 15 October 2026."
 
 #: template-remote-privacy.php
 msgid "Məxfilik siyasəti"
@@ -1449,12 +1449,20 @@ msgid "qoşulma parolunun hash-i — parolun özü serverə heç vaxt göndəril
 msgstr "a hash of the connection password — the password itself is never sent to the server,"
 
 #: template-remote-privacy.php
-msgid "son əlaqə vaxtı."
-msgstr "the time of last contact."
+msgid "son əlaqə vaxtı,"
+msgstr "the time of last contact,"
+
+#: template-remote-privacy.php
+msgid "ID nömrəsinin sonuncu dəfə yeniləndiyi vaxt."
+msgstr "the time the ID number was last renewed."
 
 #: template-remote-privacy.php
 msgid "Hər qoşulma cəhdi təhlükəsizlik jurnalına yazılır: vaxt, ID nömrəsi, IP ünvanı və nəticə. Bu, parol təxmin etmə cəhdlərini aşkar edib dayandırmaq üçündür."
 msgstr "Every connection attempt is written to a security log: time, ID number, IP address and result. This is used to detect and stop password-guessing attempts."
+
+#: template-remote-privacy.php
+msgid "ID nömrəsini Ayarlar → \"ID-ni yenilə\" ilə gündə bir dəfə dəyişmək olar: server yeni nömrə verir, köhnə nömrə ilə bu telefona artıq qoşulmaq olmur. Bunun üçün telefon serverə qısa müddətə qoşulur (ekran paylaşımı bağlı olsa da). Yeniləmə də jurnala yazılır: vaxt, köhnə və yeni ID nömrəsi, IP ünvanı."
+msgstr "The ID number can be changed once a day in Settings → \"Renew ID\" (in the app: \"ID-ni yenilə\"): the server issues a new number, and the old number can no longer be used to connect to this phone. For this the phone briefly connects to the server (even if screen sharing is off). Renewals are also logged: time, old and new ID number, IP address."
 
 #: template-remote-privacy.php
 msgid "Qoşulma zamanı ekran görüntüsü, toxunuş və klaviatura əmrləri server vasitəsilə real vaxtda qarşı tərəfə ötürülür. Server onları saxlamır. Bütün əlaqə şifrəli kanal (HTTPS/TLS) ilə gedir."
@@ -1565,8 +1573,8 @@ msgid "Yalnız yadda saxlamağı seçdiyiniz cihazlar üçün"
 msgstr "Only for devices you chose to remember"
 
 #: template-remote-privacy.php
-msgid "Telefonun öz ID-si və qoşulma parolu"
-msgstr "The phone's own ID and connection password"
+msgid "Telefonun öz ID-si, onu nə vaxt yeniləmək olar və qoşulma parolu"
+msgstr "The phone's own ID, when it can next be renewed, and connection password"
 
 #: template-remote-privacy.php
 msgid "Ekran paylaşımı üçün"
@@ -1665,8 +1673,8 @@ msgid "Silinir:"
 msgstr "Deleted:"
 
 #: template-remote-privacy.php
-msgid "cihaz qeydi (cihaz kimliyi, ID nömrəsi, cihazın adı, əməliyyat sisteminin versiyası, parolun hash-i, son əlaqə vaxtı) və həmin ID-yə aid qoşulma jurnalı (vaxt, IP ünvanı, nəticə)."
-msgstr "the device record (device identifier, ID number, device name, operating system version, password hash, time of last contact) and the connection log for that ID (time, IP address, result)."
+msgid "cihaz qeydi (cihaz kimliyi, ID nömrəsi, cihazın adı, əməliyyat sisteminin versiyası, parolun hash-i, son əlaqə vaxtı, ID-nin yenilənmə vaxtı) və həmin cihazın indiki və əvvəlki ID nömrələrinə aid qoşulma jurnalı (vaxt, IP ünvanı, nəticə)."
+msgstr "the device record (device identifier, ID number, device name, operating system version, password hash, time of last contact, time of the last ID renewal) and the connection log for the current and previous ID numbers of that device (time, IP address, result)."
 
 #: template-remote-privacy.php
 msgid "Qalmır:"

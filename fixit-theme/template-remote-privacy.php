@@ -21,7 +21,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 	<div class="container">
 		<span class="eyebrow"><?php fixit_icon( 'lock' ); ?><?php esc_html_e( 'Məxfilik', 'fixit' ); ?></span>
 		<h1><?php esc_html_e( 'Fixit Remote — Məxfilik siyasəti', 'fixit' ); ?></h1>
-		<p><?php esc_html_e( 'Mobil tətbiq (Android və iOS) haqqında. Son yenilənmə: 12 oktyabr 2026.', 'fixit' ); ?></p>
+		<p><?php esc_html_e( 'Mobil tətbiq (Android və iOS) haqqında. Son yenilənmə: 15 oktyabr 2026.', 'fixit' ); ?></p>
 
 		<nav class="crumbs" aria-label="<?php esc_attr_e( 'Naviqasiya', 'fixit' ); ?>">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Ana səhifə', 'fixit' ); ?></a>
@@ -58,9 +58,11 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 				<li><?php esc_html_e( 'tətbiqin yaratdığı təsadüfi cihaz kimliyi və 9 rəqəmli ID nömrəsi,', 'fixit' ); ?></li>
 				<li><?php esc_html_e( 'cihazın adı (telefonun adı və ya modeli) və əməliyyat sisteminin versiyası,', 'fixit' ); ?></li>
 				<li><?php esc_html_e( 'qoşulma parolunun hash-i — parolun özü serverə heç vaxt göndərilmir,', 'fixit' ); ?></li>
-				<li><?php esc_html_e( 'son əlaqə vaxtı.', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'son əlaqə vaxtı,', 'fixit' ); ?></li>
+				<li><?php esc_html_e( 'ID nömrəsinin sonuncu dəfə yeniləndiyi vaxt.', 'fixit' ); ?></li>
 			</ul>
 			<p><?php esc_html_e( 'Hər qoşulma cəhdi təhlükəsizlik jurnalına yazılır: vaxt, ID nömrəsi, IP ünvanı və nəticə. Bu, parol təxmin etmə cəhdlərini aşkar edib dayandırmaq üçündür.', 'fixit' ); ?></p>
+			<p><?php esc_html_e( 'ID nömrəsini Ayarlar → "ID-ni yenilə" ilə gündə bir dəfə dəyişmək olar: server yeni nömrə verir, köhnə nömrə ilə bu telefona artıq qoşulmaq olmur. Bunun üçün telefon serverə qısa müddətə qoşulur (ekran paylaşımı bağlı olsa da). Yeniləmə də jurnala yazılır: vaxt, köhnə və yeni ID nömrəsi, IP ünvanı.', 'fixit' ); ?></p>
 			<p><?php esc_html_e( 'Qoşulma zamanı ekran görüntüsü, toxunuş və klaviatura əmrləri server vasitəsilə real vaxtda qarşı tərəfə ötürülür. Server onları saxlamır. Bütün əlaqə şifrəli kanal (HTTPS/TLS) ilə gedir.', 'fixit' ); ?></p>
 
 			<h2><?php esc_html_e( '2. Telefonun ekranını paylaşmaq', 'fixit' ); ?></h2>
@@ -94,7 +96,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 						<tr><td><?php esc_html_e( 'İstifadəçi adı', 'fixit' ); ?></td><td><?php esc_html_e( 'Tətbiqin öz yaddaşında', 'fixit' ); ?></td><td><?php esc_html_e( 'Giriş formasını doldurmaq üçün', 'fixit' ); ?></td></tr>
 						<tr><td><?php esc_html_e( 'Hesab parolu', 'fixit' ); ?></td><td><?php esc_html_e( 'Sistemin şifrəli anbarında', 'fixit' ); ?></td><td><?php esc_html_e( 'Yalnız "Parolu yadda saxla" seçilibsə', 'fixit' ); ?></td></tr>
 						<tr><td><?php esc_html_e( 'Qoşulduğunuz cihazların parolları', 'fixit' ); ?></td><td><?php esc_html_e( 'Sistemin şifrəli anbarında', 'fixit' ); ?></td><td><?php esc_html_e( 'Yalnız yadda saxlamağı seçdiyiniz cihazlar üçün', 'fixit' ); ?></td></tr>
-						<tr><td><?php esc_html_e( 'Telefonun öz ID-si və qoşulma parolu', 'fixit' ); ?></td><td><?php esc_html_e( 'Tətbiqin öz yaddaşında', 'fixit' ); ?></td><td><?php esc_html_e( 'Ekran paylaşımı üçün', 'fixit' ); ?></td></tr>
+						<tr><td><?php esc_html_e( 'Telefonun öz ID-si, onu nə vaxt yeniləmək olar və qoşulma parolu', 'fixit' ); ?></td><td><?php esc_html_e( 'Tətbiqin öz yaddaşında', 'fixit' ); ?></td><td><?php esc_html_e( 'Ekran paylaşımı üçün', 'fixit' ); ?></td></tr>
 						<tr><td><?php esc_html_e( 'Son qoşulmalar siyahısı', 'fixit' ); ?></td><td><?php esc_html_e( 'Tətbiqin öz yaddaşında', 'fixit' ); ?></td><td><?php esc_html_e( 'Tez yenidən qoşulmaq üçün', 'fixit' ); ?></td></tr>
 						<tr><td><?php esc_html_e( 'Görünüş ayarları', 'fixit' ); ?></td><td><?php esc_html_e( 'Tətbiqin öz yaddaşında', 'fixit' ); ?></td><td><?php esc_html_e( 'Mövzu və idarə rejimi', 'fixit' ); ?></td></tr>
 					</tbody>
@@ -121,7 +123,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 				<li><?php esc_html_e( 'Məktubda telefonunuzun 9 rəqəmli ID nömrəsini göstərin — o, tətbiqin "Əsas" səhifəsində görünür.', 'fixit' ); ?></li>
 				<li><?php esc_html_e( 'Həmin ID-yə aid məlumat 30 gün ərzində silinir və nəticə barədə sizə cavab yazılır.', 'fixit' ); ?></li>
 			</ol>
-			<p><strong><?php esc_html_e( 'Silinir:', 'fixit' ); ?></strong> <?php esc_html_e( 'cihaz qeydi (cihaz kimliyi, ID nömrəsi, cihazın adı, əməliyyat sisteminin versiyası, parolun hash-i, son əlaqə vaxtı) və həmin ID-yə aid qoşulma jurnalı (vaxt, IP ünvanı, nəticə).', 'fixit' ); ?></p>
+			<p><strong><?php esc_html_e( 'Silinir:', 'fixit' ); ?></strong> <?php esc_html_e( 'cihaz qeydi (cihaz kimliyi, ID nömrəsi, cihazın adı, əməliyyat sisteminin versiyası, parolun hash-i, son əlaqə vaxtı, ID-nin yenilənmə vaxtı) və həmin cihazın indiki və əvvəlki ID nömrələrinə aid qoşulma jurnalı (vaxt, IP ünvanı, nəticə).', 'fixit' ); ?></p>
 			<p><strong><?php esc_html_e( 'Qalmır:', 'fixit' ); ?></strong> <?php esc_html_e( 'ID serverində bu ID-yə aid heç nə saxlanılmır. Ekran görüntüsü heç vaxt saxlanılmır.', 'fixit' ); ?></p>
 			<p><?php esc_html_e( 'Silmə istəyi olmadıqda cihaz qeydi və qoşulma jurnalı xidmətin işləməsi və təhlükəsizliyi üçün saxlanılır.', 'fixit' ); ?></p>
 			<p><?php esc_html_e( 'Telefonda saxlananları tətbiqi silməklə özünüz silə bilərsiniz (bax: 5-ci bənd). Şirkət serverindəki hesab və mesajlar şirkətinizə məxsusdur — onların silinməsi üçün şirkətinizin administratoruna müraciət edin.', 'fixit' ); ?></p>
@@ -147,7 +149,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 
 			<!-- ======================= EN ======================= -->
 			<h2>Privacy Policy (English)</h2>
-			<p><em>Last updated: 12 October 2026. This policy covers the Fixit Remote mobile app (Android and iOS).</em></p>
+			<p><em>Last updated: 15 October 2026. This policy covers the Fixit Remote mobile app (Android and iOS).</em></p>
 
 			<h3>Short answer</h3>
 			<ul>
@@ -162,8 +164,9 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 			</ul>
 
 			<h3>1. Connecting by ID (id.fixit.az)</h3>
-			<p>When you turn on screen sharing, the phone registers with the ID server, which stores: a random device identifier generated by the app and a 9-digit ID number; the device name (phone name or model) and OS version; a <strong>hash</strong> of the connection password (the password itself is never sent); and the time of last contact.</p>
+			<p>When you turn on screen sharing, the phone registers with the ID server, which stores: a random device identifier generated by the app and a 9-digit ID number; the device name (phone name or model) and OS version; a <strong>hash</strong> of the connection password (the password itself is never sent); the time of last contact; and the time the ID number was last renewed.</p>
 			<p>Every connection attempt is logged for security: time, ID number, IP address and result. This is used to detect and stop password-guessing.</p>
+			<p>The ID number can be changed once a day in Settings → "ID-ni yenilə" (Renew ID): the server issues a new number, and the old number can no longer be used to connect to this phone. For this the phone briefly connects to the server (even if screen sharing is off). Renewals are also logged: time, old and new ID number, IP address.</p>
 			<p>During a session, screen images and touch/keyboard commands are relayed through the server in real time. The server does <strong>not</strong> store them. All traffic uses an encrypted channel (HTTPS/TLS).</p>
 
 			<h3>2. Sharing your phone's screen</h3>
@@ -191,7 +194,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 						<tr><td>Username</td><td>App storage</td><td>To pre-fill the sign-in form</td></tr>
 						<tr><td>Account password</td><td>System secure storage</td><td>Only if "Remember password" is on</td></tr>
 						<tr><td>Passwords of devices you connect to</td><td>System secure storage</td><td>Only for devices you chose to remember</td></tr>
-						<tr><td>The phone's own ID and connection password</td><td>App storage</td><td>For screen sharing</td></tr>
+						<tr><td>The phone's own ID, when it can next be renewed, and connection password</td><td>App storage</td><td>For screen sharing</td></tr>
 						<tr><td>Recent connections</td><td>App storage</td><td>For quick reconnects</td></tr>
 						<tr><td>Appearance settings</td><td>App storage</td><td>Theme and control mode</td></tr>
 					</tbody>
@@ -218,7 +221,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 				<li>Include your phone's 9-digit ID number — it is shown on the app's Home ("Əsas") screen.</li>
 				<li>The data for that ID is deleted within 30 days and we reply to confirm.</li>
 			</ol>
-			<p><strong>Deleted:</strong> the device record (device identifier, ID number, device name, OS version, password hash, time of last contact) and the connection log entries for that ID (time, IP address, result).</p>
+			<p><strong>Deleted:</strong> the device record (device identifier, ID number, device name, OS version, password hash, time of last contact, time of the last ID renewal) and the connection log entries for the current and previous ID numbers of that device (time, IP address, result).</p>
 			<p><strong>Kept:</strong> nothing for that ID remains on the ID server. Screen images are never stored.</p>
 			<p>Without a deletion request, the device record and connection log are kept to run the service and keep it secure.</p>
 			<p>Data stored on the phone can be removed by uninstalling the app (see section 5). Accounts and messages on your company's server belong to your company — contact your company's administrator to have them deleted.</p>
