@@ -26,7 +26,7 @@ function fixit_defaults() {
 		'fixit_address_br'   => 'Cəlilabad ray., Heydər Əliyev pr. 284A',
 		'fixit_hours_br'     => 'Həftənin 7 günü, 09:00 – 20:00',
 		'fixit_facebook'     => 'https://www.facebook.com/fixitservicesaz',
-		'fixit_instagram'    => 'https://www.instagram.com/',
+		'fixit_instagram'    => '',
 		'fixit_tiktok'       => 'https://www.tiktok.com/@fixit.az',
 		'fixit_linkedin'     => '',
 		'fixit_map_embed'    => 'https://www.google.com/maps?q=Cəlilabad+Heydər+Əliyev+prospekti+284A&output=embed',
@@ -223,6 +223,29 @@ function fixit_translatable_mods() {
  *   2. Hazır tərcümə (azərbaycanca dəyər standart mətnlə eynidirsə)
  *   3. Azərbaycanca dəyər
  */
+/**
+ * Sosial şəbəkə linkləri — yalnız konkret profilə aparanlar.
+ *
+ * "https://www.instagram.com/" kimi ünvan heç bir profilə aparmır
+ * (köhnə saytdan qalmış boş link idi) — belə linklər göstərilmir.
+ *
+ * @return array şəbəkə => ünvan
+ */
+function fixit_social_links() {
+	$links = array();
+
+	foreach ( array( 'facebook', 'instagram', 'tiktok', 'linkedin' ) as $net ) {
+		$url  = trim( (string) fixit_get( 'fixit_' . $net ) );
+		$path = trim( (string) wp_parse_url( $url, PHP_URL_PATH ), '/' );
+
+		if ( $url && '' !== $path ) {
+			$links[ $net ] = $url;
+		}
+	}
+
+	return $links;
+}
+
 function fixit_get( $key ) {
 	$value = get_theme_mod( $key, fixit_default( $key ) );
 

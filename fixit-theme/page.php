@@ -5,6 +5,10 @@
  * @package FIXIT
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 get_header();
 ?>
 

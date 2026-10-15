@@ -358,20 +358,43 @@ add_filter( 'redirect_canonical', 'fixit_redirect_canonical', 20, 2 );
  * <head> içində hreflang — hansı səhifənin hansı dildə qarşılığı olduğunu bildirir.
  */
 function fixit_hreflang_tags() {
+	// Axtarış, 404 və s. indekslənmir — onlar üçün dil variantı göstərilmir.
+	if ( is_404() || is_search() || is_author() || is_date() || is_preview() ) {
+		return;
+	}
+	if ( is_singular() && get_post_meta( get_queried_object_id(), '_fixit_seo_noindex', true ) ) {
+		return;
+	}
+
 	$langs = fixit_langs();
 
 	foreach ( $langs as $code => $info ) {
 		printf(
 			'<link rel="alternate" hreflang="%s" href="%s">' . "\n",
 			esc_attr( $info['hreflang'] ),
-			esc_url( fixit_current_url_in( $code ) )
+			esc_url( fixit_hreflang_url( $code ) )
 		);
 	}
 
 	printf(
 		'<link rel="alternate" hreflang="x-default" href="%s">' . "\n",
-		esc_url( fixit_current_url_in( fixit_default_lang() ) )
+		esc_url( fixit_hreflang_url( fixit_default_lang() ) )
 	);
+}
+
+/**
+ * hreflang ünvanı — sorğu sətri olmadan.
+ *
+ * /elaqe/?mehsul=... kimi ünvanlar ayrıca səhifə deyil; Google-a hər dilin
+ * əsas ünvanı göstərilir. Səhifələnmə (/page/2/) yolun içindədir, qalır.
+ *
+ * @param string $lang Dil.
+ */
+function fixit_hreflang_url( $lang ) {
+	$url = fixit_current_url_in( $lang );
+	$pos = strpos( $url, '?' );
+
+	return false === $pos ? $url : substr( $url, 0, $pos );
 }
 add_action( 'wp_head', 'fixit_hreflang_tags', 3 );
 
@@ -391,6 +414,92 @@ function fixit_language_attributes( $output ) {
 	return preg_replace( '/lang="[^"]*"/', 'lang="' . esc_attr( $langs[ $lang ]['hreflang'] ) . '"', $output );
 }
 add_filter( 'language_attributes', 'fixit_language_attributes' );
+
+/**
+ * Sitemap: ingiliscə və rusca ünvanlar.
+ *
+ * WordPress-in öz sitemap-ı yalnız əsas (azərbaycanca) ünvanları göstərir.
+ * Bu bölmə hər dil üçün ayrıca siyahı verir: /wp-sitemap-languages-en-1.xml
+ */
+if ( class_exists( 'WP_Sitemaps_Provider' ) ) {
+
+	/**
+	 * Dil variantlarının sitemap bölməsi.
+	 */
+	class Fixit_Sitemaps_Languages extends WP_Sitemaps_Provider {
+
+		public function __construct() {
+			$this->name        = 'languages';
+			$this->object_type = 'language';
+		}
+
+		/**
+		 * Alt bölmələr: hər əlavə dil.
+		 */
+		public function get_object_subtypes() {
+			$subtypes = array();
+			foreach ( array_keys( fixit_langs() ) as $code ) {
+				if ( fixit_default_lang() !== $code ) {
+					$subtypes[ $code ] = (object) array( 'name' => $code );
+				}
+			}
+			return $subtypes;
+		}
+
+		/**
+		 * Dilin bütün ünvanları.
+		 *
+		 * @param int    $page_num       Səhifə.
+		 * @param string $object_subtype Dil.
+		 */
+		public function get_url_list( $page_num, $object_subtype = '' ) {
+			if ( 1 !== (int) $page_num || ! isset( fixit_langs()[ $object_subtype ] ) ) {
+				return array();
+			}
+
+			$posts = get_posts(
+				array(
+					'post_type'      => array( 'page', 'fixit_service', 'fixit_product' ),
+					'post_status'    => 'publish',
+					'posts_per_page' => 500,
+					'orderby'        => 'menu_order title',
+					'order'          => 'ASC',
+					'has_password'   => false,
+				)
+			);
+
+			$urls = array();
+			foreach ( $posts as $post ) {
+				if ( get_post_meta( $post->ID, '_fixit_seo_noindex', true ) ) {
+					continue;
+				}
+
+				$urls[] = array(
+					'loc'     => fixit_add_lang_to_url( fixit_strip_lang_from_url( get_permalink( $post ) ), $object_subtype ),
+					'lastmod' => gmdate( DATE_W3C, strtotime( $post->post_modified_gmt ) ),
+				);
+			}
+
+			return $urls;
+		}
+
+		/**
+		 * Bir səhifə kifayətdir.
+		 *
+		 * @param string $object_subtype Dil.
+		 */
+		public function get_max_num_pages( $object_subtype = '' ) {
+			return 1;
+		}
+	}
+
+	add_action(
+		'init',
+		function () {
+			wp_register_sitemap_provider( 'languages', new Fixit_Sitemaps_Languages() );
+		}
+	);
+}
 
 /* ============================================================
    5. Ölkəyə görə dil təklifi (brauzer tərəfdən çağırılır)

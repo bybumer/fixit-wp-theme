@@ -15,6 +15,10 @@
  * @package FIXIT
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 get_header();
 
 $fixit_contact_url = fixit_page_url( 'template-contact.php' );

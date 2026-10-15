@@ -2645,6 +2645,14 @@ msgid "FIXIT ilə əlaqə: %s. Bakı və Cəlilabad ofisləri, iş saatları və
 msgstr "Связь с FIXIT: %s. Офисы в Баку и Джалилабаде, часы работы и форма заявки. Напишите нам по вопросам ИКТ-услуг."
 
 #: inc/seo.php
+msgid "Fixit Remote ilə olduğunuz yerdən istənilən kompüterə qoşulun: ekranı görün, siçanı və klaviaturanı idarə edin. Fərdi istifadə pulsuzdur, qeydiyyat tələb olunmur."
+msgstr "Подключайтесь к любому компьютеру откуда угодно с Fixit Remote: видите экран, управляете мышью и клавиатурой. Бесплатно для личного использования, без регистрации."
+
+#: inc/seo.php
+msgid "Fixit Remote mobil tətbiqinin məxfilik siyasəti: hansı məlumatlar işlənir, harada saxlanılır və necə silinir. Reklam və izləmə yoxdur."
+msgstr "Политика конфиденциальности мобильного приложения Fixit Remote: какие данные обрабатываются, где хранятся и как удаляются. Без рекламы и отслеживания."
+
+#: inc/seo.php
 msgid "İKT xidmətləri və məhsulları"
 msgstr "ИКТ-услуги и продукты"
 
@@ -2695,6 +2703,10 @@ msgstr "Пожалуйста, корректно заполните поля «�
 #: inc/contact-form.php
 msgid "Texniki xəta baş verdi. Zəhmət olmasa bir daha cəhd edin və ya bizə zəng edin."
 msgstr "Произошла техническая ошибка. Попробуйте ещё раз или позвоните нам."
+
+#: inc/contact-form.php
+msgid "Qısa müddətdə çox sayda müraciət göndərildi. Bir az sonra yenidən cəhd edin və ya bizə zəng edin."
+msgstr "За короткое время отправлено слишком много обращений. Попробуйте чуть позже или позвоните нам."
 
 #: inc/i18n.php
 msgid "Saytın dili"

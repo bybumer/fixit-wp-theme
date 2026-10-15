@@ -5,15 +5,14 @@
  * @package FIXIT
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $fixit_phone    = fixit_get( 'fixit_phone' );
 $fixit_email    = fixit_get( 'fixit_email' );
 $fixit_whatsapp = fixit_get( 'fixit_whatsapp' );
-$fixit_socials  = array(
-	'facebook'  => fixit_get( 'fixit_facebook' ),
-	'instagram' => fixit_get( 'fixit_instagram' ),
-	'tiktok'    => fixit_get( 'fixit_tiktok' ),
-	'linkedin'  => fixit_get( 'fixit_linkedin' ),
-);
+$fixit_socials  = fixit_social_links();
 $fixit_services = fixit_get_services( 6 );
 ?>
 </main><!-- #main -->

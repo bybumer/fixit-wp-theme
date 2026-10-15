@@ -9,6 +9,10 @@
  * @package FIXIT
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 get_header();
 
 while ( have_posts() ) :
@@ -427,7 +431,7 @@ while ( have_posts() ) :
 								<input type="hidden" name="fixit_kind" value="demo">
 								<input type="hidden" name="fixit_anchor" value="demo">
 								<input type="hidden" name="fixit_topic" value="<?php echo esc_attr( $fixit_post->post_title ); ?>">
-								<?php wp_nonce_field( 'fixit_contact', 'fixit_contact_nonce' ); ?>
+								<?php fixit_form_fields(); ?>
 
 								<div class="hp-field" aria-hidden="true">
 									<label for="fixit_website_d"><?php esc_html_e( 'Sayt', 'fixit' ); ?></label>

@@ -12,6 +12,10 @@
  * @package FIXIT
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 get_header();
 
 $fixit_remote_url = fixit_page_url( 'template-remote.php' );

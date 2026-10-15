@@ -1,0 +1,14 @@
+{
+ "Qısa müddətdə çox sayda müraciət göndərildi. Bir az sonra yenidən cəhd edin və ya bizə zəng edin.": {
+  "en": "Too many requests were sent in a short time. Please try again a little later or give us a call.",
+  "ru": "За короткое время отправлено слишком много обращений. Попробуйте чуть позже или позвоните нам."
+ },
+ "Fixit Remote ilə olduğunuz yerdən istənilən kompüterə qoşulun: ekranı görün, siçanı və klaviaturanı idarə edin. Fərdi istifadə pulsuzdur, qeydiyyat tələb olunmur.": {
+  "en": "Connect to any computer from wherever you are with Fixit Remote: see the screen and control the mouse and keyboard. Free for personal use, no registration required.",
+  "ru": "Подключайтесь к любому компьютеру откуда угодно с Fixit Remote: видите экран, управляете мышью и клавиатурой. Бесплатно для личного использования, без регистрации."
+ },
+ "Fixit Remote mobil tətbiqinin məxfilik siyasəti: hansı məlumatlar işlənir, harada saxlanılır və necə silinir. Reklam və izləmə yoxdur.": {
+  "en": "Privacy policy of the Fixit Remote mobile app: what data is processed, where it is stored and how it is deleted. No ads and no tracking.",
+  "ru": "Политика конфиденциальности мобильного приложения Fixit Remote: какие данные обрабатываются, где хранятся и как удаляются. Без рекламы и отслеживания."
+ }
+}

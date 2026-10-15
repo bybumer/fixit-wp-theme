@@ -5,6 +5,10 @@
  * @package FIXIT
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 get_header();
 
 $fixit_phone     = fixit_get( 'fixit_phone' );
@@ -102,7 +106,7 @@ $fixit_products  = fixit_get_products();
 
 			<form action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
 				<input type="hidden" name="action" value="fixit_contact">
-				<?php wp_nonce_field( 'fixit_contact', 'fixit_contact_nonce' ); ?>
+				<?php fixit_form_fields(); ?>
 
 				<!-- Bot tələsi: istifadəçi görmür -->
 				<div class="hp-field" aria-hidden="true">

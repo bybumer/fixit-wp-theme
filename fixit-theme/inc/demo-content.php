@@ -35,10 +35,37 @@ function fixit_run_setup() {
 	fixit_create_reviews();
 	fixit_create_clients();
 	fixit_create_menu();
+	fixit_trash_sample_post();
 
 	flush_rewrite_rules();
 	update_option( 'fixit_demo_installed', FIXIT_VERSION );
 	update_option( 'fixit_seed_rev', FIXIT_SEED_REV );
+}
+
+/**
+ * WordPress-in nümunə yazısını ("Hello world!") zibil qutusuna köçürür.
+ *
+ * O, saytda, sitemap-da və RSS-də görünürdü. Yalnız heç redaktə
+ * olunmayıbsa və bir dəfə: admin onu geri qaytarsa, bir daha toxunulmur.
+ * Zibil qutusundan 30 gün ərzində bərpa etmək olar.
+ */
+function fixit_trash_sample_post() {
+	if ( ! add_option( 'fixit_sample_post_cleaned', 1, '', false ) ) {
+		return;
+	}
+
+	$posts = get_posts(
+		array(
+			'name'        => 'hello-world',
+			'post_type'   => 'post',
+			'post_status' => 'publish',
+			'numberposts' => 1,
+		)
+	);
+
+	if ( $posts && $posts[0]->post_modified_gmt === $posts[0]->post_date_gmt ) {
+		wp_trash_post( $posts[0]->ID );
+	}
 }
 
 /**

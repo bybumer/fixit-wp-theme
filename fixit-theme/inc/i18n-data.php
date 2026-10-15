@@ -64,6 +64,8 @@ function fixit_title_translations() {
 		'FIXIT — Peşəkar İKT Xidmətləri'         => array( 'en' => 'FIXIT — Professional ICT Services', 'ru' => 'FIXIT — Профессиональные ИКТ-услуги' ),
 		'Fixit – Informasiya Texnologiyalari'    => array( 'en' => 'Fixit – Information Technology', 'ru' => 'Fixit – Информационные технологии' ),
 		'Fixit - Informasiya Texnologiyalari'    => array( 'en' => 'Fixit - Information Technology', 'ru' => 'Fixit - Информационные технологии' ),
+		'Informasiya Texnologiyalari'            => array( 'en' => 'Information Technology', 'ru' => 'Информационные технологии' ),
+		'İnformasiya Texnologiyaları'            => array( 'en' => 'Information Technology', 'ru' => 'Информационные технологии' ),
 
 		// Şəhərlər (rəylərdə).
 		'Bakı'                          => array( 'en' => 'Baku', 'ru' => 'Баку' ),

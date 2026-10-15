@@ -5,6 +5,10 @@
  * @package FIXIT
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 ?>
 <form role="search" method="get" class="field" action="<?php echo esc_url( home_url( '/' ) ); ?>" style="display:flex;gap:10px;margin:0">
 	<label class="screen-reader-text" for="fixit-search"><?php esc_html_e( 'Axtar', 'fixit' ); ?></label>

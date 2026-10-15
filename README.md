@@ -41,6 +41,7 @@ fixit-web/
     ├── assets/img/products/  ← məhsulların hazır ekran görüntüləri (demodan çəkilib)
     ├── languages/            ← en_US / ru_RU tərcümə faylları (əl ilə dəyişmirsiniz — yığılır)
     └── inc/
+        ├── security.php      ← təhlükəsizlik: istifadəçi adları gizli, giriş limiti, XML-RPC bağlı
         ├── i18n.php          ← dillər: /en/ və /ru/ ünvanları, dil keçidi, ölkəyə görə seçim
         ├── i18n-content.php  ← məhsul/xidmət/rəy tərcümələri + admin «Tərcümələr» qutusu
         ├── i18n-data.php     ← hazır tərcümələr (ilk quraşdırmada bazaya yazılır)
@@ -290,6 +291,19 @@ Admin panelin dili dəyişmir — o, WordPress ayarlarındakı dildə qalır.
   hər səhifə üzrə bal, başlıq/təsvir uzunluğu və Google önizləməsi
 - **Üç dil (AZ / EN / RU):** dil keçidi, ölkəyə görə avtomatik seçim,
   hər dil üçün ayrıca ünvan, `hreflang` teqləri, admin paneldə tərcümə qutuları
+- **Təhlükəsizlik** (`inc/security.php`, plaginsiz):
+  - Admin hesabının adı kənardan görünmür: `/wp-json/wp/v2/users` bağlıdır,
+    müəllif səhifələri (`/?author=1`) 404 verir, sitemap və RSS-də ad yoxdur
+  - Səhv giriş: 15 dəqiqədə 5 səhv cəhd → həmin IP 30 dəqiqə bloklanır
+    (hesab yox — admin kənardan kilidlənə bilməz); xəta mesajı adın
+    mövcud olub-olmadığını demir
+  - XML-RPC tam bağlıdır (parol təxmininin əsas yolu)
+  - Başlıqlar: `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`,
+    `Permissions-Policy`, HSTS; PHP versiyası gizlədilir
+  - Əlaqə formu: keşlənmiş səhifədə də işləyən imzalı nişan, 3 saniyədən
+    tez göndərilən forma (bot) saxlanmır, IP üzrə limit (10 dəqiqədə 5),
+    sayt üzrə limit (saatda 60), çoxlu linkli spam süzülür, sahə uzunluqları məhduddur
+  - Şablon faylları birbaşa çağırılanda heç nə icra etmir
 - Sürət: xarici kitabxana yoxdur, yalnız Google Fonts
 
 ## 8. Sonrakı addımlar üçün ideyalar

@@ -178,6 +178,12 @@ function fixit_template_description( $post_id ) {
 				__( 'FIXIT ilə əlaqə: %s. Bakı və Cəlilabad ofisləri, iş saatları və müraciət formu. İKT xidmətləri üçün bizə yazın.', 'fixit' ),
 				fixit_get( 'fixit_phone' )
 			);
+
+		case 'template-remote.php':
+			return __( 'Fixit Remote ilə olduğunuz yerdən istənilən kompüterə qoşulun: ekranı görün, siçanı və klaviaturanı idarə edin. Fərdi istifadə pulsuzdur, qeydiyyat tələb olunmur.', 'fixit' );
+
+		case 'template-remote-privacy.php':
+			return __( 'Fixit Remote mobil tətbiqinin məxfilik siyasəti: hansı məlumatlar işlənir, harada saxlanılır və necə silinir. Reklam və izləmə yoxdur.', 'fixit' );
 	}
 
 	return '';
@@ -243,6 +249,26 @@ function fixit_document_title( $parts ) {
 }
 add_filter( 'document_title_parts', 'fixit_document_title' );
 
+/**
+ * 404 və axtarış səhifələrinin başlığı saytın dilində.
+ *
+ * WordPress bu başlıqları öz tərcümə faylından götürür; azərbaycanca
+ * faylı olmadığı üçün hər üç dildə ingiliscə görünürdü.
+ *
+ * @param array $parts Başlıq hissələri.
+ */
+function fixit_document_title_system( $parts ) {
+	if ( is_404() ) {
+		$parts['title'] = __( 'Belə bir səhifə tapılmadı', 'fixit' );
+	} elseif ( is_search() ) {
+		/* translators: %s: axtarılan söz */
+		$parts['title'] = sprintf( __( 'Axtarış: %s', 'fixit' ), get_search_query( false ) );
+	}
+
+	return $parts;
+}
+add_filter( 'document_title_parts', 'fixit_document_title_system', 20 );
+
 /* ============================================================
    3. Robots
    ============================================================ */
@@ -257,8 +283,9 @@ function fixit_robots( $robots ) {
 	$robots['max-snippet']       = '-1';
 	$robots['max-video-preview'] = '-1';
 
-	// Axtarış nəticələri və 404 indeksləşdirilməsin.
-	if ( is_search() || is_404() ) {
+	// Axtarış nəticələri, 404, tarix arxivləri və boş arxivlər indeksləşdirilməsin
+	// (məs. yazısı olmayan "Uncategorized" kateqoriyası).
+	if ( is_search() || is_404() || is_date() || ( is_archive() && ! have_posts() ) ) {
 		$robots['noindex'] = true;
 		$robots['follow']  = true;
 		unset( $robots['index'] );
@@ -273,6 +300,36 @@ function fixit_robots( $robots ) {
 	return $robots;
 }
 add_filter( 'wp_robots', 'fixit_robots' );
+
+/**
+ * Sitemap sorğusu "səhifə tapılmadı" sayılmasın.
+ *
+ * WordPress 7.x-də saytda heç bir bloq yazısı olmayanda /wp-sitemap.xml
+ * məzmunu göstərir, amma 404 statusu ilə — Google belə sitemap-ı qəbul etmir.
+ * Mövcud olmayan sitemap səhifəsinə 404-ü WordPress özü sonradan qoyur.
+ *
+ * @param bool     $preempt Əvvəlki qərar.
+ * @param WP_Query $query   Əsas sorğu.
+ */
+function fixit_sitemap_no_404( $preempt, $query ) {
+	$name = $query->is_main_query() ? (string) $query->get( 'sitemap' ) : '';
+
+	if ( '' === $name ) {
+		return $preempt;
+	}
+	if ( 'index' === $name ) {
+		return true;
+	}
+
+	// Yalnız mövcud bölmələr (məs. söndürülmüş "users" yox).
+	$server = function_exists( 'wp_sitemaps_get_server' ) ? wp_sitemaps_get_server() : null;
+	if ( $server && $server->registry && $server->registry->get_provider( $name ) ) {
+		return true;
+	}
+
+	return $preempt;
+}
+add_filter( 'pre_handle_404', 'fixit_sitemap_no_404', 10, 2 );
 
 /* ============================================================
    4. Meta teqlər
@@ -366,16 +423,7 @@ add_action( 'wp_head', 'fixit_seo_meta', 2 );
  * Şirkət kartı — Google-da biznes məlumatları üçün.
  */
 function fixit_schema_organization() {
-	$socials = array_values(
-		array_filter(
-			array(
-				fixit_get( 'fixit_facebook' ),
-				fixit_get( 'fixit_instagram' ),
-				fixit_get( 'fixit_tiktok' ),
-				fixit_get( 'fixit_linkedin' ),
-			)
-		)
-	);
+	$socials = array_values( fixit_social_links() );
 
 	$schema = array(
 		'@context'     => 'https://schema.org',
@@ -458,7 +506,7 @@ function fixit_schema_website() {
 		'@id'             => home_url( '/#website' ),
 		'url'             => home_url( '/' ),
 		'name'            => get_bloginfo( 'name' ),
-		'inLanguage'      => 'az-AZ',
+		'inLanguage'      => fixit_langs()[ fixit_lang() ]['hreflang'],
 		'publisher'       => array( '@id' => home_url( '/#organization' ) ),
 		'potentialAction' => array(
 			'@type'       => 'SearchAction',

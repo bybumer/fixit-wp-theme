@@ -5,6 +5,10 @@
  * @package FIXIT
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -22,12 +26,7 @@
 <?php
 $fixit_phone    = fixit_get( 'fixit_phone' );
 $fixit_email    = fixit_get( 'fixit_email' );
-$fixit_socials  = array(
-	'facebook'  => fixit_get( 'fixit_facebook' ),
-	'instagram' => fixit_get( 'fixit_instagram' ),
-	'tiktok'    => fixit_get( 'fixit_tiktok' ),
-	'linkedin'  => fixit_get( 'fixit_linkedin' ),
-);
+$fixit_socials  = fixit_social_links();
 ?>
 
 <!-- Üst zolaq -->

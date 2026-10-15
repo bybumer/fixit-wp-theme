@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.12.3' );
+define( 'FIXIT_VERSION', '1.12.4' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -206,6 +206,7 @@ add_action( 'wp_head', 'fixit_theme_boot_script', 1 );
 /* ============================================================
    3. Yardımçı fayllar
    ============================================================ */
+require_once get_template_directory() . '/inc/security.php';      // Təhlükəsizlik: istifadəçi adları, giriş limiti, başlıqlar
 require_once get_template_directory() . '/inc/i18n.php';          // Üç dil: dil seçimi, ünvanlar, keçid
 require_once get_template_directory() . '/inc/i18n-data.php';     // Baza məzmununun hazır tərcümələri
 require_once get_template_directory() . '/inc/i18n-content.php';  // Məhsul/xidmət/rəy tərcümələri
