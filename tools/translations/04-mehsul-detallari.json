@@ -191,5 +191,8 @@
 "Bildiriş": {"en": "Notification", "ru": "Уведомление"},
 "seçdiyiniz kanala dərhal": {"en": "instantly to the channel you choose", "ru": "сразу в выбранный вами канал"},
 "Proqram və məlumat sizin serverinizdədir": {"en": "The software and the data are on your server", "ru": "Программа и данные — на вашем сервере"},
-"Parol və tokenlər brauzerə göndərilmir": {"en": "Passwords and tokens are never sent to the browser", "ru": "Пароли и токены не отправляются в браузер"}
+"Parol və tokenlər brauzerə göndərilmir": {"en": "Passwords and tokens are never sent to the browser", "ru": "Пароли и токены не отправляются в браузер"},
+"İstifadəçi bələdçisi": {"en": "User guide (in Azerbaijani)", "ru": "Руководство пользователя (на азербайджанском)"},
+"Sistemin istifadəçi bələdçisi varmı?": {"en": "Is there a user guide?", "ru": "Есть ли руководство пользователя?"},
+"Bəli, guide.fixit.az ünvanında. Orada girişdən tutmuş sorğulara cavab, tapşırıqlar, hesabatlar, administrator ayarları və quraşdırmaya qədər hər şey addım-addım, ekran görüntüləri ilə yazılıb. Sistemin içində menyudakı «Bələdçi» düyməsi də olduğunuz səhifəyə uyğun bölməni açır.": {"en": "Yes, at guide.fixit.az (currently in Azerbaijani). It walks through everything step by step with screenshots: signing in, answering tickets, tasks, reports, admin settings and installation. Inside the system, the «User guide» item in the menu opens the section for the page you are on.", "ru": "Да, на guide.fixit.az (пока на азербайджанском). Там шаг за шагом и со скриншотами описано всё: вход, ответы на заявки, задачи, отчёты, настройки администратора и установка. В самой системе пункт меню «Руководство» открывает раздел для текущей страницы."}
 }

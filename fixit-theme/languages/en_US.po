@@ -489,6 +489,10 @@ msgid "Təklif istə"
 msgstr "Request a quote"
 
 #: single-fixit_product.php
+msgid "İstifadəçi bələdçisi"
+msgstr "User guide (in Azerbaijani)"
+
+#: single-fixit_product.php
 msgid "Nəyi həll edir"
 msgstr "What it solves"
 
@@ -2239,6 +2243,14 @@ msgstr "Mail intake policy: allowed domains and a blocklist"
 #: inc/product-data.php
 msgid "Hər əməliyyat audit jurnalına yazılır"
 msgstr "Every action is written to the audit log"
+
+#: inc/product-data.php
+msgid "Sistemin istifadəçi bələdçisi varmı?"
+msgstr "Is there a user guide?"
+
+#: inc/product-data.php
+msgid "Bəli, guide.fixit.az ünvanında. Orada girişdən tutmuş sorğulara cavab, tapşırıqlar, hesabatlar, administrator ayarları və quraşdırmaya qədər hər şey addım-addım, ekran görüntüləri ilə yazılıb. Sistemin içində menyudakı «Bələdçi» düyməsi də olduğunuz səhifəyə uyğun bölməni açır."
+msgstr "Yes, at guide.fixit.az (currently in Azerbaijani). It walks through everything step by step with screenshots: signing in, answering tickets, tasks, reports, admin settings and installation. Inside the system, the «User guide» item in the menu opens the section for the page you are on."
 
 #: inc/product-data.php
 msgid "Mövcud e-poçt qutumuzla işləyəcəkmi?"

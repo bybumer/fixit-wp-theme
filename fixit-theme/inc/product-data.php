@@ -194,6 +194,10 @@ function fixit_product_details() {
 			),
 
 
+			// İstifadəçi bələdçisi. Hələlik yalnız Azərbaycanca - EN/RU səhifələrdə
+			// düymənin mətni bunu deyir (tools/translations/04-mehsul-detallari.json).
+			'guide'    => 'https://guide.fixit.az/',
+
 			// Demo düyməsinin defoltu - admin paneldə dəyişmək olar (bax product-demo.php).
 			// Addımlar demo.fixit.az-ın giriş səhifəsini təsvir edir: orada
 			// qeydiyyat yoxdur, rollar bir kliklə seçilir.
@@ -231,6 +235,10 @@ function fixit_product_details() {
 			),
 
 			'faq'      => array(
+				array(
+					__( 'Sistemin istifadəçi bələdçisi varmı?', 'fixit' ),
+					__( 'Bəli, guide.fixit.az ünvanında. Orada girişdən tutmuş sorğulara cavab, tapşırıqlar, hesabatlar, administrator ayarları və quraşdırmaya qədər hər şey addım-addım, ekran görüntüləri ilə yazılıb. Sistemin içində menyudakı «Bələdçi» düyməsi də olduğunuz səhifəyə uyğun bölməni açır.', 'fixit' ),
+				),
 				array(
 					__( 'Mövcud e-poçt qutumuzla işləyəcəkmi?', 'fixit' ),
 					__( 'Bəli. Şirkət poçt qutunuz sistemə qoşulur: gələn məktublar avtomatik ticket olur, agentin cavabı isə müştəriyə adi e-poçt kimi gedir. Müştəri heç nə quraşdırmır.', 'fixit' ),

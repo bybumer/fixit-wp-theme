@@ -30,6 +30,7 @@ while ( have_posts() ) :
 	// Admin qalereyası boşdursa, temanın içindəki hazır ekran görüntüləri.
 	$fixit_screens = $fixit_gallery ? array() : fixit_product_screens( $fixit_post );
 	$fixit_modules = ! empty( $fixit_detail['modules'] ) ? $fixit_detail['modules'] : array();
+	$fixit_guide   = ! empty( $fixit_detail['guide'] ) ? $fixit_detail['guide'] : '';
 
 	$fixit_contact_url  = fixit_page_url( 'template-contact.php' );
 	$fixit_products_url = fixit_page_url( 'template-products.php' );
@@ -111,6 +112,11 @@ while ( have_posts() ) :
 					<a class="btn btn--light" href="<?php echo esc_url( $fixit_offer_url ); ?>">
 						<?php esc_html_e( 'Təklif istə', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
 					</a>
+					<?php if ( $fixit_guide ) : ?>
+						<a class="btn btn--light" href="<?php echo esc_url( $fixit_guide ); ?>" target="_blank" rel="noopener">
+							<?php fixit_icon( 'book' ); ?><?php esc_html_e( 'İstifadəçi bələdçisi', 'fixit' ); ?><?php fixit_icon( 'external' ); ?>
+						</a>
+					<?php endif; ?>
 				</div>
 			</div>
 
@@ -422,6 +428,12 @@ while ( have_posts() ) :
 							</a>
 							<?php if ( $fixit_demo['note'] ) : ?>
 								<p class="form-note"><?php echo esc_html( $fixit_demo['note'] ); ?></p>
+							<?php endif; ?>
+							<?php if ( $fixit_guide ) : ?>
+								<?php // Demoda nəyə baxacağını bilməyən ziyarətçi üçün: hər bölmə addım-addım ?>
+								<a class="btn btn--ghost btn--block demo-guide" href="<?php echo esc_url( $fixit_guide ); ?>" target="_blank" rel="noopener">
+									<?php fixit_icon( 'book' ); ?><?php esc_html_e( 'İstifadəçi bələdçisi', 'fixit' ); ?><?php fixit_icon( 'external' ); ?>
+								</a>
 							<?php endif; ?>
 						<?php else : ?>
 							<?php echo fixit_form_notice(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
