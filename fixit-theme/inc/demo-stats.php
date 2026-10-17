@@ -1,14 +1,16 @@
 <?php
 /**
- * Admin paneldə «Demo statistikası»: demo.fixit.az-a gələnlər nə edir.
+ * Admin paneldə «Demo statistikası»: demolara gələnlər nə edir.
  *
- * Məlumat demo serverindədir (Sorğu Sistemi `GET /public/demo/stats`) - sayt
- * onu açarla oxuyur və göstərir, öz bazasına heç nə yazmır. Səbəb: ziyarətçi
- * demonun içində nə edirsə (rol, bölmə, yaratdığı sorğu) onu yalnız demo
- * serveri görür; sayt yalnız oraya keçidi görərdi.
+ * İki demo var: Sorğu Sistemi (demo.fixit.az, `GET /public/demo/stats`) və
+ * Fixit Remote (remote-demo.fixit.az, `GET /api/demo/stats`). Hər ikisi eyni
+ * formatda cavab verir. Məlumat demo serverindədir - sayt onu açarla oxuyur
+ * və göstərir, öz bazasına heç nə yazmır. Səbəb: ziyarətçi demonun içində nə
+ * edirsə (rol, bölmə, gördüyü iş) onu yalnız demo serveri görür; sayt yalnız
+ * oraya keçidi görərdi.
  *
- * Bir dəfəlik qurulum: bu səhifədə «Açar yarat» → açarı demo serverinin
- * `.env` faylına `DEMO_STATS_TOKEN=...` kimi yazmaq (DEPLOY-DEMO.md §9).
+ * Bir dəfəlik qurulum (hər demo üçün ayrıca): bu səhifədə «Açar yarat» →
+ * açarı demo serverinə yazmaq (əmr «Ayarlar» bölməsində hazır verilir).
  *
  * @package FIXIT
  */
@@ -18,6 +20,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'FIXIT_DEMO_STATS_URL', 'https://demo.fixit.az/public/demo/stats' );
+define( 'FIXIT_REMOTE_DEMO_STATS_URL', 'https://remote-demo.fixit.az/api/demo/stats' );
+
+/**
+ * Demolar. Sorğu Sisteminin ayarları köhnə adlarla qalır (əvvəlki qurulum
+ * pozulmasın), Fixit Remote-unku `_remote` şəkilçisi ilə.
+ */
+function fixit_demo_stats_products() {
+	return array(
+		'ticket' => array(
+			'label'  => 'Ticket + Task',
+			'host'   => 'demo.fixit.az',
+			'url'    => FIXIT_DEMO_STATS_URL,
+			'suffix' => '',
+		),
+		'remote' => array(
+			'label'  => 'Fixit Remote',
+			'host'   => 'remote-demo.fixit.az',
+			'url'    => FIXIT_REMOTE_DEMO_STATS_URL,
+			'suffix' => '_remote',
+		),
+	);
+}
+
+function fixit_demo_stats_product( $value ) {
+	return 'remote' === $value ? 'remote' : 'ticket';
+}
+
+function fixit_demo_stats_info( $product ) {
+	$products = fixit_demo_stats_products();
+	return $products[ fixit_demo_stats_product( $product ) ];
+}
 
 /**
  * Seçilə bilən dövrlər (gün).
@@ -31,13 +64,15 @@ function fixit_demo_stats_periods() {
 	);
 }
 
-function fixit_demo_stats_url() {
-	$url = (string) get_option( 'fixit_demo_stats_url', '' );
-	return $url ? $url : FIXIT_DEMO_STATS_URL;
+function fixit_demo_stats_url( $product = 'ticket' ) {
+	$info = fixit_demo_stats_info( $product );
+	$url  = (string) get_option( 'fixit_demo_stats_url' . $info['suffix'], '' );
+	return $url ? $url : $info['url'];
 }
 
-function fixit_demo_stats_token() {
-	return (string) get_option( 'fixit_demo_stats_token', '' );
+function fixit_demo_stats_token( $product = 'ticket' ) {
+	$info = fixit_demo_stats_info( $product );
+	return (string) get_option( 'fixit_demo_stats_token' . $info['suffix'], '' );
 }
 
 /* ============================================================
@@ -68,36 +103,48 @@ function fixit_demo_stats_dashboard_widget() {
 add_action( 'wp_dashboard_setup', 'fixit_demo_stats_dashboard_widget' );
 
 function fixit_demo_stats_widget() {
-	$page = admin_url( 'admin.php?page=fixit-demo-stats' );
-	$data = fixit_demo_stats_fetch( 7 );
+	$shown = 0;
 
-	if ( is_wp_error( $data ) ) {
-		printf(
-			'<p>%s</p><p><a class="button" href="%s">%s</a></p>',
-			esc_html( $data->get_error_message() ),
-			esc_url( $page ),
-			esc_html__( 'Demo statistikasına keç', 'fixit' )
-		);
-		return;
-	}
+	foreach ( fixit_demo_stats_products() as $product => $info ) {
+		// Açarı qurulmayan Remote demosu başlanğıc səhifəsində xəta ilə görünməsin
+		if ( 'ticket' !== $product && ! fixit_demo_stats_token( $product ) ) {
+			continue;
+		}
 
-	$t     = $data['totals'];
-	$items = array(
-		array( $t['visits'], __( 'ziyarət', 'fixit' ) ),
-		array( $t['logins'], __( 'rol seçdi', 'fixit' ) ),
-		array( $t['active'], __( 'iş gördü', 'fixit' ) ),
-		array( $t['contact_visits'], __( '«Tam versiya»', 'fixit' ) ),
-	);
-	echo '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center">';
-	foreach ( $items as $item ) {
-		printf(
-			'<div style="background:#f6f7f7;border-radius:6px;padding:10px 4px"><b style="display:block;font-size:22px">%s</b><span style="color:#646970;font-size:12px">%s</span></div>',
-			esc_html( number_format_i18n( (int) $item[0] ) ),
-			esc_html( $item[1] )
+		$page = admin_url( 'admin.php?page=fixit-demo-stats&product=' . $product );
+		$data = fixit_demo_stats_fetch( 7, false, $product );
+
+		printf( '<h3 style="margin:%s 0 8px;font-size:13px">%s</h3>', $shown ? '16px' : '0', esc_html( $info['label'] ) );
+		++$shown;
+
+		if ( is_wp_error( $data ) ) {
+			printf(
+				'<p>%s</p><p><a class="button" href="%s">%s</a></p>',
+				esc_html( $data->get_error_message() ),
+				esc_url( $page ),
+				esc_html__( 'Demo statistikasına keç', 'fixit' )
+			);
+			continue;
+		}
+
+		$t     = $data['totals'];
+		$items = array(
+			array( $t['visits'], __( 'ziyarət', 'fixit' ) ),
+			array( $t['logins'], __( 'rol seçdi', 'fixit' ) ),
+			array( $t['active'], __( 'iş gördü', 'fixit' ) ),
+			array( $t['contact_visits'], __( '«Tam versiya»', 'fixit' ) ),
 		);
+		echo '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center">';
+		foreach ( $items as $item ) {
+			printf(
+				'<div style="background:#f6f7f7;border-radius:6px;padding:10px 4px"><b style="display:block;font-size:22px">%s</b><span style="color:#646970;font-size:12px">%s</span></div>',
+				esc_html( number_format_i18n( (int) $item[0] ) ),
+				esc_html( $item[1] )
+			);
+		}
+		echo '</div>';
+		printf( '<p style="margin:8px 0 0"><a href="%s">%s →</a></p>', esc_url( $page ), esc_html__( 'Ətraflı statistika', 'fixit' ) );
 	}
-	echo '</div>';
-	printf( '<p style="margin-top:12px"><a href="%s">%s →</a></p>', esc_url( $page ), esc_html__( 'Ətraflı statistika', 'fixit' ) );
 }
 
 /* ============================================================
@@ -109,33 +156,48 @@ function fixit_demo_stats_save() {
 	}
 	check_admin_referer( 'fixit_demo_stats_save' );
 
-	$notice = 'saved';
+	$product = fixit_demo_stats_product( isset( $_POST['fixit_product'] ) ? sanitize_key( wp_unslash( $_POST['fixit_product'] ) ) : '' );
+	$info    = fixit_demo_stats_info( $product );
+	$notice  = 'saved';
 
 	if ( isset( $_POST['fixit_generate'] ) ) {
-		// Uzun, təsadüfi, yalnız hərf-rəqəm: .env-də dırnaq tələb etməsin
-		update_option( 'fixit_demo_stats_token', wp_generate_password( 40, false, false ), false );
+		// Uzun, təsadüfi, yalnız hərf-rəqəm: serverin ayar faylında dırnaq tələb etməsin
+		update_option( 'fixit_demo_stats_token' . $info['suffix'], wp_generate_password( 40, false, false ), false );
 		$notice = 'generated';
 	} else {
 		$token = isset( $_POST['fixit_demo_stats_token'] ) ? sanitize_text_field( wp_unslash( $_POST['fixit_demo_stats_token'] ) ) : '';
-		update_option( 'fixit_demo_stats_token', preg_replace( '/[^A-Za-z0-9_-]/', '', $token ), false );
+		update_option( 'fixit_demo_stats_token' . $info['suffix'], preg_replace( '/[^A-Za-z0-9_-]/', '', $token ), false );
 
 		$url = isset( $_POST['fixit_demo_stats_url'] ) ? esc_url_raw( wp_unslash( $_POST['fixit_demo_stats_url'] ) ) : '';
-		update_option( 'fixit_demo_stats_url', FIXIT_DEMO_STATS_URL === $url ? '' : $url, false );
+		update_option( 'fixit_demo_stats_url' . $info['suffix'], $info['url'] === $url ? '' : $url, false );
 	}
 
-	fixit_demo_stats_flush();
+	fixit_demo_stats_flush( $product );
 
-	wp_safe_redirect( add_query_arg( 'fixit_notice', $notice, admin_url( 'admin.php?page=fixit-demo-stats&tab=settings' ) ) );
+	wp_safe_redirect(
+		add_query_arg(
+			array(
+				'fixit_notice' => $notice,
+				'product'      => $product,
+				'tab'          => 'settings',
+			),
+			admin_url( 'admin.php?page=fixit-demo-stats' )
+		)
+	);
 	exit;
 }
 add_action( 'admin_post_fixit_demo_stats_save', 'fixit_demo_stats_save' );
 
+function fixit_demo_stats_cache_key( $product, $days ) {
+	return 'fixit_demo_stats_' . fixit_demo_stats_product( $product ) . '_' . (int) $days;
+}
+
 /**
  * Keşi təmizləyir - açar dəyişəndə köhnə cavab (və ya köhnə xəta) qalmasın.
  */
-function fixit_demo_stats_flush() {
+function fixit_demo_stats_flush( $product = 'ticket' ) {
 	foreach ( array_keys( fixit_demo_stats_periods() ) as $days ) {
-		delete_transient( 'fixit_demo_stats_' . $days );
+		delete_transient( fixit_demo_stats_cache_key( $product, $days ) );
 	}
 }
 
@@ -146,17 +208,18 @@ function fixit_demo_stats_flush() {
 /**
  * Statistikanı gətirir (5 dəqiqəlik keşlə).
  *
- * @param int  $days  Dövr.
- * @param bool $force Keşi keç (Yenilə düyməsi).
+ * @param int    $days    Dövr.
+ * @param bool   $force   Keşi keç (Yenilə düyməsi).
+ * @param string $product ticket | remote.
  * @return array|WP_Error
  */
-function fixit_demo_stats_fetch( $days, $force = false ) {
-	$token = fixit_demo_stats_token();
+function fixit_demo_stats_fetch( $days, $force = false, $product = 'ticket' ) {
+	$token = fixit_demo_stats_token( $product );
 	if ( ! $token ) {
 		return new WP_Error( 'fixit_no_token', __( 'Statistika hələ qurulmayıb: «Ayarlar» bölməsində açar yaradın və demo serverinə yazın.', 'fixit' ) );
 	}
 
-	$key = 'fixit_demo_stats_' . (int) $days;
+	$key = fixit_demo_stats_cache_key( $product, $days );
 	if ( ! $force ) {
 		$cached = get_transient( $key );
 		if ( is_array( $cached ) ) {
@@ -164,8 +227,9 @@ function fixit_demo_stats_fetch( $days, $force = false ) {
 		}
 	}
 
+	$url      = fixit_demo_stats_url( $product );
 	$response = wp_remote_get(
-		add_query_arg( 'days', (int) $days, fixit_demo_stats_url() ),
+		add_query_arg( 'days', (int) $days, $url ),
 		array(
 			'timeout'    => 12,
 			'user-agent' => 'FIXIT-WP/' . FIXIT_VERSION . '; ' . home_url( '/' ),
@@ -186,12 +250,16 @@ function fixit_demo_stats_fetch( $days, $force = false ) {
 
 	if ( 200 !== $code || ! is_array( $data ) || ! isset( $data['totals'] ) ) {
 		if ( 401 === $code ) {
-			$message = __( 'Açar uyğun gəlmir: demo serverindəki DEMO_STATS_TOKEN bu səhifədəki açarla eyni olmalıdır.', 'fixit' );
+			$message = __( 'Açar uyğun gəlmir: demo serverinə yazılan açar bu səhifədəki açarla eyni olmalıdır.', 'fixit' );
 		} elseif ( 404 === $code ) {
-			$message = __( 'Demo serveri statistikanı vermir: ya DEMO_STATS_TOKEN serverə yazılmayıb, ya da demo hələ yenilənməyib.', 'fixit' );
+			$message = __( 'Demo serveri statistikanı vermir: ya açar serverə yazılmayıb, ya da demo hələ yenilənməyib.', 'fixit' );
 		} elseif ( false !== stripos( $body, 'cloudflare' ) ) {
 			// Bot qoruması saytın serverindən gələn sorğunu yoxlamaya göndərə bilər
-			$message = __( 'Cloudflare sorğunu dayandırdı. Cloudflare-də /public/demo/stats ünvanı üçün yoxlamanı söndürən qayda (WAF → Skip) əlavə edin.', 'fixit' );
+			$message = sprintf(
+				/* translators: %s: ünvanın yolu */
+				__( 'Cloudflare sorğunu dayandırdı. Cloudflare-də %s ünvanı üçün yoxlamanı söndürən qayda (WAF → Skip) əlavə edin.', 'fixit' ),
+				(string) wp_parse_url( $url, PHP_URL_PATH )
+			);
 		} else {
 			/* translators: %d: HTTP status kodu */
 			$message = sprintf( __( 'Demo serveri gözlənilməz cavab verdi (HTTP %d).', 'fixit' ), $code );
@@ -280,7 +348,62 @@ function fixit_demo_stats_labels( $group ) {
 		),
 	);
 
+	// Fixit Remote: rollar, panelin bölmələri və orada görülən işlər başqadır
+	if ( 'remote' === fixit_demo_stats_current() ) {
+		$labels['role']    = array(
+			'admin'    => __( 'Admin', 'fixit' ),
+			'manager'  => __( 'Menecer', 'fixit' ),
+			'operator' => __( 'Operator (helpdesk)', 'fixit' ),
+			'ceo'      => __( 'Rəhbər', 'fixit' ),
+		);
+		$labels['section'] = array(
+			'dashboard'     => __( 'İdarə lövhəsi', 'fixit' ),
+			'devices'       => __( 'Cihazlar', 'fixit' ),
+			'viewer'        => __( 'Ekran pəncərəsi', 'fixit' ),
+			'agent-install' => __( 'Agent yüklə', 'fixit' ),
+			'sessions'      => __( 'Sessiyalar', 'fixit' ),
+			'teams'         => __( 'Komandalar', 'fixit' ),
+			'groups'        => __( 'Qruplar', 'fixit' ),
+			'users'         => __( 'İstifadəçilər', 'fixit' ),
+			'audit'         => __( 'Sistem logu', 'fixit' ),
+			'exports'       => __( 'Log yükləmə', 'fixit' ),
+			'settings'      => __( 'Ayarlar', 'fixit' ),
+			'ldap'          => __( 'Active Directory', 'fixit' ),
+			'update'        => __( 'Yenilənmə', 'fixit' ),
+			'maintenance'   => __( 'Baxım', 'fixit' ),
+			'about'         => __( 'Haqqında', 'fixit' ),
+			'account'       => __( 'Hesabım', 'fixit' ),
+			'other'         => __( 'Digər', 'fixit' ),
+		);
+		$labels['action']  = array(
+			'connect'         => __( 'Ekrana qoşulub', 'fixit' ),
+			'view'            => __( 'Ekrana baxıb (yalnız baxış)', 'fixit' ),
+			'viewer_command'  => __( 'Qısayol / əmr göndərib', 'fixit' ),
+			'viewer_settings' => __( 'Görünüş, icazə dəyişib', 'fixit' ),
+			'screenshot'      => __( 'Ekran şəkli çəkib', 'fixit' ),
+			'record'          => __( 'Video yazıb', 'fixit' ),
+			'chat'            => __( 'Yazışmanı açıb', 'fixit' ),
+			'admin_tools'     => __( 'Admin alətlərini açıb', 'fixit' ),
+			'export'          => __( 'PDF / CSV yükləyib', 'fixit' ),
+			'agent_download'  => __( 'Agenti yükləmək istəyib', 'fixit' ),
+			'other'           => __( 'Digər', 'fixit' ),
+		);
+	}
+
 	return isset( $labels[ $group ] ) ? $labels[ $group ] : array();
+}
+
+/**
+ * Hazırda göstərilən demo (adlar ona görə seçilir).
+ *
+ * @param string|null $set Təyin etmək üçün.
+ */
+function fixit_demo_stats_current( $set = null ) {
+	static $current = 'ticket';
+	if ( null !== $set ) {
+		$current = fixit_demo_stats_product( $set );
+	}
+	return $current;
 }
 
 function fixit_demo_stats_label( $group, $key ) {
@@ -417,10 +540,14 @@ function fixit_demo_stats_page() {
 	$days = isset( $periods[ $days ] ) ? $days : 30;
 	$notice = isset( $_GET['fixit_notice'] ) ? sanitize_key( $_GET['fixit_notice'] ) : '';
 	$force  = isset( $_GET['refresh'] ) && isset( $_GET['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'fixit_demo_stats_refresh' );
+	$product = fixit_demo_stats_product( isset( $_GET['product'] ) ? sanitize_key( $_GET['product'] ) : '' );
 	// phpcs:enable
 
-	$base = admin_url( 'admin.php?page=fixit-demo-stats' );
-	$data = 'stats' === $tab ? fixit_demo_stats_fetch( $days, $force ) : null;
+	fixit_demo_stats_current( $product );
+	$info  = fixit_demo_stats_info( $product );
+	$root  = admin_url( 'admin.php?page=fixit-demo-stats' );
+	$base  = add_query_arg( 'product', $product, $root );
+	$data  = 'stats' === $tab ? fixit_demo_stats_fetch( $days, $force, $product ) : null;
 	?>
 	<style>
 		.fds-wrap{max-width:1240px}
@@ -474,8 +601,32 @@ function fixit_demo_stats_page() {
 
 	<div class="wrap fds-wrap">
 		<h1><?php esc_html_e( 'Demo statistikası', 'fixit' ); ?></h1>
+
+		<ul class="subsubsub" style="float:none;margin:6px 0 0">
+			<?php
+			$links = array();
+			foreach ( fixit_demo_stats_products() as $key => $item ) {
+				$links[] = sprintf(
+					'<li><a href="%s"%s>%s</a></li>',
+					esc_url( add_query_arg( array( 'product' => $key, 'tab' => $tab ), $root ) ),
+					$key === $product ? ' class="current" aria-current="page"' : '',
+					esc_html( $item['label'] )
+				);
+			}
+			echo implode( ' | ', $links ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- yuxarıda escape olunub
+			?>
+		</ul>
+
 		<p class="description">
-			<?php esc_html_e( 'demo.fixit.az-a gələnlər: haradan gəldilər, hansı rolu seçdilər, nəyə baxdılar və nə etdilər. IP ünvanları saxlanılmır.', 'fixit' ); ?>
+			<?php
+			echo esc_html(
+				sprintf(
+					/* translators: %s: demonun ünvanı */
+					__( '%s ünvanına gələnlər: haradan gəldilər, hansı rolu seçdilər, nəyə baxdılar və nə etdilər. IP ünvanları saxlanılmır.', 'fixit' ),
+					$info['host']
+				)
+			);
+			?>
 		</p>
 
 		<nav class="nav-tab-wrapper" style="margin-top:14px">
@@ -485,9 +636,9 @@ function fixit_demo_stats_page() {
 
 		<?php
 		if ( 'settings' === $tab ) {
-			fixit_demo_stats_settings( $notice );
+			fixit_demo_stats_settings( $notice, $product );
 		} else {
-			fixit_demo_stats_report( $data, $days, $base );
+			fixit_demo_stats_report( $data, $days, $base, $product );
 		}
 		?>
 	</div>
@@ -497,9 +648,9 @@ function fixit_demo_stats_page() {
 /**
  * «Ayarlar» bölməsi: açar və (lazım olsa) ünvan.
  */
-function fixit_demo_stats_settings( $notice ) {
-	$token = fixit_demo_stats_token();
-	$url   = fixit_demo_stats_url();
+function fixit_demo_stats_settings( $notice, $product = 'ticket' ) {
+	$token = fixit_demo_stats_token( $product );
+	$url   = fixit_demo_stats_url( $product );
 	?>
 	<?php if ( 'generated' === $notice ) : ?>
 		<div class="notice notice-success"><p><?php esc_html_e( 'Yeni açar yaradıldı. İndi onu demo serverinə yazın (aşağıdakı əmr).', 'fixit' ); ?></p></div>
@@ -509,6 +660,7 @@ function fixit_demo_stats_settings( $notice ) {
 
 	<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 		<input type="hidden" name="action" value="fixit_demo_stats_save">
+		<input type="hidden" name="fixit_product" value="<?php echo esc_attr( $product ); ?>">
 		<?php wp_nonce_field( 'fixit_demo_stats_save' ); ?>
 
 		<table class="form-table" role="presentation">
@@ -521,7 +673,7 @@ function fixit_demo_stats_settings( $notice ) {
 							<?php echo esc_html( $token ? __( 'Yeni açar yarat', 'fixit' ) : __( 'Açar yarat', 'fixit' ) ); ?>
 						</button>
 					</div>
-					<p class="fds-note"><?php esc_html_e( 'Sayt bu açarla demo serverindən statistikanı oxuyur. Eyni açar demo serverinin .env faylında DEMO_STATS_TOKEN kimi yazılmalıdır.', 'fixit' ); ?></p>
+					<p class="fds-note"><?php esc_html_e( 'Sayt bu açarla demo serverindən statistikanı oxuyur. Eyni açar demo serverinə də yazılmalıdır (aşağıdakı əmr).', 'fixit' ); ?></p>
 				</td>
 			</tr>
 			<?php if ( $token ) : ?>
@@ -529,10 +681,18 @@ function fixit_demo_stats_settings( $notice ) {
 					<th scope="row"><?php esc_html_e( 'Demo serverində (bir dəfə)', 'fixit' ); ?></th>
 					<td>
 						<?php
-						$cmd = "cd /root/fixit-ticket-system && echo 'DEMO_STATS_TOKEN=" . $token . "' >> .env && docker compose -f docker-compose.yml -f docker-compose.prod.yml -f docker-compose.demo.yml up -d app";
+						if ( 'remote' === $product ) {
+							// Xidmətin əlavə ayar faylı: quraşdırma skripti əsas faylı yenidən yazsa da qalır
+							$dir = '/etc/systemd/system/fixitremote-webdemo.service.d';
+							$cmd = "mkdir -p $dir && printf '[Service]\\nEnvironment=DemoStatsToken=" . $token . "\\n' > $dir/stats.conf && chmod 600 $dir/stats.conf && systemctl daemon-reload && systemctl restart fixitremote-webdemo";
+							$tip = __( 'SSH ilə serverə root kimi girib bu əmri işlədin. Açarı dəyişəndə də eyni əmr kifayətdir: köhnə açarın yerinə yazır.', 'fixit' );
+						} else {
+							$cmd = "cd /root/fixit-ticket-system && echo 'DEMO_STATS_TOKEN=" . $token . "' >> .env && docker compose -f docker-compose.yml -f docker-compose.prod.yml -f docker-compose.demo.yml up -d app";
+							$tip = __( 'SSH ilə serverə girib bu əmri işlədin. Açar əvvəl yazılıbsa, .env-dəki köhnə DEMO_STATS_TOKEN sətrini silin.', 'fixit' );
+						}
 						?>
 						<textarea class="large-text code" rows="3" readonly onclick="this.select()"><?php echo esc_textarea( $cmd ); ?></textarea>
-						<p class="fds-note"><?php esc_html_e( 'SSH ilə serverə girib bu əmri işlədin. Açar əvvəl yazılıbsa, .env-dəki köhnə DEMO_STATS_TOKEN sətrini silin.', 'fixit' ); ?></p>
+						<p class="fds-note"><?php echo esc_html( $tip ); ?></p>
 					</td>
 				</tr>
 			<?php endif; ?>
@@ -556,8 +716,10 @@ function fixit_demo_stats_settings( $notice ) {
  * @param array|WP_Error $data Serverin cavabı.
  * @param int            $days Dövr.
  * @param string         $base Səhifənin ünvanı.
+ * @param string         $product ticket | remote.
  */
-function fixit_demo_stats_report( $data, $days, $base ) {
+function fixit_demo_stats_report( $data, $days, $base, $product = 'ticket' ) {
+	$remote = 'remote' === $product;
 	$refresh = wp_nonce_url( add_query_arg( array( 'days' => $days, 'refresh' => 1 ), $base ), 'fixit_demo_stats_refresh' );
 	?>
 	<div class="fds-top">
@@ -597,7 +759,7 @@ function fixit_demo_stats_report( $data, $days, $base ) {
 		array( $visits, __( 'ziyarət', 'fixit' ), '' ),
 		array( $t['visitors'], __( 'ayrı ziyarətçi', 'fixit' ), $t['returning'] ? sprintf( /* translators: %d: say */ __( '%d təkrar gəlib', 'fixit' ), $t['returning'] ) : '' ),
 		array( $t['logins'], __( 'rol seçib içəri girdi', 'fixit' ), $pct( $t['logins'] ) ),
-		array( $t['active'], __( 'iş gördü (sorğu, tapşırıq...)', 'fixit' ), $pct( $t['active'] ) ),
+		array( $t['active'], $remote ? __( 'iş gördü (qoşuldu, alətlər...)', 'fixit' ) : __( 'iş gördü (sorğu, tapşırıq...)', 'fixit' ), $pct( $t['active'] ) ),
 		array( $t['contact_visits'], __( '«Tam versiya»ya keçdi', 'fixit' ), $pct( $t['contact_visits'] ) ),
 		// Median: açıq unudulmuş bir tab ortanı saatlarla şişirdərdi
 		array( number_format_i18n( (float) $t['median_minutes'], 1 ) . ' ' . __( 'dəq', 'fixit' ), __( 'tipik müddət (içəri girənlər)', 'fixit' ), '' ),
@@ -650,7 +812,13 @@ function fixit_demo_stats_report( $data, $days, $base ) {
 		fixit_demo_stats_table( __( 'Əvvəlki sayt', 'fixit' ), $data['referrers'], 'other', $visits );
 		fixit_demo_stats_table( __( 'Seçilən rol', 'fixit' ), $data['roles'], 'role', $visits, __( 'Hələ heç kim rol seçməyib.', 'fixit' ) );
 		fixit_demo_stats_table( __( 'Baxılan bölmələr', 'fixit' ), $data['sections'], 'section', $visits, __( 'Hələ heç kim içəri girməyib.', 'fixit' ) );
-		fixit_demo_stats_table( __( 'Görülən işlər (cəmi)', 'fixit' ), $data['actions'], 'action', (int) $t['actions'], __( 'Hələ heç kim nə sorğu, nə tapşırıq yaratmayıb.', 'fixit' ) );
+		fixit_demo_stats_table(
+			__( 'Görülən işlər (cəmi)', 'fixit' ),
+			$data['actions'],
+			'action',
+			(int) $t['actions'],
+			$remote ? __( 'Hələ heç kim ekrana qoşulmayıb, alətləri də açmayıb.', 'fixit' ) : __( 'Hələ heç kim nə sorğu, nə tapşırıq yaratmayıb.', 'fixit' )
+		);
 		fixit_demo_stats_table( __( 'Ölkə', 'fixit' ), $data['countries'], 'country', $visits );
 		fixit_demo_stats_table( __( 'Cihaz', 'fixit' ), $data['devices'], 'device', $visits );
 		fixit_demo_stats_table( __( 'Brauzer', 'fixit' ), $data['browsers'], 'other', $visits );
