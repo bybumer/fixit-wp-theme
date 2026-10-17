@@ -360,6 +360,27 @@ function fixit_product_details() {
 				array( 'shield', __( 'İstifadəçi', 'fixit' ), __( 'icazə verir və qoşulmanı ekranda görür', 'fixit' ) ),
 			),
 
+			// Açıq demo: remote-demo.fixit.az (Fixit Remote repo-sunda demo-server/).
+			// Giriş səhifəsinə aparır - rol orada bir kliklə seçilir və ?lang=
+			// orada işləyir (kök ünvan girişə yönləndirəndə dil itərdi).
+			'demo'     => array(
+				'mode'  => 'open',
+				'url'   => 'https://remote-demo.fixit.az/login.html',
+				'text'  => __( 'Demoda nümunə şirkətin serveri açılır: 39 kompüter, komandalar, son 30 günün sessiyaları və jurnal. Qeydiyyat yoxdur, rolu seçib dərhal baxa bilərsiniz.', 'fixit' ),
+				'note'  => __( 'Demoda dəyişikliklər saxlanmır və real kompüter yoxdur: "Qoşul" düyməsi nümunə ekran açır. Məlumat hər gecə yenilənir.', 'fixit' ),
+				'steps' => array(
+					__( 'Demonu açın, qeydiyyat tələb olunmur', 'fixit' ),
+					__( 'Rol seçin: Administrator, Menecer, Operator və ya Rəhbər', 'fixit' ),
+					__( 'Kompüterlərə, sessiyalara və jurnala baxın, qoşulmağı sınayın', 'fixit' ),
+				),
+				'roles' => array(
+					array( 'shield', __( 'Administrator', 'fixit' ), __( 'cihazlar, istifadəçilər və ayarlar', 'fixit' ) ),
+					array( 'users', __( 'Menecer', 'fixit' ), __( 'helpdesk hesabları və qoşulma', 'fixit' ) ),
+					array( 'support', __( 'Operator', 'fixit' ), __( 'yalnız öz qruplarının kompüterləri', 'fixit' ) ),
+					array( 'chart', __( 'Rəhbər', 'fixit' ), __( 'komandalar və kim işdədir', 'fixit' ) ),
+				),
+			),
+
 			'security' => array(
 				__( 'Qoşulmazdan əvvəl istifadəçidən icazə soruşulur; 30 saniyə cavab yoxdursa — rədd', 'fixit' ),
 				__( 'Ekranda gizlədilə bilməyən "qoşulma var" zolağı', 'fixit' ),

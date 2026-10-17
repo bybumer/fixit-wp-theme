@@ -2461,6 +2461,50 @@ msgid "icazə verir və qoşulmanı ekranda görür"
 msgstr "approves and sees the connection on screen"
 
 #: inc/product-data.php
+msgid "Demoda nümunə şirkətin serveri açılır: 39 kompüter, komandalar, son 30 günün sessiyaları və jurnal. Qeydiyyat yoxdur, rolu seçib dərhal baxa bilərsiniz."
+msgstr "The demo opens a sample company's server: 39 computers, teams, the last 30 days of sessions and the log. No registration: pick a role and look around right away."
+
+#: inc/product-data.php
+msgid "Demoda dəyişikliklər saxlanmır və real kompüter yoxdur: \"Qoşul\" düyməsi nümunə ekran açır. Məlumat hər gecə yenilənir."
+msgstr "Changes aren't saved in the demo and there are no real computers: the \"Connect\" button opens a sample screen. The data is refreshed every night."
+
+#: inc/product-data.php
+msgid "Demonu açın, qeydiyyat tələb olunmur"
+msgstr "Open the demo, no registration needed"
+
+#: inc/product-data.php
+msgid "Rol seçin: Administrator, Menecer, Operator və ya Rəhbər"
+msgstr "Choose a role: Administrator, Manager, Operator or Executive"
+
+#: inc/product-data.php
+msgid "Kompüterlərə, sessiyalara və jurnala baxın, qoşulmağı sınayın"
+msgstr "Look at the computers, sessions and log, and try connecting"
+
+#: inc/product-data.php
+msgid "Administrator"
+msgstr "Administrator"
+
+#: inc/product-data.php
+msgid "cihazlar, istifadəçilər və ayarlar"
+msgstr "devices, users and settings"
+
+#: inc/product-data.php
+msgid "helpdesk hesabları və qoşulma"
+msgstr "helpdesk accounts and connections"
+
+#: inc/product-data.php
+msgid "yalnız öz qruplarının kompüterləri"
+msgstr "only computers in their own groups"
+
+#: inc/product-data.php
+msgid "Rəhbər"
+msgstr "Executive"
+
+#: inc/product-data.php
+msgid "komandalar və kim işdədir"
+msgstr "teams and who is at work"
+
+#: inc/product-data.php
 msgid "Qoşulmazdan əvvəl istifadəçidən icazə soruşulur; 30 saniyə cavab yoxdursa — rədd"
 msgstr "The user is asked for permission before connecting; no answer within 30 seconds means refusal"
 

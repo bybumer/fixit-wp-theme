@@ -259,5 +259,16 @@ function fixit_product_open_demo_url( $post_id ) {
  * @return string
  */
 function fixit_demo_link( $url, $src ) {
-	return $url ? add_query_arg( 'src', rawurlencode( $src ), $url ) : $url;
+	if ( ! $url ) {
+		return $url;
+	}
+
+	// Demo saytın dilində açılsın: demolar ?lang=az|en|ru qəbul edir.
+	return add_query_arg(
+		array(
+			'src'  => rawurlencode( $src ),
+			'lang' => fixit_lang(),
+		),
+		$url
+	);
 }

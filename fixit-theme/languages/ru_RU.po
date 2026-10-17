@@ -2461,6 +2461,50 @@ msgid "icazə verir və qoşulmanı ekranda görür"
 msgstr "даёт разрешение и видит подключение на экране"
 
 #: inc/product-data.php
+msgid "Demoda nümunə şirkətin serveri açılır: 39 kompüter, komandalar, son 30 günün sessiyaları və jurnal. Qeydiyyat yoxdur, rolu seçib dərhal baxa bilərsiniz."
+msgstr "В демо открывается сервер условной компании: 39 компьютеров, команды, сеансы за последние 30 дней и журнал. Без регистрации: выберите роль и сразу смотрите."
+
+#: inc/product-data.php
+msgid "Demoda dəyişikliklər saxlanmır və real kompüter yoxdur: \"Qoşul\" düyməsi nümunə ekran açır. Məlumat hər gecə yenilənir."
+msgstr "В демо изменения не сохраняются и настоящих компьютеров нет: кнопка «Подключиться» открывает экран-образец. Данные обновляются каждую ночь."
+
+#: inc/product-data.php
+msgid "Demonu açın, qeydiyyat tələb olunmur"
+msgstr "Откройте демо, регистрация не нужна"
+
+#: inc/product-data.php
+msgid "Rol seçin: Administrator, Menecer, Operator və ya Rəhbər"
+msgstr "Выберите роль: Администратор, Менеджер, Оператор или Руководитель"
+
+#: inc/product-data.php
+msgid "Kompüterlərə, sessiyalara və jurnala baxın, qoşulmağı sınayın"
+msgstr "Посмотрите компьютеры, сеансы и журнал, попробуйте подключиться"
+
+#: inc/product-data.php
+msgid "Administrator"
+msgstr "Администратор"
+
+#: inc/product-data.php
+msgid "cihazlar, istifadəçilər və ayarlar"
+msgstr "устройства, пользователи и настройки"
+
+#: inc/product-data.php
+msgid "helpdesk hesabları və qoşulma"
+msgstr "учётные записи helpdesk и подключения"
+
+#: inc/product-data.php
+msgid "yalnız öz qruplarının kompüterləri"
+msgstr "только компьютеры своих групп"
+
+#: inc/product-data.php
+msgid "Rəhbər"
+msgstr "Руководитель"
+
+#: inc/product-data.php
+msgid "komandalar və kim işdədir"
+msgstr "команды и кто на работе"
+
+#: inc/product-data.php
 msgid "Qoşulmazdan əvvəl istifadəçidən icazə soruşulur; 30 saniyə cavab yoxdursa — rədd"
 msgstr "Перед подключением у пользователя спрашивают разрешение; нет ответа 30 секунд — отказ"
 
