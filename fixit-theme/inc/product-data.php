@@ -273,6 +273,19 @@ function fixit_product_details() {
 				__( 'Tam jurnal', 'fixit' ),
 			),
 
+			/*
+			 * Ekran görüntüləri: assets/img/products/remote/, remote-demo.fixit.az-dan
+			 * çəkilib (tools/remote-ekranlar.py). Birincisi həm də başlıqdakı şəkildir.
+			 */
+			'screens'  => array(
+				array( '01-ekran.webp', __( 'Ekran pəncərəsi: idarə, qısayollar, yazışma, ekran şəkli və video', 'fixit' ) ),
+				array( '02-cihazlar.webp', __( 'Cihazlar: kimin kompüteri, onlayn vəziyyət və bir kliklə qoşulma', 'fixit' ) ),
+				array( '03-idare-lovhesi.webp', __( 'İdarə lövhəsi: onlayn cihazlar, aktiv qoşulmalar və son hadisələr', 'fixit' ) ),
+				array( '04-yazisma.webp', __( 'Yazışma: ekrana qoşulmadan işçi ilə çat', 'fixit' ) ),
+				array( '05-sessiyalar.webp', __( 'Sessiyalar: kim kimə, nə qədər qoşulub; CSV və PDF', 'fixit' ) ),
+				array( '06-komandalar.webp', __( 'Komandalar: kim işdədir, hansı kompüterdə', 'fixit' ) ),
+			),
+
 			'problems' => array(
 				array(
 					'icon'  => 'lock',

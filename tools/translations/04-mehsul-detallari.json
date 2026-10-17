@@ -203,5 +203,11 @@
 "helpdesk hesabları və qoşulma": {"en": "helpdesk accounts and connections", "ru": "учётные записи helpdesk и подключения"},
 "yalnız öz qruplarının kompüterləri": {"en": "only computers in their own groups", "ru": "только компьютеры своих групп"},
 "Rəhbər": {"en": "Executive", "ru": "Руководитель"},
-"komandalar və kim işdədir": {"en": "teams and who is at work", "ru": "команды и кто на работе"}
+"komandalar və kim işdədir": {"en": "teams and who is at work", "ru": "команды и кто на работе"},
+"Ekran pəncərəsi: idarə, qısayollar, yazışma, ekran şəkli və video": {"en": "Screen window: control, shortcuts, chat, screenshots and video", "ru": "Окно экрана: управление, сочетания клавиш, чат, снимки экрана и видео"},
+"Cihazlar: kimin kompüteri, onlayn vəziyyət və bir kliklə qoşulma": {"en": "Devices: whose computer it is, online status and one-click connection", "ru": "Устройства: чей компьютер, статус в сети и подключение в один клик"},
+"İdarə lövhəsi: onlayn cihazlar, aktiv qoşulmalar və son hadisələr": {"en": "Dashboard: online devices, active connections and recent events", "ru": "Панель: устройства в сети, активные подключения и последние события"},
+"Yazışma: ekrana qoşulmadan işçi ilə çat": {"en": "Chat: talk to the employee without connecting to the screen", "ru": "Чат: переписка с сотрудником без подключения к экрану"},
+"Sessiyalar: kim kimə, nə qədər qoşulub; CSV və PDF": {"en": "Sessions: who connected to whom and for how long; CSV and PDF", "ru": "Сеансы: кто, к кому и как долго подключался; CSV и PDF"},
+"Komandalar: kim işdədir, hansı kompüterdə": {"en": "Teams: who is at work and on which computer", "ru": "Команды: кто на работе и за каким компьютером"}
 }

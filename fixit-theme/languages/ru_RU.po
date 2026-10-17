@@ -2305,6 +2305,30 @@ msgid "Tam jurnal"
 msgstr "Полный журнал"
 
 #: inc/product-data.php
+msgid "Ekran pəncərəsi: idarə, qısayollar, yazışma, ekran şəkli və video"
+msgstr "Окно экрана: управление, сочетания клавиш, чат, снимки экрана и видео"
+
+#: inc/product-data.php
+msgid "Cihazlar: kimin kompüteri, onlayn vəziyyət və bir kliklə qoşulma"
+msgstr "Устройства: чей компьютер, статус в сети и подключение в один клик"
+
+#: inc/product-data.php
+msgid "İdarə lövhəsi: onlayn cihazlar, aktiv qoşulmalar və son hadisələr"
+msgstr "Панель: устройства в сети, активные подключения и последние события"
+
+#: inc/product-data.php
+msgid "Yazışma: ekrana qoşulmadan işçi ilə çat"
+msgstr "Чат: переписка с сотрудником без подключения к экрану"
+
+#: inc/product-data.php
+msgid "Sessiyalar: kim kimə, nə qədər qoşulub; CSV və PDF"
+msgstr "Сеансы: кто, к кому и как долго подключался; CSV и PDF"
+
+#: inc/product-data.php
+msgid "Komandalar: kim işdədir, hansı kompüterdə"
+msgstr "Команды: кто на работе и за каким компьютером"
+
+#: inc/product-data.php
 msgid "Ekran başqasının serverindən keçir"
 msgstr "Экран идёт через чужой сервер"
 

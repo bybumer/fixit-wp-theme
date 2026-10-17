@@ -2305,6 +2305,30 @@ msgid "Tam jurnal"
 msgstr "Full logging"
 
 #: inc/product-data.php
+msgid "Ekran pəncərəsi: idarə, qısayollar, yazışma, ekran şəkli və video"
+msgstr "Screen window: control, shortcuts, chat, screenshots and video"
+
+#: inc/product-data.php
+msgid "Cihazlar: kimin kompüteri, onlayn vəziyyət və bir kliklə qoşulma"
+msgstr "Devices: whose computer it is, online status and one-click connection"
+
+#: inc/product-data.php
+msgid "İdarə lövhəsi: onlayn cihazlar, aktiv qoşulmalar və son hadisələr"
+msgstr "Dashboard: online devices, active connections and recent events"
+
+#: inc/product-data.php
+msgid "Yazışma: ekrana qoşulmadan işçi ilə çat"
+msgstr "Chat: talk to the employee without connecting to the screen"
+
+#: inc/product-data.php
+msgid "Sessiyalar: kim kimə, nə qədər qoşulub; CSV və PDF"
+msgstr "Sessions: who connected to whom and for how long; CSV and PDF"
+
+#: inc/product-data.php
+msgid "Komandalar: kim işdədir, hansı kompüterdə"
+msgstr "Teams: who is at work and on which computer"
+
+#: inc/product-data.php
 msgid "Ekran başqasının serverindən keçir"
 msgstr "The screen travels through someone else's server"
 
