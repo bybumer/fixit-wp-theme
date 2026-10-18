@@ -68,7 +68,7 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 			</div>
 			<div class="stat">
 				<b><?php echo esc_html( fixit_get( 'fixit_stat_support' ) ); ?></b>
-				<span><?php esc_html_e( 'monitorinq və dəstək', 'fixit' ); ?></span>
+				<span><?php esc_html_e( 'iş günləri, dəstək saatları', 'fixit' ); ?></span>
 			</div>
 		</div>
 	</div>

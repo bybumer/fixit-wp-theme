@@ -46,6 +46,7 @@ function fixit_message_columns( $columns ) {
 		'fixit_kind'    => __( 'Növ', 'fixit' ),
 		'title'         => __( 'Ad', 'fixit' ),
 		'fixit_company' => __( 'Şirkət', 'fixit' ),
+		'fixit_size'    => __( 'Say', 'fixit' ),
 		'fixit_email'   => __( 'E-poçt', 'fixit' ),
 		'fixit_phone'   => __( 'Telefon', 'fixit' ),
 		'fixit_topic'   => __( 'Mövzu', 'fixit' ),
@@ -67,6 +68,7 @@ function fixit_message_column_content( $column, $post_id ) {
 
 	$map = array(
 		'fixit_company' => '_fixit_msg_company',
+		'fixit_size'    => '_fixit_msg_size',
 		'fixit_email'   => '_fixit_msg_email',
 		'fixit_phone'   => '_fixit_msg_phone',
 		'fixit_topic'   => '_fixit_msg_topic',
@@ -165,6 +167,19 @@ function fixit_form_rate_ok() {
 }
 
 /**
+ * "İstifadəçi və ya kompüter sayı" seçimləri.
+ *
+ * Məhsul qiyməti saytda yazılmır, fərdi təklif istifadəçi sayına görə
+ * hazırlanır — bu sahə təklifi ilk məktubdan hazırlamağa imkan verir.
+ * Formadan yalnız bu siyahıdakı dəyər qəbul olunur.
+ *
+ * @return string[]
+ */
+function fixit_form_sizes() {
+	return array( '1–10', '11–50', '51–200', '201–500', '500+' );
+}
+
+/**
  * Sahənin uzunluğunu məhdudlaşdırır.
  *
  * @param string $value Dəyər.
@@ -208,6 +223,8 @@ function fixit_handle_contact() {
 	$topic   = isset( $_POST['fixit_topic'] ) ? fixit_form_clip( sanitize_text_field( wp_unslash( $_POST['fixit_topic'] ) ), 150 ) : '';
 	$message = isset( $_POST['fixit_message'] ) ? fixit_form_clip( sanitize_textarea_field( wp_unslash( $_POST['fixit_message'] ) ), 5000 ) : '';
 	$company = isset( $_POST['fixit_company'] ) ? fixit_form_clip( sanitize_text_field( wp_unslash( $_POST['fixit_company'] ) ), 150 ) : '';
+	$size    = isset( $_POST['fixit_size'] ) ? sanitize_text_field( wp_unslash( $_POST['fixit_size'] ) ) : '';
+	$size    = in_array( $size, fixit_form_sizes(), true ) ? $size : '';
 	$kind    = ( isset( $_POST['fixit_kind'] ) && 'demo' === $_POST['fixit_kind'] ) ? 'demo' : 'contact';
 
 	// Demo formunda mesaj sahəsi yoxdur — məzmunu özümüz yazırıq.
@@ -248,6 +265,7 @@ function fixit_handle_contact() {
 		update_post_meta( $post_id, '_fixit_msg_phone', $phone );
 		update_post_meta( $post_id, '_fixit_msg_topic', $topic );
 		update_post_meta( $post_id, '_fixit_msg_company', $company );
+		update_post_meta( $post_id, '_fixit_msg_size', $size );
 		update_post_meta( $post_id, '_fixit_msg_kind', $kind );
 	}
 
@@ -260,6 +278,7 @@ function fixit_handle_contact() {
 	$body = ( 'demo' === $kind ? "Saytdan yeni DEMO sorğusu daxil oldu:\n\n" : "Saytdan yeni müraciət daxil oldu:\n\n" )
 		. "Ad: {$name}\n"
 		. ( $company ? "Şirkət: {$company}\n" : '' )
+		. ( $size ? "İstifadəçi / kompüter sayı: {$size}\n" : '' )
 		. "E-poçt: {$email}\n"
 		. "Telefon: {$phone}\n"
 		. "Mövzu: {$topic}\n\n"

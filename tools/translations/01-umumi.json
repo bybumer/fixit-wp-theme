@@ -98,5 +98,12 @@
 "Ehtiyacınızı qısa şəkildə yazın…": {"en": "Briefly describe what you need…", "ru": "Кратко опишите вашу задачу…"},
 "Göndər": {"en": "Send", "ru": "Отправить"},
 "Məlumatlarınız yalnız müraciətinizə cavab vermək üçün istifadə olunur.": {"en": "Your details are used only to respond to your request.", "ru": "Ваши данные используются только для ответа на обращение."},
-"FIXIT ofisinin xəritədə yeri": {"en": "FIXIT office location on the map", "ru": "Расположение офиса FIXIT на карте"}
+"FIXIT ofisinin xəritədə yeri": {"en": "FIXIT office location on the map", "ru": "Расположение офиса FIXIT на карте"},
+"Kuki razılığı": {"en": "Cookie consent", "ru": "Согласие на cookie"},
+"Saytın necə istifadə olunduğunu ölçmək və reklamlarımızı yaxşılaşdırmaq üçün analitika kukilərindən istifadə edirik. Razılıq versəniz, bu kukilər yalnız bu məqsəd üçün işlənəcək.": {"en": "We use analytics cookies to measure how the site is used and to improve our ads. If you agree, these cookies will be used only for this purpose.", "ru": "Мы используем аналитические cookie, чтобы понимать, как используется сайт, и улучшать нашу рекламу. Если вы согласны, эти cookie будут использоваться только для этой цели."},
+"Qəbul edirəm": {"en": "Accept", "ru": "Принять"},
+"İmtina": {"en": "Decline", "ru": "Отказаться"},
+"İstifadəçi və ya kompüter sayı": {"en": "Number of users or computers", "ru": "Количество пользователей или компьютеров"},
+"— Seçin —": {"en": "— Select —", "ru": "— Выберите —"},
+"Say": {"en": "Count", "ru": "Количество"}
 }

@@ -37,7 +37,7 @@ function fixit_defaults() {
 		'fixit_stat_clients' => '40+',
 		'fixit_stat_project' => '30+',
 		'fixit_stat_years'   => '8+',
-		'fixit_stat_support' => '7/24',
+		'fixit_stat_support' => '09–18',
 	);
 }
 

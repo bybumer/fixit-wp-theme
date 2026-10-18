@@ -76,6 +76,22 @@ msgstr "Позвонить"
 msgid "Yuxarı qalx"
 msgstr "Наверх"
 
+#: footer.php
+msgid "Kuki razılığı"
+msgstr "Согласие на cookie"
+
+#: footer.php
+msgid "Saytın necə istifadə olunduğunu ölçmək və reklamlarımızı yaxşılaşdırmaq üçün analitika kukilərindən istifadə edirik. Razılıq versəniz, bu kukilər yalnız bu məqsəd üçün işlənəcək."
+msgstr "Мы используем аналитические cookie, чтобы понимать, как используется сайт, и улучшать нашу рекламу. Если вы согласны, эти cookie будут использоваться только для этой цели."
+
+#: footer.php
+msgid "Qəbul edirəm"
+msgstr "Принять"
+
+#: footer.php
+msgid "İmtina"
+msgstr "Отказаться"
+
 #: front-page.php
 msgid "%s-ci ildən etibarən"
 msgstr "С %s года"
@@ -329,8 +345,8 @@ msgid "il sahə təcrübəsi"
 msgstr "лет отраслевого опыта"
 
 #: front-page.php
-msgid "monitorinq və dəstək"
-msgstr "мониторинг и поддержка"
+msgid "iş günləri, dəstək saatları"
+msgstr "будни, часы поддержки"
 
 #: front-page.php
 msgid "İş prosesi"
@@ -767,6 +783,14 @@ msgstr "Отправить заявку"
 #: template-contact.php
 msgid "Formu doldurun — iş saatları ərzində sizinlə əlaqə saxlayaq."
 msgstr "Заполните форму — свяжемся с вами в рабочее время."
+
+#: template-contact.php
+msgid "İstifadəçi və ya kompüter sayı"
+msgstr "Количество пользователей или компьютеров"
+
+#: template-contact.php
+msgid "— Seçin —"
+msgstr "— Выберите —"
 
 #: template-contact.php
 msgid "Mövzu"
@@ -2759,6 +2783,10 @@ msgstr "Тип"
 #: inc/contact-form.php
 msgid "Ad"
 msgstr "Имя"
+
+#: inc/contact-form.php
+msgid "Say"
+msgstr "Количество"
 
 #: inc/contact-form.php
 msgid "Tarix"

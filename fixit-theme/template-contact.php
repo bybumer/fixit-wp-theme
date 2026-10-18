@@ -130,6 +130,23 @@ $fixit_products  = fixit_get_products();
 					<input type="email" name="fixit_email" id="fixit_email_f" required>
 				</div>
 
+				<!-- Məhsul təklifi üçün: qiymət istifadəçi sayına görə hesablanır -->
+				<div class="field-2">
+					<div class="field">
+						<label for="fixit_company_f"><?php esc_html_e( 'Şirkət', 'fixit' ); ?></label>
+						<input type="text" name="fixit_company" id="fixit_company_f" autocomplete="organization">
+					</div>
+					<div class="field">
+						<label for="fixit_size_f"><?php esc_html_e( 'İstifadəçi və ya kompüter sayı', 'fixit' ); ?></label>
+						<select name="fixit_size" id="fixit_size_f">
+							<option value=""><?php esc_html_e( '— Seçin —', 'fixit' ); ?></option>
+							<?php foreach ( fixit_form_sizes() as $fixit_size ) : ?>
+								<option value="<?php echo esc_attr( $fixit_size ); ?>"><?php echo esc_html( $fixit_size ); ?></option>
+							<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+
 				<div class="field">
 					<label for="fixit_topic"><?php esc_html_e( 'Mövzu', 'fixit' ); ?></label>
 					<?php

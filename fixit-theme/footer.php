@@ -114,6 +114,23 @@ $fixit_services = fixit_get_services( 6 );
 	</button>
 </div>
 
+<?php
+/*
+ * Kuki razılığı — yalnız "Analitika və reklam" bölməsində razılıq tələbi
+ * açıq olanda. Zolaq gizli yazılır, seçim edilməyibsə analytics.js onu
+ * göstərir: keşlənmiş səhifə də hər ziyarətçidə düzgün işləyir.
+ */
+if ( function_exists( 'fixit_tracking_active' ) && fixit_tracking_active() && get_theme_mod( 'fixit_tracking_consent', false ) ) :
+	?>
+	<div class="consent" id="fixit-consent" role="region" aria-label="<?php esc_attr_e( 'Kuki razılığı', 'fixit' ); ?>" hidden>
+		<p><?php esc_html_e( 'Saytın necə istifadə olunduğunu ölçmək və reklamlarımızı yaxşılaşdırmaq üçün analitika kukilərindən istifadə edirik. Razılıq versəniz, bu kukilər yalnız bu məqsəd üçün işlənəcək.', 'fixit' ); ?></p>
+		<div class="consent__actions">
+			<button type="button" class="btn btn--primary btn--sm" data-consent="granted"><?php esc_html_e( 'Qəbul edirəm', 'fixit' ); ?></button>
+			<button type="button" class="btn btn--ghost btn--sm" data-consent="denied"><?php esc_html_e( 'İmtina', 'fixit' ); ?></button>
+		</div>
+	</div>
+<?php endif; ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -36,10 +36,24 @@ function fixit_run_setup() {
 	fixit_create_clients();
 	fixit_create_menu();
 	fixit_trash_sample_post();
+	fixit_migrate_support_stat();
 
 	flush_rewrite_rules();
 	update_option( 'fixit_demo_installed', FIXIT_VERSION );
 	update_option( 'fixit_seed_rev', FIXIT_SEED_REV );
+}
+
+/**
+ * "7/24 monitorinq və dəstək" statistikası 1.13.0-da "09–18, iş günləri"
+ * ilə əvəz olundu: dəstək həftənin 5 günü 09:00–18:00 göstərilir.
+ *
+ * Fərdiləşdirmədə köhnə "7/24" dəyəri saxlanılıbsa, yenisi yazılır.
+ * Admin başqa dəyər yazıbsa, ona toxunulmur.
+ */
+function fixit_migrate_support_stat() {
+	if ( '7/24' === trim( (string) get_theme_mod( 'fixit_stat_support', '' ) ) ) {
+		set_theme_mod( 'fixit_stat_support', fixit_default( 'fixit_stat_support' ) );
+	}
 }
 
 /**

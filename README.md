@@ -37,6 +37,7 @@ fixit-web/
     ├── 404.php               ← səhifə tapılmadı
     ├── searchform.php        ← axtarış formu
     ├── assets/js/main.js     ← tema dəyişdirici, mobil menyu, animasiyalar, şəkil böyüdücü
+    ├── assets/js/analytics.js ← analitika hadisələri (müraciət, demo, zəng) və kuki razılığı
     ├── assets/js/admin-gallery.js ← admin: məhsul ekran görüntülərinin seçilməsi
     ├── assets/img/products/  ← məhsulların hazır ekran görüntüləri (demodan çəkilib)
     ├── languages/            ← en_US / ru_RU tərcümə faylları (əl ilə dəyişmirsiniz — yığılır)
@@ -57,6 +58,7 @@ fixit-web/
         ├── seo.php           ← meta teqlər + Google struktur məlumatları
         ├── seo-admin.php     ← admin paneldəki SEO izləmə lövhəsi
         ├── demo-stats.php    ← admin paneldə demo.fixit.az ziyarət statistikası
+        ├── analytics.php     ← GA4, Meta Pixel, LinkedIn Insight, Clarity (Fərdiləşdir → Analitika və reklam)
         └── updater.php       ← GitHub relizlərindən avtomatik yeniləmə
 ```
 
@@ -125,6 +127,8 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Səhifə adının (menyuda) EN və RU variantı | Səhifəni açın → **Tərcümələr (EN / RU)** qutusu |
 | Hero başlığı, ünvan, iş saatlarının EN/RU mətni | Fərdiləşdir → **Tərcümələr (EN / RU)** |
 | Şablondakı sabit mətnlərin tərcüməsi | `tools/translations/*.json` → `python tools/build-translations.py` |
+| Google Analytics, Meta Pixel, LinkedIn, Clarity kodları; kuki razılığı | Fərdiləşdir → **Analitika və reklam** (bax: **8. Analitika və reklam pikselləri**) |
+| “İstifadəçi və ya kompüter sayı” seçimləri (əlaqə formu) | `inc/contact-form.php` → `fixit_form_sizes()` |
 
 ---
 
@@ -306,7 +310,52 @@ Admin panelin dili dəyişmir — o, WordPress ayarlarındakı dildə qalır.
   - Şablon faylları birbaşa çağırılanda heç nə icra etmir
 - Sürət: xarici kitabxana yoxdur, yalnız Google Fonts
 
-## 8. Sonrakı addımlar üçün ideyalar
+## 8. Analitika və reklam pikselləri
+
+Kod temanın içindədir (`inc/analytics.php`, `assets/js/analytics.js`) — plagin
+və Google Tag Manager lazım deyil. **Fərdiləşdir → FIXIT tema ayarları →
+Analitika və reklam** bölməsində identifikatorları yazın:
+
+| Sahə | Format | Haradan |
+|---|---|---|
+| Google Analytics 4 — Measurement ID | `G-XXXXXXXXXX` | GA4 → Admin → Data streams → Web |
+| Meta Pixel ID | yalnız rəqəmlər | Meta Events Manager → Data sources |
+| LinkedIn Insight Tag — Partner ID | yalnız rəqəmlər | Campaign Manager → Analyze → Insight Tag |
+| LinkedIn — müraciət konversiyasının ID-si | yalnız rəqəmlər (istəyə görə) | Campaign Manager → Conversions |
+| Microsoft Clarity — Project ID | kiçik hərf və rəqəm | clarity.microsoft.com → Settings |
+
+- Boş sahənin kodu səhifəyə düşmür; heç biri yazılmayıbsa sayt əvvəlki kimidir.
+- Format yoxlanılır: sahəyə bütün kod parçası yapışdırılsa, heç nə əlavə olunmur.
+- Sayta admin/redaktor kimi daxil olanda kodlar işləmir — öz baxışlarınız sayılmır.
+
+**Sayılan hadisələr:**
+
+| GA4 | Meta | Nə vaxt |
+|---|---|---|
+| `generate_lead` (form_type, topic, company_size) | `Lead` | Əlaqə və ya demo forması uğurla göndərildi (səhifə yeniləndikdə təkrar sayılmır) |
+| `demo_open` (product) | `DemoOpen` | Saytdan canlı demoya keçid (demo ünvanları məhsul ayarlarından götürülür) |
+| `contact_click` (method: phone / whatsapp / email) | `Contact` | Zəng, WhatsApp və ya e-poçt linki |
+| `remote_free_download` (platform) | `RemoteFreeDownload` | Pulsuz Fixit Remote yükləməsi |
+| `guide_open` | — | `guide.fixit.az`-a keçid |
+
+LinkedIn konversiya ID-si yazılıbsa, form göndəriləndə o da sayılır.
+
+**GA4-də bir dəfəlik:** Admin → Events → `generate_lead` və `demo_open` üçün
+**Mark as key event**. Google Ads hesabını GA4-ə bağlayıb bu hadisələri
+konversiya kimi idxal edin — saytda əlavə Google Ads kodu lazım deyil.
+
+**Kuki razılığı:** “Kodlar yalnız ziyarətçinin razılığından sonra işləsin”
+seçilsə, saytın aşağısında zolaq görünür və heç bir izləmə skripti
+“Qəbul edirəm” basılana qədər yüklənmir. Seçim brauzerdə yadda qalır.
+Türkiyə və Aİ auditoriyasına reklam veriləndə açılması tövsiyə olunur.
+
+**Demo serverləri** (`demo.fixit.az`, `remote-demo.fixit.az`) ayrı
+proqramlardır — bu kodlar orada işləmir. Saytdan demoya keçid `demo_open`
+kimi sayılır.
+
+---
+
+## 9. Sonrakı addımlar üçün ideyalar
 
 - Bloq bölməsi (şablonlar hazırdır — sadəcə yazı əlavə etmək kifayətdir)
 - Real müştəri loqoları ilə "Tərəfdaşlar" bölməsi

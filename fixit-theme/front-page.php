@@ -365,7 +365,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 			</div>
 			<div class="stat">
 				<b><?php echo esc_html( fixit_get( 'fixit_stat_support' ) ); ?></b>
-				<span><?php esc_html_e( 'monitorinq və dəstək', 'fixit' ); ?></span>
+				<span><?php esc_html_e( 'iş günləri, dəstək saatları', 'fixit' ); ?></span>
 			</div>
 		</div>
 
