@@ -33,7 +33,7 @@ function fixit_product_details() {
 			'tagline'  => __( 'Müştəri müraciətləri və komandanın daxili işləri — bir platformada', 'fixit' ),
 			'badges'   => array(
 				__( 'Ticket + Task', 'fixit' ),
-				__( 'Öz serverinizdə', 'fixit' ),
+				__( 'Öz serverinizdə və ya buludda', 'fixit' ),
 				__( 'Azərbaycan · English · Русский', 'fixit' ),
 				__( 'Avtomatik yenilənmə', 'fixit' ),
 			),
@@ -226,7 +226,7 @@ function fixit_product_details() {
 			),
 
 			'security' => array(
-				__( 'Proqram və verilənlər bazası sizin serverinizdədir', 'fixit' ),
+				__( 'Proqram və verilənlər bazası öz serverinizdə və ya bizim buludda', 'fixit' ),
 				__( 'İki mərhələli giriş (2FA) — autentifikator tətbiqi ilə', 'fixit' ),
 				__( 'Parol təxmininə qarşı qoruma: səhv cəhdlərdə IP müvəqqəti bloklanır', 'fixit' ),
 				__( 'Sessiyalar server tərəfdə saxlanılır', 'fixit' ),
@@ -266,9 +266,9 @@ function fixit_product_details() {
 		   Fixit Remote
 		   ====================================================== */
 		'remote'        => array(
-			'tagline'  => __( 'Şirkət kompüterlərinə uzaqdan qoşulma — öz serverinizdə', 'fixit' ),
+			'tagline'  => __( 'Şirkət kompüterlərinə uzaqdan qoşulma: öz serverinizdə və ya bizim buludda', 'fixit' ),
 			'badges'   => array(
-				__( 'Öz serverinizdə', 'fixit' ),
+				__( 'Öz serverinizdə və ya buludda', 'fixit' ),
 				__( 'Mobil tətbiq', 'fixit' ),
 				__( 'Tam jurnal', 'fixit' ),
 			),
@@ -290,7 +290,7 @@ function fixit_product_details() {
 				array(
 					'icon'  => 'lock',
 					'title' => __( 'Ekran başqasının serverindən keçir', 'fixit' ),
-					'text'  => __( 'Adi uzaqdan giriş proqramlarında əlaqə kənar şirkətin serverləri üzərindən qurulur. Fixit Remote-da hər şey sizin serverinizdə qalır.', 'fixit' ),
+					'text'  => __( 'Adi uzaqdan giriş proqramlarında əlaqə xarici şirkətin serverləri üzərindən qurulur. Fixit Remote-u öz serverinizdə qura və ya bizim buludumuzda işlədə bilərsiniz.', 'fixit' ),
 				),
 				array(
 					'icon'  => 'network',
@@ -368,7 +368,7 @@ function fixit_product_details() {
 			'flow_title' => __( 'Necə işləyir', 'fixit' ),
 			'flow'       => array(
 				array( 'computer', __( 'Agent', 'fixit' ), __( 'işçi kompüterində, serverə özü qoşulur', 'fixit' ) ),
-				array( 'server', __( 'Fixit Remote server', 'fixit' ), __( 'sizin serverinizdə — cihazlar, icazələr, jurnal', 'fixit' ) ),
+				array( 'server', __( 'Fixit Remote server', 'fixit' ), __( 'sizin serverinizdə və ya bizim buludda: cihazlar, icazələr, jurnal', 'fixit' ) ),
 				array( 'users', __( 'Operator', 'fixit' ), __( 'brauzerdən və ya telefondan qoşulur', 'fixit' ) ),
 				array( 'shield', __( 'İstifadəçi', 'fixit' ), __( 'icazə verir və qoşulmanı ekranda görür', 'fixit' ) ),
 			),
@@ -406,7 +406,7 @@ function fixit_product_details() {
 			'faq'      => array(
 				array(
 					__( 'AnyDesk və ya Supremo-dan əsas fərqi nədir?', 'fixit' ),
-					__( 'Fixit Remote sizin öz serverinizdə işləyir: bağlantı, jurnal və icazələr şirkətinizin daxilində qalır. Kimin hansı kompüterə qoşula biləcəyini mərkəzdən idarə edir, hər sessiyanı jurnalda görürsünüz.', 'fixit' ),
+					__( 'Fixit Remote öz serverinizdə və ya bizim buludda işləyir, bağlantı xarici xidmətlərdən keçmir. Kimin hansı kompüterə qoşula biləcəyini mərkəzdən idarə edir, hər sessiyanı jurnalda görürsünüz.', 'fixit' ),
 				),
 				array(
 					__( 'İşçi kompüterlərində port açmaq lazımdırmı?', 'fixit' ),
@@ -429,7 +429,7 @@ function fixit_product_details() {
 		'sebeke-monitorinqi' => array(
 			'tagline'  => __( 'Kəsintini müştəridən əvvəl siz bilin', 'fixit' ),
 			'badges'   => array(
-				__( 'Öz serverinizdə', 'fixit' ),
+				__( 'Öz serverinizdə və ya buludda', 'fixit' ),
 				__( 'Telegram · WhatsApp · E-poçt', 'fixit' ),
 			),
 
@@ -483,7 +483,7 @@ function fixit_product_details() {
 			),
 
 			'security' => array(
-				__( 'Proqram və məlumat sizin serverinizdədir', 'fixit' ),
+				__( 'Proqram və məlumat öz serverinizdə və ya bizim buludda', 'fixit' ),
 				__( 'Parol və tokenlər brauzerə göndərilmir', 'fixit' ),
 			),
 

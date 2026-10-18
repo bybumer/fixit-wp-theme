@@ -53,7 +53,7 @@ function fixit_faq_products() {
 		),
 		array(
 			__( 'Məlumatlarımız harada saxlanılacaq?', 'fixit' ),
-			__( 'Sizin öz serverinizdə. Bütün məhsullarımız on-premise modeldə təqdim olunur — məlumat şirkətinizin infrastrukturundan kənara çıxmır.', 'fixit' ),
+			__( 'Seçim sizindir. On-premise variantda proqram sizin serverinizdə quraşdırılır və məlumat şirkətinizin infrastrukturundan kənara çıxmır. Bulud variantında sistemi biz işə salırıq, serveri və yeniləmələri biz idarə edirik, siz sadəcə istifadə edirsiniz.', 'fixit' ),
 		),
 		array(
 			__( 'Almazdan əvvəl sınaya bilərəmmi?', 'fixit' ),

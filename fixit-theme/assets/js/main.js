@@ -210,6 +210,135 @@
 	}
 
 	/* ---------------------------------------------
+	   6a. Ana səhifənin slaydı (məhsullar)
+	   --------------------------------------------- */
+	var slider = doc.querySelector('[data-hero-slider]');
+
+	if (slider) {
+		var slides = slider.querySelectorAll('.hero-slide');
+		var dots = slider.querySelectorAll('[data-slide-to]');
+		var at = 0;
+		var timer = null;
+		var paused = false;
+		var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		var showSlide = function (i) {
+			at = (i + slides.length) % slides.length;
+			Array.prototype.forEach.call(slides, function (s, k) {
+				var on = k === at;
+				s.classList.toggle('is-active', on);
+				// Gizli slaydın düymələrinə Tab ilə düşülməsin.
+				if (on) {
+					s.removeAttribute('inert');
+					s.removeAttribute('aria-hidden');
+				} else {
+					s.setAttribute('inert', '');
+					s.setAttribute('aria-hidden', 'true');
+				}
+			});
+			Array.prototype.forEach.call(dots, function (d, k) {
+				d.setAttribute('aria-current', k === at ? 'true' : 'false');
+			});
+		};
+
+		// Avtomatik keçid: siçan üstündə və ya klaviatura içindədirsə dayanır.
+		var schedule = function () {
+			clearTimeout(timer);
+			if (still || paused || doc.hidden || slides.length < 2) return;
+			timer = setTimeout(function () {
+				showSlide(at + 1);
+				schedule();
+			}, 7000);
+		};
+
+		var go = function (i) {
+			showSlide(i);
+			schedule();
+		};
+
+		slider.addEventListener('click', function (e) {
+			var t = e.target.closest ? e.target.closest('[data-slide-to],[data-slide-prev],[data-slide-next]') : null;
+			if (!t) return;
+			if (t.hasAttribute('data-slide-prev')) go(at - 1);
+			else if (t.hasAttribute('data-slide-next')) go(at + 1);
+			else go(parseInt(t.getAttribute('data-slide-to'), 10) || 0);
+		});
+
+		slider.addEventListener('mouseenter', function () { paused = true; clearTimeout(timer); });
+		slider.addEventListener('mouseleave', function () { paused = false; schedule(); });
+		slider.addEventListener('focusin', function () { paused = true; clearTimeout(timer); });
+		slider.addEventListener('focusout', function () { paused = false; schedule(); });
+		doc.addEventListener('visibilitychange', schedule);
+
+		// Telefonda barmaqla sürüşdürmək.
+		var startX = null;
+		slider.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+		slider.addEventListener('touchend', function (e) {
+			if (startX === null) return;
+			var dx = e.changedTouches[0].clientX - startX;
+			startX = null;
+			if (Math.abs(dx) > 45) go(at + (dx < 0 ? 1 : -1));
+		});
+
+		schedule();
+	}
+
+	/* ---------------------------------------------
+	   6b. Fixit Remote yüklənməsi: sonra nə etməli
+	   --------------------------------------------- */
+	var dlHelp = doc.getElementById('dl-help');
+
+	if (dlHelp) {
+		var phone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && !/Windows/i.test(navigator.userAgent);
+		var lastFocus = null;
+
+		var openHelp = function (view) {
+			Array.prototype.forEach.call(dlHelp.querySelectorAll('[data-dl-view]'), function (v) {
+				v.hidden = v.getAttribute('data-dl-view') !== view;
+			});
+			lastFocus = doc.activeElement;
+			dlHelp.hidden = false;
+			var close = dlHelp.querySelector('[data-dl-close]');
+			if (close) close.focus();
+		};
+
+		var closeHelp = function () {
+			dlHelp.hidden = true;
+			if (lastFocus && lastFocus.focus) lastFocus.focus();
+		};
+
+		doc.addEventListener('click', function (e) {
+			var a = e.target.closest ? e.target.closest('[data-remote-download]') : null;
+			if (!a) return;
+
+			// Telefonda yükləmənin mənası yoxdur: kompüterdə açılacaq ünvan.
+			if (phone) {
+				e.preventDefault();
+				openHelp('mobile');
+				return;
+			}
+
+			// Yükləmə öz yolu ilə gedir (səhifə yerində qalır), kömək üstə açılır.
+			setTimeout(function () { openHelp('desktop'); }, 400);
+		});
+
+		dlHelp.addEventListener('click', function (e) {
+			if (e.target === dlHelp || (e.target.closest && e.target.closest('[data-dl-close]'))) closeHelp();
+
+			var copy = e.target.closest ? e.target.closest('[data-dl-copy]') : null;
+			if (copy && navigator.clipboard) {
+				navigator.clipboard.writeText(copy.getAttribute('data-dl-copy')).then(function () {
+					copy.textContent = copy.getAttribute('data-copied');
+				}).catch(function () {});
+			}
+		});
+
+		doc.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape' && !dlHelp.hidden) closeHelp();
+		});
+	}
+
+	/* ---------------------------------------------
 	   7. Dil: seçim yadda qalır, ilk ziyarətdə ölkəyə görə təklif
 	   --------------------------------------------- */
 	var L = window.fixitLang;

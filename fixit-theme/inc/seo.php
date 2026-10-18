@@ -167,7 +167,7 @@ function fixit_template_description( $post_id ) {
 			return __( 'Kompüter servisi, video müşahidə, IP telefoniya, korporativ mail, bulud serverlər və İT dəstək — şirkətiniz üçün tam İKT xidmətləri.', 'fixit' );
 
 		case 'template-products.php':
-			return __( 'Sorğu Sistemi (Ticket + Task), Fixit Remote və Şəbəkə Monitorinqi — öz komandamızın hazırladığı, sizin serverinizdə işləyən proqram təminatı. Onlayn demo var.', 'fixit' );
+			return __( 'Sorğu Sistemi (Ticket + Task), Fixit Remote və Şəbəkə Monitorinqi: komandamızın hazırladığı proqramlar, öz serverinizdə və ya bizim buludda. Onlayn demo var.', 'fixit' );
 
 		case 'template-about.php':
 			return __( '2017-ci ildən İT sahəsində fəaliyyət göstəririk: 40-dan çox şirkətlə əməkdaşlıq, 30-dan çox tamamlanmış layihə. Bakı və Cəlilabadda xidmətinizdəyik.', 'fixit' );

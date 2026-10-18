@@ -131,6 +131,44 @@ if ( function_exists( 'fixit_tracking_active' ) && fixit_tracking_active() && ge
 	</div>
 <?php endif; ?>
 
+<?php
+/*
+ * Fixit Remote yükləndikdən sonra kömək: faylı necə açmaq və Windows-un
+ * xəbərdarlığından necə keçmək. Telefonda basana isə kompüterdə açılacaq
+ * qısa ünvan göstərilir (proqram Windows üçündür). Bax: assets/js/main.js.
+ */
+$fixit_dl_url   = home_url( '/yukle/' );
+$fixit_dl_short = preg_replace( '#^https?://(www\.)?#', '', untrailingslashit( $fixit_dl_url ) );
+?>
+<div class="dl-help" id="dl-help" hidden role="dialog" aria-modal="true" aria-labelledby="dl-help-title">
+	<div class="dl-help__box">
+		<button class="dl-help__close" type="button" data-dl-close aria-label="<?php esc_attr_e( 'Bağla', 'fixit' ); ?>"><?php fixit_icon( 'close' ); ?></button>
+
+		<div data-dl-view="desktop">
+			<h3 id="dl-help-title"><?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Yükləmə başladı', 'fixit' ); ?></h3>
+			<p class="dl-help__lead"><?php esc_html_e( 'Fixit Remote quraşdırma tələb etmir: faylı açan kimi işə düşür.', 'fixit' ); ?></p>
+			<ol class="dl-help__steps">
+				<li><span><b><?php esc_html_e( 'FixitRemote.exe faylını açın.', 'fixit' ); ?></b> <?php esc_html_e( 'Brauzerin yükləmələr siyahısında və ya «Yükləmələr» qovluğundadır.', 'fixit' ); ?></span></li>
+				<li><span><b><?php esc_html_e( 'Windows «Kompüterinizi qorudu» yazsa:', 'fixit' ); ?></b> <?php esc_html_e( '«Ətraflı məlumat», sonra «Hər halda işə sal» düyməsini basın.', 'fixit' ); ?></span></li>
+				<li><span><b><?php esc_html_e( 'Ekrandakı ID və şifrəni', 'fixit' ); ?></b> <?php esc_html_e( 'sizə kömək edən şəxsə deyin. Qoşulmağa yalnız siz icazə verirsiniz.', 'fixit' ); ?></span></li>
+			</ol>
+			<p class="dl-help__alt">
+				<?php esc_html_e( 'Yükləmə başlamadısa:', 'fixit' ); ?>
+				<a href="<?php echo esc_url( fixit_remote_download_link( 'yeniden' ) ); ?>" rel="nofollow"><?php esc_html_e( 'yenidən yüklə', 'fixit' ); ?></a>
+			</p>
+		</div>
+
+		<div data-dl-view="mobile" hidden>
+			<h3><?php fixit_icon( 'computer' ); ?><?php esc_html_e( 'Kompüterdə açın', 'fixit' ); ?></h3>
+			<p class="dl-help__lead"><?php esc_html_e( 'Fixit Remote Windows kompüterləri üçündür. Kompüterin brauzerində bu ünvanı yazın, yükləmə dərhal başlayacaq:', 'fixit' ); ?></p>
+			<div class="dl-help__link">
+				<span><?php echo esc_html( $fixit_dl_short ); ?></span>
+				<button class="btn btn--primary btn--sm" type="button" data-dl-copy="<?php echo esc_attr( $fixit_dl_url ); ?>" data-copied="<?php esc_attr_e( 'Kopyalandı', 'fixit' ); ?>"><?php esc_html_e( 'Kopyala', 'fixit' ); ?></button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <?php wp_footer(); ?>
 </body>
 </html>

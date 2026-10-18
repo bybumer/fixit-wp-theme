@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.13.0' );
+define( 'FIXIT_VERSION', '1.13.1' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -75,7 +75,7 @@ define( 'FIXIT_REMOTE_ANDROID_READY', false );
  * @return array{version:string,size:int}
  */
 function fixit_remote_release() {
-	$cached = get_transient( 'fixit_remote_release' );
+	$cached = get_transient( 'fixit_remote_release_exe' );
 
 	if ( is_array( $cached ) ) {
 		return $cached;
@@ -111,7 +111,7 @@ function fixit_remote_release() {
 
 	// Alınmayanda qısa müddətə saxlanılır ki, növbəti açılışda yenidən
 	// cəhd olunsun.
-	set_transient( 'fixit_remote_release', $info, $info['version'] ? 6 * HOUR_IN_SECONDS : 15 * MINUTE_IN_SECONDS );
+	set_transient( 'fixit_remote_release_exe', $info, $info['version'] ? 6 * HOUR_IN_SECONDS : 15 * MINUTE_IN_SECONDS );
 
 	return $info;
 }
@@ -221,6 +221,7 @@ require_once get_template_directory() . '/inc/customizer.php';    // Fərdiləş
 require_once get_template_directory() . '/inc/cpt.php';           // Xidmət və rəy post növləri
 require_once get_template_directory() . '/inc/product-demo.php';  // Məhsul: demo ayarları və ekran görüntüləri
 require_once get_template_directory() . '/inc/product-data.php';  // Məhsul səhifələrinin detallı məzmunu
+require_once get_template_directory() . '/inc/remote-download.php'; // fixit.az/yukle: Fixit Remote-un yüklənməsi və sayı
 require_once get_template_directory() . '/inc/contact-form.php';  // Əlaqə formu (plagin tələb etmir)
 require_once get_template_directory() . '/inc/demo-content.php';  // İlk quraşdırmada səhifə/menyu yaradılması
 require_once get_template_directory() . '/inc/faq.php';           // Sual-cavab məzmunu (səhifə + schema)

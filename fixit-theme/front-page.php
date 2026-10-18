@@ -62,32 +62,145 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 			</div>
 		</div>
 
-		<!-- Sağ kart -->
-		<div class="hero-card reveal">
-			<div class="hero-card__head">
-				<span class="dot" aria-hidden="true"></span>
-				<strong><?php esc_html_e( 'Xidmət istiqamətlərimiz', 'fixit' ); ?></strong>
-				<small><?php esc_html_e( 'aktiv', 'fixit' ); ?></small>
+		<!-- Sağ tərəf: məhsul slaydı (Remote, Sorğu Sistemi) və xidmətlər -->
+		<?php
+		$fixit_slide_posts = array();
+		foreach ( fixit_get_products() as $fixit_sp ) {
+			$fixit_slide_posts[ $fixit_sp->post_name ] = $fixit_sp;
+		}
+		$fixit_remote_post = isset( $fixit_slide_posts['remote'] ) ? $fixit_slide_posts['remote'] : null;
+		$fixit_ticket_post = isset( $fixit_slide_posts['sorgu-sistemi'] ) ? $fixit_slide_posts['sorgu-sistemi'] : null;
+		$fixit_remote_demo = $fixit_remote_post ? fixit_product_open_demo_url( $fixit_remote_post->ID ) : '';
+		$fixit_ticket_demo = $fixit_ticket_post ? fixit_product_open_demo_url( $fixit_ticket_post->ID ) : '';
+		$fixit_remote_shot = $fixit_remote_post ? fixit_product_screens( $fixit_remote_post ) : array();
+		$fixit_ticket_shot = $fixit_ticket_post ? fixit_product_screens( $fixit_ticket_post ) : array();
+
+		$fixit_slides = array();
+		if ( $fixit_remote_post ) {
+			$fixit_slides[] = 'remote';
+		}
+		if ( $fixit_ticket_post ) {
+			$fixit_slides[] = 'ticket';
+		}
+		$fixit_slides[] = 'services';
+		?>
+		<div class="hero-slider reveal" data-hero-slider aria-roledescription="carousel" aria-label="<?php esc_attr_e( 'Məhsullarımız və xidmətlərimiz', 'fixit' ); ?>">
+			<div class="hero-slider__track">
+				<?php foreach ( $fixit_slides as $fixit_si => $fixit_slide ) : ?>
+					<?php
+					$fixit_on = 0 === $fixit_si;
+					$fixit_at = sprintf( ' aria-roledescription="slide" aria-label="%s"%s', esc_attr( sprintf( '%d / %d', $fixit_si + 1, count( $fixit_slides ) ) ), $fixit_on ? '' : ' inert aria-hidden="true"' );
+					?>
+
+					<?php if ( 'remote' === $fixit_slide ) : ?>
+						<article class="hero-card hero-slide<?php echo $fixit_on ? ' is-active' : ''; ?>"<?php echo $fixit_at; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- yuxarıda escape olunub ?>>
+							<div class="hero-card__head">
+								<span class="dot" aria-hidden="true"></span>
+								<strong>Fixit Remote</strong>
+								<small><?php esc_html_e( 'Uzaqdan qoşulma', 'fixit' ); ?></small>
+							</div>
+							<?php if ( $fixit_remote_shot ) : ?>
+								<a class="hero-slide__shot" href="<?php echo esc_url( get_permalink( $fixit_remote_post ) ); ?>" tabindex="-1" aria-hidden="true">
+									<?php echo fixit_product_screen_img( $fixit_remote_shot[0], '(max-width: 1024px) 100vw, 520px' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								</a>
+							<?php endif; ?>
+							<p class="hero-slide__text"><?php esc_html_e( 'Başqa kompüterə uzaqdan qoşulun: ekran, idarə, yazışma və fayl ötürmə.', 'fixit' ); ?></p>
+							<div class="hero-slide__split">
+								<div class="hero-slide__opt">
+									<b><?php esc_html_e( 'Biznes üçün', 'fixit' ); ?></b>
+									<span><?php esc_html_e( 'İcazələr və tam jurnal. Öz serverinizdə və ya bizim buludda.', 'fixit' ); ?></span>
+									<?php if ( $fixit_remote_demo ) : ?>
+										<a class="btn btn--primary btn--sm" href="<?php echo esc_url( fixit_demo_link( $fixit_remote_demo, 'home-slayd' ) ); ?>" target="_blank" rel="noopener">
+											<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Onlayn demo', 'fixit' ); ?>
+										</a>
+									<?php else : ?>
+										<a class="btn btn--primary btn--sm" href="<?php echo esc_url( get_permalink( $fixit_remote_post ) ); ?>">
+											<?php esc_html_e( 'Ətraflı', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
+										</a>
+									<?php endif; ?>
+								</div>
+								<div class="hero-slide__opt">
+									<b><?php esc_html_e( 'Şəxsi istifadə', 'fixit' ); ?></b>
+									<span><?php esc_html_e( 'Pulsuz, qeydiyyatsız, quraşdırma tələb etmir.', 'fixit' ); ?></span>
+									<?php if ( FIXIT_REMOTE_WINDOWS_READY ) : ?>
+										<a class="btn btn--light btn--sm" href="<?php echo esc_url( fixit_remote_download_link( 'home-slayd' ) ); ?>" rel="nofollow" data-remote-download>
+											<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Pulsuz yüklə', 'fixit' ); ?>
+										</a>
+									<?php endif; ?>
+								</div>
+							</div>
+						</article>
+
+					<?php elseif ( 'ticket' === $fixit_slide ) : ?>
+						<article class="hero-card hero-slide<?php echo $fixit_on ? ' is-active' : ''; ?>"<?php echo $fixit_at; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- yuxarıda escape olunub ?>>
+							<div class="hero-card__head">
+								<span class="dot" aria-hidden="true"></span>
+								<strong><?php echo esc_html( fixit_t_title( $fixit_ticket_post ) ); ?></strong>
+								<small>Ticket + Task</small>
+							</div>
+							<?php if ( $fixit_ticket_shot ) : ?>
+								<a class="hero-slide__shot" href="<?php echo esc_url( get_permalink( $fixit_ticket_post ) ); ?>" tabindex="-1" aria-hidden="true">
+									<?php echo fixit_product_screen_img( $fixit_ticket_shot[0], '(max-width: 1024px) 100vw, 520px' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								</a>
+							<?php endif; ?>
+							<p class="hero-slide__text"><?php esc_html_e( 'Müştəri müraciətləri və komandanın daxili işləri bir platformada: e-poçt, portal, SLA, lövhə və vaxt uçotu.', 'fixit' ); ?></p>
+							<div class="hero-slide__cta">
+								<?php if ( $fixit_ticket_demo ) : ?>
+									<a class="btn btn--primary btn--sm" href="<?php echo esc_url( fixit_demo_link( $fixit_ticket_demo, 'home-slayd' ) ); ?>" target="_blank" rel="noopener">
+										<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Demonu sınayın', 'fixit' ); ?>
+									</a>
+								<?php endif; ?>
+								<a class="btn btn--light btn--sm" href="<?php echo esc_url( get_permalink( $fixit_ticket_post ) ); ?>">
+									<?php esc_html_e( 'Ətraflı', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
+								</a>
+							</div>
+							<?php if ( $fixit_ticket_demo ) : ?>
+								<p class="hero-slide__note"><?php esc_html_e( 'Qeydiyyatsız, bir kliklə: Admin, Agent, Menecer və ya Müştəri kimi.', 'fixit' ); ?></p>
+							<?php endif; ?>
+						</article>
+
+					<?php else : ?>
+						<div class="hero-card hero-slide<?php echo $fixit_on ? ' is-active' : ''; ?>"<?php echo $fixit_at; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- yuxarıda escape olunub ?>>
+							<div class="hero-card__head">
+								<span class="dot" aria-hidden="true"></span>
+								<strong><?php esc_html_e( 'Xidmət istiqamətlərimiz', 'fixit' ); ?></strong>
+								<small><?php esc_html_e( 'aktiv', 'fixit' ); ?></small>
+							</div>
+
+							<ul class="hero-list">
+								<?php
+								$fixit_hero_items = array(
+									array( 'computer', __( 'Kompüter servisi', 'fixit' ), __( 'pulsuz analiz', 'fixit' ) ),
+									array( 'camera', __( 'Video müşahidə', 'fixit' ), __( 'uzaqdan baxış', 'fixit' ) ),
+									array( 'cloud', __( 'Bulud serverlər', 'fixit' ), __( 'yedəkli', 'fixit' ) ),
+									array( 'phone', __( 'IP telefoniya', 'fixit' ), __( '3CX / Yeastar', 'fixit' ) ),
+									array( 'support', __( 'İT dəstək', 'fixit' ), __( 'abunə', 'fixit' ) ),
+								);
+								foreach ( $fixit_hero_items as $fixit_item ) :
+									?>
+									<li>
+										<span class="ico"><?php fixit_icon( $fixit_item[0] ); ?></span>
+										<span><?php echo esc_html( $fixit_item[1] ); ?></span>
+										<span class="tag"><?php echo esc_html( $fixit_item[2] ); ?></span>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+						</div>
+					<?php endif; ?>
+				<?php endforeach; ?>
 			</div>
 
-			<ul class="hero-list">
-				<?php
-				$fixit_hero_items = array(
-					array( 'computer', __( 'Kompüter servisi', 'fixit' ), __( 'pulsuz analiz', 'fixit' ) ),
-					array( 'camera', __( 'Video müşahidə', 'fixit' ), __( 'uzaqdan baxış', 'fixit' ) ),
-					array( 'cloud', __( 'Bulud serverlər', 'fixit' ), __( 'yedəkli', 'fixit' ) ),
-					array( 'phone', __( 'IP telefoniya', 'fixit' ), __( '3CX / Yeastar', 'fixit' ) ),
-					array( 'support', __( 'İT dəstək', 'fixit' ), __( 'abunə', 'fixit' ) ),
-				);
-				foreach ( $fixit_hero_items as $fixit_item ) :
-					?>
-					<li>
-						<span class="ico"><?php fixit_icon( $fixit_item[0] ); ?></span>
-						<span><?php echo esc_html( $fixit_item[1] ); ?></span>
-						<span class="tag"><?php echo esc_html( $fixit_item[2] ); ?></span>
-					</li>
-				<?php endforeach; ?>
-			</ul>
+			<?php if ( count( $fixit_slides ) > 1 ) : ?>
+				<div class="hero-slider__nav">
+					<button type="button" class="hero-slider__arrow hero-slider__arrow--prev" data-slide-prev aria-label="<?php esc_attr_e( 'Əvvəlki', 'fixit' ); ?>"><?php fixit_icon( 'arrow-r' ); ?></button>
+					<div class="hero-slider__dots">
+						<?php foreach ( $fixit_slides as $fixit_si => $fixit_slide ) : ?>
+							<button type="button" data-slide-to="<?php echo esc_attr( $fixit_si ); ?>" aria-current="<?php echo 0 === $fixit_si ? 'true' : 'false'; ?>" aria-label="<?php echo esc_attr( sprintf( /* translators: %d: slaydın nömrəsi */ __( 'Slayd %d', 'fixit' ), $fixit_si + 1 ) ); ?>"></button>
+						<?php endforeach; ?>
+					</div>
+					<button type="button" class="hero-slider__arrow" data-slide-next aria-label="<?php esc_attr_e( 'Növbəti', 'fixit' ); ?>"><?php fixit_icon( 'arrow-r' ); ?></button>
+				</div>
+			<?php endif; ?>
 		</div>
 
 	</div>
@@ -170,7 +283,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 			<div class="section-head section-head--center reveal">
 				<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Öz məhsullarımız', 'fixit' ); ?></span>
 				<h2><?php esc_html_e( 'Sıfırdan özümüzün yazdığı', 'fixit' ); ?> <span style="background:linear-gradient(100deg,#6fd0ff,#7bf7d8);-webkit-background-clip:text;background-clip:text;color:transparent"><?php esc_html_e( 'proqram təminatı', 'fixit' ); ?></span></h2>
-				<p><?php esc_html_e( 'Sizin öz serverinizdə işləyir, interfeysi Azərbaycan dilindədir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
+				<p><?php esc_html_e( 'Öz serverinizdə və ya bizim buludda işləyir, interfeysi Azərbaycan dilindədir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
 			</div>
 
 			<?php
@@ -286,7 +399,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 
 				<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;align-items:center">
 					<?php if ( FIXIT_REMOTE_WINDOWS_READY ) : ?>
-						<a class="btn btn--primary" href="<?php echo esc_url( FIXIT_REMOTE_WINDOWS ); ?>" rel="nofollow">
+						<a class="btn btn--primary" href="<?php echo esc_url( fixit_remote_download_link( 'home' ) ); ?>" rel="nofollow" data-remote-download>
 							<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Pulsuz yüklə', 'fixit' ); ?>
 						</a>
 					<?php else : ?>

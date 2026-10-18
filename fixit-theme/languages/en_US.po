@@ -92,6 +92,66 @@ msgstr "Accept"
 msgid "İmtina"
 msgstr "Decline"
 
+#: footer.php
+msgid "Bağla"
+msgstr "Close"
+
+#: footer.php
+msgid "Yükləmə başladı"
+msgstr "Your download has started"
+
+#: footer.php
+msgid "Fixit Remote quraşdırma tələb etmir: faylı açan kimi işə düşür."
+msgstr "Fixit Remote needs no installation: it starts as soon as you open the file."
+
+#: footer.php
+msgid "FixitRemote.exe faylını açın."
+msgstr "Open the FixitRemote.exe file."
+
+#: footer.php
+msgid "Brauzerin yükləmələr siyahısında və ya «Yükləmələr» qovluğundadır."
+msgstr "You will find it in your browser's download list or in the Downloads folder."
+
+#: footer.php
+msgid "Windows «Kompüterinizi qorudu» yazsa:"
+msgstr "If Windows says “Windows protected your PC”:"
+
+#: footer.php
+msgid "«Ətraflı məlumat», sonra «Hər halda işə sal» düyməsini basın."
+msgstr "click “More info”, then “Run anyway”."
+
+#: footer.php
+msgid "Ekrandakı ID və şifrəni"
+msgstr "Tell the ID and password on the screen"
+
+#: footer.php
+msgid "sizə kömək edən şəxsə deyin. Qoşulmağa yalnız siz icazə verirsiniz."
+msgstr "to the person helping you. Only you can allow the connection."
+
+#: footer.php
+msgid "Yükləmə başlamadısa:"
+msgstr "Download didn't start?"
+
+#: footer.php
+msgid "yenidən yüklə"
+msgstr "download again"
+
+#: footer.php
+msgid "Kompüterdə açın"
+msgstr "Open it on a computer"
+
+#: footer.php
+msgid "Fixit Remote Windows kompüterləri üçündür. Kompüterin brauzerində bu ünvanı yazın, yükləmə dərhal başlayacaq:"
+msgstr "Fixit Remote is for Windows computers. Type this address in the computer's browser and the download starts right away:"
+
+#: footer.php
+msgid "Kopyalandı"
+msgstr "Copied"
+
+#: footer.php
+msgid "Kopyala"
+msgstr "Copy"
+
 #: front-page.php
 msgid "%s-ci ildən etibarən"
 msgstr "Since %s"
@@ -115,6 +175,58 @@ msgstr "completed projects"
 #: front-page.php
 msgid "il təcrübə"
 msgstr "years of experience"
+
+#: front-page.php
+msgid "Məhsullarımız və xidmətlərimiz"
+msgstr "Our products and services"
+
+#: front-page.php
+msgid "Uzaqdan qoşulma"
+msgstr "Remote access"
+
+#: front-page.php
+msgid "Başqa kompüterə uzaqdan qoşulun: ekran, idarə, yazışma və fayl ötürmə."
+msgstr "Connect to another computer remotely: screen, control, chat and file transfer."
+
+#: front-page.php
+msgid "Biznes üçün"
+msgstr "For business"
+
+#: front-page.php
+msgid "İcazələr və tam jurnal. Öz serverinizdə və ya bizim buludda."
+msgstr "Permissions and a full log. On your own server or in our cloud."
+
+#: front-page.php
+msgid "Onlayn demo"
+msgstr "Online demo"
+
+#: front-page.php
+msgid "Ətraflı"
+msgstr "Details"
+
+#: front-page.php
+msgid "Şəxsi istifadə"
+msgstr "Personal use"
+
+#: front-page.php
+msgid "Pulsuz, qeydiyyatsız, quraşdırma tələb etmir."
+msgstr "Free, no sign-up, no installation."
+
+#: front-page.php
+msgid "Pulsuz yüklə"
+msgstr "Download free"
+
+#: front-page.php
+msgid "Müştəri müraciətləri və komandanın daxili işləri bir platformada: e-poçt, portal, SLA, lövhə və vaxt uçotu."
+msgstr "Customer requests and your team's internal work on one platform: email, portal, SLA, board and time tracking."
+
+#: front-page.php
+msgid "Demonu sınayın"
+msgstr "Try the demo"
+
+#: front-page.php
+msgid "Qeydiyyatsız, bir kliklə: Admin, Agent, Menecer və ya Müştəri kimi."
+msgstr "No sign-up, one click: as Admin, Agent, Manager or Customer."
 
 #: front-page.php
 msgid "Xidmət istiqamətlərimiz"
@@ -165,6 +277,18 @@ msgid "abunə"
 msgstr "subscription"
 
 #: front-page.php
+msgid "Əvvəlki"
+msgstr "Previous"
+
+#: front-page.php
+msgid "Slayd %d"
+msgstr "Slide %d"
+
+#: front-page.php
+msgid "Növbəti"
+msgstr "Next"
+
+#: front-page.php
 msgid "İşlədiyimiz texnologiyalar və tərəfdaşlar"
 msgstr "Technologies and partners we work with"
 
@@ -193,10 +317,6 @@ msgid "Kiçik və böyük şirkətlər üçün müasir informasiya-kommunikasiya
 msgstr "We provide modern information and communication technology services for companies of every size."
 
 #: front-page.php
-msgid "Ətraflı"
-msgstr "Details"
-
-#: front-page.php
 msgid "Öz məhsullarımız"
 msgstr "Our own products"
 
@@ -209,8 +329,8 @@ msgid "proqram təminatı"
 msgstr "from scratch"
 
 #: front-page.php
-msgid "Sizin öz serverinizdə işləyir, interfeysi Azərbaycan dilindədir və şirkətinizin iş axınına uyğunlaşdırıla bilir."
-msgstr "It runs on your own server, the interface comes in your language and it can be adapted to how your company works."
+msgid "Öz serverinizdə və ya bizim buludda işləyir, interfeysi Azərbaycan dilindədir və şirkətinizin iş axınına uyğunlaşdırıla bilir."
+msgstr "Runs on your own server or in our cloud, has an interface in Azerbaijani and can be adapted to the way your company works."
 
 #: front-page.php
 msgid "Flaqman məhsul"
@@ -241,20 +361,12 @@ msgid "Pulsuz proqram"
 msgstr "Free program"
 
 #: front-page.php
-msgid "Uzaqdan qoşulma"
-msgstr "Remote access"
-
-#: front-page.php
 msgid "öz proqramımız"
 msgstr "our own program"
 
 #: front-page.php
 msgid "Olduğunuz yerdən başqa kompüterə qoşulun: yaxınınıza kömək edin, evdə qalan maşınınıza çıxın, iş yoldaşınızla eyni ekrana baxın. Qeydiyyat yoxdur, ödəniş yoxdur — qoşulmağa isə hər dəfə qarşı tərəf icazə verir."
 msgstr "Connect to another computer from wherever you are: help a relative, reach the machine you left at home, look at the same screen as a colleague. No registration, no payment — and the other side approves every connection."
-
-#: front-page.php
-msgid "Pulsuz yüklə"
-msgstr "Download free"
 
 #: front-page.php
 msgid "Tezliklə"
@@ -440,10 +552,6 @@ msgstr "Get in touch"
 msgid "Menyu"
 msgstr "Menu"
 
-#: header.php
-msgid "Bağla"
-msgstr "Close"
-
 #: index.php
 msgid "Axtarış: %s"
 msgstr "Search: %s"
@@ -463,14 +571,6 @@ msgstr "Posts"
 #: index.php
 msgid "Oxu"
 msgstr "Read"
-
-#: index.php
-msgid "Əvvəlki"
-msgstr "Previous"
-
-#: index.php
-msgid "Növbəti"
-msgstr "Next"
 
 #: index.php
 msgid "Nəticə tapılmadı"
@@ -557,16 +657,12 @@ msgid "Məlumatınız"
 msgstr "Your data"
 
 #: single-fixit_product.php
-msgid "sizdə qalır"
-msgstr "stays with you"
+msgid "qorunur"
+msgstr "is protected"
 
 #: single-fixit_product.php
-msgid "Proqram sizin öz serverinizdə quraşdırılır. Kənar bulud xidmətindən asılılıq yoxdur."
-msgstr "The software is installed on your own server. There is no dependency on an outside cloud service."
-
-#: single-fixit_product.php
-msgid "Onlayn demo"
-msgstr "Online demo"
+msgid "Proqramı öz serverinizdə quraşdırırıq və ya bizim buludda sizin üçün işə salırıq. Hansını seçməyinizdən asılı olmayaraq aşağıdakı qorumalar işləyir."
+msgstr "We install the software on your own server or run it for you in our cloud. Whichever you choose, the protections below are in place."
 
 #: single-fixit_product.php
 msgid "Özünüz sınayın"
@@ -833,16 +929,16 @@ msgid "Bizim hazırladığımız proqram təminatı"
 msgstr "The software we build"
 
 #: template-products.php
-msgid "Xidmətlərimizlə yanaşı, öz komandamızın sıfırdan yazdığı məhsulları təqdim edirik. Hamısı Azərbaycan dilindədir, sizin öz serverinizdə işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir."
-msgstr "Alongside our services we offer products our own team wrote from scratch. They run on your own server and can be adapted to the way your company works."
+msgid "Xidmətlərimizlə yanaşı, öz komandamızın sıfırdan yazdığı məhsulları təqdim edirik. Hamısı Azərbaycan dilindədir, öz serverinizdə və ya bizim buludda işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir."
+msgstr "Alongside our services we offer products our own team built from scratch. They are all in Azerbaijani, run on your own server or in our cloud, and can be adapted to the way your company works."
 
 #: template-products.php
-msgid "Məlumat sizdə qalır"
-msgstr "Your data stays with you"
+msgid "Server və ya bulud"
+msgstr "Server or cloud"
 
 #: template-products.php
-msgid "Öz serverinizdə işləyir"
-msgstr "Runs on your own server"
+msgid "Harada işləyəcəyini siz seçirsiniz"
+msgstr "You choose where it runs"
 
 #: template-products.php
 msgid "Fərdiləşdirilə bilir"
@@ -873,16 +969,16 @@ msgid "Satış şərtləri"
 msgstr "Terms of sale"
 
 #: template-products.php
-msgid "Lisenziya"
-msgstr "Licence"
+msgid "Öz serverinizdə"
+msgstr "On your own server"
 
 #: template-products.php
-msgid "öz serverinizdə"
-msgstr "on your own server"
+msgid "və ya buludda"
+msgstr "or in the cloud"
 
 #: template-products.php
-msgid "Bütün məhsullarımız on-premise modeldə təqdim olunur: proqram sizin öz serverinizdə quraşdırılır və bütün məlumat şirkətinizin daxilində qalır. Kənar bulud xidmətindən asılılıq yoxdur."
-msgstr "All our products are delivered on-premise: the software is installed on your own server and all data stays inside your company. There is no dependency on an outside cloud service."
+msgid "Hər məhsulu iki cür təqdim edirik. On-premise: proqram sizin serverinizə quraşdırılır, bütün məlumat şirkətinizin daxilində qalır. Bulud: sistemi bizim buludda sizin üçün işə salırıq, serveri və yeniləmələri biz idarə edirik."
+msgstr "We offer every product in two ways. On-premise: the software is installed on your server and all data stays inside your company. Cloud: we run the system for you in our cloud and take care of the server and updates."
 
 #: template-products.php
 msgid "Öz infrastrukturunuzda"
@@ -891,6 +987,14 @@ msgstr "On your own infrastructure"
 #: template-products.php
 msgid "Proqram sizin serverinizə quraşdırılır; məlumat bazası da sizdə saxlanılır."
 msgstr "The software is installed on your server and the database is kept with you too."
+
+#: template-products.php
+msgid "Bizim buludda"
+msgstr "In our cloud"
+
+#: template-products.php
+msgid "Server almağa ehtiyac yoxdur: sistemi biz işə salırıq, yeniləmə və nəzarət də bizim üzərimizdədir."
+msgstr "No need to buy a server: we set the system up, and updates and monitoring are on us."
 
 #: template-products.php
 msgid "Lisenziya ehtiyaca görə"
@@ -1017,8 +1121,8 @@ msgid "Fərdi istifadə — pulsuz"
 msgstr "Personal use — free"
 
 #: template-remote.php
-msgid "Biznes — öz serverinizdə"
-msgstr "Business — on your own server"
+msgid "Biznes: öz serverinizdə və ya buludda"
+msgstr "Business: on your own server or in the cloud"
 
 #: template-remote.php
 msgid "Fərdi istifadə"
@@ -1043,6 +1147,10 @@ msgstr "Windows 10 and 11 (64-bit). No installation needed: download it, open it
 #: template-remote.php
 msgid "Versiya %1$s · %2$s"
 msgstr "Version %1$s · %2$s"
+
+#: template-remote.php
+msgid "Kompüterdə qısa ünvan: %s"
+msgstr "Short address for your computer: %s"
 
 #: template-remote.php
 msgid "Windows 10 və 11 (64-bit) üçün proqram üzərində işləyirik. Hazır olanda buradan yükləmək mümkün olacaq."
@@ -1221,24 +1329,24 @@ msgid "Qoşulma zamanı yazışın — telefonla danışmaq şərt deyil"
 msgstr "Chat during the connection — no need to be on the phone"
 
 #: template-remote.php
-msgid "Biznes üçün"
-msgstr "For business"
+msgid "Şirkət versiyası:"
+msgstr "Company edition:"
 
 #: template-remote.php
-msgid "Şirkət versiyası —"
-msgstr "The company edition —"
+msgid "öz serverinizdə və ya buludda"
+msgstr "on your own server or in the cloud"
 
 #: template-remote.php
-msgid "Şirkətdə uzaqdan dəstək başqa cür qurulur: kimin hansı kompüterə qoşulduğu bilinməlidir, qoşulma kənar şirkətin serverindən keçməməlidir, hər sessiya jurnalda qalmalıdır."
-msgstr "Remote support in a company is built differently: you must know who connected to which computer, the connection must not pass through another company's server, and every session must stay in the log."
+msgid "Şirkətdə uzaqdan dəstək başqa cür qurulur: kimin hansı kompüterə qoşulduğu bilinməlidir, qoşulma xarici xidmətlərdən keçməməlidir, hər sessiya jurnalda qalmalıdır."
+msgstr "Remote support in a company works differently: you need to know who connected to which computer, connections shouldn't pass through outside services, and every session should stay in the log."
 
 #: template-remote.php
-msgid "Məlumat şirkətdən çıxmır"
-msgstr "Data never leaves the company"
+msgid "Server sizin seçiminizdir"
+msgstr "The server is your choice"
 
 #: template-remote.php
-msgid "Server sizin infrastrukturunuzda qurulur. Ekran görüntüsü, fayllar, yazışma və jurnal kənar buluda getmir."
-msgstr "The server is installed in your infrastructure. Screen images, files, chats and logs never go to an outside cloud."
+msgid "Server öz infrastrukturunuzda və ya bizim buludda qurulur. Ekran görüntüsü, fayllar, yazışma və jurnal xarici xidmətlərə getmir."
+msgstr "The server is set up in your own infrastructure or in our cloud. Screen images, files, chat and the log never go to outside services."
 
 #: template-remote.php
 msgid "Kim kimə qoşula bilər"
@@ -1341,8 +1449,8 @@ msgid "bizim mərkəzi server"
 msgstr "our central server"
 
 #: template-remote.php
-msgid "sizin öz serveriniz"
-msgstr "your own server"
+msgid "öz serveriniz və ya bizim bulud"
+msgstr "your own server or our cloud"
 
 #: template-remote.php
 msgid "İstifadəçilər və icazələr"
@@ -1757,8 +1865,8 @@ msgid "Xidmətlə yanaşı — öz proqram təminatımız"
 msgstr "Alongside our services — our own software"
 
 #: template-services.php
-msgid "Komandamızın hazırladığı sistemlər sizin serverinizdə işləyir. Hər biri üçün onlayn demo mövcuddur."
-msgstr "The systems built by our team run on your own server. An online demo is available for each of them."
+msgid "Komandamızın hazırladığı sistemlər öz serverinizdə və ya bizim buludda işləyir. Hər biri üçün onlayn demo mövcuddur."
+msgstr "The systems our team builds run on your own server or in our cloud. Each one has an online demo."
 
 #: template-services.php
 msgid "Ətraflı və demo →"
@@ -1825,8 +1933,8 @@ msgid "Məlumatlarımız harada saxlanılacaq?"
 msgstr "Where will our data be stored?"
 
 #: inc/faq.php
-msgid "Sizin öz serverinizdə. Bütün məhsullarımız on-premise modeldə təqdim olunur — məlumat şirkətinizin infrastrukturundan kənara çıxmır."
-msgstr "On your own server. All our products are delivered on-premise — the data never leaves your company's infrastructure."
+msgid "Seçim sizindir. On-premise variantda proqram sizin serverinizdə quraşdırılır və məlumat şirkətinizin infrastrukturundan kənara çıxmır. Bulud variantında sistemi biz işə salırıq, serveri və yeniləmələri biz idarə edirik, siz sadəcə istifadə edirsiniz."
+msgstr "It's your choice. With the on-premise option the software is installed on your server and the data never leaves your company's infrastructure. With the cloud option we run the system and look after the server and updates, you simply use it."
 
 #: inc/faq.php
 msgid "Almazdan əvvəl sınaya bilərəmmi?"
@@ -1877,8 +1985,8 @@ msgid "Ticket + Task"
 msgstr "Ticket + Task"
 
 #: inc/product-data.php
-msgid "Öz serverinizdə"
-msgstr "On your own server"
+msgid "Öz serverinizdə və ya buludda"
+msgstr "On your own server or in the cloud"
 
 #: inc/product-data.php
 msgid "Azərbaycan · English · Русский"
@@ -2245,8 +2353,8 @@ msgid "portal: müraciət və izləmə"
 msgstr "portal: submitting and tracking requests"
 
 #: inc/product-data.php
-msgid "Proqram və verilənlər bazası sizin serverinizdədir"
-msgstr "The software and the database are on your server"
+msgid "Proqram və verilənlər bazası öz serverinizdə və ya bizim buludda"
+msgstr "The software and the database on your own server or in our cloud"
 
 #: inc/product-data.php
 msgid "İki mərhələli giriş (2FA) — autentifikator tətbiqi ilə"
@@ -2317,8 +2425,8 @@ msgid "Azərbaycan, ingilis və rus dillərində. Hər istifadəçi öz dilini s
 msgstr "Azerbaijani, English and Russian. Each user chooses their own language."
 
 #: inc/product-data.php
-msgid "Şirkət kompüterlərinə uzaqdan qoşulma — öz serverinizdə"
-msgstr "Remote access to company computers — on your own server"
+msgid "Şirkət kompüterlərinə uzaqdan qoşulma: öz serverinizdə və ya bizim buludda"
+msgstr "Remote access to company computers: on your own server or in our cloud"
 
 #: inc/product-data.php
 msgid "Mobil tətbiq"
@@ -2357,8 +2465,8 @@ msgid "Ekran başqasının serverindən keçir"
 msgstr "The screen travels through someone else's server"
 
 #: inc/product-data.php
-msgid "Adi uzaqdan giriş proqramlarında əlaqə kənar şirkətin serverləri üzərindən qurulur. Fixit Remote-da hər şey sizin serverinizdə qalır."
-msgstr "In ordinary remote access tools the connection is routed through another company's servers. With Fixit Remote everything stays on your own server."
+msgid "Adi uzaqdan giriş proqramlarında əlaqə xarici şirkətin serverləri üzərindən qurulur. Fixit Remote-u öz serverinizdə qura və ya bizim buludumuzda işlədə bilərsiniz."
+msgstr "With ordinary remote access tools the connection goes through another company's servers. Fixit Remote can be set up on your own server or used in our cloud."
 
 #: inc/product-data.php
 msgid "Port açmaq, VLAN problemi"
@@ -2489,8 +2597,8 @@ msgid "Fixit Remote server"
 msgstr "Fixit Remote server"
 
 #: inc/product-data.php
-msgid "sizin serverinizdə — cihazlar, icazələr, jurnal"
-msgstr "on your server — devices, permissions, logs"
+msgid "sizin serverinizdə və ya bizim buludda: cihazlar, icazələr, jurnal"
+msgstr "on your server or in our cloud: devices, permissions, log"
 
 #: inc/product-data.php
 msgid "Operator"
@@ -2581,8 +2689,8 @@ msgid "AnyDesk və ya Supremo-dan əsas fərqi nədir?"
 msgstr "What is the main difference from AnyDesk or Supremo?"
 
 #: inc/product-data.php
-msgid "Fixit Remote sizin öz serverinizdə işləyir: bağlantı, jurnal və icazələr şirkətinizin daxilində qalır. Kimin hansı kompüterə qoşula biləcəyini mərkəzdən idarə edir, hər sessiyanı jurnalda görürsünüz."
-msgstr "Fixit Remote runs on your own server: the connection, the logs and the permissions all stay inside your company. You manage centrally who may connect to which computer and you see every session in the log."
+msgid "Fixit Remote öz serverinizdə və ya bizim buludda işləyir, bağlantı xarici xidmətlərdən keçmir. Kimin hansı kompüterə qoşula biləcəyini mərkəzdən idarə edir, hər sessiyanı jurnalda görürsünüz."
+msgstr "Fixit Remote runs on your own server or in our cloud, and connections don't pass through outside services. You decide centrally who can connect to which computer and see every session in the log."
 
 #: inc/product-data.php
 msgid "İşçi kompüterlərində port açmaq lazımdırmı?"
@@ -2697,8 +2805,8 @@ msgid "seçdiyiniz kanala dərhal"
 msgstr "instantly to the channel you choose"
 
 #: inc/product-data.php
-msgid "Proqram və məlumat sizin serverinizdədir"
-msgstr "The software and the data are on your server"
+msgid "Proqram və məlumat öz serverinizdə və ya bizim buludda"
+msgstr "The software and data on your own server or in our cloud"
 
 #: inc/product-data.php
 msgid "Parol və tokenlər brauzerə göndərilmir"
@@ -2737,8 +2845,8 @@ msgid "Kompüter servisi, video müşahidə, IP telefoniya, korporativ mail, bul
 msgstr "Computer service, video surveillance, IP telephony, corporate mail, cloud servers and IT support — complete ICT services for your company."
 
 #: inc/seo.php
-msgid "Sorğu Sistemi (Ticket + Task), Fixit Remote və Şəbəkə Monitorinqi — öz komandamızın hazırladığı, sizin serverinizdə işləyən proqram təminatı. Onlayn demo var."
-msgstr "Helpdesk (Ticket + Task), Fixit Remote and Network Monitoring — software built by our own team and running on your server. An online demo is available."
+msgid "Sorğu Sistemi (Ticket + Task), Fixit Remote və Şəbəkə Monitorinqi: komandamızın hazırladığı proqramlar, öz serverinizdə və ya bizim buludda. Onlayn demo var."
+msgstr "Helpdesk (Ticket + Task), Fixit Remote and Network Monitoring: software built by our team, on your own server or in our cloud. Online demos available."
 
 #: inc/seo.php
 msgid "2017-ci ildən İT sahəsində fəaliyyət göstəririk: 40-dan çox şirkətlə əməkdaşlıq, 30-dan çox tamamlanmış layihə. Bakı və Cəlilabadda xidmətinizdəyik."
@@ -2819,3 +2927,99 @@ msgstr "Too many requests were sent in a short time. Please try again a little l
 #: inc/i18n.php
 msgid "Saytın dili"
 msgstr "Site language"
+
+#: tools/translations
+msgid "Sorğu Sistemi (Ticket + Task), Fixit Remote və Şəbəkə Monitorinqi — öz komandamızın hazırladığı, sizin serverinizdə işləyən proqram təminatı. Onlayn demo var."
+msgstr "Helpdesk (Ticket + Task), Fixit Remote and Network Monitoring — software built by our own team and running on your server. An online demo is available."
+
+#: tools/translations
+msgid "Komandamızın hazırladığı sistemlər sizin serverinizdə işləyir. Hər biri üçün onlayn demo mövcuddur."
+msgstr "The systems built by our team run on your own server. An online demo is available for each of them."
+
+#: tools/translations
+msgid "Sizin öz serverinizdə. Bütün məhsullarımız on-premise modeldə təqdim olunur — məlumat şirkətinizin infrastrukturundan kənara çıxmır."
+msgstr "On your own server. All our products are delivered on-premise — the data never leaves your company's infrastructure."
+
+#: tools/translations
+msgid "Sizin öz serverinizdə işləyir, interfeysi Azərbaycan dilindədir və şirkətinizin iş axınına uyğunlaşdırıla bilir."
+msgstr "It runs on your own server, the interface comes in your language and it can be adapted to how your company works."
+
+#: tools/translations
+msgid "Xidmətlərimizlə yanaşı, öz komandamızın sıfırdan yazdığı məhsulları təqdim edirik. Hamısı Azərbaycan dilindədir, sizin öz serverinizdə işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir."
+msgstr "Alongside our services we offer products our own team wrote from scratch. They run on your own server and can be adapted to the way your company works."
+
+#: tools/translations
+msgid "Məlumat sizdə qalır"
+msgstr "Your data stays with you"
+
+#: tools/translations
+msgid "Öz serverinizdə işləyir"
+msgstr "Runs on your own server"
+
+#: tools/translations
+msgid "Lisenziya"
+msgstr "Licence"
+
+#: tools/translations
+msgid "öz serverinizdə"
+msgstr "on your own server"
+
+#: tools/translations
+msgid "Bütün məhsullarımız on-premise modeldə təqdim olunur: proqram sizin öz serverinizdə quraşdırılır və bütün məlumat şirkətinizin daxilində qalır. Kənar bulud xidmətindən asılılıq yoxdur."
+msgstr "All our products are delivered on-premise: the software is installed on your own server and all data stays inside your company. There is no dependency on an outside cloud service."
+
+#: tools/translations
+msgid "sizdə qalır"
+msgstr "stays with you"
+
+#: tools/translations
+msgid "Proqram sizin öz serverinizdə quraşdırılır. Kənar bulud xidmətindən asılılıq yoxdur."
+msgstr "The software is installed on your own server. There is no dependency on an outside cloud service."
+
+#: tools/translations
+msgid "Proqram və verilənlər bazası sizin serverinizdədir"
+msgstr "The software and the database are on your server"
+
+#: tools/translations
+msgid "Şirkət kompüterlərinə uzaqdan qoşulma — öz serverinizdə"
+msgstr "Remote access to company computers — on your own server"
+
+#: tools/translations
+msgid "Adi uzaqdan giriş proqramlarında əlaqə kənar şirkətin serverləri üzərindən qurulur. Fixit Remote-da hər şey sizin serverinizdə qalır."
+msgstr "In ordinary remote access tools the connection is routed through another company's servers. With Fixit Remote everything stays on your own server."
+
+#: tools/translations
+msgid "sizin serverinizdə — cihazlar, icazələr, jurnal"
+msgstr "on your server — devices, permissions, logs"
+
+#: tools/translations
+msgid "Fixit Remote sizin öz serverinizdə işləyir: bağlantı, jurnal və icazələr şirkətinizin daxilində qalır. Kimin hansı kompüterə qoşula biləcəyini mərkəzdən idarə edir, hər sessiyanı jurnalda görürsünüz."
+msgstr "Fixit Remote runs on your own server: the connection, the logs and the permissions all stay inside your company. You manage centrally who may connect to which computer and you see every session in the log."
+
+#: tools/translations
+msgid "Proqram və məlumat sizin serverinizdədir"
+msgstr "The software and the data are on your server"
+
+#: tools/translations
+msgid "Biznes — öz serverinizdə"
+msgstr "Business — on your own server"
+
+#: tools/translations
+msgid "Şirkət versiyası —"
+msgstr "The company edition —"
+
+#: tools/translations
+msgid "Şirkətdə uzaqdan dəstək başqa cür qurulur: kimin hansı kompüterə qoşulduğu bilinməlidir, qoşulma kənar şirkətin serverindən keçməməlidir, hər sessiya jurnalda qalmalıdır."
+msgstr "Remote support in a company is built differently: you must know who connected to which computer, the connection must not pass through another company's server, and every session must stay in the log."
+
+#: tools/translations
+msgid "Məlumat şirkətdən çıxmır"
+msgstr "Data never leaves the company"
+
+#: tools/translations
+msgid "Server sizin infrastrukturunuzda qurulur. Ekran görüntüsü, fayllar, yazışma və jurnal kənar buluda getmir."
+msgstr "The server is installed in your infrastructure. Screen images, files, chats and logs never go to an outside cloud."
+
+#: tools/translations
+msgid "sizin öz serveriniz"
+msgstr "your own server"

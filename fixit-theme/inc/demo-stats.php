@@ -278,6 +278,7 @@ function fixit_demo_stats_labels( $group ) {
 	$labels = array(
 		'source'  => array(
 			'home'         => __( 'Ana səhifə — flaqman blok', 'fixit' ),
+			'home-slayd'   => __( 'Ana səhifə — yuxarıdakı slayd', 'fixit' ),
 			'mehsul-hero'  => __( 'Məhsul səhifəsi — yuxarı düymə', 'fixit' ),
 			'mehsul-demo'  => __( 'Məhsul səhifəsi — demo bloku', 'fixit' ),
 			'mehsul-rol'   => __( 'Məhsul səhifəsi — rol kartı', 'fixit' ),
@@ -341,6 +342,13 @@ function fixit_demo_stats_labels( $group ) {
 			'NL' => __( 'Niderland', 'fixit' ),
 			'FR' => __( 'Fransa', 'fixit' ),
 			'??' => __( 'Naməlum', 'fixit' ),
+		),
+		'download' => array(
+			'home'       => __( 'Ana səhifə — «Uzaqdan qoşulma» bloku', 'fixit' ),
+			'home-slayd' => __( 'Ana səhifə — yuxarıdakı slayd', 'fixit' ),
+			'uzaqdan'    => __( '«Uzaqdan qoşulma» səhifəsi', 'fixit' ),
+			'yeniden'    => __( 'Təkrar («yükləmə başlamadı»)', 'fixit' ),
+			'(birbaşa)'  => __( 'Qısa ünvan (fixit.az/yukle)', 'fixit' ),
 		),
 		'other'   => array(
 			'(yoxdur)' => __( 'Yoxdur (birbaşa açılıb)', 'fixit' ),
@@ -776,6 +784,25 @@ function fixit_demo_stats_report( $data, $days, $base, $product = 'ticket' ) {
 			</div>
 		<?php endforeach; ?>
 	</div>
+
+	<?php
+	// Saytdan yükləmə (şəxsi istifadə, EXE): demodan asılı deyil, sayt özü sayır.
+	if ( $remote && function_exists( 'fixit_remote_download_stats' ) ) :
+		$fixit_dl = fixit_remote_download_stats( $days );
+		?>
+		<div class="fds-grid">
+			<?php
+			fixit_demo_stats_table(
+				/* translators: %s: say */
+				sprintf( __( 'Saytdan yüklənib (Windows): %s', 'fixit' ), number_format_i18n( $fixit_dl['total'] ) ),
+				$fixit_dl['sources'],
+				'download',
+				$fixit_dl['total'],
+				__( 'Bu dövrdə hələ yükləmə yoxdur.', 'fixit' )
+			);
+			?>
+		</div>
+	<?php endif; ?>
 
 	<?php if ( ! $visits ) : ?>
 		<div class="notice notice-info inline"><p><?php esc_html_e( 'Bu dövrdə hələ ziyarət yoxdur. Demo açılan kimi burada görünəcək (keş 5 dəqiqədir — «Yenilə» ilə dərhal).', 'fixit' ); ?></p></div>

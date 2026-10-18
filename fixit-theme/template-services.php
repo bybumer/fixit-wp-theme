@@ -95,7 +95,7 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 			<div class="section-head reveal" style="margin-bottom:0">
 				<span class="eyebrow"><?php fixit_icon( 'award' ); ?><?php esc_html_e( 'Öz məhsullarımız', 'fixit' ); ?></span>
 				<h2><?php esc_html_e( 'Xidmətlə yanaşı — öz proqram təminatımız', 'fixit' ); ?></h2>
-				<p><?php esc_html_e( 'Komandamızın hazırladığı sistemlər sizin serverinizdə işləyir. Hər biri üçün onlayn demo mövcuddur.', 'fixit' ); ?></p>
+				<p><?php esc_html_e( 'Komandamızın hazırladığı sistemlər öz serverinizdə və ya bizim buludda işləyir. Hər biri üçün onlayn demo mövcuddur.', 'fixit' ); ?></p>
 			</div>
 
 			<div class="prod-strip">

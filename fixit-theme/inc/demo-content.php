@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Başlanğıc mətnlərin revizyası.
  * Mətni dəyişəndə bu rəqəmi artırın — toxunulmamış məzmun yenilənir.
  */
-define( 'FIXIT_SEED_REV', 10 );
+define( 'FIXIT_SEED_REV', 11 );
 
 /**
  * Quraşdırmanı icra edir.
@@ -376,8 +376,8 @@ function fixit_product_seed() {
 			'icon'  => 'ticket',
 			// Kartlarda ilk üç üstünlük görünür - Ticket, Task və ortaq imkanlar
 			// ona görə məhz bu sıradadır.
-			'short' => 'Müştəri müraciətləri (Ticket) və komandanın daxili işləri (Task) bir platformada: e-poçt, portal, Telegram, SLA, lövhə və vaxt uçotu. Öz serverinizdə.',
-			'chips' => 'Ticket + Task, On-premise, E-poçt və Telegram, Müştəri portalı, SLA, Kanban lövhə, Vaxt uçotu, Azərbaycan dilində',
+			'short' => 'Müştəri müraciətləri (Ticket) və komandanın daxili işləri (Task) bir platformada: e-poçt, portal, Telegram, SLA, lövhə və vaxt uçotu. Öz serverinizdə və ya bizim buludda.',
+			'chips' => 'Ticket + Task, On-premise və bulud, E-poçt və Telegram, Müştəri portalı, SLA, Kanban lövhə, Vaxt uçotu, Azərbaycan dilində',
 			'feat'  => implode(
 				"\n",
 				array(
@@ -404,7 +404,7 @@ function fixit_product_seed() {
 				),
 				array(
 					'short' => 'Müraciətləri e-poçt, müştəri portalı və daxili kanallardan bir mərkəzdə toplayan helpdesk sistemi. Tam öz kodumuzdur, kənar sistemə bağlılıq yoxdur.',
-					'chips' => 'On-premise, E-poçt inteqrasiyası, Müştəri portalı, Rol icazələri, Azərbaycan dilində',
+					'chips' => 'On-premise və bulud, E-poçt inteqrasiyası, Müştəri portalı, Rol icazələri, Azərbaycan dilində',
 					'feat'  => implode(
 						"\n",
 						array(
@@ -425,8 +425,8 @@ function fixit_product_seed() {
 			'slug'  => 'remote',
 			'order' => 2,
 			'icon'  => 'computer',
-			'short' => 'Şirkət kompüterlərinə uzaqdan qoşulma, dəstək və idarəetmə sistemi. Sizin serverinizdə işləyir — bağlantı və jurnal şirkətdən kənara çıxmır.',
-			'chips' => 'On-premise, Windows agent, Mobil tətbiq, Çat, Fayl ötürmə, Sessiya jurnalı',
+			'short' => 'Şirkət kompüterlərinə uzaqdan qoşulma, dəstək və idarəetmə sistemi. Öz serverinizdə və ya bizim buludda işləyir, bağlantı və jurnal xarici xidmətlərə getmir.',
+			'chips' => 'On-premise və bulud, Windows agent, Mobil tətbiq, Çat, Fayl ötürmə, Sessiya jurnalı',
 			'feat'  => implode(
 				"\n",
 				array(
@@ -438,7 +438,7 @@ function fixit_product_seed() {
 					'Telefondan idarəetmə üçün mobil tətbiq',
 				)
 			),
-			'body'  => 'Şirkət kompüterlərinə uzaqdan qoşulmaq, istifadəçiyə kömək etmək və kimin hansı kompüterə qoşulduğunu nəzarətdə saxlamaq üçün sistemdir. Server sizin şirkətinizdə qurulur, agentlər isə ona özü qoşulur — işçi kompüterlərində heç bir port açmaq lazım gəlmir.',
+			'body'  => 'Şirkət kompüterlərinə uzaqdan qoşulmaq, istifadəçiyə kömək etmək və kimin hansı kompüterə qoşulduğunu nəzarətdə saxlamaq üçün sistemdir. Server şirkətinizdə və ya bizim buludda qurulur, agentlər isə ona özü qoşulur — işçi kompüterlərində heç bir port açmaq lazım gəlmir.',
 		),
 		array(
 			'title' => 'FIXIT Şəbəkə Monitorinqi',
@@ -446,7 +446,7 @@ function fixit_product_seed() {
 			'order' => 3,
 			'icon'  => 'activity',
 			'short' => 'Cihazları, interfeysləri və VPN tunellərini fasiləsiz izləyən, kəsintini siz bilməmişdən əvvəl xəbər verən monitorinq və analitika aləti.',
-			'chips' => 'On-premise, SNMP, FortiGate, Telegram, WhatsApp, E-poçt',
+			'chips' => 'On-premise və bulud, SNMP, FortiGate, Telegram, WhatsApp, E-poçt',
 			'feat'  => implode(
 				"\n",
 				array(

@@ -352,10 +352,10 @@ while ( have_posts() ) :
 					<span class="eyebrow"><?php fixit_icon( 'shield' ); ?><?php esc_html_e( 'Təhlükəsizlik', 'fixit' ); ?></span>
 					<h2 style="font-size:clamp(1.6rem,3vw,2.3rem);margin:16px 0 14px">
 						<?php esc_html_e( 'Məlumatınız', 'fixit' ); ?>
-						<span style="background:linear-gradient(100deg,#6fd0ff,#7bf7d8);-webkit-background-clip:text;background-clip:text;color:transparent"><?php esc_html_e( 'sizdə qalır', 'fixit' ); ?></span>
+						<span style="background:linear-gradient(100deg,#6fd0ff,#7bf7d8);-webkit-background-clip:text;background-clip:text;color:transparent"><?php esc_html_e( 'qorunur', 'fixit' ); ?></span>
 					</h2>
 					<p style="color:#c4d8f0">
-						<?php esc_html_e( 'Proqram sizin öz serverinizdə quraşdırılır. Kənar bulud xidmətindən asılılıq yoxdur.', 'fixit' ); ?>
+						<?php esc_html_e( 'Proqramı öz serverinizdə quraşdırırıq və ya bizim buludda sizin üçün işə salırıq. Hansını seçməyinizdən asılı olmayaraq aşağıdakı qorumalar işləyir.', 'fixit' ); ?>
 					</p>
 				</div>
 

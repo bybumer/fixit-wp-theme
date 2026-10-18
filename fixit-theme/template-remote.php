@@ -46,7 +46,7 @@ $fixit_release     = fixit_remote_release();
 <div class="marquee" style="padding:16px 0">
 	<div class="container" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
 		<a class="chip" href="#ferdi"><?php esc_html_e( 'Fərdi istifadə — pulsuz', 'fixit' ); ?></a>
-		<a class="chip" href="#biznes"><?php esc_html_e( 'Biznes — öz serverinizdə', 'fixit' ); ?></a>
+		<a class="chip" href="#biznes"><?php esc_html_e( 'Biznes: öz serverinizdə və ya buludda', 'fixit' ); ?></a>
 	</div>
 </div>
 
@@ -82,7 +82,7 @@ $fixit_release     = fixit_remote_release();
 						<p><?php esc_html_e( 'Windows 10 və 11 (64-bit). Quraşdırma tələb etmir: yükləyib açın, dərhal qoşula və ya qoşulmağa icazə verə bilərsiniz. İstəsəniz, proqramın içindən kompüterə quraşdırmaq olar.', 'fixit' ); ?></p>
 
 						<div style="margin-top:18px">
-							<a class="btn btn--primary" href="<?php echo esc_url( FIXIT_REMOTE_WINDOWS ); ?>" rel="nofollow">
+							<a class="btn btn--primary" href="<?php echo esc_url( fixit_remote_download_link( 'uzaqdan' ) ); ?>" rel="nofollow" data-remote-download>
 								<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Pulsuz yüklə', 'fixit' ); ?>
 							</a>
 
@@ -98,6 +98,15 @@ $fixit_release     = fixit_remote_release();
 									?>
 								</p>
 							<?php endif; ?>
+							<p style="margin:6px 0 0;font-size:13px;color:var(--text-mute)">
+								<?php
+								printf(
+									/* translators: %s: qısa ünvan (fixit.az/yukle) */
+									esc_html__( 'Kompüterdə qısa ünvan: %s', 'fixit' ),
+									'<b>' . esc_html( preg_replace( '#^https?://(www\.)?#', '', untrailingslashit( home_url( '/yukle/' ) ) ) ) . '</b>'
+								);
+								?>
+							</p>
 						</div>
 					<?php else : ?>
 						<p><?php esc_html_e( 'Windows 10 və 11 (64-bit) üçün proqram üzərində işləyirik. Hazır olanda buradan yükləmək mümkün olacaq.', 'fixit' ); ?></p>
@@ -299,8 +308,8 @@ $fixit_release     = fixit_remote_release();
 
 		<div class="section-head reveal">
 			<span class="eyebrow"><?php fixit_icon( 'server' ); ?><?php esc_html_e( 'Biznes üçün', 'fixit' ); ?></span>
-			<h2><?php esc_html_e( 'Şirkət versiyası —', 'fixit' ); ?> <span style="background:linear-gradient(100deg,#6fd0ff,#7bf7d8);-webkit-background-clip:text;background-clip:text;color:transparent"><?php esc_html_e( 'öz serverinizdə', 'fixit' ); ?></span></h2>
-			<p style="color:rgba(255,255,255,.78)"><?php esc_html_e( 'Şirkətdə uzaqdan dəstək başqa cür qurulur: kimin hansı kompüterə qoşulduğu bilinməlidir, qoşulma kənar şirkətin serverindən keçməməlidir, hər sessiya jurnalda qalmalıdır.', 'fixit' ); ?></p>
+			<h2><?php esc_html_e( 'Şirkət versiyası:', 'fixit' ); ?> <span style="background:linear-gradient(100deg,#6fd0ff,#7bf7d8);-webkit-background-clip:text;background-clip:text;color:transparent"><?php esc_html_e( 'öz serverinizdə və ya buludda', 'fixit' ); ?></span></h2>
+			<p style="color:rgba(255,255,255,.78)"><?php esc_html_e( 'Şirkətdə uzaqdan dəstək başqa cür qurulur: kimin hansı kompüterə qoşulduğu bilinməlidir, qoşulma xarici xidmətlərdən keçməməlidir, hər sessiya jurnalda qalmalıdır.', 'fixit' ); ?></p>
 		</div>
 
 		<div class="grid grid--3">
@@ -308,8 +317,8 @@ $fixit_release     = fixit_remote_release();
 			$fixit_business = array(
 				array(
 					'icon'  => 'lock',
-					'title' => __( 'Məlumat şirkətdən çıxmır', 'fixit' ),
-					'text'  => __( 'Server sizin infrastrukturunuzda qurulur. Ekran görüntüsü, fayllar, yazışma və jurnal kənar buluda getmir.', 'fixit' ),
+					'title' => __( 'Server sizin seçiminizdir', 'fixit' ),
+					'text'  => __( 'Server öz infrastrukturunuzda və ya bizim buludda qurulur. Ekran görüntüsü, fayllar, yazışma və jurnal xarici xidmətlərə getmir.', 'fixit' ),
 				),
 				array(
 					'icon'  => 'users',
@@ -386,7 +395,7 @@ $fixit_release     = fixit_remote_release();
 							array( __( 'Ekrana baxmaq və idarə etmək', 'fixit' ), __( 'var', 'fixit' ), __( 'var', 'fixit' ) ),
 							array( __( 'Yazışma və fayl ötürmə', 'fixit' ), __( 'var', 'fixit' ), __( 'var', 'fixit' ) ),
 							array( __( 'Qoşulma üsulu', 'fixit' ), __( 'nömrə və şifrə', 'fixit' ), __( 'nömrə, şifrə və ya mərkəzi icazə', 'fixit' ) ),
-							array( __( 'Server', 'fixit' ), __( 'bizim mərkəzi server', 'fixit' ), __( 'sizin öz serveriniz', 'fixit' ) ),
+							array( __( 'Server', 'fixit' ), __( 'bizim mərkəzi server', 'fixit' ), __( 'öz serveriniz və ya bizim bulud', 'fixit' ) ),
 							array( __( 'İstifadəçilər və icazələr', 'fixit' ), __( 'yoxdur', 'fixit' ), __( 'rollar, qruplar, cihaz təsdiqi', 'fixit' ) ),
 							array( __( 'Sessiya jurnalı', 'fixit' ), __( 'yalnız cihazın öz siyahısı', 'fixit' ), __( 'tam jurnal, CSV və PDF', 'fixit' ) ),
 							array( __( 'Kütləvi quraşdırma', 'fixit' ), __( 'əl ilə', 'fixit' ), __( 'MSI ilə sakit quraşdırma', 'fixit' ) ),

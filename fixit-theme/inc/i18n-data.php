@@ -95,8 +95,8 @@ function fixit_content_translations() {
 		'FIXIT Sorğu Sistemi' => array(
 			'en' => array(
 				'title'    => 'FIXIT Helpdesk',
-				'short'    => 'Customer requests (Ticket) and your team\'s internal work (Task) on one platform: email, portal, Telegram, SLA, board and time tracking. On your own server.',
-				'chips'    => 'Ticket + Task, On-premise, Email and Telegram, Customer portal, SLA, Kanban board, Time tracking, Multilingual',
+				'short'    => 'Customer requests (Ticket) and your team\'s internal work (Task) on one platform: email, portal, Telegram, SLA, board and time tracking. On your own server or in our cloud.',
+				'chips'    => 'Ticket + Task, On-premise and cloud, Email and Telegram, Customer portal, SLA, Kanban board, Time tracking, Multilingual',
 				'features' => implode(
 					"\n",
 					array(
@@ -112,8 +112,8 @@ function fixit_content_translations() {
 			),
 			'ru' => array(
 				'title'    => 'FIXIT Служба заявок',
-				'short'    => 'Обращения клиентов (Ticket) и внутренние задачи команды (Task) на одной платформе: почта, портал, Telegram, SLA, доска и учёт времени. На вашем сервере.',
-				'chips'    => 'Ticket + Task, On-premise, Почта и Telegram, Клиентский портал, SLA, Канбан-доска, Учёт времени, Многоязычный',
+				'short'    => 'Обращения клиентов (Ticket) и внутренние задачи команды (Task) на одной платформе: почта, портал, Telegram, SLA, доска и учёт времени. На вашем сервере или в нашем облаке.',
+				'chips'    => 'Ticket + Task, On-premise и облако, Почта и Telegram, Клиентский портал, SLA, Канбан-доска, Учёт времени, Многоязычный',
 				'features' => implode(
 					"\n",
 					array(
@@ -132,8 +132,8 @@ function fixit_content_translations() {
 		'Fixit Remote' => array(
 			'en' => array(
 				'title'    => 'Fixit Remote',
-				'short'    => 'Remote access, support and management for company computers. Runs on your own server — the connection and the logs never leave your company.',
-				'chips'    => 'On-premise, Windows agent, Mobile app, Chat, File transfer, Session log',
+				'short'    => 'Remote access, support and management for company computers. Runs on your own server or in our cloud; the connection and the logs never go to outside services.',
+				'chips'    => 'On-premise and cloud, Windows agent, Mobile app, Chat, File transfer, Session log',
 				'features' => implode(
 					"\n",
 					array(
@@ -145,12 +145,12 @@ function fixit_content_translations() {
 						'Mobile app for controlling a computer from your phone',
 					)
 				),
-				'body'     => 'A system for connecting to company computers remotely, helping users and keeping track of who connected to which machine. The server is installed inside your company and the agents connect to it themselves — no ports need to be opened on employee computers.',
+				'body'     => 'A system for connecting to company computers remotely, helping users and keeping track of who connected to which machine. The server runs inside your company or in our cloud, and the agents connect to it themselves — no ports need to be opened on employee computers.',
 			),
 			'ru' => array(
 				'title'    => 'Fixit Remote',
-				'short'    => 'Удалённое подключение, поддержка и управление компьютерами компании. Работает на вашем сервере — подключение и журналы не покидают компанию.',
-				'chips'    => 'On-premise, Windows-агент, Мобильное приложение, Чат, Передача файлов, Журнал сессий',
+				'short'    => 'Удалённое подключение, поддержка и управление компьютерами компании. Работает на вашем сервере или в нашем облаке; подключение и журналы не уходят сторонним сервисам.',
+				'chips'    => 'On-premise и облако, Windows-агент, Мобильное приложение, Чат, Передача файлов, Журнал сессий',
 				'features' => implode(
 					"\n",
 					array(
@@ -162,7 +162,7 @@ function fixit_content_translations() {
 						'Мобильное приложение для управления с телефона',
 					)
 				),
-				'body'     => 'Система для удалённого подключения к компьютерам компании, помощи пользователям и контроля того, кто и к какой машине подключался. Сервер устанавливается внутри вашей компании, а агенты подключаются к нему сами — открывать порты на рабочих компьютерах не требуется.',
+				'body'     => 'Система для удалённого подключения к компьютерам компании, помощи пользователям и контроля того, кто и к какой машине подключался. Сервер работает внутри вашей компании или в нашем облаке, а агенты подключаются к нему сами — открывать порты на рабочих компьютерах не требуется.',
 			),
 		),
 
@@ -170,7 +170,7 @@ function fixit_content_translations() {
 			'en' => array(
 				'title'    => 'FIXIT Network Monitoring',
 				'short'    => 'A monitoring and analytics tool that watches devices, interfaces and VPN tunnels non-stop and warns you about an outage before you notice it.',
-				'chips'    => 'On-premise, SNMP, FortiGate, Telegram, WhatsApp, Email',
+				'chips'    => 'On-premise and cloud, SNMP, FortiGate, Telegram, WhatsApp, Email',
 				'features' => implode(
 					"\n",
 					array(
@@ -185,7 +185,7 @@ function fixit_content_translations() {
 			'ru' => array(
 				'title'    => 'FIXIT Мониторинг сети',
 				'short'    => 'Инструмент мониторинга и аналитики: непрерывно следит за устройствами, интерфейсами и VPN-туннелями и сообщает о сбое раньше, чем вы его заметите.',
-				'chips'    => 'On-premise, SNMP, FortiGate, Telegram, WhatsApp, Почта',
+				'chips'    => 'On-premise и облако, SNMP, FortiGate, Telegram, WhatsApp, Почта',
 				'features' => implode(
 					"\n",
 					array(

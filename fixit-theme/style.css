@@ -4,7 +4,7 @@ Theme URI: https://fixit.az
 Author: FIXIT
 Author URI: https://fixit.az
 Description: FIXIT şirkəti üçün hazırlanmış peşəkar İKT xidmətləri teması. Tam responsiv, işıqlı/qaranlıq rejim, daxili əlaqə formu, SEO və sürət üçün optimallaşdırılmışdır.
-Version: 1.13.0
+Version: 1.13.1
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -318,6 +318,54 @@ html[data-theme="dark"] .theme-toggle .i-moon{display:block}
 .hero-list .ico{width:36px;height:36px;border-radius:10px;flex:none;display:grid;place-items:center;background:linear-gradient(135deg,rgba(111,208,255,.3),rgba(123,247,216,.25))}
 .hero-list .ico svg{width:19px;height:19px;color:#bff0ff}
 .hero-list .tag{margin-left:auto;font-size:.74rem;font-weight:700;color:#7bf7d8}
+
+/* Hero slaydı: məhsullar (Remote, Sorğu Sistemi) və xidmətlər.
+   Slaydlar eyni xanada üst-üstə durur: hündürlük ən uzununa görədir,
+   keçiddə səhifə sıçramır. */
+.hero-slider{position:relative;min-width:0}
+.hero-slider__track{display:grid}
+.hero-slider__track>.hero-slide{grid-area:1/1;display:flex;flex-direction:column;transition:opacity .5s ease,transform .5s ease,visibility 0s linear .5s}
+.hero-slide:not(.is-active){opacity:0;transform:translateX(18px);visibility:hidden;pointer-events:none}
+.hero-slide.is-active{opacity:1;transform:none;visibility:visible;transition-delay:0s}
+.hero-slide__shot{display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.14);aspect-ratio:16/8;margin-bottom:14px;background:#0b1830}
+.hero-slide__shot img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block;transition:transform .5s ease}
+.hero-slide__shot:hover img{transform:scale(1.03)}
+.hero-slide__text{color:#c4d8f0;font-size:.93rem;margin:0 0 14px}
+.hero-slide__split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto}
+.hero-slide__opt{display:flex;flex-direction:column;gap:6px;padding:13px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11)}
+.hero-slide__opt b{font-size:.88rem}
+.hero-slide__opt span{font-size:.8rem;color:#a9c4e2;flex:1;margin-bottom:4px}
+.hero-slide__opt .btn{justify-content:center}
+.hero-slide__cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.hero-slide__note{color:#a9c4e2;font-size:.8rem;margin:12px 0 0}
+.hero-slider__nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px}
+.hero-slider__dots{display:flex;gap:8px}
+.hero-slider__dots button{width:9px;height:9px;border-radius:9px;border:0;padding:0;cursor:pointer;background:rgba(255,255,255,.3);transition:width .3s,background .3s}
+.hero-slider__dots button[aria-current="true"]{width:26px;background:#7bf7d8}
+.hero-slider__arrow{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;cursor:pointer;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);transition:background .2s}
+.hero-slider__arrow:hover{background:rgba(255,255,255,.18)}
+.hero-slider__arrow svg{width:16px;height:16px}
+.hero-slider__arrow--prev svg{transform:scaleX(-1)}
+@media (max-width:520px){.hero-slide__split{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.hero-slider__track>.hero-slide,.hero-slide__shot img{transition:none}}
+
+/* "Yükləmə başladı" köməyi: faylı necə açmaq, Windows xəbərdarlığı,
+   telefonda açanlara ünvan. */
+.dl-help{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:20px;background:rgba(5,14,30,.62);backdrop-filter:blur(4px)}
+.dl-help[hidden]{display:none}
+.dl-help__box{position:relative;width:min(520px,100%);background:var(--bg-elev);color:var(--text);border:1px solid var(--surface-line);border-radius:var(--radius-lg);padding:26px 26px 22px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.dl-help__box h3{margin:0 0 6px;font-size:1.2rem;display:flex;align-items:center;gap:10px}
+.dl-help__box h3 svg{width:22px;height:22px;color:var(--brand-500)}
+.dl-help__lead{color:var(--text-soft);margin:0 0 16px;font-size:.95rem}
+.dl-help__steps{counter-reset:step;display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.dl-help__steps li{counter-increment:step;display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;font-size:.93rem;color:var(--text-soft)}
+.dl-help__steps li::before{content:counter(step);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.85rem;color:#fff;background:linear-gradient(135deg,var(--brand-500),var(--accent-500))}
+.dl-help__steps b{color:var(--text)}
+.dl-help__link{display:flex;align-items:center;gap:10px;margin:16px 0 0;padding:12px 14px;border-radius:12px;background:var(--bg-soft);border:1px solid var(--surface-line);font-weight:700;font-size:1.05rem}
+.dl-help__link span{flex:1}
+.dl-help__alt{margin:14px 0 0;font-size:.85rem;color:var(--text-soft)}
+.dl-help__close{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;background:var(--bg-soft);color:var(--text)}
+.dl-help__close svg{width:16px;height:16px}
 
 /* ============================================================
    6. Loqo lenti

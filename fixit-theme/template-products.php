@@ -24,7 +24,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 	<div class="container">
 		<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Öz məhsullarımız', 'fixit' ); ?></span>
 		<h1><?php esc_html_e( 'Bizim hazırladığımız proqram təminatı', 'fixit' ); ?></h1>
-		<p><?php esc_html_e( 'Xidmətlərimizlə yanaşı, öz komandamızın sıfırdan yazdığı məhsulları təqdim edirik. Hamısı Azərbaycan dilindədir, sizin öz serverinizdə işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
+		<p><?php esc_html_e( 'Xidmətlərimizlə yanaşı, öz komandamızın sıfırdan yazdığı məhsulları təqdim edirik. Hamısı Azərbaycan dilindədir, öz serverinizdə və ya bizim buludda işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
 
 		<nav class="crumbs" aria-label="<?php esc_attr_e( 'Naviqasiya', 'fixit' ); ?>">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Ana səhifə', 'fixit' ); ?></a>
@@ -40,7 +40,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 		<div class="grid grid--4" style="gap:16px">
 			<?php
 			$fixit_pillars = array(
-				array( 'lock', __( 'Məlumat sizdə qalır', 'fixit' ), __( 'Öz serverinizdə işləyir', 'fixit' ) ),
+				array( 'cloud', __( 'Server və ya bulud', 'fixit' ), __( 'Harada işləyəcəyini siz seçirsiniz', 'fixit' ) ),
 				array( 'wrench', __( 'Fərdiləşdirilə bilir', 'fixit' ), __( 'Mənbə kod bizimdir', 'fixit' ) ),
 				array( 'users', __( 'Azərbaycan dilində', 'fixit' ), __( 'İnterfeys və dəstək', 'fixit' ) ),
 				array( 'support', __( 'Quraşdırma daxil', 'fixit' ), __( 'Təlim və texniki dəstək', 'fixit' ) ),
@@ -126,16 +126,17 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 		<div class="reveal">
 			<span class="eyebrow"><?php fixit_icon( 'award' ); ?><?php esc_html_e( 'Satış şərtləri', 'fixit' ); ?></span>
 			<h2 style="font-size:clamp(1.6rem,3vw,2.3rem);margin:16px 0 16px">
-				<?php esc_html_e( 'Lisenziya', 'fixit' ); ?> <span class="grad-text"><?php esc_html_e( 'öz serverinizdə', 'fixit' ); ?></span>
+				<?php esc_html_e( 'Öz serverinizdə', 'fixit' ); ?> <span class="grad-text"><?php esc_html_e( 'və ya buludda', 'fixit' ); ?></span>
 			</h2>
 			<p style="color:var(--text-soft)">
-				<?php esc_html_e( 'Bütün məhsullarımız on-premise modeldə təqdim olunur: proqram sizin öz serverinizdə quraşdırılır və bütün məlumat şirkətinizin daxilində qalır. Kənar bulud xidmətindən asılılıq yoxdur.', 'fixit' ); ?>
+				<?php esc_html_e( 'Hər məhsulu iki cür təqdim edirik. On-premise: proqram sizin serverinizə quraşdırılır, bütün məlumat şirkətinizin daxilində qalır. Bulud: sistemi bizim buludda sizin üçün işə salırıq, serveri və yeniləmələri biz idarə edirik.', 'fixit' ); ?>
 			</p>
 
 			<ul class="feature-list">
 				<?php
 				$fixit_terms = array(
 					array( 'server', __( 'Öz infrastrukturunuzda', 'fixit' ), __( 'Proqram sizin serverinizə quraşdırılır; məlumat bazası da sizdə saxlanılır.', 'fixit' ) ),
+					array( 'cloud', __( 'Bizim buludda', 'fixit' ), __( 'Server almağa ehtiyac yoxdur: sistemi biz işə salırıq, yeniləmə və nəzarət də bizim üzərimizdədir.', 'fixit' ) ),
 					array( 'users', __( 'Lisenziya ehtiyaca görə', 'fixit' ), __( 'Qiymət istifadəçi sayı və lazım olan modullara görə hesablanır — hər şirkət üçün ayrıca təklif hazırlayırıq.', 'fixit' ) ),
 					array( 'wrench', __( 'Quraşdırma və köçürmə', 'fixit' ), __( 'Sistemin qurulması, mövcud məlumatların köçürülməsi və ilkin ayarlar bizim üzərimizdədir.', 'fixit' ) ),
 					array( 'support', __( 'Təlim və dəstək', 'fixit' ), __( 'Komandanız üçün təlim keçirilir, sonrasında texniki dəstək paketi təklif olunur.', 'fixit' ) ),

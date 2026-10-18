@@ -134,6 +134,12 @@
 			return;
 		}
 
+		// Saytın öz /yukle/ ünvanı: son FixitRemote.exe-yə yönləndirir.
+		if (a.hasAttribute('data-remote-download')) {
+			send('remote_free_download', { platform: 'windows' }, 'RemoteFreeDownload', { content_name: 'windows' });
+			return;
+		}
+
 		if (host === 'github.com' && /\/fixit-remote-releases\/releases\//.test(url.pathname)) {
 			var platform = /\.apk$/i.test(url.pathname) ? 'android' : 'windows';
 			send('remote_free_download', { platform: platform }, 'RemoteFreeDownload', { content_name: platform });
