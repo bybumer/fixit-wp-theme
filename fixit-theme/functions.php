@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.12.8' );
+define( 'FIXIT_VERSION', '1.12.9' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -22,7 +22,12 @@ define( 'FIXIT_VERSION', '1.12.8' );
  * gəlmir. Telefon tətbiqi ayrıca kanalda saxlanılır — serverlər onu
  * öz yenilənməsi sanmasın deyə.
  */
-define( 'FIXIT_REMOTE_WINDOWS', 'https://github.com/bybumer/fixit-remote-releases/releases/latest/download/FixitRemoteAgent.msi' );
+/*
+ * Windows: quraşdırmadan işləyən EXE. Yükləyən adam onu dərhal açıb
+ * işlədir, istəsə proqramın içindən quraşdırır (MSI şirkətlərin kütləvi
+ * quraşdırması üçündür və saytda verilmir).
+ */
+define( 'FIXIT_REMOTE_WINDOWS', 'https://github.com/bybumer/fixit-remote-releases/releases/latest/download/FixitRemote.exe' );
 define( 'FIXIT_REMOTE_ANDROID', 'https://github.com/bybumer/fixit-remote-releases/releases/download/mobile/fixit-remote.apk' );
 
 /*
@@ -96,7 +101,7 @@ function fixit_remote_release() {
 			$info['version'] = ltrim( (string) $data['tag_name'], 'v' );
 
 			foreach ( (array) ( isset( $data['assets'] ) ? $data['assets'] : array() ) as $asset ) {
-				if ( isset( $asset['name'] ) && 'FixitRemoteAgent.msi' === $asset['name'] ) {
+				if ( isset( $asset['name'] ) && 'FixitRemote.exe' === $asset['name'] ) {
 					$info['size'] = (int) $asset['size'];
 					break;
 				}

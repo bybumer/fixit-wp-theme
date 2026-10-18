@@ -1013,8 +1013,8 @@ msgid "Windows üçün"
 msgstr "Для Windows"
 
 #: template-remote.php
-msgid "Windows 10 və 11 (64-bit). Quraşdırıldıqdan sonra proqram həm qoşulmaq, həm də qoşulmağa icazə vermək üçün hazırdır."
-msgstr "Windows 10 и 11 (64-bit). После установки программа готова и подключаться, и разрешать подключение к себе."
+msgid "Windows 10 və 11 (64-bit). Quraşdırma tələb etmir: yükləyib açın, dərhal qoşula və ya qoşulmağa icazə verə bilərsiniz. İstəsəniz, proqramın içindən kompüterə quraşdırmaq olar."
+msgstr "Windows 10 и 11 (64-bit). Установка не нужна: скачайте, откройте, и сразу можно подключаться или разрешить подключение. При желании программу можно установить на компьютер прямо из неё."
 
 #: template-remote.php
 msgid "Versiya %1$s · %2$s"
@@ -1033,8 +1033,8 @@ msgid "Qeydiyyat, hesab və ödəniş yoxdur"
 msgstr "Без регистрации, аккаунта и оплаты"
 
 #: template-remote.php
-msgid "Quraşdırma bir neçə saniyə çəkir"
-msgstr "Установка занимает несколько секунд"
+msgid "Quraşdırmadan işləyir, istəsəniz bir kliklə quraşdırılır"
+msgstr "Работает без установки, при желании устанавливается в один клик"
 
 #: template-remote.php
 msgid "İstədiyiniz vaxt tamamilə dayandıra bilərsiniz"

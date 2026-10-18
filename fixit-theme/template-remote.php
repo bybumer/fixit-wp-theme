@@ -79,7 +79,7 @@ $fixit_release     = fixit_remote_release();
 				<div class="os-panel os-panel--win">
 					<h3><?php esc_html_e( 'Windows üçün', 'fixit' ); ?></h3>
 					<?php if ( FIXIT_REMOTE_WINDOWS_READY ) : ?>
-						<p><?php esc_html_e( 'Windows 10 və 11 (64-bit). Quraşdırıldıqdan sonra proqram həm qoşulmaq, həm də qoşulmağa icazə vermək üçün hazırdır.', 'fixit' ); ?></p>
+						<p><?php esc_html_e( 'Windows 10 və 11 (64-bit). Quraşdırma tələb etmir: yükləyib açın, dərhal qoşula və ya qoşulmağa icazə verə bilərsiniz. İstəsəniz, proqramın içindən kompüterə quraşdırmaq olar.', 'fixit' ); ?></p>
 
 						<div style="margin-top:18px">
 							<a class="btn btn--primary" href="<?php echo esc_url( FIXIT_REMOTE_WINDOWS ); ?>" rel="nofollow">
@@ -110,7 +110,7 @@ $fixit_release     = fixit_remote_release();
 
 					<ul class="bullets" style="margin-top:18px">
 						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Qeydiyyat, hesab və ödəniş yoxdur', 'fixit' ); ?></span></li>
-						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Quraşdırma bir neçə saniyə çəkir', 'fixit' ); ?></span></li>
+						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'Quraşdırmadan işləyir, istəsəniz bir kliklə quraşdırılır', 'fixit' ); ?></span></li>
 						<li><?php fixit_icon( 'check-c' ); ?><span><?php esc_html_e( 'İstədiyiniz vaxt tamamilə dayandıra bilərsiniz', 'fixit' ); ?></span></li>
 					</ul>
 				</div>
