@@ -537,6 +537,10 @@ msgid "Əsas məzmuna keç"
 msgstr "Перейти к основному содержимому"
 
 #: header.php
+msgid "Fixit Remote yüklə"
+msgstr "Скачать Fixit Remote"
+
+#: header.php
 msgid "Əsas menyu"
 msgstr "Главное меню"
 
@@ -1521,8 +1525,8 @@ msgid "Fixit Remote — Məxfilik siyasəti"
 msgstr "Fixit Remote — Политика конфиденциальности"
 
 #: template-remote-privacy.php
-msgid "Mobil tətbiq (Android və iOS) haqqında. Son yenilənmə: 15 oktyabr 2026."
-msgstr "О мобильном приложении (Android и iOS). Последнее обновление: 15 октября 2026 г."
+msgid "Mobil tətbiq (Android və iOS) haqqında. Son yenilənmə: 18 oktyabr 2026."
+msgstr "О мобильном приложении (Android и iOS). Последнее обновление: 18 октября 2026 г."
 
 #: template-remote-privacy.php
 msgid "Məxfilik siyasəti"
@@ -1553,16 +1557,16 @@ msgid "cihazlar arasında qoşulmanı qurmaq üçün. Orada yalnız bunun üçü
 msgstr "для установки соединения между устройствами. На нём хранится только необходимый для этого минимум; изображение экрана не сохраняется."
 
 #: template-remote-privacy.php
-msgid "Şirkətinizin öz serveri"
-msgstr "Собственный сервер вашей компании"
+msgid "Şirkətinizin serveri"
+msgstr "Сервер вашей компании"
 
 #: template-remote-privacy.php
 msgid "istəyə görə"
 msgstr "по желанию"
 
 #: template-remote-privacy.php
-msgid "komandalar, cihazlar və yazışma. Bu məlumat şirkətinizdə qalır, Fixit-in ona çıxışı yoxdur."
-msgstr "команды, устройства и переписка. Эти данные остаются в вашей компании, у Fixit к ним нет доступа."
+msgid "komandalar, cihazlar və yazışma. Server şirkətinizdə qurulubsa, məlumat orada qalır və Fixit-in ona çıxışı yoxdur. Bulud variantında məlumat yalnız şirkətiniz üçün ayrılmış serverdə, müqaviləyə uyğun saxlanılır."
+msgstr "команды, устройства и переписка. Если сервер установлен в вашей компании, данные остаются там и у Fixit к ним нет доступа. В облачном варианте данные хранятся на сервере, выделенном только для вашей компании, в соответствии с договором."
 
 #: template-remote-privacy.php
 msgid "1. ID ilə qoşulma (id.fixit.az)"
@@ -1641,8 +1645,8 @@ msgid "4. Şirkətinizin serveri"
 msgstr "4. Сервер вашей компании"
 
 #: template-remote-privacy.php
-msgid "\"Kontaktlar\" və yazışma bölmələri işlədiyiniz şirkətin serverinə qoşulur (ünvanı özünüz yazırsınız) və istifadəçi adı ilə parol tələb edir. Komandalar, əməkdaşların adları, cihazlar və mesajlar həmin serverdə saxlanılır. Bu məlumatın sahibi şirkətdir; Fixit-in ona çıxışı yoxdur. Onunla bağlı suallar üçün şirkətinizin administratoruna müraciət edin."
-msgstr "Разделы «Контакты» и переписка подключаются к серверу компании, в которой вы работаете (адрес вы вводите сами), и требуют имя пользователя и пароль. Команды, имена сотрудников, устройства и сообщения хранятся на этом сервере. Владелец этих данных — компания; у Fixit к ним доступа нет. По вопросам о них обращайтесь к администратору вашей компании."
+msgid "\"Kontaktlar\" və yazışma bölmələri işlədiyiniz şirkətin serverinə qoşulur (ünvanı özünüz yazırsınız) və istifadəçi adı ilə parol tələb edir. Komandalar, əməkdaşların adları, cihazlar və mesajlar həmin serverdə saxlanılır. Bu məlumatın sahibi şirkətdir. Server şirkətin öz infrastrukturundadırsa, Fixit-in ona çıxışı yoxdur. Şirkət bulud variantını seçibsə, server Fixit-in buludunda yalnız həmin şirkət üçün ayrılır və məlumat müqaviləyə uyğun saxlanılır. Onunla bağlı suallar üçün şirkətinizin administratoruna müraciət edin."
+msgstr "Разделы «Контакты» и переписка подключаются к серверу компании, в которой вы работаете (адрес вы вводите сами), и требуют имя пользователя и пароль. Команды, имена сотрудников, устройства и сообщения хранятся на этом сервере. Эти данные принадлежат компании. Если сервер установлен в инфраструктуре компании, у Fixit к нему нет доступа. Если компания выбрала облачный вариант, сервер работает в облаке Fixit, выделен только для этой компании, а данные хранятся в соответствии с договором. По вопросам о них обращайтесь к администратору вашей компании."
 
 #: template-remote-privacy.php
 msgid "5. Telefonda nə saxlanılır"

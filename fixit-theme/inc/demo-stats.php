@@ -347,6 +347,7 @@ function fixit_demo_stats_labels( $group ) {
 			'home'       => __( 'Ana səhifə — «Uzaqdan qoşulma» bloku', 'fixit' ),
 			'home-slayd' => __( 'Ana səhifə — yuxarıdakı slayd', 'fixit' ),
 			'uzaqdan'    => __( '«Uzaqdan qoşulma» səhifəsi', 'fixit' ),
+			'menyu'      => __( 'Saytın yuxarı zolağı və mobil menyu', 'fixit' ),
 			'yeniden'    => __( 'Təkrar («yükləmə başlamadı»)', 'fixit' ),
 			'(birbaşa)'  => __( 'Qısa ünvan (fixit.az/yukle)', 'fixit' ),
 		),

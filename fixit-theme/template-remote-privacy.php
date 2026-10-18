@@ -25,7 +25,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 	<div class="container">
 		<span class="eyebrow"><?php fixit_icon( 'lock' ); ?><?php esc_html_e( 'Məxfilik', 'fixit' ); ?></span>
 		<h1><?php esc_html_e( 'Fixit Remote — Məxfilik siyasəti', 'fixit' ); ?></h1>
-		<p><?php esc_html_e( 'Mobil tətbiq (Android və iOS) haqqında. Son yenilənmə: 15 oktyabr 2026.', 'fixit' ); ?></p>
+		<p><?php esc_html_e( 'Mobil tətbiq (Android və iOS) haqqında. Son yenilənmə: 18 oktyabr 2026.', 'fixit' ); ?></p>
 
 		<nav class="crumbs" aria-label="<?php esc_attr_e( 'Naviqasiya', 'fixit' ); ?>">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Ana səhifə', 'fixit' ); ?></a>
@@ -51,7 +51,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 				<li><?php esc_html_e( 'Tətbiq iki serverlə işləyir:', 'fixit' ); ?>
 					<ul>
 						<li><strong><?php esc_html_e( 'Fixit-in ID serveri', 'fixit' ); ?></strong> (id.fixit.az) — <?php esc_html_e( 'cihazlar arasında qoşulmanı qurmaq üçün. Orada yalnız bunun üçün lazım olan minimum saxlanılır; ekran görüntüsü saxlanılmır.', 'fixit' ); ?></li>
-						<li><strong><?php esc_html_e( 'Şirkətinizin öz serveri', 'fixit' ); ?></strong> (<?php esc_html_e( 'istəyə görə', 'fixit' ); ?>) — <?php esc_html_e( 'komandalar, cihazlar və yazışma. Bu məlumat şirkətinizdə qalır, Fixit-in ona çıxışı yoxdur.', 'fixit' ); ?></li>
+						<li><strong><?php esc_html_e( 'Şirkətinizin serveri', 'fixit' ); ?></strong> (<?php esc_html_e( 'istəyə görə', 'fixit' ); ?>) — <?php esc_html_e( 'komandalar, cihazlar və yazışma. Server şirkətinizdə qurulubsa, məlumat orada qalır və Fixit-in ona çıxışı yoxdur. Bulud variantında məlumat yalnız şirkətiniz üçün ayrılmış serverdə, müqaviləyə uyğun saxlanılır.', 'fixit' ); ?></li>
 					</ul>
 				</li>
 			</ul>
@@ -82,7 +82,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 			<p><?php esc_html_e( 'Qoşulduğunuz kompüterin ekranı telefona gəlir, toxunuş və klaviatura əmrləriniz oraya gedir. Görüntü telefonda yazılmır və saxlanılmır.', 'fixit' ); ?></p>
 
 			<h2><?php esc_html_e( '4. Şirkətinizin serveri', 'fixit' ); ?></h2>
-			<p><?php esc_html_e( '"Kontaktlar" və yazışma bölmələri işlədiyiniz şirkətin serverinə qoşulur (ünvanı özünüz yazırsınız) və istifadəçi adı ilə parol tələb edir. Komandalar, əməkdaşların adları, cihazlar və mesajlar həmin serverdə saxlanılır. Bu məlumatın sahibi şirkətdir; Fixit-in ona çıxışı yoxdur. Onunla bağlı suallar üçün şirkətinizin administratoruna müraciət edin.', 'fixit' ); ?></p>
+			<p><?php esc_html_e( '"Kontaktlar" və yazışma bölmələri işlədiyiniz şirkətin serverinə qoşulur (ünvanı özünüz yazırsınız) və istifadəçi adı ilə parol tələb edir. Komandalar, əməkdaşların adları, cihazlar və mesajlar həmin serverdə saxlanılır. Bu məlumatın sahibi şirkətdir. Server şirkətin öz infrastrukturundadırsa, Fixit-in ona çıxışı yoxdur. Şirkət bulud variantını seçibsə, server Fixit-in buludunda yalnız həmin şirkət üçün ayrılır və məlumat müqaviləyə uyğun saxlanılır. Onunla bağlı suallar üçün şirkətinizin administratoruna müraciət edin.', 'fixit' ); ?></p>
 
 			<h2><?php esc_html_e( '5. Telefonda nə saxlanılır', 'fixit' ); ?></h2>
 			<div class="compare__scroll">
@@ -153,7 +153,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 
 			<!-- ======================= EN ======================= -->
 			<h2>Privacy Policy (English)</h2>
-			<p><em>Last updated: 15 October 2026. This policy covers the Fixit Remote mobile app (Android and iOS).</em></p>
+			<p><em>Last updated: 18 October 2026. This policy covers the Fixit Remote mobile app (Android and iOS).</em></p>
 
 			<h3>Short answer</h3>
 			<ul>
@@ -162,7 +162,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 				<li>The app works with two servers:
 					<ul>
 						<li><strong>Fixit's ID server</strong> (id.fixit.az) — to set up connections between devices. It keeps only the minimum needed for that; screen images are not stored.</li>
-						<li><strong>Your company's own server</strong> (optional) — teams, devices and chat. That data stays with your company; Fixit has no access to it.</li>
+						<li><strong>Your company's server</strong> (optional) — teams, devices and chat. If the server runs at your company, the data stays there and Fixit has no access to it. With the cloud option, the data is kept on a server dedicated to your company only, under the terms of the contract.</li>
 					</ul>
 				</li>
 			</ul>
@@ -186,7 +186,7 @@ $fixit_remote_url = fixit_page_url( 'template-remote.php' );
 			<p>The remote computer's screen is shown on your phone and your touch and keyboard input is sent to it. The image is not recorded or stored on the phone.</p>
 
 			<h3>4. Your company's server</h3>
-			<p>The Contacts and chat sections connect to your employer's server (you enter its address) and require a username and password. Teams, employee names, devices and messages are stored on that server. That data belongs to your company; Fixit has no access to it. Contact your company's administrator about it.</p>
+			<p>The Contacts and chat sections connect to your employer's server (you enter its address) and require a username and password. Teams, employee names, devices and messages are stored on that server. That data belongs to your company. If the server runs on the company's own infrastructure, Fixit has no access to it. If the company chose the cloud option, the server runs in Fixit's cloud, dedicated to that company only, and the data is kept under the terms of the contract. Contact your company's administrator about it.</p>
 
 			<h3>5. What is stored on the phone</h3>
 			<div class="compare__scroll">

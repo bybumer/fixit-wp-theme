@@ -46,6 +46,12 @@ $fixit_socials  = fixit_social_links();
 		</div>
 
 		<div class="topbar__right">
+			<?php if ( FIXIT_REMOTE_WINDOWS_READY ) : ?>
+				<a class="topbar__dl" href="<?php echo esc_url( fixit_remote_download_link( 'menyu' ) ); ?>" rel="nofollow" data-remote-download aria-label="<?php esc_attr_e( 'Fixit Remote yüklə', 'fixit' ); ?>">
+					<?php fixit_icon( 'download' ); ?><span><?php esc_html_e( 'Fixit Remote yüklə', 'fixit' ); ?></span>
+				</a>
+			<?php endif; ?>
+
 			<?php fixit_lang_switcher( 'lang-switch--topbar' ); ?>
 
 			<div class="topbar__socials">
@@ -180,6 +186,11 @@ $fixit_socials  = fixit_social_links();
 		<a class="btn btn--ghost btn--block" href="mailto:<?php echo esc_attr( $fixit_email ); ?>">
 			<?php fixit_icon( 'mail' ); ?><?php echo esc_html( $fixit_email ); ?>
 		</a>
+		<?php if ( FIXIT_REMOTE_WINDOWS_READY ) : ?>
+			<a class="btn btn--ghost btn--block" href="<?php echo esc_url( fixit_remote_download_link( 'menyu' ) ); ?>" rel="nofollow" data-remote-download>
+				<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Fixit Remote yüklə', 'fixit' ); ?>
+			</a>
+		<?php endif; ?>
 	</div>
 </div>
 
