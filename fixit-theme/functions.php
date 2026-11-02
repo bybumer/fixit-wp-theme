@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.13.2' );
+define( 'FIXIT_VERSION', '1.14.0' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -62,59 +62,6 @@ define( 'FIXIT_REMOTE_MAC_READY', false );
  * etmək kifayətdir - yuxarıdakı ünvan onsuz da ən son yığımı verir.
  */
 define( 'FIXIT_REMOTE_ANDROID_READY', false );
-
-/**
- * Yüklənən proqramın son versiyası (nömrə və həcm).
- *
- * Fayl ünvanı onsuz da həmişə ən sonu verir; bu, yalnız ziyarətçiyə
- * "nə yükləyirəm?" sualının cavabıdır. Məlumat 6 saat saxlanılır:
- * hər səhifə açılışında kənar serverə getmək səhifəni yavaşladır.
- *
- * Alınmasa boş qaytarır — düymə yenə işləyir, sadəcə altında yazı olmur.
- *
- * @return array{version:string,size:int}
- */
-function fixit_remote_release() {
-	$cached = get_transient( 'fixit_remote_release_exe' );
-
-	if ( is_array( $cached ) ) {
-		return $cached;
-	}
-
-	$info = array(
-		'version' => '',
-		'size'    => 0,
-	);
-
-	$response = wp_remote_get(
-		'https://api.github.com/repos/bybumer/fixit-remote-releases/releases/latest',
-		array(
-			'timeout' => 8,
-			'headers' => array( 'Accept' => 'application/vnd.github+json' ),
-		)
-	);
-
-	if ( ! is_wp_error( $response ) && 200 === (int) wp_remote_retrieve_response_code( $response ) ) {
-		$data = json_decode( wp_remote_retrieve_body( $response ), true );
-
-		if ( ! empty( $data['tag_name'] ) ) {
-			$info['version'] = ltrim( (string) $data['tag_name'], 'v' );
-
-			foreach ( (array) ( isset( $data['assets'] ) ? $data['assets'] : array() ) as $asset ) {
-				if ( isset( $asset['name'] ) && 'FixitRemote.exe' === $asset['name'] ) {
-					$info['size'] = (int) $asset['size'];
-					break;
-				}
-			}
-		}
-	}
-
-	// Alınmayanda qısa müddətə saxlanılır ki, növbəti açılışda yenidən
-	// cəhd olunsun.
-	set_transient( 'fixit_remote_release_exe', $info, $info['version'] ? 6 * HOUR_IN_SECONDS : 15 * MINUTE_IN_SECONDS );
-
-	return $info;
-}
 
 /* ============================================================
    1. Tema dəstəkləri
@@ -181,6 +128,11 @@ function fixit_assets() {
 
 	wp_localize_script( 'fixit-main', 'fixitLang', fixit_lang_js_data() );
 
+	// Fixit Remote-un versiya yazısı brauzerdə təzələnir (səhifə keşdə köhnə qala bilər).
+	if ( FIXIT_REMOTE_WINDOWS_READY ) {
+		wp_localize_script( 'fixit-main', 'fixitRemote', array( 'api' => esc_url_raw( rest_url( 'fixit/v1/remote-release' ) ) ) );
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -222,6 +174,7 @@ require_once get_template_directory() . '/inc/cpt.php';           // Xidmət və
 require_once get_template_directory() . '/inc/product-demo.php';  // Məhsul: demo ayarları və ekran görüntüləri
 require_once get_template_directory() . '/inc/product-data.php';  // Məhsul səhifələrinin detallı məzmunu
 require_once get_template_directory() . '/inc/remote-download.php'; // fixit.az/yukle: Fixit Remote-un yüklənməsi və sayı
+require_once get_template_directory() . '/inc/remote-admin.php';    // Admin: Fixit Remote — son versiya və yükləmə sayı
 require_once get_template_directory() . '/inc/contact-form.php';  // Əlaqə formu (plagin tələb etmir)
 require_once get_template_directory() . '/inc/demo-content.php';  // İlk quraşdırmada səhifə/menyu yaradılması
 require_once get_template_directory() . '/inc/faq.php';           // Sual-cavab məzmunu (səhifə + schema)

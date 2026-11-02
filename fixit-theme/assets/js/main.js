@@ -372,6 +372,38 @@
 		}
 	}
 
+	/* ---------------------------------------------
+	   8. Fixit Remote: versiya yazısı həmişə ən sonuncu
+	   Səhifə serverin keşində günlərlə qala bilər — yazı açılışda təzələnir.
+	   --------------------------------------------- */
+	var RV = window.fixitRemote;
+	var rvEls = doc.querySelectorAll('[data-remote-version]');
+
+	if (RV && RV.api && rvEls.length && window.fetch) {
+		// 5 dəqiqəlik addım: ünvan dəyişir ki, aradakı keş köhnə cavab verməsin.
+		var bucket = Math.floor(Date.now() / 300000);
+		fetch(RV.api + (RV.api.indexOf('?') === -1 ? '?' : '&') + 't=' + bucket, { credentials: 'omit' })
+			.then(function (r) { return r.ok ? r.json() : null; })
+			.then(function (d) {
+				if (!d || !d.version) return;
+				var lang = doc.documentElement.lang || 'az';
+				var size = '';
+				if (d.size) {
+					try {
+						size = (d.size / 1048576).toLocaleString(lang, { maximumFractionDigits: 1 }) + ' MB';
+					} catch (e) {
+						size = (Math.round(d.size / 104857.6) / 10) + ' MB';
+					}
+				}
+				Array.prototype.forEach.call(rvEls, function (el) {
+					var text = (el.getAttribute('data-tpl') || '{v}').replace('{v}', d.version).replace('{s}', size);
+					el.textContent = size ? text : text.replace(/\s*·\s*$/, '');
+					el.hidden = false;
+				});
+			})
+			.catch(function () {});
+	}
+
 	function isBot() {
 		try {
 			return new RegExp(L.bots || 'bot', 'i').test(navigator.userAgent || '');

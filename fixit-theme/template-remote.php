@@ -86,18 +86,27 @@ $fixit_release     = fixit_remote_release();
 								<?php fixit_icon( 'download' ); ?><?php esc_html_e( 'Pulsuz yüklə', 'fixit' ); ?>
 							</a>
 
-							<?php if ( $fixit_release['version'] ) : ?>
-								<p style="margin:10px 0 0;font-size:13px;color:var(--text-mute)">
-									<?php
-									printf(
-										/* translators: 1: versiya, 2: faylın həcmi */
-										esc_html__( 'Versiya %1$s · %2$s', 'fixit' ),
-										esc_html( $fixit_release['version'] ),
-										esc_html( $fixit_release['size'] ? size_format( $fixit_release['size'], 1 ) : '' )
+							<?php
+							/*
+							 * Versiya yazısı: səhifə keşdə köhnə qala bilər, ona görə
+							 * brauzer onu açılışda təzələyir (main.js, data-remote-version).
+							 */
+							/* translators: 1: versiya, 2: faylın həcmi */
+							$fixit_ver_tpl = __( 'Versiya %1$s · %2$s', 'fixit' );
+							?>
+							<p style="margin:10px 0 0;font-size:13px;color:var(--text-mute)" data-remote-version data-tpl="<?php echo esc_attr( sprintf( $fixit_ver_tpl, '{v}', '{s}' ) ); ?>"<?php echo $fixit_release['version'] ? '' : ' hidden'; ?>>
+								<?php
+								if ( $fixit_release['version'] ) {
+									echo esc_html(
+										sprintf(
+											$fixit_ver_tpl,
+											$fixit_release['version'],
+											$fixit_release['size'] ? size_format( $fixit_release['size'], 1 ) : ''
+										)
 									);
-									?>
-								</p>
-							<?php endif; ?>
+								}
+								?>
+							</p>
 							<p style="margin:6px 0 0;font-size:13px;color:var(--text-mute)">
 								<?php
 								printf(

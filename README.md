@@ -57,6 +57,8 @@ fixit-web/
         ├── demo-content.php  ← ilk aktivləşdirmədə səhifə/menyu yaradır
         ├── seo.php           ← meta teqlər + Google struktur məlumatları
         ├── seo-admin.php     ← admin paneldəki SEO izləmə lövhəsi
+        ├── remote-download.php ← fixit.az/yukle: Fixit Remote yükləməsi, sayğac, son versiya
+        ├── remote-admin.php  ← admin: «Fixit Remote» — son versiya, fayllar, yükləmə sayı
         ├── demo-stats.php    ← admin paneldə demo.fixit.az ziyarət statistikası
         ├── analytics.php     ← GA4, Meta Pixel, LinkedIn Insight, Clarity (Fərdiləşdir → Analitika və reklam)
         └── updater.php       ← GitHub relizlərindən avtomatik yeniləmə
@@ -107,6 +109,7 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Xidmət mətnləri, ikonlar, üstünlüklər | Admin → **Xidmətlər** |
 | Məhsul adı, qısa təsvir, əsas xüsusiyyətlər | Admin → **Məhsullar** |
 | Məhsulun demo ünvanı, demo rejimi, **ekran görüntüləri** | Admin → Məhsullar → məhsulu açın → **Demo və ekran görüntüləri** |
+| Fixit Remote-un son versiyası, faylları, neçə dəfə yükləndiyi | Admin → **Fixit Remote** (başlanğıc səhifəsində də vidcet var). Saytdakı «Yüklə» düymələri həmişə ən son versiyanı verir, heç nə dəyişmək lazım deyil |
 | Demoya kim gəldi, hansı rolu seçdi, nə etdi | Admin → **Demo statistikası** (bir dəfəlik: «Ayarlar» → açar yarat → demo serverinin `.env`-inə `DEMO_STATS_TOKEN`; bax Fixit-Ticket-System `DEPLOY-DEMO.md` §9) |
 | Sorğu Sistemi-nin hazır ekran görüntülərini demodan yenidən çəkmək | `python tools/demo-ekranlar.py` (Chrome + Node 22+; admin qalereyası boşdursa bunlar göstərilir) |
 | Məhsul səhifəsinin detallı bölmələri (imkan qrupları, iş prinsipi, təhlükəsizlik, suallar) | `inc/product-data.php` |
