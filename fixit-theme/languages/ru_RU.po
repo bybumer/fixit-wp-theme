@@ -1852,6 +1852,182 @@ msgstr "При изменении политики новый текст пуб�
 msgid "Sual və müraciətlər üçün:"
 msgstr "По вопросам и обращениям:"
 
+#: template-ticket-privacy.php
+msgid "FIXIT Ticket: Məxfilik siyasəti"
+msgstr "FIXIT Ticket: Политика конфиденциальности"
+
+#: template-ticket-privacy.php
+msgid "Android tətbiqi haqqında. Son yenilənmə: 25 oktyabr 2026."
+msgstr "Об Android-приложении. Последнее обновление: 25 октября 2026 г."
+
+#: template-ticket-privacy.php
+msgid "Qısaca"
+msgstr "Коротко"
+
+#: template-ticket-privacy.php
+msgid "Tətbiq yalnız şirkətinizin öz FIXIT Ticket serveri ilə işləyir. Ünvanı siz yazırsınız və məlumat o serverə gedir."
+msgstr "Приложение работает только с собственным сервером FIXIT Ticket вашей компании. Адрес вы вводите сами, и данные отправляются на этот сервер."
+
+#: template-ticket-privacy.php
+msgid "FIXIT (tətbiqin tərtibatçısı) sizin hesabınızı, sorğularınızı və fayllarınızı görmür və saxlamır."
+msgstr "FIXIT (разработчик приложения) не видит и не хранит вашу учётную запись, обращения и файлы."
+
+#: template-ticket-privacy.php
+msgid "1. Kim nəyə cavabdehdir"
+msgstr "1. Кто за что отвечает"
+
+#: template-ticket-privacy.php
+msgid "Server şirkətinizdə (və ya şirkətinizin seçdiyi hostinqdə) qurulur və onu şirkətiniz idarə edir. Hesabınızı, sorğuları və faylları şirkətinizin administratoru yaradır, saxlayır və silir. Bu məlumatla bağlı suallar üçün şirkətinizə müraciət edin. Tətbiq yalnız sizin cihazınızla şirkətin serveri arasında vasitədir."
+msgstr "Сервер устанавливается в вашей компании (или у хостинг-провайдера, которого выбрала компания), и управляет им ваша компания. Учётную запись, обращения и файлы создаёт, хранит и удаляет администратор вашей компании. По вопросам об этих данных обращайтесь в свою компанию. Приложение лишь связывает ваше устройство с сервером компании."
+
+#: template-ticket-privacy.php
+msgid "2. Tətbiq hansı məlumatla işləyir"
+msgstr "2. С какими данными работает приложение"
+
+#: template-ticket-privacy.php
+msgid "Şirkətinizin serverinə göndərilir:"
+msgstr "Отправляется на сервер вашей компании:"
+
+#: template-ticket-privacy.php
+msgid "e-poçt və parol (giriş anında; parol telefonda saxlanılmır), adınız, imzanız və dil seçiminiz;"
+msgstr "адрес эл. почты и пароль (при входе; пароль на телефоне не хранится), ваше имя, подпись и выбранный язык;"
+
+#: template-ticket-privacy.php
+msgid "yazdığınız sorğular, cavablar, daxili qeydlər, əlavə etdiyiniz fayllar və şəkillər, qeyd etdiyiniz vaxt;"
+msgstr "ваши обращения, ответы, внутренние заметки, прикреплённые файлы и фото, учтённое время;"
+
+#: template-ticket-privacy.php
+msgid "«Cihazlar» siyahısı üçün tətbiqin yaratdığı təsadüfi cihaz kimliyi, telefonun modeli və Android versiyası."
+msgstr "для списка «Устройства»: случайный идентификатор устройства, созданный приложением, модель телефона и версия Android."
+
+#: template-ticket-privacy.php
+msgid "Telefonda saxlanılır:"
+msgstr "Хранится на телефоне:"
+
+#: template-ticket-privacy.php
+msgid "serverlərin ünvanları və adları;"
+msgstr "адреса и названия серверов;"
+
+#: template-ticket-privacy.php
+msgid "giriş tokenləri, Android Keystore açarı ilə şifrələnmiş;"
+msgstr "токены входа, зашифрованные ключом Android Keystore;"
+
+#: template-ticket-privacy.php
+msgid "tətbiq ayarları (tema, dil, bildiriş və fon yoxlaması seçimləri);"
+msgstr "настройки приложения (тема, язык, уведомления и фоновая проверка);"
+
+#: template-ticket-privacy.php
+msgid "son yüklənən sorğu və tapşırıq siyahıları (şəbəkə olmayanda göstərmək üçün), ayrıca Android Keystore açarı ilə şifrələnmiş;"
+msgstr "последние загруженные списки обращений и задач (чтобы показывать их без сети), зашифрованные отдельным ключом Android Keystore;"
+
+#: template-ticket-privacy.php
+msgid "göndərilməmiş cavab, şərh və yeni sorğu qaralamaları, şifrələnmiş; 7 gündən sonra və çıxışda silinir, fayllar qaralamada saxlanılmır;"
+msgstr "неотправленные черновики ответов, комментариев и новых обращений в зашифрованном виде; удаляются через 7 дней и при выходе, файлы в черновиках не хранятся;"
+
+#: template-ticket-privacy.php
+msgid "açdığınız faylların nüsxələri."
+msgstr "копии открытых вами файлов."
+
+#: template-ticket-privacy.php
+msgid "Sorğuya bağlı kompüter üçün «FIXIT Remote-da aç» düyməsini göstərmək üçün tətbiq yalnız telefonda FIXIT Remote tətbiqinin quraşdırılıb-quraşdırılmadığını yoxlayır. Başqa tətbiqlərin siyahısına baxmır."
+msgstr "Чтобы показать кнопку «Открыть в FIXIT Remote» для компьютера, привязанного к обращению, приложение только проверяет, установлено ли на телефоне приложение FIXIT Remote. Список других приложений оно не просматривает."
+
+#: template-ticket-privacy.php
+msgid "Tətbiq kontaktlarınıza, yerləşmənizə, mikrofona və şəkil qalereyanıza çıxış istəmir. Şəkil çəkəndə telefonun öz kamera tətbiqi açılır, tətbiq yalnız çəkdiyiniz şəkli alır. Fayl əlavə edəndə yalnız seçdiyiniz fayl oxunur."
+msgstr "Приложение не запрашивает доступ к контактам, местоположению, микрофону и галерее. Для съёмки открывается штатное приложение камеры, приложение получает только сделанный вами снимок. При прикреплении файла читается только выбранный вами файл."
+
+#: template-ticket-privacy.php
+msgid "3. Bildirişlər"
+msgstr "3. Уведомления"
+
+#: template-ticket-privacy.php
+msgid "Bildiriş xidməti (Firebase və s.) işlədilmir. Tətbiq yeniliyi şirkətinizin serverindən özü soruşur: açıq olanda yarım dəqiqədən bir, bağlı olanda seçdiyiniz aralıqla (15, 30, 60 dəqiqə və ya heç vaxt)."
+msgstr "Сервисы push-уведомлений (Firebase и т. п.) не используются. Приложение само запрашивает новое у сервера вашей компании: каждые 30 секунд, пока открыто, и с выбранным вами интервалом, когда закрыто (15, 30, 60 минут или никогда)."
+
+#: template-ticket-privacy.php
+msgid "4. Yeniləmələr"
+msgstr "4. Обновления"
+
+#: template-ticket-privacy.php
+msgid "Google Play-dən quraşdırılmış tətbiq yalnız Google Play vasitəsilə yenilənir. Birbaşa APK ilə quraşdırılmış versiya isə 6 saatdan bir GitHub-dakı açıq faylı (latest.json) oxuyur. Bu zaman GitHub yalnız standart şəbəkə məlumatını (IP ünvanı) görür, sizin hesab məlumatınız göndərilmir."
+msgstr "Приложение, установленное из Google Play, обновляется только через Google Play. Версия, установленная напрямую из APK, раз в 6 часов читает открытый файл (latest.json) на GitHub. При этом GitHub видит только стандартные сетевые данные (IP-адрес), данные вашей учётной записи не передаются."
+
+#: template-ticket-privacy.php
+msgid "5. Təhlükəsizlik"
+msgstr "5. Безопасность"
+
+#: template-ticket-privacy.php
+msgid "Bütün əlaqə şifrəli kanal (HTTPS/TLS) ilə gedir, şifrəsiz qoşulma qadağandır."
+msgstr "Весь обмен идёт по зашифрованному каналу (HTTPS/TLS), незашифрованные подключения запрещены."
+
+#: template-ticket-privacy.php
+msgid "Tokenlər şifrəli saxlanılır, tətbiqin məlumatı bulud ehtiyat nüsxəsinə düşmür."
+msgstr "Токены хранятся в зашифрованном виде, данные приложения не попадают в облачные резервные копии."
+
+#: template-ticket-privacy.php
+msgid "İki mərhələli doğrulama dəstəklənir."
+msgstr "Поддерживается двухфакторная аутентификация."
+
+#: template-ticket-privacy.php
+msgid "İstəsəniz ekran görüntüsünü qadağan edə bilərsiniz."
+msgstr "При желании можно запретить снимки экрана."
+
+#: template-ticket-privacy.php
+msgid "6. Məlumatın silinməsi və hesabın silinməsi"
+msgstr "6. Удаление данных и учётной записи"
+
+#: template-ticket-privacy.php
+msgid "Telefondakı məlumat."
+msgstr "Данные на телефоне."
+
+#: template-ticket-privacy.php
+msgid "Profildə «Çıxış» bu cihazdakı sessiyanı bağlayır və yerli məlumatı, o cümlədən göndərilməmiş qaralamaları silir. Tətbiqi silmək telefondakı hər şeyi silir."
+msgstr "«Выход» в профиле закрывает сеанс на этом устройстве и удаляет локальные данные, в том числе неотправленные черновики. Удаление приложения стирает с телефона всё."
+
+#: template-ticket-privacy.php
+msgid "Hesab və serverdəki məlumat."
+msgstr "Учётная запись и данные на сервере."
+
+#: template-ticket-privacy.php
+msgid "Hesabınız şirkətinizin serverindədir, onu şirkətin administratoru silir:"
+msgstr "Ваша учётная запись находится на сервере компании, удаляет её администратор компании:"
+
+#: template-ticket-privacy.php
+msgid "Müştəri hesabı:"
+msgstr "Учётная запись клиента:"
+
+#: template-ticket-privacy.php
+msgid "tətbiqdə Profil → Hesabın silinməsi → Sorğu göndər. Şirkətin dəstək xidmətinə silinmə sorğusu gedir, gedişini «Sorğularım» bölməsində görürsünüz. Tətbiqə daxil ola bilmirsinizsə, şirkətin dəstək e-poçtuna yazın."
+msgstr "в приложении откройте Профиль → Удаление учётной записи → Отправить запрос. В службу поддержки компании уходит запрос на удаление, его ход виден в разделе «Мои обращения». Если войти в приложение не получается, напишите на адрес поддержки компании."
+
+#: template-ticket-privacy.php
+msgid "İşçi hesabı:"
+msgstr "Учётная запись сотрудника:"
+
+#: template-ticket-privacy.php
+msgid "işçi hesabını şirkət yaradır və silir. Silinmə üçün administratorunuza müraciət edin."
+msgstr "учётные записи сотрудников создаёт и удаляет компания. Для удаления обратитесь к своему администратору."
+
+#: template-ticket-privacy.php
+msgid "Şirkətin qanuni saxlama öhdəlikləri varsa (məsələn, müraciətlərin tarixçəsi), bəzi qeydlər şirkətin qaydasına uyğun saxlanıla bilər. Bunu şirkətinizdən soruşun."
+msgstr "Если у компании есть обязанности по хранению данных по закону (например, история обращений), часть записей может храниться по правилам компании. Уточните это в своей компании."
+
+#: template-ticket-privacy.php
+msgid "Kimə müraciət edəcəyinizi bilmirsinizsə, bu ünvana yazın, sizi şirkətinizin administratoruna yönləndirək:"
+msgstr "Если не знаете, к кому обратиться, напишите на этот адрес, и мы направим вас к администратору вашей компании:"
+
+#: template-ticket-privacy.php
+msgid "7. Uşaqlar"
+msgstr "7. Дети"
+
+#: template-ticket-privacy.php
+msgid "8. Dəyişikliklər"
+msgstr "8. Изменения"
+
+#: template-ticket-privacy.php
+msgid "Siyasət dəyişəndə bu səhifə yenilənir, yuxarıdakı tarix dəyişir."
+msgstr "При изменении политики эта страница обновляется, а дата вверху меняется."
+
 #: template-services.php
 msgid "İKT Xidmətləri"
 msgstr "ИКТ-услуги"
@@ -2867,6 +3043,10 @@ msgstr "Подключайтесь к любому компьютеру отку
 #: inc/seo.php
 msgid "Fixit Remote mobil tətbiqinin məxfilik siyasəti: hansı məlumatlar işlənir, harada saxlanılır və necə silinir. Reklam və izləmə yoxdur."
 msgstr "Политика конфиденциальности мобильного приложения Fixit Remote: какие данные обрабатываются, где хранятся и как удаляются. Без рекламы и отслеживания."
+
+#: inc/seo.php
+msgid "FIXIT Ticket mobil tətbiqinin məxfilik siyasəti: hansı məlumatlar işlənir, harada saxlanılır və hesab necə silinir. Reklam və izləmə yoxdur."
+msgstr "Политика конфиденциальности мобильного приложения FIXIT Ticket: какие данные обрабатываются, где хранятся и как удалить учётную запись. Без рекламы и отслеживания."
 
 #: inc/seo.php
 msgid "İKT xidmətləri və məhsulları"

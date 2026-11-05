@@ -224,6 +224,12 @@ function fixit_create_pages() {
 			'title'    => 'Fixit Remote — Məxfilik siyasəti',
 			'template' => 'template-remote-privacy.php',
 		),
+		// FIXIT Ticket Android tətbiqi: Google Play «Privacy policy» və
+		// «Delete account URL» bu ünvanı göstərir. Menyuya düşmür.
+		'fixit-ticket-mexfilik' => array(
+			'title'    => 'FIXIT Ticket: Məxfilik siyasəti',
+			'template' => 'template-ticket-privacy.php',
+		),
 	);
 
 	$ids = array();

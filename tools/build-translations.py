@@ -40,7 +40,8 @@ FRONT = [
     '404.php', 'footer.php', 'front-page.php', 'header.php', 'index.php',
     'page.php', 'searchform.php', 'single.php', 'single-fixit_product.php',
     'template-about.php', 'template-contact.php', 'template-products.php',
-    'template-remote.php', 'template-remote-privacy.php', 'template-services.php',
+    'template-remote.php', 'template-remote-privacy.php', 'template-ticket-privacy.php',
+    'template-services.php',
     'inc/faq.php', 'inc/product-data.php', 'inc/seo.php', 'inc/contact-form.php',
     'inc/i18n.php',
 ]

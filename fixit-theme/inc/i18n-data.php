@@ -32,6 +32,7 @@ function fixit_title_translations() {
 		'Uzaqdan qoşulma'               => array( 'en' => 'Remote access', 'ru' => 'Удалённый доступ' ),
 		'Uzaqdan dəstək'                => array( 'en' => 'Remote support', 'ru' => 'Удалённая поддержка' ),
 		'Fixit Remote — Məxfilik siyasəti' => array( 'en' => 'Fixit Remote — Privacy policy', 'ru' => 'Fixit Remote — Политика конфиденциальности' ),
+		'FIXIT Ticket: Məxfilik siyasəti' => array( 'en' => 'FIXIT Ticket: Privacy policy', 'ru' => 'FIXIT Ticket: Политика конфиденциальности' ),
 
 		// Məhsullar.
 		'FIXIT Sorğu Sistemi'           => array( 'en' => 'FIXIT Helpdesk', 'ru' => 'FIXIT Служба заявок' ),
