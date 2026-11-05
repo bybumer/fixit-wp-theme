@@ -184,6 +184,9 @@ function fixit_template_description( $post_id ) {
 
 		case 'template-remote-privacy.php':
 			return __( 'Fixit Remote mobil tətbiqinin məxfilik siyasəti: hansı məlumatlar işlənir, harada saxlanılır və necə silinir. Reklam və izləmə yoxdur.', 'fixit' );
+
+		case 'template-ticket-privacy.php':
+			return __( 'FIXIT Ticket mobil tətbiqinin məxfilik siyasəti: hansı məlumatlar işlənir, harada saxlanılır və hesab necə silinir. Reklam və izləmə yoxdur.', 'fixit' );
 	}
 
 	return '';
