@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.15.3' );
+define( 'FIXIT_VERSION', '1.15.4' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -179,6 +179,7 @@ require_once get_template_directory() . '/inc/remote-pricing.php';  // Fixit Rem
 require_once get_template_directory() . '/inc/remote-trial.php';    // Fixit Remote: 14 günlük sınaq müraciəti, məktub, admin izləmə
 require_once get_template_directory() . '/inc/remote-trial-admin.php'; // Admin: sınaq müraciətləri, qiymət və sınaq ayarları
 require_once get_template_directory() . '/inc/contact-form.php';  // Əlaqə formu (plagin tələb etmir)
+require_once get_template_directory() . '/inc/smtp.php';          // E-poçt: məktublar SMTP ilə (Parametrlər → E-poçt)
 require_once get_template_directory() . '/inc/demo-content.php';  // İlk quraşdırmada səhifə/menyu yaradılması
 require_once get_template_directory() . '/inc/faq.php';           // Sual-cavab məzmunu (səhifə + schema)
 require_once get_template_directory() . '/inc/seo.php';           // Meta teqlər və Schema.org

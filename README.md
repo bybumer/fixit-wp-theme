@@ -326,6 +326,18 @@ Fixit Remote reposundadır (`central/FixitRemote.Central/TrialTicket.cs`).
 1.15.2-yə qədər istifadə olunan GitHub açarı (`fixit_remote_repo_token`) admin
 panel ilk açılanda bazadan silinir.
 
+### E-poçt (SMTP)
+
+Admin → **Parametrlər → E-poçt (SMTP)** (`inc/smtp.php`). Saytın bütün məktubları
+(sınaq bələdçisi, müraciət bildirişləri, əlaqə forması) bu poçt qutusundan gedir;
+göndərən ünvan həmin qutudur (`wp_mail_from` + `phpmailer_init`). Hazır seçimlər:
+Hostinger (smtp.hostinger.com:465 SSL), Google Workspace/Gmail (587 TLS, «App
+password» lazımdır), Microsoft 365, Yandex, Zoho, Mail.ru. Parol bazada şifrəli
+(sodium secretbox, açar `wp_salt('auth')`-dan) saxlanılır və səhifədə göstərilmir;
+istəsəniz `wp-config.php`-də `define( 'FIXIT_SMTP_PASSWORD', '...' );` yazın, onda
+bazaya düşmür. Səhifədə «Sınaq məktubu göndər», son uğurlu məktub və son xəta var.
+SMTP söndürülü olanda WordPress hostinqin `mail()` funksiyası ilə göndərir.
+
 ## 8. Kukilər və məxfilik
 
 Saytın aşağısında razılıq zolağı: «Hamısını qəbul et», «Yalnız zəruri», «Ayarlar»

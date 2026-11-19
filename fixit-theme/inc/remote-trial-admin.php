@@ -445,6 +445,9 @@ function fixit_trial_action_box( $post ) {
 	if ( ! $key ) {
 		$checks[] = array( 'warn', __( 'Saytın imza açarı yaradılmayıb: məktubda yükləmə linki olmayacaq', 'fixit' ) );
 	}
+	if ( function_exists( 'fixit_smtp_ready' ) && ! fixit_smtp_ready() ) {
+		$checks[] = array( 'warn', __( 'SMTP qurulmayıb: məktub spama düşə bilər (Parametrlər → E-poçt)', 'fixit' ) );
+	}
 	?>
 	<ul style="margin:0 0 12px">
 		<?php foreach ( $checks as $check ) : ?>
@@ -599,7 +602,11 @@ function fixit_trial_settings_page() {
 				<tr>
 					<th scope="row"><label for="notify"><?php esc_html_e( 'Bildiriş ünvanı', 'fixit' ); ?></label></th>
 					<td><input type="email" name="notify" id="notify" value="<?php echo esc_attr( $s['notify'] ); ?>" class="regular-text">
-					<p class="description"><?php esc_html_e( 'Yeni müraciət haqqında məktub bura gəlir. Müştəri məktuba cavab yazanda da bu ünvana düşür.', 'fixit' ); ?></p></td>
+					<p class="description"><?php esc_html_e( 'Yeni müraciət haqqında məktub bura gəlir. Müştəri məktuba cavab yazanda da bu ünvana düşür.', 'fixit' ); ?></p>
+					<?php if ( function_exists( 'fixit_smtp_status' ) ) : ?>
+						<?php $fixit_mail = fixit_smtp_status(); ?>
+						<p style="color:<?php echo 'ok' === $fixit_mail[0] ? '#1a7f37' : '#8a5300'; ?>"><?php echo esc_html( $fixit_mail[1] ); ?> · <a href="<?php echo esc_url( fixit_smtp_page_url() ); ?>"><?php esc_html_e( 'E-poçt ayarları', 'fixit' ); ?></a></p>
+					<?php endif; ?></td>
 				</tr>
 				<tr>
 					<th scope="row"><label for="server"><?php esc_html_e( 'Paketi verən mərkəz', 'fixit' ); ?></label></th>
