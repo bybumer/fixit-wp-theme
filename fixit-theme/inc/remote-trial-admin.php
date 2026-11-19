@@ -520,14 +520,15 @@ function fixit_trial_settings_page() {
 			<?php wp_nonce_field( 'fixit_trial_settings' ); ?>
 
 			<h2><?php esc_html_e( 'Qiymətlər', 'fixit' ); ?></h2>
-			<p class="description"><?php esc_html_e( 'Qiymət ildə, idarə olunan kompüter sayına görədir. Saytda paketin illik qiyməti və kompüter başına aylıq qiymət görünür. Paketdən artıq kompüter 10-luq əlavə ilə həmin paketin qiymətinə hesablanır.', 'fixit' ); ?></p>
+			<p class="description"><?php esc_html_e( 'Qiymət kompüter başına, ayda yazılır. Saytda yuxarıda «Aylıq / İllik» seçimi var: aylıqda paketin aylıq məbləği, illikdə illik məbləği görünür. Paketdən artıq kompüter 10-luq əlavə ilə həmin paketin qiymətinə hesablanır.', 'fixit' ); ?></p>
 
 			<table class="widefat striped" style="max-width:720px;margin:12px 0 18px">
 				<thead><tr>
 					<th><?php esc_html_e( 'Paket', 'fixit' ); ?></th>
 					<th><?php esc_html_e( 'Kompüterə qədər', 'fixit' ); ?></th>
 					<th><?php esc_html_e( 'Kompüter başına, ayda (AZN)', 'fixit' ); ?></th>
-					<th><?php esc_html_e( 'Paketin illik qiyməti', 'fixit' ); ?></th>
+					<th><?php esc_html_e( 'Paket, ayda', 'fixit' ); ?></th>
+					<th><?php esc_html_e( 'Paket, ildə', 'fixit' ); ?></th>
 				</tr></thead>
 				<tbody>
 					<?php foreach ( $p['tiers'] as $i => $tier ) : ?>
@@ -535,6 +536,7 @@ function fixit_trial_settings_page() {
 							<td><strong><?php echo esc_html( $names[ $tier['key'] ] ); ?></strong></td>
 							<td><input type="number" min="1" name="tiers[<?php echo esc_attr( $i ); ?>][max]" value="<?php echo esc_attr( $tier['max'] ); ?>" style="width:100px"></td>
 							<td><input type="number" min="0" step="0.05" name="tiers[<?php echo esc_attr( $i ); ?>][price]" value="<?php echo esc_attr( $tier['price'] ); ?>" style="width:100px"></td>
+							<td><?php echo esc_html( fixit_pricing_money( $tier['month'] ) ); ?></td>
 							<td><?php echo esc_html( fixit_pricing_money( $tier['year'] ) ); ?></td>
 						</tr>
 					<?php endforeach; ?>
@@ -542,6 +544,26 @@ function fixit_trial_settings_page() {
 			</table>
 
 			<table class="form-table" role="presentation">
+				<tr>
+					<th scope="row"><label for="gift"><?php esc_html_e( 'İllik ödənişdə hədiyyə', 'fixit' ); ?></label></th>
+					<td>
+						<select name="gift" id="gift">
+							<?php for ( $g = 0; $g <= 3; $g++ ) : ?>
+								<option value="<?php echo esc_attr( $g ); ?>" <?php selected( $p['gift'], $g ); ?>>
+									<?php
+									echo esc_html(
+										0 === $g
+											? __( 'Yoxdur: illik = 12 ay', 'fixit' )
+											/* translators: 1: hədiyyə ay, 2: ödənilən ay, 3: faiz */
+											: sprintf( __( '%1$d ay hədiyyə: illik = %2$d ay (%3$d%% qənaət)', 'fixit' ), $g, 12 - $g, (int) round( $g / 12 * 100 ) )
+									);
+									?>
+								</option>
+							<?php endfor; ?>
+						</select>
+						<p class="description"><?php esc_html_e( 'İllik ödəyənə endirim. Seçiləndə saytda «İllik ödəniş» düyməsinin yanında qənaət faizi görünür.', 'fixit' ); ?></p>
+					</td>
+				</tr>
 				<tr>
 					<th scope="row"><?php esc_html_e( 'Çoxillik müqavilə endirimi', 'fixit' ); ?></th>
 					<td>
@@ -658,6 +680,7 @@ function fixit_trial_settings_save() {
 		'fixit_remote_pricing',
 		array(
 			'show'   => ! empty( $_POST['show'] ),
+			'gift'   => isset( $_POST['gift'] ) ? min( 3, absint( $_POST['gift'] ) ) : 0,
 			'multi2' => isset( $_POST['multi2'] ) ? absint( $_POST['multi2'] ) : 0,
 			'multi3' => isset( $_POST['multi3'] ) ? absint( $_POST['multi3'] ) : 0,
 			'tiers'  => $tiers,

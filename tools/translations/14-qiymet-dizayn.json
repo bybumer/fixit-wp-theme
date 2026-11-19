@@ -1,0 +1,146 @@
+{
+ "Kiçik ofis üçün": {
+  "en": "For a small office",
+  "ru": "Для небольшого офиса"
+ },
+ "Böyüyən komanda üçün": {
+  "en": "For a growing team",
+  "ru": "Для растущей команды"
+ },
+ "Orta şirkət üçün": {
+  "en": "For a mid-sized company",
+  "ru": "Для средней компании"
+ },
+ "Filialları olan şirkət üçün": {
+  "en": "For a company with branches",
+  "ru": "Для компании с филиалами"
+ },
+ "Böyük təşkilat üçün": {
+  "en": "For a large organization",
+  "ru": "Для крупной организации"
+ },
+ "Prioritet": {
+  "en": "Priority",
+  "ru": "Приоритетная"
+ },
+ "Tam quraşdırma": {
+  "en": "Full installation",
+  "ru": "Полная установка"
+ },
+ "Dəstək": {
+  "en": "Support",
+  "ru": "Поддержка"
+ },
+ "E-poçt, iş günləri": {
+  "en": "Email, business days",
+  "ru": "Почта, рабочие дни"
+ },
+ "E-poçt və telefon": {
+  "en": "Email and phone",
+  "ru": "Почта и телефон"
+ },
+ "Quraşdırma": {
+  "en": "Installation",
+  "ru": "Установка"
+ },
+ "Bələdçi ilə": {
+  "en": "With our guide",
+  "ru": "По руководству"
+ },
+ "Uzaqdan kömək": {
+  "en": "Remote help",
+  "ru": "Удалённая помощь"
+ },
+ "Mütəxəssisimizlə": {
+  "en": "With our specialist",
+  "ru": "С нашим специалистом"
+ },
+ "SSO / LDAP qoşulması mütəxəssisimizlə": {
+  "en": "SSO / LDAP setup with our specialist",
+  "ru": "Подключение SSO / LDAP с нашим специалистом"
+ },
+ "Ehtiyat nüsxə və bərpa planı": {
+  "en": "Backup and recovery plan",
+  "ru": "План резервного копирования и восстановления"
+ },
+ "%s%% qənaət": {
+  "en": "Save %s%%",
+  "ru": "Экономия %s%%"
+ },
+ "ayda": {
+  "en": "per month",
+  "ru": "в месяц"
+ },
+ "Qiymət idarə olunan kompüterlərin sayından asılıdır. Komandanızın hamısı işləyə bilər, bütün imkanlar hər paketdədir. Aylıq və ya illik ödəyə bilərsiniz.": {
+  "en": "The price depends on the number of managed computers. Your whole team can work in the system and every package includes all features. Pay monthly or yearly.",
+  "ru": "Цена зависит от числа управляемых компьютеров. Работать может вся ваша команда, все возможности входят в каждый пакет. Оплата помесячно или за год."
+ },
+ "Ödəniş dövrü": {
+  "en": "Billing period",
+  "ru": "Период оплаты"
+ },
+ "Aylıq ödəniş": {
+  "en": "Monthly",
+  "ru": "Помесячно"
+ },
+ "İllik ödəniş": {
+  "en": "Yearly",
+  "ru": "За год"
+ },
+ "kompüter başına %s": {
+  "en": "%s per computer",
+  "ru": "%s за компьютер"
+ },
+ "{tier} paketi{extra}": {
+  "en": "{tier} package{extra}",
+  "ru": "Пакет {tier}{extra}"
+ },
+ "Aylıq ödənişdə: {v}": {
+  "en": "Paid monthly: {v}",
+  "ru": "При оплате помесячно: {v}"
+ },
+ "İllik ödənişdə: {v}": {
+  "en": "Paid yearly: {v}",
+  "ru": "При оплате за год: {v}"
+ },
+ "Sizə uyğun paket": {
+  "en": "Your package",
+  "ru": "Подходящий пакет"
+ },
+ "Hər paketə daxildir": {
+  "en": "Included in every package",
+  "ru": "Входит в каждый пакет"
+ },
+ "Paketlər nə ilə fərqlənir": {
+  "en": "How the packages differ",
+  "ru": "Чем отличаются пакеты"
+ },
+ "Kompüterə qədər": {
+  "en": "Computers, up to",
+  "ru": "Компьютеров, до"
+ },
+ "Qiymət": {
+  "en": "Price",
+  "ru": "Цена"
+ },
+ "Hər əlavə %s kompüter": {
+  "en": "Each extra %s computers",
+  "ru": "Каждые дополнительные %s компьютеров"
+ },
+ "Var": {
+  "en": "Included",
+  "ru": "Есть"
+ },
+ "Yoxdur": {
+  "en": "Not included",
+  "ru": "Нет"
+ },
+ "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, aylıq və ya illik ödəyə bilərsiniz.": {
+  "en": "The price depends on the number of managed computers, with no limit on operators. Every package includes all features, and you can pay monthly or yearly.",
+  "ru": "Цена зависит от числа управляемых компьютеров, число операторов не ограничено. Все возможности входят в каждый пакет, оплата помесячно или за год."
+ },
+ "%1$s × %2$d ay": {
+  "en": "%1$s × %2$d months",
+  "ru": "%1$s × %2$d мес."
+ }
+}

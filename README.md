@@ -276,9 +276,17 @@ Admin panelin dili dəyişmir — o, WordPress ayarlarındakı dildə qalır.
 
 **Qiymət modeli:** idarə olunan kompüter (agent) sayına görə, operator sayı
 məhdud deyil. Paketlər 25 / 50 / 100 / 250 / 500 kompüter; kompüter başına
-aylıq qiymət həcm artdıqca düşür, ödəniş illikdir. Paketdən artıq kompüter
+aylıq qiymət həcm artdıqca düşür. Paketdən artıq kompüter
 10-luq əlavə ilə həmin paketin qiymətinə alınır (qiymət sıçrayış etmir),
 kalkulyator ən sərfəli variantı özü seçir. 500-dən çox: fərdi təklif.
+
+**Aylıq / illik:** bölmənin yuxarısında seçim var, standart olaraq aylıq
+məbləğlər görünür (paket kartları, kalkulyator, müqayisə cədvəli birlikdə
+dəyişir). İllik = aylıq × 12. Ayarda «İllik ödənişdə hədiyyə» (0-3 ay) seçilsə,
+illik = aylıq × (12 − hədiyyə) olur və «İllik ödəniş» düyməsinin yanında
+qənaət faizi görünür. Kartlarda yalnız qiymət və paketin kimə uyğun olduğu
+var; dəstək səviyyələri ayrıca «Paketlər nə ilə fərqlənir» cədvəlindədir
+(`fixit_pricing_compare()`).
 
 Rəqəmlər admin paneldə dəyişir. **Qiymətlər saytda yalnız «Qiymətləri saytda
 göstər» seçiləndən sonra görünür**, o vaxta qədər paketlər «qiymət sorğu ilə»

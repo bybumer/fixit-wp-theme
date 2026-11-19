@@ -405,11 +405,32 @@
 	}
 
 	/* ---------------------------------------------
-	   9. Fixit Remote: qiymət kalkulyatoru
+	   9. Fixit Remote: aylıq / illik seçimi və qiymət kalkulyatoru
 	   Hesab inc/remote-pricing.php → fixit_pricing_quote() ilə eynidir:
 	   hər paket üçün «paket + 10-luq əlavələr» hesablanır, ən ucuzu seçilir.
+	   Aylıq = kompüter × qiymət; illik = aylıq × data-months.
 	   --------------------------------------------- */
+	var priceSection = doc.querySelector('.price-section');
+	var billToggle = priceSection ? priceSection.querySelector('.bill-toggle') : null;
 	var calc = doc.querySelector('[data-price-calc]');
+	var renderCalc = null;
+
+	var billing = function () {
+		return priceSection && priceSection.getAttribute('data-billing') === 'year' ? 'year' : 'month';
+	};
+
+	if (billToggle) {
+		var billButtons = billToggle.querySelectorAll('[data-bill-set]');
+		billToggle.hidden = false;
+		billButtons.forEach(function (btn) {
+			btn.addEventListener('click', function () {
+				var mode = btn.getAttribute('data-bill-set');
+				priceSection.setAttribute('data-billing', mode);
+				billButtons.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+				if (renderCalc) renderCalc();
+			});
+		});
+	}
 
 	if (calc) {
 		var tiers = [];
@@ -420,10 +441,13 @@
 		} catch (e) {}
 
 		var step = parseInt(calc.getAttribute('data-step'), 10) || 10;
+		var months = parseInt(calc.getAttribute('data-months'), 10) || 12;
 		var range = calc.querySelector('input[type=range]');
 		var num = calc.querySelector('input[type=number]');
-		var out = calc.querySelector('.price-calc__out');
-		var lang = doc.documentElement.lang || 'az';
+		var outTier = calc.querySelector('[data-calc="tier"]');
+		var outBig = calc.querySelector('[data-calc="big"]');
+		var outAlt = calc.querySelector('[data-calc="alt"]');
+		var attr = function (n) { return calc.getAttribute('data-' + n) || ''; };
 
 		// Ayırıcılar serverdən gəlir (fixit_pricing_separators): PHP ilə eyni format.
 		var sep = ['.', ','];
@@ -436,46 +460,56 @@
 			return parts.join(sep[0]) + '\u00a0AZN';
 		};
 
-		var esc = function (t) {
-			return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
-		};
-
 		var quote = function (n) {
 			var best = null;
 			if (!tiers.length || n > tiers[tiers.length - 1].max) return null;
 			tiers.forEach(function (t) {
 				var extra = Math.max(0, Math.ceil((n - t.max) / step) * step);
-				var year = Math.round((t.max + extra) * t.price * 12 * 100) / 100;
-				if (!best || year < best.year) best = { tier: t, extra: extra, year: year };
+				var month = Math.round((t.max + extra) * t.price * 100) / 100;
+				if (!best || month < best.month) best = { tier: t, extra: extra, month: month };
 			});
+			best.year = Math.round(best.month * months * 100) / 100;
 			return best;
 		};
 
-		var render = function (n) {
-			n = Math.max(1, Math.min(100000, parseInt(n, 10) || 1));
-			var q = quote(n);
-			var html;
-			if (!q) {
-				html = esc(calc.getAttribute('data-tpl-custom') || '').replace('{n}', '<b>' + n + '</b>');
-			} else {
-				var extra = q.extra ? esc(calc.getAttribute('data-tpl-extra') || '').replace('{extra}', q.extra) : '';
-				html = esc(calc.getAttribute('data-tpl') || '')
-					.replace('{n}', '<b>' + n + '</b>')
-					.replace('{tier}', '<b>' + esc(names[q.tier.key] || q.tier.key) + '</b>')
-					.replace('{extra}', extra)
-					.replace('{year}', '<b>' + money(q.year) + '</b>')
-					.replace('{month}', money(Math.round(q.year / 12 * 100) / 100));
-			}
-			out.innerHTML = html;
+		var current = function () {
+			return Math.max(1, Math.min(100000, parseInt(num.value, 10) || 1));
 		};
 
-		if (range && num && out) {
-			range.addEventListener('input', function () { num.value = range.value; render(range.value); });
+		renderCalc = function () {
+			var n = current();
+			var q = quote(n);
+			if (!q) {
+				outTier.textContent = attr('tpl-custom-title');
+				outBig.textContent = '';
+				outAlt.textContent = attr('tpl-custom').replace('{n}', n);
+				return;
+			}
+			var extra = q.extra ? attr('tpl-extra').replace('{extra}', q.extra) : '';
+			outTier.textContent = attr('tpl-tier').replace('{tier}', names[q.tier.key] || q.tier.key).replace('{extra}', extra);
+
+			var year = billing() === 'year';
+			outBig.textContent = '';
+			var b = doc.createElement('b');
+			b.textContent = money(year ? q.year : q.month);
+			var small = doc.createElement('small');
+			small.textContent = attr(year ? 'per-year' : 'per-month');
+			outBig.appendChild(b);
+			outBig.appendChild(small);
+			outAlt.textContent = year
+				? attr('tpl-alt-month').replace('{v}', money(q.month))
+				: attr('tpl-alt-year').replace('{v}', money(q.year));
+		};
+
+		if (range && num && outTier && outBig && outAlt) {
+			range.addEventListener('input', function () { num.value = range.value; renderCalc(); });
 			num.addEventListener('input', function () {
 				if (parseInt(num.value, 10) <= parseInt(range.max, 10)) range.value = num.value;
-				render(num.value);
+				renderCalc();
 			});
-			render(num.value);
+			renderCalc();
+		} else {
+			renderCalc = null;
 		}
 	}
 

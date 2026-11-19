@@ -770,12 +770,12 @@ function fixit_trial_mail_html( $name, $link ) {
 
 				<div style="font-size:17px;font-weight:700;margin:0 0 10px"><?php esc_html_e( 'Qiymətlər', 'fixit' ); ?></div>
 				<?php if ( $pricing['show'] ) : ?>
-					<p style="margin:0 0 10px;font-size:14px;color:#3b4658"><?php esc_html_e( 'Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, ödəniş illikdir.', 'fixit' ); ?></p>
+					<p style="margin:0 0 10px;font-size:14px;color:#3b4658"><?php esc_html_e( 'Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, aylıq və ya illik ödəyə bilərsiniz.', 'fixit' ); ?></p>
 					<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;font-size:14px;margin:0 0 8px">
 						<?php foreach ( $pricing['tiers'] as $tier ) : ?>
 							<tr>
 								<td style="padding:8px 0;border-bottom:1px solid #eef1f6"><b><?php echo esc_html( $names[ $tier['key'] ] ); ?></b><br><span style="color:#5b6678"><?php echo esc_html( sprintf( /* translators: %s: say */ __( '%s kompüterə qədər', 'fixit' ), number_format_i18n( $tier['max'] ) ) ); ?></span></td>
-								<td style="padding:8px 0;border-bottom:1px solid #eef1f6;text-align:right;white-space:nowrap"><b><?php echo esc_html( fixit_pricing_money( $tier['year'] ) ); ?></b> <?php esc_html_e( 'ildə', 'fixit' ); ?><br><span style="color:#5b6678"><?php echo esc_html( sprintf( /* translators: %s: qiymət */ __( 'ayda kompüter başına %s', 'fixit' ), fixit_pricing_money( $tier['price'] ) ) ); ?></span></td>
+								<td style="padding:8px 0;border-bottom:1px solid #eef1f6;text-align:right;white-space:nowrap"><b><?php echo esc_html( fixit_pricing_money( $tier['month'] ) ); ?></b> <?php esc_html_e( 'ayda', 'fixit' ); ?><br><span style="color:#5b6678"><?php echo esc_html( fixit_pricing_money( $tier['year'] ) ); ?> <?php esc_html_e( 'ildə', 'fixit' ); ?></span></td>
 							</tr>
 						<?php endforeach; ?>
 					</table>

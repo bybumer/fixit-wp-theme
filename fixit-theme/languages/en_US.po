@@ -3325,32 +3325,64 @@ msgid "Müəssisə"
 msgstr "Enterprise"
 
 #: inc/remote-pricing.php
-msgid "E-poçt ilə dəstək, iş günləri"
-msgstr "Email support on business days"
+msgid "Kiçik ofis üçün"
+msgstr "For a small office"
 
 #: inc/remote-pricing.php
-msgid "E-poçt və telefonla dəstək"
-msgstr "Email and phone support"
+msgid "Böyüyən komanda üçün"
+msgstr "For a growing team"
 
 #: inc/remote-pricing.php
-msgid "Uzaqdan quraşdırma köməyi"
-msgstr "Remote help with installation"
+msgid "Orta şirkət üçün"
+msgstr "For a mid-sized company"
 
 #: inc/remote-pricing.php
-msgid "Quraşdırma və SSO / LDAP qoşulması mütəxəssisimizlə"
-msgstr "Installation and SSO / LDAP setup with our specialist"
+msgid "Filialları olan şirkət üçün"
+msgstr "For a company with branches"
+
+#: inc/remote-pricing.php
+msgid "Böyük təşkilat üçün"
+msgstr "For a large organization"
+
+#: inc/remote-pricing.php
+msgid "Prioritet"
+msgstr "Priority"
+
+#: inc/remote-pricing.php
+msgid "Tam quraşdırma"
+msgstr "Full installation"
+
+#: inc/remote-pricing.php
+msgid "E-poçt, iş günləri"
+msgstr "Email, business days"
+
+#: inc/remote-pricing.php
+msgid "E-poçt və telefon"
+msgstr "Email and phone"
+
+#: inc/remote-pricing.php
+msgid "Bələdçi ilə"
+msgstr "With our guide"
+
+#: inc/remote-pricing.php
+msgid "Uzaqdan kömək"
+msgstr "Remote help"
+
+#: inc/remote-pricing.php
+msgid "Mütəxəssisimizlə"
+msgstr "With our specialist"
+
+#: inc/remote-pricing.php
+msgid "SSO / LDAP qoşulması mütəxəssisimizlə"
+msgstr "SSO / LDAP setup with our specialist"
 
 #: inc/remote-pricing.php
 msgid "İT komandanız üçün onlayn təlim"
 msgstr "Online training for your IT team"
 
 #: inc/remote-pricing.php
-msgid "Prioritet dəstək"
-msgstr "Priority support"
-
-#: inc/remote-pricing.php
-msgid "Tam quraşdırma, ehtiyat nüsxə və bərpa planı"
-msgstr "Full installation, backup and recovery plan"
+msgid "Ehtiyat nüsxə və bərpa planı"
+msgstr "Backup and recovery plan"
 
 #: inc/remote-pricing.php
 msgid "Filial serverləri üçün ayrıca lisenziya açarları"
@@ -3389,36 +3421,48 @@ msgid "Kompüter silinəndə və ya bloklananda yeri boşalır"
 msgstr "Removing or blocking a computer frees its slot"
 
 #: inc/remote-pricing.php
-msgid "Kompüter sayına görə ödəyirsiniz, operator sayına görə yox"
-msgstr "You pay per computer, not per operator"
-
-#: inc/remote-pricing.php
-msgid "Qiymət idarə olunan kompüterlərin sayından asılıdır. Komandanızın hamısı işləyə bilər, bütün imkanlar hər paketdədir. Ödəniş illikdir."
-msgstr "The price depends on the number of managed computers. Your whole team can work in the system and every package includes all features. Billing is annual."
-
-#: inc/remote-pricing.php
-msgid "Ən çox seçilən"
-msgstr "Most popular"
-
-#: inc/remote-pricing.php
-msgid "%s kompüterə qədər"
-msgstr "Up to %s computers"
+msgid "ayda"
+msgstr "per month"
 
 #: inc/remote-pricing.php
 msgid "ildə"
 msgstr "per year"
 
 #: inc/remote-pricing.php
-msgid "ayda kompüter başına %s"
-msgstr "%s per computer per month"
+msgid "%s%% qənaət"
+msgstr "Save %s%%"
 
 #: inc/remote-pricing.php
-msgid "%s paketindəki hər şey"
-msgstr "Everything in %s"
+msgid "Kompüter sayına görə ödəyirsiniz, operator sayına görə yox"
+msgstr "You pay per computer, not per operator"
 
 #: inc/remote-pricing.php
-msgid "Hər əlavə %1$s kompüter: ildə %2$s"
-msgstr "Each extra %1$s computers: %2$s per year"
+msgid "Qiymət idarə olunan kompüterlərin sayından asılıdır. Komandanızın hamısı işləyə bilər, bütün imkanlar hər paketdədir. Aylıq və ya illik ödəyə bilərsiniz."
+msgstr "The price depends on the number of managed computers. Your whole team can work in the system and every package includes all features. Pay monthly or yearly."
+
+#: inc/remote-pricing.php
+msgid "Ödəniş dövrü"
+msgstr "Billing period"
+
+#: inc/remote-pricing.php
+msgid "Aylıq ödəniş"
+msgstr "Monthly"
+
+#: inc/remote-pricing.php
+msgid "İllik ödəniş"
+msgstr "Yearly"
+
+#: inc/remote-pricing.php
+msgid "Ən çox seçilən"
+msgstr "Most popular"
+
+#: inc/remote-pricing.php
+msgid "kompüter başına %s"
+msgstr "%s per computer"
+
+#: inc/remote-pricing.php
+msgid "%1$s × %2$d ay"
+msgstr "%1$s × %2$d months"
 
 #: inc/remote-pricing.php
 msgid "Qiymət sorğu ilə"
@@ -3429,6 +3473,10 @@ msgid "təklifi sınaqla birlikdə göndəririk"
 msgstr "we send the quote together with the trial"
 
 #: inc/remote-pricing.php
+msgid "%s kompüterə qədər"
+msgstr "Up to %s computers"
+
+#: inc/remote-pricing.php
 msgid "Fərdi təklif"
 msgstr "Custom offer"
 
@@ -3437,20 +3485,24 @@ msgid "%s kompüterdən çox"
 msgstr "More than %s computers"
 
 #: inc/remote-pricing.php
-msgid "Böyük parklar üçün"
-msgstr "For large fleets"
-
-#: inc/remote-pricing.php
 msgid "həcmə görə qiymət, çoxillik müqavilə, bir neçə filial"
 msgstr "volume pricing, multi-year contracts, several branches"
 
 #: inc/remote-pricing.php
-msgid "{n} kompüter: {tier} paketi{extra}. İldə {year}, ayda təxminən {month}."
-msgstr "{n} computers: {tier} package{extra}. {year} per year, about {month} per month."
+msgid "{tier} paketi{extra}"
+msgstr "{tier} package{extra}"
 
 #: inc/remote-pricing.php
 msgid " və {extra} əlavə kompüter"
 msgstr " plus {extra} extra computers"
+
+#: inc/remote-pricing.php
+msgid "Aylıq ödənişdə: {v}"
+msgstr "Paid monthly: {v}"
+
+#: inc/remote-pricing.php
+msgid "İllik ödənişdə: {v}"
+msgstr "Paid yearly: {v}"
 
 #: inc/remote-pricing.php
 msgid "{n} kompüter üçün fərdi təklif hazırlayırıq: bizimlə əlaqə saxlayın."
@@ -3463,6 +3515,34 @@ msgstr "How many computers do you have?"
 #: inc/remote-pricing.php
 msgid "Kompüter sayı"
 msgstr "Number of computers"
+
+#: inc/remote-pricing.php
+msgid "Sizə uyğun paket"
+msgstr "Your package"
+
+#: inc/remote-pricing.php
+msgid "Hər paketə daxildir"
+msgstr "Included in every package"
+
+#: inc/remote-pricing.php
+msgid "Paketlər nə ilə fərqlənir"
+msgstr "How the packages differ"
+
+#: inc/remote-pricing.php
+msgid "Kompüterə qədər"
+msgstr "Computers, up to"
+
+#: inc/remote-pricing.php
+msgid "Hər əlavə %s kompüter"
+msgstr "Each extra %s computers"
+
+#: inc/remote-pricing.php
+msgid "Var"
+msgstr "Included"
+
+#: inc/remote-pricing.php
+msgid "Yoxdur"
+msgstr "Not included"
 
 #: inc/remote-pricing.php
 msgid "2 illik müqavilədə %1$s%%, 3 illikdə %2$s%% endirim."
@@ -3713,8 +3793,8 @@ msgid "Ətraflı bələdçi və problem olarsa nə etməli:"
 msgstr "Full guide and what to do if something goes wrong:"
 
 #: inc/remote-trial.php
-msgid "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, ödəniş illikdir."
-msgstr "The price is based on the number of managed computers, with no limit on operators. Every package includes all features; billing is annual."
+msgid "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, aylıq və ya illik ödəyə bilərsiniz."
+msgstr "The price depends on the number of managed computers, with no limit on operators. Every package includes all features, and you can pay monthly or yearly."
 
 #: inc/remote-trial.php
 msgid "Paketdən artıq kompüter: hər %s kompüter həmin paketin qiyməti ilə."
@@ -4477,9 +4557,61 @@ msgid "Fixit Remote öz serverinizdə və ya bizim buludda işləyir, bağlantı
 msgstr "Fixit Remote runs on your own server or in our cloud, and connections don't pass through outside services. You decide centrally who can connect to which computer and see every session in the log."
 
 #: tools/translations
+msgid "E-poçt ilə dəstək, iş günləri"
+msgstr "Email support on business days"
+
+#: tools/translations
+msgid "E-poçt və telefonla dəstək"
+msgstr "Email and phone support"
+
+#: tools/translations
+msgid "Uzaqdan quraşdırma köməyi"
+msgstr "Remote help with installation"
+
+#: tools/translations
+msgid "Quraşdırma və SSO / LDAP qoşulması mütəxəssisimizlə"
+msgstr "Installation and SSO / LDAP setup with our specialist"
+
+#: tools/translations
+msgid "Prioritet dəstək"
+msgstr "Priority support"
+
+#: tools/translations
+msgid "Tam quraşdırma, ehtiyat nüsxə və bərpa planı"
+msgstr "Full installation, backup and recovery plan"
+
+#: tools/translations
+msgid "Qiymət idarə olunan kompüterlərin sayından asılıdır. Komandanızın hamısı işləyə bilər, bütün imkanlar hər paketdədir. Ödəniş illikdir."
+msgstr "The price depends on the number of managed computers. Your whole team can work in the system and every package includes all features. Billing is annual."
+
+#: tools/translations
+msgid "ayda kompüter başına %s"
+msgstr "%s per computer per month"
+
+#: tools/translations
+msgid "%s paketindəki hər şey"
+msgstr "Everything in %s"
+
+#: tools/translations
+msgid "Hər əlavə %1$s kompüter: ildə %2$s"
+msgstr "Each extra %1$s computers: %2$s per year"
+
+#: tools/translations
+msgid "Böyük parklar üçün"
+msgstr "For large fleets"
+
+#: tools/translations
+msgid "{n} kompüter: {tier} paketi{extra}. İldə {year}, ayda təxminən {month}."
+msgstr "{n} computers: {tier} package{extra}. {year} per year, about {month} per month."
+
+#: tools/translations
 msgid "Server sizin avadanlığınızda və ya öz buludunuzda qurulur."
 msgstr "The server is installed on your hardware or in your own cloud."
 
 #: tools/translations
 msgid "Formanı doldurun: qurulum bələdçisini, serverin yükləmə linkini və qiymətləri dərhal e-poçtunuza göndəririk. Server öz avadanlığınızda qurulur, sınaq müddətində bütün imkanlar açıqdır."
 msgstr "Fill in the form and we will immediately email you the installation guide, the server download link and pricing. The server is installed on your own hardware and every feature is open during the trial."
+
+#: tools/translations
+msgid "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, ödəniş illikdir."
+msgstr "The price is based on the number of managed computers, with no limit on operators. Every package includes all features; billing is annual."
