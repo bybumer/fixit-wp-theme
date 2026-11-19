@@ -881,8 +881,8 @@ msgid "Formu doldurun — iş saatları ərzində sizinlə əlaqə saxlayaq."
 msgstr "Fill in the form and we will contact you during working hours."
 
 #: template-contact.php
-msgid "İstifadəçi və ya kompüter sayı"
-msgstr "Number of users or computers"
+msgid "İstifadəçi və ya cihaz sayı"
+msgstr "Number of users or devices"
 
 #: template-contact.php
 msgid "— Seçin —"
@@ -1009,8 +1009,8 @@ msgid "Lisenziya ehtiyaca görə"
 msgstr "Licence to fit your needs"
 
 #: template-products.php
-msgid "Fixit Remote kompüter sayına görə paketlərlə satılır. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayına və modullara görə hesablanır."
-msgstr "Fixit Remote is sold in packages based on the number of computers. For the Helpdesk and Network Monitoring the price depends on the number of users and the modules you need."
+msgid "Fixit Remote cihaz sayına görə paketlərlə satılır. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayına və modullara görə hesablanır."
+msgstr "Fixit Remote is sold in packages based on the number of devices. For the Helpdesk and Network Monitoring the price depends on the number of users and the modules you need."
 
 #: template-products.php
 msgid "Quraşdırma və köçürmə"
@@ -2105,8 +2105,8 @@ msgid "Qiymətlər necə hesablanır?"
 msgstr "How is pricing calculated?"
 
 #: inc/faq.php
-msgid "Fixit Remote idarə olunan kompüterlərin sayına görə paketlərlə satılır, operator sayı məhdud deyil; paketlər məhsul səhifəsindədir. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayından, modullardan və quraşdırma həcmindən asılıdır: ehtiyacınızı öyrənib yazılı təklif hazırlayırıq."
-msgstr "Fixit Remote is sold in packages based on the number of managed computers, with no limit on operators; the packages are listed on its product page. For the Helpdesk and Network Monitoring the price depends on the number of users, the modules and the scope of installation: we learn what you need and prepare a written quote."
+msgid "Fixit Remote idarə olunan cihazların sayına görə paketlərlə satılır, operator sayı məhdud deyil; paketlər məhsul səhifəsindədir. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayından, modullardan və quraşdırma həcmindən asılıdır: ehtiyacınızı öyrənib yazılı təklif hazırlayırıq."
+msgstr "Fixit Remote is sold in packages based on the number of managed devices, with no limit on operators; the packages are listed on its product page. For the Helpdesk and Network Monitoring the price depends on the number of users, the modules and the scope of installation: we learn what you need and prepare a written quote."
 
 #: inc/faq.php
 msgid "Məlumatlarımız harada saxlanılacaq?"
@@ -2993,8 +2993,8 @@ msgid "Qiymət necə hesablanır?"
 msgstr "How is the price calculated?"
 
 #: inc/product-data.php
-msgid "İdarə olunan kompüterlərin sayına görə. Operator sayı məhdud deyil, bütün imkanlar hər paketdədir. Paketlər bu səhifənin «Qiymətlər» bölməsindədir, 14 günlük pulsuz sınaq var. Lisenziya müqavilə ilə rəsmiləşdirilir, ödəniş bank köçürməsi ilə."
-msgstr "By the number of managed computers. There is no limit on operators and every package includes all features. The packages are in the Pricing section of this page, and there is a 14-day free trial. Licenses are issued under a contract and paid by bank transfer."
+msgid "İdarə olunan cihazların sayına görə. Operator sayı məhdud deyil, bütün imkanlar hər paketdədir. Paketlər bu səhifənin «Qiymətlər» bölməsindədir, 14 günlük pulsuz sınaq var. Lisenziya müqavilə ilə rəsmiləşdirilir, ödəniş bank köçürməsi ilə."
+msgstr "By the number of managed devices. There is no limit on operators and every package includes all features. The packages are in the Pricing section of this page, and there is a 14-day free trial. Licenses are issued under a contract and paid by bank transfer."
 
 #: inc/product-data.php
 msgid "İşçi kompüterlərində port açmaq lazımdırmı?"
@@ -3361,12 +3361,12 @@ msgid "Lisenziya müddətində bütün yeni versiyalar"
 msgstr "All new versions during the license term"
 
 #: inc/remote-pricing.php
-msgid "Windows və Linux kompüterləri eyni qaydada sayılır"
-msgstr "Windows and Linux computers are counted the same way"
+msgid "Windows və Linux cihazları eyni qaydada sayılır"
+msgstr "Windows and Linux devices are counted the same way"
 
 #: inc/remote-pricing.php
-msgid "Kompüter silinəndə və ya bloklananda yeri boşalır"
-msgstr "Removing or blocking a computer frees its slot"
+msgid "Cihaz silinəndə və ya bloklananda yeri boşalır"
+msgstr "Removing or blocking a device frees its slot"
 
 #: inc/remote-pricing.php
 msgid "ayda"
@@ -3381,12 +3381,12 @@ msgid "%s%% qənaət"
 msgstr "Save %s%%"
 
 #: inc/remote-pricing.php
-msgid "Kompüter sayına görə ödəyirsiniz, operator sayına görə yox"
-msgstr "You pay per computer, not per operator"
+msgid "İdarə etdiyiniz cihaz sayına görə ödəyirsiniz"
+msgstr "You pay for the number of devices you manage"
 
 #: inc/remote-pricing.php
-msgid "Qiymət idarə olunan kompüterlərin sayından asılıdır. Komandanızın hamısı işləyə bilər, bütün imkanlar hər paketdədir. Aylıq və ya illik ödəyə bilərsiniz."
-msgstr "The price depends on the number of managed computers. Your whole team can work in the system and every package includes all features. Pay monthly or yearly."
+msgid "Komandanızda neçə operator olsa da qiymət dəyişmir, bütün imkanlar hər paketdə var. Ödənişi aylıq və ya illik edə bilərsiniz."
+msgstr "The price stays the same no matter how many operators your team has, and every package includes all features. You can pay monthly or yearly."
 
 #: inc/remote-pricing.php
 msgid "Ödəniş dövrü"
@@ -3405,8 +3405,8 @@ msgid "Ən çox seçilən"
 msgstr "Most popular"
 
 #: inc/remote-pricing.php
-msgid "kompüter başına %s"
-msgstr "%s per computer"
+msgid "cihaz başına %s"
+msgstr "%s per device"
 
 #: inc/remote-pricing.php
 msgid "%1$s × %2$d ay"
@@ -3421,28 +3421,24 @@ msgid "təklifi sınaqla birlikdə göndəririk"
 msgstr "we send the quote together with the trial"
 
 #: inc/remote-pricing.php
-msgid "%s kompüterə qədər"
-msgstr "Up to %s computers"
+msgid "%s cihaza qədər"
+msgstr "Up to %s devices"
 
 #: inc/remote-pricing.php
 msgid "Fərdi təklif"
 msgstr "Custom offer"
 
 #: inc/remote-pricing.php
-msgid "%s kompüterdən çox"
-msgstr "More than %s computers"
-
-#: inc/remote-pricing.php
-msgid "həcmə görə qiymət, çoxillik müqavilə, bir neçə filial"
-msgstr "volume pricing, multi-year contracts, several branches"
+msgid "%s cihazdan çox olduqda qiyməti həcmə və filialların sayına görə ayrıca hesablayırıq."
+msgstr "For more than %s devices we price separately, based on volume and the number of branches."
 
 #: inc/remote-pricing.php
 msgid "{tier} paketi{extra}"
 msgstr "{tier} package{extra}"
 
 #: inc/remote-pricing.php
-msgid " və {extra} əlavə kompüter"
-msgstr " plus {extra} extra computers"
+msgid " və {extra} əlavə cihaz"
+msgstr " plus {extra} extra devices"
 
 #: inc/remote-pricing.php
 msgid "Aylıq ödənişdə: {v}"
@@ -3453,16 +3449,16 @@ msgid "İllik ödənişdə: {v}"
 msgstr "Paid yearly: {v}"
 
 #: inc/remote-pricing.php
-msgid "{n} kompüter üçün fərdi təklif hazırlayırıq: bizimlə əlaqə saxlayın."
-msgstr "For {n} computers we prepare a custom offer: please get in touch."
+msgid "{n} cihaz üçün fərdi təklif hazırlayırıq, bizimlə əlaqə saxlayın."
+msgstr "For {n} devices we prepare a custom offer, please get in touch."
 
 #: inc/remote-pricing.php
-msgid "Neçə kompüteriniz var?"
-msgstr "How many computers do you have?"
+msgid "Neçə cihazınız var?"
+msgstr "How many devices do you have?"
 
 #: inc/remote-pricing.php
-msgid "Kompüter sayı"
-msgstr "Number of computers"
+msgid "Cihaz sayı"
+msgstr "Number of devices"
 
 #: inc/remote-pricing.php
 msgid "Sizə uyğun paket"
@@ -3481,8 +3477,8 @@ msgid "Lisenziya almaq istəyirsiniz?"
 msgstr "Want to buy a license?"
 
 #: inc/remote-pricing.php
-msgid "Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Bizə yazın: kompüter sayınıza görə müqaviləni və hesab-fakturanı hazırlayırıq, ödənişdən sonra lisenziya açarını göndəririk."
-msgstr "Licenses are issued under a contract and paid by bank transfer. Get in touch: we prepare the contract and invoice for your number of computers and send the license key once payment is received."
+msgid "Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Bizə yazın: cihaz sayınıza görə müqaviləni və hesab-fakturanı hazırlayırıq, ödənişdən sonra lisenziya açarını göndəririk."
+msgstr "Licenses are issued under a contract and paid by bank transfer. Get in touch: we prepare the contract and invoice for your number of devices and send the license key once payment is received."
 
 #: inc/remote-pricing.php
 msgid "Lisenziya üçün müraciət"
@@ -3565,8 +3561,8 @@ msgid "Ödəniş və kart tələb olunmur"
 msgstr "No payment or card required"
 
 #: inc/remote-trial.php
-msgid "Sınaq müddətində kompüter sayı məhdud deyil"
-msgstr "No limit on the number of computers during the trial"
+msgid "Sınaq müddətində cihaz sayı məhdud deyil"
+msgstr "No limit on the number of devices during the trial"
 
 #: inc/remote-trial.php
 msgid "Linux serverdə bir əmrlə qurulur"
@@ -3641,8 +3637,8 @@ msgid "Serveri hazırlayın"
 msgstr "Prepare the server"
 
 #: inc/remote-trial.php
-msgid "Linux server və ya virtual maşın (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 və ya RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. 200 kompüterə qədər 2 vCPU, 2 GB yaddaş və 20 GB disk kifayətdir; 1000 kompüterə qədər 4 vCPU, 4 GB və 40 GB SSD. Serverə statik IP və ya DNS adı verin: kompüterlər ona bu ünvanla qoşulur."
-msgstr "A Linux server or virtual machine (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 or RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. Up to 200 computers, 2 vCPU, 2 GB RAM and 20 GB of disk are enough; up to 1,000 computers, 4 vCPU, 4 GB and a 40 GB SSD. Give the server a static IP or a DNS name: the computers connect to it at that address."
+msgid "Linux server və ya virtual maşın (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 və ya RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. 200 cihaza qədər 2 vCPU, 2 GB yaddaş və 20 GB disk kifayətdir; 1000 cihaza qədər 4 vCPU, 4 GB və 40 GB SSD. Serverə statik IP və ya DNS adı verin: cihazlar ona bu ünvanla qoşulur."
+msgstr "A Linux server or virtual machine (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 or RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. Up to 200 devices, 2 vCPU, 2 GB RAM and 20 GB of disk are enough; up to 1,000 devices, 4 vCPU, 4 GB and a 40 GB SSD. Give the server a static IP or a DNS name: the devices connect to it at that address."
 
 #: inc/remote-trial.php
 msgid "Paketi yükləyib açın"
@@ -3689,8 +3685,8 @@ msgid "Sınaq və lisenziya"
 msgstr "Trial and license"
 
 #: inc/remote-trial.php
-msgid "Sınaq serverin ilk açılışından 14 gün davam edir, kompüter sayı məhdud deyil. Lisenziya üçün paneldə Sistem → Lisenziya səhifəsindəki Qurulum ID-ni bizə göndərin, aldığınız açarı həmin səhifəyə yazın. Server və bütün ayarlar olduğu kimi qalır."
-msgstr "The trial runs for 14 days from the server's first start, with no limit on computers. For a license, send us the Installation ID from System → License in the panel and enter the key you receive on the same page. The server and all settings stay as they are."
+msgid "Sınaq serverin ilk açılışından 14 gün davam edir, cihaz sayı məhdud deyil. Lisenziya üçün paneldə Sistem → Lisenziya səhifəsindəki Qurulum ID-ni bizə göndərin, aldığınız açarı həmin səhifəyə yazın. Server və bütün ayarlar olduğu kimi qalır."
+msgstr "The trial runs for 14 days from the server's first start, with no limit on devices. For a license, send us the Installation ID from System → License in the panel and enter the key you receive on the same page. The server and all settings stay as they are."
 
 #: inc/remote-trial.php
 msgid "%d günlük pulsuz sınaq"
@@ -3733,20 +3729,20 @@ msgid "Ətraflı bələdçi və problem olarsa nə etməli:"
 msgstr "Full guide and what to do if something goes wrong:"
 
 #: inc/remote-trial.php
-msgid "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, aylıq və ya illik ödəyə bilərsiniz."
-msgstr "The price depends on the number of managed computers, with no limit on operators. Every package includes all features, and you can pay monthly or yearly."
+msgid "Qiymət idarə olunan cihazların sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, aylıq və ya illik ödəyə bilərsiniz."
+msgstr "The price depends on the number of managed devices, with no limit on operators. Every package includes all features, and you can pay monthly or yearly."
 
 #: inc/remote-trial.php
-msgid "Paketdən artıq kompüter: hər %s kompüter həmin paketin qiyməti ilə."
-msgstr "Computers above the package: each extra %s at that package's price."
+msgid "Paketdən artıq cihaz: hər %s cihaz həmin paketin qiyməti ilə."
+msgstr "Devices above the package: each extra %s at that package's price."
 
 #: inc/remote-trial.php
-msgid "%s kompüterdən çox olduqda xüsusi təklif hazırlayırıq."
-msgstr "For more than %s computers we prepare a custom offer."
+msgid "%s cihazdan çox olduqda xüsusi təklif hazırlayırıq."
+msgstr "For more than %s devices we prepare a custom offer."
 
 #: inc/remote-trial.php
-msgid "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Kompüter sayınızı bildirin, dəqiq təklifi göndərək."
-msgstr "The price is based on the number of managed computers, with no limit on operators. Tell us how many computers you have and we will send an exact quote."
+msgid "Qiymət idarə olunan cihazların sayına görədir, operator sayı məhdud deyil. Cihaz sayınızı bildirin, dəqiq təklifi göndərək."
+msgstr "The price is based on the number of managed devices, with no limit on operators. Tell us how many devices you have and we will send an exact quote."
 
 #: inc/remote-trial.php
 msgid "Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Lisenziya üçün bu məktuba cavab yazın və ya zəng edin: müqaviləni və hesab-fakturanı hazırlayaq."
@@ -4537,28 +4533,12 @@ msgid "Yazılı SLA: cavab və həll müddətləri"
 msgstr "Written SLA: response and resolution times"
 
 #: tools/translations
-msgid "Qiymət idarə olunan kompüterlərin sayından asılıdır. Komandanızın hamısı işləyə bilər, bütün imkanlar hər paketdədir. Ödəniş illikdir."
-msgstr "The price depends on the number of managed computers. Your whole team can work in the system and every package includes all features. Billing is annual."
-
-#: tools/translations
-msgid "ayda kompüter başına %s"
-msgstr "%s per computer per month"
-
-#: tools/translations
 msgid "%s paketindəki hər şey"
 msgstr "Everything in %s"
 
 #: tools/translations
-msgid "Hər əlavə %1$s kompüter: ildə %2$s"
-msgstr "Each extra %1$s computers: %2$s per year"
-
-#: tools/translations
 msgid "Böyük parklar üçün"
 msgstr "For large fleets"
-
-#: tools/translations
-msgid "{n} kompüter: {tier} paketi{extra}. İldə {year}, ayda təxminən {month}."
-msgstr "{n} computers: {tier} package{extra}. {year} per year, about {month} per month."
 
 #: tools/translations
 msgid "Server sizin avadanlığınızda və ya öz buludunuzda qurulur."
@@ -4575,10 +4555,6 @@ msgstr "The repository token has not been set."
 #: tools/translations
 msgid "GitHub cavab vermədi (kod %s). Açarın müddətini və icazəsini yoxlayın."
 msgstr "GitHub did not respond (code %s). Check the token's expiry and permissions."
-
-#: tools/translations
-msgid "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, ödəniş illikdir."
-msgstr "The price is based on the number of managed computers, with no limit on operators. Every package includes all features; billing is annual."
 
 #: tools/translations
 msgid "Prioritet"
@@ -4619,14 +4595,6 @@ msgstr "Backup and recovery plan"
 #: tools/translations
 msgid "Paketlər nə ilə fərqlənir"
 msgstr "How the packages differ"
-
-#: tools/translations
-msgid "Kompüterə qədər"
-msgstr "Computers, up to"
-
-#: tools/translations
-msgid "Hər əlavə %s kompüter"
-msgstr "Each extra %s computers"
 
 #: tools/translations
 msgid "Var"

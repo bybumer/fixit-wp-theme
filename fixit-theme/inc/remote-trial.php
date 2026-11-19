@@ -239,7 +239,7 @@ function fixit_trial_section() {
 					<p><?php esc_html_e( 'Formanı doldurun: mütəxəssisimiz müraciətinizi yoxlayıb qurulum bələdçisini və serverin yükləmə linkini e-poçtunuza göndərəcək. Server öz avadanlığınızda qurulur, sınaq müddətində bütün imkanlar açıqdır.', 'fixit' ); ?></p>
 					<ul class="trial__list">
 						<li><?php fixit_icon( 'check' ); ?><span><?php esc_html_e( 'Ödəniş və kart tələb olunmur', 'fixit' ); ?></span></li>
-						<li><?php fixit_icon( 'check' ); ?><span><?php esc_html_e( 'Sınaq müddətində kompüter sayı məhdud deyil', 'fixit' ); ?></span></li>
+						<li><?php fixit_icon( 'check' ); ?><span><?php esc_html_e( 'Sınaq müddətində cihaz sayı məhdud deyil', 'fixit' ); ?></span></li>
 						<li><?php fixit_icon( 'check' ); ?><span><?php esc_html_e( 'Linux serverdə bir əmrlə qurulur', 'fixit' ); ?></span></li>
 						<li><?php fixit_icon( 'check' ); ?><span><?php esc_html_e( 'Lisenziya yazılan kimi eyni server işləməyə davam edir, heç nə yenidən qurulmur', 'fixit' ); ?></span></li>
 						<li><?php fixit_icon( 'check' ); ?><span><?php esc_html_e( 'Qurulumda kömək lazım olsa, mütəxəssisimiz qoşulur', 'fixit' ); ?></span></li>
@@ -702,7 +702,7 @@ function fixit_trial_guide_steps() {
 	return array(
 		array(
 			'title' => __( 'Serveri hazırlayın', 'fixit' ),
-			'text'  => __( 'Linux server və ya virtual maşın (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 və ya RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. 200 kompüterə qədər 2 vCPU, 2 GB yaddaş və 20 GB disk kifayətdir; 1000 kompüterə qədər 4 vCPU, 4 GB və 40 GB SSD. Serverə statik IP və ya DNS adı verin: kompüterlər ona bu ünvanla qoşulur.', 'fixit' ),
+			'text'  => __( 'Linux server və ya virtual maşın (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 və ya RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. 200 cihaza qədər 2 vCPU, 2 GB yaddaş və 20 GB disk kifayətdir; 1000 cihaza qədər 4 vCPU, 4 GB və 40 GB SSD. Serverə statik IP və ya DNS adı verin: cihazlar ona bu ünvanla qoşulur.', 'fixit' ),
 		),
 		array(
 			'title' => __( 'Paketi yükləyib açın', 'fixit' ),
@@ -729,7 +729,7 @@ function fixit_trial_guide_steps() {
 		),
 		array(
 			'title' => __( 'Sınaq və lisenziya', 'fixit' ),
-			'text'  => __( 'Sınaq serverin ilk açılışından 14 gün davam edir, kompüter sayı məhdud deyil. Lisenziya üçün paneldə Sistem → Lisenziya səhifəsindəki Qurulum ID-ni bizə göndərin, aldığınız açarı həmin səhifəyə yazın. Server və bütün ayarlar olduğu kimi qalır.', 'fixit' ),
+			'text'  => __( 'Sınaq serverin ilk açılışından 14 gün davam edir, cihaz sayı məhdud deyil. Lisenziya üçün paneldə Sistem → Lisenziya səhifəsindəki Qurulum ID-ni bizə göndərin, aldığınız açarı həmin səhifəyə yazın. Server və bütün ayarlar olduğu kimi qalır.', 'fixit' ),
 		),
 	);
 }
@@ -809,19 +809,19 @@ function fixit_trial_mail_html( $name, $link ) {
 
 				<div style="font-size:17px;font-weight:700;margin:0 0 10px"><?php esc_html_e( 'Qiymətlər', 'fixit' ); ?></div>
 				<?php if ( $pricing['show'] ) : ?>
-					<p style="margin:0 0 10px;font-size:14px;color:#3b4658"><?php esc_html_e( 'Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, aylıq və ya illik ödəyə bilərsiniz.', 'fixit' ); ?></p>
+					<p style="margin:0 0 10px;font-size:14px;color:#3b4658"><?php esc_html_e( 'Qiymət idarə olunan cihazların sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, aylıq və ya illik ödəyə bilərsiniz.', 'fixit' ); ?></p>
 					<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;font-size:14px;margin:0 0 8px">
 						<?php foreach ( $pricing['tiers'] as $tier ) : ?>
 							<tr>
-								<td style="padding:8px 0;border-bottom:1px solid #eef1f6"><b><?php echo esc_html( $names[ $tier['key'] ] ); ?></b><br><span style="color:#5b6678"><?php echo esc_html( sprintf( /* translators: %s: say */ __( '%s kompüterə qədər', 'fixit' ), number_format_i18n( $tier['max'] ) ) ); ?></span></td>
+								<td style="padding:8px 0;border-bottom:1px solid #eef1f6"><b><?php echo esc_html( $names[ $tier['key'] ] ); ?></b><br><span style="color:#5b6678"><?php echo esc_html( sprintf( /* translators: %s: say */ __( '%s cihaza qədər', 'fixit' ), number_format_i18n( $tier['max'] ) ) ); ?></span></td>
 								<td style="padding:8px 0;border-bottom:1px solid #eef1f6;text-align:right;white-space:nowrap"><b><?php echo esc_html( fixit_pricing_money( $tier['month'] ) ); ?></b> <?php esc_html_e( 'ayda', 'fixit' ); ?><br><span style="color:#5b6678"><?php echo esc_html( fixit_pricing_money( $tier['year'] ) ); ?> <?php esc_html_e( 'ildə', 'fixit' ); ?></span></td>
 							</tr>
 						<?php endforeach; ?>
 					</table>
-					<p style="margin:0 0 6px;font-size:14px"><?php echo esc_html( sprintf( /* translators: %s: say */ __( 'Paketdən artıq kompüter: hər %s kompüter həmin paketin qiyməti ilə.', 'fixit' ), $pricing['step'] ) ); ?></p>
-					<p style="margin:0 0 6px;font-size:14px"><?php echo esc_html( sprintf( /* translators: %s: say */ __( '%s kompüterdən çox olduqda xüsusi təklif hazırlayırıq.', 'fixit' ), number_format_i18n( end( $pricing['tiers'] )['max'] ) ) ); ?></p>
+					<p style="margin:0 0 6px;font-size:14px"><?php echo esc_html( sprintf( /* translators: %s: say */ __( 'Paketdən artıq cihaz: hər %s cihaz həmin paketin qiyməti ilə.', 'fixit' ), $pricing['step'] ) ); ?></p>
+					<p style="margin:0 0 6px;font-size:14px"><?php echo esc_html( sprintf( /* translators: %s: say */ __( '%s cihazdan çox olduqda xüsusi təklif hazırlayırıq.', 'fixit' ), number_format_i18n( end( $pricing['tiers'] )['max'] ) ) ); ?></p>
 				<?php else : ?>
-					<p style="margin:0 0 10px;font-size:14px;color:#3b4658"><?php esc_html_e( 'Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Kompüter sayınızı bildirin, dəqiq təklifi göndərək.', 'fixit' ); ?></p>
+					<p style="margin:0 0 10px;font-size:14px;color:#3b4658"><?php esc_html_e( 'Qiymət idarə olunan cihazların sayına görədir, operator sayı məhdud deyil. Cihaz sayınızı bildirin, dəqiq təklifi göndərək.', 'fixit' ); ?></p>
 				<?php endif; ?>
 				<p style="margin:0 0 22px;font-size:14px;color:#3b4658"><?php esc_html_e( 'Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Lisenziya üçün bu məktuba cavab yazın və ya zəng edin: müqaviləni və hesab-fakturanı hazırlayaq.', 'fixit' ); ?></p>
 

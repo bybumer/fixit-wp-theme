@@ -418,9 +418,5 @@
  "Lisenziya açarını paneldə yazırsınız və eyni server işləməyə davam edir: kompüterlər, istifadəçilər və jurnal olduğu kimi qalır. Lisenziya yazılmasa, sınaq bitəndə panel bağlanır, kompüterlər isə serverə qoşulu qalır.": {
   "en": "You enter the license key in the panel and the same server keeps running: computers, users and logs stay as they are. If no license is entered, the panel locks when the trial ends, while the computers stay connected to the server.",
   "ru": "Вы вводите лицензионный ключ в панели, и тот же сервер продолжает работать: компьютеры, пользователи и журнал остаются как есть. Если лицензию не ввести, после окончания пробного периода панель блокируется, а компьютеры остаются подключены к серверу."
- },
- "İdarə olunan kompüterlərin sayına görə. Operator sayı məhdud deyil, bütün imkanlar hər paketdədir. Paketlər bu səhifənin «Qiymətlər» bölməsindədir, 14 günlük pulsuz sınaq var. Lisenziya müqavilə ilə rəsmiləşdirilir, ödəniş bank köçürməsi ilə.": {
-  "en": "By the number of managed computers. There is no limit on operators and every package includes all features. The packages are in the Pricing section of this page, and there is a 14-day free trial. Licenses are issued under a contract and paid by bank transfer.",
-  "ru": "По числу управляемых компьютеров. Число операторов не ограничено, все возможности входят в каждый пакет. Пакеты указаны в разделе «Цены» на этой странице, есть бесплатный пробный период на 14 дней. Лицензия оформляется по договору, оплата банковским переводом."
  }
 }

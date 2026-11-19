@@ -49,7 +49,7 @@ function fixit_faq_products() {
 	return array(
 		array(
 			__( 'Qiymətlər necə hesablanır?', 'fixit' ),
-			__( 'Fixit Remote idarə olunan kompüterlərin sayına görə paketlərlə satılır, operator sayı məhdud deyil; paketlər məhsul səhifəsindədir. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayından, modullardan və quraşdırma həcmindən asılıdır: ehtiyacınızı öyrənib yazılı təklif hazırlayırıq.', 'fixit' ),
+			__( 'Fixit Remote idarə olunan cihazların sayına görə paketlərlə satılır, operator sayı məhdud deyil; paketlər məhsul səhifəsindədir. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayından, modullardan və quraşdırma həcmindən asılıdır: ehtiyacınızı öyrənib yazılı təklif hazırlayırıq.', 'fixit' ),
 		),
 		array(
 			__( 'Məlumatlarımız harada saxlanılacaq?', 'fixit' ),

@@ -457,7 +457,7 @@ function fixit_product_details() {
 				),
 				array(
 					__( 'Qiymət necə hesablanır?', 'fixit' ),
-					__( 'İdarə olunan kompüterlərin sayına görə. Operator sayı məhdud deyil, bütün imkanlar hər paketdədir. Paketlər bu səhifənin «Qiymətlər» bölməsindədir, 14 günlük pulsuz sınaq var. Lisenziya müqavilə ilə rəsmiləşdirilir, ödəniş bank köçürməsi ilə.', 'fixit' ),
+					__( 'İdarə olunan cihazların sayına görə. Operator sayı məhdud deyil, bütün imkanlar hər paketdədir. Paketlər bu səhifənin «Qiymətlər» bölməsindədir, 14 günlük pulsuz sınaq var. Lisenziya müqavilə ilə rəsmiləşdirilir, ödəniş bank köçürməsi ilə.', 'fixit' ),
 				),
 				array(
 					__( 'İşçi kompüterlərində port açmaq lazımdırmı?', 'fixit' ),

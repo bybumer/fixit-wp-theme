@@ -35,10 +35,6 @@
   "en": "We adapt it to your workflow",
   "ru": "Дорабатываем под ваши процессы"
  },
- "Fixit Remote kompüter sayına görə paketlərlə satılır. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayına və modullara görə hesablanır.": {
-  "en": "Fixit Remote is sold in packages based on the number of computers. For the Helpdesk and Network Monitoring the price depends on the number of users and the modules you need.",
-  "ru": "Fixit Remote продаётся пакетами по числу компьютеров. Для Службы заявок и Мониторинга сети цена зависит от числа пользователей и нужных модулей."
- },
  "Şəffaf qiymət, yazılı təklif": {
   "en": "Clear pricing, written quote",
   "ru": "Прозрачная цена, письменное предложение"
@@ -50,10 +46,6 @@
  "Qiymətlər necə hesablanır?": {
   "en": "How is pricing calculated?",
   "ru": "Как рассчитывается цена?"
- },
- "Fixit Remote idarə olunan kompüterlərin sayına görə paketlərlə satılır, operator sayı məhdud deyil; paketlər məhsul səhifəsindədir. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayından, modullardan və quraşdırma həcmindən asılıdır: ehtiyacınızı öyrənib yazılı təklif hazırlayırıq.": {
-  "en": "Fixit Remote is sold in packages based on the number of managed computers, with no limit on operators; the packages are listed on its product page. For the Helpdesk and Network Monitoring the price depends on the number of users, the modules and the scope of installation: we learn what you need and prepare a written quote.",
-  "ru": "Fixit Remote продаётся пакетами по числу управляемых компьютеров, число операторов не ограничено; пакеты указаны на странице продукта. Для Службы заявок и Мониторинга сети цена зависит от числа пользователей, модулей и объёма установки: мы уточняем потребности и готовим письменное предложение."
  },
  "Bu sayt kukilərdən istifadə edir": {
   "en": "This website uses cookies",

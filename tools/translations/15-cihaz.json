@@ -1,0 +1,94 @@
+{
+ "İdarə etdiyiniz cihaz sayına görə ödəyirsiniz": {
+  "en": "You pay for the number of devices you manage",
+  "ru": "Вы платите за количество управляемых устройств"
+ },
+ "Komandanızda neçə operator olsa da qiymət dəyişmir, bütün imkanlar hər paketdə var. Ödənişi aylıq və ya illik edə bilərsiniz.": {
+  "en": "The price stays the same no matter how many operators your team has, and every package includes all features. You can pay monthly or yearly.",
+  "ru": "Сколько бы операторов ни было в вашей команде, цена не меняется, а все возможности есть в каждом пакете. Платить можно помесячно или за год."
+ },
+ "Windows və Linux cihazları eyni qaydada sayılır": {
+  "en": "Windows and Linux devices are counted the same way",
+  "ru": "Устройства с Windows и Linux считаются одинаково"
+ },
+ "Cihaz silinəndə və ya bloklananda yeri boşalır": {
+  "en": "Removing or blocking a device frees its slot",
+  "ru": "Удалённое или заблокированное устройство освобождает место"
+ },
+ "cihaz başına %s": {
+  "en": "%s per device",
+  "ru": "%s за устройство"
+ },
+ "%s cihaza qədər": {
+  "en": "Up to %s devices",
+  "ru": "До %s устройств"
+ },
+ " və {extra} əlavə cihaz": {
+  "en": " plus {extra} extra devices",
+  "ru": " и ещё {extra} устройств"
+ },
+ "{n} cihaz üçün fərdi təklif hazırlayırıq, bizimlə əlaqə saxlayın.": {
+  "en": "For {n} devices we prepare a custom offer, please get in touch.",
+  "ru": "Для {n} устройств подготовим индивидуальное предложение, свяжитесь с нами."
+ },
+ "Neçə cihazınız var?": {
+  "en": "How many devices do you have?",
+  "ru": "Сколько у вас устройств?"
+ },
+ "Cihaz sayı": {
+  "en": "Number of devices",
+  "ru": "Число устройств"
+ },
+ "Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Bizə yazın: cihaz sayınıza görə müqaviləni və hesab-fakturanı hazırlayırıq, ödənişdən sonra lisenziya açarını göndəririk.": {
+  "en": "Licenses are issued under a contract and paid by bank transfer. Get in touch: we prepare the contract and invoice for your number of devices and send the license key once payment is received.",
+  "ru": "Лицензия оформляется по договору, оплата банковским переводом. Напишите нам: мы подготовим договор и счёт под ваше число устройств, а после оплаты пришлём лицензионный ключ."
+ },
+ "Sınaq müddətində cihaz sayı məhdud deyil": {
+  "en": "No limit on the number of devices during the trial",
+  "ru": "Во время пробного периода число устройств не ограничено"
+ },
+ "Linux server və ya virtual maşın (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 və ya RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. 200 cihaza qədər 2 vCPU, 2 GB yaddaş və 20 GB disk kifayətdir; 1000 cihaza qədər 4 vCPU, 4 GB və 40 GB SSD. Serverə statik IP və ya DNS adı verin: cihazlar ona bu ünvanla qoşulur.": {
+  "en": "A Linux server or virtual machine (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 or RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. Up to 200 devices, 2 vCPU, 2 GB RAM and 20 GB of disk are enough; up to 1,000 devices, 4 vCPU, 4 GB and a 40 GB SSD. Give the server a static IP or a DNS name: the devices connect to it at that address.",
+  "ru": "Linux-сервер или виртуальная машина (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 или RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. До 200 устройств достаточно 2 vCPU, 2 ГБ памяти и 20 ГБ диска; до 1000 устройств 4 vCPU, 4 ГБ и 40 ГБ SSD. Назначьте серверу статический IP или DNS-имя: устройства подключаются к нему по этому адресу."
+ },
+ "Sınaq serverin ilk açılışından 14 gün davam edir, cihaz sayı məhdud deyil. Lisenziya üçün paneldə Sistem → Lisenziya səhifəsindəki Qurulum ID-ni bizə göndərin, aldığınız açarı həmin səhifəyə yazın. Server və bütün ayarlar olduğu kimi qalır.": {
+  "en": "The trial runs for 14 days from the server's first start, with no limit on devices. For a license, send us the Installation ID from System → License in the panel and enter the key you receive on the same page. The server and all settings stay as they are.",
+  "ru": "Пробный период длится 14 дней с первого запуска сервера, число устройств не ограничено. Для лицензии пришлите нам ID установки со страницы «Система → Лицензия» в панели и введите полученный ключ на той же странице. Сервер и все настройки остаются как есть."
+ },
+ "Qiymət idarə olunan cihazların sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, aylıq və ya illik ödəyə bilərsiniz.": {
+  "en": "The price depends on the number of managed devices, with no limit on operators. Every package includes all features, and you can pay monthly or yearly.",
+  "ru": "Цена зависит от числа управляемых устройств, число операторов не ограничено. Все возможности входят в каждый пакет, оплата помесячно или за год."
+ },
+ "Paketdən artıq cihaz: hər %s cihaz həmin paketin qiyməti ilə.": {
+  "en": "Devices above the package: each extra %s at that package's price.",
+  "ru": "Устройства сверх пакета: каждые %s по цене этого пакета."
+ },
+ "%s cihazdan çox olduqda xüsusi təklif hazırlayırıq.": {
+  "en": "For more than %s devices we prepare a custom offer.",
+  "ru": "Для более чем %s устройств готовим индивидуальное предложение."
+ },
+ "Qiymət idarə olunan cihazların sayına görədir, operator sayı məhdud deyil. Cihaz sayınızı bildirin, dəqiq təklifi göndərək.": {
+  "en": "The price is based on the number of managed devices, with no limit on operators. Tell us how many devices you have and we will send an exact quote.",
+  "ru": "Цена зависит от числа управляемых устройств, число операторов не ограничено. Сообщите число устройств, и мы пришлём точное предложение."
+ },
+ "Fixit Remote idarə olunan cihazların sayına görə paketlərlə satılır, operator sayı məhdud deyil; paketlər məhsul səhifəsindədir. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayından, modullardan və quraşdırma həcmindən asılıdır: ehtiyacınızı öyrənib yazılı təklif hazırlayırıq.": {
+  "en": "Fixit Remote is sold in packages based on the number of managed devices, with no limit on operators; the packages are listed on its product page. For the Helpdesk and Network Monitoring the price depends on the number of users, the modules and the scope of installation: we learn what you need and prepare a written quote.",
+  "ru": "Fixit Remote продаётся пакетами по числу управляемых устройств, число операторов не ограничено; пакеты указаны на странице продукта. Для Службы заявок и Мониторинга сети цена зависит от числа пользователей, модулей и объёма установки: мы уточняем потребности и готовим письменное предложение."
+ },
+ "İdarə olunan cihazların sayına görə. Operator sayı məhdud deyil, bütün imkanlar hər paketdədir. Paketlər bu səhifənin «Qiymətlər» bölməsindədir, 14 günlük pulsuz sınaq var. Lisenziya müqavilə ilə rəsmiləşdirilir, ödəniş bank köçürməsi ilə.": {
+  "en": "By the number of managed devices. There is no limit on operators and every package includes all features. The packages are in the Pricing section of this page, and there is a 14-day free trial. Licenses are issued under a contract and paid by bank transfer.",
+  "ru": "По числу управляемых устройств. Число операторов не ограничено, все возможности входят в каждый пакет. Пакеты указаны в разделе «Цены» на этой странице, есть бесплатный пробный период на 14 дней. Лицензия оформляется по договору, оплата банковским переводом."
+ },
+ "Fixit Remote cihaz sayına görə paketlərlə satılır. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayına və modullara görə hesablanır.": {
+  "en": "Fixit Remote is sold in packages based on the number of devices. For the Helpdesk and Network Monitoring the price depends on the number of users and the modules you need.",
+  "ru": "Fixit Remote продаётся пакетами по числу устройств. Для Службы заявок и Мониторинга сети цена зависит от числа пользователей и нужных модулей."
+ },
+ "İstifadəçi və ya cihaz sayı": {
+  "en": "Number of users or devices",
+  "ru": "Количество пользователей или устройств"
+ },
+ "%s cihazdan çox olduqda qiyməti həcmə və filialların sayına görə ayrıca hesablayırıq.": {
+  "en": "For more than %s devices we price separately, based on volume and the number of branches.",
+  "ru": "Если устройств больше %s, рассчитываем цену отдельно, с учётом объёма и числа филиалов."
+ }
+}

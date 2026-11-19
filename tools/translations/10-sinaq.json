@@ -59,10 +59,6 @@
   "en": "No payment or card required",
   "ru": "Оплата и карта не нужны"
  },
- "Sınaq müddətində kompüter sayı məhdud deyil": {
-  "en": "No limit on the number of computers during the trial",
-  "ru": "Во время пробного периода число компьютеров не ограничено"
- },
  "Linux serverdə bir əmrlə qurulur": {
   "en": "Installs on a Linux server with a single command",
   "ru": "Устанавливается на Linux-сервер одной командой"
@@ -119,10 +115,6 @@
   "en": "Prepare the server",
   "ru": "Подготовьте сервер"
  },
- "Linux server və ya virtual maşın (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 və ya RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. 200 kompüterə qədər 2 vCPU, 2 GB yaddaş və 20 GB disk kifayətdir; 1000 kompüterə qədər 4 vCPU, 4 GB və 40 GB SSD. Serverə statik IP və ya DNS adı verin: kompüterlər ona bu ünvanla qoşulur.": {
-  "en": "A Linux server or virtual machine (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 or RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. Up to 200 computers, 2 vCPU, 2 GB RAM and 20 GB of disk are enough; up to 1,000 computers, 4 vCPU, 4 GB and a 40 GB SSD. Give the server a static IP or a DNS name: the computers connect to it at that address.",
-  "ru": "Linux-сервер или виртуальная машина (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 или RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. До 200 компьютеров достаточно 2 vCPU, 2 ГБ памяти и 20 ГБ диска; до 1000 компьютеров 4 vCPU, 4 ГБ и 40 ГБ SSD. Назначьте серверу статический IP или DNS-имя: компьютеры подключаются к нему по этому адресу."
- },
  "Paketi yükləyib açın": {
   "en": "Download and unpack the package",
   "ru": "Загрузите и распакуйте пакет"
@@ -167,10 +159,6 @@
   "en": "Trial and license",
   "ru": "Пробный период и лицензия"
  },
- "Sınaq serverin ilk açılışından 14 gün davam edir, kompüter sayı məhdud deyil. Lisenziya üçün paneldə Sistem → Lisenziya səhifəsindəki Qurulum ID-ni bizə göndərin, aldığınız açarı həmin səhifəyə yazın. Server və bütün ayarlar olduğu kimi qalır.": {
-  "en": "The trial runs for 14 days from the server's first start, with no limit on computers. For a license, send us the Installation ID from System → License in the panel and enter the key you receive on the same page. The server and all settings stay as they are.",
-  "ru": "Пробный период длится 14 дней с первого запуска сервера, число компьютеров не ограничено. Для лицензии пришлите нам ID установки со страницы «Система → Лицензия» в панели и введите полученный ключ на той же странице. Сервер и все настройки остаются как есть."
- },
  "%d günlük pulsuz sınaq": {
   "en": "%d-day free trial",
   "ru": "Бесплатный пробный период %d дней"
@@ -210,22 +198,6 @@
  "Ətraflı bələdçi və problem olarsa nə etməli:": {
   "en": "Full guide and what to do if something goes wrong:",
   "ru": "Подробное руководство и что делать при проблемах:"
- },
- "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, ödəniş illikdir.": {
-  "en": "The price is based on the number of managed computers, with no limit on operators. Every package includes all features; billing is annual.",
-  "ru": "Цена зависит от числа управляемых компьютеров, число операторов не ограничено. Все возможности входят в каждый пакет, оплата годовая."
- },
- "Paketdən artıq kompüter: hər %s kompüter həmin paketin qiyməti ilə.": {
-  "en": "Computers above the package: each extra %s at that package's price.",
-  "ru": "Компьютеры сверх пакета: каждые %s по цене этого пакета."
- },
- "%s kompüterdən çox olduqda xüsusi təklif hazırlayırıq.": {
-  "en": "For more than %s computers we prepare a custom offer.",
-  "ru": "Для более чем %s компьютеров готовим индивидуальное предложение."
- },
- "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Kompüter sayınızı bildirin, dəqiq təklifi göndərək.": {
-  "en": "The price is based on the number of managed computers, with no limit on operators. Tell us how many computers you have and we will send an exact quote.",
-  "ru": "Цена зависит от числа управляемых компьютеров, число операторов не ограничено. Сообщите число компьютеров, и мы пришлём точное предложение."
  },
  "Sualınız olsa, bu məktuba cavab yazın və ya zəng edin:": {
   "en": "If you have any questions, reply to this email or call us:",

@@ -137,7 +137,7 @@ $fixit_products  = fixit_get_products();
 						<input type="text" name="fixit_company" id="fixit_company_f" autocomplete="organization">
 					</div>
 					<div class="field">
-						<label for="fixit_size_f"><?php esc_html_e( 'İstifadəçi və ya kompüter sayı', 'fixit' ); ?></label>
+						<label for="fixit_size_f"><?php esc_html_e( 'İstifadəçi və ya cihaz sayı', 'fixit' ); ?></label>
 						<select name="fixit_size" id="fixit_size_f">
 							<option value=""><?php esc_html_e( '— Seçin —', 'fixit' ); ?></option>
 							<?php foreach ( fixit_form_sizes() as $fixit_size ) : ?>

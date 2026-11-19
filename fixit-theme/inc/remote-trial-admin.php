@@ -414,7 +414,7 @@ function fixit_trial_box( $post ) {
 		</tr>
 		<tr>
 			<th scope="row"><label for="ft_note"><?php esc_html_e( 'Qeyd', 'fixit' ); ?></label></th>
-			<td><textarea name="ft_note" id="ft_note" rows="4" class="large-text" placeholder="<?php esc_attr_e( 'Zəng, görüş, kompüter sayı, təklif...', 'fixit' ); ?>"><?php echo esc_textarea( (string) get_post_meta( $id, '_ft_note', true ) ); ?></textarea></td>
+			<td><textarea name="ft_note" id="ft_note" rows="4" class="large-text" placeholder="<?php esc_attr_e( 'Zəng, görüş, cihaz sayı, təklif...', 'fixit' ); ?>"><?php echo esc_textarea( (string) get_post_meta( $id, '_ft_note', true ) ); ?></textarea></td>
 		</tr>
 	</table>
 	<?php
@@ -523,13 +523,13 @@ function fixit_trial_settings_page() {
 			<?php wp_nonce_field( 'fixit_trial_settings' ); ?>
 
 			<h2><?php esc_html_e( 'Qiymətlər', 'fixit' ); ?></h2>
-			<p class="description"><?php esc_html_e( 'Qiymət kompüter başına, ayda yazılır. Saytda yuxarıda «Aylıq / İllik» seçimi var: aylıqda paketin aylıq məbləği, illikdə illik məbləği görünür. Paketdən artıq kompüter 10-luq əlavə ilə həmin paketin qiymətinə hesablanır.', 'fixit' ); ?></p>
+			<p class="description"><?php esc_html_e( 'Qiymət cihaz başına, ayda yazılır. Saytda yuxarıda «Aylıq / İllik» seçimi var: aylıqda paketin aylıq məbləği, illikdə illik məbləği görünür. Paketdən artıq cihaz 10-luq əlavə ilə həmin paketin qiymətinə hesablanır.', 'fixit' ); ?></p>
 
 			<table class="widefat striped" style="max-width:720px;margin:12px 0 18px">
 				<thead><tr>
 					<th><?php esc_html_e( 'Paket', 'fixit' ); ?></th>
-					<th><?php esc_html_e( 'Kompüterə qədər', 'fixit' ); ?></th>
-					<th><?php esc_html_e( 'Kompüter başına, ayda (AZN)', 'fixit' ); ?></th>
+					<th><?php esc_html_e( 'Cihaza qədər', 'fixit' ); ?></th>
+					<th><?php esc_html_e( 'Cihaz başına, ayda (AZN)', 'fixit' ); ?></th>
 					<th><?php esc_html_e( 'Paket, ayda', 'fixit' ); ?></th>
 					<th><?php esc_html_e( 'Paket, ildə', 'fixit' ); ?></th>
 				</tr></thead>

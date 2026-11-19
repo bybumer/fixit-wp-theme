@@ -4,15 +4,15 @@
  *
  * Model (bazarın RMM tərəfi belə satır, Fixit Remote-un lisenziyası da
  * yalnız agent sayını məhdudlaşdırır):
- * - qiymət idarə olunan kompüterin (agentin) sayına görədir, operator sayı
+ * - qiymət idarə olunan cihazın (agentin) sayına görədir, operator sayı
  *   və eyni anda sessiya sayı məhdud deyil;
- * - paketlər: 25, 50, 100, 250, 500 kompüter; kompüter başına qiymət həcm
+ * - paketlər: 25, 50, 100, 250, 500 cihaz; cihaz başına qiymət həcm
  *   artdıqca düşür;
- * - ödəniş aylıq və ya illik ola bilər: aylıq məbləğ = kompüter sayı ×
- *   kompüter başına aylıq qiymət; illik məbləğ = aylıq × (12 − hədiyyə ay).
+ * - ödəniş aylıq və ya illik ola bilər: aylıq məbləğ = cihaz sayı ×
+ *   cihaz başına aylıq qiymət; illik məbləğ = aylıq × (12 − hədiyyə ay).
  *   Hədiyyə ay admin paneldə seçilir (standart 0: illik = 12 ay);
- * - paketdən artıq kompüter 10-luq əlavə ilə həmin paketin qiymətinə alınır,
- *   ona görə qiymət paketlər arasında sıçrayış etmir (101 kompüter 100-dən
+ * - paketdən artıq cihaz 10-luq əlavə ilə həmin paketin qiymətinə alınır,
+ *   ona görə qiymət paketlər arasında sıçrayış etmir (101 cihaz 100-dən
  *   ucuz olmur); kalkulyator ən sərfəli variantı özü seçir;
  * - bütün imkanlar hər paketdədir, paketlər dəstək səviyyəsi ilə fərqlənir.
  *
@@ -163,7 +163,7 @@ function fixit_pricing_money( $amount ) {
 /**
  * Agent sayı üçün ən sərfəli variant (sayt kalkulyatoru ilə eyni hesab).
  *
- * @param int $agents Kompüter sayı.
+ * @param int $agents Cihaz sayı.
  * @return array{tier:array,extra:int,month:float,year:float}|null null — fərdi təklif.
  */
 function fixit_pricing_quote( $agents ) {
@@ -198,8 +198,8 @@ function fixit_pricing_includes() {
 		__( 'Operator sayı məhdud deyil, eyni anda istənilən qədər sessiya', 'fixit' ),
 		__( 'Server sizdə qurulur, məlumat şirkətdən çıxmır', 'fixit' ),
 		__( 'Lisenziya müddətində bütün yeni versiyalar', 'fixit' ),
-		__( 'Windows və Linux kompüterləri eyni qaydada sayılır', 'fixit' ),
-		__( 'Kompüter silinəndə və ya bloklananda yeri boşalır', 'fixit' ),
+		__( 'Windows və Linux cihazları eyni qaydada sayılır', 'fixit' ),
+		__( 'Cihaz silinəndə və ya bloklananda yeri boşalır', 'fixit' ),
 	);
 }
 
@@ -235,8 +235,8 @@ function fixit_pricing_section() {
 		<div class="container">
 			<div class="section-head section-head--center reveal">
 				<span class="eyebrow"><?php fixit_icon( 'tag' ); ?><?php esc_html_e( 'Qiymətlər', 'fixit' ); ?></span>
-				<h2><?php esc_html_e( 'Kompüter sayına görə ödəyirsiniz, operator sayına görə yox', 'fixit' ); ?></h2>
-				<p><?php esc_html_e( 'Qiymət idarə olunan kompüterlərin sayından asılıdır. Komandanızın hamısı işləyə bilər, bütün imkanlar hər paketdədir. Aylıq və ya illik ödəyə bilərsiniz.', 'fixit' ); ?></p>
+				<h2><?php esc_html_e( 'İdarə etdiyiniz cihaz sayına görə ödəyirsiniz', 'fixit' ); ?></h2>
+				<p><?php esc_html_e( 'Komandanızda neçə operator olsa da qiymət dəyişmir, bütün imkanlar hər paketdə var. Ödənişi aylıq və ya illik edə bilərsiniz.', 'fixit' ); ?></p>
 			</div>
 
 			<?php if ( $p['show'] ) : ?>
@@ -266,7 +266,7 @@ function fixit_pricing_section() {
 									<span data-bill="month">
 										<?php
 										/* translators: %s: qiymət */
-										echo esc_html( sprintf( __( 'kompüter başına %s', 'fixit' ), fixit_pricing_money( $tier['price'] ) ) );
+										echo esc_html( sprintf( __( 'cihaz başına %s', 'fixit' ), fixit_pricing_money( $tier['price'] ) ) );
 										?>
 									</span>
 									<span data-bill="year">
@@ -289,8 +289,8 @@ function fixit_pricing_section() {
 							<?php fixit_icon( 'computer' ); ?>
 							<span>
 								<?php
-								/* translators: %s: kompüter sayı */
-								echo esc_html( sprintf( __( '%s kompüterə qədər', 'fixit' ), number_format_i18n( $tier['max'] ) ) );
+								/* translators: %s: cihaz sayı */
+								echo esc_html( sprintf( __( '%s cihaza qədər', 'fixit' ), number_format_i18n( $tier['max'] ) ) );
 								?>
 							</span>
 						</p>
@@ -306,8 +306,8 @@ function fixit_pricing_section() {
 					<strong><?php esc_html_e( 'Fərdi təklif', 'fixit' ); ?></strong>
 					<span>
 						<?php
-						/* translators: %s: kompüter sayı */
-						echo esc_html( sprintf( __( '%s kompüterdən çox', 'fixit' ), number_format_i18n( $last['max'] ) ) . ': ' . __( 'həcmə görə qiymət, çoxillik müqavilə, bir neçə filial', 'fixit' ) );
+						/* translators: %s: cihaz sayı */
+						echo esc_html( sprintf( __( '%s cihazdan çox olduqda qiyməti həcmə və filialların sayına görə ayrıca hesablayırıq.', 'fixit' ), number_format_i18n( $last['max'] ) ) );
 						?>
 					</span>
 				</p>
@@ -324,15 +324,15 @@ function fixit_pricing_section() {
 					data-per-month="<?php esc_attr_e( 'ayda', 'fixit' ); ?>"
 					data-per-year="<?php esc_attr_e( 'ildə', 'fixit' ); ?>"
 					data-tpl-tier="<?php echo esc_attr__( '{tier} paketi{extra}', 'fixit' ); ?>"
-					data-tpl-extra="<?php echo esc_attr__( ' və {extra} əlavə kompüter', 'fixit' ); ?>"
+					data-tpl-extra="<?php echo esc_attr__( ' və {extra} əlavə cihaz', 'fixit' ); ?>"
 					data-tpl-alt-month="<?php echo esc_attr__( 'Aylıq ödənişdə: {v}', 'fixit' ); ?>"
 					data-tpl-alt-year="<?php echo esc_attr__( 'İllik ödənişdə: {v}', 'fixit' ); ?>"
 					data-tpl-custom-title="<?php esc_attr_e( 'Fərdi təklif', 'fixit' ); ?>"
-					data-tpl-custom="<?php echo esc_attr__( '{n} kompüter üçün fərdi təklif hazırlayırıq: bizimlə əlaqə saxlayın.', 'fixit' ); ?>">
+					data-tpl-custom="<?php echo esc_attr__( '{n} cihaz üçün fərdi təklif hazırlayırıq, bizimlə əlaqə saxlayın.', 'fixit' ); ?>">
 					<div class="price-calc__input">
-						<label for="price-calc-n"><?php esc_html_e( 'Neçə kompüteriniz var?', 'fixit' ); ?></label>
+						<label for="price-calc-n"><?php esc_html_e( 'Neçə cihazınız var?', 'fixit' ); ?></label>
 						<div class="price-calc__row">
-							<input type="range" id="price-calc-range" min="1" max="<?php echo esc_attr( $last['max'] + 100 ); ?>" value="100" aria-label="<?php esc_attr_e( 'Kompüter sayı', 'fixit' ); ?>">
+							<input type="range" id="price-calc-range" min="1" max="<?php echo esc_attr( $last['max'] + 100 ); ?>" value="100" aria-label="<?php esc_attr_e( 'Cihaz sayı', 'fixit' ); ?>">
 							<input type="number" id="price-calc-n" min="1" max="100000" value="100" inputmode="numeric">
 						</div>
 					</div>
@@ -368,7 +368,7 @@ function fixit_pricing_section() {
 			<div class="price-license reveal">
 				<div>
 					<h3><?php esc_html_e( 'Lisenziya almaq istəyirsiniz?', 'fixit' ); ?></h3>
-					<p><?php esc_html_e( 'Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Bizə yazın: kompüter sayınıza görə müqaviləni və hesab-fakturanı hazırlayırıq, ödənişdən sonra lisenziya açarını göndəririk.', 'fixit' ); ?></p>
+					<p><?php esc_html_e( 'Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Bizə yazın: cihaz sayınıza görə müqaviləni və hesab-fakturanı hazırlayırıq, ödənişdən sonra lisenziya açarını göndəririk.', 'fixit' ); ?></p>
 				</div>
 				<a class="btn btn--primary" href="<?php echo esc_url( $contact . '#elaqe-form' ); ?>"><?php esc_html_e( 'Lisenziya üçün müraciət', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?></a>
 			</div>

@@ -167,7 +167,7 @@ function fixit_form_rate_ok() {
 }
 
 /**
- * "İstifadəçi və ya kompüter sayı" seçimləri.
+ * "İstifadəçi və ya cihaz sayı" seçimləri.
  *
  * Məhsul qiyməti saytda yazılmır, fərdi təklif istifadəçi sayına görə
  * hazırlanır — bu sahə təklifi ilk məktubdan hazırlamağa imkan verir.
@@ -278,7 +278,7 @@ function fixit_handle_contact() {
 	$body = ( 'demo' === $kind ? "Saytdan yeni DEMO sorğusu daxil oldu:\n\n" : "Saytdan yeni müraciət daxil oldu:\n\n" )
 		. "Ad: {$name}\n"
 		. ( $company ? "Şirkət: {$company}\n" : '' )
-		. ( $size ? "İstifadəçi / kompüter sayı: {$size}\n" : '' )
+		. ( $size ? "İstifadəçi / cihaz sayı: {$size}\n" : '' )
 		. "E-poçt: {$email}\n"
 		. "Telefon: {$phone}\n"
 		. "Mövzu: {$topic}\n\n"

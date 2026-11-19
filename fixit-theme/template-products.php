@@ -137,7 +137,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 				$fixit_terms = array(
 					array( 'server', __( 'Öz infrastrukturunuzda', 'fixit' ), __( 'Proqram sizin serverinizə quraşdırılır; məlumat bazası da sizdə saxlanılır.', 'fixit' ) ),
 					array( 'cloud', __( 'Bizim buludda', 'fixit' ), __( 'Server almağa ehtiyac yoxdur: sistemi biz işə salırıq, yeniləmə və nəzarət də bizim üzərimizdədir.', 'fixit' ) ),
-					array( 'users', __( 'Lisenziya ehtiyaca görə', 'fixit' ), __( 'Fixit Remote kompüter sayına görə paketlərlə satılır. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayına və modullara görə hesablanır.', 'fixit' ) ),
+					array( 'users', __( 'Lisenziya ehtiyaca görə', 'fixit' ), __( 'Fixit Remote cihaz sayına görə paketlərlə satılır. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayına və modullara görə hesablanır.', 'fixit' ) ),
 					array( 'wrench', __( 'Quraşdırma və köçürmə', 'fixit' ), __( 'Sistemin qurulması, mövcud məlumatların köçürülməsi və ilkin ayarlar bizim üzərimizdədir.', 'fixit' ) ),
 					array( 'support', __( 'Təlim və dəstək', 'fixit' ), __( 'Komandanız üçün təlim keçirilir, sonrasında texniki dəstək paketi təklif olunur.', 'fixit' ) ),
 					array( 'zap', __( 'Yeniliklər', 'fixit' ), __( 'Məhsullar daim inkişaf etdirilir; yeni versiyalar dəstək müddəti ərzində təqdim olunur.', 'fixit' ) ),
