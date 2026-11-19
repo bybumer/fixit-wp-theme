@@ -1,0 +1,242 @@
+{
+ "Sınaq müraciətləri": {
+  "en": "Trial requests",
+  "ru": "Заявки на пробную версию"
+ },
+ "Sınaq müraciəti": {
+  "en": "Trial request",
+  "ru": "Заявка на пробную версию"
+ },
+ "Müraciət axtar": {
+  "en": "Search requests",
+  "ru": "Поиск заявок"
+ },
+ "Hələ müraciət yoxdur.": {
+  "en": "No requests yet.",
+  "ru": "Заявок пока нет."
+ },
+ "Yeni": {
+  "en": "New",
+  "ru": "Новая"
+ },
+ "Əlaqə saxlanılıb": {
+  "en": "Contacted",
+  "ru": "Связались"
+ },
+ "Qurub, sınayır": {
+  "en": "Installed, testing",
+  "ru": "Установили, тестируют"
+ },
+ "Müştəri oldu": {
+  "en": "Became a customer",
+  "ru": "Стали клиентом"
+ },
+ "İmtina etdi": {
+  "en": "Declined",
+  "ru": "Отказались"
+ },
+ "Təşəkkür edirik! Qurulum bələdçisini və qiymət məlumatını e-poçtunuza göndərdik. Məktubu bir neçə dəqiqəyə görməsəniz, «Spam» qovluğuna baxın.": {
+  "en": "Thank you! We have emailed you the installation guide and pricing. If the message does not arrive within a few minutes, please check your Spam folder.",
+  "ru": "Спасибо! Мы отправили вам на почту руководство по установке и информацию о ценах. Если письмо не придёт через несколько минут, проверьте папку «Спам»."
+ },
+ "Zəhmət olmasa bütün sahələri düzgün doldurun: ad, şirkət, telefon və e-poçt.": {
+  "en": "Please fill in all fields correctly: name, company, phone and email.",
+  "ru": "Пожалуйста, правильно заполните все поля: имя, компания, телефон и почта."
+ },
+ "Pulsuz sınaq": {
+  "en": "Free trial",
+  "ru": "Бесплатная пробная версия"
+ },
+ "Serveri %d gün pulsuz sınayın": {
+  "en": "Try the server free for %d days",
+  "ru": "Попробуйте сервер бесплатно %d дней"
+ },
+ "Formanı doldurun: qurulum bələdçisini, serverin yükləmə linkini və qiymətləri dərhal e-poçtunuza göndəririk. Server öz avadanlığınızda qurulur, sınaq müddətində bütün imkanlar açıqdır.": {
+  "en": "Fill in the form and we will immediately email you the installation guide, the server download link and pricing. The server is installed on your own hardware and every feature is open during the trial.",
+  "ru": "Заполните форму, и мы сразу отправим вам руководство по установке, ссылку на загрузку сервера и цены. Сервер устанавливается на вашем оборудовании, во время пробного периода открыты все возможности."
+ },
+ "Ödəniş və kart tələb olunmur": {
+  "en": "No payment or card required",
+  "ru": "Оплата и карта не нужны"
+ },
+ "Sınaq müddətində kompüter sayı məhdud deyil": {
+  "en": "No limit on the number of computers during the trial",
+  "ru": "Во время пробного периода число компьютеров не ограничено"
+ },
+ "Linux serverdə bir əmrlə qurulur": {
+  "en": "Installs on a Linux server with a single command",
+  "ru": "Устанавливается на Linux-сервер одной командой"
+ },
+ "Lisenziya yazılan kimi eyni server işləməyə davam edir, heç nə yenidən qurulmur": {
+  "en": "Once you enter a license the same server keeps running, nothing needs to be reinstalled",
+  "ru": "После ввода лицензии тот же сервер продолжает работать, ничего переустанавливать не нужно"
+ },
+ "Qurulumda kömək lazım olsa, mütəxəssisimiz qoşulur": {
+  "en": "If you need help with installation, our specialist will join",
+  "ru": "Если нужна помощь с установкой, подключится наш специалист"
+ },
+ "Ad, soyad": {
+  "en": "Full name",
+  "ru": "Имя и фамилия"
+ },
+ "Şirkətin adı": {
+  "en": "Company name",
+  "ru": "Название компании"
+ },
+ "Bələdçini göndərin": {
+  "en": "Send me the guide",
+  "ru": "Отправить руководство"
+ },
+ "Repo açarı yazılmayıb.": {
+  "en": "The repository token has not been set.",
+  "ru": "Ключ доступа к репозиторию не указан."
+ },
+ "GitHub cavab vermədi (kod %s). Açarın müddətini və icazəsini yoxlayın.": {
+  "en": "GitHub did not respond (code %s). Check the token's expiry and permissions.",
+  "ru": "GitHub не ответил (код %s). Проверьте срок действия и права ключа."
+ },
+ "Yeni link almaq üçün formanı yenidən doldurun": {
+  "en": "Fill in the form again to get a new link",
+  "ru": "Заполните форму ещё раз, чтобы получить новую ссылку"
+ },
+ "Link etibarsızdır": {
+  "en": "This link is not valid",
+  "ru": "Ссылка недействительна"
+ },
+ "Linkin müddəti bitib": {
+  "en": "This link has expired",
+  "ru": "Срок действия ссылки истёк"
+ },
+ "Paket hazırda əlçatmazdır. Mütəxəssisimizə xəbər getdi, qısa müddətdə sizinlə əlaqə saxlayacağıq.": {
+  "en": "The package is not available right now. Our specialist has been notified and we will contact you shortly.",
+  "ru": "Пакет сейчас недоступен. Наш специалист уже получил уведомление, мы скоро свяжемся с вами."
+ },
+ "Paket hazırda əlçatmazdır": {
+  "en": "The package is not available right now",
+  "ru": "Пакет сейчас недоступен"
+ },
+ "Fixit Remote: %d günlük sınaq və qurulum bələdçisi": {
+  "en": "Fixit Remote: %d-day trial and installation guide",
+  "ru": "Fixit Remote: пробный период %d дней и руководство по установке"
+ },
+ "Serveri hazırlayın": {
+  "en": "Prepare the server",
+  "ru": "Подготовьте сервер"
+ },
+ "Linux server və ya virtual maşın (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 və ya RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. 200 kompüterə qədər 2 vCPU, 2 GB yaddaş və 20 GB disk kifayətdir; 1000 kompüterə qədər 4 vCPU, 4 GB və 40 GB SSD. Serverə statik IP və ya DNS adı verin: kompüterlər ona bu ünvanla qoşulur.": {
+  "en": "A Linux server or virtual machine (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 or RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. Up to 200 computers, 2 vCPU, 2 GB RAM and 20 GB of disk are enough; up to 1,000 computers, 4 vCPU, 4 GB and a 40 GB SSD. Give the server a static IP or a DNS name: the computers connect to it at that address.",
+  "ru": "Linux-сервер или виртуальная машина (x86_64, systemd): Ubuntu Server 22.04 / 24.04 / 26.04, Debian 12 / 13 или RHEL, Rocky, AlmaLinux, Oracle Linux 9 / 10. До 200 компьютеров достаточно 2 vCPU, 2 ГБ памяти и 20 ГБ диска; до 1000 компьютеров 4 vCPU, 4 ГБ и 40 ГБ SSD. Назначьте серверу статический IP или DNS-имя: компьютеры подключаются к нему по этому адресу."
+ },
+ "Paketi yükləyib açın": {
+  "en": "Download and unpack the package",
+  "ru": "Загрузите и распакуйте пакет"
+ },
+ "Şəxsi linklə paketi serverə yükləyin, açın və qovluğa keçin. İstəsəniz əvvəlcə sistemi yoxlayın: yoxla.sh heç nəyi dəyişmir.": {
+  "en": "Download the package to the server with your personal link, unpack it and change into the folder. You can check the system first if you like: yoxla.sh does not change anything.",
+  "ru": "Загрузите пакет на сервер по личной ссылке, распакуйте его и перейдите в папку. При желании сначала проверьте систему: yoxla.sh ничего не меняет."
+ },
+ "Quraşdırın": {
+  "en": "Install",
+  "ru": "Установите"
+ },
+ "Quraşdırma bir əmrdir: paketin bütövlüyü yoxlanılır, lazım olan kitabxanalar qurulur, xidmət işə düşür. Panelin standart portu 8443-dür, başqa port üçün --port seçimini verin.": {
+  "en": "Installation is a single command: the package integrity is checked, the required libraries are installed and the service starts. The default panel port is 8443; use the --port option for a different port.",
+  "ru": "Установка выполняется одной командой: проверяется целостность пакета, ставятся нужные библиотеки, запускается служба. Стандартный порт панели 8443, для другого порта укажите параметр --port."
+ },
+ "Şəbəkəni yoxlayın": {
+  "en": "Check the network",
+  "ru": "Проверьте сеть"
+ },
+ "Kompüterlər və operatorlar serverə 8443/TCP ilə qoşulur, 8442/UDP isə yerli şəbəkədə serverin tapılması üçündür. ufw və ya firewalld açıqdırsa, quraşdırma bu portları özü açır. Kompüterlərin özündə port açmaq lazım deyil: agent serverə özü qoşulur.": {
+  "en": "Computers and operators connect to the server on 8443/TCP; 8442/UDP is used to find the server on the local network. If ufw or firewalld is active, the installer opens these ports itself. No ports need to be opened on the computers: the agent connects to the server on its own.",
+  "ru": "Компьютеры и операторы подключаются к серверу по 8443/TCP, 8442/UDP нужен для поиска сервера в локальной сети. Если включён ufw или firewalld, установщик сам откроет эти порты. На компьютерах открывать порты не нужно: агент сам подключается к серверу."
+ },
+ "İlk administratoru yaradın": {
+  "en": "Create the first administrator",
+  "ru": "Создайте первого администратора"
+ },
+ "Windows kompüterdə brauzerlə https://SERVER-ÜNVANI:8443 ünvanını açın və Fixit Remote Client proqramını endirin. Client-də serverin ünvanını yazın, göstərilən sertifikat izini serverdəki ilə tutuşdurun, sonra birdəfəlik qurulum kodunu yazıb admin hesabı yaradın:": {
+  "en": "On a Windows computer open https://SERVER-ADDRESS:8443 in a browser and download the Fixit Remote Client. Enter the server address in the Client, compare the certificate fingerprint it shows with the one on the server, then enter the one-time setup code and create the admin account:",
+  "ru": "На компьютере с Windows откройте в браузере https://АДРЕС-СЕРВЕРА:8443 и скачайте программу Fixit Remote Client. Введите в ней адрес сервера, сверьте показанный отпечаток сертификата с отпечатком на сервере, затем введите одноразовый код установки и создайте учётную запись администратора:"
+ },
+ "Kompüterləri qoşun": {
+  "en": "Connect the computers",
+  "ru": "Подключите компьютеры"
+ },
+ "Paneldə «Agentlər» bölməsindən Windows MSI-ni endirin: serverin ünvanı və qeydiyyat açarı içindədir, GPO, Intune və ya SCCM ilə səssiz qurulur. Linux kompüterlər üçün ayrıca agent paketi var. Qoşulan kompüter dərhal siyahıda görünür.": {
+  "en": "Download the Windows MSI from the Agents section of the panel: it already contains the server address and registration key and installs silently via GPO, Intune or SCCM. There is a separate agent package for Linux computers. A connected computer appears in the list right away.",
+  "ru": "Скачайте Windows MSI в разделе «Агенты» панели: в нём уже есть адрес сервера и ключ регистрации, он тихо устанавливается через GPO, Intune или SCCM. Для Linux-компьютеров есть отдельный пакет агента. Подключённый компьютер сразу появляется в списке."
+ },
+ "Sınaq və lisenziya": {
+  "en": "Trial and license",
+  "ru": "Пробный период и лицензия"
+ },
+ "Sınaq serverin ilk açılışından 14 gün davam edir, kompüter sayı məhdud deyil. Lisenziya üçün paneldə Sistem → Lisenziya səhifəsindəki Qurulum ID-ni bizə göndərin, aldığınız açarı həmin səhifəyə yazın. Server və bütün ayarlar olduğu kimi qalır.": {
+  "en": "The trial runs for 14 days from the server's first start, with no limit on computers. For a license, send us the Installation ID from System → License in the panel and enter the key you receive on the same page. The server and all settings stay as they are.",
+  "ru": "Пробный период длится 14 дней с первого запуска сервера, число компьютеров не ограничено. Для лицензии пришлите нам ID установки со страницы «Система → Лицензия» в панели и введите полученный ключ на той же странице. Сервер и все настройки остаются как есть."
+ },
+ "%d günlük pulsuz sınaq": {
+  "en": "%d-day free trial",
+  "ru": "Бесплатный пробный период %d дней"
+ },
+ "Salam, %s!": {
+  "en": "Hello, %s!",
+  "ru": "Здравствуйте, %s!"
+ },
+ "Fixit Remote ilə maraqlandığınız üçün təşəkkür edirik. Aşağıda serveri öz avadanlığınızda qurmaq üçün lazım olan hər şey var. Sınaq qurulum anından 14 gün davam edir, bütün imkanlar açıqdır.": {
+  "en": "Thank you for your interest in Fixit Remote. Below is everything you need to install the server on your own hardware. The trial runs for 14 days from installation and every feature is open.",
+  "ru": "Спасибо за интерес к Fixit Remote. Ниже всё, что нужно для установки сервера на вашем оборудовании. Пробный период длится 14 дней с момента установки, все возможности открыты."
+ },
+ "Şəxsi yükləmə linkiniz": {
+  "en": "Your personal download link",
+  "ru": "Ваша личная ссылка на загрузку"
+ },
+ "Link yalnız sizin üçündür və %s tarixinədək işləyir.": {
+  "en": "The link is for you only and works until %s.",
+  "ru": "Ссылка только для вас и действует до %s."
+ },
+ "Server paketini yüklə (Linux)": {
+  "en": "Download the server package (Linux)",
+  "ru": "Скачать пакет сервера (Linux)"
+ },
+ "Paketin rəqəmsal imzası:": {
+  "en": "Digital signature of the package:",
+  "ru": "Цифровая подпись пакета:"
+ },
+ "Server paketinin yükləmə linkini mütəxəssisimiz iş saatı ərzində ayrıca məktubla göndərəcək.": {
+  "en": "Our specialist will send the server package download link in a separate email during business hours.",
+  "ru": "Ссылку на загрузку пакета сервера наш специалист пришлёт отдельным письмом в рабочее время."
+ },
+ "Qurulum addım-addım": {
+  "en": "Installation step by step",
+  "ru": "Установка по шагам"
+ },
+ "Ətraflı bələdçi və problem olarsa nə etməli:": {
+  "en": "Full guide and what to do if something goes wrong:",
+  "ru": "Подробное руководство и что делать при проблемах:"
+ },
+ "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, ödəniş illikdir.": {
+  "en": "The price is based on the number of managed computers, with no limit on operators. Every package includes all features; billing is annual.",
+  "ru": "Цена зависит от числа управляемых компьютеров, число операторов не ограничено. Все возможности входят в каждый пакет, оплата годовая."
+ },
+ "Paketdən artıq kompüter: hər %s kompüter həmin paketin qiyməti ilə.": {
+  "en": "Computers above the package: each extra %s at that package's price.",
+  "ru": "Компьютеры сверх пакета: каждые %s по цене этого пакета."
+ },
+ "%s kompüterdən çox olduqda xüsusi təklif hazırlayırıq.": {
+  "en": "For more than %s computers we prepare a custom offer.",
+  "ru": "Для более чем %s компьютеров готовим индивидуальное предложение."
+ },
+ "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Kompüter sayınızı bildirin, dəqiq təklifi göndərək.": {
+  "en": "The price is based on the number of managed computers, with no limit on operators. Tell us how many computers you have and we will send an exact quote.",
+  "ru": "Цена зависит от числа управляемых компьютеров, число операторов не ограничено. Сообщите число компьютеров, и мы пришлём точное предложение."
+ },
+ "Sualınız olsa, bu məktuba cavab yazın və ya zəng edin:": {
+  "en": "If you have any questions, reply to this email or call us:",
+  "ru": "Если есть вопросы, ответьте на это письмо или позвоните:"
+ },
+ "Müraciətiniz qəbul olundu. Məktubu hazırda göndərə bilmədik: mütəxəssisimiz bələdçini və qiymətləri qısa müddətdə özü göndərəcək.": {
+  "en": "Your request has been received. We could not send the email right now, so our specialist will send you the guide and pricing shortly.",
+  "ru": "Ваша заявка принята. Сейчас не удалось отправить письмо, поэтому наш специалист сам вскоре пришлёт руководство и цены."
+ }
+}

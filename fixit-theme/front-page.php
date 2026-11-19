@@ -143,7 +143,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 									<?php echo fixit_product_screen_img( $fixit_ticket_shot[0], '(max-width: 1024px) 100vw, 520px' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 								</a>
 							<?php endif; ?>
-							<p class="hero-slide__text"><?php esc_html_e( 'Müştəri müraciətləri və komandanın daxili işləri bir platformada: e-poçt, portal, SLA, lövhə və vaxt uçotu.', 'fixit' ); ?></p>
+							<p class="hero-slide__text"><?php esc_html_e( 'Müştəri sorğuları və komandanın daxili işləri bir platformada: e-poçt, Telegram, portal, SLA, vaxt uçotu və Android tətbiqi.', 'fixit' ); ?></p>
 							<div class="hero-slide__cta">
 								<?php if ( $fixit_ticket_demo ) : ?>
 									<a class="btn btn--primary btn--sm" href="<?php echo esc_url( fixit_demo_link( $fixit_ticket_demo, 'home-slayd' ) ); ?>" target="_blank" rel="noopener">
@@ -282,7 +282,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 		<div class="container">
 			<div class="section-head section-head--center reveal">
 				<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Öz məhsullarımız', 'fixit' ); ?></span>
-				<h2><?php esc_html_e( 'Sıfırdan özümüzün yazdığı', 'fixit' ); ?> <span style="background:linear-gradient(100deg,#6fd0ff,#7bf7d8);-webkit-background-clip:text;background-clip:text;color:transparent"><?php esc_html_e( 'proqram təminatı', 'fixit' ); ?></span></h2>
+				<h2><?php esc_html_e( 'Komandamızın hazırladığı', 'fixit' ); ?> <span style="background:linear-gradient(100deg,#6fd0ff,#7bf7d8);-webkit-background-clip:text;background-clip:text;color:transparent"><?php esc_html_e( 'proqram təminatı', 'fixit' ); ?></span></h2>
 				<p><?php esc_html_e( 'Öz serverinizdə və ya bizim buludda işləyir, interfeysi Azərbaycan dilindədir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
 			</div>
 
@@ -394,7 +394,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 		<div class="demo-box reveal">
 			<div class="demo-box__text">
 				<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Pulsuz proqram', 'fixit' ); ?></span>
-				<h2><?php esc_html_e( 'Uzaqdan qoşulma', 'fixit' ); ?> — <span class="grad-text"><?php esc_html_e( 'öz proqramımız', 'fixit' ); ?></span></h2>
+				<h2><?php esc_html_e( 'Uzaqdan qoşulma', 'fixit' ); ?> — <span class="grad-text"><?php esc_html_e( 'fərdi istifadə üçün pulsuz', 'fixit' ); ?></span></h2>
 				<p><?php esc_html_e( 'Olduğunuz yerdən başqa kompüterə qoşulun: yaxınınıza kömək edin, evdə qalan maşınınıza çıxın, iş yoldaşınızla eyni ekrana baxın. Qeydiyyat yoxdur, ödəniş yoxdur — qoşulmağa isə hər dəfə qarşı tərəf icazə verir.', 'fixit' ); ?></p>
 
 				<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;align-items:center">

@@ -59,6 +59,10 @@ fixit-web/
         ├── seo-admin.php     ← admin paneldəki SEO izləmə lövhəsi
         ├── remote-download.php ← fixit.az/yukle: Fixit Remote yükləməsi, sayğac, son versiya
         ├── remote-admin.php  ← admin: «Fixit Remote» — son versiya, fayllar, yükləmə sayı
+        ├── remote-pricing.php ← Fixit Remote qiymət cədvəli və kalkulyator (kompüter sayına görə)
+        ├── remote-trial.php  ← 14 günlük sınaq: forma, məktub, şəxsi yükləmə linki (fixit.az/sinaq-paketi)
+        ├── remote-trial-admin.php ← admin: sınaq müraciətləri, «Qiymətlər və sınaq» ayarları
+        ├── consent.php       ← kuki razılığı zolağı, footerdəki «Məxfilik siyasəti» və «Kuki ayarları»
         ├── demo-stats.php    ← admin paneldə demo.fixit.az ziyarət statistikası
         ├── analytics.php     ← GA4, Meta Pixel, LinkedIn Insight, Clarity (Fərdiləşdir → Analitika və reklam)
         └── updater.php       ← GitHub relizlərindən avtomatik yeniləmə
@@ -112,6 +116,11 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Fixit Remote-un son versiyası, faylları, neçə dəfə yükləndiyi | Admin → **Fixit Remote** (başlanğıc səhifəsində də vidcet var). Saytdakı «Yüklə» düymələri həmişə ən son versiyanı verir, heç nə dəyişmək lazım deyil |
 | Demoya kim gəldi, hansı rolu seçdi, nə etdi | Admin → **Demo statistikası** (bir dəfəlik: «Ayarlar» → açar yarat → demo serverinin `.env`-inə `DEMO_STATS_TOKEN`; bax Fixit-Ticket-System `DEPLOY-DEMO.md` §9) |
 | Sorğu Sistemi-nin hazır ekran görüntülərini demodan yenidən çəkmək | `python tools/demo-ekranlar.py` (Chrome + Node 22+; admin qalereyası boşdursa bunlar göstərilir) |
+| Fixit Remote-un ekran görüntülərini demodan yenidən çəkmək | `python tools/remote-ekranlar.py` (eyni tələblər; başlıqlar `inc/product-data.php` → `remote` → `screens`) |
+| Fixit Remote-un qiymətləri, paketləri, ƏDV qeydi, qiymətləri saytda göstərmək | Admin → **Fixit Remote → Qiymətlər və sınaq** (qiymətlər yalnız «Qiymətləri saytda göstər» seçiləndə görünür) |
+| 14 günlük sınaq müraciətləri, onların vəziyyəti, məktubu yenidən göndərmək | Admin → **Fixit Remote → Sınaq müraciətləri** |
+| Sınaq məktubundakı qurulum addımları | `inc/remote-trial.php` → `fixit_trial_guide_steps()` (bələdçi səhifəsi də buradan götürür) |
+| Saytın məxfilik siyasəti, kukilər cədvəli | `template-privacy.php` (yeni kuki və ya xidmət əlavə olunanda bura da yazılır) |
 | Məhsul səhifəsinin detallı bölmələri (imkan qrupları, iş prinsipi, təhlükəsizlik, suallar) | `inc/product-data.php` |
 | Demo sorğuları | Admin → **Form mesajları** ("Növ: Demo") |
 | Məhsulların satış şərtləri, qiymət mətni, FAQ | `template-products.php` |
@@ -263,7 +272,45 @@ Admin panelin dili dəyişmir — o, WordPress ayarlarındakı dildə qalır.
 
 ---
 
-## 7. Nə edilib
+## 7. Fixit Remote: qiymətlər və 14 günlük sınaq
+
+**Qiymət modeli:** idarə olunan kompüter (agent) sayına görə, operator sayı
+məhdud deyil. Paketlər 25 / 50 / 100 / 250 / 500 kompüter; kompüter başına
+aylıq qiymət həcm artdıqca düşür, ödəniş illikdir. Paketdən artıq kompüter
+10-luq əlavə ilə həmin paketin qiymətinə alınır (qiymət sıçrayış etmir),
+kalkulyator ən sərfəli variantı özü seçir. 500-dən çox: fərdi təklif.
+
+Rəqəmlər admin paneldə dəyişir. **Qiymətlər saytda yalnız «Qiymətləri saytda
+göstər» seçiləndən sonra görünür**, o vaxta qədər paketlər «qiymət sorğu ilə»
+kimi göstərilir və sınaq məktubunda qiymət olmur.
+
+**Sınaq axını:**
+1. Ziyarətçi məhsul səhifəsindəki formanı doldurur (ad, şirkət, telefon, e-poçt).
+2. Müraciət admin paneldə saxlanılır, sizə bildiriş gedir.
+3. Müştəriyə öz dilində məktub gedir: qurulum addımları, qiymətlər və
+   **şəxsi yükləmə linki** (`fixit.az/<dil>/sinaq-paketi/?k=...`, standart 14 gün).
+4. Link açılanda sayt açarı yoxlayır, yükləməni müraciətdə qeyd edir və paketi
+   gizli GitHub reposundan (`bybumer/fixit-remote-server`) bir neçə dəqiqəlik
+   ünvanla verir. Repo və giriş açarı heç yerdə görünmür.
+
+**Bir dəfəlik ayar:** GitHub → Settings → Developer settings → Fine-grained
+tokens: yalnız `fixit-remote-server` reposu, *Contents: Read-only*. Açarı
+Admin → Fixit Remote → Qiymətlər və sınaq → «Repoya giriş açarı» sahəsinə yazın
+və «Girişi yoxla» basın. Açar yazılmayıbsa məktubda «linki mütəxəssis göndərəcək»
+yazılır, linki müraciətin səhifəsindən «Məktubu yenidən göndər» ilə göndərirsiniz.
+
+## 8. Kukilər və məxfilik
+
+Saytın aşağısında razılıq zolağı: «Hamısını qəbul et», «Yalnız zəruri», «Ayarlar»
+(analitika və reklam ayrıca). Seçim 12 ay saxlanılır, footerdəki «Kuki ayarları»
+ilə dəyişir. Analitika (GA4, Clarity) və reklam (Meta, LinkedIn) kodları yalnız
+razılıqdan sonra yüklənir; razılıq geri götürüləndə onların kukiləri silinir.
+Əlaqə səhifəsindəki xəritə yalnız «Xəritəni göstər» basılanda yüklənir.
+
+Məxfilik siyasəti: `fixit.az/mexfilik-siyaseti/` (WordPress-in «Məxfilik» ayarı da
+bu səhifəni göstərir). Formaların altında ona keçid var.
+
+## 9. Nə edilib
 
 - 5 tam səhifə: Ana səhifə, Xidmətlər, **Məhsullar**, Haqqımızda, Əlaqə
 - **Hər məhsulun ayrıca səhifəsi** (`/mehsul/sorgu-sistemi/`, `/mehsul/remote/`,
@@ -313,7 +360,7 @@ Admin panelin dili dəyişmir — o, WordPress ayarlarındakı dildə qalır.
   - Şablon faylları birbaşa çağırılanda heç nə icra etmir
 - Sürət: xarici kitabxana yoxdur, yalnız Google Fonts
 
-## 8. Analitika və reklam pikselləri
+## 10. Analitika və reklam pikselləri
 
 Kod temanın içindədir (`inc/analytics.php`, `assets/js/analytics.js`) — plagin
 və Google Tag Manager lazım deyil. **Fərdiləşdir → FIXIT tema ayarları →
@@ -335,7 +382,7 @@ Analitika və reklam** bölməsində identifikatorları yazın:
 
 | GA4 | Meta | Nə vaxt |
 |---|---|---|
-| `generate_lead` (form_type, topic, company_size) | `Lead` | Əlaqə və ya demo forması uğurla göndərildi (səhifə yeniləndikdə təkrar sayılmır) |
+| `generate_lead` (form_type: contact / demo / trial, topic, company_size) | `Lead` | Əlaqə, demo və ya Fixit Remote sınaq forması uğurla göndərildi (səhifə yeniləndikdə təkrar sayılmır) |
 | `demo_open` (product) | `DemoOpen` | Saytdan canlı demoya keçid (demo ünvanları məhsul ayarlarından götürülür) |
 | `contact_click` (method: phone / whatsapp / email) | `Contact` | Zəng, WhatsApp və ya e-poçt linki |
 | `remote_free_download` (platform) | `RemoteFreeDownload` | Pulsuz Fixit Remote yükləməsi |
@@ -347,10 +394,8 @@ LinkedIn konversiya ID-si yazılıbsa, form göndəriləndə o da sayılır.
 **Mark as key event**. Google Ads hesabını GA4-ə bağlayıb bu hadisələri
 konversiya kimi idxal edin — saytda əlavə Google Ads kodu lazım deyil.
 
-**Kuki razılığı:** “Kodlar yalnız ziyarətçinin razılığından sonra işləsin”
-seçilsə, saytın aşağısında zolaq görünür və heç bir izləmə skripti
-“Qəbul edirəm” basılana qədər yüklənmir. Seçim brauzerdə yadda qalır.
-Türkiyə və Aİ auditoriyasına reklam veriləndə açılması tövsiyə olunur.
+**Kuki razılığı** həmişə soruşulur (bax: bölmə 8): analitika kodları yalnız
+«Analitika», reklam kodları yalnız «Reklam» razılığından sonra yüklənir.
 
 **Demo serverləri** (`demo.fixit.az`, `remote-demo.fixit.az`) ayrı
 proqramlardır — bu kodlar orada işləmir. Saytdan demoya keçid `demo_open`
@@ -358,7 +403,7 @@ kimi sayılır.
 
 ---
 
-## 9. Sonrakı addımlar üçün ideyalar
+## 11. Sonrakı addımlar üçün ideyalar
 
 - Bloq bölməsi (şablonlar hazırdır — sadəcə yazı əlavə etmək kifayətdir)
 - Real müştəri loqoları ilə "Tərəfdaşlar" bölməsi

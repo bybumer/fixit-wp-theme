@@ -37,7 +37,7 @@ SCRIPT = os.path.join(BASE, 'tools', 'remote-ekranlar.mjs')
 PORT = '9334'
 
 # Sıra = qalereyadakı sıra (product-data.php → 'screens' ilə eyni adlar).
-ORDER = ['ekran', 'cihazlar', 'idare-lovhesi', 'yazisma', 'sessiyalar', 'komandalar']
+ORDER = ['ekran', 'cihazlar', 'idare-lovhesi', 'bildirisler', 'istifadeciler', 'yazisma', 'sessiyalar', 'komandalar']
 
 CHROME_PATHS = [
     r'C:\Program Files\Google\Chrome\Application\chrome.exe',

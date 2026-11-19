@@ -18,18 +18,26 @@ const BASE = 'https://demo.fixit.az/portal';
 // ona görə səhifədə bunlardan biri görünsə şəkil ÇƏKİLMİR, skript dayanır.
 const FORBIDDEN = /SOCAR|Pasha Holding|Kapital Bank|Azərenerji|Azerenerji|Bravo Supermarket|Azərsu|Azersu|socar\.az|pasha\.az|kapitalbank\.az/i;
 
-// [fayl adı, ünvan, gözləmə ms] - adlar demo-ekranlar.py-dəki sıra ilə eynidir.
-// Demo hər gecə yenidən yaranır və ID-lər dəyişir - ona görə tək sorğu
-// sabit nömrə ilə yox, siyahıdakı birinci sorğu kimi açılır (FIRST_TICKET).
+// [fayl adı, ünvan, gözləmə ms, səhifədə edilən hərəkət] - adlar demo-ekranlar.py-dəki
+// sıra ilə eynidir. Demo hər gecə yenidən yaranır və ID-lər dəyişir - ona görə tək
+// sorğu sabit nömrə ilə yox, siyahıdakı sorğulardan biri kimi açılır (FIRST_TICKET).
 const FIRST_TICKET = 'FIRST_TICKET';
 const SHOTS = [
-  ['sorgular', '/tickets?status=open', 2500],
-  ['sorgu', FIRST_TICKET, 2500],
-  ['lovhe', '/board', 2500],
-  ['tapsiriqlar', '/tasks', 2500],
-  ['vaxt-hesabati', '/time-report', 2500],
-  ['hesabatlar', '/reports', 2500],
+  // Siyahı və sorğu yan-yana: sətrə bir klik sorğunu sağ paneldə açır.
+  ['sorgular', '/tickets?status=open', 2800, 'open-panel'],
+  // Sorğunun tam səhifəsi: SLA nişanı, Müştəri paneli, «Həll olundu».
+  ['sorgu', FIRST_TICKET, 2800, ''],
+  // Ctrl+K: sorğu, tapşırıq və müştəri bir pəncərədən.
+  ['axtaris', '/dashboards', 3000, 'palette'],
+  ['dashboard', '/dashboards', 3500, ''],
+  ['tapsiriqlar', '/tasks', 2800, ''],
+  ['gantt', '/reports/view?type=gantt&kind=task', 3500, ''],
+  ['vaxt-hesabati', '/time-report', 2800, ''],
+  ['hesabatlar', '/reports/view?type=resolution&kind=ticket&days=90', 3500, ''],
 ];
+
+// Yalnız bəzilərini çəkmək üçün: node demo-ekranlar.mjs PORT OUT sorgular,gantt
+const ONLY = (process.argv[4] || '').split(',').filter(Boolean);
 
 const list = await (await fetch(`http://127.0.0.1:${port}/json/list`)).json();
 const ws = new WebSocket(list.find((t) => t.type === 'page').webSocketDebuggerUrl);
@@ -57,6 +65,12 @@ const evaluate = async (expression) =>
 const go = async (url, wait) => {
   await send('Page.navigate', { url });
   await sleep(wait);
+};
+// Ctrl+K kimi qısayol (modifiers: 2 = Ctrl).
+const chord = async (k, code, mods) => {
+  const vk = k.toUpperCase().charCodeAt(0);
+  await send('Input.dispatchKeyEvent', { type: 'keyDown', key: k, code, modifiers: mods, windowsVirtualKeyCode: vk });
+  await send('Input.dispatchKeyEvent', { type: 'keyUp', key: k, code, modifiers: mods, windowsVirtualKeyCode: vk });
 };
 
 await send('Page.enable');
@@ -91,12 +105,19 @@ const polish = `(() => {
   document.head.appendChild(s);
 })()`;
 
-for (const [name, path, wait] of SHOTS) {
+// Siyahının ilk sətirləri çox vaxt təzə, cavabsız sorğudur - üçüncünü seçirik,
+// orada adətən yazışma və müştəri məlumatı olur.
+const pickTicket = `(() => {
+  const links = [...document.querySelectorAll('a[href]')].filter(x => /^\\/portal\\/tickets\\/\\d+$/.test(x.getAttribute('href')));
+  const a = links[Math.min(2, links.length - 1)];
+  return a ? a.getAttribute('href') : ''; })()`;
+
+for (const [name, path, wait, action] of SHOTS) {
+  if (ONLY.length && !ONLY.includes(name)) continue;
+
   if (path === FIRST_TICKET) {
     await go(`${BASE}/tickets?status=open`, wait);
-    const href = await evaluate(`(() => {
-      const a = [...document.querySelectorAll('a[href]')].find(x => /^\\/portal\\/tickets\\/\\d+$/.test(x.getAttribute('href')));
-      return a ? a.getAttribute('href') : ''; })()`);
+    const href = await evaluate(pickTicket);
     if (!href) {
       console.error('XETA: siyahida sorgu tapilmadi.');
       process.exit(1);
@@ -104,6 +125,23 @@ for (const [name, path, wait] of SHOTS) {
     await go(new URL(href, BASE).href, wait);
   } else {
     await go(BASE + path, wait);
+  }
+
+  if (action === 'open-panel') {
+    // Sətrə bir klik: sorğu sağ paneldə açılır, siyahı yerində qalır.
+    const ok = await evaluate(`(() => {
+      const rows = [...document.querySelectorAll('tbody tr')];
+      const target = rows[Math.min(2, rows.length - 1)];
+      if (!target) return false;
+      (target.querySelector('td:nth-child(3)') || target).click();
+      return true; })()`);
+    if (!ok) console.error('XEBERDARLIQ: panel acilmadi (' + name + ')');
+    await sleep(2000);
+  } else if (action === 'palette') {
+    await chord('k', 'KeyK', 2);
+    await sleep(800);
+    await send('Input.insertText', { text: 'print' });
+    await sleep(1600);
   }
 
   // Boş və ya xəta səhifəsi qalereyaya düşməsin.

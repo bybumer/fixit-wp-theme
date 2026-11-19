@@ -24,7 +24,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 	<div class="container">
 		<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Öz məhsullarımız', 'fixit' ); ?></span>
 		<h1><?php esc_html_e( 'Bizim hazırladığımız proqram təminatı', 'fixit' ); ?></h1>
-		<p><?php esc_html_e( 'Xidmətlərimizlə yanaşı, öz komandamızın sıfırdan yazdığı məhsulları təqdim edirik. Hamısı Azərbaycan dilindədir, öz serverinizdə və ya bizim buludda işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
+		<p><?php esc_html_e( 'Xidmətlərimizlə yanaşı, komandamızın hazırladığı məhsulları təqdim edirik. Hamısı Azərbaycan dilindədir, öz serverinizdə və ya bizim buludda işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
 
 		<nav class="crumbs" aria-label="<?php esc_attr_e( 'Naviqasiya', 'fixit' ); ?>">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Ana səhifə', 'fixit' ); ?></a>
@@ -41,7 +41,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 			<?php
 			$fixit_pillars = array(
 				array( 'cloud', __( 'Server və ya bulud', 'fixit' ), __( 'Harada işləyəcəyini siz seçirsiniz', 'fixit' ) ),
-				array( 'wrench', __( 'Fərdiləşdirilə bilir', 'fixit' ), __( 'Mənbə kod bizimdir', 'fixit' ) ),
+				array( 'wrench', __( 'Fərdiləşdirilə bilir', 'fixit' ), __( 'İş axınınıza uyğun dəyişikliklər edirik', 'fixit' ) ),
 				array( 'users', __( 'Azərbaycan dilində', 'fixit' ), __( 'İnterfeys və dəstək', 'fixit' ) ),
 				array( 'support', __( 'Quraşdırma daxil', 'fixit' ), __( 'Təlim və texniki dəstək', 'fixit' ) ),
 			);
@@ -137,7 +137,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 				$fixit_terms = array(
 					array( 'server', __( 'Öz infrastrukturunuzda', 'fixit' ), __( 'Proqram sizin serverinizə quraşdırılır; məlumat bazası da sizdə saxlanılır.', 'fixit' ) ),
 					array( 'cloud', __( 'Bizim buludda', 'fixit' ), __( 'Server almağa ehtiyac yoxdur: sistemi biz işə salırıq, yeniləmə və nəzarət də bizim üzərimizdədir.', 'fixit' ) ),
-					array( 'users', __( 'Lisenziya ehtiyaca görə', 'fixit' ), __( 'Qiymət istifadəçi sayı və lazım olan modullara görə hesablanır — hər şirkət üçün ayrıca təklif hazırlayırıq.', 'fixit' ) ),
+					array( 'users', __( 'Lisenziya ehtiyaca görə', 'fixit' ), __( 'Fixit Remote kompüter sayına görə paketlərlə satılır. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayına və modullara görə hesablanır.', 'fixit' ) ),
 					array( 'wrench', __( 'Quraşdırma və köçürmə', 'fixit' ), __( 'Sistemin qurulması, mövcud məlumatların köçürülməsi və ilkin ayarlar bizim üzərimizdədir.', 'fixit' ) ),
 					array( 'support', __( 'Təlim və dəstək', 'fixit' ), __( 'Komandanız üçün təlim keçirilir, sonrasında texniki dəstək paketi təklif olunur.', 'fixit' ) ),
 					array( 'zap', __( 'Yeniliklər', 'fixit' ), __( 'Məhsullar daim inkişaf etdirilir; yeni versiyalar dəstək müddəti ərzində təqdim olunur.', 'fixit' ) ),
@@ -158,9 +158,9 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 		<div class="reveal">
 			<div class="form">
 				<span class="eyebrow"><?php esc_html_e( 'Qiymət', 'fixit' ); ?></span>
-				<h3 style="font-size:1.5rem;margin:14px 0 12px"><?php esc_html_e( 'Təklif fərdi hazırlanır', 'fixit' ); ?></h3>
+				<h3 style="font-size:1.5rem;margin:14px 0 12px"><?php esc_html_e( 'Şəffaf qiymət, yazılı təklif', 'fixit' ); ?></h3>
 				<p style="color:var(--text-soft);font-size:.97rem">
-					<?php esc_html_e( 'Sabit qiymət siyahısı vermirik, çünki hər şirkətin istifadəçi sayı, modul ehtiyacı və mövcud infrastrukturu fərqlidir. Qısa bir söhbətdən sonra sizə konkret və şəffaf təklif təqdim edirik.', 'fixit' ); ?>
+					<?php esc_html_e( 'Fixit Remote-un paketləri və qiymətləri məhsul səhifəsindədir, 14 gün pulsuz sınamaq olar. Sorğu Sistemi və Şəbəkə Monitorinqi üçün istifadəçi sayınızı və ehtiyacınızı öyrənib qısa söhbətdən sonra yazılı təklif göndəririk.', 'fixit' ); ?>
 				</p>
 
 				<ul class="bullets" style="margin-top:20px">

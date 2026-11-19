@@ -109,9 +109,18 @@ while ( have_posts() ) :
 							<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Demonu sına', 'fixit' ); ?>
 						</a>
 					<?php endif; ?>
-					<a class="btn btn--light" href="<?php echo esc_url( $fixit_offer_url ); ?>">
-						<?php esc_html_e( 'Təklif istə', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
-					</a>
+					<?php if ( 'remote' === $fixit_post->post_name ) : ?>
+						<a class="btn btn--light" href="#sinaq">
+							<?php fixit_icon( 'gift' ); ?><?php esc_html_e( '14 gün pulsuz sınayın', 'fixit' ); ?>
+						</a>
+						<a class="btn btn--light" href="#qiymetler">
+							<?php fixit_icon( 'tag' ); ?><?php esc_html_e( 'Qiymətlər', 'fixit' ); ?>
+						</a>
+					<?php else : ?>
+						<a class="btn btn--light" href="<?php echo esc_url( $fixit_offer_url ); ?>">
+							<?php esc_html_e( 'Təklif istə', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
+						</a>
+					<?php endif; ?>
 					<?php if ( $fixit_guide ) : ?>
 						<a class="btn btn--light" href="<?php echo esc_url( $fixit_guide ); ?>" target="_blank" rel="noopener">
 							<?php fixit_icon( 'book' ); ?><?php esc_html_e( 'İstifadəçi bələdçisi', 'fixit' ); ?><?php fixit_icon( 'external' ); ?>
@@ -368,6 +377,12 @@ while ( have_posts() ) :
 		</section>
 	<?php endif; ?>
 
+	<!-- ============================ QİYMƏTLƏR VƏ SINAQ (Fixit Remote) ============================ -->
+	<?php if ( 'remote' === $fixit_post->post_name ) : ?>
+		<?php fixit_pricing_section(); ?>
+		<?php fixit_trial_section(); ?>
+	<?php endif; ?>
+
 	<!-- ============================ DEMO ============================ -->
 	<?php if ( $fixit_show_demo ) : ?>
 		<section class="section" id="demo">
@@ -475,7 +490,7 @@ while ( have_posts() ) :
 								<button class="btn btn--primary btn--block" type="submit">
 									<?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Demo girişi istə', 'fixit' ); ?>
 								</button>
-								<p class="form-note"><?php esc_html_e( 'Məlumatlarınız yalnız demo girişi göndərmək və sizinlə əlaqə üçün istifadə olunur.', 'fixit' ); ?></p>
+								<p class="form-note"><?php esc_html_e( 'Məlumatlarınız yalnız demo girişi göndərmək və sizinlə əlaqə üçün istifadə olunur.', 'fixit' ); ?> <a href="<?php echo esc_url( fixit_privacy_url() ); ?>"><?php esc_html_e( 'Məxfilik siyasəti', 'fixit' ); ?></a></p>
 							</form>
 						<?php endif; ?>
 					</div>

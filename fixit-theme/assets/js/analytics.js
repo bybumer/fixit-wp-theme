@@ -20,41 +20,15 @@
 	if (!c) return;
 
 	/*
-	 * Hadisəni bütün qoşulu sistemlərə ötürür. Razılıq hələ verilməyibsə
-	 * kitabxanalar yoxdur və hadisə heç yerə getmir — bu, qəsdəndir.
+	 * Hadisəni bütün qoşulu sistemlərə ötürür. Razılıq verilməyibsə
+	 * kitabxanalar yoxdur və hadisə heç yerə getmir — bu, qəsdəndir
+	 * (razılıq zolağı: assets/js/consent.js).
 	 */
 	function send(name, params, metaName, metaParams, metaStandard) {
 		if (c.ga4 && window.gtag) window.gtag('event', name, params || {});
 		if (c.meta && window.fbq && metaName) {
 			window.fbq(metaStandard ? 'track' : 'trackCustom', metaName, metaParams || params || {});
 		}
-	}
-
-	/* ---------------------------------------------
-	   1. Kuki razılığı
-	   --------------------------------------------- */
-	var bar = doc.getElementById('fixit-consent');
-
-	if (c.ask && bar) {
-		var choice = null;
-		try {
-			choice = localStorage.getItem('fixit-consent');
-		} catch (e) {}
-
-		if (choice !== 'granted' && choice !== 'denied') bar.hidden = false;
-
-		bar.addEventListener('click', function (e) {
-			var btn = e.target.closest ? e.target.closest('[data-consent]') : null;
-			if (!btn) return;
-
-			var value = btn.getAttribute('data-consent') === 'granted' ? 'granted' : 'denied';
-			try {
-				localStorage.setItem('fixit-consent', value);
-			} catch (err) {}
-
-			bar.hidden = true;
-			if (value === 'granted' && c.start) c.start();
-		});
 	}
 
 	/* ---------------------------------------------
@@ -70,7 +44,17 @@
 
 	doc.addEventListener('submit', function (e) {
 		var form = e.target;
-		if (!form || !form.querySelector || !form.querySelector('input[name="action"][value="fixit_contact"]')) return;
+		if (!form || !form.querySelector) return;
+
+		// Fixit Remote-un 14 günlük sınaq forması (inc/remote-trial.php).
+		if (form.querySelector('input[name="action"][value="fixit_trial"]')) {
+			try {
+				sessionStorage.setItem(LEAD_KEY, JSON.stringify({ kind: 'trial', topic: 'Fixit Remote', size: '' }));
+			} catch (err) {}
+			return;
+		}
+
+		if (!form.querySelector('input[name="action"][value="fixit_contact"]')) return;
 
 		var kind = form.querySelector('[name="fixit_kind"]');
 		var topic = form.querySelector('[name="fixit_topic"]');
@@ -85,7 +69,7 @@
 		} catch (err) {}
 	}, true);
 
-	if (/[?&]fixit_msg=(ok|demo_ok)(&|$)/.test(window.location.search)) {
+	if (/[?&](fixit_msg=(ok|demo_ok)|fixit_trial=(ok|queued))(&|$)/.test(window.location.search)) {
 		var lead = null;
 		try {
 			lead = JSON.parse(sessionStorage.getItem(LEAD_KEY) || 'null');

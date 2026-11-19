@@ -95,13 +95,9 @@
 "en": "Details",
 "ru": "Подробнее"
 },
-"Sıfırdan özümüzün yazdığı": {
-"en": "Software we wrote",
-"ru": "Программы, написанные нами"
-},
 "proqram təminatı": {
-"en": "from scratch",
-"ru": "с нуля"
+"en": "by our team",
+"ru": "нашей командой"
 },
 "Sizin öz serverinizdə işləyir, interfeysi Azərbaycan dilindədir və şirkətinizin iş axınına uyğunlaşdırıla bilir.": {
 "en": "It runs on your own server, the interface comes in your language and it can be adapted to how your company works.",
@@ -138,10 +134,6 @@
 "Uzaqdan qoşulma": {
 "en": "Remote access",
 "ru": "Удалённое подключение"
-},
-"öz proqramımız": {
-"en": "our own program",
-"ru": "наша программа"
 },
 "Olduğunuz yerdən başqa kompüterə qoşulun: yaxınınıza kömək edin, evdə qalan maşınınıza çıxın, iş yoldaşınızla eyni ekrana baxın. Qeydiyyat yoxdur, ödəniş yoxdur — qoşulmağa isə hər dəfə qarşı tərəf icazə verir.": {
 "en": "Connect to another computer from wherever you are: help a relative, reach the machine you left at home, look at the same screen as a colleague. No registration, no payment — and the other side approves every connection.",

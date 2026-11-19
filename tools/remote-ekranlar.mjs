@@ -15,12 +15,20 @@ mkdirSync(out, { recursive: true });
 // [fayl adı, ünvan, gözləmə ms] - adlar remote-ekranlar.py-dəki sıra ilə eynidir.
 // VIEWER: ekran pəncərəsi - işçinin öz kompüteri (ortaq terminal yox).
 // CHAT: cihazlar siyahısı və yazışması olan kompüterin çat paneli.
+// PROFILE: onlayn kompüterin profili, «Avadanlıq» bölməsi (demoda inventar
+// boş olduğu üçün hazırda dəstə daxil deyil).
+// 4-cü dəyər: qısa siyahılı səhifələr kiçik pəncərədə (eyni 16:10 nisbəti) çəkilir,
+// məzmun böyük görünür və altda boş yer qalmır.
 const VIEWER = 'VIEWER';
 const CHAT = 'CHAT';
+const PROFILE = 'PROFILE';
+const SMALL = { width: 1280, height: 800 };
 const SHOTS = [
   ['ekran', VIEWER, 3500],
   ['cihazlar', '/#devices', 2500],
   ['idare-lovhesi', '/#dashboard', 3000],
+  ['bildirisler', '/#notices', 2500, SMALL],
+  ['istifadeciler', '/#users', 2500, SMALL],
   ['yazisma', CHAT, 2500],
   ['sessiyalar', '/#sessions', 2500],
   ['komandalar', '/#teams', 2500],
@@ -96,7 +104,10 @@ const polish = `(() => {
   document.head.appendChild(s);
 })()`;
 
-for (const [name, path, wait] of SHOTS) {
+for (const [name, path, wait, size] of SHOTS) {
+  const view = size || { width: 1920, height: 1200 };
+  await send('Emulation.setDeviceMetricsOverride', { width: view.width, height: view.height, deviceScaleFactor: 2, mobile: false });
+
   if (path === VIEWER) {
     // Paneldəki "Qoşul" kimi: demo-viewer.html eyni parametrlərlə.
     const url = await evaluate(`(async () => {
@@ -112,6 +123,22 @@ for (const [name, path, wait] of SHOTS) {
       process.exit(1);
     }
     await go(BASE + url, wait);
+  } else if (path === PROFILE) {
+    // Onlayn, təsdiqlənmiş və sahibi olan kompüter: profilində inventar doludur.
+    const dev = await evaluate(`(async () => {
+      const list = await (await fetch('/api/devices')).json();
+      const d = list.find(x => x.online && x.approved && x.owner) || list.find(x => x.approved);
+      return d ? d.deviceId : ''; })()`);
+    if (!dev) {
+      console.error('XETA: profil ucun komputer tapilmadi.');
+      process.exit(1);
+    }
+    await go(BASE + '/#device/' + dev, wait);
+    await evaluate(`(() => {
+      const t = [...document.querySelectorAll('main button, main [role=tab]')].find(b => b.textContent.trim() === 'Avadanlıq');
+      if (t) t.click();
+      return !!t; })()`);
+    await sleep(2000);
   } else if (path === CHAT) {
     await go(BASE + '/#devices', wait);
     // Ən çox mesajı olan kompüterin çatı (məlumat hər gecə yenidən yaranır).

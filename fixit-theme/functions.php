@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.14.1' );
+define( 'FIXIT_VERSION', '1.15.0' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -175,13 +175,17 @@ require_once get_template_directory() . '/inc/product-demo.php';  // Məhsul: de
 require_once get_template_directory() . '/inc/product-data.php';  // Məhsul səhifələrinin detallı məzmunu
 require_once get_template_directory() . '/inc/remote-download.php'; // fixit.az/yukle: Fixit Remote-un yüklənməsi və sayı
 require_once get_template_directory() . '/inc/remote-admin.php';    // Admin: Fixit Remote — son versiya və yükləmə sayı
+require_once get_template_directory() . '/inc/remote-pricing.php';  // Fixit Remote: qiymət cədvəli (agent sayına görə)
+require_once get_template_directory() . '/inc/remote-trial.php';    // Fixit Remote: 14 günlük sınaq müraciəti, məktub, admin izləmə
+require_once get_template_directory() . '/inc/remote-trial-admin.php'; // Admin: sınaq müraciətləri, qiymət və sınaq ayarları
 require_once get_template_directory() . '/inc/contact-form.php';  // Əlaqə formu (plagin tələb etmir)
 require_once get_template_directory() . '/inc/demo-content.php';  // İlk quraşdırmada səhifə/menyu yaradılması
 require_once get_template_directory() . '/inc/faq.php';           // Sual-cavab məzmunu (səhifə + schema)
 require_once get_template_directory() . '/inc/seo.php';           // Meta teqlər və Schema.org
 require_once get_template_directory() . '/inc/seo-admin.php';     // Admin paneldə SEO izləmə lövhəsi
 require_once get_template_directory() . '/inc/demo-stats.php';    // Admin paneldə demo.fixit.az ziyarət statistikası
-require_once get_template_directory() . '/inc/analytics.php';     // GA4, Meta Pixel, LinkedIn Insight, Clarity + kuki razılığı
+require_once get_template_directory() . '/inc/analytics.php';     // GA4, Meta Pixel, LinkedIn Insight, Clarity (yalnız razılıqla)
+require_once get_template_directory() . '/inc/consent.php';       // Kuki razılığı zolağı, məxfilik keçidləri
 require_once get_template_directory() . '/inc/updater.php';       // GitHub relizlərindən avtomatik yeniləmə
 require_once get_template_directory() . '/inc/updater-package.php'; // Paketin yoxlanması, ehtiyat mənbə, diaqnostika
 

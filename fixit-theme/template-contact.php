@@ -187,7 +187,7 @@ $fixit_products  = fixit_get_products();
 					<?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Göndər', 'fixit' ); ?>
 				</button>
 
-				<p class="form-note"><?php esc_html_e( 'Məlumatlarınız yalnız müraciətinizə cavab vermək üçün istifadə olunur.', 'fixit' ); ?></p>
+				<p class="form-note"><?php esc_html_e( 'Məlumatlarınız yalnız müraciətinizə cavab vermək üçün istifadə olunur.', 'fixit' ); ?> <a href="<?php echo esc_url( fixit_privacy_url() ); ?>"><?php esc_html_e( 'Məxfilik siyasəti', 'fixit' ); ?></a></p>
 			</form>
 		</div>
 
@@ -198,13 +198,18 @@ $fixit_products  = fixit_get_products();
 <?php if ( $fixit_map ) : ?>
 	<section class="section" style="padding-top:0">
 		<div class="container">
-			<div class="map-wrap reveal">
-				<iframe
-					src="<?php echo esc_url( $fixit_map ); ?>"
-					title="<?php esc_attr_e( 'FIXIT ofisinin xəritədə yeri', 'fixit' ); ?>"
-					loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade"
-					allowfullscreen></iframe>
+			<?php
+			/*
+			 * Xəritə yalnız düymə basılanda yüklənir: Google Maps öz kukilərini
+			 * yazır, ziyarətçi bunu özü seçsin (bax: Məxfilik siyasəti, assets/js/main.js).
+			 */
+			?>
+			<div class="map-wrap map-wrap--lazy reveal" data-map-src="<?php echo esc_url( $fixit_map ); ?>" data-map-title="<?php esc_attr_e( 'FIXIT ofisinin xəritədə yeri', 'fixit' ); ?>">
+				<button type="button" class="map-load" data-map-load>
+					<?php fixit_icon( 'pin' ); ?>
+					<span><?php esc_html_e( 'Xəritəni göstər', 'fixit' ); ?></span>
+					<small><?php esc_html_e( 'Xəritə Google Maps-dən yüklənir', 'fixit' ); ?></small>
+				</button>
 			</div>
 		</div>
 	</section>

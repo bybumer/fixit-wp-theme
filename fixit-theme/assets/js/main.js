@@ -404,6 +404,99 @@
 			.catch(function () {});
 	}
 
+	/* ---------------------------------------------
+	   9. Fixit Remote: qiymət kalkulyatoru
+	   Hesab inc/remote-pricing.php → fixit_pricing_quote() ilə eynidir:
+	   hər paket üçün «paket + 10-luq əlavələr» hesablanır, ən ucuzu seçilir.
+	   --------------------------------------------- */
+	var calc = doc.querySelector('[data-price-calc]');
+
+	if (calc) {
+		var tiers = [];
+		var names = {};
+		try {
+			tiers = JSON.parse(calc.getAttribute('data-tiers') || '[]');
+			names = JSON.parse(calc.getAttribute('data-names') || '{}');
+		} catch (e) {}
+
+		var step = parseInt(calc.getAttribute('data-step'), 10) || 10;
+		var range = calc.querySelector('input[type=range]');
+		var num = calc.querySelector('input[type=number]');
+		var out = calc.querySelector('.price-calc__out');
+		var lang = doc.documentElement.lang || 'az';
+
+		// Ayırıcılar serverdən gəlir (fixit_pricing_separators): PHP ilə eyni format.
+		var sep = ['.', ','];
+		try { sep = JSON.parse(calc.getAttribute('data-sep') || '[".", ","]'); } catch (e) {}
+
+		var money = function (v) {
+			var whole = Math.abs(v - Math.round(v)) < 0.005;
+			var parts = (whole ? Math.round(v).toString() : v.toFixed(2)).split('.');
+			parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, sep[1]);
+			return parts.join(sep[0]) + '\u00a0AZN';
+		};
+
+		var esc = function (t) {
+			return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+		};
+
+		var quote = function (n) {
+			var best = null;
+			if (!tiers.length || n > tiers[tiers.length - 1].max) return null;
+			tiers.forEach(function (t) {
+				var extra = Math.max(0, Math.ceil((n - t.max) / step) * step);
+				var year = Math.round((t.max + extra) * t.price * 12 * 100) / 100;
+				if (!best || year < best.year) best = { tier: t, extra: extra, year: year };
+			});
+			return best;
+		};
+
+		var render = function (n) {
+			n = Math.max(1, Math.min(100000, parseInt(n, 10) || 1));
+			var q = quote(n);
+			var html;
+			if (!q) {
+				html = esc(calc.getAttribute('data-tpl-custom') || '').replace('{n}', '<b>' + n + '</b>');
+			} else {
+				var extra = q.extra ? esc(calc.getAttribute('data-tpl-extra') || '').replace('{extra}', q.extra) : '';
+				html = esc(calc.getAttribute('data-tpl') || '')
+					.replace('{n}', '<b>' + n + '</b>')
+					.replace('{tier}', '<b>' + esc(names[q.tier.key] || q.tier.key) + '</b>')
+					.replace('{extra}', extra)
+					.replace('{year}', '<b>' + money(q.year) + '</b>')
+					.replace('{month}', money(Math.round(q.year / 12 * 100) / 100));
+			}
+			out.innerHTML = html;
+		};
+
+		if (range && num && out) {
+			range.addEventListener('input', function () { num.value = range.value; render(range.value); });
+			num.addEventListener('input', function () {
+				if (parseInt(num.value, 10) <= parseInt(range.max, 10)) range.value = num.value;
+				render(num.value);
+			});
+			render(num.value);
+		}
+	}
+
+	/* ---------------------------------------------
+	   10. Xəritə: yalnız «Xəritəni göstər» basılanda yüklənir
+	   --------------------------------------------- */
+	doc.addEventListener('click', function (e) {
+		var btn = e.target.closest ? e.target.closest('[data-map-load]') : null;
+		if (!btn) return;
+		var wrap = btn.closest('[data-map-src]');
+		if (!wrap) return;
+
+		var frame = doc.createElement('iframe');
+		frame.src = wrap.getAttribute('data-map-src');
+		frame.title = wrap.getAttribute('data-map-title') || '';
+		frame.loading = 'lazy';
+		frame.referrerPolicy = 'no-referrer-when-downgrade';
+		frame.allowFullscreen = true;
+		wrap.replaceChild(frame, btn);
+	});
+
 	function isBot() {
 		try {
 			return new RegExp(L.bots || 'bot', 'i').test(navigator.userAgent || '');

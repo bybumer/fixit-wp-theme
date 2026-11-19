@@ -1,0 +1,118 @@
+{
+ "Müştəri sorğuları və komandanın daxili işləri bir platformada: e-poçt, Telegram, portal, SLA, vaxt uçotu və Android tətbiqi.": {
+  "en": "Customer requests and your team's internal work on one platform: email, Telegram, portal, SLA, time tracking and an Android app.",
+  "ru": "Обращения клиентов и внутренние задачи команды на одной платформе: почта, Telegram, портал, SLA, учёт времени и Android-приложение."
+ },
+ "Komandamızın hazırladığı": {
+  "en": "Software built",
+  "ru": "Программы, созданные"
+ },
+ "fərdi istifadə üçün pulsuz": {
+  "en": "free for personal use",
+  "ru": "бесплатно для личного использования"
+ },
+ "14 gün pulsuz sınayın": {
+  "en": "Try free for 14 days",
+  "ru": "14 дней бесплатно"
+ },
+ "Qiymətlər": {
+  "en": "Pricing",
+  "ru": "Цены"
+ },
+ "Xəritəni göstər": {
+  "en": "Show the map",
+  "ru": "Показать карту"
+ },
+ "Xəritə Google Maps-dən yüklənir": {
+  "en": "The map is loaded from Google Maps",
+  "ru": "Карта загружается из Google Maps"
+ },
+ "Xidmətlərimizlə yanaşı, komandamızın hazırladığı məhsulları təqdim edirik. Hamısı Azərbaycan dilindədir, öz serverinizdə və ya bizim buludda işləyir və şirkətinizin iş axınına uyğunlaşdırıla bilir.": {
+  "en": "Alongside our services we offer products built by our team. They are available in Azerbaijani, English and Russian, run on your own server or in our cloud, and can be adapted to the way your company works.",
+  "ru": "Помимо услуг мы предлагаем продукты, созданные нашей командой. Они работают на азербайджанском, английском и русском, на вашем сервере или в нашем облаке и подстраиваются под процессы вашей компании."
+ },
+ "İş axınınıza uyğun dəyişikliklər edirik": {
+  "en": "We adapt it to your workflow",
+  "ru": "Дорабатываем под ваши процессы"
+ },
+ "Fixit Remote kompüter sayına görə paketlərlə satılır. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayına və modullara görə hesablanır.": {
+  "en": "Fixit Remote is sold in packages based on the number of computers. For the Helpdesk and Network Monitoring the price depends on the number of users and the modules you need.",
+  "ru": "Fixit Remote продаётся пакетами по числу компьютеров. Для Службы заявок и Мониторинга сети цена зависит от числа пользователей и нужных модулей."
+ },
+ "Şəffaf qiymət, yazılı təklif": {
+  "en": "Clear pricing, written quote",
+  "ru": "Прозрачная цена, письменное предложение"
+ },
+ "Fixit Remote-un paketləri və qiymətləri məhsul səhifəsindədir, 14 gün pulsuz sınamaq olar. Sorğu Sistemi və Şəbəkə Monitorinqi üçün istifadəçi sayınızı və ehtiyacınızı öyrənib qısa söhbətdən sonra yazılı təklif göndəririk.": {
+  "en": "Fixit Remote packages and prices are on its product page, and you can try it free for 14 days. For the Helpdesk and Network Monitoring we learn your user count and needs, and after a short call we send a written quote.",
+  "ru": "Пакеты и цены Fixit Remote указаны на странице продукта, попробовать можно бесплатно 14 дней. Для Службы заявок и Мониторинга сети мы уточняем число пользователей и потребности и после короткого разговора присылаем письменное предложение."
+ },
+ "Qiymətlər necə hesablanır?": {
+  "en": "How is pricing calculated?",
+  "ru": "Как рассчитывается цена?"
+ },
+ "Fixit Remote idarə olunan kompüterlərin sayına görə paketlərlə satılır, operator sayı məhdud deyil; paketlər məhsul səhifəsindədir. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayından, modullardan və quraşdırma həcmindən asılıdır: ehtiyacınızı öyrənib yazılı təklif hazırlayırıq.": {
+  "en": "Fixit Remote is sold in packages based on the number of managed computers, with no limit on operators; the packages are listed on its product page. For the Helpdesk and Network Monitoring the price depends on the number of users, the modules and the scope of installation: we learn what you need and prepare a written quote.",
+  "ru": "Fixit Remote продаётся пакетами по числу управляемых компьютеров, число операторов не ограничено; пакеты указаны на странице продукта. Для Службы заявок и Мониторинга сети цена зависит от числа пользователей, модулей и объёма установки: мы уточняем потребности и готовим письменное предложение."
+ },
+ "Bu sayt kukilərdən istifadə edir": {
+  "en": "This website uses cookies",
+  "ru": "Этот сайт использует cookie"
+ },
+ "Zəruri kukilər saytın işləməsi üçündür: dil seçimi, razılığınız və təhlükəsizlik. Razılığınızla həm də saytın necə istifadə olunduğunu ölçən analitika və reklamlarımızın nəticəsini göstərən kukilər işləyir.": {
+  "en": "Necessary cookies keep the site working: your language, your consent choice and security. With your consent we also use analytics cookies that measure how the site is used, and advertising cookies that show how our ads perform.",
+  "ru": "Необходимые cookie нужны для работы сайта: выбор языка, ваше согласие и безопасность. С вашего согласия также используются аналитические cookie, которые показывают, как используется сайт, и рекламные cookie, которые показывают результат нашей рекламы."
+ },
+ "Zəruri": {
+  "en": "Necessary",
+  "ru": "Необходимые"
+ },
+ "Dil seçimi, razılığınızın yadda saxlanması, təhlükəsizlik. Bunlarsız sayt düzgün işləmir, söndürmək olmur.": {
+  "en": "Language choice, remembering your consent, security. The site does not work properly without them, so they cannot be turned off.",
+  "ru": "Выбор языка, сохранение вашего согласия, безопасность. Без них сайт работает неправильно, отключить их нельзя."
+ },
+ "Analitika": {
+  "en": "Analytics",
+  "ru": "Аналитика"
+ },
+ "Hansı səhifələrə baxıldığını və saytın necə istifadə olunduğunu anonim ölçür (Google Analytics, Microsoft Clarity).": {
+  "en": "Anonymously measures which pages are viewed and how the site is used (Google Analytics, Microsoft Clarity).",
+  "ru": "Анонимно измеряют, какие страницы просматриваются и как используется сайт (Google Analytics, Microsoft Clarity)."
+ },
+ "Reklam": {
+  "en": "Advertising",
+  "ru": "Реклама"
+ },
+ "Reklamlarımızın nəticəsini ölçür və onları maraqlı ola biləcək insanlara göstərməyə kömək edir (Meta, LinkedIn).": {
+  "en": "Measures how our ads perform and helps show them to people who may find them useful (Meta, LinkedIn).",
+  "ru": "Измеряют результат нашей рекламы и помогают показывать её тем, кому она может быть интересна (Meta, LinkedIn)."
+ },
+ "Hamısını qəbul et": {
+  "en": "Accept all",
+  "ru": "Принять все"
+ },
+ "Yalnız zəruri": {
+  "en": "Necessary only",
+  "ru": "Только необходимые"
+ },
+ "Ayarlar": {
+  "en": "Settings",
+  "ru": "Настройки"
+ },
+ "Seçimi yadda saxla": {
+  "en": "Save my choice",
+  "ru": "Сохранить выбор"
+ },
+ "Hüquqi məlumat": {
+  "en": "Legal information",
+  "ru": "Правовая информация"
+ },
+ "Kuki ayarları": {
+  "en": "Cookie settings",
+  "ru": "Настройки cookie"
+ },
+ "Məlumatlarınız yalnız bələdçini göndərmək və sizinlə əlaqə üçün istifadə olunur.": {
+  "en": "Your details are used only to send you the guide and to get in touch with you.",
+  "ru": "Ваши данные используются только для отправки руководства и связи с вами."
+ }
+}

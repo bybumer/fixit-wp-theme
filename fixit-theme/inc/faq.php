@@ -48,8 +48,8 @@ function fixit_faq_home() {
 function fixit_faq_products() {
 	return array(
 		array(
-			__( 'Qiymət niyə saytda göstərilmir?', 'fixit' ),
-			__( 'Çünki qiymət istifadəçi sayından, lazım olan modullardan və quraşdırma həcmindən asılıdır. Sabit siyahı vermək əvəzinə ehtiyacınızı öyrənib dəqiq və şəffaf təklif hazırlayırıq.', 'fixit' ),
+			__( 'Qiymətlər necə hesablanır?', 'fixit' ),
+			__( 'Fixit Remote idarə olunan kompüterlərin sayına görə paketlərlə satılır, operator sayı məhdud deyil; paketlər məhsul səhifəsindədir. Sorğu Sistemi və Şəbəkə Monitorinqi üçün qiymət istifadəçi sayından, modullardan və quraşdırma həcmindən asılıdır: ehtiyacınızı öyrənib yazılı təklif hazırlayırıq.', 'fixit' ),
 		),
 		array(
 			__( 'Məlumatlarımız harada saxlanılacaq?', 'fixit' ),

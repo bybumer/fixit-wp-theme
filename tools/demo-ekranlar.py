@@ -33,7 +33,7 @@ SCRIPT = os.path.join(BASE, 'tools', 'demo-ekranlar.mjs')
 PORT = '9339'
 
 # Sıra = qalereyadakı sıra (product-data.php → 'screens' ilə eyni adlar).
-ORDER = ['sorgular', 'sorgu', 'lovhe', 'tapsiriqlar', 'vaxt-hesabati', 'hesabatlar']
+ORDER = ['sorgular', 'sorgu', 'axtaris', 'dashboard', 'tapsiriqlar', 'gantt', 'vaxt-hesabati', 'hesabatlar']
 
 CHROME_PATHS = [
     r'C:\Program Files\Google\Chrome\Application\chrome.exe',

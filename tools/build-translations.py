@@ -44,6 +44,8 @@ FRONT = [
     'template-services.php',
     'inc/faq.php', 'inc/product-data.php', 'inc/seo.php', 'inc/contact-form.php',
     'inc/i18n.php',
+    'inc/consent.php', 'inc/remote-pricing.php', 'inc/remote-trial.php',
+    'template-remote-guide.php', 'template-privacy.php',
 ]
 
 CALL = r"(?:esc_html__|esc_attr__|esc_html_e|esc_attr_e|__|_e)"

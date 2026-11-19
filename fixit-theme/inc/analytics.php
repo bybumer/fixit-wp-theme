@@ -7,8 +7,10 @@
  * "Analitika və reklam" bölməsində yazılır; boş sahənin kodu səhifəyə
  * düşmür. Heç biri doldurulmayıbsa sayt əvvəlki kimi işləyir.
  *
- * Hadisələr (müraciət, demo açılışı, zəng və s.) assets/js/analytics.js-dədir,
- * kuki razılığı zolağı footer.php-dədir.
+ * Hadisələr (müraciət, demo açılışı, zəng və s.) assets/js/analytics.js-dədir.
+ * Heç bir kod ziyarətçinin razılığı olmadan işləmir: analitika (GA4, Clarity)
+ * və reklam (Meta, LinkedIn) ayrıca kateqoriyalardır, razılıq zolağı
+ * inc/consent.php və assets/js/consent.js-dədir.
  *
  * @package FIXIT
  */
@@ -83,7 +85,7 @@ function fixit_tracking_customize( $wp_customize ) {
 		array(
 			'title'       => __( 'Analitika və reklam', 'fixit' ),
 			'panel'       => 'fixit_panel',
-			'description' => __( 'Boş qalan sahənin kodu sayta əlavə olunmur. Sayta admin kimi daxil olanda kodlar işləmir — öz baxışlarınız statistikaya düşmür.', 'fixit' ),
+			'description' => __( 'Boş qalan sahənin kodu sayta əlavə olunmur. Kodlar yalnız ziyarətçi saytın aşağısındakı zolaqda razılıq verdikdən sonra işləyir: analitika (Google Analytics, Clarity) və reklam (Meta, LinkedIn) ayrıca. Sayta admin kimi daxil olanda kodlar işləmir, öz baxışlarınız statistikaya düşmür.', 'fixit' ),
 		)
 	);
 
@@ -106,24 +108,6 @@ function fixit_tracking_customize( $wp_customize ) {
 			)
 		);
 	}
-
-	$wp_customize->add_setting(
-		'fixit_tracking_consent',
-		array(
-			'default'           => false,
-			'sanitize_callback' => 'rest_sanitize_boolean',
-			'transport'         => 'refresh',
-		)
-	);
-	$wp_customize->add_control(
-		'fixit_tracking_consent',
-		array(
-			'label'       => __( 'Kodlar yalnız ziyarətçinin razılığından sonra işləsin', 'fixit' ),
-			'description' => __( 'Açıq olanda saytın aşağısında kuki razılığı zolağı görünür və analitika yalnız “Qəbul edirəm” basıldıqdan sonra yüklənir. Türkiyə və Aİ auditoriyasına reklam veriləndə açılması tövsiyə olunur.', 'fixit' ),
-			'section'     => 'fixit_tracking',
-			'type'        => 'checkbox',
-		)
-	);
 }
 add_action( 'customize_register', 'fixit_tracking_customize', 20 );
 
@@ -152,7 +136,6 @@ function fixit_tracking_config() {
 	}
 
 	$config['leadConv'] = fixit_tracking_id( 'fixit_linkedin_lead' );
-	$config['ask']      = (bool) get_theme_mod( 'fixit_tracking_consent', false );
 	$config['demos']    = fixit_tracking_demo_hosts();
 
 	$cached = $config;
@@ -207,9 +190,9 @@ function fixit_tracking_active() {
 /**
  * <head>: identifikatorlar və yükləyici.
  *
- * Kitabxanalar birbaşa <script src> ilə yox, yükləyici ilə qoşulur: razılıq
- * tələb olunanda "Qəbul edirəm" basılana qədər heç bir kənar skript
- * yüklənmir və kuki yazılmır.
+ * Kitabxanalar birbaşa <script src> ilə yox, yükləyici ilə qoşulur: ziyarətçi
+ * razılıq verməyənə qədər heç bir kənar skript yüklənmir və kuki yazılmır.
+ * Analitika və reklam ayrıca razılıqdır.
  */
 function fixit_tracking_head() {
 	if ( ! fixit_tracking_active() ) {
@@ -219,7 +202,7 @@ function fixit_tracking_head() {
 	<script>
 	window.fixitTrack = <?php echo wp_json_encode( fixit_tracking_config() ); ?>;
 	(function (w, d, c) {
-		var started = false;
+		var on = { a: false, m: false };
 
 		function load(src) {
 			var s = d.createElement('script');
@@ -228,52 +211,76 @@ function fixit_tracking_head() {
 			d.head.appendChild(s);
 		}
 
-		c.start = function () {
-			if (started) return;
-			started = true;
+		function consentState(choice) {
+			return {
+				analytics_storage: choice.a ? 'granted' : 'denied',
+				ad_storage: choice.m ? 'granted' : 'denied',
+				ad_user_data: choice.m ? 'granted' : 'denied',
+				ad_personalization: choice.m ? 'granted' : 'denied'
+			};
+		}
 
-			if (c.ga4) {
-				w.dataLayer = w.dataLayer || [];
-				w.gtag = function () { w.dataLayer.push(arguments); };
-				w.gtag('js', new Date());
-				w.gtag('config', c.ga4);
-				load('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(c.ga4));
-			}
+		/*
+		 * Razılıq verilən kateqoriyanın skriptlərini yükləyir. Təkrar çağırış
+		 * zərərsizdir: artıq yüklənmiş kateqoriya ikinci dəfə yüklənmir.
+		 */
+		c.start = function (choice) {
+			choice = choice || {};
 
-			if (c.meta && !w.fbq) {
-				var f = w.fbq = function () {
-					if (f.callMethod) { f.callMethod.apply(f, arguments); } else { f.queue.push(arguments); }
-				};
-				if (!w._fbq) w._fbq = f;
-				f.push = f;
-				f.loaded = true;
-				f.version = '2.0';
-				f.queue = [];
-				load('https://connect.facebook.net/en_US/fbevents.js');
-				f('init', c.meta);
-				f('track', 'PageView');
-			}
+			if (choice.a && !on.a) {
+				on.a = true;
 
-			if (c.linkedin) {
-				w._linkedin_partner_id = c.linkedin;
-				w._linkedin_data_partner_ids = w._linkedin_data_partner_ids || [];
-				w._linkedin_data_partner_ids.push(c.linkedin);
-				if (!w.lintrk) {
-					w.lintrk = function (a, b) { w.lintrk.q.push([a, b]); };
-					w.lintrk.q = [];
+				if (c.ga4) {
+					w.dataLayer = w.dataLayer || [];
+					w.gtag = function () { w.dataLayer.push(arguments); };
+					w.gtag('consent', 'default', consentState(choice));
+					w.gtag('js', new Date());
+					w.gtag('config', c.ga4);
+					load('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(c.ga4));
 				}
-				load('https://snap.licdn.com/li.lms-analytics/insight.min.js');
+
+				if (c.clarity) {
+					w.clarity = w.clarity || function () { (w.clarity.q = w.clarity.q || []).push(arguments); };
+					load('https://www.clarity.ms/tag/' + encodeURIComponent(c.clarity));
+					w.clarity('consent');
+				}
 			}
 
-			if (c.clarity) {
-				w.clarity = w.clarity || function () { (w.clarity.q = w.clarity.q || []).push(arguments); };
-				load('https://www.clarity.ms/tag/' + encodeURIComponent(c.clarity));
+			if (choice.m && !on.m) {
+				on.m = true;
+
+				if (w.gtag && c.ga4) w.gtag('consent', 'update', consentState({ a: on.a, m: true }));
+
+				if (c.meta && !w.fbq) {
+					var f = w.fbq = function () {
+						if (f.callMethod) { f.callMethod.apply(f, arguments); } else { f.queue.push(arguments); }
+					};
+					if (!w._fbq) w._fbq = f;
+					f.push = f;
+					f.loaded = true;
+					f.version = '2.0';
+					f.queue = [];
+					load('https://connect.facebook.net/en_US/fbevents.js');
+					f('init', c.meta);
+					f('track', 'PageView');
+				}
+
+				if (c.linkedin) {
+					w._linkedin_partner_id = c.linkedin;
+					w._linkedin_data_partner_ids = w._linkedin_data_partner_ids || [];
+					w._linkedin_data_partner_ids.push(c.linkedin);
+					if (!w.lintrk) {
+						w.lintrk = function (a, b) { w.lintrk.q.push([a, b]); };
+						w.lintrk.q = [];
+					}
+					load('https://snap.licdn.com/li.lms-analytics/insight.min.js');
+				}
 			}
 		};
 
-		var choice = null;
-		try { choice = w.localStorage.getItem('fixit-consent'); } catch (e) {}
-		if (!c.ask || choice === 'granted') c.start();
+		// Əvvəlki ziyarətdə verilmiş razılıq (inc/consent.php oxuyur).
+		var choice = w.fixitConsent && w.fixitConsent.read ? w.fixitConsent.read() : null;
+		if (choice) c.start(choice);
 	})(window, document, window.fixitTrack);
 	</script>
 	<?php

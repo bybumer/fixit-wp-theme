@@ -4,7 +4,7 @@
  *
  * - Ən son versiya və onun faylları (yükləmə düymələri ilə)
  * - Saytdan yükləmələr: bu gün, 7 gün, 30 gün, bütün dövr; günlər və mənbələr üzrə
- * - GitHub sayğacı: saytdan kənar yükləmələr və avtomatik yenilənmələr də daxil
+ * - GitHub sayğacı: saytdan kənar yükləmələr və proqramın öz yeniləmələri də daxil
  * - Başlanğıc səhifəsində qısa vidcet
  *
  * @package FIXIT
@@ -24,10 +24,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 function fixit_remote_asset_kinds() {
 	return array(
 		'exe'           => array( '/^FixitRemote\.exe$/', __( 'Windows proqramı (FixitRemote.exe) — saytdakı düymə bunu verir', 'fixit' ) ),
-		'client_update' => array( '/^FixitRemote\.Client-.*\.exe$/i', __( 'Proqramın avtomatik yenilənməsi', 'fixit' ) ),
+		'client_update' => array( '/^FixitRemote\.Client-.*\.exe$/i', __( 'Client proqramının yeni versiyaya keçməsi', 'fixit' ) ),
 		'client_msi'    => array( '/^FixitRemoteClient.*\.msi$/i', __( 'Şirkət quraşdırıcısı — Client (MSI)', 'fixit' ) ),
 		'agent_msi'     => array( '/^FixitRemoteAgent.*\.msi$/i', __( 'Şirkət quraşdırıcısı — Agent (MSI)', 'fixit' ) ),
-		'agent_update'  => array( '/^(agent-[\d.]+\.zip|FixitRemote\.Agent-.*\.exe|fixitremote-agent-linux.*)$/i', __( 'Agentlərin avtomatik yenilənməsi', 'fixit' ) ),
+		'agent_update'  => array( '/^(agent-[\d.]+\.zip|FixitRemote\.Agent-.*\.exe|fixitremote-agent-linux.*)$/i', __( 'Agentlərin yeni versiyaya keçməsi', 'fixit' ) ),
 		'server'        => array( '/^(FixitRemoteServer.*\.msi|fixitremote-server-.*\.tar\.gz|server-[\d.]+\.zip)$/i', __( 'Server paketləri', 'fixit' ) ),
 		'apk'           => array( '/\.apk$/i', __( 'Android (APK)', 'fixit' ) ),
 	);
@@ -225,6 +225,25 @@ function fixit_remote_dashboard_widget() {
 		array( $totals['all'], __( 'hamısı', 'fixit' ) ),
 	);
 
+	// Server sınağı müraciətləri: yeni olanlar diqqət tələb edir.
+	if ( function_exists( 'fixit_trial_count' ) ) {
+		$fixit_new = fixit_trial_count( 'new' );
+		printf(
+			'<p style="margin:0 0 12px;padding:8px 10px;border-radius:6px;background:%1$s"><a href="%2$s" style="text-decoration:none"><b>%3$s</b></a> %4$s</p>',
+			esc_attr( $fixit_new ? '#fff4e0' : '#f6f7f7' ),
+			esc_url( admin_url( 'edit.php?post_type=fixit_trial' . ( $fixit_new ? '&ft_status=new' : '' ) ) ),
+			esc_html(
+				sprintf(
+					/* translators: 1: yeni, 2: cəmi */
+					__( 'Sınaq müraciətləri: %1$d yeni, cəmi %2$d', 'fixit' ),
+					$fixit_new,
+					fixit_trial_count()
+				)
+			),
+			$fixit_new ? '→' : ''
+		);
+	}
+
 	echo '<p style="margin:0 0 6px;color:#646970">' . esc_html__( 'Saytdan yüklənib (Windows):', 'fixit' ) . '</p>';
 	echo '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center">';
 	foreach ( $items as $item ) {
@@ -381,7 +400,7 @@ function fixit_remote_admin_page() {
 							<th><?php esc_html_e( 'Versiya', 'fixit' ); ?></th>
 							<th><?php esc_html_e( 'Tarix', 'fixit' ); ?></th>
 							<th class="num"><?php esc_html_e( 'Proqram (EXE)', 'fixit' ); ?></th>
-							<th class="num"><?php esc_html_e( 'Avtomatik yenilənmə', 'fixit' ); ?></th>
+							<th class="num"><?php esc_html_e( 'Yeni versiyaya keçid', 'fixit' ); ?></th>
 							<th class="num"><?php esc_html_e( 'MSI', 'fixit' ); ?></th>
 						</tr>
 					</thead>
@@ -575,7 +594,7 @@ function fixit_remote_admin_github( $github ) {
 					</tr>
 				<?php endforeach; ?>
 			</tbody></table>
-			<p class="frm-note"><?php esc_html_e( 'GitHub hər faylın neçə dəfə yükləndiyini özü sayır: saytdan, birbaşa linkdən, proqramın və agentlərin avtomatik yenilənməsindən. Buna sınaq yükləmələri də daxildir, ona görə saytın öz sayğacından çox olur.', 'fixit' ); ?></p>
+			<p class="frm-note"><?php esc_html_e( 'GitHub hər faylın neçə dəfə yükləndiyini özü sayır: saytdan, birbaşa linkdən, proqramın və agentlərin yeni versiyaya keçməsindən. Buna sınaq yükləmələri də daxildir, ona görə saytın öz sayğacından çox olur.', 'fixit' ); ?></p>
 		<?php endif; ?>
 	</div>
 	<?php

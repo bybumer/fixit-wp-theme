@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Başlanğıc mətnlərin revizyası.
  * Mətni dəyişəndə bu rəqəmi artırın — toxunulmamış məzmun yenilənir.
  */
-define( 'FIXIT_SEED_REV', 11 );
+define( 'FIXIT_SEED_REV', 12 );
 
 /**
  * Quraşdırmanı icra edir.
@@ -230,6 +230,17 @@ function fixit_create_pages() {
 			'title'    => 'FIXIT Ticket: Məxfilik siyasəti',
 			'template' => 'template-ticket-privacy.php',
 		),
+		// Saytın ümumi məxfilik siyasəti: footer, kuki zolağı və formalar
+		// buraya keçid verir. WordPress-in «Məxfilik» ayarı da bu səhifəni göstərir.
+		'mexfilik-siyaseti' => array(
+			'title'    => 'Məxfilik siyasəti',
+			'template' => 'template-privacy.php',
+		),
+		// Fixit Remote serverinin qurulumu: sınaq məktubu buraya keçid verir.
+		'fixit-remote-qurulum' => array(
+			'title'    => 'Fixit Remote server qurulumu',
+			'template' => 'template-remote-guide.php',
+		),
 	);
 
 	$ids = array();
@@ -266,6 +277,10 @@ function fixit_create_pages() {
 			}
 			$ids[ $slug ] = $id;
 		}
+	}
+
+	if ( isset( $ids['mexfilik-siyaseti'] ) ) {
+		update_option( 'wp_page_for_privacy_policy', $ids['mexfilik-siyaseti'] );
 	}
 
 	// Statik ana səhifəni təyin et.
@@ -383,7 +398,7 @@ function fixit_product_seed() {
 			// Kartlarda ilk üç üstünlük görünür - Ticket, Task və ortaq imkanlar
 			// ona görə məhz bu sıradadır.
 			'short' => 'Müştəri müraciətləri (Ticket) və komandanın daxili işləri (Task) bir platformada: e-poçt, portal, Telegram, SLA, lövhə və vaxt uçotu. Öz serverinizdə və ya bizim buludda.',
-			'chips' => 'Ticket + Task, On-premise və bulud, E-poçt və Telegram, Müştəri portalı, SLA, Kanban lövhə, Vaxt uçotu, Azərbaycan dilində',
+			'chips' => 'Ticket + Task, On-premise və bulud, E-poçt və Telegram, Müştəri portalı, SLA, Vaxt uçotu, Android tətbiqi, FIXIT Remote ilə',
 			'feat'  => implode(
 				"\n",
 				array(
@@ -391,8 +406,8 @@ function fixit_product_seed() {
 					'Task: komandanın daxili işləri — lövhə, checklist, asılılıq, təkrarlanan işlər',
 					'SLA iş saatına görə, vaxt uçotu və aylıq hesabat',
 					'Müraciətdən bir kliklə tapşırıq — hər ikisi bir-birinə bağlı qalır',
-					'Rol və qrup əsaslı icazələr, iki mərhələli giriş, audit jurnalı',
-					'İnterfeys Azərbaycan, ingilis və rus dillərində',
+					'Domen (Active Directory) hesabı ilə giriş, iki mərhələli giriş, audit jurnalı',
+					'Android tətbiqi və FIXIT Remote ilə sorğudan kompüterə qoşulma',
 				)
 			),
 			'body'  => 'Müştəridən gələn müraciətlər (Ticket) və komandanın öz işləri (Task) eyni sistemdə: müştəri e-poçt, portal və ya Telegram ilə yazır, komanda cavab verir, görüləcək işi tapşırıq kimi bölüşdürür və sərf olunan vaxtı qeyd edir. Sistemi şirkətinizin iş axınına uyğunlaşdırmaq mümkündür.',
@@ -405,6 +420,20 @@ function fixit_product_seed() {
 			 * həmin sahə yenilənir. Yalnız müqayisə üçündür, saytda görünmür.
 			 */
 			'was'   => array(
+				array(
+					'chips' => 'Ticket + Task, On-premise və bulud, E-poçt və Telegram, Müştəri portalı, SLA, Kanban lövhə, Vaxt uçotu, Azərbaycan dilində',
+					'feat'  => implode(
+						"\n",
+						array(
+							'Ticket: e-poçt, müştəri portalı, Telegram və veb formadan gələn müraciətlər bir yerdə',
+							'Task: komandanın daxili işləri — lövhə, checklist, asılılıq, təkrarlanan işlər',
+							'SLA iş saatına görə, vaxt uçotu və aylıq hesabat',
+							'Müraciətdən bir kliklə tapşırıq — hər ikisi bir-birinə bağlı qalır',
+							'Rol və qrup əsaslı icazələr, iki mərhələli giriş, audit jurnalı',
+							'İnterfeys Azərbaycan, ingilis və rus dillərində',
+						)
+					),
+				),
 				array(
 					'body' => 'Müştəridən gələn müraciətlər (Ticket) və komandanın öz işləri (Task) eyni sistemdə: müştəri e-poçt, portal və ya Telegram ilə yazır, komanda cavab verir, görüləcək işi tapşırıq kimi bölüşdürür və sərf olunan vaxtı qeyd edir. Sistem tamamilə bizim kodumuzdur — şirkətinizin iş axınına uyğunlaşdırmaq mümkündür.',
 				),
@@ -431,20 +460,40 @@ function fixit_product_seed() {
 			'slug'  => 'remote',
 			'order' => 2,
 			'icon'  => 'computer',
-			'short' => 'Şirkət kompüterlərinə uzaqdan qoşulma, dəstək və idarəetmə sistemi. Öz serverinizdə və ya bizim buludda işləyir, bağlantı və jurnal xarici xidmətlərə getmir.',
-			'chips' => 'On-premise və bulud, Windows agent, Mobil tətbiq, Çat, Fayl ötürmə, Sessiya jurnalı',
+			'short' => 'Uzaqdan dəstək və kompüter parkının idarəsi bir sistemdə: inventar, skriptlər, proqram yayımı, monitorinq. Öz serverinizdə və ya bizim buludda işləyir, operator sayı məhdud deyil.',
+			'chips' => 'On-premise və bulud, Windows və Linux, Skriptlər, Proqram yayımı, Monitorinq, Mobil tətbiq, Sessiya jurnalı',
 			'feat'  => implode(
 				"\n",
 				array(
-					'Ekrana baxmaq və idarə etmək — siçan və klaviatura',
-					'Sessiya zamanı yazışma və fayl ötürmə',
-					'Agent serverə özü qoşulur — kompüterlərdə port açmaq lazım deyil',
-					'İstifadəçidən icazə soruşmaq və ekranda gizlədilə bilməyən qoşulma zolağı',
-					'Hər sessiya jurnala yazılır; CSV və PDF kimi yüklənir',
-					'Telefondan idarəetmə üçün mobil tətbiq',
+					'Ekrana baxmaq və idarə etmək: fayl ötürmə, çat, video yazısı',
+					'İnventar, System Manager və skriptlər: ekrana qoşulmadan idarə',
+					'Proqram yayımı və Windows / Linux yeniləmələri mərkəzdən',
+					'Monitorinq qaydaları və xəbərdarlıq mərkəzi',
+					'Agent serverə özü qoşulur: kompüterlərdə port açmaq lazım deyil',
+					'Hər sessiya və əmr jurnala yazılır; SSO, AD və iki mərhələli giriş',
 				)
 			),
-			'body'  => 'Şirkət kompüterlərinə uzaqdan qoşulmaq, istifadəçiyə kömək etmək və kimin hansı kompüterə qoşulduğunu nəzarətdə saxlamaq üçün sistemdir. Server şirkətinizdə və ya bizim buludda qurulur, agentlər isə ona özü qoşulur — işçi kompüterlərində heç bir port açmaq lazım gəlmir.',
+			'body'  => 'Şirkət kompüterlərinə uzaqdan qoşulmaq, istifadəçiyə kömək etmək və kompüter parkını bir paneldən idarə etmək üçün sistemdir: inventar, skriptlər, proqram yayımı və monitorinq. Server şirkətinizdə və ya bizim buludda qurulur, agentlər ona özü qoşulur, işçi kompüterlərində port açmaq lazım gəlmir.',
+
+			// Əvvəlki mətn: admin məhsulu bir dəfə yadda saxlayıbsa da, bu sahələr dəyişməyibsə yenilənir.
+			'was'   => array(
+				array(
+					'short' => 'Şirkət kompüterlərinə uzaqdan qoşulma, dəstək və idarəetmə sistemi. Öz serverinizdə və ya bizim buludda işləyir, bağlantı və jurnal xarici xidmətlərə getmir.',
+					'chips' => 'On-premise və bulud, Windows agent, Mobil tətbiq, Çat, Fayl ötürmə, Sessiya jurnalı',
+					'feat'  => implode(
+						"\n",
+						array(
+							'Ekrana baxmaq və idarə etmək — siçan və klaviatura',
+							'Sessiya zamanı yazışma və fayl ötürmə',
+							'Agent serverə özü qoşulur — kompüterlərdə port açmaq lazım deyil',
+							'İstifadəçidən icazə soruşmaq və ekranda gizlədilə bilməyən qoşulma zolağı',
+							'Hər sessiya jurnala yazılır; CSV və PDF kimi yüklənir',
+							'Telefondan idarəetmə üçün mobil tətbiq',
+						)
+					),
+					'body'  => 'Şirkət kompüterlərinə uzaqdan qoşulmaq, istifadəçiyə kömək etmək və kimin hansı kompüterə qoşulduğunu nəzarətdə saxlamaq üçün sistemdir. Server şirkətinizdə və ya bizim buludda qurulur, agentlər isə ona özü qoşulur — işçi kompüterlərində heç bir port açmaq lazım gəlmir.',
+				),
+			),
 		),
 		array(
 			'title' => 'FIXIT Şəbəkə Monitorinqi',

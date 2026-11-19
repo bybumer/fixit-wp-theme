@@ -30,6 +30,8 @@ function fixit_title_translations() {
 		'Haqqımızda'                    => array( 'en' => 'About us', 'ru' => 'О нас' ),
 		'Əlaqə'                         => array( 'en' => 'Contact', 'ru' => 'Контакты' ),
 		'Uzaqdan qoşulma'               => array( 'en' => 'Remote access', 'ru' => 'Удалённый доступ' ),
+		'Məxfilik siyasəti'             => array( 'en' => 'Privacy policy', 'ru' => 'Политика конфиденциальности' ),
+		'Fixit Remote server qurulumu'  => array( 'en' => 'Fixit Remote server setup', 'ru' => 'Установка сервера Fixit Remote' ),
 		'Uzaqdan dəstək'                => array( 'en' => 'Remote support', 'ru' => 'Удалённая поддержка' ),
 		'Fixit Remote — Məxfilik siyasəti' => array( 'en' => 'Fixit Remote — Privacy policy', 'ru' => 'Fixit Remote — Политика конфиденциальности' ),
 		'FIXIT Ticket: Məxfilik siyasəti' => array( 'en' => 'FIXIT Ticket: Privacy policy', 'ru' => 'FIXIT Ticket: Политика конфиденциальности' ),
@@ -97,7 +99,7 @@ function fixit_content_translations() {
 			'en' => array(
 				'title'    => 'FIXIT Helpdesk',
 				'short'    => 'Customer requests (Ticket) and your team\'s internal work (Task) on one platform: email, portal, Telegram, SLA, board and time tracking. On your own server or in our cloud.',
-				'chips'    => 'Ticket + Task, On-premise and cloud, Email and Telegram, Customer portal, SLA, Kanban board, Time tracking, Multilingual',
+				'chips'    => 'Ticket + Task, On-premise and cloud, Email and Telegram, Customer portal, SLA, Time tracking, Android app, Works with FIXIT Remote',
 				'features' => implode(
 					"\n",
 					array(
@@ -105,8 +107,8 @@ function fixit_content_translations() {
 						'Task: your team\'s internal work — board, checklists, dependencies, recurring tasks',
 						'SLA counted in business hours, time tracking and monthly reports',
 						'Turn a request into a task in one click — the two stay linked',
-						'Role and group based permissions, two-step login, audit log',
-						'Interface in Azerbaijani, English and Russian',
+						'Sign in with a domain (Active Directory) account, two-step login, audit log',
+						'Android app, and one click from a request to the user\'s computer with FIXIT Remote',
 					)
 				),
 				'body'     => 'Customer requests (Ticket) and your team\'s own work (Task) live in the same system: the customer writes by email, through the portal or Telegram, your team answers, splits the work into tasks and records the time spent. The system can be shaped around the way your company works.',
@@ -114,7 +116,7 @@ function fixit_content_translations() {
 			'ru' => array(
 				'title'    => 'FIXIT Служба заявок',
 				'short'    => 'Обращения клиентов (Ticket) и внутренние задачи команды (Task) на одной платформе: почта, портал, Telegram, SLA, доска и учёт времени. На вашем сервере или в нашем облаке.',
-				'chips'    => 'Ticket + Task, On-premise и облако, Почта и Telegram, Клиентский портал, SLA, Канбан-доска, Учёт времени, Многоязычный',
+				'chips'    => 'Ticket + Task, On-premise и облако, Почта и Telegram, Клиентский портал, SLA, Учёт времени, Android-приложение, Связка с FIXIT Remote',
 				'features' => implode(
 					"\n",
 					array(
@@ -122,8 +124,8 @@ function fixit_content_translations() {
 						'Task: внутренние задачи команды — доска, чек-листы, зависимости, повторяющиеся работы',
 						'SLA по рабочим часам, учёт времени и ежемесячный отчёт',
 						'Из обращения — задача в один клик, связь между ними сохраняется',
-						'Права по ролям и группам, двухэтапный вход, журнал аудита',
-						'Интерфейс на азербайджанском, английском и русском',
+						'Вход под доменной учётной записью (Active Directory), двухэтапный вход, журнал аудита',
+						'Android-приложение и подключение к компьютеру пользователя прямо из заявки через FIXIT Remote',
 					)
 				),
 				'body'     => 'Обращения клиентов (Ticket) и собственные задачи команды (Task) находятся в одной системе: клиент пишет по почте, через портал или Telegram, команда отвечает, распределяет работу в виде задач и фиксирует затраченное время. Систему можно подстроить под рабочие процессы вашей компании.',
@@ -133,37 +135,37 @@ function fixit_content_translations() {
 		'Fixit Remote' => array(
 			'en' => array(
 				'title'    => 'Fixit Remote',
-				'short'    => 'Remote access, support and management for company computers. Runs on your own server or in our cloud; the connection and the logs never go to outside services.',
-				'chips'    => 'On-premise and cloud, Windows agent, Mobile app, Chat, File transfer, Session log',
+				'short'    => 'Remote support and fleet management in one system: inventory, scripts, software deployment, monitoring. Runs on your own server or in our cloud, with no limit on the number of operators.',
+				'chips'    => 'On-premise and cloud, Windows and Linux, Scripts, Software deployment, Monitoring, Mobile app, Session log',
 				'features' => implode(
 					"\n",
 					array(
-						'View and control the screen — mouse and keyboard',
-						'Chat and file transfer during the session',
-						'The agent connects to the server itself — no ports to open on the computers',
-						'Asks the user for permission; an on-screen bar that cannot be hidden',
-						'Every session is logged; export as CSV and PDF',
-						'Mobile app for controlling a computer from your phone',
+						'View and control the screen: file transfer, chat, session recording',
+						'Inventory, System Manager and scripts: manage without connecting to the screen',
+						'Software deployment and Windows / Linux updates from one place',
+						'Monitoring rules and an alert center',
+						'The agent connects to the server itself: no ports to open on the computers',
+						'Every session and command is logged; SSO, AD and two-step login',
 					)
 				),
-				'body'     => 'A system for connecting to company computers remotely, helping users and keeping track of who connected to which machine. The server runs inside your company or in our cloud, and the agents connect to it themselves — no ports need to be opened on employee computers.',
+				'body'     => 'A system for connecting to company computers remotely, helping users and managing the whole fleet from one panel: inventory, scripts, software deployment and monitoring. The server runs inside your company or in our cloud, and the agents connect to it themselves, so no ports need to be opened on employee computers.',
 			),
 			'ru' => array(
 				'title'    => 'Fixit Remote',
-				'short'    => 'Удалённое подключение, поддержка и управление компьютерами компании. Работает на вашем сервере или в нашем облаке; подключение и журналы не уходят сторонним сервисам.',
-				'chips'    => 'On-premise и облако, Windows-агент, Мобильное приложение, Чат, Передача файлов, Журнал сессий',
+				'short'    => 'Удалённая поддержка и управление парком компьютеров в одной системе: инвентаризация, скрипты, распространение ПО, мониторинг. Работает на вашем сервере или в нашем облаке, число операторов не ограничено.',
+				'chips'    => 'On-premise и облако, Windows и Linux, Скрипты, Распространение ПО, Мониторинг, Мобильное приложение, Журнал сессий',
 				'features' => implode(
 					"\n",
 					array(
-						'Просмотр и управление экраном — мышь и клавиатура',
-						'Чат и передача файлов во время сессии',
-						'Агент сам подключается к серверу — порты на компьютерах открывать не нужно',
-						'Запрос разрешения у пользователя и полоса подключения, которую нельзя скрыть',
-						'Каждая сессия записывается в журнал; выгрузка в CSV и PDF',
-						'Мобильное приложение для управления с телефона',
+						'Просмотр и управление экраном: передача файлов, чат, запись сессии',
+						'Инвентаризация, System Manager и скрипты: управление без подключения к экрану',
+						'Распространение ПО и обновления Windows / Linux из одного места',
+						'Правила мониторинга и центр оповещений',
+						'Агент сам подключается к серверу: порты на компьютерах открывать не нужно',
+						'Каждая сессия и команда записываются в журнал; SSO, AD и двухэтапный вход',
 					)
 				),
-				'body'     => 'Система для удалённого подключения к компьютерам компании, помощи пользователям и контроля того, кто и к какой машине подключался. Сервер работает внутри вашей компании или в нашем облаке, а агенты подключаются к нему сами — открывать порты на рабочих компьютерах не требуется.',
+				'body'     => 'Система для удалённого подключения к компьютерам компании, помощи пользователям и управления всем парком из одной панели: инвентаризация, скрипты, распространение ПО и мониторинг. Сервер работает в вашей компании или в нашем облаке, агенты сами подключаются к нему, поэтому открывать порты на компьютерах сотрудников не нужно.',
 			),
 		),
 

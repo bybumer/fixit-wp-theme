@@ -35,7 +35,7 @@ function fixit_product_details() {
 				__( 'Ticket + Task', 'fixit' ),
 				__( 'Öz serverinizdə və ya buludda', 'fixit' ),
 				__( 'Azərbaycan · English · Русский', 'fixit' ),
-				__( 'Avtomatik yenilənmə', 'fixit' ),
+				__( 'Android tətbiqi', 'fixit' ),
 			),
 
 			'intro'    => __( 'İki modul, bir sistem: kənardan gələn müraciətlər (Ticket) və komandanın öz işləri (Task) eyni mühərrik üzərində — eyni axtarış, hesabat, vaxt uçotu. Hər ikisini birlikdə və ya ayrıca işlədə bilərsiniz.', 'fixit' ),
@@ -57,7 +57,7 @@ function fixit_product_details() {
 						'points' => array(
 							__( 'E-poçt, müştəri portalı, Telegram və veb forma', 'fixit' ),
 							__( 'SLA iş saatına görə; müddət keçəndə eskalasiya', 'fixit' ),
-							__( 'Cavab müştəriyə adi e-poçt kimi gedir', 'fixit' ),
+							__( 'Cavab müştəriyə yazdığı kanalla gedir: e-poçt, Telegram və ya portal', 'fixit' ),
 							__( 'Müştəri öz müraciətini portalda izləyir', 'fixit' ),
 						),
 					),
@@ -76,7 +76,7 @@ function fixit_product_details() {
 				),
 				'shared' => array(
 					__( 'Müraciətdən bir kliklə tapşırıq', 'fixit' ),
-					__( 'Vahid axtarış', 'fixit' ),
+					__( 'Ctrl+K ilə vahid axtarış', 'fixit' ),
 					__( 'Dashboard və hesabatlar', 'fixit' ),
 					__( 'Vaxt uçotu', 'fixit' ),
 					__( 'Rollar və icazələr', 'fixit' ),
@@ -91,12 +91,14 @@ function fixit_product_details() {
 			 * Şəkillər demo.fixit.az-dan çəkilib (tools/demo-ekranlar.py).
 			 */
 			'screens'  => array(
-				array( '01-sorgular.webp', __( 'Sorğular: hazır görünüşlər, süzgəc və axtarış', 'fixit' ) ),
-				array( '02-sorgu.webp', __( 'Müraciət: müştəri ilə yazışma, daxili qeyd və vaxt uçotu', 'fixit' ) ),
-				array( '03-lovhe.webp', __( 'Ticket lövhəsi: statusu sürüşdürməklə dəyişin', 'fixit' ) ),
-				array( '04-tapsiriqlar.webp', __( 'Task lövhəsi: gecikən iş dərhal seçilir', 'fixit' ) ),
-				array( '05-vaxt-hesabati.webp', __( 'Vaxt hesabatı: şirkət və agent üzrə, fakturaya düşən vaxt ayrıca', 'fixit' ) ),
-				array( '06-hesabatlar.webp', __( 'Hesabatlar: iş yükü, həll müddəti, SLA və status keçidləri', 'fixit' ) ),
+				array( '01-sorgular.webp', __( 'Siyahı və sorğu yan-yana: işdən işə keçmək üçün geri qayıtmaq lazım deyil', 'fixit' ) ),
+				array( '02-sorgu.webp', __( 'Sorğunun bütün konteksti bir ekranda: müştərinin digər sorğuları və bir kliklə «Həll olundu»', 'fixit' ) ),
+				array( '03-axtaris.webp', __( 'Ctrl+K: sorğu, tapşırıq və müştərini bir pəncərədən tapın', 'fixit' ) ),
+				array( '04-dashboard.webp', __( 'Hər işçinin öz paneli: vidcetlər, qrafiklər və yük bölgüsü', 'fixit' ) ),
+				array( '05-tapsiriqlar.webp', __( 'Tapşırıq lövhəsi: gecikən iş dərhal seçilir', 'fixit' ) ),
+				array( '06-gantt.webp', __( 'Gantt qrafiki: tapşırıqların müddəti və asılılıqları', 'fixit' ) ),
+				array( '07-vaxt-hesabati.webp', __( 'Vaxt hesabatı: şirkət və agent üzrə, fakturaya düşən vaxt ayrıca', 'fixit' ) ),
+				array( '08-hesabatlar.webp', __( 'Həll müddəti: orta, median, 90% və həftəlik dinamika', 'fixit' ) ),
 			),
 
 			'problems' => array(
@@ -123,21 +125,21 @@ function fixit_product_details() {
 					'title' => __( 'Müraciət kanalları', 'fixit' ),
 					'items' => array(
 						__( 'E-poçt: şirkət poçt qutusuna gələn məktub avtomatik ticket olur', 'fixit' ),
-						__( 'Agentin cavabı müştəriyə adi e-poçt kimi gedir', 'fixit' ),
+						__( 'Cavab müştəriyə yazdığı kanalla qayıdır: məktuba məktubla, Telegram-a Telegram-da', 'fixit' ),
 						__( 'Müştəri portalı: qeydiyyat, e-poçt təsdiqi, parol bərpası', 'fixit' ),
-						__( 'Telegram və saytınızdakı veb forma', 'fixit' ),
-						__( 'Göndərənin domeninə görə müraciət avtomatik doğru qrupa düşür', 'fixit' ),
+						__( 'Telegram botu: server internetdən görünməsə də işləyir', 'fixit' ),
+						__( 'Göndərənin e-poçt domeninə görə sorğu doğru şirkətə bağlanır', 'fixit' ),
 					),
 				),
 				array(
 					'icon'  => 'ticket',
 					'title' => __( 'Gündəlik iş', 'fixit' ),
 					'items' => array(
-						__( 'Təyinat, statuslar və prioritetlər; bir ticket-ə bir neçə agent', 'fixit' ),
-						__( 'Kanban lövhə — statusu sürüşdürməklə dəyişmək', 'fixit' ),
-						__( 'Sol paneldə hazır görünüşlər — lazım olan siyahı bir kliklə', 'fixit' ),
-						__( 'Axtarış: nömrə, mövzu, müştəri və mesaj mətni üzrə', 'fixit' ),
-						__( 'Layihələr — şirkətdaxili şöbələr üçün ayrıca axın', 'fixit' ),
+						__( 'Siyahıda bir klik sorğunu sağ paneldə açır, ↑ ↓ ilə işdən işə keçirsiniz', 'fixit' ),
+						__( 'Ctrl+K ilə hər yerdən axtarış; süzgəcləri saxlayıb komanda ilə paylaşmaq', 'fixit' ),
+						__( 'Daxili qeyd sarı fonla seçilir, səhvən müştəriyə getmir', 'fixit' ),
+						__( 'Həmkarınız eyni sorğuya yazanda göndərmədən əvvəl xəbərdarlıq', 'fixit' ),
+						__( 'Toplu əməliyyatlar, «İzlə» və təkrar sorğuların birləşdirilməsi', 'fixit' ),
 					),
 				),
 				// Task-ın imkanları yuxarıdakı 'modules' bölməsindədir - burada
@@ -148,8 +150,8 @@ function fixit_product_details() {
 					'items' => array(
 						__( 'SLA iş saatına görə hesablanır — gecə və həftəsonu sayılmır', 'fixit' ),
 						__( 'Müddət keçəndə məsul şəxsə eskalasiya məktubu', 'fixit' ),
-						__( '"Vaxtı keçib" siyahısı — gecikən heç nə gözdən qaçmır', 'fixit' ),
-						__( 'Yeni müraciət gələn kimi bildiriş', 'fixit' ),
+						__( '«SLA yaxınlaşır»: son müddətə 3 saatdan az qalan sorğular bir yerdə', 'fixit' ),
+						__( '«Əgər-onda» qaydaları: sorğunu doğru komandaya ötürmək, gözləyəni bağlamaq', 'fixit' ),
 					),
 				),
 				array(
@@ -159,27 +161,27 @@ function fixit_product_details() {
 						__( 'Hər ticket üzrə sərf olunan vaxtın qeydi', 'fixit' ),
 						__( 'Aylıq hesabat: şirkət və agent üzrə', 'fixit' ),
 						__( 'Fakturaya düşən vaxt ayrıca göstərilir', 'fixit' ),
-						__( 'Analitika və süzgəclər', 'fixit' ),
+						__( '14 hazır hesabat: həll müddəti, iş yükü, timesheet, Gantt; hər biri bir kliklə dashboard-a', 'fixit' ),
 					),
 				),
 				array(
 					'icon'  => 'users',
 					'title' => __( 'İdarəetmə', 'fixit' ),
 					'items' => array(
-						__( 'Rollar və icazələr — ayrı-ayrı seçilən hüquqlar', 'fixit' ),
-						__( 'Qruplar və görünürlük: kim hansı müraciətləri görür', 'fixit' ),
-						__( 'Avtomatik məktub şablonları və agent imzası', 'fixit' ),
-						__( 'Audit jurnalı — kim nə vaxt nə edib', 'fixit' ),
+						__( 'Windows (Active Directory) hesabı ilə giriş, rol AD qrupundan gəlir', 'fixit' ),
+						__( 'Rollar və icazələr: ayrı-ayrı seçilən hüquqlar', 'fixit' ),
+						__( 'Komandalar və görünürlük: kim hansı sorğu və tapşırıqları görür', 'fixit' ),
+						__( 'Hazır cavablar: mətn, status və teq bir kliklə', 'fixit' ),
 					),
 				),
 				array(
 					'icon'  => 'server',
 					'title' => __( 'Sistem', 'fixit' ),
 					'items' => array(
-						__( 'İnterfeysdən ehtiyat nüsxə — baza və fayllar bir arxivdə', 'fixit' ),
-						__( 'Yeni versiyalar interfeysdən, avtomatik quraşdırılır', 'fixit' ),
+						__( 'İnterfeysdən ehtiyat nüsxə: baza və fayllar bir arxivdə', 'fixit' ),
+						__( 'Android tətbiqi: sahədə cavab, şəkil və vaxt uçotu, bildirişlər öz serverinizdən', 'fixit' ),
+						__( 'FIXIT Remote ilə: sorğudan istifadəçinin kompüterinə bir kliklə qoşulma', 'fixit' ),
 						__( 'Mövcud helpdesk sistemindən köçürmə (məs. Zammad)', 'fixit' ),
-						__( 'Mobil və planşetdə tam işləyir, işıqlı/qaranlıq rejim', 'fixit' ),
 					),
 				),
 			),
@@ -187,9 +189,9 @@ function fixit_product_details() {
 			'flow_title' => __( 'Müraciət necə işlənir', 'fixit' ),
 			'flow'       => array(
 				array( 'mail', __( 'Müraciət gəlir', 'fixit' ), __( 'e-poçt, portal, Telegram və ya veb forma', 'fixit' ) ),
-				array( 'ticket', __( 'Ticket yaranır', 'fixit' ), __( 'nömrə alır, doğru qrupa düşür', 'fixit' ) ),
+				array( 'ticket', __( 'Ticket yaranır', 'fixit' ), __( 'nömrə alır, doğru şirkətə və komandaya düşür', 'fixit' ) ),
 				array( 'users', __( 'Komanda işləyir', 'fixit' ), __( 'təyinat, SLA, lazım olsa — tapşırıq', 'fixit' ) ),
-				array( 'send', __( 'Cavab gedir', 'fixit' ), __( 'müştəri adi e-poçt alır', 'fixit' ) ),
+				array( 'send', __( 'Cavab gedir', 'fixit' ), __( 'müştəri cavabı yazdığı kanalda alır', 'fixit' ) ),
 				array( 'chart', __( 'Hesabat', 'fixit' ), __( 'ay sonu şirkət və agent üzrə', 'fixit' ) ),
 			),
 
@@ -229,9 +231,9 @@ function fixit_product_details() {
 				__( 'Proqram və verilənlər bazası öz serverinizdə və ya bizim buludda', 'fixit' ),
 				__( 'İki mərhələli giriş (2FA) — autentifikator tətbiqi ilə', 'fixit' ),
 				__( 'Parol təxmininə qarşı qoruma: səhv cəhdlərdə IP müvəqqəti bloklanır', 'fixit' ),
-				__( 'Sessiyalar server tərəfdə saxlanılır', 'fixit' ),
+				__( 'Hərəkətsiz qalan brauzerdən avtomatik çıxış, müddəti admin seçir', 'fixit' ),
 				__( 'Mail qəbulu siyasəti: icazəli domenlər və qara siyahı', 'fixit' ),
-				__( 'Hər əməliyyat audit jurnalına yazılır', 'fixit' ),
+				__( 'Girişlər və ayar dəyişiklikləri audit jurnalına, sorğudakı hər dəyişiklik isə onun tarixçəsinə yazılır', 'fixit' ),
 			),
 
 			'faq'      => array(
@@ -259,6 +261,10 @@ function fixit_product_details() {
 					__( 'İnterfeys hansı dillərdədir?', 'fixit' ),
 					__( 'Azərbaycan, ingilis və rus dillərində. Hər istifadəçi öz dilini seçir.', 'fixit' ),
 				),
+				array(
+					__( 'Mobil tətbiq varmı?', 'fixit' ),
+					__( 'Bəli, FIXIT Ticket Android tətbiqi. Mütəxəssis sahədə sorğuya cavab yazır, şəkil əlavə edir, vaxtı qeyd edir. Tətbiq birbaşa şirkətinizin serverinə qoşulur, bildirişlər də oradan gəlir.', 'fixit' ),
+				),
 			),
 		),
 
@@ -266,10 +272,11 @@ function fixit_product_details() {
 		   Fixit Remote
 		   ====================================================== */
 		'remote'        => array(
-			'tagline'  => __( 'Şirkət kompüterlərinə uzaqdan qoşulma: öz serverinizdə və ya bizim buludda', 'fixit' ),
+			'tagline'  => __( 'Uzaqdan dəstək və kompüter parkının idarəsi: öz serverinizdə və ya bizim buludda', 'fixit' ),
 			'badges'   => array(
 				__( 'Öz serverinizdə və ya buludda', 'fixit' ),
-				__( 'Mobil tətbiq', 'fixit' ),
+				__( 'Windows və Linux', 'fixit' ),
+				__( 'Operator sayı məhdud deyil', 'fixit' ),
 				__( 'Tam jurnal', 'fixit' ),
 			),
 
@@ -278,61 +285,119 @@ function fixit_product_details() {
 			 * çəkilib (tools/remote-ekranlar.py). Birincisi həm də başlıqdakı şəkildir.
 			 */
 			'screens'  => array(
-				array( '01-ekran.webp', __( 'Ekran pəncərəsi: idarə, qısayollar, yazışma, ekran şəkli və video', 'fixit' ) ),
-				array( '02-cihazlar.webp', __( 'Cihazlar: kimin kompüteri, onlayn vəziyyət və bir kliklə qoşulma', 'fixit' ) ),
-				array( '03-idare-lovhesi.webp', __( 'İdarə lövhəsi: onlayn cihazlar, aktiv qoşulmalar və son hadisələr', 'fixit' ) ),
-				array( '04-yazisma.webp', __( 'Yazışma: ekrana qoşulmadan işçi ilə çat', 'fixit' ) ),
-				array( '05-sessiyalar.webp', __( 'Sessiyalar: kim kimə, nə qədər qoşulub; CSV və PDF', 'fixit' ) ),
-				array( '06-komandalar.webp', __( 'Komandalar: kim işdədir, hansı kompüterdə', 'fixit' ) ),
+				array( '01-ekran.webp', __( 'Ekran pəncərəsi: idarə, qısayollar, yazışma, ekran şəkli və video yazısı', 'fixit' ) ),
+				array( '02-cihazlar.webp', __( 'Bütün kompüterlər bir siyahıda: sahib, vəziyyət, agent versiyası və bir kliklə qoşulma', 'fixit' ) ),
+				array( '03-idare-lovhesi.webp', __( 'İdarə lövhəsi: onlayn cihazlar, sessiyalar, xəbərdarlıqlar və serverin vəziyyəti', 'fixit' ) ),
+				array( '04-bildirisler.webp', __( 'Ekran bildirişləri: kompüterlərə elan və ya sahib məlumatı forması, cavabların hesabatı', 'fixit' ) ),
+				array( '05-istifadeciler.webp', __( 'İstifadəçilər: rol, cihaz əhatəsi, iki mərhələli giriş və əməliyyat icazələri', 'fixit' ) ),
+				array( '06-yazisma.webp', __( 'Yazışma: ekrana qoşulmadan işçi ilə çat', 'fixit' ) ),
+				array( '07-sessiyalar.webp', __( 'Sessiyalar: kim kimə, nə qədər qoşulub; CSV və PDF', 'fixit' ) ),
+				array( '08-komandalar.webp', __( 'Komandalar: kim işdədir, hansı kompüterdə', 'fixit' ) ),
 			),
 
 			'problems' => array(
 				array(
 					'icon'  => 'lock',
 					'title' => __( 'Ekran başqasının serverindən keçir', 'fixit' ),
-					'text'  => __( 'Adi uzaqdan giriş proqramlarında əlaqə xarici şirkətin serverləri üzərindən qurulur. Fixit Remote-u öz serverinizdə qura və ya bizim buludumuzda işlədə bilərsiniz.', 'fixit' ),
+					'text'  => __( 'Adi uzaqdan giriş proqramlarında əlaqə xarici şirkətin serverləri üzərindən qurulur. Fixit Remote-u öz serverinizdə qurduqda ekran, fayllar və jurnal şirkətdən çıxmır; istəsəniz bizim buludda da işlədə bilərsiniz.', 'fixit' ),
 				),
 				array(
 					'icon'  => 'network',
 					'title' => __( 'Port açmaq, VLAN problemi', 'fixit' ),
-					'text'  => __( 'Agent serverə özü qoşulur — işçi kompüterlərində heç bir port açmaq lazım deyil, fərqli VLAN-lar problem yaratmır.', 'fixit' ),
+					'text'  => __( 'Agent serverə özü qoşulur: işçi kompüterlərində port açmaq lazım deyil, fərqli VLAN-lar problem yaratmır.', 'fixit' ),
+				),
+				array(
+					'icon'  => 'wrench',
+					'title' => __( 'Hər kompüterə ayrıca gedirsiniz', 'fixit' ),
+					'text'  => __( 'Skript, proqram və yeniləmə yüzlərlə kompüterə bir dəfəyə gedir, nəticə hər kompüter üçün ayrıca görünür.', 'fixit' ),
 				),
 				array(
 					'icon'  => 'search',
-					'title' => __( 'Kim kimə qoşulub — bilinmir', 'fixit' ),
-					'text'  => __( 'Hər sessiya, hər qoşulma cəhdi və hər hadisə jurnala yazılır; CSV və PDF kimi yüklənir.', 'fixit' ),
+					'title' => __( 'Kim kimə qoşulub, bilinmir', 'fixit' ),
+					'text'  => __( 'Hər sessiya, fayl ötürmə və əmr jurnala yazılır; CSV və PDF kimi yüklənir.', 'fixit' ),
 				),
 			),
 
 			'groups'   => array(
 				array(
 					'icon'  => 'computer',
-					'title' => __( 'Uzaqdan qoşulma', 'fixit' ),
+					'title' => __( 'Uzaqdan dəstək', 'fixit' ),
 					'items' => array(
-						__( 'Ekrana baxmaq və idarə etmək — siçan və klaviatura', 'fixit' ),
-						__( 'Sessiya ayrı pəncərədə açılır, panel yerində qalır', 'fixit' ),
-						__( 'Sessiya zamanı yazışma (çat)', 'fixit' ),
-						__( 'Fayl ötürmə — ekran axınını dayandırmadan', 'fixit' ),
+						__( 'Ekrana baxmaq və idarə etmək: çoxmonitor, AZ / RU / EN klaviatura düzümü', 'fixit' ),
+						__( 'Tam idarə və ya yalnız baxış; kilid ekranı və admin pəncərələri ilə işləyir', 'fixit' ),
+						__( 'Fayl ötürmə və mübadilə buferi ekranı dayandırmadan', 'fixit' ),
+						__( 'Bir sessiyaya bir neçə operator, sessiyanın video yazısı', 'fixit' ),
+						__( 'Əlaqə qısa müddətə kəsiləndə sessiya özü bərpa olunur', 'fixit' ),
 					),
 				),
 				array(
 					'icon'  => 'server',
-					'title' => __( 'Cihazlar', 'fixit' ),
+					'title' => __( 'Cihazlar və inventar', 'fixit' ),
 					'items' => array(
-						__( 'Bütün kompüterlər bir siyahıda, onlayn/oflayn vəziyyəti ilə', 'fixit' ),
-						__( 'Axtarış: ad, ID, istifadəçi və IP üzrə', 'fixit' ),
-						__( 'Yeni cihazı təsdiqləmək və ya bloklamaq', 'fixit' ),
-						__( 'Bir kliklə qoşulma', 'fixit' ),
+						__( 'Bütün kompüterlər bir siyahıda: sahib, IP, əməliyyat sistemi, agent versiyası', 'fixit' ),
+						__( 'Avadanlıq və proqram inventarı: disklər, şəbəkə, quraşdırılmış proqramlar', 'fixit' ),
+						__( 'Cihaz profili: sağlamlıq, proqramlar, sessiyalar və jurnal bir yerdə', 'fixit' ),
+						__( 'Qruplar, teqlər, toplu əməliyyatlar; minlərlə kompüterlə sürətli işləyir', 'fixit' ),
+					),
+				),
+				array(
+					'icon'  => 'wrench',
+					'title' => __( 'System Manager və skriptlər', 'fixit' ),
+					'items' => array(
+						__( 'Ekrana qoşulmadan proseslər, xidmətlər, sistem jurnalı və aktiv istifadəçilər', 'fixit' ),
+						__( 'PowerShell, CMD və Bash skript kitabxanası, versiyalar və risk yoxlaması', 'fixit' ),
+						__( 'Dörd göz qaydası: istəsəniz skript ikinci şəxs təsdiqləməmiş işə düşmür', 'fixit' ),
+						__( 'İşlər cədvəllə və qruplar üzrə; nəticə hər kompüter üçün ayrıca', 'fixit' ),
+					),
+				),
+				array(
+					'icon'  => 'download',
+					'title' => __( 'Proqram yayımı və yeniləmələr', 'fixit' ),
+					'items' => array(
+						__( 'MSI və EXE kataloqu, imza və hash yoxlaması; Linux paketləri', 'fixit' ),
+						__( 'Dalğalarla yayım: vaxt pəncərəsi, xəta həddi, təsdiq və geri qaytarma', 'fixit' ),
+						__( 'Windows Update və Linux (apt, dnf) yeniləmələrinin mərkəzdən quraşdırılması', 'fixit' ),
+						__( 'Hansı proqramın hansı kompüterdə olduğu bir siyahıda', 'fixit' ),
+					),
+				),
+				array(
+					'icon'  => 'activity',
+					'title' => __( 'Monitorinq və xəbərdarlıqlar', 'fixit' ),
+					'items' => array(
+						__( 'Kompüterlərin sağlamlığı: yük, disk, şəbəkə, yenidən başlatma ehtiyacı', 'fixit' ),
+						__( 'Qaydalar: şərt, müddət və ciddilik; problem davam edəndə xəbərdarlıq', 'fixit' ),
+						__( 'Xəbərdarlıq mərkəzi: təsdiq, həll və tarixçə', 'fixit' ),
+						__( 'Uzun müddət qoşulmayan və köhnə agentli kompüterlər ayrıca görünür', 'fixit' ),
 					),
 				),
 				array(
 					'icon'  => 'users',
 					'title' => __( 'Komandalar və icazələr', 'fixit' ),
 					'items' => array(
-						__( 'Şöbə → komanda → əməkdaş quruluşu', 'fixit' ),
-						__( 'Kim işə başlayıb — kompüterin açıq olub-olmaması', 'fixit' ),
-						__( 'Qruplar: kim hansı cihazlara qoşula bilər', 'fixit' ),
-						__( 'Sistem bölmələri yalnız administrator üçün', 'fixit' ),
+						__( 'Rollar: administrator, menecer, operator, yalnız baxış, rəhbər', 'fixit' ),
+						__( 'Əməliyyat icazələri: kim qoşula, fayl ötürə, skript işlədə bilər', 'fixit' ),
+						__( 'Qruplar: kim hansı kompüterlərə çatır', 'fixit' ),
+						__( 'Şöbə, komanda və əməkdaş; kim işdədir, rəhbər bir baxışda görür', 'fixit' ),
+					),
+				),
+				array(
+					'icon'  => 'network',
+					'title' => __( 'Giriş və inteqrasiyalar', 'fixit' ),
+					'items' => array(
+						__( 'Active Directory / LDAP və SSO: Entra ID, Okta, Keycloak, Google', 'fixit' ),
+						__( 'FIXIT Sorğu Sistemi: sorğudan kompüterə bir kliklə, agentdən yeni sorğu', 'fixit' ),
+						__( 'API və webhooklar: öz sistemlərinizə qoşmaq üçün', 'fixit' ),
+						__( 'Ekran bildirişləri: kompüterlərə elan və sahib məlumatı forması', 'fixit' ),
+					),
+				),
+				array(
+					'icon'  => 'database',
+					'title' => __( 'Server və baxım', 'fixit' ),
+					'items' => array(
+						__( 'Linux serverdə bir əmrlə quraşdırma: Ubuntu, Debian, RHEL ailəsi', 'fixit' ),
+						__( 'Gündəlik ehtiyat nüsxə, bir əmrlə bərpa, lazım olsa təmiz maşında', 'fixit' ),
+						__( 'Windows MSI-si GPO, Intune və ya SCCM ilə səssiz yayılır', 'fixit' ),
+						__( 'Server internetsiz də tam işləyir: panel kənar xidmətə müraciət etmir', 'fixit' ),
 					),
 				),
 				array(
@@ -344,32 +409,13 @@ function fixit_product_details() {
 						__( 'Kontaktlar: şöbə, komanda, əməkdaş və bir toxunuşla zəng', 'fixit' ),
 					),
 				),
-				array(
-					'icon'  => 'activity',
-					'title' => __( 'Jurnal və hesabat', 'fixit' ),
-					'items' => array(
-						__( 'Sessiyalar: kim, hansı cihaza, nə vaxt, nə qədər, nə qədər trafik', 'fixit' ),
-						__( 'Sistem logu — hadisə növünə görə süzgəc', 'fixit' ),
-						__( 'Logları CSV və PDF kimi yükləmək', 'fixit' ),
-					),
-				),
-				array(
-					'icon'  => 'wrench',
-					'title' => __( 'Quraşdırma və baxım', 'fixit' ),
-					'items' => array(
-						__( 'Server və agent üçün hazır quraşdırıcı (MSI)', 'fixit' ),
-						__( 'İşçi kompüterinə əvvəlcədən heç nə quraşdırmaq lazım deyil', 'fixit' ),
-						__( 'Server özü yenilənir və agentlərə yeni versiyanı özü paylayır', 'fixit' ),
-						__( 'Ehtiyat nüsxə və köhnə qeydlərin təmizlənməsi paneldən', 'fixit' ),
-					),
-				),
 			),
 
 			'flow_title' => __( 'Necə işləyir', 'fixit' ),
 			'flow'       => array(
-				array( 'computer', __( 'Agent', 'fixit' ), __( 'işçi kompüterində, serverə özü qoşulur', 'fixit' ) ),
-				array( 'server', __( 'Fixit Remote server', 'fixit' ), __( 'sizin serverinizdə və ya bizim buludda: cihazlar, icazələr, jurnal', 'fixit' ) ),
-				array( 'users', __( 'Operator', 'fixit' ), __( 'brauzerdən və ya telefondan qoşulur', 'fixit' ) ),
+				array( 'computer', __( 'Agent', 'fixit' ), __( 'Windows və Linux kompüterdə, serverə özü qoşulur', 'fixit' ) ),
+				array( 'server', __( 'Fixit Remote server', 'fixit' ), __( 'sizin şəbəkənizdə: cihazlar, icazələr, jurnal', 'fixit' ) ),
+				array( 'users', __( 'Operator', 'fixit' ), __( 'Client proqramı və ya telefondan işləyir', 'fixit' ) ),
 				array( 'shield', __( 'İstifadəçi', 'fixit' ), __( 'icazə verir və qoşulmanı ekranda görür', 'fixit' ) ),
 			),
 
@@ -395,22 +441,27 @@ function fixit_product_details() {
 			),
 
 			'security' => array(
-				__( 'Qoşulmazdan əvvəl istifadəçidən icazə soruşulur; 30 saniyə cavab yoxdursa — rədd', 'fixit' ),
-				__( 'Ekranda gizlədilə bilməyən "qoşulma var" zolağı', 'fixit' ),
-				__( 'İstifadəçi yerində olmayanda — mərkəzdən idarə olunan qoşulma parolu; hər istifadə jurnala yazılır', 'fixit' ),
-				__( 'Şifrələnmiş bağlantı (TLS) və sertifikat yoxlaması', 'fixit' ),
-				__( 'Parollar heç yerdə açıq saxlanılmır', 'fixit' ),
-				__( 'Səhv parol cəhdlərində IP müvəqqəti bloklanır', 'fixit' ),
+				__( 'Qoşulmazdan əvvəl istifadəçidən icazə soruşulur; 30 saniyə cavab yoxdursa rədd', 'fixit' ),
+				__( 'Ekranda gizlədilə bilməyən «qoşulma var» zolağı', 'fixit' ),
+				__( 'Agent və Client serverin sertifikat izinə bağlıdır: araya girən başqa server qəbul olunmur', 'fixit' ),
+				__( 'İki mərhələli giriş, SSO və domen hesabı ilə giriş', 'fixit' ),
+				__( 'Skriptlər və proqram yayımı üçün ikinci şəxsin təsdiqi tələb oluna bilər', 'fixit' ),
+				__( 'İstifadəçi yerində olmayanda mərkəzdən idarə olunan qoşulma parolu; hər istifadə jurnala yazılır', 'fixit' ),
+				__( 'Səhv parol cəhdlərində IP bloklanır, hesab yox', 'fixit' ),
 			),
 
 			'faq'      => array(
 				array(
-					__( 'AnyDesk və ya Supremo-dan əsas fərqi nədir?', 'fixit' ),
-					__( 'Fixit Remote öz serverinizdə və ya bizim buludda işləyir, bağlantı xarici xidmətlərdən keçmir. Kimin hansı kompüterə qoşula biləcəyini mərkəzdən idarə edir, hər sessiyanı jurnalda görürsünüz.', 'fixit' ),
+					__( 'AnyDesk və ya TeamViewer-dən əsas fərqi nədir?', 'fixit' ),
+					__( 'Fixit Remote serveri sizin şəbəkənizdə işləyir, bağlantı xarici xidmətlərdən keçmir. Uzaqdan dəstəkdən əlavə kompüter parkını da idarə edir: inventar, skriptlər, proqram yayımı, monitorinq. Kimin hansı kompüterə qoşula biləcəyini mərkəzdən təyin edirsiniz, hər sessiyanı jurnalda görürsünüz.', 'fixit' ),
+				),
+				array(
+					__( 'Qiymət necə hesablanır?', 'fixit' ),
+					__( 'İdarə olunan kompüterlərin sayına görə. Operator sayı məhdud deyil, bütün imkanlar hər paketdədir. Paketlər bu səhifənin «Qiymətlər» bölməsindədir, 14 günlük pulsuz sınaq var.', 'fixit' ),
 				),
 				array(
 					__( 'İşçi kompüterlərində port açmaq lazımdırmı?', 'fixit' ),
-					__( 'Xeyr. Agent serverə özü qoşulur. Kompüterlər fərqli VLAN və ya alt şəbəkələrdə ola bilər — yalnız server əlçatan olmalıdır.', 'fixit' ),
+					__( 'Xeyr. Agent serverə özü qoşulur. Kompüterlər fərqli VLAN və ya alt şəbəkələrdə ola bilər, yalnız server əlçatan olmalıdır.', 'fixit' ),
 				),
 				array(
 					__( 'İşçi bilmədən kompüterinə qoşulmaq olarmı?', 'fixit' ),
@@ -418,7 +469,11 @@ function fixit_product_details() {
 				),
 				array(
 					__( 'Hansı əməliyyat sistemlərində işləyir?', 'fixit' ),
-					__( 'Agent Windows kompüterlərində işləyir. Operator brauzerdən və ya mobil tətbiqdən qoşulur.', 'fixit' ),
+					__( 'Agent Windows və Linux kompüterlərində işləyir. Server Linux-da qurulur: Ubuntu, Debian və ya RHEL ailəsi. Operator Windows üçün Client proqramı və ya mobil tətbiqlə işləyir.', 'fixit' ),
+				),
+				array(
+					__( 'Sınaqdan sonra nə olur?', 'fixit' ),
+					__( 'Lisenziya açarını paneldə yazırsınız və eyni server işləməyə davam edir: kompüterlər, istifadəçilər və jurnal olduğu kimi qalır. Lisenziya yazılmasa, sınaq bitəndə panel bağlanır, kompüterlər isə serverə qoşulu qalır.', 'fixit' ),
 				),
 			),
 		),
