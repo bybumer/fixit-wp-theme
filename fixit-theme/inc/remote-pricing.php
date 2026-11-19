@@ -54,64 +54,6 @@ function fixit_pricing_tier_audience() {
 }
 
 /**
- * Paketlərin fərqləri (müqayisə cədvəli).
- *
- * Hər sətir ya hər paket üçün öz mətnini verir ('cells'), ya da göstərilən
- * paketdən ('from') başlayaraq yuxarı paketlərdə var.
- */
-function fixit_pricing_compare() {
-	$priority = __( 'Prioritet', 'fixit' );
-	$full     = __( 'Tam quraşdırma', 'fixit' );
-
-	return array(
-		array(
-			'label' => __( 'Dəstək', 'fixit' ),
-			'cells' => array(
-				'start'      => __( 'E-poçt, iş günləri', 'fixit' ),
-				'biznes'     => __( 'E-poçt və telefon', 'fixit' ),
-				'pesekar'    => $priority,
-				'korporativ' => $priority,
-				'muessise'   => $priority,
-			),
-		),
-		array(
-			'label' => __( 'Quraşdırma', 'fixit' ),
-			'cells' => array(
-				'start'      => __( 'Bələdçi ilə', 'fixit' ),
-				'biznes'     => __( 'Uzaqdan kömək', 'fixit' ),
-				'pesekar'    => __( 'Mütəxəssisimizlə', 'fixit' ),
-				'korporativ' => $full,
-				'muessise'   => $full,
-			),
-		),
-		array(
-			'label' => __( 'SSO / LDAP qoşulması mütəxəssisimizlə', 'fixit' ),
-			'from'  => 'pesekar',
-		),
-		array(
-			'label' => __( 'İT komandanız üçün onlayn təlim', 'fixit' ),
-			'from'  => 'pesekar',
-		),
-		array(
-			'label' => __( 'Ehtiyat nüsxə və bərpa planı', 'fixit' ),
-			'from'  => 'korporativ',
-		),
-		array(
-			'label' => __( 'Filial serverləri üçün ayrıca lisenziya açarları', 'fixit' ),
-			'from'  => 'korporativ',
-		),
-		array(
-			'label' => __( 'Şəxsi menecer və rüblük texniki baxış', 'fixit' ),
-			'from'  => 'muessise',
-		),
-		array(
-			'label' => __( 'Yazılı SLA: cavab və həll müddətləri', 'fixit' ),
-			'from'  => 'muessise',
-		),
-	);
-}
-
-/**
  * Defolt rəqəmlər (sahib təsdiq edənə qədər saytda görünmür).
  */
 function fixit_pricing_defaults() {
@@ -286,7 +228,6 @@ function fixit_pricing_section() {
 	$audience = fixit_pricing_tier_audience();
 	$last     = end( $p['tiers'] );
 	$contact  = add_query_arg( 'mehsul', 'Fixit Remote', fixit_page_url( 'template-contact.php' ) );
-	$keys     = wp_list_pluck( $p['tiers'], 'key' );
 	/* translators: %s: faiz */
 	$save = $p['save'] ? sprintf( __( '%s%% qənaət', 'fixit' ), number_format_i18n( $p['save'] ) ) : '';
 	?>
@@ -412,67 +353,6 @@ function fixit_pricing_section() {
 							<li><?php fixit_icon( 'check' ); ?><span><?php echo esc_html( $line ); ?></span></li>
 						<?php endforeach; ?>
 					</ul>
-				</div>
-
-				<h3 class="price-compare__title"><?php esc_html_e( 'Paketlər nə ilə fərqlənir', 'fixit' ); ?></h3>
-				<div class="price-table-wrap" tabindex="0" role="region" aria-label="<?php esc_attr_e( 'Paketlər nə ilə fərqlənir', 'fixit' ); ?>">
-					<table class="price-table">
-						<thead>
-							<tr>
-								<td></td>
-								<?php foreach ( $p['tiers'] as $tier ) : ?>
-									<th scope="col"<?php echo 'pesekar' === $tier['key'] ? ' class="is-featured"' : ''; ?>><?php echo esc_html( $names[ $tier['key'] ] ); ?></th>
-								<?php endforeach; ?>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row"><?php esc_html_e( 'Kompüterə qədər', 'fixit' ); ?></th>
-								<?php foreach ( $p['tiers'] as $tier ) : ?>
-									<td<?php echo 'pesekar' === $tier['key'] ? ' class="is-featured"' : ''; ?>><b><?php echo esc_html( number_format_i18n( $tier['max'] ) ); ?></b></td>
-								<?php endforeach; ?>
-							</tr>
-							<?php if ( $p['show'] ) : ?>
-								<tr>
-									<th scope="row"><?php esc_html_e( 'Qiymət', 'fixit' ); ?></th>
-									<?php foreach ( $p['tiers'] as $tier ) : ?>
-										<td<?php echo 'pesekar' === $tier['key'] ? ' class="is-featured"' : ''; ?>><?php fixit_pricing_amount( $tier['month'], $tier['year'], 'price-amount--sm' ); ?></td>
-									<?php endforeach; ?>
-								</tr>
-								<tr>
-									<th scope="row">
-										<?php
-										/* translators: %s: say */
-										echo esc_html( sprintf( __( 'Hər əlavə %s kompüter', 'fixit' ), $p['step'] ) );
-										?>
-									</th>
-									<?php foreach ( $p['tiers'] as $tier ) : ?>
-										<td<?php echo 'pesekar' === $tier['key'] ? ' class="is-featured"' : ''; ?>><?php fixit_pricing_amount( $p['step'] * $tier['price'], $p['step'] * $tier['price'] * $p['months'], 'price-amount--sm' ); ?></td>
-									<?php endforeach; ?>
-								</tr>
-							<?php endif; ?>
-							<?php foreach ( fixit_pricing_compare() as $row ) : ?>
-								<tr>
-									<th scope="row"><?php echo esc_html( $row['label'] ); ?></th>
-									<?php
-									$on = false;
-									foreach ( $keys as $key ) :
-										$on = $on || ( isset( $row['from'] ) && $row['from'] === $key );
-										?>
-										<td<?php echo 'pesekar' === $key ? ' class="is-featured"' : ''; ?>>
-											<?php if ( isset( $row['cells'] ) ) : ?>
-												<?php echo esc_html( isset( $row['cells'][ $key ] ) ? $row['cells'][ $key ] : '' ); ?>
-											<?php elseif ( $on ) : ?>
-												<span class="price-yes"><?php fixit_icon( 'check' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Var', 'fixit' ); ?></span></span>
-											<?php else : ?>
-												<span class="price-no" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e( 'Yoxdur', 'fixit' ); ?></span>
-											<?php endif; ?>
-										</td>
-									<?php endforeach; ?>
-								</tr>
-							<?php endforeach; ?>
-						</tbody>
-					</table>
 				</div>
 
 				<?php if ( $p['show'] && ( $p['multi2'] || $p['multi3'] ) ) : ?>

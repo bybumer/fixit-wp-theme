@@ -308,7 +308,7 @@ add_action( 'admin_post_fixit_trial_reject', 'fixit_trial_reject' );
 function fixit_trial_preview() {
 	$id   = fixit_trial_admin_action_id( 'fixit_trial_preview_' );
 	$days = fixit_trial_settings()['link_days'];
-	$link = '' !== fixit_trial_repo_token()
+	$link = fixit_trial_sign_key()
 		? array(
 			'url'     => '#onizleme',
 			'sig'     => '#onizleme',
@@ -431,7 +431,7 @@ function fixit_trial_action_box( $post ) {
 	$domain = strtolower( (string) substr( strrchr( $email, '@' ), 1 ) );
 	$free   = in_array( $domain, array( 'gmail.com', 'mail.ru', 'yandex.ru', 'yandex.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'live.com', 'icloud.com', 'inbox.ru', 'list.ru', 'bk.ru', 'rambler.ru', 'proton.me', 'protonmail.com' ), true );
 	$sent   = fixit_trial_is_sent( $id );
-	$token  = '' !== fixit_trial_repo_token();
+	$key    = (bool) fixit_trial_sign_key();
 	$checks = array(
 		$free
 			/* translators: %s: domen */
@@ -442,8 +442,8 @@ function fixit_trial_action_box( $post ) {
 	if ( (int) get_post_meta( $id, '_ft_repeats', true ) ) {
 		$checks[] = array( 'warn', __( 'Bir gün ərzində təkrar müraciət edib', 'fixit' ) );
 	}
-	if ( ! $token ) {
-		$checks[] = array( 'warn', __( 'Repo açarı yazılmayıb: məktubda yükləmə linki olmayacaq', 'fixit' ) );
+	if ( ! $key ) {
+		$checks[] = array( 'warn', __( 'Saytın imza açarı yaradılmayıb: məktubda yükləmə linki olmayacaq', 'fixit' ) );
 	}
 	?>
 	<ul style="margin:0 0 12px">
@@ -504,12 +504,12 @@ function fixit_trial_settings_page() {
 	$p     = fixit_pricing();
 	$s     = fixit_trial_settings();
 	$names = fixit_pricing_tier_names();
-	$token = fixit_trial_repo_token();
+	$pub   = fixit_trial_public_key();
 	$test  = null;
 
-	// «Yoxla»: repoya giriş və son paket.
+	// «Mərkəzi yoxla»: mərkəz saytın biletini tanıyır və paketi verə bilir.
 	if ( isset( $_GET['ft_test'], $_GET['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'fixit_trial_test' ) ) {
-		$test = fixit_trial_repo_release( true );
+		$test = fixit_trial_server_check( true );
 	}
 	?>
 	<div class="wrap" style="max-width:980px">
@@ -585,7 +585,7 @@ function fixit_trial_settings_page() {
 			</table>
 
 			<h2 style="margin-top:28px"><?php esc_html_e( '14 günlük sınaq', 'fixit' ); ?></h2>
-			<p class="description"><?php esc_html_e( 'Müraciət admin paneldə yaranır və sizə bildiriş gəlir. Yoxlayıb «Bələdçini göndər» basanda müştəriyə hazır məktub gedir: qurulum bələdçisi, qiymətlər və şəxsi yükləmə linki. Server paketi gizli GitHub reposundadır, link sayt vasitəsilə verilir və hər yükləmə müraciətdə qeyd olunur.', 'fixit' ); ?></p>
+			<p class="description"><?php esc_html_e( 'Müraciət admin paneldə yaranır və sizə bildiriş gəlir. Yoxlayıb «Bələdçini göndər» basanda müştəriyə hazır məktub gedir: qurulum bələdçisi, qiymətlər və şəxsi yükləmə linki. Server paketini Fixit mərkəzi (id.fixit.az) verir: link sayt vasitəsilə keçir və hər yükləmə müraciətdə qeyd olunur.', 'fixit' ); ?></p>
 
 			<table class="form-table" role="presentation">
 				<tr>
@@ -602,49 +602,37 @@ function fixit_trial_settings_page() {
 					<p class="description"><?php esc_html_e( 'Yeni müraciət haqqında məktub bura gəlir. Müştəri məktuba cavab yazanda da bu ünvana düşür.', 'fixit' ); ?></p></td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="repo"><?php esc_html_e( 'Server paketlərinin reposu', 'fixit' ); ?></label></th>
-					<td><input type="text" name="repo" id="repo" value="<?php echo esc_attr( $s['repo'] ); ?>" class="regular-text"></td>
+					<th scope="row"><label for="server"><?php esc_html_e( 'Paketi verən mərkəz', 'fixit' ); ?></label></th>
+					<td>
+						<input type="url" name="server" id="server" value="<?php echo esc_attr( $s['server'] ); ?>" class="regular-text">
+						<p class="description"><?php esc_html_e( 'Müştəri server paketini bu ünvandan yükləyir. Sayt linki yoxlayır, yükləməni qeyd edir və müştərini 30 dəqiqəlik imzalı biletlə mərkəzə yönləndirir. GitHub açarı lazım deyil.', 'fixit' ); ?></p>
+					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="repo_token"><?php esc_html_e( 'Repoya giriş açarı', 'fixit' ); ?></label></th>
+					<th scope="row"><?php esc_html_e( 'Saytın imza açarı', 'fixit' ); ?></th>
 					<td>
-						<input type="password" name="repo_token" id="repo_token" value="" class="regular-text" autocomplete="new-password" placeholder="<?php echo esc_attr( $token ? __( 'yazılıb — dəyişmək üçün yenisini yazın', 'fixit' ) : 'github_pat_...' ); ?>">
-						<?php if ( $token ) : ?>
-							<p><label><input type="checkbox" name="repo_token_clear" value="1"> <?php esc_html_e( 'Açarı sil', 'fixit' ); ?></label></p>
-						<?php endif; ?>
-						<p class="description"><?php esc_html_e( 'Bu açar bir dəfə yazılır və bütün müştərilər üçün işləyir: müştərilər onu görmür, hər müştəriyə sayt ayrıca müvəqqəti link yaradır. GitHub → Settings → Developer settings → Fine-grained tokens: yalnız bu repo, Contents: Read-only.', 'fixit' ); ?></p>
-						<?php $fixit_exp = (int) get_option( 'fixit_remote_repo_token_exp' ); ?>
-						<?php if ( $token && $fixit_exp ) : ?>
-							<p style="color:<?php echo ( $fixit_exp - time() ) < 21 * DAY_IN_SECONDS ? '#b32d2e' : '#1a7f37'; ?>">
-								<?php
-								/* translators: 1: tarix, 2: gün */
-								echo esc_html( sprintf( __( 'Açarın müddəti: %1$s (%2$d gün qalıb). Bitməzdən əvvəl GitHub-da yeniləyin və bura yazın.', 'fixit' ), wp_date( 'd.m.Y', $fixit_exp ), max( 0, (int) floor( ( $fixit_exp - time() ) / DAY_IN_SECONDS ) ) ) );
-								?>
-							</p>
-						<?php endif; ?>
-						<?php if ( $token ) : ?>
-							<p><a class="button" href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'ft_test', 1, admin_url( 'admin.php?page=fixit-remote-settings' ) ), 'fixit_trial_test' ) ); ?>"><?php esc_html_e( 'Girişi yoxla', 'fixit' ); ?></a></p>
-						<?php endif; ?>
-						<?php if ( null !== $test ) : ?>
-							<?php if ( is_wp_error( $test ) ) : ?>
-								<div class="notice notice-error inline"><p><?php echo esc_html( $test->get_error_message() ); ?></p></div>
-							<?php else : ?>
-								<?php
-								$pkg = fixit_trial_find_asset( $test, 'pkg' );
-								$sig = fixit_trial_find_asset( $test, 'sig' );
-								?>
-								<div class="notice notice-<?php echo $pkg && $sig ? 'success' : 'warning'; ?> inline"><p>
-									<?php
-									echo esc_html(
-										$pkg && $sig
-											/* translators: 1: versiya, 2: faylın adı */
-											? sprintf( __( 'Hazırdır: versiya %1$s, paket %2$s və imzası tapıldı.', 'fixit' ), $test['tag'], $pkg['name'] )
-											/* translators: %s: versiya */
-											: sprintf( __( 'Repoya giriş var (versiya %s), amma son buraxılışda server paketi və ya imzası tapılmadı.', 'fixit' ), $test['tag'] )
-									);
-									?>
-								</p></div>
+						<?php if ( '' === $pub ) : ?>
+							<p><?php esc_html_e( 'Açar hələ yaradılmayıb. Açar bir dəfə yaradılır və bütün müştərilər üçün işləyir: gizli hissəsi yalnız bu saytdadır, ictimai hissəsini mərkəzə yazırsınız.', 'fixit' ); ?></p>
+							<p><button type="submit" class="button button-primary" name="sign_key_create" value="1"><?php esc_html_e( 'Açarı yarat', 'fixit' ); ?></button></p>
+						<?php else : ?>
+							<p><?php esc_html_e( 'İctimai açar (gizli deyil):', 'fixit' ); ?></p>
+							<input type="text" readonly class="large-text code" value="<?php echo esc_attr( $pub ); ?>" onclick="this.select()">
+							<p class="description" style="margin-top:12px"><?php esc_html_e( 'Mərkəzə bir dəfə yazılır. id.fixit.az serverində (root kimi):', 'fixit' ); ?></p>
+							<pre style="background:#1d2327;color:#f0f0f1;padding:10px 12px;border-radius:4px;white-space:pre-wrap;word-break:break-all;max-width:760px"><?php echo esc_html( fixit_trial_central_commands( $pub ) ); ?></pre>
+							<p><a class="button" href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'ft_test', 1, admin_url( 'admin.php?page=fixit-remote-settings' ) ), 'fixit_trial_test' ) ); ?>"><?php esc_html_e( 'Mərkəzi yoxla', 'fixit' ); ?></a></p>
+							<?php if ( null !== $test ) : ?>
+								<?php if ( is_wp_error( $test ) ) : ?>
+									<div class="notice notice-error inline"><p><?php echo esc_html( $test->get_error_message() ); ?></p></div>
+								<?php else : ?>
+									<div class="notice notice-success inline"><p>
+										<?php
+										/* translators: 1: versiya, 2: faylın adı */
+										echo esc_html( sprintf( __( 'Hazırdır: mərkəz saytın açarını tanıyır, versiya %1$s (%2$s).', 'fixit' ), $test['version'], $test['package'] ) );
+										?>
+									</p></div>
+								<?php endif; ?>
 							<?php endif; ?>
+							<p style="margin-top:14px"><label><input type="checkbox" name="sign_key_renew" value="1"> <?php esc_html_e( 'Açarı yenilə: köhnə açar dərhal işləməz olur, yeni ictimai açarı mərkəzə yenidən yazmaq lazımdır', 'fixit' ); ?></label></p>
 						<?php endif; ?>
 					</td>
 				</tr>
@@ -655,6 +643,30 @@ function fixit_trial_settings_page() {
 	</div>
 	<?php
 }
+
+/**
+ * Mərkəzdə saytın ictimai açarını yazan əmrlər (açar gizli deyil).
+ *
+ * @param string $pub İctimai açar (base64url).
+ */
+function fixit_trial_central_commands( $pub ) {
+	return "sed -i '/^FIXITREMOTE_TRIAL_KEY=/d' /etc/fixitremote-central/update.env\n"
+		. "echo 'FIXITREMOTE_TRIAL_KEY=" . $pub . "' >> /etc/fixitremote-central/update.env\n"
+		. 'systemctl restart fixitremote-central';
+}
+
+/**
+ * Köhnə GitHub açarı (1.15.2-yə qədər sınaq paketi GitHub-dan verilirdi): artıq
+ * istifadə olunmur, bazada saxlanmır.
+ */
+function fixit_trial_drop_github_token() {
+	if ( false !== get_option( 'fixit_remote_repo_token', false ) || false !== get_option( 'fixit_remote_repo_token_exp', false ) ) {
+		delete_option( 'fixit_remote_repo_token' );
+		delete_option( 'fixit_remote_repo_token_exp' );
+		delete_transient( 'fixit_trial_repo_release' );
+	}
+}
+add_action( 'admin_init', 'fixit_trial_drop_github_token' );
 
 /**
  * Ayarları yadda saxlayır.
@@ -694,18 +706,18 @@ function fixit_trial_settings_save() {
 			'auto_send' => ! empty( $_POST['auto_send'] ),
 			'link_days' => isset( $_POST['link_days'] ) ? absint( $_POST['link_days'] ) : 14,
 			'notify'    => isset( $_POST['notify'] ) ? sanitize_email( wp_unslash( $_POST['notify'] ) ) : '',
-			'repo'      => isset( $_POST['repo'] ) ? sanitize_text_field( wp_unslash( $_POST['repo'] ) ) : '',
+			'server'    => isset( $_POST['server'] ) ? untrailingslashit( esc_url_raw( wp_unslash( $_POST['server'] ), array( 'https' ) ) ) : '',
 		),
 		false
 	);
 
-	if ( ! empty( $_POST['repo_token_clear'] ) ) {
-		delete_option( 'fixit_remote_repo_token' );
-	} elseif ( ! empty( $_POST['repo_token'] ) ) {
-		$token = preg_replace( '/[^A-Za-z0-9_]/', '', (string) wp_unslash( $_POST['repo_token'] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- yalnız icazəli simvollar saxlanılır
-		update_option( 'fixit_remote_repo_token', $token, false );
+	if ( ! empty( $_POST['sign_key_renew'] ) ) {
+		delete_option( 'fixit_trial_sign_key' );
 	}
-	delete_transient( 'fixit_trial_repo_release' );
+	if ( ! empty( $_POST['sign_key_create'] ) || ! empty( $_POST['sign_key_renew'] ) ) {
+		fixit_trial_sign_key( true );
+	}
+	delete_transient( 'fixit_trial_server_check' );
 
 	wp_safe_redirect( add_query_arg( 'ft_notice', 'saved', admin_url( 'admin.php?page=fixit-remote-settings' ) ) );
 	exit;

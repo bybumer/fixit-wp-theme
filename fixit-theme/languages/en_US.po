@@ -3345,58 +3345,6 @@ msgid "Böyük təşkilat üçün"
 msgstr "For a large organization"
 
 #: inc/remote-pricing.php
-msgid "Prioritet"
-msgstr "Priority"
-
-#: inc/remote-pricing.php
-msgid "Tam quraşdırma"
-msgstr "Full installation"
-
-#: inc/remote-pricing.php
-msgid "E-poçt, iş günləri"
-msgstr "Email, business days"
-
-#: inc/remote-pricing.php
-msgid "E-poçt və telefon"
-msgstr "Email and phone"
-
-#: inc/remote-pricing.php
-msgid "Bələdçi ilə"
-msgstr "With our guide"
-
-#: inc/remote-pricing.php
-msgid "Uzaqdan kömək"
-msgstr "Remote help"
-
-#: inc/remote-pricing.php
-msgid "Mütəxəssisimizlə"
-msgstr "With our specialist"
-
-#: inc/remote-pricing.php
-msgid "SSO / LDAP qoşulması mütəxəssisimizlə"
-msgstr "SSO / LDAP setup with our specialist"
-
-#: inc/remote-pricing.php
-msgid "İT komandanız üçün onlayn təlim"
-msgstr "Online training for your IT team"
-
-#: inc/remote-pricing.php
-msgid "Ehtiyat nüsxə və bərpa planı"
-msgstr "Backup and recovery plan"
-
-#: inc/remote-pricing.php
-msgid "Filial serverləri üçün ayrıca lisenziya açarları"
-msgstr "Separate license keys for branch servers"
-
-#: inc/remote-pricing.php
-msgid "Şəxsi menecer və rüblük texniki baxış"
-msgstr "Personal account manager and quarterly technical review"
-
-#: inc/remote-pricing.php
-msgid "Yazılı SLA: cavab və həll müddətləri"
-msgstr "Written SLA: response and resolution times"
-
-#: inc/remote-pricing.php
 msgid "Bütün imkanlar hər paketdə: uzaqdan dəstək, inventar, skriptlər, proqram yayımı, monitorinq, SSO və API"
 msgstr "Every feature in every package: remote support, inventory, scripts, software deployment, monitoring, SSO and API"
 
@@ -3525,26 +3473,6 @@ msgid "Hər paketə daxildir"
 msgstr "Included in every package"
 
 #: inc/remote-pricing.php
-msgid "Paketlər nə ilə fərqlənir"
-msgstr "How the packages differ"
-
-#: inc/remote-pricing.php
-msgid "Kompüterə qədər"
-msgstr "Computers, up to"
-
-#: inc/remote-pricing.php
-msgid "Hər əlavə %s kompüter"
-msgstr "Each extra %s computers"
-
-#: inc/remote-pricing.php
-msgid "Var"
-msgstr "Included"
-
-#: inc/remote-pricing.php
-msgid "Yoxdur"
-msgstr "Not included"
-
-#: inc/remote-pricing.php
 msgid "2 illik müqavilədə %1$s%%, 3 illikdə %2$s%% endirim."
 msgstr "%1$s%% off a 2-year contract, %2$s%% off a 3-year contract."
 
@@ -3665,12 +3593,24 @@ msgid "Sınaq üçün müraciət edin"
 msgstr "Request a trial"
 
 #: inc/remote-trial.php
-msgid "Repo açarı yazılmayıb."
-msgstr "The repository token has not been set."
+msgid "Saytın imza açarı yaradılmayıb."
+msgstr "The site signing key has not been created."
 
 #: inc/remote-trial.php
-msgid "GitHub cavab vermədi (kod %s). Açarın müddətini və icazəsini yoxlayın."
-msgstr "GitHub did not respond (code %s). Check the token's expiry and permissions."
+msgid "Mərkəzə qoşulmaq olmadı: %s"
+msgstr "Could not connect to the central server: %s"
+
+#: inc/remote-trial.php
+msgid "Mərkəz saytın açarını tanımadı: ictimai açarı mərkəzdə FIXITREMOTE_TRIAL_KEY kimi yazın (aşağıdakı əmrlər)."
+msgstr "The central server did not recognize the site key: add the public key on the central server as FIXITREMOTE_TRIAL_KEY (commands below)."
+
+#: inc/remote-trial.php
+msgid "Mərkəzdə sınaq yükləməsi qurulmayıb: saytın ictimai açarı və ya gizli reponun açarı yazılmayıb."
+msgstr "Trial downloads are not set up on the central server: the site public key or the private repository key is missing."
+
+#: inc/remote-trial.php
+msgid "Mərkəz paketi vermədi (kod %1$s). %2$s"
+msgstr "The central server did not provide the package (code %1$s). %2$s"
 
 #: inc/remote-trial.php
 msgid "Yeni link almaq üçün formanı yenidən doldurun"
@@ -4573,12 +4513,28 @@ msgid "Quraşdırma və SSO / LDAP qoşulması mütəxəssisimizlə"
 msgstr "Installation and SSO / LDAP setup with our specialist"
 
 #: tools/translations
+msgid "İT komandanız üçün onlayn təlim"
+msgstr "Online training for your IT team"
+
+#: tools/translations
 msgid "Prioritet dəstək"
 msgstr "Priority support"
 
 #: tools/translations
 msgid "Tam quraşdırma, ehtiyat nüsxə və bərpa planı"
 msgstr "Full installation, backup and recovery plan"
+
+#: tools/translations
+msgid "Filial serverləri üçün ayrıca lisenziya açarları"
+msgstr "Separate license keys for branch servers"
+
+#: tools/translations
+msgid "Şəxsi menecer və rüblük texniki baxış"
+msgstr "Personal account manager and quarterly technical review"
+
+#: tools/translations
+msgid "Yazılı SLA: cavab və həll müddətləri"
+msgstr "Written SLA: response and resolution times"
 
 #: tools/translations
 msgid "Qiymət idarə olunan kompüterlərin sayından asılıdır. Komandanızın hamısı işləyə bilər, bütün imkanlar hər paketdədir. Ödəniş illikdir."
@@ -4613,5 +4569,69 @@ msgid "Formanı doldurun: qurulum bələdçisini, serverin yükləmə linkini v�
 msgstr "Fill in the form and we will immediately email you the installation guide, the server download link and pricing. The server is installed on your own hardware and every feature is open during the trial."
 
 #: tools/translations
+msgid "Repo açarı yazılmayıb."
+msgstr "The repository token has not been set."
+
+#: tools/translations
+msgid "GitHub cavab vermədi (kod %s). Açarın müddətini və icazəsini yoxlayın."
+msgstr "GitHub did not respond (code %s). Check the token's expiry and permissions."
+
+#: tools/translations
 msgid "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Bütün imkanlar hər paketdədir, ödəniş illikdir."
 msgstr "The price is based on the number of managed computers, with no limit on operators. Every package includes all features; billing is annual."
+
+#: tools/translations
+msgid "Prioritet"
+msgstr "Priority"
+
+#: tools/translations
+msgid "Tam quraşdırma"
+msgstr "Full installation"
+
+#: tools/translations
+msgid "E-poçt, iş günləri"
+msgstr "Email, business days"
+
+#: tools/translations
+msgid "E-poçt və telefon"
+msgstr "Email and phone"
+
+#: tools/translations
+msgid "Bələdçi ilə"
+msgstr "With our guide"
+
+#: tools/translations
+msgid "Uzaqdan kömək"
+msgstr "Remote help"
+
+#: tools/translations
+msgid "Mütəxəssisimizlə"
+msgstr "With our specialist"
+
+#: tools/translations
+msgid "SSO / LDAP qoşulması mütəxəssisimizlə"
+msgstr "SSO / LDAP setup with our specialist"
+
+#: tools/translations
+msgid "Ehtiyat nüsxə və bərpa planı"
+msgstr "Backup and recovery plan"
+
+#: tools/translations
+msgid "Paketlər nə ilə fərqlənir"
+msgstr "How the packages differ"
+
+#: tools/translations
+msgid "Kompüterə qədər"
+msgstr "Computers, up to"
+
+#: tools/translations
+msgid "Hər əlavə %s kompüter"
+msgstr "Each extra %s computers"
+
+#: tools/translations
+msgid "Var"
+msgstr "Included"
+
+#: tools/translations
+msgid "Yoxdur"
+msgstr "Not included"

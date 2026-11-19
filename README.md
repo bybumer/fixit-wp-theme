@@ -281,12 +281,11 @@ aylıq qiymət həcm artdıqca düşür. Paketdən artıq kompüter
 kalkulyator ən sərfəli variantı özü seçir. 500-dən çox: fərdi təklif.
 
 **Aylıq / illik:** bölmənin yuxarısında seçim var, standart olaraq aylıq
-məbləğlər görünür (paket kartları, kalkulyator, müqayisə cədvəli birlikdə
+məbləğlər görünür (paket kartları və kalkulyator birlikdə
 dəyişir). İllik = aylıq × 12. Ayarda «İllik ödənişdə hədiyyə» (0-3 ay) seçilsə,
 illik = aylıq × (12 − hədiyyə) olur və «İllik ödəniş» düyməsinin yanında
-qənaət faizi görünür. Kartlarda yalnız qiymət və paketin kimə uyğun olduğu
-var; dəstək səviyyələri ayrıca «Paketlər nə ilə fərqlənir» cədvəlindədir
-(`fixit_pricing_compare()`).
+qənaət faizi görünür. Kartlarda paketin adı, kimə uyğun olduğu, qiymət və
+kompüter sayı var; altında «Hər paketə daxildir» siyahısı.
 
 Rəqəmlər admin paneldə dəyişir. **Qiymətlər saytda yalnız «Qiymətləri saytda
 göstər» seçiləndən sonra görünür**, o vaxta qədər paketlər «qiymət sorğu ilə»
@@ -308,18 +307,24 @@ Saytda ƏDV qeydi yoxdur.
      müqavilə qeydi və `fixit.az/<dil>/sinaq-paketi/?k=...` şəxsi linki, standart
      14 gün). Vəziyyət «Bələdçi göndərilib» olur;
    - **Rədd et**: saxta və ya sınaq müraciəti, müştəriyə heç nə getmir.
-4. Link açılanda sayt açarı yoxlayır, yükləməni müraciətdə qeyd edir və paketi
-   gizli GitHub reposundan (`bybumer/fixit-remote-server`) bir neçə dəqiqəlik
-   ünvanla verir.
+4. Link açılanda sayt açarı və müddəti yoxlayır, yükləməni müraciətdə qeyd edir
+   və müştərini **id.fixit.az**-a 30 dəqiqəlik imzalı biletlə yönləndirir
+   (`/api/trial/package?t=...`). Paketi Fixit mərkəzi gizli repodan öz keşindən
+   verir; mərkəz yalnız biletin imzasını və müddətini yoxlayır.
 
 Ayarlarda «Bələdçini avtomatik göndər» seçimi var (standart söndürülü): saytdan
 birbaşa satışa keçəndə açmaq olar.
 
-**GitHub açarı bir dənədir.** Müştərilər onu görmür və almır; hər müştəri üçün
-sayt ayrıca müvəqqəti link yaradır. Açarı bir dəfə yaradın: GitHub → Settings →
-Developer settings → Fine-grained tokens, yalnız `fixit-remote-server` reposu,
-*Contents: Read-only*. Açarı «Qiymətlər və sınaq» səhifəsinə yazıb «Girişi yoxla»
-basın: açarın bitmə tarixi orada görünür, bitməzdən əvvəl yeniləyin.
+**Saytda GitHub açarı yoxdur.** Biletləri saytın öz Ed25519 açarı imzalayır:
+«Qiymətlər və sınaq» → **Saytın imza açarı** → «Açarı yarat» (bir dəfə). Gizli
+hissə yalnız saytın bazasındadır; ictimai hissəni (gizli deyil) mərkəzdə
+`/etc/fixitremote-central/update.env` faylına `FIXITREMOTE_TRIAL_KEY=...` kimi
+yazırsınız: hazır əmrlər həmin səhifədə görünür. Sonra «Mərkəzi yoxla». Açarı
+yeniləsəniz yeni ictimai açarı mərkəzə yenidən yazmaq lazımdır. Mərkəzin tərəfi
+Fixit Remote reposundadır (`central/FixitRemote.Central/TrialTicket.cs`).
+
+1.15.2-yə qədər istifadə olunan GitHub açarı (`fixit_remote_repo_token`) admin
+panel ilk açılanda bazadan silinir.
 
 ## 8. Kukilər və məxfilik
 

@@ -142,5 +142,25 @@
  "%1$s × %2$d ay": {
   "en": "%1$s × %2$d months",
   "ru": "%1$s × %2$d мес."
+ },
+ "Saytın imza açarı yaradılmayıb.": {
+  "en": "The site signing key has not been created.",
+  "ru": "Ключ подписи сайта не создан."
+ },
+ "Mərkəzə qoşulmaq olmadı: %s": {
+  "en": "Could not connect to the central server: %s",
+  "ru": "Не удалось подключиться к центральному серверу: %s"
+ },
+ "Mərkəz saytın açarını tanımadı: ictimai açarı mərkəzdə FIXITREMOTE_TRIAL_KEY kimi yazın (aşağıdakı əmrlər).": {
+  "en": "The central server did not recognize the site key: add the public key on the central server as FIXITREMOTE_TRIAL_KEY (commands below).",
+  "ru": "Центральный сервер не распознал ключ сайта: укажите публичный ключ на центральном сервере как FIXITREMOTE_TRIAL_KEY (команды ниже)."
+ },
+ "Mərkəzdə sınaq yükləməsi qurulmayıb: saytın ictimai açarı və ya gizli reponun açarı yazılmayıb.": {
+  "en": "Trial downloads are not set up on the central server: the site public key or the private repository key is missing.",
+  "ru": "На центральном сервере не настроена пробная загрузка: не указан публичный ключ сайта или ключ закрытого репозитория."
+ },
+ "Mərkəz paketi vermədi (kod %1$s). %2$s": {
+  "en": "The central server did not provide the package (code %1$s). %2$s",
+  "ru": "Центральный сервер не выдал пакет (код %1$s). %2$s"
  }
 }

@@ -9,9 +9,11 @@
  * 3. Siz müraciətin həqiqi olduğunu yoxlayırsınız və «Bələdçini göndər» düyməsi ilə
  *    müştəriyə öz dilində hazır məktub gedir: qurulum bələdçisi, qiymətlər və şəxsi
  *    yükləmə linki (müddətli). İstəsəniz ayarlarda avtomatik göndərmə də açılır.
- * 4. Server paketi gizli GitHub reposundadır. Link fixit.az/sinaq-paketi/
- *    ünvanından keçir: sayt açarı yoxlayır, yükləməni qeyd edir və paketi
- *    GitHub-dan bir neçə dəqiqəlik ünvanla verir. Repo və açar heç yerdə görünmür.
+ * 4. Server paketini Fixit mərkəzi (id.fixit.az) verir. Link fixit.az/sinaq-paketi/
+ *    ünvanından keçir: sayt şəxsi açarı və müddəti yoxlayır, yükləməni qeyd edir və
+ *    müştərini id.fixit.az-a 30 dəqiqəlik imzalı biletlə yönləndirir. Bileti saytın
+ *    Ed25519 açarı imzalayır, mərkəz ictimai hissəsi ilə yoxlayır. Saytda GitHub
+ *    açarı yoxdur, hər müştəriyə ayrıca açar lazım deyil.
  *
  * Ayarlar: Fixit Remote → Qiymətlər və sınaq.
  *
@@ -80,7 +82,7 @@ function fixit_trial_statuses() {
 /**
  * Sınaq ayarları.
  *
- * @return array{days:int,link_days:int,auto_send:bool,notify:string,repo:string}
+ * @return array{days:int,link_days:int,auto_send:bool,notify:string,server:string}
  */
 function fixit_trial_settings() {
 	$saved = get_option( 'fixit_remote_trial', array() );
@@ -92,7 +94,7 @@ function fixit_trial_settings() {
 			'link_days' => 14,
 			'auto_send' => false,
 			'notify'    => '',
-			'repo'      => 'bybumer/fixit-remote-server',
+			'server'    => FIXIT_TRIAL_SERVER,
 		)
 	);
 
@@ -101,15 +103,94 @@ function fixit_trial_settings() {
 		'link_days' => min( 60, max( 1, (int) $s['link_days'] ) ),
 		'auto_send' => (bool) $s['auto_send'],
 		'notify'    => is_email( $s['notify'] ) ? $s['notify'] : fixit_get( 'fixit_form_email' ),
-		'repo'      => preg_match( '#^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$#', (string) $s['repo'] ) ? (string) $s['repo'] : 'bybumer/fixit-remote-server',
+		'server'    => preg_match( '#^https://[a-z0-9.-]+(:\d+)?$#i', (string) $s['server'] ) ? (string) $s['server'] : FIXIT_TRIAL_SERVER,
+	);
+}
+
+/** Server paketini verən mərkəz. */
+if ( ! defined( 'FIXIT_TRIAL_SERVER' ) ) {
+	define( 'FIXIT_TRIAL_SERVER', 'https://id.fixit.az' );
+}
+
+/**
+ * Saytın imza açarı (Ed25519): sınaq paketinin biletlərini imzalayır.
+ *
+ * Gizli hissə yalnız bu saytın bazasındadır. İctimai hissə gizli deyil: admin
+ * paneldə göstərilir və mərkəzdə FIXITREMOTE_TRIAL_KEY kimi yazılır.
+ *
+ * @param bool $create Yoxdursa yarat.
+ * @return array{secret:string,public:string}|null İkili açarlar.
+ */
+function fixit_trial_sign_key( $create = false ) {
+	$stored = (string) get_option( 'fixit_trial_sign_key', '' );
+	$secret = '' !== $stored ? base64_decode( $stored, true ) : false; // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_decode -- açarın saxlanma forması
+
+	if ( is_string( $secret ) && 64 === strlen( $secret ) ) {
+		return array(
+			'secret' => $secret,
+			'public' => sodium_crypto_sign_publickey_from_secretkey( $secret ),
+		);
+	}
+
+	if ( ! $create ) {
+		return null;
+	}
+
+	$pair   = sodium_crypto_sign_keypair();
+	$secret = sodium_crypto_sign_secretkey( $pair );
+	update_option( 'fixit_trial_sign_key', base64_encode( $secret ), false ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- açarın saxlanma forması
+	delete_transient( 'fixit_trial_server_check' );
+
+	return array(
+		'secret' => $secret,
+		'public' => sodium_crypto_sign_publickey( $pair ),
 	);
 }
 
 /**
- * Gizli repoya giriş açarı (yalnız oxuma). Saytda göstərilmir.
+ * Base64url (= işarəsiz).
+ *
+ * @param string $bin İkili mətn.
  */
-function fixit_trial_repo_token() {
-	return (string) get_option( 'fixit_remote_repo_token', '' );
+function fixit_trial_b64url( $bin ) {
+	return rtrim( strtr( base64_encode( $bin ), '+/', '-_' ), '=' ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- bilet formatı
+}
+
+/**
+ * Saytın ictimai açarı (mərkəzə yazılan), yoxdursa boş.
+ */
+function fixit_trial_public_key() {
+	$key = fixit_trial_sign_key();
+	return $key ? fixit_trial_b64url( $key['public'] ) : '';
+}
+
+/**
+ * Mərkəz üçün qısa ömürlü bilet: base64url(JSON) "." base64url(imza).
+ *
+ * İçində yalnız müraciətin nömrəsi və müddət var (şəxsi məlumat yox). Format
+ * mərkəzdəki TrialTicket ilə eynidir.
+ *
+ * @param int $id  Müraciət (0 — admin yoxlaması).
+ * @param int $ttl Saniyə.
+ * @return string Açar yoxdursa boş.
+ */
+function fixit_trial_ticket( $id, $ttl = 1800 ) {
+	$key = fixit_trial_sign_key();
+	if ( ! $key ) {
+		return '';
+	}
+
+	$payload = fixit_trial_b64url(
+		wp_json_encode(
+			array(
+				'v'   => 1,
+				'sub' => $id ? 'trial-' . (int) $id : 'check',
+				'exp' => time() + (int) $ttl,
+			)
+		)
+	);
+
+	return $payload . '.' . fixit_trial_b64url( sodium_crypto_sign_detached( $payload, $key['secret'] ) );
 }
 
 /* ============================================================
@@ -335,92 +416,63 @@ function fixit_trial_new_link( $id ) {
 }
 
 /**
- * Gizli reponun son buraxılışı (10 dəqiqəlik keş).
+ * Mərkəz sınaq paketini verə bilirmi (10 dəqiqəlik keş, xəta 2 dəqiqə).
+ *
+ * Mərkəz saytın biletini yoxlayır və son server paketinin versiyasını qaytarır.
  *
  * @param bool $force Keşə baxma.
- * @return array|WP_Error {tag, assets: [name => api url]}
+ * @return array{version:string,package:string}|WP_Error
  */
-function fixit_trial_repo_release( $force = false ) {
-	$token = fixit_trial_repo_token();
-	if ( '' === $token ) {
-		return new WP_Error( 'fixit_trial_token', __( 'Repo açarı yazılmayıb.', 'fixit' ) );
+function fixit_trial_server_check( $force = false ) {
+	$cached = $force ? false : get_transient( 'fixit_trial_server_check' );
+	if ( is_array( $cached ) ) {
+		return isset( $cached['error'] ) ? new WP_Error( 'fixit_trial_server', $cached['error'] ) : $cached;
 	}
 
-	$cached = $force ? false : get_transient( 'fixit_trial_repo_release' );
-	if ( is_array( $cached ) ) {
-		return $cached;
+	$ticket = fixit_trial_ticket( 0, 300 );
+	if ( '' === $ticket ) {
+		return new WP_Error( 'fixit_trial_key', __( 'Saytın imza açarı yaradılmayıb.', 'fixit' ) );
 	}
 
 	$response = wp_remote_get(
-		'https://api.github.com/repos/' . fixit_trial_settings()['repo'] . '/releases/latest',
+		add_query_arg( 't', $ticket, fixit_trial_settings()['server'] . '/api/trial/check' ),
 		array(
-			'timeout' => 12,
-			'headers' => array(
-				'Accept'               => 'application/vnd.github+json',
-				'Authorization'        => 'Bearer ' . $token,
-				'X-GitHub-Api-Version' => '2022-11-28',
-			),
+			'timeout'     => 15,
+			'redirection' => 0,
 		)
 	);
 
 	$code = is_wp_error( $response ) ? 0 : (int) wp_remote_retrieve_response_code( $response );
-	if ( 200 !== $code ) {
-		return new WP_Error(
-			'fixit_trial_repo',
-			/* translators: %s: HTTP kodu */
-			sprintf( __( 'GitHub cavab vermədi (kod %s). Açarın müddətini və icazəsini yoxlayın.', 'fixit' ), $code ? $code : '—' )
+	$data = is_wp_error( $response ) ? null : json_decode( wp_remote_retrieve_body( $response ), true );
+
+	if ( 200 === $code && is_array( $data ) && ! empty( $data['ok'] ) && ! empty( $data['package'] ) ) {
+		$result = array(
+			'version' => isset( $data['version'] ) ? sanitize_text_field( (string) $data['version'] ) : '',
+			'package' => sanitize_file_name( (string) $data['package'] ),
 		);
+		set_transient( 'fixit_trial_server_check', $result, 10 * MINUTE_IN_SECONDS );
+		return $result;
 	}
 
-	// Fine-grained açarın bitmə tarixi (məs. "2027-11-19 12:00:00 UTC"): adminə vaxtında xatırladılır.
-	$expires = strtotime( (string) wp_remote_retrieve_header( $response, 'github-authentication-token-expiration' ) );
-	if ( $expires ) {
-		update_option( 'fixit_remote_repo_token_exp', $expires, false );
+	if ( is_wp_error( $response ) ) {
+		/* translators: %s: xəta */
+		$error = sprintf( __( 'Mərkəzə qoşulmaq olmadı: %s', 'fixit' ), $response->get_error_message() );
+	} elseif ( 403 === $code ) {
+		$error = __( 'Mərkəz saytın açarını tanımadı: ictimai açarı mərkəzdə FIXITREMOTE_TRIAL_KEY kimi yazın (aşağıdakı əmrlər).', 'fixit' );
+	} elseif ( 503 === $code ) {
+		$error = __( 'Mərkəzdə sınaq yükləməsi qurulmayıb: saytın ictimai açarı və ya gizli reponun açarı yazılmayıb.', 'fixit' );
+	} else {
+		/* translators: 1: HTTP kodu, 2: mərkəzin cavabı */
+		$error = sprintf( __( 'Mərkəz paketi vermədi (kod %1$s). %2$s', 'fixit' ), $code ? $code : '—', is_array( $data ) && isset( $data['error'] ) ? sanitize_text_field( (string) $data['error'] ) : '' );
 	}
 
-	$data   = json_decode( wp_remote_retrieve_body( $response ), true );
-	$assets = array();
-	foreach ( (array) ( isset( $data['assets'] ) ? $data['assets'] : array() ) as $asset ) {
-		if ( ! empty( $asset['name'] ) && ! empty( $asset['url'] ) ) {
-			$assets[ (string) $asset['name'] ] = esc_url_raw( $asset['url'] );
-		}
-	}
-
-	$release = array(
-		'tag'    => isset( $data['tag_name'] ) ? ltrim( (string) $data['tag_name'], 'v' ) : '',
-		'assets' => $assets,
-	);
-
-	set_transient( 'fixit_trial_repo_release', $release, 10 * MINUTE_IN_SECONDS );
-
-	return $release;
-}
-
-/**
- * Buraxılışda serverin paketini (və ya imzasını) tapır.
- *
- * @param array  $release fixit_trial_repo_release().
- * @param string $kind    'pkg' və ya 'sig'.
- * @return array{name:string,url:string}|null
- */
-function fixit_trial_find_asset( $release, $kind ) {
-	foreach ( $release['assets'] as $name => $url ) {
-		$is_pkg = (bool) preg_match( '/^fixitremote-server-linux-x64-[\d.]+\.tar\.gz$/', $name );
-		$is_sig = (bool) preg_match( '/^fixitremote-server-linux-x64-[\d.]+\.tar\.gz\.sig$/', $name );
-
-		if ( ( 'pkg' === $kind && $is_pkg ) || ( 'sig' === $kind && $is_sig ) ) {
-			return array(
-				'name' => $name,
-				'url'  => $url,
-			);
-		}
-	}
-	return null;
+	set_transient( 'fixit_trial_server_check', array( 'error' => $error ), 2 * MINUTE_IN_SECONDS );
+	return new WP_Error( 'fixit_trial_server', $error );
 }
 
 /**
  * fixit.az/sinaq-paketi/?k=... — açarı yoxlayır, yükləməni qeyd edir,
- * paketi GitHub-ın qısamüddətli ünvanına yönləndirir.
+ * müştərini id.fixit.az-a qısa ömürlü imzalı biletlə yönləndirir.
  */
 function fixit_trial_download_route() {
 	if ( ! is_404() ) {
@@ -464,41 +516,28 @@ function fixit_trial_download_route() {
 		wp_die( '<h1>' . esc_html__( 'Linkin müddəti bitib', 'fixit' ) . '</h1>' . $back, esc_html__( 'Linkin müddəti bitib', 'fixit' ), array( 'response' => 410 ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- yuxarıda escape olunub
 	}
 
-	$release = fixit_trial_repo_release();
-	$asset   = is_wp_error( $release ) ? null : fixit_trial_find_asset( $release, $kind );
-	$target  = '';
+	$status = fixit_trial_server_check();
 
-	if ( $asset ) {
-		$response = wp_remote_get(
-			$asset['url'],
-			array(
-				'timeout'     => 12,
-				'redirection' => 0,
-				'headers'     => array(
-					'Accept'               => 'application/octet-stream',
-					'Authorization'        => 'Bearer ' . fixit_trial_repo_token(),
-					'X-GitHub-Api-Version' => '2022-11-28',
-				),
-			)
-		);
-		$code   = is_wp_error( $response ) ? 0 : (int) wp_remote_retrieve_response_code( $response );
-		$target = in_array( $code, array( 301, 302, 303, 307 ), true ) ? (string) wp_remote_retrieve_header( $response, 'location' ) : '';
-	}
-
-	if ( ! $target || ! preg_match( '#^https://#', $target ) ) {
-		fixit_trial_alert_admin_unavailable( $id, is_wp_error( $release ) ? $release->get_error_message() : '' );
+	if ( is_wp_error( $status ) ) {
+		fixit_trial_alert_admin_unavailable( $id, $status->get_error_message() );
 
 		$contact = '<p>' . esc_html__( 'Paket hazırda əlçatmazdır. Mütəxəssisimizə xəbər getdi, qısa müddətdə sizinlə əlaqə saxlayacağıq.', 'fixit' ) . '</p>';
 		wp_die( '<h1>' . esc_html__( 'Paket hazırda əlçatmazdır', 'fixit' ) . '</h1>' . $contact, esc_html__( 'Paket hazırda əlçatmazdır', 'fixit' ), array( 'response' => 503 ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- yuxarıda escape olunub
 	}
 
+	$args = array( 't' => fixit_trial_ticket( $id ) );
+	if ( 'sig' === $kind ) {
+		$args['f'] = 'sig';
+	}
+	$target = add_query_arg( $args, fixit_trial_settings()['server'] . '/api/trial/package' );
+
 	if ( 'pkg' === $kind ) {
 		update_post_meta( $id, '_ft_downloads', (int) get_post_meta( $id, '_ft_downloads', true ) + 1 );
 		update_post_meta( $id, '_ft_last_download', time() );
-		update_post_meta( $id, '_ft_version', is_wp_error( $release ) ? '' : $release['tag'] );
+		update_post_meta( $id, '_ft_version', $status['version'] );
 	}
 
-	wp_redirect( $target, 302, 'FIXIT' ); // phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect -- GitHub-ın imzalı, qısamüddətli ünvanı
+	wp_redirect( $target, 302, 'FIXIT' ); // phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect -- öz mərkəzimiz (id.fixit.az), qısa ömürlü bilet
 	exit;
 }
 add_action( 'template_redirect', 'fixit_trial_download_route', 1 );
@@ -520,7 +559,7 @@ function fixit_trial_alert_admin_unavailable( $id, $reason ) {
 		'[fixit.az] Fixit Remote: sınaq paketi verilə bilmədi',
 		"Müştəri sınaq paketini yükləməyə çalışdı, amma paket verilə bilmədi.\n\n"
 			. 'Müraciət: ' . get_the_title( $id ) . ' (' . get_post_meta( $id, '_ft_company', true ) . ")\n"
-			. 'Səbəb: ' . ( $reason ? $reason : 'GitHub-dan paket alınmadı' ) . "\n\n"
+			. 'Səbəb: ' . ( $reason ? $reason : 'Mərkəz (id.fixit.az) paketi vermədi' ) . "\n\n"
 			. 'Yoxlayın: ' . admin_url( 'admin.php?page=fixit-remote-settings' ) . "\n"
 	);
 }
@@ -573,7 +612,7 @@ function fixit_trial_send_customer_mail( $id ) {
 	$email = (string) get_post_meta( $id, '_ft_email', true );
 
 	$s    = fixit_trial_settings();
-	$link = '' !== fixit_trial_repo_token() ? fixit_trial_new_link( $id ) : null;
+	$link = fixit_trial_sign_key() ? fixit_trial_new_link( $id ) : null;
 	$mail = fixit_trial_build_mail( $id, $link );
 
 	$sent = wp_mail(
