@@ -71,7 +71,6 @@ function fixit_pricing_tier_extras() {
 function fixit_pricing_defaults() {
 	return array(
 		'show'   => false,
-		'vat'    => 'excl',
 		'multi2' => 10,
 		'multi3' => 15,
 		'tiers'  => array(
@@ -107,7 +106,7 @@ function fixit_pricing_defaults() {
 /**
  * Qüvvədə olan qiymətlər (admin ayarı + defolt).
  *
- * @return array{show:bool,vat:string,multi2:int,multi3:int,currency:string,step:int,tiers:array}
+ * @return array{show:bool,multi2:int,multi3:int,currency:string,step:int,tiers:array}
  */
 function fixit_pricing() {
 	$defaults = fixit_pricing_defaults();
@@ -133,7 +132,6 @@ function fixit_pricing() {
 
 	return array(
 		'show'     => (bool) $data['show'],
-		'vat'      => in_array( $data['vat'], array( 'incl', 'excl', 'none' ), true ) ? $data['vat'] : 'excl',
 		'multi2'   => min( 50, max( 0, (int) $data['multi2'] ) ),
 		'multi3'   => min( 50, max( 0, (int) $data['multi3'] ) ),
 		'currency' => 'AZN',
@@ -192,20 +190,6 @@ function fixit_pricing_quote( $agents ) {
 		}
 	}
 	return $best;
-}
-
-/**
- * ƏDV qeydi.
- */
-function fixit_pricing_vat_note() {
-	$vat = fixit_pricing()['vat'];
-	if ( 'incl' === $vat ) {
-		return __( 'Qiymətlərə ƏDV daxildir.', 'fixit' );
-	}
-	if ( 'excl' === $vat ) {
-		return __( 'Qiymətlərə ƏDV daxil deyil.', 'fixit' );
-	}
-	return '';
 }
 
 /**
@@ -343,20 +327,22 @@ function fixit_pricing_section() {
 				<?php endforeach; ?>
 			</ul>
 
-			<?php if ( $p['show'] ) : ?>
+			<?php if ( $p['show'] && ( $p['multi2'] || $p['multi3'] ) ) : ?>
 				<p class="price-foot">
 					<?php
-					$parts = array();
-					if ( $p['multi2'] || $p['multi3'] ) {
-						/* translators: 1: 2 illik endirim, 2: 3 illik endirim */
-						$parts[] = sprintf( __( '2 illik müqavilədə %1$s%%, 3 illikdə %2$s%% endirim.', 'fixit' ), number_format_i18n( $p['multi2'] ), number_format_i18n( $p['multi3'] ) );
-					}
-					$parts[] = fixit_pricing_vat_note();
-					$parts[] = __( 'Server sizin avadanlığınızda və ya öz buludunuzda qurulur.', 'fixit' );
-					echo esc_html( implode( ' ', array_filter( $parts ) ) );
+					/* translators: 1: 2 illik endirim, 2: 3 illik endirim */
+					echo esc_html( sprintf( __( '2 illik müqavilədə %1$s%%, 3 illikdə %2$s%% endirim.', 'fixit' ), number_format_i18n( $p['multi2'] ), number_format_i18n( $p['multi3'] ) ) );
 					?>
 				</p>
 			<?php endif; ?>
+
+			<div class="price-license reveal">
+				<div>
+					<h3><?php esc_html_e( 'Lisenziya almaq istəyirsiniz?', 'fixit' ); ?></h3>
+					<p><?php esc_html_e( 'Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Bizə yazın: kompüter sayınıza görə müqaviləni və hesab-fakturanı hazırlayırıq, ödənişdən sonra lisenziya açarını göndəririk.', 'fixit' ); ?></p>
+				</div>
+				<a class="btn btn--primary" href="<?php echo esc_url( add_query_arg( 'mehsul', 'Fixit Remote', fixit_page_url( 'template-contact.php' ) ) . '#elaqe-form' ); ?>"><?php esc_html_e( 'Lisenziya üçün müraciət', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?></a>
+			</div>
 		</div>
 	</section>
 	<?php

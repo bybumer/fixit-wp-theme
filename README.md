@@ -117,8 +117,8 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Demoya kim gəldi, hansı rolu seçdi, nə etdi | Admin → **Demo statistikası** (bir dəfəlik: «Ayarlar» → açar yarat → demo serverinin `.env`-inə `DEMO_STATS_TOKEN`; bax Fixit-Ticket-System `DEPLOY-DEMO.md` §9) |
 | Sorğu Sistemi-nin hazır ekran görüntülərini demodan yenidən çəkmək | `python tools/demo-ekranlar.py` (Chrome + Node 22+; admin qalereyası boşdursa bunlar göstərilir) |
 | Fixit Remote-un ekran görüntülərini demodan yenidən çəkmək | `python tools/remote-ekranlar.py` (eyni tələblər; başlıqlar `inc/product-data.php` → `remote` → `screens`) |
-| Fixit Remote-un qiymətləri, paketləri, ƏDV qeydi, qiymətləri saytda göstərmək | Admin → **Fixit Remote → Qiymətlər və sınaq** (qiymətlər yalnız «Qiymətləri saytda göstər» seçiləndə görünür) |
-| 14 günlük sınaq müraciətləri, onların vəziyyəti, məktubu yenidən göndərmək | Admin → **Fixit Remote → Sınaq müraciətləri** |
+| Fixit Remote-un qiymətləri, paketləri, qiymətləri saytda göstərmək, sınaq bələdçisinin göndərilmə qaydası | Admin → **Fixit Remote → Qiymətlər və sınaq** (qiymətlər yalnız «Qiymətləri saytda göstər» seçiləndə görünür) |
+| 14 günlük sınaq müraciətləri: yoxlamaq, məktuba baxmaq, bir düymə ilə göndərmək, rədd etmək | Admin → **Fixit Remote → Sınaq müraciətləri** |
 | Sınaq məktubundakı qurulum addımları | `inc/remote-trial.php` → `fixit_trial_guide_steps()` (bələdçi səhifəsi də buradan götürür) |
 | Saytın məxfilik siyasəti, kukilər cədvəli | `template-privacy.php` (yeni kuki və ya xidmət əlavə olunanda bura da yazılır) |
 | Məhsul səhifəsinin detallı bölmələri (imkan qrupları, iş prinsipi, təhlükəsizlik, suallar) | `inc/product-data.php` |
@@ -284,20 +284,34 @@ Rəqəmlər admin paneldə dəyişir. **Qiymətlər saytda yalnız «Qiymətlər
 göstər» seçiləndən sonra görünür**, o vaxta qədər paketlər «qiymət sorğu ilə»
 kimi göstərilir və sınaq məktubunda qiymət olmur.
 
-**Sınaq axını:**
+**Lisenziya** saytdan satılmır: müqavilə ilə, ödəniş bank köçürməsi ilə. Qiymət
+bölməsinin altında «Lisenziya üçün müraciət» düyməsi əlaqə formasına aparır.
+Saytda ƏDV qeydi yoxdur.
+
+**Sınaq axını (yoxla və göndər):**
 1. Ziyarətçi məhsul səhifəsindəki formanı doldurur (ad, şirkət, telefon, e-poçt).
-2. Müraciət admin paneldə saxlanılır, sizə bildiriş gedir.
-3. Müştəriyə öz dilində məktub gedir: qurulum addımları, qiymətlər və
-   **şəxsi yükləmə linki** (`fixit.az/<dil>/sinaq-paketi/?k=...`, standart 14 gün).
+   Ona «mütəxəssisimiz yoxlayıb göndərəcək» deyilir, özünə heç nə getmir.
+2. Müraciət Admin → Fixit Remote → **Sınaq müraciətləri**-ndə yaranır, sizə
+   bildiriş gəlir (məktubda «Bax və göndər» linki).
+3. Müraciəti açırsınız. Sağdakı «Yoxla və göndər» qutusunda ipucları var:
+   şirkət domeni və ya pulsuz poçt, təkrar müraciət. Burada üç düymə var:
+   - **Məktuba bax**: müştərinin öz dilində görəcəyi məktubun önizləməsi;
+   - **Bələdçini göndər**: hazır məktub gedir (qurulum addımları, qiymətlər,
+     müqavilə qeydi və `fixit.az/<dil>/sinaq-paketi/?k=...` şəxsi linki, standart
+     14 gün). Vəziyyət «Bələdçi göndərilib» olur;
+   - **Rədd et**: saxta və ya sınaq müraciəti, müştəriyə heç nə getmir.
 4. Link açılanda sayt açarı yoxlayır, yükləməni müraciətdə qeyd edir və paketi
    gizli GitHub reposundan (`bybumer/fixit-remote-server`) bir neçə dəqiqəlik
-   ünvanla verir. Repo və giriş açarı heç yerdə görünmür.
+   ünvanla verir.
 
-**Bir dəfəlik ayar:** GitHub → Settings → Developer settings → Fine-grained
-tokens: yalnız `fixit-remote-server` reposu, *Contents: Read-only*. Açarı
-Admin → Fixit Remote → Qiymətlər və sınaq → «Repoya giriş açarı» sahəsinə yazın
-və «Girişi yoxla» basın. Açar yazılmayıbsa məktubda «linki mütəxəssis göndərəcək»
-yazılır, linki müraciətin səhifəsindən «Məktubu yenidən göndər» ilə göndərirsiniz.
+Ayarlarda «Bələdçini avtomatik göndər» seçimi var (standart söndürülü): saytdan
+birbaşa satışa keçəndə açmaq olar.
+
+**GitHub açarı bir dənədir.** Müştərilər onu görmür və almır; hər müştəri üçün
+sayt ayrıca müvəqqəti link yaradır. Açarı bir dəfə yaradın: GitHub → Settings →
+Developer settings → Fine-grained tokens, yalnız `fixit-remote-server` reposu,
+*Contents: Read-only*. Açarı «Qiymətlər və sınaq» səhifəsinə yazıb «Girişi yoxla»
+basın: açarın bitmə tarixi orada görünür, bitməzdən əvvəl yeniləyin.
 
 ## 8. Kukilər və məxfilik
 

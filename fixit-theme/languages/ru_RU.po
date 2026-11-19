@@ -2993,8 +2993,8 @@ msgid "Qiymət necə hesablanır?"
 msgstr "Как рассчитывается цена?"
 
 #: inc/product-data.php
-msgid "İdarə olunan kompüterlərin sayına görə. Operator sayı məhdud deyil, bütün imkanlar hər paketdədir. Paketlər bu səhifənin «Qiymətlər» bölməsindədir, 14 günlük pulsuz sınaq var."
-msgstr "По числу управляемых компьютеров. Число операторов не ограничено, все возможности входят в каждый пакет. Пакеты указаны в разделе «Цены» на этой странице, есть бесплатный пробный период на 14 дней."
+msgid "İdarə olunan kompüterlərin sayına görə. Operator sayı məhdud deyil, bütün imkanlar hər paketdədir. Paketlər bu səhifənin «Qiymətlər» bölməsindədir, 14 günlük pulsuz sınaq var. Lisenziya müqavilə ilə rəsmiləşdirilir, ödəniş bank köçürməsi ilə."
+msgstr "По числу управляемых компьютеров. Число операторов не ограничено, все возможности входят в каждый пакет. Пакеты указаны в разделе «Цены» на этой странице, есть бесплатный пробный период на 14 дней. Лицензия оформляется по договору, оплата банковским переводом."
 
 #: inc/product-data.php
 msgid "İşçi kompüterlərində port açmaq lazımdırmı?"
@@ -3365,14 +3365,6 @@ msgid "Yazılı SLA: cavab və həll müddətləri"
 msgstr "Письменный SLA: сроки ответа и решения"
 
 #: inc/remote-pricing.php
-msgid "Qiymətlərə ƏDV daxildir."
-msgstr "Цены включают НДС."
-
-#: inc/remote-pricing.php
-msgid "Qiymətlərə ƏDV daxil deyil."
-msgstr "Цены указаны без НДС."
-
-#: inc/remote-pricing.php
 msgid "Bütün imkanlar hər paketdə: uzaqdan dəstək, inventar, skriptlər, proqram yayımı, monitorinq, SSO və API"
 msgstr "Все возможности в каждом пакете: удалённая поддержка, инвентаризация, скрипты, распространение ПО, мониторинг, SSO и API"
 
@@ -3477,8 +3469,16 @@ msgid "2 illik müqavilədə %1$s%%, 3 illikdə %2$s%% endirim."
 msgstr "Скидка %1$s%% по договору на 2 года и %2$s%% на 3 года."
 
 #: inc/remote-pricing.php
-msgid "Server sizin avadanlığınızda və ya öz buludunuzda qurulur."
-msgstr "Сервер устанавливается на вашем оборудовании или в вашем облаке."
+msgid "Lisenziya almaq istəyirsiniz?"
+msgstr "Хотите приобрести лицензию?"
+
+#: inc/remote-pricing.php
+msgid "Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Bizə yazın: kompüter sayınıza görə müqaviləni və hesab-fakturanı hazırlayırıq, ödənişdən sonra lisenziya açarını göndəririk."
+msgstr "Лицензия оформляется по договору, оплата банковским переводом. Напишите нам: мы подготовим договор и счёт под ваше число компьютеров, а после оплаты пришлём лицензионный ключ."
+
+#: inc/remote-pricing.php
+msgid "Lisenziya üçün müraciət"
+msgstr "Запросить лицензию"
 
 #: inc/remote-trial.php
 msgid "Sınaq müraciətləri"
@@ -3501,6 +3501,10 @@ msgid "Yeni"
 msgstr "Новая"
 
 #: inc/remote-trial.php
+msgid "Bələdçi göndərilib"
+msgstr "Руководство отправлено"
+
+#: inc/remote-trial.php
 msgid "Əlaqə saxlanılıb"
 msgstr "Связались"
 
@@ -3515,6 +3519,14 @@ msgstr "Стали клиентом"
 #: inc/remote-trial.php
 msgid "İmtina etdi"
 msgstr "Отказались"
+
+#: inc/remote-trial.php
+msgid "Rədd edildi"
+msgstr "Отклонена"
+
+#: inc/remote-trial.php
+msgid "Təşəkkür edirik! Müraciətiniz qəbul olundu. Mütəxəssisimiz məlumatlarınızı yoxlayıb qurulum bələdçisini və serverin yükləmə linkini iş saatı ərzində e-poçtunuza göndərəcək."
+msgstr "Спасибо! Ваша заявка принята. Наш специалист проверит данные и в рабочее время пришлёт на почту руководство по установке и ссылку на загрузку сервера."
 
 #: inc/remote-trial.php
 msgid "Təşəkkür edirik! Qurulum bələdçisini və qiymət məlumatını e-poçtunuza göndərdik. Məktubu bir neçə dəqiqəyə görməsəniz, «Spam» qovluğuna baxın."
@@ -3537,8 +3549,8 @@ msgid "Serveri %d gün pulsuz sınayın"
 msgstr "Попробуйте сервер бесплатно %d дней"
 
 #: inc/remote-trial.php
-msgid "Formanı doldurun: qurulum bələdçisini, serverin yükləmə linkini və qiymətləri dərhal e-poçtunuza göndəririk. Server öz avadanlığınızda qurulur, sınaq müddətində bütün imkanlar açıqdır."
-msgstr "Заполните форму, и мы сразу отправим вам руководство по установке, ссылку на загрузку сервера и цены. Сервер устанавливается на вашем оборудовании, во время пробного периода открыты все возможности."
+msgid "Formanı doldurun: mütəxəssisimiz müraciətinizi yoxlayıb qurulum bələdçisini və serverin yükləmə linkini e-poçtunuza göndərəcək. Server öz avadanlığınızda qurulur, sınaq müddətində bütün imkanlar açıqdır."
+msgstr "Заполните форму: наш специалист проверит заявку и пришлёт на почту руководство по установке и ссылку на загрузку сервера. Сервер устанавливается на вашем оборудовании, во время пробного периода открыты все возможности."
 
 #: inc/remote-trial.php
 msgid "Ödəniş və kart tələb olunmur"
@@ -3569,8 +3581,8 @@ msgid "Şirkətin adı"
 msgstr "Название компании"
 
 #: inc/remote-trial.php
-msgid "Bələdçini göndərin"
-msgstr "Отправить руководство"
+msgid "Sınaq üçün müraciət edin"
+msgstr "Запросить пробную версию"
 
 #: inc/remote-trial.php
 msgid "Repo açarı yazılmayıb."
@@ -3715,6 +3727,10 @@ msgstr "Для более чем %s компьютеров готовим инд
 #: inc/remote-trial.php
 msgid "Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Kompüter sayınızı bildirin, dəqiq təklifi göndərək."
 msgstr "Цена зависит от числа управляемых компьютеров, число операторов не ограничено. Сообщите число компьютеров, и мы пришлём точное предложение."
+
+#: inc/remote-trial.php
+msgid "Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Lisenziya üçün bu məktuba cavab yazın və ya zəng edin: müqaviləni və hesab-fakturanı hazırlayaq."
+msgstr "Лицензия оформляется по договору, оплата банковским переводом. Чтобы получить лицензию, ответьте на это письмо или позвоните: мы подготовим договор и счёт."
 
 #: inc/remote-trial.php
 msgid "Sualınız olsa, bu məktuba cavab yazın və ya zəng edin:"
@@ -4459,3 +4475,11 @@ msgstr "на вашем сервере или в нашем облаке: уст
 #: tools/translations
 msgid "Fixit Remote öz serverinizdə və ya bizim buludda işləyir, bağlantı xarici xidmətlərdən keçmir. Kimin hansı kompüterə qoşula biləcəyini mərkəzdən idarə edir, hər sessiyanı jurnalda görürsünüz."
 msgstr "Fixit Remote работает на вашем сервере или в нашем облаке, соединение не идёт через сторонние сервисы. Вы централизованно решаете, кто к какому компьютеру может подключиться, и видите каждую сессию в журнале."
+
+#: tools/translations
+msgid "Server sizin avadanlığınızda və ya öz buludunuzda qurulur."
+msgstr "Сервер устанавливается на вашем оборудовании или в вашем облаке."
+
+#: tools/translations
+msgid "Formanı doldurun: qurulum bələdçisini, serverin yükləmə linkini və qiymətləri dərhal e-poçtunuza göndəririk. Server öz avadanlığınızda qurulur, sınaq müddətində bütün imkanlar açıqdır."
+msgstr "Заполните форму, и мы сразу отправим вам руководство по установке, ссылку на загрузку сервера и цены. Сервер устанавливается на вашем оборудовании, во время пробного периода открыты все возможности."

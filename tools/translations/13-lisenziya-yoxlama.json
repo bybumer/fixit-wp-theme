@@ -1,0 +1,38 @@
+{
+ "Lisenziya almaq istəyirsiniz?": {
+  "en": "Want to buy a license?",
+  "ru": "Хотите приобрести лицензию?"
+ },
+ "Lisenziya üçün müraciət": {
+  "en": "Request a license",
+  "ru": "Запросить лицензию"
+ },
+ "Bələdçi göndərilib": {
+  "en": "Guide sent",
+  "ru": "Руководство отправлено"
+ },
+ "Rədd edildi": {
+  "en": "Rejected",
+  "ru": "Отклонена"
+ },
+ "Təşəkkür edirik! Müraciətiniz qəbul olundu. Mütəxəssisimiz məlumatlarınızı yoxlayıb qurulum bələdçisini və serverin yükləmə linkini iş saatı ərzində e-poçtunuza göndərəcək.": {
+  "en": "Thank you! Your request has been received. Our specialist will review your details and email you the installation guide and the server download link during business hours.",
+  "ru": "Спасибо! Ваша заявка принята. Наш специалист проверит данные и в рабочее время пришлёт на почту руководство по установке и ссылку на загрузку сервера."
+ },
+ "Formanı doldurun: mütəxəssisimiz müraciətinizi yoxlayıb qurulum bələdçisini və serverin yükləmə linkini e-poçtunuza göndərəcək. Server öz avadanlığınızda qurulur, sınaq müddətində bütün imkanlar açıqdır.": {
+  "en": "Fill in the form: our specialist will review your request and email you the installation guide and the server download link. The server is installed on your own hardware and every feature is open during the trial.",
+  "ru": "Заполните форму: наш специалист проверит заявку и пришлёт на почту руководство по установке и ссылку на загрузку сервера. Сервер устанавливается на вашем оборудовании, во время пробного периода открыты все возможности."
+ },
+ "Sınaq üçün müraciət edin": {
+  "en": "Request a trial",
+  "ru": "Запросить пробную версию"
+ },
+ "Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Lisenziya üçün bu məktuba cavab yazın və ya zəng edin: müqaviləni və hesab-fakturanı hazırlayaq.": {
+  "en": "Licenses are issued under a contract and paid by bank transfer. To get a license, reply to this email or call us and we will prepare the contract and invoice.",
+  "ru": "Лицензия оформляется по договору, оплата банковским переводом. Чтобы получить лицензию, ответьте на это письмо или позвоните: мы подготовим договор и счёт."
+ },
+ "Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Bizə yazın: kompüter sayınıza görə müqaviləni və hesab-fakturanı hazırlayırıq, ödənişdən sonra lisenziya açarını göndəririk.": {
+  "en": "Licenses are issued under a contract and paid by bank transfer. Get in touch: we prepare the contract and invoice for your number of computers and send the license key once payment is received.",
+  "ru": "Лицензия оформляется по договору, оплата банковским переводом. Напишите нам: мы подготовим договор и счёт под ваше число компьютеров, а после оплаты пришлём лицензионный ключ."
+ }
+}

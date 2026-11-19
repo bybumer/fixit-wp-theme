@@ -1,45 +1,166 @@
 {
- "Start": {"en": "Start", "ru": "Старт"},
- "Peşəkar": {"en": "Professional", "ru": "Профессиональный"},
- "Korporativ": {"en": "Corporate", "ru": "Корпоративный"},
- "Müəssisə": {"en": "Enterprise", "ru": "Предприятие"},
- "E-poçt ilə dəstək, iş günləri": {"en": "Email support on business days", "ru": "Поддержка по почте в рабочие дни"},
- "E-poçt və telefonla dəstək": {"en": "Email and phone support", "ru": "Поддержка по почте и телефону"},
- "Uzaqdan quraşdırma köməyi": {"en": "Remote help with installation", "ru": "Удалённая помощь с установкой"},
- "Quraşdırma və SSO / LDAP qoşulması mütəxəssisimizlə": {"en": "Installation and SSO / LDAP setup with our specialist", "ru": "Установка и подключение SSO / LDAP с нашим специалистом"},
- "İT komandanız üçün onlayn təlim": {"en": "Online training for your IT team", "ru": "Онлайн-обучение для вашей ИТ-команды"},
- "Prioritet dəstək": {"en": "Priority support", "ru": "Приоритетная поддержка"},
- "Tam quraşdırma, ehtiyat nüsxə və bərpa planı": {"en": "Full installation, backup and recovery plan", "ru": "Полная установка, план резервного копирования и восстановления"},
- "Filial serverləri üçün ayrıca lisenziya açarları": {"en": "Separate license keys for branch servers", "ru": "Отдельные лицензионные ключи для серверов филиалов"},
- "Şəxsi menecer və rüblük texniki baxış": {"en": "Personal account manager and quarterly technical review", "ru": "Персональный менеджер и ежеквартальный технический обзор"},
- "Yazılı SLA: cavab və həll müddətləri": {"en": "Written SLA: response and resolution times", "ru": "Письменный SLA: сроки ответа и решения"},
- "Qiymətlərə ƏDV daxildir.": {"en": "Prices include VAT.", "ru": "Цены включают НДС."},
- "Qiymətlərə ƏDV daxil deyil.": {"en": "Prices do not include VAT.", "ru": "Цены указаны без НДС."},
- "Bütün imkanlar hər paketdə: uzaqdan dəstək, inventar, skriptlər, proqram yayımı, monitorinq, SSO və API": {"en": "Every feature in every package: remote support, inventory, scripts, software deployment, monitoring, SSO and API", "ru": "Все возможности в каждом пакете: удалённая поддержка, инвентаризация, скрипты, распространение ПО, мониторинг, SSO и API"},
- "Operator sayı məhdud deyil, eyni anda istənilən qədər sessiya": {"en": "No limit on operators or concurrent sessions", "ru": "Число операторов и одновременных сессий не ограничено"},
- "Server sizdə qurulur, məlumat şirkətdən çıxmır": {"en": "The server is installed at your site, data stays in the company", "ru": "Сервер устанавливается у вас, данные не покидают компанию"},
- "Lisenziya müddətində bütün yeni versiyalar": {"en": "All new versions during the license term", "ru": "Все новые версии в течение срока лицензии"},
- "Windows və Linux kompüterləri eyni qaydada sayılır": {"en": "Windows and Linux computers are counted the same way", "ru": "Компьютеры с Windows и Linux считаются одинаково"},
- "Kompüter silinəndə və ya bloklananda yeri boşalır": {"en": "Removing or blocking a computer frees its slot", "ru": "Удалённый или заблокированный компьютер освобождает место"},
- "Kompüter sayına görə ödəyirsiniz, operator sayına görə yox": {"en": "You pay per computer, not per operator", "ru": "Вы платите за компьютеры, а не за операторов"},
- "Qiymət idarə olunan kompüterlərin sayından asılıdır. Komandanızın hamısı işləyə bilər, bütün imkanlar hər paketdədir. Ödəniş illikdir.": {"en": "The price depends on the number of managed computers. Your whole team can work in the system and every package includes all features. Billing is annual.", "ru": "Цена зависит от числа управляемых компьютеров. Работать может вся ваша команда, все возможности входят в каждый пакет. Оплата годовая."},
- "Ən çox seçilən": {"en": "Most popular", "ru": "Чаще всего выбирают"},
- "%s kompüterə qədər": {"en": "Up to %s computers", "ru": "До %s компьютеров"},
- "ildə": {"en": "per year", "ru": "в год"},
- "ayda kompüter başına %s": {"en": "%s per computer per month", "ru": "%s за компьютер в месяц"},
- "%s paketindəki hər şey": {"en": "Everything in %s", "ru": "Всё из пакета %s"},
- "Hər əlavə %1$s kompüter: ildə %2$s": {"en": "Each extra %1$s computers: %2$s per year", "ru": "Каждые дополнительные %1$s компьютеров: %2$s в год"},
- "Qiymət sorğu ilə": {"en": "Price on request", "ru": "Цена по запросу"},
- "təklifi sınaqla birlikdə göndəririk": {"en": "we send the quote together with the trial", "ru": "предложение пришлём вместе с пробной версией"},
- "Fərdi təklif": {"en": "Custom offer", "ru": "Индивидуальное предложение"},
- "%s kompüterdən çox": {"en": "More than %s computers", "ru": "Более %s компьютеров"},
- "Böyük parklar üçün": {"en": "For large fleets", "ru": "Для крупных парков"},
- "həcmə görə qiymət, çoxillik müqavilə, bir neçə filial": {"en": "volume pricing, multi-year contracts, several branches", "ru": "цена по объёму, многолетний договор, несколько филиалов"},
- "{n} kompüter: {tier} paketi{extra}. İldə {year}, ayda təxminən {month}.": {"en": "{n} computers: {tier} package{extra}. {year} per year, about {month} per month.", "ru": "{n} компьютеров: пакет {tier}{extra}. {year} в год, примерно {month} в месяц."},
- " və {extra} əlavə kompüter": {"en": " plus {extra} extra computers", "ru": " и ещё {extra} компьютеров"},
- "{n} kompüter üçün fərdi təklif hazırlayırıq: bizimlə əlaqə saxlayın.": {"en": "For {n} computers we prepare a custom offer: please get in touch.", "ru": "Для {n} компьютеров подготовим индивидуальное предложение: свяжитесь с нами."},
- "Neçə kompüteriniz var?": {"en": "How many computers do you have?", "ru": "Сколько у вас компьютеров?"},
- "Kompüter sayı": {"en": "Number of computers", "ru": "Число компьютеров"},
- "2 illik müqavilədə %1$s%%, 3 illikdə %2$s%% endirim.": {"en": "%1$s%% off a 2-year contract, %2$s%% off a 3-year contract.", "ru": "Скидка %1$s%% по договору на 2 года и %2$s%% на 3 года."},
- "Server sizin avadanlığınızda və ya öz buludunuzda qurulur.": {"en": "The server is installed on your hardware or in your own cloud.", "ru": "Сервер устанавливается на вашем оборудовании или в вашем облаке."}
+ "Start": {
+  "en": "Start",
+  "ru": "Старт"
+ },
+ "Peşəkar": {
+  "en": "Professional",
+  "ru": "Профессиональный"
+ },
+ "Korporativ": {
+  "en": "Corporate",
+  "ru": "Корпоративный"
+ },
+ "Müəssisə": {
+  "en": "Enterprise",
+  "ru": "Предприятие"
+ },
+ "E-poçt ilə dəstək, iş günləri": {
+  "en": "Email support on business days",
+  "ru": "Поддержка по почте в рабочие дни"
+ },
+ "E-poçt və telefonla dəstək": {
+  "en": "Email and phone support",
+  "ru": "Поддержка по почте и телефону"
+ },
+ "Uzaqdan quraşdırma köməyi": {
+  "en": "Remote help with installation",
+  "ru": "Удалённая помощь с установкой"
+ },
+ "Quraşdırma və SSO / LDAP qoşulması mütəxəssisimizlə": {
+  "en": "Installation and SSO / LDAP setup with our specialist",
+  "ru": "Установка и подключение SSO / LDAP с нашим специалистом"
+ },
+ "İT komandanız üçün onlayn təlim": {
+  "en": "Online training for your IT team",
+  "ru": "Онлайн-обучение для вашей ИТ-команды"
+ },
+ "Prioritet dəstək": {
+  "en": "Priority support",
+  "ru": "Приоритетная поддержка"
+ },
+ "Tam quraşdırma, ehtiyat nüsxə və bərpa planı": {
+  "en": "Full installation, backup and recovery plan",
+  "ru": "Полная установка, план резервного копирования и восстановления"
+ },
+ "Filial serverləri üçün ayrıca lisenziya açarları": {
+  "en": "Separate license keys for branch servers",
+  "ru": "Отдельные лицензионные ключи для серверов филиалов"
+ },
+ "Şəxsi menecer və rüblük texniki baxış": {
+  "en": "Personal account manager and quarterly technical review",
+  "ru": "Персональный менеджер и ежеквартальный технический обзор"
+ },
+ "Yazılı SLA: cavab və həll müddətləri": {
+  "en": "Written SLA: response and resolution times",
+  "ru": "Письменный SLA: сроки ответа и решения"
+ },
+ "Bütün imkanlar hər paketdə: uzaqdan dəstək, inventar, skriptlər, proqram yayımı, monitorinq, SSO və API": {
+  "en": "Every feature in every package: remote support, inventory, scripts, software deployment, monitoring, SSO and API",
+  "ru": "Все возможности в каждом пакете: удалённая поддержка, инвентаризация, скрипты, распространение ПО, мониторинг, SSO и API"
+ },
+ "Operator sayı məhdud deyil, eyni anda istənilən qədər sessiya": {
+  "en": "No limit on operators or concurrent sessions",
+  "ru": "Число операторов и одновременных сессий не ограничено"
+ },
+ "Server sizdə qurulur, məlumat şirkətdən çıxmır": {
+  "en": "The server is installed at your site, data stays in the company",
+  "ru": "Сервер устанавливается у вас, данные не покидают компанию"
+ },
+ "Lisenziya müddətində bütün yeni versiyalar": {
+  "en": "All new versions during the license term",
+  "ru": "Все новые версии в течение срока лицензии"
+ },
+ "Windows və Linux kompüterləri eyni qaydada sayılır": {
+  "en": "Windows and Linux computers are counted the same way",
+  "ru": "Компьютеры с Windows и Linux считаются одинаково"
+ },
+ "Kompüter silinəndə və ya bloklananda yeri boşalır": {
+  "en": "Removing or blocking a computer frees its slot",
+  "ru": "Удалённый или заблокированный компьютер освобождает место"
+ },
+ "Kompüter sayına görə ödəyirsiniz, operator sayına görə yox": {
+  "en": "You pay per computer, not per operator",
+  "ru": "Вы платите за компьютеры, а не за операторов"
+ },
+ "Qiymət idarə olunan kompüterlərin sayından asılıdır. Komandanızın hamısı işləyə bilər, bütün imkanlar hər paketdədir. Ödəniş illikdir.": {
+  "en": "The price depends on the number of managed computers. Your whole team can work in the system and every package includes all features. Billing is annual.",
+  "ru": "Цена зависит от числа управляемых компьютеров. Работать может вся ваша команда, все возможности входят в каждый пакет. Оплата годовая."
+ },
+ "Ən çox seçilən": {
+  "en": "Most popular",
+  "ru": "Чаще всего выбирают"
+ },
+ "%s kompüterə qədər": {
+  "en": "Up to %s computers",
+  "ru": "До %s компьютеров"
+ },
+ "ildə": {
+  "en": "per year",
+  "ru": "в год"
+ },
+ "ayda kompüter başına %s": {
+  "en": "%s per computer per month",
+  "ru": "%s за компьютер в месяц"
+ },
+ "%s paketindəki hər şey": {
+  "en": "Everything in %s",
+  "ru": "Всё из пакета %s"
+ },
+ "Hər əlavə %1$s kompüter: ildə %2$s": {
+  "en": "Each extra %1$s computers: %2$s per year",
+  "ru": "Каждые дополнительные %1$s компьютеров: %2$s в год"
+ },
+ "Qiymət sorğu ilə": {
+  "en": "Price on request",
+  "ru": "Цена по запросу"
+ },
+ "təklifi sınaqla birlikdə göndəririk": {
+  "en": "we send the quote together with the trial",
+  "ru": "предложение пришлём вместе с пробной версией"
+ },
+ "Fərdi təklif": {
+  "en": "Custom offer",
+  "ru": "Индивидуальное предложение"
+ },
+ "%s kompüterdən çox": {
+  "en": "More than %s computers",
+  "ru": "Более %s компьютеров"
+ },
+ "Böyük parklar üçün": {
+  "en": "For large fleets",
+  "ru": "Для крупных парков"
+ },
+ "həcmə görə qiymət, çoxillik müqavilə, bir neçə filial": {
+  "en": "volume pricing, multi-year contracts, several branches",
+  "ru": "цена по объёму, многолетний договор, несколько филиалов"
+ },
+ "{n} kompüter: {tier} paketi{extra}. İldə {year}, ayda təxminən {month}.": {
+  "en": "{n} computers: {tier} package{extra}. {year} per year, about {month} per month.",
+  "ru": "{n} компьютеров: пакет {tier}{extra}. {year} в год, примерно {month} в месяц."
+ },
+ " və {extra} əlavə kompüter": {
+  "en": " plus {extra} extra computers",
+  "ru": " и ещё {extra} компьютеров"
+ },
+ "{n} kompüter üçün fərdi təklif hazırlayırıq: bizimlə əlaqə saxlayın.": {
+  "en": "For {n} computers we prepare a custom offer: please get in touch.",
+  "ru": "Для {n} компьютеров подготовим индивидуальное предложение: свяжитесь с нами."
+ },
+ "Neçə kompüteriniz var?": {
+  "en": "How many computers do you have?",
+  "ru": "Сколько у вас компьютеров?"
+ },
+ "Kompüter sayı": {
+  "en": "Number of computers",
+  "ru": "Число компьютеров"
+ },
+ "2 illik müqavilədə %1$s%%, 3 illikdə %2$s%% endirim.": {
+  "en": "%1$s%% off a 2-year contract, %2$s%% off a 3-year contract.",
+  "ru": "Скидка %1$s%% по договору на 2 года и %2$s%% на 3 года."
+ },
+ "Server sizin avadanlığınızda və ya öz buludunuzda qurulur.": {
+  "en": "The server is installed on your hardware or in your own cloud.",
+  "ru": "Сервер устанавливается на вашем оборудовании или в вашем облаке."
+ }
 }

@@ -4,9 +4,11 @@
  *
  * Axın:
  * 1. Ziyarətçi məhsul səhifəsindəki qısa formanı doldurur (ad, şirkət, telefon, e-poçt).
- * 2. Müraciət admin paneldə saxlanılır: Fixit Remote → Sınaq müraciətləri.
- * 3. Müştəriyə öz dilində məktub gedir: qurulum bələdçisi, qiymətlər və şəxsi
- *    yükləmə linki (müddətli). Sizə də bildiriş gəlir.
+ * 2. Müraciət admin paneldə saxlanılır: Fixit Remote → Sınaq müraciətləri. Sizə
+ *    bildiriş gəlir, ziyarətçiyə isə «yoxlayıb göndərəcəyik» deyilir.
+ * 3. Siz müraciətin həqiqi olduğunu yoxlayırsınız və «Bələdçini göndər» düyməsi ilə
+ *    müştəriyə öz dilində hazır məktub gedir: qurulum bələdçisi, qiymətlər və şəxsi
+ *    yükləmə linki (müddətli). İstəsəniz ayarlarda avtomatik göndərmə də açılır.
  * 4. Server paketi gizli GitHub reposundadır. Link fixit.az/sinaq-paketi/
  *    ünvanından keçir: sayt açarı yoxlayır, yükləməni qeyd edir və paketi
  *    GitHub-dan bir neçə dəqiqəlik ünvanla verir. Repo və açar heç yerdə görünmür.
@@ -66,17 +68,19 @@ add_action( 'init', 'fixit_trial_register_cpt' );
 function fixit_trial_statuses() {
 	return array(
 		'new'       => __( 'Yeni', 'fixit' ),
+		'sent'      => __( 'Bələdçi göndərilib', 'fixit' ),
 		'contacted' => __( 'Əlaqə saxlanılıb', 'fixit' ),
 		'installed' => __( 'Qurub, sınayır', 'fixit' ),
 		'customer'  => __( 'Müştəri oldu', 'fixit' ),
 		'lost'      => __( 'İmtina etdi', 'fixit' ),
+		'rejected'  => __( 'Rədd edildi', 'fixit' ),
 	);
 }
 
 /**
  * Sınaq ayarları.
  *
- * @return array{days:int,link_days:int,auto_link:bool,notify:string,repo:string}
+ * @return array{days:int,link_days:int,auto_send:bool,notify:string,repo:string}
  */
 function fixit_trial_settings() {
 	$saved = get_option( 'fixit_remote_trial', array() );
@@ -86,7 +90,7 @@ function fixit_trial_settings() {
 		$saved,
 		array(
 			'link_days' => 14,
-			'auto_link' => true,
+			'auto_send' => false,
 			'notify'    => '',
 			'repo'      => 'bybumer/fixit-remote-server',
 		)
@@ -95,7 +99,7 @@ function fixit_trial_settings() {
 	return array(
 		'days'      => 14,
 		'link_days' => min( 60, max( 1, (int) $s['link_days'] ) ),
-		'auto_link' => (bool) $s['auto_link'],
+		'auto_send' => (bool) $s['auto_send'],
 		'notify'    => is_email( $s['notify'] ) ? $s['notify'] : fixit_get( 'fixit_form_email' ),
 		'repo'      => preg_match( '#^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$#', (string) $s['repo'] ) ? (string) $s['repo'] : 'bybumer/fixit-remote-server',
 	);
@@ -120,6 +124,7 @@ function fixit_trial_notice() {
 	$status = isset( $_GET['fixit_trial'] ) ? sanitize_key( wp_unslash( $_GET['fixit_trial'] ) ) : '';
 
 	$messages = array(
+		'received' => array( 'ok', __( 'Təşəkkür edirik! Müraciətiniz qəbul olundu. Mütəxəssisimiz məlumatlarınızı yoxlayıb qurulum bələdçisini və serverin yükləmə linkini iş saatı ərzində e-poçtunuza göndərəcək.', 'fixit' ) ),
 		'ok'      => array( 'ok', __( 'Təşəkkür edirik! Qurulum bələdçisini və qiymət məlumatını e-poçtunuza göndərdik. Məktubu bir neçə dəqiqəyə görməsəniz, «Spam» qovluğuna baxın.', 'fixit' ) ),
 		'invalid' => array( 'err', __( 'Zəhmət olmasa bütün sahələri düzgün doldurun: ad, şirkət, telefon və e-poçt.', 'fixit' ) ),
 		'busy'    => array( 'err', __( 'Qısa müddətdə çox sayda müraciət göndərildi. Bir az sonra yenidən cəhd edin və ya bizə zəng edin.', 'fixit' ) ),
@@ -150,7 +155,7 @@ function fixit_trial_section() {
 				<div class="trial__text">
 					<span class="eyebrow"><?php fixit_icon( 'gift' ); ?><?php esc_html_e( 'Pulsuz sınaq', 'fixit' ); ?></span>
 					<h2><?php echo esc_html( sprintf( /* translators: %d: gün */ __( 'Serveri %d gün pulsuz sınayın', 'fixit' ), $s['days'] ) ); ?></h2>
-					<p><?php esc_html_e( 'Formanı doldurun: qurulum bələdçisini, serverin yükləmə linkini və qiymətləri dərhal e-poçtunuza göndəririk. Server öz avadanlığınızda qurulur, sınaq müddətində bütün imkanlar açıqdır.', 'fixit' ); ?></p>
+					<p><?php esc_html_e( 'Formanı doldurun: mütəxəssisimiz müraciətinizi yoxlayıb qurulum bələdçisini və serverin yükləmə linkini e-poçtunuza göndərəcək. Server öz avadanlığınızda qurulur, sınaq müddətində bütün imkanlar açıqdır.', 'fixit' ); ?></p>
 					<ul class="trial__list">
 						<li><?php fixit_icon( 'check' ); ?><span><?php esc_html_e( 'Ödəniş və kart tələb olunmur', 'fixit' ); ?></span></li>
 						<li><?php fixit_icon( 'check' ); ?><span><?php esc_html_e( 'Sınaq müddətində kompüter sayı məhdud deyil', 'fixit' ); ?></span></li>
@@ -192,7 +197,7 @@ function fixit_trial_section() {
 							</div>
 						</div>
 
-						<button type="submit" class="btn btn--primary btn--block"><?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Bələdçini göndərin', 'fixit' ); ?></button>
+						<button type="submit" class="btn btn--primary btn--block"><?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Sınaq üçün müraciət edin', 'fixit' ); ?></button>
 						<?php fixit_form_privacy_note(); ?>
 					</form>
 				</div>
@@ -282,10 +287,17 @@ function fixit_trial_handle() {
 	update_post_meta( $id, '_ft_lang', $lang );
 	update_post_meta( $id, '_ft_source', esc_url_raw( remove_query_arg( 'fixit_trial', $back ) ) );
 
-	$sent = fixit_trial_send_customer_mail( $id );
+	// Standart: müraciət yoxlanılandan sonra admin paneldən bir düymə ilə göndərilir.
+	// Avtomatik göndərmə ayarda açıqdırsa (məs. gələcəkdə saytdan satış) dərhal gedir.
+	$auto = fixit_trial_settings()['auto_send'];
+	$sent = $auto ? fixit_trial_send_customer_mail( $id ) : false;
 
 	if ( ! $existing ) {
 		fixit_trial_send_admin_mail( $id );
+	}
+
+	if ( ! $auto ) {
+		$go( 'received' );
 	}
 
 	// Məktub getmədisə ziyarətçiyə «göndərdik» demirik: müraciət saxlanılıb, biz əlaqə saxlayırıq.
@@ -358,6 +370,12 @@ function fixit_trial_repo_release( $force = false ) {
 			/* translators: %s: HTTP kodu */
 			sprintf( __( 'GitHub cavab vermədi (kod %s). Açarın müddətini və icazəsini yoxlayın.', 'fixit' ), $code ? $code : '—' )
 		);
+	}
+
+	// Fine-grained açarın bitmə tarixi (məs. "2027-11-19 12:00:00 UTC"): adminə vaxtında xatırladılır.
+	$expires = strtotime( (string) wp_remote_retrieve_header( $response, 'github-authentication-token-expiration' ) );
+	if ( $expires ) {
+		update_option( 'fixit_remote_repo_token_exp', $expires, false );
 	}
 
 	$data   = json_decode( wp_remote_retrieve_body( $response ), true );
@@ -553,22 +571,10 @@ function fixit_trial_in_lang( $lang, $callback ) {
  */
 function fixit_trial_send_customer_mail( $id ) {
 	$email = (string) get_post_meta( $id, '_ft_email', true );
-	$lang  = (string) get_post_meta( $id, '_ft_lang', true );
-	$name  = get_the_title( $id );
 
 	$s    = fixit_trial_settings();
-	$link = ( $s['auto_link'] && '' !== fixit_trial_repo_token() ) ? fixit_trial_new_link( $id ) : null;
-
-	$mail = fixit_trial_in_lang(
-		$lang ? $lang : fixit_default_lang(),
-		function () use ( $name, $link ) {
-			return array(
-				/* translators: %d: gün */
-				'subject' => sprintf( __( 'Fixit Remote: %d günlük sınaq və qurulum bələdçisi', 'fixit' ), 14 ),
-				'body'    => fixit_trial_mail_html( $name, $link ),
-			);
-		}
-	);
+	$link = '' !== fixit_trial_repo_token() ? fixit_trial_new_link( $id ) : null;
+	$mail = fixit_trial_build_mail( $id, $link );
 
 	$sent = wp_mail(
 		$email,
@@ -584,9 +590,38 @@ function fixit_trial_send_customer_mail( $id ) {
 	if ( $sent ) {
 		delete_post_meta( $id, '_ft_mail_failed' );
 		update_post_meta( $id, '_ft_link_sent', $link ? 1 : 0 );
+
+		if ( in_array( (string) get_post_meta( $id, '_ft_status', true ), array( '', 'new', 'rejected' ), true ) ) {
+			update_post_meta( $id, '_ft_status', 'sent' );
+		}
 	}
 
 	return $sent;
+}
+
+/**
+ * Müştəriyə gedəcək məktub (mövzu və HTML), müraciətin dilində.
+ *
+ * Admin paneldəki «Məktuba bax» da bunu göstərir: göndərilən ilə baxılan eynidir.
+ *
+ * @param int        $id   Müraciət.
+ * @param array|null $link Yükləmə linki (önizləmədə nümunə).
+ * @return array{subject:string,body:string}
+ */
+function fixit_trial_build_mail( $id, $link ) {
+	$lang = (string) get_post_meta( $id, '_ft_lang', true );
+	$name = get_the_title( $id );
+
+	return fixit_trial_in_lang(
+		$lang ? $lang : fixit_default_lang(),
+		function () use ( $name, $link ) {
+			return array(
+				/* translators: %d: gün */
+				'subject' => sprintf( __( 'Fixit Remote: %d günlük sınaq və qurulum bələdçisi', 'fixit' ), 14 ),
+				'body'    => fixit_trial_mail_html( $name, $link ),
+			);
+		}
+	);
 }
 
 /**
@@ -601,9 +636,10 @@ function fixit_trial_send_admin_mail( $id ) {
 		. 'Telefon: ' . get_post_meta( $id, '_ft_phone', true ) . "\n"
 		. 'E-poçt: ' . get_post_meta( $id, '_ft_email', true ) . "\n"
 		. 'Dil: ' . strtoupper( (string) get_post_meta( $id, '_ft_lang', true ) ) . "\n\n"
-		. ( get_post_meta( $id, '_ft_mail_sent', true ) ? "Müştəriyə bələdçi göndərildi.\n" : "DİQQƏT: müştəriyə məktub göndərilə bilmədi.\n" )
-		. ( get_post_meta( $id, '_ft_link_sent', true ) ? "Məktubda şəxsi yükləmə linki var.\n" : "Məktubda yükləmə linki YOXDUR (ayarlarda repo açarı yoxdur və ya avtomatik link söndürülüb): linki admin paneldən göndərin.\n" )
-		. "\nAdmin panel: " . admin_url( 'post.php?post=' . $id . '&action=edit' ) . "\n";
+		. ( fixit_trial_settings()['auto_send']
+			? ( get_post_meta( $id, '_ft_mail_sent', true ) ? "Müştəriyə bələdçi avtomatik göndərildi.\n" : "DİQQƏT: müştəriyə məktub göndərilə bilmədi.\n" )
+			: "Müştəriyə hələ heç nə getməyib. Müraciəti yoxlayın və «Bələdçini göndər» düyməsini basın.\n" )
+		. "\nBax və göndər: " . admin_url( 'post.php?post=' . $id . '&action=edit' ) . "\n";
 
 	$email = (string) get_post_meta( $id, '_ft_email', true );
 
@@ -745,14 +781,10 @@ function fixit_trial_mail_html( $name, $link ) {
 					</table>
 					<p style="margin:0 0 6px;font-size:14px"><?php echo esc_html( sprintf( /* translators: %s: say */ __( 'Paketdən artıq kompüter: hər %s kompüter həmin paketin qiyməti ilə.', 'fixit' ), $pricing['step'] ) ); ?></p>
 					<p style="margin:0 0 6px;font-size:14px"><?php echo esc_html( sprintf( /* translators: %s: say */ __( '%s kompüterdən çox olduqda xüsusi təklif hazırlayırıq.', 'fixit' ), number_format_i18n( end( $pricing['tiers'] )['max'] ) ) ); ?></p>
-					<?php if ( fixit_pricing_vat_note() ) : ?>
-						<p style="margin:0 0 22px;font-size:13px;color:#5b6678"><?php echo esc_html( fixit_pricing_vat_note() ); ?></p>
-					<?php else : ?>
-						<div style="height:16px"></div>
-					<?php endif; ?>
 				<?php else : ?>
-					<p style="margin:0 0 22px;font-size:14px;color:#3b4658"><?php esc_html_e( 'Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Kompüter sayınızı bildirin, dəqiq təklifi göndərək.', 'fixit' ); ?></p>
+					<p style="margin:0 0 10px;font-size:14px;color:#3b4658"><?php esc_html_e( 'Qiymət idarə olunan kompüterlərin sayına görədir, operator sayı məhdud deyil. Kompüter sayınızı bildirin, dəqiq təklifi göndərək.', 'fixit' ); ?></p>
 				<?php endif; ?>
+				<p style="margin:0 0 22px;font-size:14px;color:#3b4658"><?php esc_html_e( 'Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Lisenziya üçün bu məktuba cavab yazın və ya zəng edin: müqaviləni və hesab-fakturanı hazırlayaq.', 'fixit' ); ?></p>
 
 				<div style="border-top:1px solid #eef1f6;padding-top:16px;font-size:14px;color:#3b4658">
 					<?php esc_html_e( 'Sualınız olsa, bu məktuba cavab yazın və ya zəng edin:', 'fixit' ); ?>

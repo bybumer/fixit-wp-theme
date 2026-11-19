@@ -1,108 +1,426 @@
 {
- "Android tətbiqi": {"en": "Android app", "ru": "Android-приложение"},
- "Cavab müştəriyə yazdığı kanalla gedir: e-poçt, Telegram və ya portal": {"en": "Replies go back through the channel the customer used: email, Telegram or the portal", "ru": "Ответ уходит клиенту по тому же каналу: почта, Telegram или портал"},
- "Ctrl+K ilə vahid axtarış": {"en": "One search with Ctrl+K", "ru": "Единый поиск по Ctrl+K"},
- "Siyahı və sorğu yan-yana: işdən işə keçmək üçün geri qayıtmaq lazım deyil": {"en": "List and request side by side: no need to go back to move to the next one", "ru": "Список и заявка рядом: не нужно возвращаться, чтобы перейти к следующей"},
- "Sorğunun bütün konteksti bir ekranda: müştərinin digər sorğuları və bir kliklə «Həll olundu»": {"en": "All the context of a request on one screen: the customer's other requests and \"Resolved\" in one click", "ru": "Весь контекст заявки на одном экране: другие заявки клиента и «Решено» в один клик"},
- "Ctrl+K: sorğu, tapşırıq və müştərini bir pəncərədən tapın": {"en": "Ctrl+K: find requests, tasks and customers from one window", "ru": "Ctrl+K: заявки, задачи и клиенты в одном окне поиска"},
- "Hər işçinin öz paneli: vidcetlər, qrafiklər və yük bölgüsü": {"en": "Each person's own dashboard: widgets, charts and workload", "ru": "Своя панель у каждого сотрудника: виджеты, графики и распределение нагрузки"},
- "Tapşırıq lövhəsi: gecikən iş dərhal seçilir": {"en": "Task board: overdue work stands out immediately", "ru": "Доска задач: просроченная работа сразу видна"},
- "Gantt qrafiki: tapşırıqların müddəti və asılılıqları": {"en": "Gantt chart: task durations and dependencies", "ru": "Диаграмма Ганта: сроки задач и зависимости"},
- "Həll müddəti: orta, median, 90% və həftəlik dinamika": {"en": "Resolution time: average, median, 90th percentile and weekly trend", "ru": "Время решения: среднее, медиана, 90-й процентиль и динамика по неделям"},
- "Cavab müştəriyə yazdığı kanalla qayıdır: məktuba məktubla, Telegram-a Telegram-da": {"en": "Replies go back the way the customer wrote: email to email, Telegram to Telegram", "ru": "Ответ приходит туда, откуда писал клиент: на письмо письмом, в Telegram в Telegram"},
- "Telegram botu: server internetdən görünməsə də işləyir": {"en": "Telegram bot: works even if the server is not reachable from the internet", "ru": "Telegram-бот: работает, даже если сервер не виден из интернета"},
- "Göndərənin e-poçt domeninə görə sorğu doğru şirkətə bağlanır": {"en": "Requests are linked to the right company by the sender's email domain", "ru": "Заявка привязывается к нужной компании по домену почты отправителя"},
- "Siyahıda bir klik sorğunu sağ paneldə açır, ↑ ↓ ilə işdən işə keçirsiniz": {"en": "One click opens a request in the side panel; move between requests with ↑ ↓", "ru": "Один клик открывает заявку в правой панели, ↑ ↓ переключают между заявками"},
- "Ctrl+K ilə hər yerdən axtarış; süzgəcləri saxlayıb komanda ilə paylaşmaq": {"en": "Search from anywhere with Ctrl+K; save filters and share them with the team", "ru": "Поиск отовсюду по Ctrl+K; фильтры можно сохранить и поделиться с командой"},
- "Daxili qeyd sarı fonla seçilir, səhvən müştəriyə getmir": {"en": "Internal notes are highlighted in yellow and never go to the customer by mistake", "ru": "Внутренняя заметка выделена жёлтым и не уйдёт клиенту по ошибке"},
- "Həmkarınız eyni sorğuya yazanda göndərmədən əvvəl xəbərdarlıq": {"en": "A warning before sending if a colleague is replying to the same request", "ru": "Предупреждение перед отправкой, если коллега пишет в ту же заявку"},
- "Toplu əməliyyatlar, «İzlə» və təkrar sorğuların birləşdirilməsi": {"en": "Bulk actions, \"Follow\" and merging duplicate requests", "ru": "Массовые действия, «Следить» и объединение повторных заявок"},
- "«SLA yaxınlaşır»: son müddətə 3 saatdan az qalan sorğular bir yerdə": {"en": "\"SLA due soon\": requests with less than 3 hours left, all in one place", "ru": "«SLA скоро истекает»: заявки, до срока которых осталось меньше 3 часов"},
- "«Əgər-onda» qaydaları: sorğunu doğru komandaya ötürmək, gözləyəni bağlamaq": {"en": "\"If-then\" rules: route a request to the right team, close ones left waiting", "ru": "Правила «если-то»: передать заявку нужной команде, закрыть ожидающие"},
- "14 hazır hesabat: həll müddəti, iş yükü, timesheet, Gantt; hər biri bir kliklə dashboard-a": {"en": "14 ready reports: resolution time, workload, timesheet, Gantt; each one added to a dashboard in a click", "ru": "14 готовых отчётов: время решения, нагрузка, табель, Гант; любой добавляется на панель в один клик"},
- "Windows (Active Directory) hesabı ilə giriş, rol AD qrupundan gəlir": {"en": "Sign in with a Windows (Active Directory) account; the role comes from the AD group", "ru": "Вход под учётной записью Windows (Active Directory), роль берётся из группы AD"},
- "Rollar və icazələr: ayrı-ayrı seçilən hüquqlar": {"en": "Roles and permissions: rights chosen one by one", "ru": "Роли и права: каждое право настраивается отдельно"},
- "Komandalar və görünürlük: kim hansı sorğu və tapşırıqları görür": {"en": "Teams and visibility: who sees which requests and tasks", "ru": "Команды и видимость: кто какие заявки и задачи видит"},
- "Hazır cavablar: mətn, status və teq bir kliklə": {"en": "Canned replies: text, status and tags in one click", "ru": "Готовые ответы: текст, статус и теги в один клик"},
- "İnterfeysdən ehtiyat nüsxə: baza və fayllar bir arxivdə": {"en": "Backup from the interface: database and files in one archive", "ru": "Резервная копия из интерфейса: база и файлы в одном архиве"},
- "Android tətbiqi: sahədə cavab, şəkil və vaxt uçotu, bildirişlər öz serverinizdən": {"en": "Android app: reply, add photos and log time in the field, with notifications from your own server", "ru": "Android-приложение: ответы, фото и учёт времени на выезде, уведомления с вашего сервера"},
- "FIXIT Remote ilə: sorğudan istifadəçinin kompüterinə bir kliklə qoşulma": {"en": "With FIXIT Remote: connect from a request to the user's computer in one click", "ru": "С FIXIT Remote: подключение к компьютеру пользователя прямо из заявки"},
- "nömrə alır, doğru şirkətə və komandaya düşür": {"en": "gets a number and lands with the right company and team", "ru": "получает номер и попадает к нужной компании и команде"},
- "müştəri cavabı yazdığı kanalda alır": {"en": "the customer gets the reply in the channel they used", "ru": "клиент получает ответ в том канале, где писал"},
- "Hərəkətsiz qalan brauzerdən avtomatik çıxış, müddəti admin seçir": {"en": "Automatic sign-out of idle browsers, with the timeout set by the admin", "ru": "Автоматический выход из неактивного браузера, время задаёт администратор"},
- "Girişlər və ayar dəyişiklikləri audit jurnalına, sorğudakı hər dəyişiklik isə onun tarixçəsinə yazılır": {"en": "Sign-ins and settings changes go to the audit log, and every change to a request goes to its history", "ru": "Входы и изменения настроек пишутся в журнал аудита, а каждое изменение заявки в её историю"},
- "Mobil tətbiq varmı?": {"en": "Is there a mobile app?", "ru": "Есть ли мобильное приложение?"},
- "Bəli, FIXIT Ticket Android tətbiqi. Mütəxəssis sahədə sorğuya cavab yazır, şəkil əlavə edir, vaxtı qeyd edir. Tətbiq birbaşa şirkətinizin serverinə qoşulur, bildirişlər də oradan gəlir.": {"en": "Yes, the FIXIT Ticket Android app. Field staff reply to requests, add photos and log time. The app connects directly to your company's server, and notifications come from there too.", "ru": "Да, Android-приложение FIXIT Ticket. Специалист на выезде отвечает на заявки, добавляет фото и отмечает время. Приложение подключается напрямую к серверу вашей компании, уведомления тоже приходят оттуда."},
- "Uzaqdan dəstək və kompüter parkının idarəsi: öz serverinizdə və ya bizim buludda": {"en": "Remote support and fleet management: on your own server or in our cloud", "ru": "Удалённая поддержка и управление парком компьютеров: на вашем сервере или в нашем облаке"},
- "Windows və Linux": {"en": "Windows and Linux", "ru": "Windows и Linux"},
- "Operator sayı məhdud deyil": {"en": "Unlimited operators", "ru": "Без ограничения операторов"},
- "Ekran pəncərəsi: idarə, qısayollar, yazışma, ekran şəkli və video yazısı": {"en": "Session window: control, shortcuts, chat, screenshots and video recording", "ru": "Окно сеанса: управление, сочетания клавиш, чат, снимок экрана и видеозапись"},
- "Bütün kompüterlər bir siyahıda: sahib, vəziyyət, agent versiyası və bir kliklə qoşulma": {"en": "All computers in one list: owner, status, agent version and one-click connect", "ru": "Все компьютеры в одном списке: владелец, состояние, версия агента и подключение в один клик"},
- "İdarə lövhəsi: onlayn cihazlar, sessiyalar, xəbərdarlıqlar və serverin vəziyyəti": {"en": "Dashboard: online devices, sessions, alerts and server health", "ru": "Панель управления: устройства онлайн, сеансы, оповещения и состояние сервера"},
- "Ekran bildirişləri: kompüterlərə elan və ya sahib məlumatı forması, cavabların hesabatı": {"en": "Screen notices: announcements or an owner-details form on computers, with a report of the responses", "ru": "Экранные уведомления: объявление или форма данных владельца на компьютерах и отчёт по ответам"},
- "İstifadəçilər: rol, cihaz əhatəsi, iki mərhələli giriş və əməliyyat icazələri": {"en": "Users: role, device scope, two-step login and action permissions", "ru": "Пользователи: роль, доступные устройства, двухэтапный вход и права на действия"},
- "Adi uzaqdan giriş proqramlarında əlaqə xarici şirkətin serverləri üzərindən qurulur. Fixit Remote-u öz serverinizdə qurduqda ekran, fayllar və jurnal şirkətdən çıxmır; istəsəniz bizim buludda da işlədə bilərsiniz.": {"en": "With typical remote access tools the connection goes through an outside company's servers. When you install Fixit Remote on your own server, screens, files and logs never leave the company; you can also run it in our cloud if you prefer.", "ru": "В обычных программах удалённого доступа связь идёт через серверы сторонней компании. Если установить Fixit Remote на свой сервер, экран, файлы и журнал не покидают компанию; при желании его можно запустить и в нашем облаке."},
- "Agent serverə özü qoşulur: işçi kompüterlərində port açmaq lazım deyil, fərqli VLAN-lar problem yaratmır.": {"en": "The agent connects to the server itself: no ports to open on employee computers, and different VLANs are not a problem.", "ru": "Агент сам подключается к серверу: на компьютерах сотрудников не нужно открывать порты, разные VLAN не мешают."},
- "Hər kompüterə ayrıca gedirsiniz": {"en": "You go to each computer one by one", "ru": "К каждому компьютеру приходится подходить отдельно"},
- "Skript, proqram və yeniləmə yüzlərlə kompüterə bir dəfəyə gedir, nəticə hər kompüter üçün ayrıca görünür.": {"en": "Scripts, software and updates reach hundreds of computers at once, and you see the result for each computer separately.", "ru": "Скрипты, программы и обновления уходят на сотни компьютеров сразу, а результат виден по каждому компьютеру."},
- "Kim kimə qoşulub, bilinmir": {"en": "No record of who connected to whom", "ru": "Неизвестно, кто к кому подключался"},
- "Hər sessiya, fayl ötürmə və əmr jurnala yazılır; CSV və PDF kimi yüklənir.": {"en": "Every session, file transfer and command is logged and can be exported as CSV or PDF.", "ru": "Каждый сеанс, передача файлов и команда записываются в журнал; выгрузка в CSV и PDF."},
- "Uzaqdan dəstək": {"en": "Remote support", "ru": "Удалённая поддержка"},
- "Ekrana baxmaq və idarə etmək: çoxmonitor, AZ / RU / EN klaviatura düzümü": {"en": "View and control the screen: multiple monitors, AZ / RU / EN keyboard layouts", "ru": "Просмотр и управление экраном: несколько мониторов, раскладки AZ / RU / EN"},
- "Tam idarə və ya yalnız baxış; kilid ekranı və admin pəncərələri ilə işləyir": {"en": "Full control or view only; works with the lock screen and admin prompts", "ru": "Полное управление или только просмотр; работает с экраном блокировки и окнами администратора"},
- "Fayl ötürmə və mübadilə buferi ekranı dayandırmadan": {"en": "File transfer and clipboard without pausing the screen", "ru": "Передача файлов и буфер обмена без остановки экрана"},
- "Bir sessiyaya bir neçə operator, sessiyanın video yazısı": {"en": "Several operators in one session, session video recording", "ru": "Несколько операторов в одном сеансе, видеозапись сеанса"},
- "Əlaqə qısa müddətə kəsiləndə sessiya özü bərpa olunur": {"en": "If the connection drops briefly, the session resumes on its own", "ru": "При кратком обрыве связи сеанс восстанавливается сам"},
- "Cihazlar və inventar": {"en": "Devices and inventory", "ru": "Устройства и инвентаризация"},
- "Bütün kompüterlər bir siyahıda: sahib, IP, əməliyyat sistemi, agent versiyası": {"en": "All computers in one list: owner, IP, operating system, agent version", "ru": "Все компьютеры в одном списке: владелец, IP, операционная система, версия агента"},
- "Avadanlıq və proqram inventarı: disklər, şəbəkə, quraşdırılmış proqramlar": {"en": "Hardware and software inventory: disks, network, installed programs", "ru": "Инвентаризация оборудования и ПО: диски, сеть, установленные программы"},
- "Cihaz profili: sağlamlıq, proqramlar, sessiyalar və jurnal bir yerdə": {"en": "Device profile: health, software, sessions and log in one place", "ru": "Профиль устройства: состояние, программы, сеансы и журнал в одном месте"},
- "Qruplar, teqlər, toplu əməliyyatlar; minlərlə kompüterlə sürətli işləyir": {"en": "Groups, tags and bulk actions; stays fast with thousands of computers", "ru": "Группы, теги и массовые действия; быстро работает с тысячами компьютеров"},
- "System Manager və skriptlər": {"en": "System Manager and scripts", "ru": "System Manager и скрипты"},
- "Ekrana qoşulmadan proseslər, xidmətlər, sistem jurnalı və aktiv istifadəçilər": {"en": "Processes, services, system log and signed-in users without connecting to the screen", "ru": "Процессы, службы, системный журнал и активные пользователи без подключения к экрану"},
- "PowerShell, CMD və Bash skript kitabxanası, versiyalar və risk yoxlaması": {"en": "PowerShell, CMD and Bash script library with versions and risk checks", "ru": "Библиотека скриптов PowerShell, CMD и Bash с версиями и проверкой рисков"},
- "Dörd göz qaydası: istəsəniz skript ikinci şəxs təsdiqləməmiş işə düşmür": {"en": "Four-eyes rule: optionally, a script does not run until a second person approves it", "ru": "Правило четырёх глаз: при желании скрипт не запустится без одобрения второго человека"},
- "İşlər cədvəllə və qruplar üzrə; nəticə hər kompüter üçün ayrıca": {"en": "Scheduled jobs across groups, with a result for each computer", "ru": "Задания по расписанию и по группам, результат по каждому компьютеру"},
- "Proqram yayımı və yeniləmələr": {"en": "Software deployment and updates", "ru": "Распространение ПО и обновления"},
- "MSI və EXE kataloqu, imza və hash yoxlaması; Linux paketləri": {"en": "MSI and EXE catalog with signature and hash checks; Linux packages", "ru": "Каталог MSI и EXE с проверкой подписи и хеша; пакеты Linux"},
- "Dalğalarla yayım: vaxt pəncərəsi, xəta həddi, təsdiq və geri qaytarma": {"en": "Rollouts in waves: time window, failure threshold, approval and rollback", "ru": "Развёртывание волнами: временное окно, порог ошибок, утверждение и откат"},
- "Windows Update və Linux (apt, dnf) yeniləmələrinin mərkəzdən quraşdırılması": {"en": "Install Windows Update and Linux (apt, dnf) updates centrally", "ru": "Централизованная установка обновлений Windows Update и Linux (apt, dnf)"},
- "Hansı proqramın hansı kompüterdə olduğu bir siyahıda": {"en": "Which software is on which computer, in one list", "ru": "Какая программа на каком компьютере, в одном списке"},
- "Monitorinq və xəbərdarlıqlar": {"en": "Monitoring and alerts", "ru": "Мониторинг и оповещения"},
- "Kompüterlərin sağlamlığı: yük, disk, şəbəkə, yenidən başlatma ehtiyacı": {"en": "Computer health: load, disk, network, pending restarts", "ru": "Состояние компьютеров: нагрузка, диск, сеть, необходимость перезагрузки"},
- "Qaydalar: şərt, müddət və ciddilik; problem davam edəndə xəbərdarlıq": {"en": "Rules with condition, duration and severity; an alert when a problem persists", "ru": "Правила: условие, длительность и важность; оповещение, если проблема не уходит"},
- "Xəbərdarlıq mərkəzi: təsdiq, həll və tarixçə": {"en": "Alert center: acknowledge, resolve and history", "ru": "Центр оповещений: подтверждение, решение и история"},
- "Uzun müddət qoşulmayan və köhnə agentli kompüterlər ayrıca görünür": {"en": "Computers that have been offline for long or run an old agent stand out", "ru": "Давно не подключавшиеся компьютеры и компьютеры со старым агентом видны отдельно"},
- "Rollar: administrator, menecer, operator, yalnız baxış, rəhbər": {"en": "Roles: administrator, manager, operator, viewer, executive", "ru": "Роли: администратор, менеджер, оператор, только просмотр, руководитель"},
- "Əməliyyat icazələri: kim qoşula, fayl ötürə, skript işlədə bilər": {"en": "Action permissions: who can connect, transfer files, run scripts", "ru": "Права на действия: кто может подключаться, передавать файлы, запускать скрипты"},
- "Qruplar: kim hansı kompüterlərə çatır": {"en": "Groups: who can reach which computers", "ru": "Группы: кому доступны какие компьютеры"},
- "Şöbə, komanda və əməkdaş; kim işdədir, rəhbər bir baxışda görür": {"en": "Departments, teams and staff; managers see at a glance who is at work", "ru": "Отделы, команды и сотрудники; руководитель сразу видит, кто на работе"},
- "Giriş və inteqrasiyalar": {"en": "Sign-in and integrations", "ru": "Вход и интеграции"},
- "Active Directory / LDAP və SSO: Entra ID, Okta, Keycloak, Google": {"en": "Active Directory / LDAP and SSO: Entra ID, Okta, Keycloak, Google", "ru": "Active Directory / LDAP и SSO: Entra ID, Okta, Keycloak, Google"},
- "FIXIT Sorğu Sistemi: sorğudan kompüterə bir kliklə, agentdən yeni sorğu": {"en": "FIXIT Helpdesk: from a request to the computer in one click, new requests from the agent", "ru": "FIXIT Служба заявок: из заявки к компьютеру в один клик, новая заявка прямо из агента"},
- "API və webhooklar: öz sistemlərinizə qoşmaq üçün": {"en": "API and webhooks to connect your own systems", "ru": "API и вебхуки для связи с вашими системами"},
- "Ekran bildirişləri: kompüterlərə elan və sahib məlumatı forması": {"en": "Screen notices: announcements and an owner-details form on computers", "ru": "Экранные уведомления: объявления и форма данных владельца на компьютерах"},
- "Server və baxım": {"en": "Server and maintenance", "ru": "Сервер и обслуживание"},
- "Linux serverdə bir əmrlə quraşdırma: Ubuntu, Debian, RHEL ailəsi": {"en": "One-command installation on a Linux server: Ubuntu, Debian, RHEL family", "ru": "Установка на Linux-сервер одной командой: Ubuntu, Debian, семейство RHEL"},
- "Gündəlik ehtiyat nüsxə, bir əmrlə bərpa, lazım olsa təmiz maşında": {"en": "Daily backups and one-command restore, even onto a fresh machine", "ru": "Ежедневная резервная копия и восстановление одной командой, даже на чистой машине"},
- "Windows MSI-si GPO, Intune və ya SCCM ilə səssiz yayılır": {"en": "The Windows MSI deploys silently via GPO, Intune or SCCM", "ru": "Windows MSI тихо разворачивается через GPO, Intune или SCCM"},
- "Server internetsiz də tam işləyir: panel kənar xidmətə müraciət etmir": {"en": "The server works fully without internet: the panel does not call outside services", "ru": "Сервер полностью работает без интернета: панель не обращается к внешним сервисам"},
- "Windows və Linux kompüterdə, serverə özü qoşulur": {"en": "on Windows and Linux computers, connects to the server itself", "ru": "на компьютерах с Windows и Linux, сам подключается к серверу"},
- "sizin şəbəkənizdə: cihazlar, icazələr, jurnal": {"en": "in your network: devices, permissions, log", "ru": "в вашей сети: устройства, права, журнал"},
- "Client proqramı və ya telefondan işləyir": {"en": "works from the Client app or a phone", "ru": "работает в программе Client или с телефона"},
- "Qoşulmazdan əvvəl istifadəçidən icazə soruşulur; 30 saniyə cavab yoxdursa rədd": {"en": "The user is asked for permission before connecting; no answer in 30 seconds means no", "ru": "Перед подключением у пользователя спрашивается разрешение; нет ответа 30 секунд означает отказ"},
- "Ekranda gizlədilə bilməyən «qoşulma var» zolağı": {"en": "An on-screen \"connected\" bar that cannot be hidden", "ru": "Полоса «идёт подключение», которую нельзя скрыть"},
- "Agent və Client serverin sertifikat izinə bağlıdır: araya girən başqa server qəbul olunmur": {"en": "The agent and Client are pinned to the server's certificate fingerprint: no other server can step in between", "ru": "Агент и Client привязаны к отпечатку сертификата сервера: подменный сервер не будет принят"},
- "İki mərhələli giriş, SSO və domen hesabı ilə giriş": {"en": "Two-step login, SSO and sign-in with a domain account", "ru": "Двухэтапный вход, SSO и вход под доменной учётной записью"},
- "Skriptlər və proqram yayımı üçün ikinci şəxsin təsdiqi tələb oluna bilər": {"en": "Scripts and software rollouts can require a second person's approval", "ru": "Для скриптов и распространения ПО можно требовать одобрение второго человека"},
- "İstifadəçi yerində olmayanda mərkəzdən idarə olunan qoşulma parolu; hər istifadə jurnala yazılır": {"en": "A centrally managed connection password for when the user is away; every use is logged", "ru": "Централизованно управляемый пароль подключения на случай, когда пользователя нет на месте; каждое использование фиксируется"},
- "Səhv parol cəhdlərində IP bloklanır, hesab yox": {"en": "Wrong password attempts block the IP, not the account", "ru": "При неверных паролях блокируется IP, а не учётная запись"},
- "AnyDesk və ya TeamViewer-dən əsas fərqi nədir?": {"en": "How is it different from AnyDesk or TeamViewer?", "ru": "Чем он отличается от AnyDesk или TeamViewer?"},
- "Fixit Remote serveri sizin şəbəkənizdə işləyir, bağlantı xarici xidmətlərdən keçmir. Uzaqdan dəstəkdən əlavə kompüter parkını da idarə edir: inventar, skriptlər, proqram yayımı, monitorinq. Kimin hansı kompüterə qoşula biləcəyini mərkəzdən təyin edirsiniz, hər sessiyanı jurnalda görürsünüz.": {"en": "The Fixit Remote server runs in your network, and connections do not pass through outside services. Beyond remote support it also manages your fleet: inventory, scripts, software deployment, monitoring. You decide centrally who can connect to which computer, and you see every session in the log.", "ru": "Сервер Fixit Remote работает в вашей сети, подключения не идут через внешние сервисы. Кроме удалённой поддержки он управляет и парком компьютеров: инвентаризация, скрипты, распространение ПО, мониторинг. Вы централизованно задаёте, кто к каким компьютерам может подключаться, и видите каждый сеанс в журнале."},
- "Qiymət necə hesablanır?": {"en": "How is the price calculated?", "ru": "Как рассчитывается цена?"},
- "İdarə olunan kompüterlərin sayına görə. Operator sayı məhdud deyil, bütün imkanlar hər paketdədir. Paketlər bu səhifənin «Qiymətlər» bölməsindədir, 14 günlük pulsuz sınaq var.": {"en": "By the number of managed computers. There is no limit on operators and every package includes all features. The packages are in the Pricing section of this page, and there is a 14-day free trial.", "ru": "По числу управляемых компьютеров. Число операторов не ограничено, все возможности входят в каждый пакет. Пакеты указаны в разделе «Цены» на этой странице, есть бесплатный пробный период на 14 дней."},
- "Xeyr. Agent serverə özü qoşulur. Kompüterlər fərqli VLAN və ya alt şəbəkələrdə ola bilər, yalnız server əlçatan olmalıdır.": {"en": "No. The agent connects to the server itself. Computers can be on different VLANs or subnets; only the server needs to be reachable.", "ru": "Нет. Агент сам подключается к серверу. Компьютеры могут быть в разных VLAN или подсетях, нужно лишь, чтобы сервер был доступен."},
- "Agent Windows və Linux kompüterlərində işləyir. Server Linux-da qurulur: Ubuntu, Debian və ya RHEL ailəsi. Operator Windows üçün Client proqramı və ya mobil tətbiqlə işləyir.": {"en": "The agent runs on Windows and Linux computers. The server is installed on Linux: Ubuntu, Debian or the RHEL family. Operators work with the Client app for Windows or the mobile app.", "ru": "Агент работает на компьютерах с Windows и Linux. Сервер устанавливается на Linux: Ubuntu, Debian или семейство RHEL. Операторы работают в программе Client для Windows или в мобильном приложении."},
- "Sınaqdan sonra nə olur?": {"en": "What happens after the trial?", "ru": "Что будет после пробного периода?"},
- "Lisenziya açarını paneldə yazırsınız və eyni server işləməyə davam edir: kompüterlər, istifadəçilər və jurnal olduğu kimi qalır. Lisenziya yazılmasa, sınaq bitəndə panel bağlanır, kompüterlər isə serverə qoşulu qalır.": {"en": "You enter the license key in the panel and the same server keeps running: computers, users and logs stay as they are. If no license is entered, the panel locks when the trial ends, while the computers stay connected to the server.", "ru": "Вы вводите лицензионный ключ в панели, и тот же сервер продолжает работать: компьютеры, пользователи и журнал остаются как есть. Если лицензию не ввести, после окончания пробного периода панель блокируется, а компьютеры остаются подключены к серверу."}
+ "Android tətbiqi": {
+  "en": "Android app",
+  "ru": "Android-приложение"
+ },
+ "Cavab müştəriyə yazdığı kanalla gedir: e-poçt, Telegram və ya portal": {
+  "en": "Replies go back through the channel the customer used: email, Telegram or the portal",
+  "ru": "Ответ уходит клиенту по тому же каналу: почта, Telegram или портал"
+ },
+ "Ctrl+K ilə vahid axtarış": {
+  "en": "One search with Ctrl+K",
+  "ru": "Единый поиск по Ctrl+K"
+ },
+ "Siyahı və sorğu yan-yana: işdən işə keçmək üçün geri qayıtmaq lazım deyil": {
+  "en": "List and request side by side: no need to go back to move to the next one",
+  "ru": "Список и заявка рядом: не нужно возвращаться, чтобы перейти к следующей"
+ },
+ "Sorğunun bütün konteksti bir ekranda: müştərinin digər sorğuları və bir kliklə «Həll olundu»": {
+  "en": "All the context of a request on one screen: the customer's other requests and \"Resolved\" in one click",
+  "ru": "Весь контекст заявки на одном экране: другие заявки клиента и «Решено» в один клик"
+ },
+ "Ctrl+K: sorğu, tapşırıq və müştərini bir pəncərədən tapın": {
+  "en": "Ctrl+K: find requests, tasks and customers from one window",
+  "ru": "Ctrl+K: заявки, задачи и клиенты в одном окне поиска"
+ },
+ "Hər işçinin öz paneli: vidcetlər, qrafiklər və yük bölgüsü": {
+  "en": "Each person's own dashboard: widgets, charts and workload",
+  "ru": "Своя панель у каждого сотрудника: виджеты, графики и распределение нагрузки"
+ },
+ "Tapşırıq lövhəsi: gecikən iş dərhal seçilir": {
+  "en": "Task board: overdue work stands out immediately",
+  "ru": "Доска задач: просроченная работа сразу видна"
+ },
+ "Gantt qrafiki: tapşırıqların müddəti və asılılıqları": {
+  "en": "Gantt chart: task durations and dependencies",
+  "ru": "Диаграмма Ганта: сроки задач и зависимости"
+ },
+ "Həll müddəti: orta, median, 90% və həftəlik dinamika": {
+  "en": "Resolution time: average, median, 90th percentile and weekly trend",
+  "ru": "Время решения: среднее, медиана, 90-й процентиль и динамика по неделям"
+ },
+ "Cavab müştəriyə yazdığı kanalla qayıdır: məktuba məktubla, Telegram-a Telegram-da": {
+  "en": "Replies go back the way the customer wrote: email to email, Telegram to Telegram",
+  "ru": "Ответ приходит туда, откуда писал клиент: на письмо письмом, в Telegram в Telegram"
+ },
+ "Telegram botu: server internetdən görünməsə də işləyir": {
+  "en": "Telegram bot: works even if the server is not reachable from the internet",
+  "ru": "Telegram-бот: работает, даже если сервер не виден из интернета"
+ },
+ "Göndərənin e-poçt domeninə görə sorğu doğru şirkətə bağlanır": {
+  "en": "Requests are linked to the right company by the sender's email domain",
+  "ru": "Заявка привязывается к нужной компании по домену почты отправителя"
+ },
+ "Siyahıda bir klik sorğunu sağ paneldə açır, ↑ ↓ ilə işdən işə keçirsiniz": {
+  "en": "One click opens a request in the side panel; move between requests with ↑ ↓",
+  "ru": "Один клик открывает заявку в правой панели, ↑ ↓ переключают между заявками"
+ },
+ "Ctrl+K ilə hər yerdən axtarış; süzgəcləri saxlayıb komanda ilə paylaşmaq": {
+  "en": "Search from anywhere with Ctrl+K; save filters and share them with the team",
+  "ru": "Поиск отовсюду по Ctrl+K; фильтры можно сохранить и поделиться с командой"
+ },
+ "Daxili qeyd sarı fonla seçilir, səhvən müştəriyə getmir": {
+  "en": "Internal notes are highlighted in yellow and never go to the customer by mistake",
+  "ru": "Внутренняя заметка выделена жёлтым и не уйдёт клиенту по ошибке"
+ },
+ "Həmkarınız eyni sorğuya yazanda göndərmədən əvvəl xəbərdarlıq": {
+  "en": "A warning before sending if a colleague is replying to the same request",
+  "ru": "Предупреждение перед отправкой, если коллега пишет в ту же заявку"
+ },
+ "Toplu əməliyyatlar, «İzlə» və təkrar sorğuların birləşdirilməsi": {
+  "en": "Bulk actions, \"Follow\" and merging duplicate requests",
+  "ru": "Массовые действия, «Следить» и объединение повторных заявок"
+ },
+ "«SLA yaxınlaşır»: son müddətə 3 saatdan az qalan sorğular bir yerdə": {
+  "en": "\"SLA due soon\": requests with less than 3 hours left, all in one place",
+  "ru": "«SLA скоро истекает»: заявки, до срока которых осталось меньше 3 часов"
+ },
+ "«Əgər-onda» qaydaları: sorğunu doğru komandaya ötürmək, gözləyəni bağlamaq": {
+  "en": "\"If-then\" rules: route a request to the right team, close ones left waiting",
+  "ru": "Правила «если-то»: передать заявку нужной команде, закрыть ожидающие"
+ },
+ "14 hazır hesabat: həll müddəti, iş yükü, timesheet, Gantt; hər biri bir kliklə dashboard-a": {
+  "en": "14 ready reports: resolution time, workload, timesheet, Gantt; each one added to a dashboard in a click",
+  "ru": "14 готовых отчётов: время решения, нагрузка, табель, Гант; любой добавляется на панель в один клик"
+ },
+ "Windows (Active Directory) hesabı ilə giriş, rol AD qrupundan gəlir": {
+  "en": "Sign in with a Windows (Active Directory) account; the role comes from the AD group",
+  "ru": "Вход под учётной записью Windows (Active Directory), роль берётся из группы AD"
+ },
+ "Rollar və icazələr: ayrı-ayrı seçilən hüquqlar": {
+  "en": "Roles and permissions: rights chosen one by one",
+  "ru": "Роли и права: каждое право настраивается отдельно"
+ },
+ "Komandalar və görünürlük: kim hansı sorğu və tapşırıqları görür": {
+  "en": "Teams and visibility: who sees which requests and tasks",
+  "ru": "Команды и видимость: кто какие заявки и задачи видит"
+ },
+ "Hazır cavablar: mətn, status və teq bir kliklə": {
+  "en": "Canned replies: text, status and tags in one click",
+  "ru": "Готовые ответы: текст, статус и теги в один клик"
+ },
+ "İnterfeysdən ehtiyat nüsxə: baza və fayllar bir arxivdə": {
+  "en": "Backup from the interface: database and files in one archive",
+  "ru": "Резервная копия из интерфейса: база и файлы в одном архиве"
+ },
+ "Android tətbiqi: sahədə cavab, şəkil və vaxt uçotu, bildirişlər öz serverinizdən": {
+  "en": "Android app: reply, add photos and log time in the field, with notifications from your own server",
+  "ru": "Android-приложение: ответы, фото и учёт времени на выезде, уведомления с вашего сервера"
+ },
+ "FIXIT Remote ilə: sorğudan istifadəçinin kompüterinə bir kliklə qoşulma": {
+  "en": "With FIXIT Remote: connect from a request to the user's computer in one click",
+  "ru": "С FIXIT Remote: подключение к компьютеру пользователя прямо из заявки"
+ },
+ "nömrə alır, doğru şirkətə və komandaya düşür": {
+  "en": "gets a number and lands with the right company and team",
+  "ru": "получает номер и попадает к нужной компании и команде"
+ },
+ "müştəri cavabı yazdığı kanalda alır": {
+  "en": "the customer gets the reply in the channel they used",
+  "ru": "клиент получает ответ в том канале, где писал"
+ },
+ "Hərəkətsiz qalan brauzerdən avtomatik çıxış, müddəti admin seçir": {
+  "en": "Automatic sign-out of idle browsers, with the timeout set by the admin",
+  "ru": "Автоматический выход из неактивного браузера, время задаёт администратор"
+ },
+ "Girişlər və ayar dəyişiklikləri audit jurnalına, sorğudakı hər dəyişiklik isə onun tarixçəsinə yazılır": {
+  "en": "Sign-ins and settings changes go to the audit log, and every change to a request goes to its history",
+  "ru": "Входы и изменения настроек пишутся в журнал аудита, а каждое изменение заявки в её историю"
+ },
+ "Mobil tətbiq varmı?": {
+  "en": "Is there a mobile app?",
+  "ru": "Есть ли мобильное приложение?"
+ },
+ "Bəli, FIXIT Ticket Android tətbiqi. Mütəxəssis sahədə sorğuya cavab yazır, şəkil əlavə edir, vaxtı qeyd edir. Tətbiq birbaşa şirkətinizin serverinə qoşulur, bildirişlər də oradan gəlir.": {
+  "en": "Yes, the FIXIT Ticket Android app. Field staff reply to requests, add photos and log time. The app connects directly to your company's server, and notifications come from there too.",
+  "ru": "Да, Android-приложение FIXIT Ticket. Специалист на выезде отвечает на заявки, добавляет фото и отмечает время. Приложение подключается напрямую к серверу вашей компании, уведомления тоже приходят оттуда."
+ },
+ "Uzaqdan dəstək və kompüter parkının idarəsi: öz serverinizdə və ya bizim buludda": {
+  "en": "Remote support and fleet management: on your own server or in our cloud",
+  "ru": "Удалённая поддержка и управление парком компьютеров: на вашем сервере или в нашем облаке"
+ },
+ "Windows və Linux": {
+  "en": "Windows and Linux",
+  "ru": "Windows и Linux"
+ },
+ "Operator sayı məhdud deyil": {
+  "en": "Unlimited operators",
+  "ru": "Без ограничения операторов"
+ },
+ "Ekran pəncərəsi: idarə, qısayollar, yazışma, ekran şəkli və video yazısı": {
+  "en": "Session window: control, shortcuts, chat, screenshots and video recording",
+  "ru": "Окно сеанса: управление, сочетания клавиш, чат, снимок экрана и видеозапись"
+ },
+ "Bütün kompüterlər bir siyahıda: sahib, vəziyyət, agent versiyası və bir kliklə qoşulma": {
+  "en": "All computers in one list: owner, status, agent version and one-click connect",
+  "ru": "Все компьютеры в одном списке: владелец, состояние, версия агента и подключение в один клик"
+ },
+ "İdarə lövhəsi: onlayn cihazlar, sessiyalar, xəbərdarlıqlar və serverin vəziyyəti": {
+  "en": "Dashboard: online devices, sessions, alerts and server health",
+  "ru": "Панель управления: устройства онлайн, сеансы, оповещения и состояние сервера"
+ },
+ "Ekran bildirişləri: kompüterlərə elan və ya sahib məlumatı forması, cavabların hesabatı": {
+  "en": "Screen notices: announcements or an owner-details form on computers, with a report of the responses",
+  "ru": "Экранные уведомления: объявление или форма данных владельца на компьютерах и отчёт по ответам"
+ },
+ "İstifadəçilər: rol, cihaz əhatəsi, iki mərhələli giriş və əməliyyat icazələri": {
+  "en": "Users: role, device scope, two-step login and action permissions",
+  "ru": "Пользователи: роль, доступные устройства, двухэтапный вход и права на действия"
+ },
+ "Adi uzaqdan giriş proqramlarında əlaqə xarici şirkətin serverləri üzərindən qurulur. Fixit Remote-u öz serverinizdə qurduqda ekran, fayllar və jurnal şirkətdən çıxmır; istəsəniz bizim buludda da işlədə bilərsiniz.": {
+  "en": "With typical remote access tools the connection goes through an outside company's servers. When you install Fixit Remote on your own server, screens, files and logs never leave the company; you can also run it in our cloud if you prefer.",
+  "ru": "В обычных программах удалённого доступа связь идёт через серверы сторонней компании. Если установить Fixit Remote на свой сервер, экран, файлы и журнал не покидают компанию; при желании его можно запустить и в нашем облаке."
+ },
+ "Agent serverə özü qoşulur: işçi kompüterlərində port açmaq lazım deyil, fərqli VLAN-lar problem yaratmır.": {
+  "en": "The agent connects to the server itself: no ports to open on employee computers, and different VLANs are not a problem.",
+  "ru": "Агент сам подключается к серверу: на компьютерах сотрудников не нужно открывать порты, разные VLAN не мешают."
+ },
+ "Hər kompüterə ayrıca gedirsiniz": {
+  "en": "You go to each computer one by one",
+  "ru": "К каждому компьютеру приходится подходить отдельно"
+ },
+ "Skript, proqram və yeniləmə yüzlərlə kompüterə bir dəfəyə gedir, nəticə hər kompüter üçün ayrıca görünür.": {
+  "en": "Scripts, software and updates reach hundreds of computers at once, and you see the result for each computer separately.",
+  "ru": "Скрипты, программы и обновления уходят на сотни компьютеров сразу, а результат виден по каждому компьютеру."
+ },
+ "Kim kimə qoşulub, bilinmir": {
+  "en": "No record of who connected to whom",
+  "ru": "Неизвестно, кто к кому подключался"
+ },
+ "Hər sessiya, fayl ötürmə və əmr jurnala yazılır; CSV və PDF kimi yüklənir.": {
+  "en": "Every session, file transfer and command is logged and can be exported as CSV or PDF.",
+  "ru": "Каждый сеанс, передача файлов и команда записываются в журнал; выгрузка в CSV и PDF."
+ },
+ "Uzaqdan dəstək": {
+  "en": "Remote support",
+  "ru": "Удалённая поддержка"
+ },
+ "Ekrana baxmaq və idarə etmək: çoxmonitor, AZ / RU / EN klaviatura düzümü": {
+  "en": "View and control the screen: multiple monitors, AZ / RU / EN keyboard layouts",
+  "ru": "Просмотр и управление экраном: несколько мониторов, раскладки AZ / RU / EN"
+ },
+ "Tam idarə və ya yalnız baxış; kilid ekranı və admin pəncərələri ilə işləyir": {
+  "en": "Full control or view only; works with the lock screen and admin prompts",
+  "ru": "Полное управление или только просмотр; работает с экраном блокировки и окнами администратора"
+ },
+ "Fayl ötürmə və mübadilə buferi ekranı dayandırmadan": {
+  "en": "File transfer and clipboard without pausing the screen",
+  "ru": "Передача файлов и буфер обмена без остановки экрана"
+ },
+ "Bir sessiyaya bir neçə operator, sessiyanın video yazısı": {
+  "en": "Several operators in one session, session video recording",
+  "ru": "Несколько операторов в одном сеансе, видеозапись сеанса"
+ },
+ "Əlaqə qısa müddətə kəsiləndə sessiya özü bərpa olunur": {
+  "en": "If the connection drops briefly, the session resumes on its own",
+  "ru": "При кратком обрыве связи сеанс восстанавливается сам"
+ },
+ "Cihazlar və inventar": {
+  "en": "Devices and inventory",
+  "ru": "Устройства и инвентаризация"
+ },
+ "Bütün kompüterlər bir siyahıda: sahib, IP, əməliyyat sistemi, agent versiyası": {
+  "en": "All computers in one list: owner, IP, operating system, agent version",
+  "ru": "Все компьютеры в одном списке: владелец, IP, операционная система, версия агента"
+ },
+ "Avadanlıq və proqram inventarı: disklər, şəbəkə, quraşdırılmış proqramlar": {
+  "en": "Hardware and software inventory: disks, network, installed programs",
+  "ru": "Инвентаризация оборудования и ПО: диски, сеть, установленные программы"
+ },
+ "Cihaz profili: sağlamlıq, proqramlar, sessiyalar və jurnal bir yerdə": {
+  "en": "Device profile: health, software, sessions and log in one place",
+  "ru": "Профиль устройства: состояние, программы, сеансы и журнал в одном месте"
+ },
+ "Qruplar, teqlər, toplu əməliyyatlar; minlərlə kompüterlə sürətli işləyir": {
+  "en": "Groups, tags and bulk actions; stays fast with thousands of computers",
+  "ru": "Группы, теги и массовые действия; быстро работает с тысячами компьютеров"
+ },
+ "System Manager və skriptlər": {
+  "en": "System Manager and scripts",
+  "ru": "System Manager и скрипты"
+ },
+ "Ekrana qoşulmadan proseslər, xidmətlər, sistem jurnalı və aktiv istifadəçilər": {
+  "en": "Processes, services, system log and signed-in users without connecting to the screen",
+  "ru": "Процессы, службы, системный журнал и активные пользователи без подключения к экрану"
+ },
+ "PowerShell, CMD və Bash skript kitabxanası, versiyalar və risk yoxlaması": {
+  "en": "PowerShell, CMD and Bash script library with versions and risk checks",
+  "ru": "Библиотека скриптов PowerShell, CMD и Bash с версиями и проверкой рисков"
+ },
+ "Dörd göz qaydası: istəsəniz skript ikinci şəxs təsdiqləməmiş işə düşmür": {
+  "en": "Four-eyes rule: optionally, a script does not run until a second person approves it",
+  "ru": "Правило четырёх глаз: при желании скрипт не запустится без одобрения второго человека"
+ },
+ "İşlər cədvəllə və qruplar üzrə; nəticə hər kompüter üçün ayrıca": {
+  "en": "Scheduled jobs across groups, with a result for each computer",
+  "ru": "Задания по расписанию и по группам, результат по каждому компьютеру"
+ },
+ "Proqram yayımı və yeniləmələr": {
+  "en": "Software deployment and updates",
+  "ru": "Распространение ПО и обновления"
+ },
+ "MSI və EXE kataloqu, imza və hash yoxlaması; Linux paketləri": {
+  "en": "MSI and EXE catalog with signature and hash checks; Linux packages",
+  "ru": "Каталог MSI и EXE с проверкой подписи и хеша; пакеты Linux"
+ },
+ "Dalğalarla yayım: vaxt pəncərəsi, xəta həddi, təsdiq və geri qaytarma": {
+  "en": "Rollouts in waves: time window, failure threshold, approval and rollback",
+  "ru": "Развёртывание волнами: временное окно, порог ошибок, утверждение и откат"
+ },
+ "Windows Update və Linux (apt, dnf) yeniləmələrinin mərkəzdən quraşdırılması": {
+  "en": "Install Windows Update and Linux (apt, dnf) updates centrally",
+  "ru": "Централизованная установка обновлений Windows Update и Linux (apt, dnf)"
+ },
+ "Hansı proqramın hansı kompüterdə olduğu bir siyahıda": {
+  "en": "Which software is on which computer, in one list",
+  "ru": "Какая программа на каком компьютере, в одном списке"
+ },
+ "Monitorinq və xəbərdarlıqlar": {
+  "en": "Monitoring and alerts",
+  "ru": "Мониторинг и оповещения"
+ },
+ "Kompüterlərin sağlamlığı: yük, disk, şəbəkə, yenidən başlatma ehtiyacı": {
+  "en": "Computer health: load, disk, network, pending restarts",
+  "ru": "Состояние компьютеров: нагрузка, диск, сеть, необходимость перезагрузки"
+ },
+ "Qaydalar: şərt, müddət və ciddilik; problem davam edəndə xəbərdarlıq": {
+  "en": "Rules with condition, duration and severity; an alert when a problem persists",
+  "ru": "Правила: условие, длительность и важность; оповещение, если проблема не уходит"
+ },
+ "Xəbərdarlıq mərkəzi: təsdiq, həll və tarixçə": {
+  "en": "Alert center: acknowledge, resolve and history",
+  "ru": "Центр оповещений: подтверждение, решение и история"
+ },
+ "Uzun müddət qoşulmayan və köhnə agentli kompüterlər ayrıca görünür": {
+  "en": "Computers that have been offline for long or run an old agent stand out",
+  "ru": "Давно не подключавшиеся компьютеры и компьютеры со старым агентом видны отдельно"
+ },
+ "Rollar: administrator, menecer, operator, yalnız baxış, rəhbər": {
+  "en": "Roles: administrator, manager, operator, viewer, executive",
+  "ru": "Роли: администратор, менеджер, оператор, только просмотр, руководитель"
+ },
+ "Əməliyyat icazələri: kim qoşula, fayl ötürə, skript işlədə bilər": {
+  "en": "Action permissions: who can connect, transfer files, run scripts",
+  "ru": "Права на действия: кто может подключаться, передавать файлы, запускать скрипты"
+ },
+ "Qruplar: kim hansı kompüterlərə çatır": {
+  "en": "Groups: who can reach which computers",
+  "ru": "Группы: кому доступны какие компьютеры"
+ },
+ "Şöbə, komanda və əməkdaş; kim işdədir, rəhbər bir baxışda görür": {
+  "en": "Departments, teams and staff; managers see at a glance who is at work",
+  "ru": "Отделы, команды и сотрудники; руководитель сразу видит, кто на работе"
+ },
+ "Giriş və inteqrasiyalar": {
+  "en": "Sign-in and integrations",
+  "ru": "Вход и интеграции"
+ },
+ "Active Directory / LDAP və SSO: Entra ID, Okta, Keycloak, Google": {
+  "en": "Active Directory / LDAP and SSO: Entra ID, Okta, Keycloak, Google",
+  "ru": "Active Directory / LDAP и SSO: Entra ID, Okta, Keycloak, Google"
+ },
+ "FIXIT Sorğu Sistemi: sorğudan kompüterə bir kliklə, agentdən yeni sorğu": {
+  "en": "FIXIT Helpdesk: from a request to the computer in one click, new requests from the agent",
+  "ru": "FIXIT Служба заявок: из заявки к компьютеру в один клик, новая заявка прямо из агента"
+ },
+ "API və webhooklar: öz sistemlərinizə qoşmaq üçün": {
+  "en": "API and webhooks to connect your own systems",
+  "ru": "API и вебхуки для связи с вашими системами"
+ },
+ "Ekran bildirişləri: kompüterlərə elan və sahib məlumatı forması": {
+  "en": "Screen notices: announcements and an owner-details form on computers",
+  "ru": "Экранные уведомления: объявления и форма данных владельца на компьютерах"
+ },
+ "Server və baxım": {
+  "en": "Server and maintenance",
+  "ru": "Сервер и обслуживание"
+ },
+ "Linux serverdə bir əmrlə quraşdırma: Ubuntu, Debian, RHEL ailəsi": {
+  "en": "One-command installation on a Linux server: Ubuntu, Debian, RHEL family",
+  "ru": "Установка на Linux-сервер одной командой: Ubuntu, Debian, семейство RHEL"
+ },
+ "Gündəlik ehtiyat nüsxə, bir əmrlə bərpa, lazım olsa təmiz maşında": {
+  "en": "Daily backups and one-command restore, even onto a fresh machine",
+  "ru": "Ежедневная резервная копия и восстановление одной командой, даже на чистой машине"
+ },
+ "Windows MSI-si GPO, Intune və ya SCCM ilə səssiz yayılır": {
+  "en": "The Windows MSI deploys silently via GPO, Intune or SCCM",
+  "ru": "Windows MSI тихо разворачивается через GPO, Intune или SCCM"
+ },
+ "Server internetsiz də tam işləyir: panel kənar xidmətə müraciət etmir": {
+  "en": "The server works fully without internet: the panel does not call outside services",
+  "ru": "Сервер полностью работает без интернета: панель не обращается к внешним сервисам"
+ },
+ "Windows və Linux kompüterdə, serverə özü qoşulur": {
+  "en": "on Windows and Linux computers, connects to the server itself",
+  "ru": "на компьютерах с Windows и Linux, сам подключается к серверу"
+ },
+ "sizin şəbəkənizdə: cihazlar, icazələr, jurnal": {
+  "en": "in your network: devices, permissions, log",
+  "ru": "в вашей сети: устройства, права, журнал"
+ },
+ "Client proqramı və ya telefondan işləyir": {
+  "en": "works from the Client app or a phone",
+  "ru": "работает в программе Client или с телефона"
+ },
+ "Qoşulmazdan əvvəl istifadəçidən icazə soruşulur; 30 saniyə cavab yoxdursa rədd": {
+  "en": "The user is asked for permission before connecting; no answer in 30 seconds means no",
+  "ru": "Перед подключением у пользователя спрашивается разрешение; нет ответа 30 секунд означает отказ"
+ },
+ "Ekranda gizlədilə bilməyən «qoşulma var» zolağı": {
+  "en": "An on-screen \"connected\" bar that cannot be hidden",
+  "ru": "Полоса «идёт подключение», которую нельзя скрыть"
+ },
+ "Agent və Client serverin sertifikat izinə bağlıdır: araya girən başqa server qəbul olunmur": {
+  "en": "The agent and Client are pinned to the server's certificate fingerprint: no other server can step in between",
+  "ru": "Агент и Client привязаны к отпечатку сертификата сервера: подменный сервер не будет принят"
+ },
+ "İki mərhələli giriş, SSO və domen hesabı ilə giriş": {
+  "en": "Two-step login, SSO and sign-in with a domain account",
+  "ru": "Двухэтапный вход, SSO и вход под доменной учётной записью"
+ },
+ "Skriptlər və proqram yayımı üçün ikinci şəxsin təsdiqi tələb oluna bilər": {
+  "en": "Scripts and software rollouts can require a second person's approval",
+  "ru": "Для скриптов и распространения ПО можно требовать одобрение второго человека"
+ },
+ "İstifadəçi yerində olmayanda mərkəzdən idarə olunan qoşulma parolu; hər istifadə jurnala yazılır": {
+  "en": "A centrally managed connection password for when the user is away; every use is logged",
+  "ru": "Централизованно управляемый пароль подключения на случай, когда пользователя нет на месте; каждое использование фиксируется"
+ },
+ "Səhv parol cəhdlərində IP bloklanır, hesab yox": {
+  "en": "Wrong password attempts block the IP, not the account",
+  "ru": "При неверных паролях блокируется IP, а не учётная запись"
+ },
+ "AnyDesk və ya TeamViewer-dən əsas fərqi nədir?": {
+  "en": "How is it different from AnyDesk or TeamViewer?",
+  "ru": "Чем он отличается от AnyDesk или TeamViewer?"
+ },
+ "Fixit Remote serveri sizin şəbəkənizdə işləyir, bağlantı xarici xidmətlərdən keçmir. Uzaqdan dəstəkdən əlavə kompüter parkını da idarə edir: inventar, skriptlər, proqram yayımı, monitorinq. Kimin hansı kompüterə qoşula biləcəyini mərkəzdən təyin edirsiniz, hər sessiyanı jurnalda görürsünüz.": {
+  "en": "The Fixit Remote server runs in your network, and connections do not pass through outside services. Beyond remote support it also manages your fleet: inventory, scripts, software deployment, monitoring. You decide centrally who can connect to which computer, and you see every session in the log.",
+  "ru": "Сервер Fixit Remote работает в вашей сети, подключения не идут через внешние сервисы. Кроме удалённой поддержки он управляет и парком компьютеров: инвентаризация, скрипты, распространение ПО, мониторинг. Вы централизованно задаёте, кто к каким компьютерам может подключаться, и видите каждый сеанс в журнале."
+ },
+ "Qiymət necə hesablanır?": {
+  "en": "How is the price calculated?",
+  "ru": "Как рассчитывается цена?"
+ },
+ "Xeyr. Agent serverə özü qoşulur. Kompüterlər fərqli VLAN və ya alt şəbəkələrdə ola bilər, yalnız server əlçatan olmalıdır.": {
+  "en": "No. The agent connects to the server itself. Computers can be on different VLANs or subnets; only the server needs to be reachable.",
+  "ru": "Нет. Агент сам подключается к серверу. Компьютеры могут быть в разных VLAN или подсетях, нужно лишь, чтобы сервер был доступен."
+ },
+ "Agent Windows və Linux kompüterlərində işləyir. Server Linux-da qurulur: Ubuntu, Debian və ya RHEL ailəsi. Operator Windows üçün Client proqramı və ya mobil tətbiqlə işləyir.": {
+  "en": "The agent runs on Windows and Linux computers. The server is installed on Linux: Ubuntu, Debian or the RHEL family. Operators work with the Client app for Windows or the mobile app.",
+  "ru": "Агент работает на компьютерах с Windows и Linux. Сервер устанавливается на Linux: Ubuntu, Debian или семейство RHEL. Операторы работают в программе Client для Windows или в мобильном приложении."
+ },
+ "Sınaqdan sonra nə olur?": {
+  "en": "What happens after the trial?",
+  "ru": "Что будет после пробного периода?"
+ },
+ "Lisenziya açarını paneldə yazırsınız və eyni server işləməyə davam edir: kompüterlər, istifadəçilər və jurnal olduğu kimi qalır. Lisenziya yazılmasa, sınaq bitəndə panel bağlanır, kompüterlər isə serverə qoşulu qalır.": {
+  "en": "You enter the license key in the panel and the same server keeps running: computers, users and logs stay as they are. If no license is entered, the panel locks when the trial ends, while the computers stay connected to the server.",
+  "ru": "Вы вводите лицензионный ключ в панели, и тот же сервер продолжает работать: компьютеры, пользователи и журнал остаются как есть. Если лицензию не ввести, после окончания пробного периода панель блокируется, а компьютеры остаются подключены к серверу."
+ },
+ "İdarə olunan kompüterlərin sayına görə. Operator sayı məhdud deyil, bütün imkanlar hər paketdədir. Paketlər bu səhifənin «Qiymətlər» bölməsindədir, 14 günlük pulsuz sınaq var. Lisenziya müqavilə ilə rəsmiləşdirilir, ödəniş bank köçürməsi ilə.": {
+  "en": "By the number of managed computers. There is no limit on operators and every package includes all features. The packages are in the Pricing section of this page, and there is a 14-day free trial. Licenses are issued under a contract and paid by bank transfer.",
+  "ru": "По числу управляемых компьютеров. Число операторов не ограничено, все возможности входят в каждый пакет. Пакеты указаны в разделе «Цены» на этой странице, есть бесплатный пробный период на 14 дней. Лицензия оформляется по договору, оплата банковским переводом."
+ }
 }

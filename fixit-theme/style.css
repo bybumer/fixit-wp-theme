@@ -4,7 +4,7 @@ Theme URI: https://fixit.az
 Author: FIXIT
 Author URI: https://fixit.az
 Description: FIXIT şirkəti üçün hazırlanmış peşəkar İKT xidmətləri teması. Tam responsiv, işıqlı/qaranlıq rejim, daxili əlaqə formu, SEO və sürət üçün optimallaşdırılmışdır.
-Version: 1.15.0
+Version: 1.15.1
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -1186,6 +1186,13 @@ html[data-theme="dark"] .svc__tagline{color:var(--accent-400)}
 .price-includes li{display:flex;gap:10px;align-items:flex-start;color:var(--text-soft);font-size:.95rem;line-height:1.5}
 .price-includes svg{width:18px;height:18px;flex-shrink:0;margin-top:2px;color:var(--brand-600)}
 .price-foot{text-align:center;color:var(--text-mute);font-size:.85rem;margin:18px auto 0;max-width:760px}
+.price-license{
+  display:flex;align-items:center;justify-content:space-between;gap:20px 32px;flex-wrap:wrap;
+  margin:26px auto 0;max-width:980px;padding:22px 26px;border-radius:var(--radius);
+  background:var(--bg-elev);border:1px solid var(--surface-line);box-shadow:var(--shadow-sm);
+}
+.price-license h3{margin:0 0 6px;font-size:1.15rem}
+.price-license p{margin:0;color:var(--text-soft);max-width:620px}
 
 .trial{
   display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,48px);align-items:start;

@@ -5,7 +5,7 @@
  * Fixit Remote menyusunda:
  * - Sınaq müraciətləri — siyahı (vəziyyət, məktub, paketin yüklənməsi), hər
  *   müraciətdə vəziyyət və qeyd, «Məktubu yenidən göndər»;
- * - Qiymətlər və sınaq — paketlərin rəqəmləri, saytda göstərmək, ƏDV qeydi,
+ * - Qiymətlər və sınaq — paketlərin rəqəmləri, saytda göstərmək, göndərmə qaydası,
  *   yükləmə linkinin müddəti, gizli repoya giriş açarı.
  *
  * @package FIXIT
@@ -100,6 +100,8 @@ function fixit_trial_badge( $status ) {
 		'installed' => 'background:#efe7ff;color:#5b2bb5',
 		'customer'  => 'background:#e6f6ea;color:#1a7f37',
 		'lost'      => 'background:#f0f0f1;color:#50575e',
+		'sent'      => 'background:#e6f4fb;color:#0a6a96',
+		'rejected'  => 'background:#fbeaea;color:#a12622',
 	);
 	$labels = fixit_trial_statuses();
 	$status = isset( $labels[ $status ] ) ? $status : 'new';
@@ -200,7 +202,16 @@ function fixit_trial_filter_query( $q ) {
 add_action( 'pre_get_posts', 'fixit_trial_filter_query' );
 
 /**
- * Sətir əməliyyatları: məktubu yenidən göndər.
+ * Müştəriyə bələdçi artıq göndərilibmi.
+ *
+ * @param int $id Müraciət.
+ */
+function fixit_trial_is_sent( $id ) {
+	return (bool) get_post_meta( $id, '_ft_mail_sent', true );
+}
+
+/**
+ * Sətir əməliyyatları: bələdçini göndər / yenidən göndər, rədd et.
  *
  * @param array   $actions Əməliyyatlar.
  * @param WP_Post $post    Müraciət.
@@ -210,33 +221,118 @@ function fixit_trial_row_actions( $actions, $post ) {
 		return $actions;
 	}
 	unset( $actions['inline hide-if-no-js'] );
-	$actions['ft_resend'] = sprintf( '<a href="%1$s">%2$s</a>', esc_url( fixit_trial_resend_url( $post->ID ) ), esc_html__( 'Məktubu yenidən göndər', 'fixit' ) );
+
+	$sent = fixit_trial_is_sent( $post->ID );
+
+	$actions['ft_send'] = sprintf(
+		'<a href="%1$s" onclick="return confirm(%2$s)"><strong>%3$s</strong></a>',
+		esc_url( fixit_trial_send_url( $post->ID ) ),
+		esc_attr( wp_json_encode( sprintf( /* translators: %s: e-poçt */ __( 'Bələdçi %s ünvanına göndərilsin?', 'fixit' ), get_post_meta( $post->ID, '_ft_email', true ) ) ) ),
+		esc_html( $sent ? __( 'Yenidən göndər', 'fixit' ) : __( 'Bələdçini göndər', 'fixit' ) )
+	);
+	if ( ! $sent && 'rejected' !== get_post_meta( $post->ID, '_ft_status', true ) ) {
+		$actions['ft_reject'] = sprintf( '<a href="%1$s" style="color:#b32d2e">%2$s</a>', esc_url( fixit_trial_reject_url( $post->ID ) ), esc_html__( 'Rədd et', 'fixit' ) );
+	}
 	return $actions;
 }
 add_filter( 'post_row_actions', 'fixit_trial_row_actions', 10, 2 );
 
-function fixit_trial_resend_url( $id ) {
+function fixit_trial_send_url( $id ) {
 	return wp_nonce_url( admin_url( 'admin-post.php?action=fixit_trial_resend&post=' . (int) $id ), 'fixit_trial_resend_' . (int) $id );
 }
 
 /**
- * Məktubu yenidən göndərir (yeni yükləmə linki ilə).
+ * Köhnə ad (bələdçi linklərində və bildiriş məktublarında qala bilər).
+ *
+ * @param int $id Müraciət.
  */
-function fixit_trial_resend() {
+function fixit_trial_resend_url( $id ) {
+	return fixit_trial_send_url( $id );
+}
+
+function fixit_trial_reject_url( $id ) {
+	return wp_nonce_url( admin_url( 'admin-post.php?action=fixit_trial_reject&post=' . (int) $id ), 'fixit_trial_reject_' . (int) $id );
+}
+
+function fixit_trial_preview_url( $id ) {
+	return wp_nonce_url( admin_url( 'admin-post.php?action=fixit_trial_preview&post=' . (int) $id ), 'fixit_trial_preview_' . (int) $id );
+}
+
+/**
+ * Admin əməliyyatları üçün ümumi yoxlama: icazə, nonce, müraciət.
+ *
+ * @param string $nonce Nonce adının əvvəli.
+ * @return int Müraciət.
+ */
+function fixit_trial_admin_action_id( $nonce ) {
 	$id = isset( $_GET['post'] ) ? absint( $_GET['post'] ) : 0;
 
 	if ( ! current_user_can( 'manage_options' ) || 'fixit_trial' !== get_post_type( $id ) ) {
 		wp_die( esc_html__( 'İcazə yoxdur.', 'fixit' ) );
 	}
-	check_admin_referer( 'fixit_trial_resend_' . $id );
+	check_admin_referer( $nonce . $id );
 
-	$ok = fixit_trial_send_customer_mail( $id );
+	return $id;
+}
+
+/**
+ * Bələdçini göndərir (hər dəfə yeni yükləmə linki ilə).
+ */
+function fixit_trial_resend() {
+	$id    = fixit_trial_admin_action_id( 'fixit_trial_resend_' );
+	$again = fixit_trial_is_sent( $id );
+	$ok    = fixit_trial_send_customer_mail( $id );
 
 	$back = wp_get_referer() ? wp_get_referer() : admin_url( 'edit.php?post_type=fixit_trial' );
-	wp_safe_redirect( add_query_arg( 'ft_notice', $ok ? 'resent' : 'mail_failed', $back ) );
+	wp_safe_redirect( add_query_arg( 'ft_notice', $ok ? ( $again ? 'resent' : 'sent' ) : 'mail_failed', $back ) );
 	exit;
 }
 add_action( 'admin_post_fixit_trial_resend', 'fixit_trial_resend' );
+
+/**
+ * Müraciəti rədd edir (saxta, test və s.): müştəriyə heç nə getmir.
+ */
+function fixit_trial_reject() {
+	$id = fixit_trial_admin_action_id( 'fixit_trial_reject_' );
+	update_post_meta( $id, '_ft_status', 'rejected' );
+
+	$back = wp_get_referer() ? wp_get_referer() : admin_url( 'edit.php?post_type=fixit_trial' );
+	wp_safe_redirect( add_query_arg( 'ft_notice', 'rejected', $back ) );
+	exit;
+}
+add_action( 'admin_post_fixit_trial_reject', 'fixit_trial_reject' );
+
+/**
+ * Məktubun önizləməsi: müştəri nə görəcəksə, eynisi (link nümunədir).
+ */
+function fixit_trial_preview() {
+	$id   = fixit_trial_admin_action_id( 'fixit_trial_preview_' );
+	$days = fixit_trial_settings()['link_days'];
+	$link = '' !== fixit_trial_repo_token()
+		? array(
+			'url'     => '#onizleme',
+			'sig'     => '#onizleme',
+			'expires' => time() + $days * DAY_IN_SECONDS,
+		)
+		: null;
+	$mail = fixit_trial_build_mail( $id, $link );
+
+	nocache_headers();
+	header( 'Content-Type: text/html; charset=UTF-8' );
+	echo '<!doctype html><html><head><meta charset="utf-8"><title>' . esc_html( $mail['subject'] ) . '</title></head><body style="margin:0;background:#f3f6fb">';
+	printf(
+		'<div style="font:14px/1.5 Segoe UI,Arial,sans-serif;max-width:620px;margin:0 auto;padding:16px 12px 0;color:#1d2533"><b>%1$s</b> %2$s<br><b>%3$s</b> %4$s<br><span style="color:#8a5300">%5$s</span></div>',
+		esc_html__( 'Kimə:', 'fixit' ),
+		esc_html( (string) get_post_meta( $id, '_ft_email', true ) ),
+		esc_html__( 'Mövzu:', 'fixit' ),
+		esc_html( $mail['subject'] ),
+		esc_html__( 'Önizləmə: yükləmə linki göndərilən anda yaradılır.', 'fixit' )
+	);
+	echo $mail['body']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- fixit_trial_mail_html içində escape olunub
+	echo '</body></html>';
+	exit;
+}
+add_action( 'admin_post_fixit_trial_preview', 'fixit_trial_preview' );
 
 /**
  * Admin bildirişləri.
@@ -244,7 +340,9 @@ add_action( 'admin_post_fixit_trial_resend', 'fixit_trial_resend' );
 function fixit_trial_admin_notices() {
 	$notice = isset( $_GET['ft_notice'] ) ? sanitize_key( wp_unslash( $_GET['ft_notice'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$map    = array(
+		'sent'        => array( 'success', __( 'Bələdçi müştəriyə göndərildi.', 'fixit' ) ),
 		'resent'      => array( 'success', __( 'Məktub yenidən göndərildi.', 'fixit' ) ),
+		'rejected'    => array( 'success', __( 'Müraciət rədd edildi. Müştəriyə heç nə göndərilmədi.', 'fixit' ) ),
 		'mail_failed' => array( 'error', __( 'Məktub göndərilə bilmədi. Saytın poçt ayarlarını yoxlayın.', 'fixit' ) ),
 		'saved'       => array( 'success', __( 'Ayarlar yadda saxlanıldı.', 'fixit' ) ),
 	);
@@ -259,6 +357,7 @@ add_action( 'admin_notices', 'fixit_trial_admin_notices' );
    ============================================================ */
 function fixit_trial_meta_boxes() {
 	add_meta_box( 'fixit_trial_box', __( 'Müraciət', 'fixit' ), 'fixit_trial_box', 'fixit_trial', 'normal', 'high' );
+	add_meta_box( 'fixit_trial_actions', __( 'Yoxla və göndər', 'fixit' ), 'fixit_trial_action_box', 'fixit_trial', 'side', 'high' );
 }
 add_action( 'add_meta_boxes', 'fixit_trial_meta_boxes' );
 
@@ -318,9 +417,56 @@ function fixit_trial_box( $post ) {
 			<td><textarea name="ft_note" id="ft_note" rows="4" class="large-text" placeholder="<?php esc_attr_e( 'Zəng, görüş, kompüter sayı, təklif...', 'fixit' ); ?>"><?php echo esc_textarea( (string) get_post_meta( $id, '_ft_note', true ) ); ?></textarea></td>
 		</tr>
 	</table>
-	<p>
-		<a class="button" href="<?php echo esc_url( fixit_trial_resend_url( $id ) ); ?>"><?php esc_html_e( 'Məktubu yenidən göndər (yeni linklə)', 'fixit' ); ?></a>
+	<?php
+}
+
+/**
+ * Yan qutu: müraciəti yoxlamaq üçün ipucları və əsas düymələr.
+ *
+ * @param WP_Post $post Müraciət.
+ */
+function fixit_trial_action_box( $post ) {
+	$id     = $post->ID;
+	$email  = (string) get_post_meta( $id, '_ft_email', true );
+	$domain = strtolower( (string) substr( strrchr( $email, '@' ), 1 ) );
+	$free   = in_array( $domain, array( 'gmail.com', 'mail.ru', 'yandex.ru', 'yandex.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'live.com', 'icloud.com', 'inbox.ru', 'list.ru', 'bk.ru', 'rambler.ru', 'proton.me', 'protonmail.com' ), true );
+	$sent   = fixit_trial_is_sent( $id );
+	$token  = '' !== fixit_trial_repo_token();
+	$checks = array(
+		$free
+			/* translators: %s: domen */
+			? array( 'warn', sprintf( __( 'Pulsuz poçt (%s): şirkətin adını və telefonu yoxlayın', 'fixit' ), $domain ) )
+			/* translators: %s: domen */
+			: array( 'ok', sprintf( __( 'Şirkət domeni: %s', 'fixit' ), $domain ) ),
+	);
+	if ( (int) get_post_meta( $id, '_ft_repeats', true ) ) {
+		$checks[] = array( 'warn', __( 'Bir gün ərzində təkrar müraciət edib', 'fixit' ) );
+	}
+	if ( ! $token ) {
+		$checks[] = array( 'warn', __( 'Repo açarı yazılmayıb: məktubda yükləmə linki olmayacaq', 'fixit' ) );
+	}
+	?>
+	<ul style="margin:0 0 12px">
+		<?php foreach ( $checks as $check ) : ?>
+			<li style="margin:0 0 6px;padding-left:20px;position:relative">
+				<span style="position:absolute;left:0;color:<?php echo 'ok' === $check[0] ? '#1a7f37' : '#8a5300'; ?>"><?php echo 'ok' === $check[0] ? '✓' : '!'; ?></span>
+				<?php echo esc_html( $check[1] ); ?>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+	<p style="margin:0 0 8px">
+		<a class="button button-primary button-large" style="width:100%;text-align:center" href="<?php echo esc_url( fixit_trial_send_url( $id ) ); ?>" onclick="return confirm(<?php echo esc_attr( wp_json_encode( sprintf( /* translators: %s: e-poçt */ __( 'Bələdçi %s ünvanına göndərilsin?', 'fixit' ), $email ) ) ); ?>)">
+			<?php echo esc_html( $sent ? __( 'Yenidən göndər (yeni linklə)', 'fixit' ) : __( 'Bələdçini göndər', 'fixit' ) ); ?>
+		</a>
 	</p>
+	<p style="margin:0 0 8px">
+		<a class="button" style="width:100%;text-align:center" href="<?php echo esc_url( fixit_trial_preview_url( $id ) ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Məktuba bax', 'fixit' ); ?></a>
+	</p>
+	<?php if ( ! $sent && 'rejected' !== get_post_meta( $id, '_ft_status', true ) ) : ?>
+		<p style="margin:0">
+			<a class="button-link" style="color:#b32d2e" href="<?php echo esc_url( fixit_trial_reject_url( $id ) ); ?>"><?php esc_html_e( 'Rədd et (saxta və ya sınaq müraciəti)', 'fixit' ); ?></a>
+		</p>
+	<?php endif; ?>
 	<?php
 }
 
@@ -405,16 +551,6 @@ function fixit_trial_settings_page() {
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="vat"><?php esc_html_e( 'ƏDV', 'fixit' ); ?></label></th>
-					<td>
-						<select name="vat" id="vat">
-							<option value="excl" <?php selected( $p['vat'], 'excl' ); ?>><?php esc_html_e( 'Qiymətlərə ƏDV daxil deyil', 'fixit' ); ?></option>
-							<option value="incl" <?php selected( $p['vat'], 'incl' ); ?>><?php esc_html_e( 'Qiymətlərə ƏDV daxildir', 'fixit' ); ?></option>
-							<option value="none" <?php selected( $p['vat'], 'none' ); ?>><?php esc_html_e( 'Heç nə yazma', 'fixit' ); ?></option>
-						</select>
-					</td>
-				</tr>
-				<tr>
 					<th scope="row"><?php esc_html_e( 'Saytda', 'fixit' ); ?></th>
 					<td>
 						<label><input type="checkbox" name="show" value="1" <?php checked( $p['show'] ); ?>> <strong><?php esc_html_e( 'Qiymətləri saytda və sınaq məktubunda göstər', 'fixit' ); ?></strong></label>
@@ -427,14 +563,14 @@ function fixit_trial_settings_page() {
 			</table>
 
 			<h2 style="margin-top:28px"><?php esc_html_e( '14 günlük sınaq', 'fixit' ); ?></h2>
-			<p class="description"><?php esc_html_e( 'Formanı dolduran şəxsə dərhal məktub gedir: qurulum bələdçisi, qiymətlər və şəxsi yükləmə linki. Server paketi gizli GitHub reposundadır, link sayt vasitəsilə verilir və hər yükləmə müraciətdə qeyd olunur.', 'fixit' ); ?></p>
+			<p class="description"><?php esc_html_e( 'Müraciət admin paneldə yaranır və sizə bildiriş gəlir. Yoxlayıb «Bələdçini göndər» basanda müştəriyə hazır məktub gedir: qurulum bələdçisi, qiymətlər və şəxsi yükləmə linki. Server paketi gizli GitHub reposundadır, link sayt vasitəsilə verilir və hər yükləmə müraciətdə qeyd olunur.', 'fixit' ); ?></p>
 
 			<table class="form-table" role="presentation">
 				<tr>
-					<th scope="row"><?php esc_html_e( 'Yükləmə linki', 'fixit' ); ?></th>
+					<th scope="row"><?php esc_html_e( 'Göndərmə', 'fixit' ); ?></th>
 					<td>
-						<label><input type="checkbox" name="auto_link" value="1" <?php checked( $s['auto_link'] ); ?>> <?php esc_html_e( 'Məktuba şəxsi yükləmə linkini avtomatik əlavə et', 'fixit' ); ?></label>
-						<p class="description"><?php esc_html_e( 'Söndürülü olanda məktubda «linki mütəxəssis göndərəcək» yazılır, linki müraciətin səhifəsindən göndərirsiniz.', 'fixit' ); ?></p>
+						<label><input type="checkbox" name="auto_send" value="1" <?php checked( $s['auto_send'] ); ?>> <?php esc_html_e( 'Bələdçini yoxlamadan, müraciət gələn kimi avtomatik göndər', 'fixit' ); ?></label>
+						<p class="description"><?php esc_html_e( 'Söndürülü olanda (tövsiyə olunur) müraciəti özünüz yoxlayıb bir düymə ilə göndərirsiniz. Saytdan birbaşa satışa keçəndə açmaq olar.', 'fixit' ); ?></p>
 						<p><label><?php esc_html_e( 'Linkin müddəti:', 'fixit' ); ?> <input type="number" min="1" max="60" name="link_days" value="<?php echo esc_attr( $s['link_days'] ); ?>" style="width:70px"> <?php esc_html_e( 'gün', 'fixit' ); ?></label></p>
 					</td>
 				</tr>
@@ -454,7 +590,16 @@ function fixit_trial_settings_page() {
 						<?php if ( $token ) : ?>
 							<p><label><input type="checkbox" name="repo_token_clear" value="1"> <?php esc_html_e( 'Açarı sil', 'fixit' ); ?></label></p>
 						<?php endif; ?>
-						<p class="description"><?php esc_html_e( 'GitHub → Settings → Developer settings → Fine-grained tokens: yalnız bu repo, Contents: Read-only. Açar saytda heç yerdə görünmür, yalnız paketi vermək üçün işlədilir. Müddəti bitməzdən əvvəl yeniləyin.', 'fixit' ); ?></p>
+						<p class="description"><?php esc_html_e( 'Bu açar bir dəfə yazılır və bütün müştərilər üçün işləyir: müştərilər onu görmür, hər müştəriyə sayt ayrıca müvəqqəti link yaradır. GitHub → Settings → Developer settings → Fine-grained tokens: yalnız bu repo, Contents: Read-only.', 'fixit' ); ?></p>
+						<?php $fixit_exp = (int) get_option( 'fixit_remote_repo_token_exp' ); ?>
+						<?php if ( $token && $fixit_exp ) : ?>
+							<p style="color:<?php echo ( $fixit_exp - time() ) < 21 * DAY_IN_SECONDS ? '#b32d2e' : '#1a7f37'; ?>">
+								<?php
+								/* translators: 1: tarix, 2: gün */
+								echo esc_html( sprintf( __( 'Açarın müddəti: %1$s (%2$d gün qalıb). Bitməzdən əvvəl GitHub-da yeniləyin və bura yazın.', 'fixit' ), wp_date( 'd.m.Y', $fixit_exp ), max( 0, (int) floor( ( $fixit_exp - time() ) / DAY_IN_SECONDS ) ) ) );
+								?>
+							</p>
+						<?php endif; ?>
 						<?php if ( $token ) : ?>
 							<p><a class="button" href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'ft_test', 1, admin_url( 'admin.php?page=fixit-remote-settings' ) ), 'fixit_trial_test' ) ); ?>"><?php esc_html_e( 'Girişi yoxla', 'fixit' ); ?></a></p>
 						<?php endif; ?>
@@ -513,7 +658,6 @@ function fixit_trial_settings_save() {
 		'fixit_remote_pricing',
 		array(
 			'show'   => ! empty( $_POST['show'] ),
-			'vat'    => isset( $_POST['vat'] ) ? sanitize_key( wp_unslash( $_POST['vat'] ) ) : 'excl',
 			'multi2' => isset( $_POST['multi2'] ) ? absint( $_POST['multi2'] ) : 0,
 			'multi3' => isset( $_POST['multi3'] ) ? absint( $_POST['multi3'] ) : 0,
 			'tiers'  => $tiers,
@@ -524,7 +668,7 @@ function fixit_trial_settings_save() {
 	update_option(
 		'fixit_remote_trial',
 		array(
-			'auto_link' => ! empty( $_POST['auto_link'] ),
+			'auto_send' => ! empty( $_POST['auto_send'] ),
 			'link_days' => isset( $_POST['link_days'] ) ? absint( $_POST['link_days'] ) : 14,
 			'notify'    => isset( $_POST['notify'] ) ? sanitize_email( wp_unslash( $_POST['notify'] ) ) : '',
 			'repo'      => isset( $_POST['repo'] ) ? sanitize_text_field( wp_unslash( $_POST['repo'] ) ) : '',

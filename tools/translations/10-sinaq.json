@@ -83,10 +83,6 @@
   "en": "Company name",
   "ru": "Название компании"
  },
- "Bələdçini göndərin": {
-  "en": "Send me the guide",
-  "ru": "Отправить руководство"
- },
  "Repo açarı yazılmayıb.": {
   "en": "The repository token has not been set.",
   "ru": "Ключ доступа к репозиторию не указан."
