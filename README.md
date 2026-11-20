@@ -211,40 +211,11 @@ skript fərqli olsa dərc etmir.
 **Təhlükəsizlik:** sayta heç bir parol və ya açar verilmir. Sayt yalnız GitHub-ın
 açıq API-sindən son relizi oxuyur və arxivi WordPress-in öz quraşdırıcısı ilə yükləyir.
 
-**Dizayn seçimi (1.16.1-dən):** Görünüş → **Sayt dizaynı**. İki seçim var:
-«Yeni dizayn (test)» və «Əsas dizayn (əvvəlki)». Seçim dərhal bütün ziyarətçilərə
-tətbiq olunur, LiteSpeed keşi özü təmizlənir (Cloudflare-də əl ilə). Admin hər iki
-dizayna ziyarətçilərə təsir etmədən baxa bilər: həmin səhifədəki düymələr və ya
-saytın üst panelindəki menyu (`?fixit_dizayn=yeni|klassik|sifirla`, sessiya kukisi,
-keşlənmir). Əsas dizaynın üslubu `assets/css/klassik.css`-dədir: v1.15.5-in
-`style.css`-i olduğu kimi, onu dəyişməyin. Şablonlar iki dizayn üçün eynidir
-(`inc/design-switch.php`).
-
-**Geri qaytarmaq (kodla):** WordPress yalnız daha yeni versiyaya keçir. Əvvəlki
-vəziyyətə qayıtmaq üçün köhnə kod yeni versiya nömrəsi ilə dərc olunur
-(`git revert` → versiyanı artır → `reliz-yarat.py`). 1.16.0-dakı dizayn
-dəyişikliyindən əvvəlki vəziyyət `kohne-dizayn` budağında və `v1.15.5` relizindədir.
-
-### Dizayn sistemi (1.16.0-dan)
-
-Üslub texniki sənəd dilidir, FIXIT rənglərində: əsas rəng loqonun göyü
-(`--brand-600` #0860E4), tünd zolaqlar və alt hissə onun tünd çaları (`--dark`,
-`--footer`), fon soyuq ağ, mətn tünd göy (`--ink`). Nazik xətlər, monospace
-etiketlər, nömrələnmiş bölmələr. Şriftlər IBM Plex Sans (mətn) və IBM Plex Mono
-(etiket, rəqəm, qiymət); hər ikisində Azərbaycan hərfləri və kiril var. Qradiyent,
-kölgə, şüşə effekti, kapsul forması və görünəndə üzə çıxan animasiya işlənmir.
-(1.16.0-da eyni sistem qara-bej rənglərdə idi: `v1.16.0` relizi.)
-
-- Bölmə başlığı (`.section-head`): solda etiket və avtomatik nömrə (01, 02…),
-  sağda başlıq və izah, yuxarıda tam enli xətt. FAQ və «Aylıq / İllik» seçimi
-  sağ sütunla bir xətdə başlayır.
-- Kart (`.card`): qutu deyil, üst xətt + məzmun. Statistika, addımlar, loqolar,
-  qiymətlər xətlərlə cədvəl kimi düzülür.
-- Düymələr: `--primary` mürəkkəb rəngdə, `--ghost` çərçivəli, tünd zolaqda `--light`.
-- Tünd zolaq (`.section--dark`) və alt hissə düz tünd rəngdədir.
-
-Qaydalar `style.css`-in 1-20-ci bölmələrindədir; 26-cı bölmə köhnə blokları
-(məhsul, qiymət, sınaq, bələdçi) eyni sistemə gətirir.
+**Sınanmış yeni dizayn:** 1.16.0–1.16.1-də «texniki sənəd» üslubu (IBM Plex, xətlər,
+nömrələnmiş bölmələr, FIXIT rəngləri və admin paneldə dizayn seçimi) sınandı,
+1.16.2-də bu dizayna (v1.15.5) qayıdıldı. Kod `yeni-dizayn-sinaq` budağında və
+`v1.16.1` relizindədir. WordPress yalnız yuxarı versiyaya keçdiyi üçün geri
+qayıtmaq köhnə kodu yeni versiya nömrəsi ilə dərc etmək deməkdir.
 
 ---
 

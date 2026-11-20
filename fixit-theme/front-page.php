@@ -282,7 +282,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 		<div class="container">
 			<div class="section-head section-head--center reveal">
 				<span class="eyebrow"><?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Öz məhsullarımız', 'fixit' ); ?></span>
-				<h2><?php esc_html_e( 'Komandamızın hazırladığı', 'fixit' ); ?> <span class="grad-text"><?php esc_html_e( 'proqram təminatı', 'fixit' ); ?></span></h2>
+				<h2><?php esc_html_e( 'Komandamızın hazırladığı', 'fixit' ); ?> <span style="background:linear-gradient(100deg,#6fd0ff,#7bf7d8);-webkit-background-clip:text;background-clip:text;color:transparent"><?php esc_html_e( 'proqram təminatı', 'fixit' ); ?></span></h2>
 				<p><?php esc_html_e( 'Öz serverinizdə və ya bizim buludda işləyir, interfeysi Azərbaycan dilindədir və şirkətinizin iş axınına uyğunlaşdırıla bilir.', 'fixit' ); ?></p>
 			</div>
 
