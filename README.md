@@ -211,6 +211,30 @@ skript fərqli olsa dərc etmir.
 **Təhlükəsizlik:** sayta heç bir parol və ya açar verilmir. Sayt yalnız GitHub-ın
 açıq API-sindən son relizi oxuyur və arxivi WordPress-in öz quraşdırıcısı ilə yükləyir.
 
+**Geri qaytarmaq:** WordPress yalnız daha yeni versiyaya keçir. Əvvəlki vəziyyətə
+qayıtmaq üçün köhnə kod yeni versiya nömrəsi ilə dərc olunur (`git revert` →
+versiyanı artır → `reliz-yarat.py`). 1.16.0-dakı dizayn dəyişikliyindən əvvəlki
+vəziyyət `kohne-dizayn` budağında və `v1.15.5` relizindədir.
+
+### Dizayn sistemi (1.16.0-dan)
+
+Üslub texniki sənəd dilidir: isti kağız fonu (`--paper`), mürəkkəb mətn (`--ink`),
+nazik xətlər, monospace etiketlər, nömrələnmiş bölmələr. Şriftlər IBM Plex Sans
+(mətn) və IBM Plex Mono (etiket, rəqəm, qiymət); hər ikisində Azərbaycan hərfləri
+və kiril var. Bir vurğu rəngi var (`--brand-600`); qradiyent, kölgə, şüşə effekti,
+kapsul forması və görünəndə üzə çıxan animasiya işlənmir.
+
+- Bölmə başlığı (`.section-head`): solda etiket və avtomatik nömrə (01, 02…),
+  sağda başlıq və izah, yuxarıda tam enli xətt. FAQ və «Aylıq / İllik» seçimi
+  sağ sütunla bir xətdə başlayır.
+- Kart (`.card`): qutu deyil, üst xətt + məzmun. Statistika, addımlar, loqolar,
+  qiymətlər xətlərlə cədvəl kimi düzülür.
+- Düymələr: `--primary` mürəkkəb rəngdə, `--ghost` çərçivəli, tünd zolaqda `--light`.
+- Tünd zolaq (`.section--dark`) və alt hissə düz tünd rəngdədir.
+
+Qaydalar `style.css`-in 1-20-ci bölmələrindədir; 26-cı bölmə köhnə blokları
+(məhsul, qiymət, sınaq, bələdçi) eyni sistemə gətirir.
+
 ---
 
 ## 6. Dillər (AZ / EN / RU)
