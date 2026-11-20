@@ -317,7 +317,7 @@ $fixit_release     = fixit_remote_release();
 
 		<div class="section-head reveal">
 			<span class="eyebrow"><?php fixit_icon( 'server' ); ?><?php esc_html_e( 'Biznes üçün', 'fixit' ); ?></span>
-			<h2><?php esc_html_e( 'Şirkət versiyası:', 'fixit' ); ?> <span><?php esc_html_e( 'öz serverinizdə və ya buludda', 'fixit' ); ?></span></h2>
+			<h2><?php esc_html_e( 'Şirkət versiyası:', 'fixit' ); ?> <span class="grad-text"><?php esc_html_e( 'öz serverinizdə və ya buludda', 'fixit' ); ?></span></h2>
 			<p><?php esc_html_e( 'Şirkətdə uzaqdan dəstək başqa cür qurulur: kimin hansı kompüterə qoşulduğu bilinməlidir, qoşulma xarici xidmətlərdən keçməməlidir, hər sessiya jurnalda qalmalıdır.', 'fixit' ); ?></p>
 		</div>
 

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.16.0' );
+define( 'FIXIT_VERSION', '1.16.1' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -108,15 +108,11 @@ function fixit_ver( $rel ) {
 }
 
 function fixit_assets() {
-	// Google Fonts: IBM Plex Sans (mətn) və IBM Plex Mono (etiketlər, rəqəmlər).
-	wp_enqueue_style(
-		'fixit-fonts',
-		'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap',
-		array(),
-		null
-	);
-
-	wp_enqueue_style( 'fixit-style', get_stylesheet_uri(), array( 'fixit-fonts' ), fixit_ver( 'style.css' ) );
+	// Üslub və şriftlər seçilmiş dizayna görə (Görünüş → Sayt dizaynı):
+	// yeni dizayn IBM Plex və style.css, əsas dizayn Plus Jakarta Sans və assets/css/klassik.css.
+	$fixit_design = fixit_design_assets();
+	wp_enqueue_style( 'fixit-fonts', $fixit_design['fonts'], array(), null );
+	wp_enqueue_style( 'fixit-style', $fixit_design['css'], array( 'fixit-fonts' ), $fixit_design['ver'] );
 
 	wp_enqueue_script(
 		'fixit-main',
@@ -163,6 +159,7 @@ add_action( 'wp_head', 'fixit_theme_boot_script', 1 );
 /* ============================================================
    3. Yardımçı fayllar
    ============================================================ */
+require_once get_template_directory() . '/inc/design-switch.php'; // Sayt dizaynı: yeni (test) və əsas (əvvəlki)
 require_once get_template_directory() . '/inc/security.php';      // Təhlükəsizlik: istifadəçi adları, giriş limiti, başlıqlar
 require_once get_template_directory() . '/inc/i18n.php';          // Üç dil: dil seçimi, ünvanlar, keçid
 require_once get_template_directory() . '/inc/i18n-data.php';     // Baza məzmununun hazır tərcümələri
