@@ -557,11 +557,11 @@ function fixit_trial_alert_admin_unavailable( $id, $reason ) {
 
 	wp_mail(
 		fixit_trial_settings()['notify'],
-		'[fixit.az] Fixit Remote: sınaq paketi verilə bilmədi',
-		"Müştəri sınaq paketini yükləməyə çalışdı, amma paket verilə bilmədi.\n\n"
-			. 'Müraciət: ' . get_the_title( $id ) . ' (' . get_post_meta( $id, '_ft_company', true ) . ")\n"
-			. 'Səbəb: ' . ( $reason ? $reason : 'Mərkəz (id.fixit.az) paketi vermədi' ) . "\n\n"
-			. 'Yoxlayın: ' . admin_url( 'admin.php?page=fixit-remote-settings' ) . "\n"
+		'[fixit.az] Fixit Remote: trial package could not be delivered',
+		"A customer tried to download the trial package, but it could not be delivered.\n\n"
+			. 'Request: ' . get_the_title( $id ) . ' (' . get_post_meta( $id, '_ft_company', true ) . ")\n"
+			. 'Reason: ' . ( $reason ? $reason : 'The central server (id.fixit.az) did not provide the package' ) . "\n\n"
+			. 'Check: ' . admin_url( 'admin.php?page=fixit-remote-settings' ) . "\n"
 	);
 }
 
@@ -584,7 +584,9 @@ function fixit_trial_in_lang( $lang, $callback ) {
 	$locale = isset( $langs[ $lang ] ) ? $langs[ $lang ]['locale'] : 'az';
 	$mo     = get_template_directory() . '/languages/' . $locale . '.mo';
 
-	unload_textdomain( 'fixit', true );
+	// Yenidən yüklənməyən kimi boşaldılır: admin sorğusu ingiliscədir və WordPress
+	// AZ məktubu üçün temanın EN tərcüməsini «vaxtında» yükləməsin.
+	unload_textdomain( 'fixit' );
 	if ( fixit_default_lang() !== $lang && file_exists( $mo ) ) {
 		load_textdomain( 'fixit', $mo, $locale );
 	}
@@ -670,22 +672,22 @@ function fixit_trial_build_mail( $id, $link ) {
  * @param int $id Müraciət.
  */
 function fixit_trial_send_admin_mail( $id ) {
-	$body = "Saytdan Fixit Remote 14 günlük sınaq müraciəti gəldi:\n\n"
-		. 'Ad: ' . get_the_title( $id ) . "\n"
-		. 'Şirkət: ' . get_post_meta( $id, '_ft_company', true ) . "\n"
-		. 'Telefon: ' . get_post_meta( $id, '_ft_phone', true ) . "\n"
-		. 'E-poçt: ' . get_post_meta( $id, '_ft_email', true ) . "\n"
-		. 'Dil: ' . strtoupper( (string) get_post_meta( $id, '_ft_lang', true ) ) . "\n\n"
+	$body = "A new Fixit Remote 14-day trial request came from the site:\n\n"
+		. 'Name: ' . get_the_title( $id ) . "\n"
+		. 'Company: ' . get_post_meta( $id, '_ft_company', true ) . "\n"
+		. 'Phone: ' . get_post_meta( $id, '_ft_phone', true ) . "\n"
+		. 'Email: ' . get_post_meta( $id, '_ft_email', true ) . "\n"
+		. 'Language: ' . strtoupper( (string) get_post_meta( $id, '_ft_lang', true ) ) . "\n\n"
 		. ( fixit_trial_settings()['auto_send']
-			? ( get_post_meta( $id, '_ft_mail_sent', true ) ? "Müştəriyə bələdçi avtomatik göndərildi.\n" : "DİQQƏT: müştəriyə məktub göndərilə bilmədi.\n" )
-			: "Müştəriyə hələ heç nə getməyib. Müraciəti yoxlayın və «Bələdçini göndər» düyməsini basın.\n" )
-		. "\nBax və göndər: " . admin_url( 'post.php?post=' . $id . '&action=edit' ) . "\n";
+			? ( get_post_meta( $id, '_ft_mail_sent', true ) ? "The guide was sent to the customer automatically.\n" : "WARNING: the email to the customer could not be sent.\n" )
+			: "Nothing has been sent to the customer yet. Review the request and click \"Send guide\".\n" )
+		. "\nReview and send: " . admin_url( 'post.php?post=' . $id . '&action=edit' ) . "\n";
 
 	$email = (string) get_post_meta( $id, '_ft_email', true );
 
 	wp_mail(
 		fixit_trial_settings()['notify'],
-		'[fixit.az] Fixit Remote sınaq müraciəti: ' . get_post_meta( $id, '_ft_company', true ),
+		'[fixit.az] Fixit Remote trial request: ' . get_post_meta( $id, '_ft_company', true ),
 		$body,
 		array(
 			'Content-Type: text/plain; charset=UTF-8',

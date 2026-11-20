@@ -201,7 +201,7 @@ function fixit_handle_contact() {
 
 	// Nəticə bildirişinin göstəriləcəyi yer (forma özü göndərir).
 	$anchor = isset( $_POST['fixit_anchor'] ) ? sanitize_key( wp_unslash( $_POST['fixit_anchor'] ) ) : '';
-	$anchor = '#' . ( $anchor ? $anchor : 'elaqe-form' );
+	$anchor = '#' . ( $anchor ? $anchor : 'contact-form' );
 
 	$token = fixit_form_token_check();
 
@@ -272,17 +272,17 @@ function fixit_handle_contact() {
 	// E-poçt göndər.
 	$to      = fixit_get( 'fixit_form_email' );
 	$subject = ( 'demo' === $kind )
-		? sprintf( '[fixit.az] Demo sorğusu — %s (%s)', $name, $topic )
-		: sprintf( '[fixit.az] Yeni müraciət — %s', $name );
+		? sprintf( '[fixit.az] Demo request: %s (%s)', $name, $topic )
+		: sprintf( '[fixit.az] New enquiry: %s', $name );
 
-	$body = ( 'demo' === $kind ? "Saytdan yeni DEMO sorğusu daxil oldu:\n\n" : "Saytdan yeni müraciət daxil oldu:\n\n" )
-		. "Ad: {$name}\n"
-		. ( $company ? "Şirkət: {$company}\n" : '' )
-		. ( $size ? "İstifadəçi / cihaz sayı: {$size}\n" : '' )
-		. "E-poçt: {$email}\n"
-		. "Telefon: {$phone}\n"
-		. "Mövzu: {$topic}\n\n"
-		. "Mesaj:\n{$message}\n\n"
+	$body = ( 'demo' === $kind ? "A new DEMO request came from the site:\n\n" : "A new enquiry came from the site:\n\n" )
+		. "Name: {$name}\n"
+		. ( $company ? "Company: {$company}\n" : '' )
+		. ( $size ? "Users / devices: {$size}\n" : '' )
+		. "Email: {$email}\n"
+		. "Phone: {$phone}\n"
+		. "Topic: {$topic}\n\n"
+		. "Message:\n{$message}\n\n"
 		. fixit_demo_mail_hint( $kind, $topic )
 		. '— ' . home_url( '/' );
 
@@ -319,7 +319,7 @@ function fixit_demo_mail_hint( $kind, $topic ) {
 		if ( $prod->post_title === $topic ) {
 			$demo = fixit_product_demo( $prod->ID );
 			if ( $demo['url'] ) {
-				return "Demo ünvanı: {$demo['url']}\nMüştəriyə giriş məlumatını göndərməyi unutmayın.\n\n";
+				return "Demo address: {$demo['url']}\nRemember to send the customer the login details.\n\n";
 			}
 		}
 	}

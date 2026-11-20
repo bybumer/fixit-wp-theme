@@ -221,6 +221,18 @@ qayıtmaq köhnə kodu yeni versiya nömrəsi ilə dərc etmək deməkdir.
 
 ## 6. Dillər (AZ / EN / RU)
 
+### Admin panel ingiliscədir (1.16.5-dən)
+
+Arxa hissə (WordPress admin paneli, temanın admin səhifələri, giriş səhifəsi)
+saytın və istifadəçinin dil ayarından asılı olmayaraq ingiliscədir
+(`inc/admin-locale.php`: `switch_to_locale('en_US')`; AJAX, REST və cron-a
+toxunulmur). Temanın admin mətnləri Azərbaycan dilində yazılıb, ingiliscə
+tərcüməsi `tools/translations/17-admin-remote.json`, `18-admin-site.json`,
+`19-admin-demo-stats.json`-dadır: yeni admin mətni əlavə edəndə onun `en`
+tərcüməsini də yazın. Sahibə gedən bildirişlər (yeni müraciət, sınaq müraciəti,
+paket verilə bilmədi) ingiliscədir; müştəriyə gedən məktublar müştərinin
+dilindədir (`fixit_trial_in_lang`).
+
 ### Ünvanlar ingiliscədir (1.16.4-dən)
 
 Məzmun üç dildədir (AZ əsas, `/en/`, `/ru/`), ünvanların özü isə ingiliscədir:

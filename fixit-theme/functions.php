@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.16.4' );
+define( 'FIXIT_VERSION', '1.16.5' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -168,6 +168,7 @@ require_once get_template_directory() . '/inc/i18n.php';          // Üç dil: d
 require_once get_template_directory() . '/inc/i18n-data.php';     // Baza məzmununun hazır tərcümələri
 require_once get_template_directory() . '/inc/i18n-content.php';  // Məhsul/xidmət/rəy tərcümələri
 require_once get_template_directory() . '/inc/icons.php';         // SVG ikon kitabxanası
+require_once get_template_directory() . '/inc/admin-locale.php';  // Admin panel və giriş səhifəsi ingiliscə
 require_once get_template_directory() . '/inc/url-map.php';       // İngiliscə ünvanlar, köhnə ünvanlardan 301
 require_once get_template_directory() . '/inc/slugs.php';         // Ünvanlarda ə → e (təmiz URL)
 require_once get_template_directory() . '/inc/customizer.php';    // Fərdiləşdirmə (əlaqə, sosial şəbəkə)

@@ -932,7 +932,7 @@ function fixit_demo_stats_report( $data, $days, $base, $product = 'ticket' ) {
 								: __( '< 1 dəq', 'fixit' )
 						);
 						?>
-						<br><span class="fds-note"><?php echo esc_html( sprintf( /* translators: %d: səhifə sayı */ _n( '%d səhifə', '%d səhifə', (int) $v['page_views'], 'fixit' ), (int) $v['page_views'] ) ); ?></span>
+						<br><span class="fds-note"><?php echo esc_html( sprintf( /* translators: %d: səhifə sayı */ __( 'Səhifə: %d', 'fixit' ), (int) $v['page_views'] ) ); ?></span>
 					</td>
 				</tr>
 			<?php endforeach; ?>

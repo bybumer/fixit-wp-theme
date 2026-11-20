@@ -4615,3 +4615,2135 @@ msgstr "Included"
 #: tools/translations
 msgid "Yoxdur"
 msgstr "Not included"
+
+#: tools/translations
+msgid "%1$s buraxılış · yeniləndi: %2$s"
+msgstr "Release %1$s · updated: %2$s"
+
+#: tools/translations
+msgid "%1$s: %2$s · ən çox bir gündə: %3$s"
+msgstr "%1$s: %2$s · busiest day: %3$s"
+
+#: tools/translations
+msgid "%d dəq əvvəl"
+msgstr "%d min ago"
+
+#: tools/translations
+msgid "%d gün əvvəl"
+msgstr "%d days ago"
+
+#: tools/translations
+msgid "%d saat əvvəl"
+msgstr "%d hours ago"
+
+#: tools/translations
+msgid "%s tarixindən"
+msgstr "since %s"
+
+#: tools/translations
+msgid "Agentlərin yeni versiyaya keçməsi"
+msgstr "Agent updates"
+
+#: tools/translations
+msgid "Android (APK)"
+msgstr "Android (APK)"
+
+#: tools/translations
+msgid "Bütün versiyalar üzrə cəm (GitHub sayğacı)"
+msgstr "Total across all versions (GitHub counter)"
+
+#: tools/translations
+msgid "Client proqramının yeni versiyaya keçməsi"
+msgstr "Client app updates"
+
+#: tools/translations
+msgid "Fayl"
+msgstr "File"
+
+#: tools/translations
+msgid "Faylların siyahısı hazırda alınmadı — yuxarıdakı düymə yenə də ən son versiyanı verir."
+msgstr "The file list is not available right now. The button above still gives the latest version."
+
+#: tools/translations
+msgid "Fixit Remote"
+msgstr "Fixit Remote"
+
+#: tools/translations
+msgid "GitHub hazırda cavab vermir — sonuncu alınmış rəqəmlər göstərilir."
+msgstr "GitHub is not responding right now. Showing the last numbers received."
+
+#: tools/translations
+msgid "GitHub hazırda cavab vermir. Bir az sonra «İndi yoxla» düyməsini basın."
+msgstr "GitHub is not responding right now. Click “Check now” a bit later."
+
+#: tools/translations
+msgid "GitHub hər faylın neçə dəfə yükləndiyini özü sayır: saytdan, birbaşa linkdən, proqramın və agentlərin yeni versiyaya keçməsindən. Buna sınaq yükləmələri də daxildir, ona görə saytın öz sayğacından çox olur."
+msgstr "GitHub counts every download of each file: from the site, from direct links and from app and agent updates. Test downloads are included too, so the number is higher than the site's own counter."
+
+#: tools/translations
+msgid "GitHub-da bax"
+msgstr "View on GitHub"
+
+#: tools/translations
+msgid "Günlük yükləmə qrafiki"
+msgstr "Daily download chart"
+
+#: tools/translations
+msgid "Haradan yükləndi (saytdakı düymə)"
+msgstr "Download source (button on the site)"
+
+#: tools/translations
+msgid "Həcm"
+msgstr "Size"
+
+#: tools/translations
+msgid "MSI"
+msgstr "MSI"
+
+#: tools/translations
+msgid "Proqram (EXE)"
+msgstr "App (EXE)"
+
+#: tools/translations
+msgid "Saytdakı bütün «Yüklə» düymələri və %s ünvanı həmişə ən son versiyanı verir — yeni versiya çıxanda saytda heç nə dəyişmək lazım deyil. Versiya 10 dəqiqədən bir yoxlanılır."
+msgstr "All “Download” buttons on the site and the %s address always serve the latest version, so nothing needs to change on the site when a new version is released. The version is checked every 10 minutes."
+
+#: tools/translations
+msgid "Saytdakı «Yüklə» düymələri və qısa ünvanla edilən yükləmələr. Axtarış robotları və link önizləmələri sayılmır. IP ünvanı saxlanılmır."
+msgstr "Downloads made with the “Download” buttons on the site and the short address. Search bots and link previews are not counted. IP addresses are not stored."
+
+#: tools/translations
+msgid "Saytdan yükləmələr — günlər üzrə"
+msgstr "Downloads from the site by day"
+
+#: tools/translations
+msgid "Saytdan yüklənib (Windows):"
+msgstr "Downloaded from the site (Windows):"
+
+#: tools/translations
+msgid "Server paketləri"
+msgstr "Server packages"
+
+#: tools/translations
+msgid "Son versiya:"
+msgstr "Latest version:"
+
+#: tools/translations
+msgid "Sınaq müraciətləri: %1$d yeni, cəmi %2$d"
+msgstr "Trial requests: %1$d new, %2$d total"
+
+#: tools/translations
+msgid "Versiya"
+msgstr "Version"
+
+#: tools/translations
+msgid "Versiyalar üzrə (GitHub sayğacı)"
+msgstr "By version (GitHub counter)"
+
+#: tools/translations
+msgid "Windows proqramı (FixitRemote.exe) — saytdakı düymə bunu verir"
+msgstr "Windows app (FixitRemote.exe), served by the button on the site"
+
+#: tools/translations
+msgid "Windows proqramını yüklə (FixitRemote.exe)"
+msgstr "Download the Windows app (FixitRemote.exe)"
+
+#: tools/translations
+msgid "Yeni versiyaya keçid"
+msgstr "Updates"
+
+#: tools/translations
+msgid "Yüklənib"
+msgstr "Downloads"
+
+#: tools/translations
+msgid "bu gün"
+msgstr "today"
+
+#: tools/translations
+msgid "bu gün yüklənib"
+msgstr "downloaded today"
+
+#: tools/translations
+msgid "bütün dövrdə (saytdan)"
+msgstr "all time (from the site)"
+
+#: tools/translations
+msgid "hamısı"
+msgstr "all"
+
+#: tools/translations
+msgid "son 30 gündə"
+msgstr "last 30 days"
+
+#: tools/translations
+msgid "son 7 gündə"
+msgstr "last 7 days"
+
+#: tools/translations
+msgid "«Yüklənib» — GitHub-un sayğacı (bu versiya üçün, bütün mənbələrdən)."
+msgstr "“Downloads” is GitHub's counter (for this version, from all sources)."
+
+#: tools/translations
+msgid "İndi yoxla"
+msgstr "Check now"
+
+#: tools/translations
+msgid "Şirkət quraşdırıcısı — Agent (MSI)"
+msgstr "Company installer: Agent (MSI)"
+
+#: tools/translations
+msgid "Şirkət quraşdırıcısı — Client (MSI)"
+msgstr "Company installer: Client (MSI)"
+
+#: tools/translations
+msgid "Ən son versiyanı yüklə"
+msgstr "Download the latest version"
+
+#: tools/translations
+msgid "Ən son versiyanın faylları (%s)"
+msgstr "Files of the latest version (%s)"
+
+#: tools/translations
+msgid "ən son versiya"
+msgstr "latest version"
+
+#: tools/translations
+msgid "%1$d ay hədiyyə: illik = %2$d ay (%3$d%% qənaət)"
+msgstr "%1$d months free: yearly = %2$d months (save %3$d%%)"
+
+#: tools/translations
+msgid "%1$d dəfə, son: %2$s (versiya %3$s)"
+msgstr "%1$d times, last: %2$s (version %3$s)"
+
+#: tools/translations
+msgid "%s tarixinədək etibarlıdır"
+msgstr "valid until %s"
+
+#: tools/translations
+msgid "14 günlük sınaq"
+msgstr "14-day trial"
+
+#: tools/translations
+msgid "2 il:"
+msgstr "2 years:"
+
+#: tools/translations
+msgid "3 il:"
+msgstr "3 years:"
+
+#: tools/translations
+msgid "Ayarlar yadda saxlanıldı."
+msgstr "Settings saved."
+
+#: tools/translations
+msgid "Açar hələ yaradılmayıb. Açar bir dəfə yaradılır və bütün müştərilər üçün işləyir: gizli hissəsi yalnız bu saytdadır, ictimai hissəsini mərkəzə yazırsınız."
+msgstr "The key has not been created yet. It is created once and works for all customers: the private part stays on this site, and you add the public part to the central server."
+
+#: tools/translations
+msgid "Açarı yarat"
+msgstr "Create key"
+
+#: tools/translations
+msgid "Açarı yenilə: köhnə açar dərhal işləməz olur, yeni ictimai açarı mərkəzə yenidən yazmaq lazımdır"
+msgstr "Renew the key: the old key stops working immediately and the new public key has to be added to the central server again"
+
+#: tools/translations
+msgid "Bildiriş ünvanı"
+msgstr "Notification address"
+
+#: tools/translations
+msgid "Bir gün ərzində təkrar müraciət edib"
+msgstr "Sent another request within a day"
+
+#: tools/translations
+msgid "Bələdçi %s ünvanına göndərilsin?"
+msgstr "Send the guide to %s?"
+
+#: tools/translations
+msgid "Bələdçi müştəriyə göndərildi."
+msgstr "The guide was sent to the customer."
+
+#: tools/translations
+msgid "Bələdçini göndər"
+msgstr "Send guide"
+
+#: tools/translations
+msgid "Bələdçini yoxlamadan, müraciət gələn kimi avtomatik göndər"
+msgstr "Send the guide automatically as soon as a request arrives, without review"
+
+#: tools/translations
+msgid "Cihaz başına, ayda (AZN)"
+msgstr "Per device, monthly (AZN)"
+
+#: tools/translations
+msgid "Cihaza qədər"
+msgstr "Up to devices"
+
+#: tools/translations
+msgid "Dil"
+msgstr "Language"
+
+#: tools/translations
+msgid "E-poçt ayarları"
+msgstr "Email settings"
+
+#: tools/translations
+msgid "Göndərildiyi səhifə"
+msgstr "Sent from page"
+
+#: tools/translations
+msgid "Göndərilmədi"
+msgstr "Not sent"
+
+#: tools/translations
+msgid "Göndərmə"
+msgstr "Sending"
+
+#: tools/translations
+msgid "Hamısı"
+msgstr "All"
+
+#: tools/translations
+msgid "Hazırdır: mərkəz saytın açarını tanıyır, versiya %1$s (%2$s)."
+msgstr "Ready: the central server recognizes the site key, version %1$s (%2$s)."
+
+#: tools/translations
+msgid "Kimə:"
+msgstr "To:"
+
+#: tools/translations
+msgid "Linkin müddəti:"
+msgstr "Link valid for:"
+
+#: tools/translations
+msgid "Mövzu:"
+msgstr "Subject:"
+
+#: tools/translations
+msgid "Müraciət admin paneldə yaranır və sizə bildiriş gəlir. Yoxlayıb «Bələdçini göndər» basanda müştəriyə hazır məktub gedir: qurulum bələdçisi, qiymətlər və şəxsi yükləmə linki. Server paketini Fixit mərkəzi (id.fixit.az) verir: link sayt vasitəsilə keçir və hər yükləmə müraciətdə qeyd olunur."
+msgstr "A request is created in the admin panel and you get a notification. After you review it and click “Send guide”, the customer gets a ready email: the installation guide, prices and a personal download link. The server package is served by the Fixit central server (id.fixit.az): the link goes through the site and every download is recorded in the request."
+
+#: tools/translations
+msgid "Müraciət rədd edildi. Müştəriyə heç nə göndərilmədi."
+msgstr "The request was rejected. Nothing was sent to the customer."
+
+#: tools/translations
+msgid "Müştəri server paketini bu ünvandan yükləyir. Sayt linki yoxlayır, yükləməni qeyd edir və müştərini 30 dəqiqəlik imzalı biletlə mərkəzə yönləndirir. GitHub açarı lazım deyil."
+msgstr "The customer downloads the server package from this address. The site checks the link, records the download and sends the customer to the central server with a signed ticket valid for 30 minutes. No GitHub key is needed."
+
+#: tools/translations
+msgid "Məktub"
+msgstr "Email"
+
+#: tools/translations
+msgid "Məktub göndərilə bilmədi. Saytın poçt ayarlarını yoxlayın."
+msgstr "The email could not be sent. Check the site's email settings."
+
+#: tools/translations
+msgid "Məktub yenidən göndərildi."
+msgstr "The email was sent again."
+
+#: tools/translations
+msgid "Məktuba bax"
+msgstr "Preview email"
+
+#: tools/translations
+msgid "Mərkəzi yoxla"
+msgstr "Check central server"
+
+#: tools/translations
+msgid "Mərkəzə bir dəfə yazılır. id.fixit.az serverində (root kimi):"
+msgstr "Added to the central server once. On the id.fixit.az server (as root):"
+
+#: tools/translations
+msgid "Paket"
+msgstr "Package"
+
+#: tools/translations
+msgid "Paket yüklənib"
+msgstr "Package downloaded"
+
+#: tools/translations
+msgid "Paket, ayda"
+msgstr "Package, monthly"
+
+#: tools/translations
+msgid "Paket, ildə"
+msgstr "Package, yearly"
+
+#: tools/translations
+msgid "Paketi verən mərkəz"
+msgstr "Package server"
+
+#: tools/translations
+msgid "Pulsuz poçt (%s): şirkətin adını və telefonu yoxlayın"
+msgstr "Free email provider (%s): check the company name and phone number"
+
+#: tools/translations
+msgid "Qeyd"
+msgstr "Note"
+
+#: tools/translations
+msgid "Qiymət cihaz başına, ayda yazılır. Saytda yuxarıda «Aylıq / İllik» seçimi var: aylıqda paketin aylıq məbləği, illikdə illik məbləği görünür. Paketdən artıq cihaz 10-luq əlavə ilə həmin paketin qiymətinə hesablanır."
+msgstr "Prices are entered per device per month. The site has a “Monthly / Yearly” switch at the top: monthly shows the package's monthly amount, yearly shows the yearly amount. Devices above the package are added in blocks of 10 at that package's price."
+
+#: tools/translations
+msgid "Qiymətlər və sınaq"
+msgstr "Pricing and trial"
+
+#: tools/translations
+msgid "Qiymətləri saytda və sınaq məktubunda göstər"
+msgstr "Show prices on the site and in the trial email"
+
+#: tools/translations
+msgid "Rədd et"
+msgstr "Reject"
+
+#: tools/translations
+msgid "Rədd et (saxta və ya sınaq müraciəti)"
+msgstr "Reject (fake or test request)"
+
+#: tools/translations
+msgid "SMTP qurulmayıb: məktub spama düşə bilər (Parametrlər → E-poçt)"
+msgstr "SMTP is not set up: the email may end up in spam (Settings → Email)"
+
+#: tools/translations
+msgid "Saytda"
+msgstr "On the site"
+
+#: tools/translations
+msgid "Saytda bax"
+msgstr "View on site"
+
+#: tools/translations
+msgid "Saytın imza açarı"
+msgstr "Site signing key"
+
+#: tools/translations
+msgid "Saytın imza açarı yaradılmayıb: məktubda yükləmə linki olmayacaq"
+msgstr "The site signing key has not been created: the email will not contain a download link"
+
+#: tools/translations
+msgid "Söndürülü olanda (tövsiyə olunur) müraciəti özünüz yoxlayıb bir düymə ilə göndərirsiniz. Saytdan birbaşa satışa keçəndə açmaq olar."
+msgstr "When off (recommended), you review each request yourself and send it with one click. You can turn it on when you start selling directly on the site."
+
+#: tools/translations
+msgid "Söndürülü olanda saytda paketlər qiymətsiz, «qiymət sorğu ilə» kimi görünür, məktubda da qiymət olmur. Rəqəmləri yoxlayın, sonra yandırın."
+msgstr "When off, packages are shown on the site without prices (“price on request”) and the email has no prices. Check the numbers, then turn it on."
+
+#: tools/translations
+msgid "Təkrar müraciət"
+msgstr "Repeat request"
+
+#: tools/translations
+msgid "Vəziyyət"
+msgstr "Status"
+
+#: tools/translations
+msgid "Yeni müraciət haqqında məktub bura gəlir. Müştəri məktuba cavab yazanda da bu ünvana düşür."
+msgstr "Notifications about new requests are sent here. Customer replies to the email also arrive at this address."
+
+#: tools/translations
+msgid "Yenidən göndər"
+msgstr "Send again"
+
+#: tools/translations
+msgid "Yenidən göndər (yeni linklə)"
+msgstr "Send again (with a new link)"
+
+#: tools/translations
+msgid "Yoxdur: illik = 12 ay"
+msgstr "None: yearly = 12 months"
+
+#: tools/translations
+msgid "Yoxla və göndər"
+msgstr "Review and send"
+
+#: tools/translations
+msgid "Yükləmə linki"
+msgstr "Download link"
+
+#: tools/translations
+msgid "Zəng, görüş, cihaz sayı, təklif..."
+msgstr "Call, meeting, number of devices, offer..."
+
+#: tools/translations
+msgid "göndərilmədi"
+msgstr "not sent"
+
+#: tools/translations
+msgid "gün"
+msgstr "days"
+
+#: tools/translations
+msgid "hələ yox"
+msgstr "not yet"
+
+#: tools/translations
+msgid "hələ yüklənməyib"
+msgstr "not downloaded yet"
+
+#: tools/translations
+msgid "linksiz"
+msgstr "no link"
+
+#: tools/translations
+msgid "verilməyib"
+msgstr "not issued"
+
+#: tools/translations
+msgid "yükləmə linki olmadan"
+msgstr "without a download link"
+
+#: tools/translations
+msgid "Çoxillik müqavilə endirimi"
+msgstr "Multi-year contract discount"
+
+#: tools/translations
+msgid "Önizləmə: yükləmə linki göndərilən anda yaradılır."
+msgstr "Preview: the download link is created at the moment of sending."
+
+#: tools/translations
+msgid "İcmal"
+msgstr "Overview"
+
+#: tools/translations
+msgid "İctimai açar (gizli deyil):"
+msgstr "Public key (not secret):"
+
+#: tools/translations
+msgid "İllik ödənişdə hədiyyə"
+msgstr "Free months on yearly billing"
+
+#: tools/translations
+msgid "İllik ödəyənə endirim. Seçiləndə saytda «İllik ödəniş» düyməsinin yanında qənaət faizi görünür."
+msgstr "A discount for yearly payment. When set, the savings percentage is shown next to the “Yearly” button on the site."
+
+#: tools/translations
+msgid "Şirkət domeni: %s"
+msgstr "Company domain: %s"
+
+#: tools/translations
+msgid "Adətən poçt qutusunun özü (məs. info@fixit.az). Başqa ünvan yazsanız, poçt xidmətində o ünvandan göndərməyə icazə olmalıdır."
+msgstr "Usually the mailbox itself (e.g. info@fixit.az). If you enter a different address, your email provider must allow sending from it."
+
+#: tools/translations
+msgid "Bu, saytın poçt ayarlarını yoxlamaq üçün sınaq məktubudur. Məktubu aldınızsa, sayt məktubları düzgün göndərir."
+msgstr "This is a test email to check the site's email settings. If you received it, the site sends email correctly."
+
+#: tools/translations
+msgid "E-poçt (SMTP)"
+msgstr "Email (SMTP)"
+
+#: tools/translations
+msgid "E-poçt ünvanı düzgün deyil."
+msgstr "The email address is not valid."
+
+#: tools/translations
+msgid "Giriş"
+msgstr "Login"
+
+#: tools/translations
+msgid "Gmail və Google Workspace-də adi parol işləmir: hesabda iki mərhələli giriş açılmalı və «App password» yaradılmalıdır. Microsoft 365-də poçt qutusu üçün «Authenticated SMTP» açıq olmalıdır."
+msgstr "Gmail and Google Workspace do not accept the normal password: turn on 2-step verification for the account and create an “App password”. In Microsoft 365, “Authenticated SMTP” must be enabled for the mailbox."
+
+#: tools/translations
+msgid "Göndərən"
+msgstr "From"
+
+#: tools/translations
+msgid "Göndərənin adı"
+msgstr "Sender name"
+
+#: tools/translations
+msgid "Məktub %1$s ünvanına göndərildi (%2$s). Gələnlər qutusunu, gəlməyibsə spamı yoxlayın."
+msgstr "The email was sent to %1$s (%2$s). Check the inbox, and the spam folder if it has not arrived."
+
+#: tools/translations
+msgid "Məktub göndərilmədi (%1$s): %2$s"
+msgstr "The email was not sent (%1$s): %2$s"
+
+#: tools/translations
+msgid "Məktublar SMTP ilə gedir: %1$s, göndərən %2$s"
+msgstr "Emails are sent via SMTP: %1$s, from %2$s"
+
+#: tools/translations
+msgid "Məktubları bu poçt serverindən göndər"
+msgstr "Send emails through this mail server"
+
+#: tools/translations
+msgid "Parol"
+msgstr "Password"
+
+#: tools/translations
+msgid "Parol bazada şifrələnmiş saxlanılır və səhifədə göstərilmir."
+msgstr "The password is stored encrypted in the database and is never shown on the page."
+
+#: tools/translations
+msgid "Parolu sil"
+msgstr "Delete password"
+
+#: tools/translations
+msgid "Port və şifrələmə"
+msgstr "Port and encryption"
+
+#: tools/translations
+msgid "Poçt xidməti"
+msgstr "Email provider"
+
+#: tools/translations
+msgid "SMTP"
+msgstr "SMTP"
+
+#: tools/translations
+msgid "SMTP qurulmayıb: məktublar hostinqin mail() funksiyası ilə gedir və spama düşə bilər."
+msgstr "SMTP is not set up: emails are sent with the hosting's mail() function and may end up in spam."
+
+#: tools/translations
+msgid "SMTP yandırılıb, amma ayarlar tam deyil: məktublar hostinqin mail() funksiyası ilə gedir."
+msgstr "SMTP is on, but the settings are incomplete: emails are sent with the hosting's mail() function."
+
+#: tools/translations
+msgid "Saytın bütün məktubları (sınaq bələdçisi, yeni müraciət bildirişləri, əlaqə forması) bu poçt qutusundan göndərilir. Göndərən şirkətin ünvanı olur, məktublar spama düşmür."
+msgstr "All emails from the site (trial guide, new request notifications, contact form) are sent from this mailbox. The sender is the company address, so the emails do not end up in spam."
+
+#: tools/translations
+msgid "Server istifadəçi adı və parol istəyir"
+msgstr "The server requires a username and password"
+
+#: tools/translations
+msgid "Seçin, sahələr özü dolsun"
+msgstr "Choose one to fill in the fields"
+
+#: tools/translations
+msgid "Son uğurlu məktub: %s"
+msgstr "Last successful email: %s"
+
+#: tools/translations
+msgid "Son xəta (%1$s, %2$s): %3$s"
+msgstr "Last error (%1$s, %2$s): %3$s"
+
+#: tools/translations
+msgid "Sınaq məktubu"
+msgstr "Test email"
+
+#: tools/translations
+msgid "Sınaq məktubu göndər"
+msgstr "Send test email"
+
+#: tools/translations
+msgid "boş olsa istifadəçi adı"
+msgstr "username if empty"
+
+#: tools/translations
+msgid "səbəb bilinmir"
+msgstr "unknown reason"
+
+#: tools/translations
+msgid "wp-config.php-də verilib"
+msgstr "set in wp-config.php"
+
+#: tools/translations
+msgid "yazılıb, dəyişmək üçün yenisini yazın"
+msgstr "saved, type a new one to change it"
+
+#: tools/translations
+msgid "Şifrələmə yoxdur (tövsiyə olunmur)"
+msgstr "No encryption (not recommended)"
+
+#: tools/translations
+msgid "Əvvəlcə ayarları yadda saxlayın. Xəta olarsa, poçt serverinin cavabı burada görünəcək."
+msgstr "Save the settings first. If something goes wrong, the mail server's response is shown here."
+
+#: tools/translations
+msgid "%1$d xidmət, %2$d məhsul dərc olunub."
+msgstr "%1$d services and %2$d products are published."
+
+#: tools/translations
+msgid "(təsvir yoxdur)"
+msgstr "(no description)"
+
+#: tools/translations
+msgid "Aktivdir: %s"
+msgstr "Active: %s"
+
+#: tools/translations
+msgid "Axtarış sistemlərinə görünürlük"
+msgstr "Search engine visibility"
+
+#: tools/translations
+msgid "Aç"
+msgstr "Open"
+
+#: tools/translations
+msgid "Bal"
+msgstr "Score"
+
+#: tools/translations
+msgid "Bax"
+msgstr "View"
+
+#: tools/translations
+msgid "Başlıq qısadır — açar sözlər əlavə edin."
+msgstr "The title is short. Add keywords."
+
+#: tools/translations
+msgid "Başlıq uzundur — Google onu kəsəcək."
+msgstr "The title is long. Google will cut it off."
+
+#: tools/translations
+msgid "Başlıq və təsviri dəyişmək üçün yazını açın — redaktə səhifəsində \"SEO\" qutusu var."
+msgstr "To change the title and description, open the post: the edit screen has an \"SEO\" box."
+
+#: tools/translations
+msgid "Bu səhifə axtarışdan gizlədilib (noindex)."
+msgstr "This page is hidden from search (noindex)."
+
+#: tools/translations
+msgid "Daimi linklərin quruluşu"
+msgstr "Permalink structure"
+
+#: tools/translations
+msgid "Düzəlt"
+msgstr "Fix"
+
+#: tools/translations
+msgid "FIXIT SEO"
+msgstr "FIXIT SEO"
+
+#: tools/translations
+msgid "Google Biznes Profili"
+msgstr "Google Business Profile"
+
+#: tools/translations
+msgid "Google Search Console-a saytı əlavə edin"
+msgstr "Add the site to Google Search Console"
+
+#: tools/translations
+msgid "Google-da necə görünür"
+msgstr "How it looks on Google"
+
+#: tools/translations
+msgid "Linklər \"?p=123\" formasındadır. \"Yazı adı\" seçimi SEO üçün daha yaxşıdır."
+msgstr "Links look like \"?p=123\". The \"Post name\" option is better for SEO."
+
+#: tools/translations
+msgid "Linklər oxunaqlıdır."
+msgstr "Links are readable."
+
+#: tools/translations
+msgid "Növbəti addımlar"
+msgstr "Next steps"
+
+#: tools/translations
+msgid "Qeydlər"
+msgstr "Notes"
+
+#: tools/translations
+msgid "SEO plagini"
+msgstr "SEO plugin"
+
+#: tools/translations
+msgid "Sayt HTTP üzərindədir. Hostinqdən pulsuz SSL aktivləşdirin."
+msgstr "The site runs over HTTP. Enable the free SSL in your hosting panel."
+
+#: tools/translations
+msgid "Sayt SSL üzərindən işləyir."
+msgstr "The site runs over SSL."
+
+#: tools/translations
+msgid "Sayt adı və şüarı"
+msgstr "Site title and tagline"
+
+#: tools/translations
+msgid "Sayt axtarış sistemlərindən gizlədilib! Google saytı tapa bilməyəcək."
+msgstr "The site is hidden from search engines! Google will not be able to find it."
+
+#: tools/translations
+msgid "Sayt ayarları"
+msgstr "Site settings"
+
+#: tools/translations
+msgid "Sayt ikonu (favicon)"
+msgstr "Site icon (favicon)"
+
+#: tools/translations
+msgid "Sayt indeksləşməyə açıqdır."
+msgstr "The site is open for indexing."
+
+#: tools/translations
+msgid "Saytın Google-da hansı sözlərlə tapıldığını, neçə kliklə gəldiyini və xətaları orada görürsünüz. Sitemap ünvanını da ora əlavə edin."
+msgstr "There you can see which words the site is found by on Google, how many clicks it gets and any errors. Add the sitemap address there as well."
+
+#: tools/translations
+msgid "Saytın axtarış sistemlərinə hazırlığı. Məlumat səhifə açılanda canlı hesablanır — heç bir xarici xidmətə sorğu getmir."
+msgstr "How ready the site is for search engines. The data is calculated live when the page opens; no requests go to external services."
+
+#: tools/translations
+msgid "Sitemap söndürülüb. Google səhifələri gec tapa bilər."
+msgstr "The sitemap is turned off. Google may find pages late."
+
+#: tools/translations
+msgid "Struktur məlumatları yoxlayın"
+msgstr "Check structured data"
+
+#: tools/translations
+msgid "Səhifə"
+msgstr "Page"
+
+#: tools/translations
+msgid "Səhifələr üzrə vəziyyət"
+msgstr "Status by page"
+
+#: tools/translations
+msgid "Telefon və ya e-poçt boşdur. Google şirkət kartında görünmür."
+msgstr "The phone or email is empty. It will not appear in the Google company card."
+
+#: tools/translations
+msgid "Tema şirkət kartı, naviqasiya zənciri və sual-cavab məlumatlarını avtomatik göndərir. Düzgün oxunduğunu Google-un test alətində yoxlaya bilərsiniz."
+msgstr "The theme automatically outputs the company card, breadcrumbs and FAQ data. You can check that it is read correctly in Google's testing tool."
+
+#: tools/translations
+msgid "Test et"
+msgstr "Test"
+
+#: tools/translations
+msgid "Təhlükəsiz bağlantı (HTTPS)"
+msgstr "Secure connection (HTTPS)"
+
+#: tools/translations
+msgid "Təsvir"
+msgstr "Description"
+
+#: tools/translations
+msgid "Təsvir qısadır."
+msgstr "The description is short."
+
+#: tools/translations
+msgid "Təsvir uzundur — kəsiləcək."
+msgstr "The description is long and will be cut off."
+
+#: tools/translations
+msgid "Təsvir yoxdur — Google özü təsadüfi mətn seçəcək."
+msgstr "No description: Google will pick some text on its own."
+
+#: tools/translations
+msgid "Təyin olunmayıb. Brend tanınması üçün əlavə edin."
+msgstr "Not set. Add one for brand recognition."
+
+#: tools/translations
+msgid "Təyin olunub."
+msgstr "Set."
+
+#: tools/translations
+msgid "XML sitemap"
+msgstr "XML sitemap"
+
+#: tools/translations
+msgid "Xarici SEO plagini aktivdir — meta teqləri o idarə edir, temanın SEO sahələri söndürülüb."
+msgstr "An external SEO plugin is active: it manages the meta tags, and the theme's SEO fields are turned off."
+
+#: tools/translations
+msgid "Xidmət və məhsul məzmunu"
+msgstr "Service and product content"
+
+#: tools/translations
+msgid "Yerli axtarışda (xəritədə) görünmək üçün Bakı və Cəlilabad ofislərini qeydə alın — İT xidmətlərində ən çox müraciət oradan gəlir."
+msgstr "Register the Baku and Jalilabad offices to appear in local search (on the map): most IT service enquiries come from there."
+
+#: tools/translations
+msgid "Yüklənib — sosial şəbəkə paylaşımlarında da işlədilir."
+msgstr "Uploaded. It is also used when shared on social networks."
+
+#: tools/translations
+msgid "Yüklənməyib. Paylaşım şəkli və Google şirkət kartı üçün faydalıdır."
+msgstr "Not uploaded. Useful for the share image and the Google company card."
+
+#: tools/translations
+msgid "diqqət tələb edən səhifə"
+msgstr "pages need attention"
+
+#: tools/translations
+msgid "indeksləşən səhifə"
+msgstr "indexed pages"
+
+#: tools/translations
+msgid "orta SEO balı"
+msgstr "average SEO score"
+
+#: tools/translations
+msgid "qaydasındadır"
+msgstr "OK"
+
+#: tools/translations
+msgid "sayt ayarı problemi"
+msgstr "site setting issues"
+
+#: tools/translations
+msgid "Şüar boşdur və ya standart mətndir. Şirkəti bir cümlə ilə təsvir edin."
+msgstr "The tagline is empty or the default text. Describe the company in one sentence."
+
+#: tools/translations
+msgid "əl ilə yazılıb"
+msgstr "written manually"
+
+#: tools/translations
+msgid "Analitika və reklam"
+msgstr "Analytics and ads"
+
+#: tools/translations
+msgid "Boş qalan sahənin kodu sayta əlavə olunmur. Kodlar yalnız ziyarətçi saytın aşağısındakı zolaqda razılıq verdikdən sonra işləyir: analitika (Google Analytics, Clarity) və reklam (Meta, LinkedIn) ayrıca. Sayta admin kimi daxil olanda kodlar işləmir, öz baxışlarınız statistikaya düşmür."
+msgstr "Codes for empty fields are not added to the site. The codes run only after the visitor gives consent in the bar at the bottom of the site, with analytics (Google Analytics, Clarity) and ads (Meta, LinkedIn) separately. They do not run while you are logged in as an admin, so your own views are not counted."
+
+#: tools/translations
+msgid "Campaign Manager → Conversions → \"Lead\" növlü konversiya yaradın, onun ID-sini yazın. Form göndəriləndə bu konversiya sayılır."
+msgstr "Campaign Manager → Conversions → create a \"Lead\" conversion and enter its ID. The conversion is counted when a form is submitted."
+
+#: tools/translations
+msgid "G-XXXXXXXXXX formatında. GA4 → Admin → Data streams → Web."
+msgstr "In the G-XXXXXXXXXX format. GA4 → Admin → Data streams → Web."
+
+#: tools/translations
+msgid "Google Analytics 4 — Measurement ID"
+msgstr "Google Analytics 4: Measurement ID"
+
+#: tools/translations
+msgid "LinkedIn Insight Tag — Partner ID"
+msgstr "LinkedIn Insight Tag: Partner ID"
+
+#: tools/translations
+msgid "LinkedIn — müraciət konversiyasının ID-si (istəyə görə)"
+msgstr "LinkedIn: lead conversion ID (optional)"
+
+#: tools/translations
+msgid "Meta Pixel ID"
+msgstr "Meta Pixel ID"
+
+#: tools/translations
+msgid "Microsoft Clarity — Project ID"
+msgstr "Microsoft Clarity: Project ID"
+
+#: tools/translations
+msgid "Yalnız rəqəmlər. Campaign Manager → Analyze → Insight Tag."
+msgstr "Digits only. Campaign Manager → Analyze → Insight Tag."
+
+#: tools/translations
+msgid "Yalnız rəqəmlər. Meta Events Manager → Data sources → Pixel."
+msgstr "Digits only. Meta Events Manager → Data sources → Pixel."
+
+#: tools/translations
+msgid "clarity.microsoft.com → Settings → Overview → Project ID."
+msgstr "clarity.microsoft.com → Settings → Overview → Project ID."
+
+#: tools/translations
+msgid "Loqo"
+msgstr "Logo"
+
+#: tools/translations
+msgid "Müştəri əlavə olunmayıb"
+msgstr "No clients added"
+
+#: tools/translations
+msgid "Müştərilər"
+msgstr "Clients"
+
+#: tools/translations
+msgid "Müştərini redaktə et"
+msgstr "Edit client"
+
+#: tools/translations
+msgid "Müştərinin adı"
+msgstr "Client name"
+
+#: tools/translations
+msgid "Məhsul"
+msgstr "Product"
+
+#: tools/translations
+msgid "Məhsul detalları"
+msgstr "Product details"
+
+#: tools/translations
+msgid "Məhsul tapılmadı"
+msgstr "No products found"
+
+#: tools/translations
+msgid "Məhsulu redaktə et"
+msgstr "Edit product"
+
+#: tools/translations
+msgid "Məsələn: 3CX, Yeastar, Hikvision"
+msgstr "For example: 3CX, Yeastar, Hikvision"
+
+#: tools/translations
+msgid "Qısa təsvir (kartlarda görünür)"
+msgstr "Short description (shown on cards)"
+
+#: tools/translations
+msgid "Reytinq (1–5)"
+msgstr "Rating (1–5)"
+
+#: tools/translations
+msgid "Rəy"
+msgstr "Review"
+
+#: tools/translations
+msgid "Rəy detalları"
+msgstr "Review details"
+
+#: tools/translations
+msgid "Rəyi redaktə et"
+msgstr "Edit review"
+
+#: tools/translations
+msgid "Teqlər (vergüllə ayırın)"
+msgstr "Tags (separate with commas)"
+
+#: tools/translations
+msgid "Tövsiyə: computer, camera, cloud, mail, phone, support, shield, server, network, lock"
+msgstr "Suggested: computer, camera, cloud, mail, phone, support, shield, server, network, lock"
+
+#: tools/translations
+msgid "Xidmət"
+msgstr "Service"
+
+#: tools/translations
+msgid "Xidmət detalları"
+msgstr "Service details"
+
+#: tools/translations
+msgid "Xidmət tapılmadı"
+msgstr "No services found"
+
+#: tools/translations
+msgid "Xidməti redaktə et"
+msgstr "Edit service"
+
+#: tools/translations
+msgid "Xidmətlərdə axtar"
+msgstr "Search services"
+
+#: tools/translations
+msgid "Yeni müştəri"
+msgstr "New client"
+
+#: tools/translations
+msgid "Yeni müştəri əlavə et"
+msgstr "Add new client"
+
+#: tools/translations
+msgid "Yeni məhsul"
+msgstr "New product"
+
+#: tools/translations
+msgid "Yeni məhsul əlavə et"
+msgstr "Add new product"
+
+#: tools/translations
+msgid "Yeni rəy"
+msgstr "New review"
+
+#: tools/translations
+msgid "Yeni rəy əlavə et"
+msgstr "Add new review"
+
+#: tools/translations
+msgid "Yeni xidmət"
+msgstr "New service"
+
+#: tools/translations
+msgid "Yeni xidmət əlavə et"
+msgstr "Add new service"
+
+#: tools/translations
+msgid "loqo yoxdur"
+msgstr "no logo"
+
+#: tools/translations
+msgid "Üstünlüklər (hər sətirdə bir ədəd)"
+msgstr "Benefits (one per line)"
+
+#: tools/translations
+msgid "İkon"
+msgstr "Icon"
+
+#: tools/translations
+msgid "Şəhər / şirkət"
+msgstr "City / company"
+
+#: tools/translations
+msgid "Ana səhifə (Hero)"
+msgstr "Home page (Hero)"
+
+#: tools/translations
+msgid "Ağ variantı yükləyin. Boş qalsa, hər iki rejimdə əsas loqo işlədilir."
+msgstr "Upload the white version. If empty, the main logo is used in both modes."
+
+#: tools/translations
+msgid "Baş ofis iş saatları"
+msgstr "Head office hours"
+
+#: tools/translations
+msgid "Baş ofis ünvanı"
+msgstr "Head office address"
+
+#: tools/translations
+msgid "Başlıq altı mətn"
+msgstr "Text below the headline"
+
+#: tools/translations
+msgid "Boş qoyulan sahə üçün hazır tərcümə göstərilir (azərbaycanca mətni dəyişməmisinizsə). Azərbaycanca mətni dəyişmisinizsə, burada da yeni tərcüməni yazın."
+msgstr "Empty fields show the built-in translation (if you have not changed the Azerbaijani text). If you have changed the Azerbaijani text, enter the new translation here too."
+
+#: tools/translations
+msgid "Böyük başlıq"
+msgstr "Headline"
+
+#: tools/translations
+msgid "FIXIT tema ayarları"
+msgstr "FIXIT theme settings"
+
+#: tools/translations
+msgid "Filial iş saatları"
+msgstr "Branch office hours"
+
+#: tools/translations
+msgid "Filial ünvanı"
+msgstr "Branch address"
+
+#: tools/translations
+msgid "Form mesajlarının gedəcəyi e-poçt"
+msgstr "Email for form messages"
+
+#: tools/translations
+msgid "Fəaliyyət ili"
+msgstr "Founded in"
+
+#: tools/translations
+msgid "Loqo — qaranlıq rejim"
+msgstr "Logo: dark mode"
+
+#: tools/translations
+msgid "Rəngli hissəni &lt;span&gt;...&lt;/span&gt; içinə alın."
+msgstr "Wrap the highlighted part in &lt;span&gt;...&lt;/span&gt;."
+
+#: tools/translations
+msgid "Sosial şəbəkələr"
+msgstr "Social networks"
+
+#: tools/translations
+msgid "Statistika: dəstək"
+msgstr "Stats: support"
+
+#: tools/translations
+msgid "Statistika: layihə"
+msgstr "Stats: projects"
+
+#: tools/translations
+msgid "Statistika: müştəri"
+msgstr "Stats: clients"
+
+#: tools/translations
+msgid "Statistika: təcrübə"
+msgstr "Stats: experience"
+
+#: tools/translations
+msgid "Tərcümələr (EN / RU)"
+msgstr "Translations (EN / RU)"
+
+#: tools/translations
+msgid "WhatsApp nömrəsi"
+msgstr "WhatsApp number"
+
+#: tools/translations
+msgid "Xəritə embed linki"
+msgstr "Map embed link"
+
+#: tools/translations
+msgid "Yalnız rəqəmlər, ölkə kodu ilə. Məs: 994102252090"
+msgstr "Digits only, with the country code. E.g. 994102252090"
+
+#: tools/translations
+msgid "Əlaqə məlumatları"
+msgstr "Contact details"
+
+#: tools/translations
+msgid "Əlavə telefon"
+msgstr "Additional phone"
+
+#: tools/translations
+msgid "Başlanğıc məzmunu yarat"
+msgstr "Create starter content"
+
+#: tools/translations
+msgid "Bir kliklə düzəlt"
+msgstr "Fix with one click"
+
+#: tools/translations
+msgid "Bu düymə temanın başlanğıc məzmununu yaradır: səhifələr (Ana səhifə, Xidmətlər, Haqqımızda, Əlaqə), 6 xidmət, müştəri rəyləri və əsas menyu."
+msgstr "This button creates the theme's starter content: pages (Home, Services, About, Contact), 6 services, client reviews and the main menu."
+
+#: tools/translations
+msgid "FIXIT quraşdırma"
+msgstr "FIXIT setup"
+
+#: tools/translations
+msgid "Hazırdır. Çatışmayan məzmun yaradıldı."
+msgstr "Done. The missing content was created."
+
+#: tools/translations
+msgid "Hazırkı vəziyyət"
+msgstr "Current status"
+
+#: tools/translations
+msgid "Hər şey yerindədir."
+msgstr "Everything is in place."
+
+#: tools/translations
+msgid "Müştəri %d — adını yazın, loqo yükləyin"
+msgstr "Client %d: enter the name and upload a logo"
+
+#: tools/translations
+msgid "Saytın başlanğıc məzmunu tam yaradılmayıb (xidmətlər, səhifələr və ya menyu çatışmır)."
+msgstr "The site's starter content is incomplete (services, pages or the menu are missing)."
+
+#: tools/translations
+msgid "Səhifələr"
+msgstr "Pages"
+
+#: tools/translations
+msgid "Təhlükəsizdir:"
+msgstr "It is safe:"
+
+#: tools/translations
+msgid "mövcud məzmun silinmir və təkrarlanmır — yalnız çatışmayanlar yaradılır."
+msgstr "existing content is not deleted or duplicated; only what is missing is created."
+
+#: tools/translations
+msgid "Çatışmayan bölmələr:"
+msgstr "Missing sections:"
+
+#: tools/translations
+msgid "Başlıq"
+msgstr "Title"
+
+#: tools/translations
+msgid "Boş qoyulan sahə üçün Azərbaycanca mətn göstərilir. Burada yazdığınız mətn tema yeniləndikdə pozulmur."
+msgstr "Empty fields show the Azerbaijani text. What you enter here is kept when the theme is updated."
+
+#: tools/translations
+msgid "Mətn"
+msgstr "Text"
+
+#: tools/translations
+msgid "Qısa təsvir"
+msgstr "Short description"
+
+#: tools/translations
+msgid "Teqlər (vergüllə)"
+msgstr "Tags (comma-separated)"
+
+#: tools/translations
+msgid "\"Sorğu ilə\" rejimində bu ünvan saytda görünmür — yalnız sizə gələn sorğu məktubunda xatırlatma kimi yazılır."
+msgstr "In \"On request\" mode this address is not shown on the site; it only appears as a reminder in the request email you receive."
+
+#: tools/translations
+msgid "Açıq demo üçün qeyd"
+msgstr "Note for the open demo"
+
+#: tools/translations
+msgid "Açıq — düymə birbaşa demo ünvanına aparır"
+msgstr "Open: the button goes straight to the demo address"
+
+#: tools/translations
+msgid "Demo rejimi"
+msgstr "Demo mode"
+
+#: tools/translations
+msgid "Demo və ekran görüntüləri"
+msgstr "Demo and screenshots"
+
+#: tools/translations
+msgid "Demo ünvanı"
+msgstr "Demo address"
+
+#: tools/translations
+msgid "Məhsul səhifəsində qalereya kimi göstərilir; ilk şəkil səhifənin yuxarısında da görünür. Sıranı sürüşdürərək dəyişə bilərsiniz. Real müştəri məlumatı olan ekran şəkli yükləməyin — demo məlumatlarından çəkin."
+msgstr "Shown as a gallery on the product page; the first image also appears at the top of the page. Drag to change the order. Do not upload screenshots with real customer data; take them from demo data."
+
+#: tools/translations
+msgid "Məs: Hər giriş 40 dəqiqəlik ayrıca sessiyadır"
+msgstr "E.g.: each login is a separate 40-minute session"
+
+#: tools/translations
+msgid "Sil"
+msgstr "Delete"
+
+#: tools/translations
+msgid "Sorğu ilə — müştəri formu doldurur, girişi biz göndəririk (tövsiyə)"
+msgstr "On request: the customer fills in the form and we send the login (recommended)"
+
+#: tools/translations
+msgid "Söndürülüb — demo bölməsi görünmür"
+msgstr "Off: the demo section is hidden"
+
+#: tools/translations
+msgid "Yalnız \"Açıq\" rejimdə düymənin altında göstərilir. Boş qalsa, temanın hazır qeydi göstərilir və saytın dilinə tərcümə olunur."
+msgstr "Shown under the button only in \"Open\" mode. If empty, the theme's built-in note is shown, translated into the site's language."
+
+#: tools/translations
+msgid "Ünvan boş qalsa və temada bu məhsul üçün hazır demo varsa, o işlədilir (məs. Sorğu Sistemi → açıq demo). \"Sorğu ilə\" rejimini saxlamaq üçün ünvanı da yazın."
+msgstr "If the address is empty and the theme has a built-in demo for this product, that one is used (e.g. Ticket System → open demo). To keep \"On request\" mode, enter the address as well."
+
+#: tools/translations
+msgid "Şəkil əlavə et"
+msgstr "Add image"
+
+#: tools/translations
+msgid "Əlavə et"
+msgstr "Add"
+
+#: tools/translations
+msgid "Bu məlumata baxmaq üçün icazə yoxdur."
+msgstr "You are not allowed to view this information."
+
+#: tools/translations
+msgid "Çox sayda səhv cəhd edildi. %d dəqiqə sonra yenidən yoxlayın."
+msgstr "Too many failed attempts. Try again in %d minutes."
+
+#: tools/translations
+msgid "İstifadəçi adı və ya parol səhvdir."
+msgstr "The username or password is incorrect."
+
+#: tools/translations
+msgid "Aktivdir — yeni versiyalar özü quraşdırılır"
+msgstr "On: new versions are installed automatically"
+
+#: tools/translations
+msgid "Avtomatik yeniləmə"
+msgstr "Automatic updates"
+
+#: tools/translations
+msgid "GitHub yoxlanıldı."
+msgstr "GitHub was checked."
+
+#: tools/translations
+msgid "Quraşdırılmış versiya"
+msgstr "Installed version"
+
+#: tools/translations
+msgid "Relizdə arxiv tapılmadı."
+msgstr "No archive found in the release."
+
+#: tools/translations
+msgid "Relizdə fixit-theme.zip yoxdur."
+msgstr "The release has no fixit-theme.zip."
+
+#: tools/translations
+msgid "Son buraxılmış versiya"
+msgstr "Latest released version"
+
+#: tools/translations
+msgid "Son yoxlama"
+msgstr "Last check"
+
+#: tools/translations
+msgid "Söndürülüb"
+msgstr "Off"
+
+#: tools/translations
+msgid "Tema yeniləmələri"
+msgstr "Theme updates"
+
+#: tools/translations
+msgid "Yeniləmə mövcuddur"
+msgstr "Update available"
+
+#: tools/translations
+msgid "Yeniləməni indi yoxla"
+msgstr "Check for updates now"
+
+#: tools/translations
+msgid "aktivləşdir"
+msgstr "enable"
+
+#: tools/translations
+msgid "dəyişikliklər"
+msgstr "changes"
+
+#: tools/translations
+msgid "hələ yoxlanılmayıb"
+msgstr "not checked yet"
+
+#: tools/translations
+msgid "indi yenilə"
+msgstr "update now"
+
+#: tools/translations
+msgid "yoxlanıla bilmədi"
+msgstr "could not be checked"
+
+#: tools/translations
+msgid "Ən son versiyadır"
+msgstr "Up to date"
+
+#: tools/translations
+msgid "%1$s serverinə qoşulmaq alınmadı: %2$s"
+msgstr "Could not connect to the %1$s server: %2$s"
+
+#: tools/translations
+msgid "%1$s → HTTP %2$d, %3$s, %4$s bayt"
+msgstr "%1$s → HTTP %2$d, %3$s, %4$s bytes"
+
+#: tools/translations
+msgid "%s əvvəl"
+msgstr "%s ago"
+
+#: tools/translations
+msgid "Arxivdə fixit-theme/style.css yoxdur. İçindəkilər: %s"
+msgstr "The archive has no fixit-theme/style.css. Contents: %s"
+
+#: tools/translations
+msgid "Açılmış arxivdə fixit-theme qovluğu tapılmadı. İçindəkilər: %s"
+msgstr "No fixit-theme folder was found in the extracted archive. Contents: %s"
+
+#: tools/translations
+msgid "Ehtiyat mənbə sınanır (codeload.github.com):"
+msgstr "Trying the backup source (codeload.github.com):"
+
+#: tools/translations
+msgid "FIXIT: paket yüklənir və yoxlanılır…"
+msgstr "FIXIT: downloading and checking the package…"
+
+#: tools/translations
+msgid "Fayl ZIP kimi açılmır (PclZip)."
+msgstr "The file cannot be opened as a ZIP (PclZip)."
+
+#: tools/translations
+msgid "Fayl ZIP kimi açılmır."
+msgstr "The file cannot be opened as a ZIP."
+
+#: tools/translations
+msgid "GitHub-da son reliz tapılmadı."
+msgstr "No latest release found on GitHub."
+
+#: tools/translations
+msgid "Gələn fayl ZIP deyil — ehtimal ki, hostinq onu əvəz edib. Başlanğıcı: \"%s\""
+msgstr "The downloaded file is not a ZIP; the hosting probably replaced it. It starts with: \"%s\""
+
+#: tools/translations
+msgid "Gələn fayl çox kiçikdir (%1$d bayt). Başlanğıcı: \"%2$s\""
+msgstr "The downloaded file is too small (%1$d bytes). It starts with: \"%2$s\""
+
+#: tools/translations
+msgid "Müvəqqəti fayl yaradıla bilmədi (disk və ya icazə problemi)."
+msgstr "Could not create a temporary file (disk or permission problem)."
+
+#: tools/translations
+msgid "Paket yüklənir və qaydasındadır — yeniləmə bu serverdə işləməlidir."
+msgstr "The package downloads and is valid, so updates should work on this server."
+
+#: tools/translations
+msgid "Paketi sına"
+msgstr "Test the package"
+
+#: tools/translations
+msgid "Quraşdırıldı"
+msgstr "Installed"
+
+#: tools/translations
+msgid "Reliz arxivi:"
+msgstr "Release archive:"
+
+#: tools/translations
+msgid "Server faylı vermədi (HTTP %d)."
+msgstr "The server did not return the file (HTTP %d)."
+
+#: tools/translations
+msgid "Son relizi yükləyib yoxlayır, amma quraşdırmır. Yeniləmə alınmırsa, nəticəni bizə göndərin."
+msgstr "Downloads and checks the latest release without installing it. If updates fail, send us the result."
+
+#: tools/translations
+msgid "Son yeniləmə cəhdi:"
+msgstr "Last update attempt:"
+
+#: tools/translations
+msgid "Tema tapıldı: %s"
+msgstr "Theme found: %s"
+
+#: tools/translations
+msgid "Yeniləmə diaqnostikası"
+msgstr "Update diagnostics"
+
+#: tools/translations
+msgid "Yeniləmə paketi yüklənmədi. GitHub: %1$s Ehtiyat mənbə: %2$s"
+msgstr "The update package could not be downloaded. GitHub: %1$s Backup source: %2$s"
+
+#: tools/translations
+msgid "ZIP imzası düzgündür"
+msgstr "The ZIP signature is valid"
+
+#: tools/translations
+msgid "paket yükləndi"
+msgstr "package downloaded"
+
+#: tools/translations
+msgid "uğurla quraşdırıldı"
+msgstr "installed successfully"
+
+#: tools/translations
+msgid "Alt menyu (Xidmətlər)"
+msgstr "Footer menu (Services)"
+
+#: tools/translations
+msgid "%1$s — %2$d ziyarət, %3$d rol seçdi, %4$d iş gördü"
+msgstr "%1$s: %2$d visits, %3$d chose a role, %4$d did something"
+
+#: tools/translations
+msgid "%d təkrar gəlib"
+msgstr "%d returning"
+
+#: tools/translations
+msgid "%s dəq"
+msgstr "%s min"
+
+#: tools/translations
+msgid "%s ünvanına gələnlər: haradan gəldilər, hansı rolu seçdilər, nəyə baxdılar və nə etdilər. IP ünvanları saxlanılmır."
+msgstr "Visitors to %s: where they came from, which role they chose, what they looked at and what they did. IP addresses are not stored."
+
+#: tools/translations
+msgid "30 gün"
+msgstr "30 days"
+
+#: tools/translations
+msgid "7 gün"
+msgstr "7 days"
+
+#: tools/translations
+msgid "90 gün"
+msgstr "90 days"
+
+#: tools/translations
+msgid "< 1 dəq"
+msgstr "< 1 min"
+
+#: tools/translations
+msgid "ABŞ"
+msgstr "USA"
+
+#: tools/translations
+msgid "Active Directory"
+msgstr "Active Directory"
+
+#: tools/translations
+msgid "Admin alətlərini açıb"
+msgstr "Opened admin tools"
+
+#: tools/translations
+msgid "Adətən dəyişmək lazım deyil. Demo başqa ünvana köçsə yazın."
+msgstr "Usually no need to change. Update it if the demo moves to another address."
+
+#: tools/translations
+msgid "Agent yüklə"
+msgstr "Agent download"
+
+#: tools/translations
+msgid "Agenti yükləmək istəyib"
+msgstr "Tried to download the agent"
+
+#: tools/translations
+msgid "Almaniya"
+msgstr "Germany"
+
+#: tools/translations
+msgid "Ana səhifə — flaqman blok"
+msgstr "Home page: flagship block"
+
+#: tools/translations
+msgid "Ana səhifə — yuxarıdakı slayd"
+msgstr "Home page: top slider"
+
+#: tools/translations
+msgid "Ana səhifə — «Uzaqdan qoşulma» bloku"
+msgstr "Home page: “Remote access” block"
+
+#: tools/translations
+msgid "Ayarlara keç"
+msgstr "Go to settings"
+
+#: tools/translations
+msgid "Azərbaycan"
+msgstr "Azerbaijan"
+
+#: tools/translations
+msgid "Açar"
+msgstr "Key"
+
+#: tools/translations
+msgid "Açar uyğun gəlmir: demo serverinə yazılan açar bu səhifədəki açarla eyni olmalıdır."
+msgstr "The key does not match: the key on the demo server must be the same as the key on this page."
+
+#: tools/translations
+msgid "Açar yarat"
+msgstr "Create key"
+
+#: tools/translations
+msgid "Baxdığı bölmələr"
+msgstr "Sections viewed"
+
+#: tools/translations
+msgid "Baxılan bölmələr"
+msgstr "Sections viewed"
+
+#: tools/translations
+msgid "Baxım"
+msgstr "Maintenance"
+
+#: tools/translations
+msgid "Birbaşa / başqa yerdən"
+msgstr "Direct / elsewhere"
+
+#: tools/translations
+msgid "Brauzer"
+msgstr "Browser"
+
+#: tools/translations
+msgid "Bu dövrdə hələ yükləmə yoxdur."
+msgstr "No downloads in this period yet."
+
+#: tools/translations
+msgid "Bu dövrdə hələ ziyarət yoxdur. Demo açılan kimi burada görünəcək (keş 5 dəqiqədir — «Yenilə» ilə dərhal)."
+msgstr "No visits in this period yet. They appear here as soon as the demo is opened (the cache is 5 minutes; use “Refresh” to see them right away)."
+
+#: tools/translations
+msgid "Bu ziyarətçi əvvəl də gəlib"
+msgstr "This visitor has been here before"
+
+#: tools/translations
+msgid "Böyük Britaniya"
+msgstr "United Kingdom"
+
+#: tools/translations
+msgid "BƏƏ"
+msgstr "UAE"
+
+#: tools/translations
+msgid "Cavab / şərh yazıb"
+msgstr "Wrote a reply / comment"
+
+#: tools/translations
+msgid "Checklist"
+msgstr "Checklist"
+
+#: tools/translations
+msgid "Cihaz"
+msgstr "Device"
+
+#: tools/translations
+msgid "Cloudflare sorğunu dayandırdı. Cloudflare-də %s ünvanı üçün yoxlamanı söndürən qayda (WAF → Skip) əlavə edin."
+msgstr "Cloudflare blocked the request. In Cloudflare, add a rule that skips the check for %s (WAF → Skip)."
+
+#: tools/translations
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: tools/translations
+msgid "Dashboard qurub"
+msgstr "Built a dashboard"
+
+#: tools/translations
+msgid "Demo serveri gözlənilməz cavab verdi (HTTP %d)."
+msgstr "The demo server returned an unexpected response (HTTP %d)."
+
+#: tools/translations
+msgid "Demo serveri statistikanı vermir: ya açar serverə yazılmayıb, ya da demo hələ yenilənməyib."
+msgstr "The demo server does not return the stats: either the key is not set on the server or the demo has not been updated yet."
+
+#: tools/translations
+msgid "Demo serverində (bir dəfə)"
+msgstr "On the demo server (once)"
+
+#: tools/translations
+msgid "Demo serverinə qoşulmaq olmadı: %s"
+msgstr "Could not connect to the demo server: %s"
+
+#: tools/translations
+msgid "Demo statistikası"
+msgstr "Demo statistics"
+
+#: tools/translations
+msgid "Demo statistikasına keç"
+msgstr "Go to demo statistics"
+
+#: tools/translations
+msgid "Demo — son 7 gün"
+msgstr "Demo: last 7 days"
+
+#: tools/translations
+msgid "Demonu açdı"
+msgstr "Opened the demo"
+
+#: tools/translations
+msgid "Ekran pəncərəsi"
+msgstr "Screen window"
+
+#: tools/translations
+msgid "Ekran şəkli çəkib"
+msgstr "Took a screenshot"
+
+#: tools/translations
+msgid "Ekrana baxıb (yalnız baxış)"
+msgstr "Viewed the screen (view only)"
+
+#: tools/translations
+msgid "Ekrana qoşulub"
+msgstr "Connected to the screen"
+
+#: tools/translations
+msgid "Fransa"
+msgstr "France"
+
+#: tools/translations
+msgid "Gördüyü iş"
+msgstr "Activity"
+
+#: tools/translations
+msgid "Görülən işlər (cəmi)"
+msgstr "Activity (total)"
+
+#: tools/translations
+msgid "Görünüş / hesabat saxlayıb"
+msgstr "Saved a view / report"
+
+#: tools/translations
+msgid "Görünüş, icazə dəyişib"
+msgstr "Changed a view or permission"
+
+#: tools/translations
+msgid "Günlük ziyarət qrafiki"
+msgstr "Daily visits chart"
+
+#: tools/translations
+msgid "Günlər üzrə"
+msgstr "By day"
+
+#: tools/translations
+msgid "Günün saatı (Bakı vaxtı)"
+msgstr "Hour of day (Baku time)"
+
+#: tools/translations
+msgid "Gürcüstan"
+msgstr "Georgia"
+
+#: tools/translations
+msgid "Haqqında"
+msgstr "About"
+
+#: tools/translations
+msgid "Haradan"
+msgstr "Source"
+
+#: tools/translations
+msgid "Haradan gəldi (saytdakı düymə)"
+msgstr "Source (button on the site)"
+
+#: tools/translations
+msgid "Hesabatlar"
+msgstr "Reports"
+
+#: tools/translations
+msgid "Hesabım"
+msgstr "My account"
+
+#: tools/translations
+msgid "Huni: açılışdan maraqa qədər"
+msgstr "Funnel: from opening to engagement"
+
+#: tools/translations
+msgid "Hələ heç kim ekrana qoşulmayıb, alətləri də açmayıb."
+msgstr "Nobody has connected to a screen or opened the tools yet."
+
+#: tools/translations
+msgid "Hələ heç kim içəri girməyib."
+msgstr "Nobody has logged in yet."
+
+#: tools/translations
+msgid "Hələ heç kim nə sorğu, nə tapşırıq yaratmayıb."
+msgstr "Nobody has created a ticket or a task yet."
+
+#: tools/translations
+msgid "Hələ heç kim rol seçməyib."
+msgstr "Nobody has chosen a role yet."
+
+#: tools/translations
+msgid "Hələ məlumat yoxdur."
+msgstr "No data yet."
+
+#: tools/translations
+msgid "Komandalar"
+msgstr "Teams"
+
+#: tools/translations
+msgid "Kompüter"
+msgstr "Desktop"
+
+#: tools/translations
+msgid "Log yükləmə"
+msgstr "Log download"
+
+#: tools/translations
+msgid "Məhsul səhifəsi — demo bloku"
+msgstr "Product page: demo block"
+
+#: tools/translations
+msgid "Məhsul səhifəsi — rol kartı"
+msgstr "Product page: role card"
+
+#: tools/translations
+msgid "Məhsul səhifəsi — yuxarı düymə"
+msgstr "Product page: top button"
+
+#: tools/translations
+msgid "Məhsullar siyahısı"
+msgstr "Product list"
+
+#: tools/translations
+msgid "Naməlum"
+msgstr "Unknown"
+
+#: tools/translations
+msgid "Niderland"
+msgstr "Netherlands"
+
+#: tools/translations
+msgid "Operator (helpdesk)"
+msgstr "Operator (helpdesk)"
+
+#: tools/translations
+msgid "PDF / CSV yükləyib"
+msgstr "Downloaded PDF / CSV"
+
+#: tools/translations
+msgid "Planşet"
+msgstr "Tablet"
+
+#: tools/translations
+msgid "Profil"
+msgstr "Profile"
+
+#: tools/translations
+msgid "Qazaxıstan"
+msgstr "Kazakhstan"
+
+#: tools/translations
+msgid "Qruplar"
+msgstr "Groups"
+
+#: tools/translations
+msgid "Qısa ünvan (fixit.az/yukle)"
+msgstr "Short address (fixit.az/download)"
+
+#: tools/translations
+msgid "Qısayol / əmr göndərib"
+msgstr "Sent a shortcut / command"
+
+#: tools/translations
+msgid "Rol"
+msgstr "Role"
+
+#: tools/translations
+msgid "Rol seçib girdi"
+msgstr "Chose a role and logged in"
+
+#: tools/translations
+msgid "Rusiya"
+msgstr "Russia"
+
+#: tools/translations
+msgid "SSH ilə serverə girib bu əmri işlədin. Açar əvvəl yazılıbsa, .env-dəki köhnə DEMO_STATS_TOKEN sətrini silin."
+msgstr "Log in to the server over SSH and run this command. If a key was set before, delete the old DEMO_STATS_TOKEN line in .env."
+
+#: tools/translations
+msgid "SSH ilə serverə root kimi girib bu əmri işlədin. Açarı dəyişəndə də eyni əmr kifayətdir: köhnə açarın yerinə yazır."
+msgstr "Log in to the server over SSH as root and run this command. The same command also works when you change the key: it replaces the old one."
+
+#: tools/translations
+msgid "Sayt bu açarla demo serverindən statistikanı oxuyur. Eyni açar demo serverinə də yazılmalıdır (aşağıdakı əmr)."
+msgstr "The site reads the stats from the demo server with this key. The same key must be set on the demo server too (command below)."
+
+#: tools/translations
+msgid "Saytdan yüklənib (Windows): %s"
+msgstr "Downloaded from the site (Windows): %s"
+
+#: tools/translations
+msgid "Saytın yuxarı zolağı və mobil menyu"
+msgstr "Site top bar and mobile menu"
+
+#: tools/translations
+msgid "Sessiyalar"
+msgstr "Sessions"
+
+#: tools/translations
+msgid "Seçilən rol"
+msgstr "Chosen role"
+
+#: tools/translations
+msgid "Sistem logu"
+msgstr "System log"
+
+#: tools/translations
+msgid "Son %d ziyarət göstərilir. «Təkrar» — eyni brauzer və şəbəkədən əvvəl də gəlib (IP yox, geri açılmayan kod ilə tanınır)."
+msgstr "Showing the last %d visits. “Returning” means the same browser and network visited before (recognized by a one-way code, not by IP)."
+
+#: tools/translations
+msgid "Son ziyarətlər"
+msgstr "Recent visits"
+
+#: tools/translations
+msgid "Sorğu yaradıb"
+msgstr "Created a ticket"
+
+#: tools/translations
+msgid "Sorğudan tapşırıq"
+msgstr "Task from ticket"
+
+#: tools/translations
+msgid "Sorğular siyahısı"
+msgstr "Ticket list"
+
+#: tools/translations
+msgid "Sorğunun içi"
+msgstr "Ticket details"
+
+#: tools/translations
+msgid "Statistika"
+msgstr "Statistics"
+
+#: tools/translations
+msgid "Statistika hələ qurulmayıb: «Ayarlar» bölməsində açar yaradın və demo serverinə yazın."
+msgstr "Statistics are not set up yet: create a key in “Settings” and set it on the demo server."
+
+#: tools/translations
+msgid "Statistika ünvanı"
+msgstr "Statistics address"
+
+#: tools/translations
+msgid "Status, sahə dəyişib"
+msgstr "Changed a status or field"
+
+#: tools/translations
+msgid "Tapşırıq yaradıb"
+msgstr "Created a task"
+
+#: tools/translations
+msgid "Tapşırıqlar lövhəsi"
+msgstr "Task board"
+
+#: tools/translations
+msgid "Tapşırığın içi"
+msgstr "Task details"
+
+#: tools/translations
+msgid "Ticket lövhəsi"
+msgstr "Ticket board"
+
+#: tools/translations
+msgid "Türkiyə"
+msgstr "Turkey"
+
+#: tools/translations
+msgid "Təkrar («yükləmə başlamadı»)"
+msgstr "Retry (“download did not start”)"
+
+#: tools/translations
+msgid "Təkrarlanan işlər"
+msgstr "Recurring jobs"
+
+#: tools/translations
+msgid "Təkrarlanan qayda"
+msgstr "Recurring rule"
+
+#: tools/translations
+msgid "Ukrayna"
+msgstr "Ukraine"
+
+#: tools/translations
+msgid "Vaxt"
+msgstr "Time"
+
+#: tools/translations
+msgid "Vaxt hesabatı"
+msgstr "Time report"
+
+#: tools/translations
+msgid "Vaxt qeyd edib"
+msgstr "Logged time"
+
+#: tools/translations
+msgid "Video yazıb"
+msgstr "Recorded a video"
+
+#: tools/translations
+msgid "Yadda saxla"
+msgstr "Save"
+
+#: tools/translations
+msgid "Yadda saxlanıldı."
+msgstr "Saved."
+
+#: tools/translations
+msgid "Yazışmanı açıb"
+msgstr "Opened the chat"
+
+#: tools/translations
+msgid "Yeni açar köhnəsini əvəz edəcək və demo serverində də dəyişmək lazım olacaq. Davam edək?"
+msgstr "The new key will replace the old one and must also be changed on the demo server. Continue?"
+
+#: tools/translations
+msgid "Yeni açar yaradıldı. İndi onu demo serverinə yazın (aşağıdakı əmr)."
+msgstr "A new key was created. Now set it on the demo server (command below)."
+
+#: tools/translations
+msgid "Yeni açar yarat"
+msgstr "Create a new key"
+
+#: tools/translations
+msgid "Yeni sorğu forması"
+msgstr "New ticket form"
+
+#: tools/translations
+msgid "Yeni tapşırıq forması"
+msgstr "New task form"
+
+#: tools/translations
+msgid "Yenilə"
+msgstr "Refresh"
+
+#: tools/translations
+msgid "Yeniləndi: %s"
+msgstr "Updated: %s"
+
+#: tools/translations
+msgid "Yenilənmə"
+msgstr "Updates"
+
+#: tools/translations
+msgid "Yoxdur (birbaşa açılıb)"
+msgstr "None (opened directly)"
+
+#: tools/translations
+msgid "ayrı ziyarətçi"
+msgstr "unique visitors"
+
+#: tools/translations
+msgid "dəq"
+msgstr "min"
+
+#: tools/translations
+msgid "girmədi"
+msgstr "did not log in"
+
+#: tools/translations
+msgid "iş gördü"
+msgstr "did something"
+
+#: tools/translations
+msgid "iş gördü (qoşuldu, alətlər...)"
+msgstr "did something (connected, tools...)"
+
+#: tools/translations
+msgid "iş gördü (sorğu, tapşırıq...)"
+msgstr "did something (ticket, task...)"
+
+#: tools/translations
+msgid "rol seçdi"
+msgstr "chose a role"
+
+#: tools/translations
+msgid "rol seçib içəri girdi"
+msgstr "chose a role and logged in"
+
+#: tools/translations
+msgid "tipik müddət (içəri girənlər)"
+msgstr "typical duration (logged-in visitors)"
+
+#: tools/translations
+msgid "təkrar"
+msgstr "returning"
+
+#: tools/translations
+msgid "ziyarət"
+msgstr "visits"
+
+#: tools/translations
+msgid "«Tam versiya»"
+msgstr "“Full version”"
+
+#: tools/translations
+msgid "«Tam versiya»ya keçdi"
+msgstr "Went to “Full version”"
+
+#: tools/translations
+msgid "«Uzaqdan qoşulma» səhifəsi"
+msgstr "“Remote access” page"
+
+#: tools/translations
+msgid "Ölkə"
+msgstr "Country"
+
+#: tools/translations
+msgid "Ölkə · cihaz"
+msgstr "Country · device"
+
+#: tools/translations
+msgid "Özbəkistan"
+msgstr "Uzbekistan"
+
+#: tools/translations
+msgid "İcazə yoxdur."
+msgstr "Permission denied."
+
+#: tools/translations
+msgid "İcraçı təyin edib"
+msgstr "Assigned someone"
+
+#: tools/translations
+msgid "İdarə lövhəsi"
+msgstr "Dashboard"
+
+#: tools/translations
+msgid "İdarəetmə (bağlı bölmələr)"
+msgstr "Administration (restricted sections)"
+
+#: tools/translations
+msgid "İran"
+msgstr "Iran"
+
+#: tools/translations
+msgid "İstifadəçilər"
+msgstr "Users"
+
+#: tools/translations
+msgid "İş gördü"
+msgstr "Did something"
+
+#: tools/translations
+msgid "Əməliyyat sistemi"
+msgstr "Operating system"
+
+#: tools/translations
+msgid "Ətraflı statistika"
+msgstr "Detailed statistics"
+
+#: tools/translations
+msgid "Əvvəlki sayt"
+msgstr "Previous site"
+
+#: tools/translations
+msgid "ən çox: %d"
+msgstr "max: %d"
+
+#: tools/translations
+msgid "Səhifə: %d"
+msgstr "Pages: %d"
