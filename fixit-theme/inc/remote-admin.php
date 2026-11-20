@@ -290,7 +290,7 @@ function fixit_remote_admin_page() {
 	$totals  = fixit_remote_download_totals();
 	$period  = fixit_remote_download_stats( $days );
 	$refresh = wp_nonce_url( fixit_remote_admin_url( array( 'days' => $days, 'refresh' => 1 ) ), 'fixit_remote_refresh' );
-	$short   = preg_replace( '#^https?://(www\.)?#', '', untrailingslashit( home_url( '/yukle/' ) ) );
+	$short   = preg_replace( '#^https?://(www\.)?#', '', untrailingslashit( home_url( '/download/' ) ) );
 	?>
 	<style>
 		.frm-wrap{max-width:1240px}

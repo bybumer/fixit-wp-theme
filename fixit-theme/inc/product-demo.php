@@ -183,8 +183,9 @@ function fixit_product_demo( $post_id ) {
 	// yenilənən kimi demo düyməsi işləsin, əlavə ayar tələb etmədən.
 	$post     = get_post( $post_id );
 	$details  = $post ? fixit_product_details() : array();
-	$fallback = ( $post && isset( $details[ $post->post_name ]['demo'] ) )
-		? $details[ $post->post_name ]['demo'] : array();
+	$fixit_key = $post ? fixit_product_key( $post ) : '';
+	$fallback  = ( $post && isset( $details[ $fixit_key ]['demo'] ) )
+		? $details[ $fixit_key ]['demo'] : array();
 
 	if ( $fallback && '' === $url ) {
 		/*

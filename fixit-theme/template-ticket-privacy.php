@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 
-$fixit_ticket_product = get_page_by_path( 'sorgu-sistemi', OBJECT, 'fixit_product' );
+$fixit_ticket_product = fixit_product_by_key( 'sorgu-sistemi' );
 $fixit_ticket_url     = $fixit_ticket_product ? get_permalink( $fixit_ticket_product ) : '';
 ?>
 

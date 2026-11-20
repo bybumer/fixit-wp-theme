@@ -206,7 +206,7 @@ add_action( 'rest_api_init', 'fixit_remote_register_rest' );
  * @param string $src Düymə harada durur (statistika üçün): home, home-slayd, uzaqdan...
  */
 function fixit_remote_download_link( $src = '' ) {
-	$url = home_url( '/yukle/' );
+	$url = home_url( '/download/' );
 	return $src ? add_query_arg( 'src', rawurlencode( $src ), $url ) : $url;
 }
 

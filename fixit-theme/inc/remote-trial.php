@@ -9,7 +9,7 @@
  * 3. Siz müraciətin həqiqi olduğunu yoxlayırsınız və «Bələdçini göndər» düyməsi ilə
  *    müştəriyə öz dilində hazır məktub gedir: qurulum bələdçisi, qiymətlər və şəxsi
  *    yükləmə linki (müddətli). İstəsəniz ayarlarda avtomatik göndərmə də açılır.
- * 4. Server paketini Fixit mərkəzi (id.fixit.az) verir. Link fixit.az/sinaq-paketi/
+ * 4. Server paketini Fixit mərkəzi (id.fixit.az) verir. Link fixit.az/trial-package/
  *    ünvanından keçir: sayt şəxsi açarı və müddəti yoxlayır, yükləməni qeyd edir və
  *    müştərini id.fixit.az-a 30 dəqiqəlik imzalı biletlə yönləndirir. Bileti saytın
  *    Ed25519 açarı imzalayır, mərkəz ictimai hissəsi ilə yoxlayır. Saytda GitHub
@@ -230,7 +230,7 @@ function fixit_trial_notice() {
 function fixit_trial_section() {
 	$s = fixit_trial_settings();
 	?>
-	<section class="section" id="sinaq">
+	<section class="section" id="trial">
 		<div class="container">
 			<div class="trial reveal">
 				<div class="trial__text">
@@ -297,7 +297,7 @@ function fixit_trial_handle() {
 		$back = wp_get_referer() ? wp_get_referer() : home_url( '/' );
 	}
 	$go = function ( $code ) use ( $back ) {
-		wp_safe_redirect( add_query_arg( 'fixit_trial', $code, remove_query_arg( 'fixit_trial', $back ) ) . '#sinaq' );
+		wp_safe_redirect( add_query_arg( 'fixit_trial', $code, remove_query_arg( 'fixit_trial', $back ) ) . '#trial' );
 		exit;
 	};
 
@@ -406,7 +406,7 @@ function fixit_trial_new_link( $id ) {
 
 	// Linkdə müraciətin dili: müddəti bitəndə və s. çıxan səhifə də həmin dildə olsun.
 	$lang = (string) get_post_meta( $id, '_ft_lang', true );
-	$base = fixit_add_lang_to_url( fixit_strip_lang_from_url( home_url( '/sinaq-paketi/' ) ), $lang ? $lang : fixit_default_lang() );
+	$base = fixit_add_lang_to_url( fixit_strip_lang_from_url( home_url( '/trial-package/' ) ), $lang ? $lang : fixit_default_lang() );
 
 	return array(
 		'url'     => add_query_arg( array( 'k' => $key ), $base ),
@@ -471,7 +471,7 @@ function fixit_trial_server_check( $force = false ) {
 }
 
 /**
- * fixit.az/sinaq-paketi/?k=... — açarı yoxlayır, yükləməni qeyd edir,
+ * fixit.az/trial-package/?k=... — açarı yoxlayır, yükləməni qeyd edir,
  * müştərini id.fixit.az-a qısa ömürlü imzalı biletlə yönləndirir.
  */
 function fixit_trial_download_route() {
@@ -482,7 +482,8 @@ function fixit_trial_download_route() {
 	global $wp;
 	$path = strtolower( trim( (string) $wp->request, '/' ) );
 	$path = preg_replace( '#^(en|ru)/#', '', $path );
-	if ( 'sinaq-paketi' !== $path ) {
+	// Köhnə ünvan (sinaq-paketi) artıq göndərilmiş məktublar üçün işləyir.
+	if ( ! in_array( $path, array( 'trial-package', 'sinaq-paketi' ), true ) ) {
 		return;
 	}
 
@@ -504,7 +505,7 @@ function fixit_trial_download_route() {
 		)
 	);
 
-	$back = '<p><a href="' . esc_url( fixit_product_url( 'remote' ) . '#sinaq' ) . '">' . esc_html__( 'Yeni link almaq üçün formanı yenidən doldurun', 'fixit' ) . '</a></p>';
+	$back = '<p><a href="' . esc_url( fixit_product_url( 'remote' ) . '#trial' ) . '">' . esc_html__( 'Yeni link almaq üçün formanı yenidən doldurun', 'fixit' ) . '</a></p>';
 
 	if ( ! $found ) {
 		wp_die( '<h1>' . esc_html__( 'Link etibarsızdır', 'fixit' ) . '</h1>' . $back, esc_html__( 'Link etibarsızdır', 'fixit' ), array( 'response' => 403 ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- yuxarıda escape olunub

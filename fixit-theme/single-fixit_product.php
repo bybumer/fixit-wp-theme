@@ -34,7 +34,7 @@ while ( have_posts() ) :
 
 	$fixit_contact_url  = fixit_page_url( 'template-contact.php' );
 	$fixit_products_url = fixit_page_url( 'template-products.php' );
-	$fixit_offer_url    = add_query_arg( 'mehsul', rawurlencode( $fixit_post->post_title ), $fixit_contact_url ) . '#elaqe-form';
+	$fixit_offer_url    = add_query_arg( 'product', rawurlencode( $fixit_post->post_title ), $fixit_contact_url ) . '#contact-form';
 
 	$fixit_tagline = ! empty( $fixit_detail['tagline'] ) ? $fixit_detail['tagline'] : $fixit_short;
 	$fixit_badges  = ! empty( $fixit_detail['badges'] ) ? $fixit_detail['badges'] : array();
@@ -110,10 +110,10 @@ while ( have_posts() ) :
 						</a>
 					<?php endif; ?>
 					<?php if ( 'remote' === $fixit_post->post_name ) : ?>
-						<a class="btn btn--light" href="#sinaq">
+						<a class="btn btn--light" href="#trial">
 							<?php fixit_icon( 'gift' ); ?><?php esc_html_e( '14 gün pulsuz sınayın', 'fixit' ); ?>
 						</a>
-						<a class="btn btn--light" href="#qiymetler">
+						<a class="btn btn--light" href="#pricing">
 							<?php fixit_icon( 'tag' ); ?><?php esc_html_e( 'Qiymətlər', 'fixit' ); ?>
 						</a>
 					<?php else : ?>

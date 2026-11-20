@@ -45,13 +45,13 @@ $fixit_release     = fixit_remote_release();
 <!-- Hansı hissə kimə aiddir -->
 <div class="marquee" style="padding:16px 0">
 	<div class="container" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-		<a class="chip" href="#ferdi"><?php esc_html_e( 'Fərdi istifadə — pulsuz', 'fixit' ); ?></a>
-		<a class="chip" href="#biznes"><?php esc_html_e( 'Biznes: öz serverinizdə və ya buludda', 'fixit' ); ?></a>
+		<a class="chip" href="#personal"><?php esc_html_e( 'Fərdi istifadə — pulsuz', 'fixit' ); ?></a>
+		<a class="chip" href="#business"><?php esc_html_e( 'Biznes: öz serverinizdə və ya buludda', 'fixit' ); ?></a>
 	</div>
 </div>
 
 <!-- ============================ FƏRDİ ============================ -->
-<section class="section" id="ferdi">
+<section class="section" id="personal">
 	<div class="container">
 
 		<div class="section-head reveal">
@@ -112,7 +112,7 @@ $fixit_release     = fixit_remote_release();
 								printf(
 									/* translators: %s: qısa ünvan (fixit.az/yukle) */
 									esc_html__( 'Kompüterdə qısa ünvan: %s', 'fixit' ),
-									'<b>' . esc_html( preg_replace( '#^https?://(www\.)?#', '', untrailingslashit( home_url( '/yukle/' ) ) ) ) . '</b>'
+									'<b>' . esc_html( preg_replace( '#^https?://(www\.)?#', '', untrailingslashit( home_url( '/download/' ) ) ) ) . '</b>'
 								);
 								?>
 							</p>
@@ -312,7 +312,7 @@ $fixit_release     = fixit_remote_release();
 </section>
 
 <!-- ============================ BİZNES ============================ -->
-<section class="section section--dark" id="biznes">
+<section class="section section--dark" id="business">
 	<div class="container">
 
 		<div class="section-head reveal">

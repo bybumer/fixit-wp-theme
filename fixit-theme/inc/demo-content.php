@@ -188,23 +188,23 @@ function fixit_create_clients() {
    ============================================================ */
 function fixit_create_pages() {
 	$pages = array(
-		'ana-sehife' => array(
+		'home'       => array(
 			'title'    => 'Ana səhifə',
 			'template' => '',
 		),
-		'xidmetler'  => array(
+		'services'   => array(
 			'title'    => 'Xidmətlər',
 			'template' => 'template-services.php',
 		),
-		'mehsullar'  => array(
+		'products'   => array(
 			'title'    => 'Məhsullar',
 			'template' => 'template-products.php',
 		),
-		'haqqimizda' => array(
+		'about'      => array(
 			'title'    => 'Haqqımızda',
 			'template' => 'template-about.php',
 		),
-		'uzaqdan-destek' => array(
+		'remote-access' => array(
 			'title'    => 'Uzaqdan qoşulma',
 			'template' => 'template-remote.php',
 			// Səhifə əvvəl "Uzaqdan dəstək" adlanırdı. Proqram hər kəs
@@ -213,31 +213,31 @@ function fixit_create_pages() {
 			// admin özü başqa ad yazıbsa toxunulmur.
 			'rename'   => 'Uzaqdan dəstək',
 		),
-		'elaqe'      => array(
+		'contact'    => array(
 			'title'    => 'Əlaqə',
 			'template' => 'template-contact.php',
 		),
 		// Mobil tətbiqin məxfilik siyasəti: Google Play / App Store
 		// listinqi ictimai URL tələb edir. Menyuya düşmür (menyu yalnız
 		// $order siyahısından qurulur) — birbaşa keçidlə açılır.
-		'fixit-remote-mexfilik' => array(
+		'fixit-remote-privacy' => array(
 			'title'    => 'Fixit Remote — Məxfilik siyasəti',
 			'template' => 'template-remote-privacy.php',
 		),
 		// FIXIT Ticket Android tətbiqi: Google Play «Privacy policy» və
 		// «Delete account URL» bu ünvanı göstərir. Menyuya düşmür.
-		'fixit-ticket-mexfilik' => array(
+		'fixit-ticket-privacy' => array(
 			'title'    => 'FIXIT Ticket: Məxfilik siyasəti',
 			'template' => 'template-ticket-privacy.php',
 		),
 		// Saytın ümumi məxfilik siyasəti: footer, kuki zolağı və formalar
 		// buraya keçid verir. WordPress-in «Məxfilik» ayarı da bu səhifəni göstərir.
-		'mexfilik-siyaseti' => array(
+		'privacy-policy' => array(
 			'title'    => 'Məxfilik siyasəti',
 			'template' => 'template-privacy.php',
 		),
 		// Fixit Remote serverinin qurulumu: sınaq məktubu buraya keçid verir.
-		'fixit-remote-qurulum' => array(
+		'fixit-remote-setup' => array(
 			'title'    => 'Fixit Remote server qurulumu',
 			'template' => 'template-remote-guide.php',
 		),
@@ -245,8 +245,20 @@ function fixit_create_pages() {
 
 	$ids = array();
 
+	$old_slugs = array_flip( fixit_page_slug_map() );
+
 	foreach ( $pages as $slug => $data ) {
 		$existing = get_page_by_path( $slug );
+
+		// Köhnə (Azərbaycanca) ünvanlı səhifə: yeni ünvana keçir, təkrar yaranmır.
+		if ( ! $existing && isset( $old_slugs[ $slug ] ) ) {
+			$existing = get_page_by_path( $old_slugs[ $slug ] );
+			if ( $existing ) {
+				global $wpdb;
+				$wpdb->update( $wpdb->posts, array( 'post_name' => $slug ), array( 'ID' => $existing->ID ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+				clean_post_cache( $existing->ID );
+			}
+		}
 
 		if ( $existing ) {
 			$id = $existing->ID;
@@ -279,14 +291,14 @@ function fixit_create_pages() {
 		}
 	}
 
-	if ( isset( $ids['mexfilik-siyaseti'] ) ) {
-		update_option( 'wp_page_for_privacy_policy', $ids['mexfilik-siyaseti'] );
+	if ( isset( $ids['privacy-policy'] ) ) {
+		update_option( 'wp_page_for_privacy_policy', $ids['privacy-policy'] );
 	}
 
 	// Statik ana səhifəni təyin et.
-	if ( isset( $ids['ana-sehife'] ) ) {
+	if ( isset( $ids['home'] ) ) {
 		update_option( 'show_on_front', 'page' );
-		update_option( 'page_on_front', $ids['ana-sehife'] );
+		update_option( 'page_on_front', $ids['home'] );
 	}
 
 	update_option( 'fixit_page_ids', $ids );
@@ -392,7 +404,7 @@ function fixit_product_seed() {
 	return array(
 		array(
 			'title' => 'FIXIT Sorğu Sistemi',
-			'slug'  => 'sorgu-sistemi',
+			'slug'  => 'ticket-system',
 			'order' => 1,
 			'icon'  => 'ticket',
 			// Kartlarda ilk üç üstünlük görünür - Ticket, Task və ortaq imkanlar
@@ -497,7 +509,7 @@ function fixit_product_seed() {
 		),
 		array(
 			'title' => 'FIXIT Şəbəkə Monitorinqi',
-			'slug'  => 'sebeke-monitorinqi',
+			'slug'  => 'network-monitoring',
 			'order' => 3,
 			'icon'  => 'activity',
 			'short' => 'Cihazları, interfeysləri və VPN tunellərini fasiləsiz izləyən, kəsintini siz bilməmişdən əvvəl xəbər verən monitorinq və analitika aləti.',
@@ -767,7 +779,7 @@ function fixit_menu_normalize_order( $menu_id ) {
  * @param array $page_ids Səhifə ID-ləri (slug => ID).
  */
 function fixit_menu_add_products( $menu_id, $page_ids ) {
-	if ( empty( $page_ids['mehsullar'] ) ) {
+	if ( empty( $page_ids['products'] ) ) {
 		return;
 	}
 
@@ -777,7 +789,7 @@ function fixit_menu_add_products( $menu_id, $page_ids ) {
 	$have   = array();
 
 	foreach ( $items as $item ) {
-		if ( 'post_type' === $item->type && 'page' === $item->object && (int) $item->object_id === (int) $page_ids['mehsullar'] ) {
+		if ( 'post_type' === $item->type && 'page' === $item->object && (int) $item->object_id === (int) $page_ids['products'] ) {
 			$parent = (int) $item->ID;
 		}
 		if ( 'fixit_product' === $item->object ) {
@@ -895,7 +907,7 @@ function fixit_create_menu() {
 	}
 
 	$page_ids = get_option( 'fixit_page_ids', array() );
-	$order    = array( 'ana-sehife', 'xidmetler', 'mehsullar', 'uzaqdan-destek', 'haqqimizda', 'elaqe' );
+	$order    = array( 'home', 'services', 'products', 'remote-access', 'about', 'contact' );
 	$pos      = count( $items );
 
 	foreach ( $order as $slug ) {
@@ -1001,7 +1013,7 @@ function fixit_missing_items() {
 	if ( ! fixit_get_reviews( 1 ) ) {
 		$missing[] = __( 'Müştəri rəyləri', 'fixit' );
 	}
-	if ( ! get_page_by_path( 'xidmetler' ) || ! get_page_by_path( 'elaqe' ) || ! get_page_by_path( 'mehsullar' ) ) {
+	if ( ! get_page_by_path( 'services' ) || ! get_page_by_path( 'contact' ) || ! get_page_by_path( 'products' ) ) {
 		$missing[] = __( 'Səhifələr', 'fixit' );
 	}
 	if ( ! has_nav_menu( 'primary' ) ) {

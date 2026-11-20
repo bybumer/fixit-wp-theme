@@ -96,7 +96,7 @@ $fixit_products  = fixit_get_products();
 		</div>
 
 		<!-- Sağ: form -->
-		<div class="form reveal" id="elaqe-form">
+		<div class="form reveal" id="contact-form">
 			<h2 style="font-size:1.5rem;margin-bottom:8px"><?php esc_html_e( 'Müraciət göndərin', 'fixit' ); ?></h2>
 			<p style="color:var(--text-soft);margin-bottom:22px;font-size:.96rem">
 				<?php esc_html_e( 'Formu doldurun — iş saatları ərzində sizinlə əlaqə saxlayaq.', 'fixit' ); ?>
@@ -151,7 +151,7 @@ $fixit_products  = fixit_get_products();
 					<label for="fixit_topic"><?php esc_html_e( 'Mövzu', 'fixit' ); ?></label>
 					<?php
 					// Məhsul səhifəsindən "Demo təyin et" ilə gəlibsə mövzu öncədən seçilir.
-					$fixit_preselect = isset( $_GET['mehsul'] ) ? sanitize_text_field( wp_unslash( $_GET['mehsul'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+					$fixit_preselect = isset( $_GET['product'] ) ? sanitize_text_field( wp_unslash( $_GET['product'] ) ) : ( isset( $_GET['mehsul'] ) ? sanitize_text_field( wp_unslash( $_GET['mehsul'] ) ) : '' ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 					?>
 					<select name="fixit_topic" id="fixit_topic">
 						<option value=""><?php esc_html_e( '— Mövzu seçin —', 'fixit' ); ?></option>

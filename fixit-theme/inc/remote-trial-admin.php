@@ -581,7 +581,7 @@ function fixit_trial_settings_page() {
 						<label><input type="checkbox" name="show" value="1" <?php checked( $p['show'] ); ?>> <strong><?php esc_html_e( 'Qiymətləri saytda və sınaq məktubunda göstər', 'fixit' ); ?></strong></label>
 						<p class="description"><?php esc_html_e( 'Söndürülü olanda saytda paketlər qiymətsiz, «qiymət sorğu ilə» kimi görünür, məktubda da qiymət olmur. Rəqəmləri yoxlayın, sonra yandırın.', 'fixit' ); ?></p>
 						<?php if ( function_exists( 'fixit_product_url' ) ) : ?>
-							<p><a href="<?php echo esc_url( fixit_product_url( 'remote' ) . '#qiymetler' ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Saytda bax', 'fixit' ); ?> ↗</a></p>
+							<p><a href="<?php echo esc_url( fixit_product_url( 'remote' ) . '#pricing' ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Saytda bax', 'fixit' ); ?> ↗</a></p>
 						<?php endif; ?>
 					</td>
 				</tr>

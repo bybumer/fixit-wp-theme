@@ -52,7 +52,7 @@ $fixit_services = fixit_get_services( 6 );
 					<?php if ( $fixit_services ) : ?>
 						<?php foreach ( $fixit_services as $fixit_svc ) : ?>
 							<li>
-								<a href="<?php echo esc_url( fixit_page_url( 'template-services.php' ) . '#xidmet-' . $fixit_svc->ID ); ?>">
+								<a href="<?php echo esc_url( fixit_page_url( 'template-services.php' ) . '#service-' . $fixit_svc->ID ); ?>">
 									<?php echo esc_html( fixit_t_title( $fixit_svc ) ); ?>
 								</a>
 							</li>
@@ -121,7 +121,7 @@ $fixit_services = fixit_get_services( 6 );
  * xəbərdarlığından necə keçmək. Telefonda basana isə kompüterdə açılacaq
  * qısa ünvan göstərilir (proqram Windows üçündür). Bax: assets/js/main.js.
  */
-$fixit_dl_url   = home_url( '/yukle/' );
+$fixit_dl_url   = home_url( '/download/' );
 $fixit_dl_short = preg_replace( '#^https?://(www\.)?#', '', untrailingslashit( $fixit_dl_url ) );
 ?>
 <div class="dl-help" id="dl-help" hidden role="dialog" aria-modal="true" aria-labelledby="dl-help-title">

@@ -66,7 +66,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 		<?php
 		$fixit_slide_posts = array();
 		foreach ( fixit_get_products() as $fixit_sp ) {
-			$fixit_slide_posts[ $fixit_sp->post_name ] = $fixit_sp;
+			$fixit_slide_posts[ fixit_product_key( $fixit_sp ) ] = $fixit_sp;
 		}
 		$fixit_remote_post = isset( $fixit_slide_posts['remote'] ) ? $fixit_slide_posts['remote'] : null;
 		$fixit_ticket_post = isset( $fixit_slide_posts['sorgu-sistemi'] ) ? $fixit_slide_posts['sorgu-sistemi'] : null;
@@ -265,7 +265,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 					$fixit_short = wp_trim_words( $fixit_svc->post_content, 22 );
 				}
 				?>
-				<a class="card reveal" href="<?php echo esc_url( $fixit_services_url . '#xidmet-' . $fixit_svc->ID ); ?>">
+				<a class="card reveal" href="<?php echo esc_url( $fixit_services_url . '#service-' . $fixit_svc->ID ); ?>">
 					<span class="card__icon"><?php fixit_icon( $fixit_icon_key ? $fixit_icon_key : 'shield' ); ?></span>
 					<h3><?php echo esc_html( fixit_t_title( $fixit_svc ) ); ?></h3>
 					<p><?php echo esc_html( $fixit_short ); ?></p>
@@ -563,8 +563,8 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 </section>
 
 <!-- ============================ CTA ============================ -->
-<?php // id="elaqe": demo.fixit.az-dakı "Tam versiya" linki fixit.az/#elaqe ünvanına gəlir. ?>
-<section class="section" id="elaqe" style="padding-top:0">
+<?php // id="contact": demo.fixit.az-dakı "Tam versiya" linki fixit.az/#elaqe ünvanına gəlir, main.js köhnə lövbəri #contact-a çevirir. ?>
+<section class="section" id="contact" style="padding-top:0">
 	<div class="container">
 		<div class="cta reveal">
 			<div>

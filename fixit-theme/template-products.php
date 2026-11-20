@@ -110,7 +110,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 								<?php fixit_icon( 'zap' ); ?><?php esc_html_e( 'Canlı demo', 'fixit' ); ?><?php fixit_icon( 'external' ); ?>
 							</a>
 						<?php endif; ?>
-						<a class="btn btn--ghost" href="<?php echo esc_url( add_query_arg( 'mehsul', rawurlencode( $fixit_prod->post_title ), $fixit_contact_url ) ); ?>#elaqe-form">
+						<a class="btn btn--ghost" href="<?php echo esc_url( add_query_arg( 'product', rawurlencode( $fixit_prod->post_title ), $fixit_contact_url ) ); ?>#contact-form">
 							<?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Təklif istə', 'fixit' ); ?>
 						</a>
 					</div>
@@ -178,7 +178,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 				</ul>
 
 				<div style="margin-top:26px;display:grid;gap:10px">
-					<a class="btn btn--primary btn--block" href="<?php echo esc_url( $fixit_contact_url ); ?>#elaqe-form">
+					<a class="btn btn--primary btn--block" href="<?php echo esc_url( $fixit_contact_url ); ?>#contact-form">
 						<?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Təklif istə', 'fixit' ); ?>
 					</a>
 					<a class="btn btn--ghost btn--block" href="tel:<?php echo esc_attr( fixit_tel( $fixit_phone ) ); ?>">
@@ -257,7 +257,7 @@ endwhile;
 				<p><?php esc_html_e( 'Sizə uyğun vaxtda demo təşkil edək — 20-30 dəqiqə kifayətdir.', 'fixit' ); ?></p>
 			</div>
 			<div class="cta__actions">
-				<a class="btn btn--white" href="<?php echo esc_url( $fixit_contact_url ); ?>#elaqe-form">
+				<a class="btn btn--white" href="<?php echo esc_url( $fixit_contact_url ); ?>#contact-form">
 					<?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Demo təyin et', 'fixit' ); ?>
 				</a>
 				<a class="btn btn--light" href="tel:<?php echo esc_attr( fixit_tel( $fixit_phone ) ); ?>">

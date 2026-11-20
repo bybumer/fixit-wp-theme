@@ -555,7 +555,8 @@ function fixit_product_details() {
  */
 function fixit_product_detail( $post ) {
 	$all = fixit_product_details();
-	return isset( $all[ $post->post_name ] ) ? $all[ $post->post_name ] : array();
+	$key = fixit_product_key( $post );
+	return isset( $all[ $key ] ) ? $all[ $key ] : array();
 }
 
 /**
@@ -573,7 +574,7 @@ function fixit_product_screens( $post ) {
 		return array();
 	}
 
-	$dir     = '/assets/img/products/' . $post->post_name . '/';
+	$dir     = '/assets/img/products/' . fixit_product_key( $post ) . '/';
 	$screens = array();
 
 	foreach ( $detail['screens'] as $screen ) {

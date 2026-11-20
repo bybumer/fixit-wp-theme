@@ -35,7 +35,7 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 	<div class="marquee" style="padding:16px 0">
 		<div class="container" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
 			<?php foreach ( $fixit_services as $fixit_svc ) : ?>
-				<a class="chip" href="#xidmet-<?php echo esc_attr( $fixit_svc->ID ); ?>"><?php echo esc_html( fixit_t_title( $fixit_svc ) ); ?></a>
+				<a class="chip" href="#service-<?php echo esc_attr( $fixit_svc->ID ); ?>"><?php echo esc_html( fixit_t_title( $fixit_svc ) ); ?></a>
 			<?php endforeach; ?>
 		</div>
 	</div>
@@ -50,7 +50,7 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 			$fixit_features = fixit_t_features( $fixit_svc );
 			$fixit_chips    = fixit_t_chips( $fixit_svc );
 			?>
-			<article class="svc reveal" id="xidmet-<?php echo esc_attr( $fixit_svc->ID ); ?>">
+			<article class="svc reveal" id="service-<?php echo esc_attr( $fixit_svc->ID ); ?>">
 				<div class="svc__icon"><?php fixit_icon( $fixit_icon_key ? $fixit_icon_key : 'shield' ); ?></div>
 
 				<div>

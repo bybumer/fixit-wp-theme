@@ -221,6 +221,26 @@ qayıtmaq köhnə kodu yeni versiya nömrəsi ilə dərc etmək deməkdir.
 
 ## 6. Dillər (AZ / EN / RU)
 
+### Ünvanlar ingiliscədir (1.16.4-dən)
+
+Məzmun üç dildədir (AZ əsas, `/en/`, `/ru/`), ünvanların özü isə ingiliscədir:
+`/services/`, `/products/`, `/about/`, `/contact/`, `/remote-access/`,
+`/privacy-policy/`, `/product/remote/`, `/product/ticket-system/`,
+`/product/network-monitoring/`, `/fixit-remote-privacy/`, `/fixit-ticket-privacy/`,
+`/fixit-remote-setup/`, `/download/`, `/trial-package/`. Lövbərlər də:
+`#pricing`, `#trial`, `#contact`, `#contact-form`, `#service-ID`; əlaqə formasında
+məhsul `?product=` ilə seçilir.
+
+Köhnə Azərbaycan ünvanları (`/haqqimizda/`, `/mehsul/sorgu-sistemi/`,
+`/fixit-remote-mexfilik/` …) dil önşəkilçisi və parametrlərlə birlikdə yenisinə
+**301** ilə yönləndirilir (`inc/url-map.php`); `/yukle/` və `/sinaq-paketi/`
+olduğu kimi işləyir, köhnə lövbərləri (`#qiymetler`, `#xidmet-12`, `#elaqe`)
+`main.js` yenisinə çevirir. Köçürmə bir dəfə işləyir (`fixit_url_rev`): səhifə və
+məhsulların slug-u birbaşa bazada dəyişir, yazı növlərinin ünvanı yenilənir.
+Məhsulun daxili açarı köhnə slug-dur (`fixit_product_key()`): mətnlər
+(`product-data.php`) və şəkil qovluqları (`assets/img/products/sorgu-sistemi/`)
+dəyişməyib.
+
 Sayt üç dildədir. Azərbaycanca əsas dildir və ünvanı dəyişmir;
 digər dillər ünvanın əvvəlinə prefiks alır:
 

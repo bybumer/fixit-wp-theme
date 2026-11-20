@@ -40,7 +40,7 @@ $fixit_remote_url = function_exists( 'fixit_product_url' ) ? fixit_product_url( 
 		<div class="policy">
 			<div class="alert alert--ok" style="margin-bottom:26px">
 				<?php esc_html_e( 'Server paketini sınaq formasını dolduranda e-poçtunuza göndərdiyimiz şəxsi linklə yükləyirsiniz.', 'fixit' ); ?>
-				<a href="<?php echo esc_url( $fixit_remote_url . '#sinaq' ); ?>"><?php esc_html_e( 'Linki almaq', 'fixit' ); ?></a>
+				<a href="<?php echo esc_url( $fixit_remote_url . '#trial' ); ?>"><?php esc_html_e( 'Linki almaq', 'fixit' ); ?></a>
 			</div>
 
 			<ol class="guide-steps">

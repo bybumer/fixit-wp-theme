@@ -236,11 +236,11 @@ function fixit_pricing_section() {
 	$names    = fixit_pricing_tier_names();
 	$audience = fixit_pricing_tier_audience();
 	$last     = end( $p['tiers'] );
-	$contact  = add_query_arg( 'mehsul', 'Fixit Remote', fixit_page_url( 'template-contact.php' ) );
+	$contact  = add_query_arg( 'product', 'Fixit Remote', fixit_page_url( 'template-contact.php' ) );
 	/* translators: %s: faiz */
 	$save = $p['save'] ? sprintf( __( '%s%% qənaət', 'fixit' ), number_format_i18n( $p['save'] ) ) : '';
 	?>
-	<section class="section section--soft price-section" id="qiymetler" data-billing="month" data-rates="<?php echo esc_url( rest_url( 'fixit/v1/rates' ) ); ?>" data-sep="<?php echo esc_attr( wp_json_encode( fixit_pricing_separators() ) ); ?>">
+	<section class="section section--soft price-section" id="pricing" data-billing="month" data-rates="<?php echo esc_url( rest_url( 'fixit/v1/rates' ) ); ?>" data-sep="<?php echo esc_attr( wp_json_encode( fixit_pricing_separators() ) ); ?>">
 		<div class="container">
 			<div class="section-head section-head--center reveal">
 				<span class="eyebrow"><?php fixit_icon( 'tag' ); ?><?php esc_html_e( 'Qiymətlər', 'fixit' ); ?></span>
@@ -311,7 +311,7 @@ function fixit_pricing_section() {
 							</span>
 						</p>
 
-						<a class="btn <?php echo $featured ? 'btn--primary' : 'btn--ghost'; ?> btn--block" href="#sinaq"><?php esc_html_e( '14 gün pulsuz sınayın', 'fixit' ); ?></a>
+						<a class="btn <?php echo $featured ? 'btn--primary' : 'btn--ghost'; ?> btn--block" href="#trial"><?php esc_html_e( '14 gün pulsuz sınayın', 'fixit' ); ?></a>
 					</article>
 				<?php endforeach; ?>
 			</div>
@@ -392,7 +392,7 @@ function fixit_pricing_section() {
 					<h3><?php esc_html_e( 'Lisenziya almaq istəyirsiniz?', 'fixit' ); ?></h3>
 					<p><?php esc_html_e( 'Lisenziya müqavilə əsasında rəsmiləşdirilir, ödəniş bank köçürməsi ilə. Bizə yazın: cihaz sayınıza görə müqaviləni və hesab-fakturanı hazırlayırıq, ödənişdən sonra lisenziya açarını göndəririk.', 'fixit' ); ?></p>
 				</div>
-				<a class="btn btn--primary" href="<?php echo esc_url( $contact . '#elaqe-form' ); ?>"><?php esc_html_e( 'Lisenziya üçün müraciət', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?></a>
+				<a class="btn btn--primary" href="<?php echo esc_url( $contact . '#contact-form' ); ?>"><?php esc_html_e( 'Lisenziya üçün müraciət', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?></a>
 			</div>
 		</div>
 	</section>

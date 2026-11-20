@@ -118,7 +118,7 @@
 			return;
 		}
 
-		// Saytın öz /yukle/ ünvanı: son FixitRemote.exe-yə yönləndirir.
+		// Saytın öz /download/ ünvanı (köhnəsi /yukle/): son FixitRemote.exe-yə yönləndirir.
 		if (a.hasAttribute('data-remote-download')) {
 			send('remote_free_download', { platform: 'windows' }, 'RemoteFreeDownload', { content_name: 'windows' });
 			return;

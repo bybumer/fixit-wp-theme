@@ -8,6 +8,24 @@
 	var doc = document;
 
 	/* ---------------------------------------------
+	   0. Köhnə lövbərlər: #qiymetler → #pricing və s.
+	   Ünvanlar ingiliscəyə keçib (inc/url-map.php); köhnə linklər, məktublar
+	   və demo saytındakı keçid (fixit.az/#elaqe) yenə lazımi yerə aparsın.
+	   --------------------------------------------- */
+	var legacyAnchors = { qiymetler: 'pricing', sinaq: 'trial', 'elaqe-form': 'contact-form', elaqe: 'contact', biznes: 'business', ferdi: 'personal' };
+	var fixLegacyAnchor = function () {
+		var h = '';
+		try { h = decodeURIComponent((window.location.hash || '').slice(1)); } catch (e) { return; }
+		var to = legacyAnchors[h] || (/^xidmet-\d+$/.test(h) ? 'service-' + h.slice(7) : '');
+		var el = to ? doc.getElementById(to) : null;
+		if (!el) return;
+		try { window.history.replaceState(null, '', '#' + to); } catch (e) {}
+		el.scrollIntoView();
+	};
+	fixLegacyAnchor();
+	window.addEventListener('hashchange', fixLegacyAnchor);
+
+	/* ---------------------------------------------
 	   1. İşıqlı / qaranlıq rejim
 	   --------------------------------------------- */
 	var toggle = doc.querySelector('.theme-toggle');
