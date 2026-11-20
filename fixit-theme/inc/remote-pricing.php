@@ -204,6 +204,15 @@ function fixit_pricing_includes() {
 }
 
 /**
+ * Məbləğ HTML-də: AZN yazısı və data-azn (valyuta seçiləndə brauzer çevirir).
+ *
+ * @param float $amount Məbləğ, AZN.
+ */
+function fixit_pricing_money_html( $amount ) {
+	return '<span data-azn="' . esc_attr( round( (float) $amount, 2 ) ) . '">' . esc_html( fixit_pricing_money( $amount ) ) . '</span>';
+}
+
+/**
  * Məbləğ, aylıq və illik görünüşü ilə (seçim JS ilə dəyişir, JS olmasa aylıq).
  *
  * @param float  $month Aylıq məbləğ.
@@ -213,8 +222,8 @@ function fixit_pricing_includes() {
 function fixit_pricing_amount( $month, $year, $class = '' ) {
 	?>
 	<span class="price-amount <?php echo esc_attr( $class ); ?>">
-		<span data-bill="month"><b><?php echo esc_html( fixit_pricing_money( $month ) ); ?></b><small><?php esc_html_e( 'ayda', 'fixit' ); ?></small></span>
-		<span data-bill="year"><b><?php echo esc_html( fixit_pricing_money( $year ) ); ?></b><small><?php esc_html_e( 'ildə', 'fixit' ); ?></small></span>
+		<span data-bill="month"><b data-azn="<?php echo esc_attr( round( (float) $month, 2 ) ); ?>"><?php echo esc_html( fixit_pricing_money( $month ) ); ?></b><small><?php esc_html_e( 'ayda', 'fixit' ); ?></small></span>
+		<span data-bill="year"><b data-azn="<?php echo esc_attr( round( (float) $year, 2 ) ); ?>"><?php echo esc_html( fixit_pricing_money( $year ) ); ?></b><small><?php esc_html_e( 'ildə', 'fixit' ); ?></small></span>
 	</span>
 	<?php
 }
@@ -231,7 +240,7 @@ function fixit_pricing_section() {
 	/* translators: %s: faiz */
 	$save = $p['save'] ? sprintf( __( '%s%% qənaət', 'fixit' ), number_format_i18n( $p['save'] ) ) : '';
 	?>
-	<section class="section section--soft price-section" id="qiymetler" data-billing="month">
+	<section class="section section--soft price-section" id="qiymetler" data-billing="month" data-rates="<?php echo esc_url( rest_url( 'fixit/v1/rates' ) ); ?>" data-sep="<?php echo esc_attr( wp_json_encode( fixit_pricing_separators() ) ); ?>">
 		<div class="container">
 			<div class="section-head section-head--center reveal">
 				<span class="eyebrow"><?php fixit_icon( 'tag' ); ?><?php esc_html_e( 'Qiymətlər', 'fixit' ); ?></span>
@@ -240,9 +249,16 @@ function fixit_pricing_section() {
 			</div>
 
 			<?php if ( $p['show'] ) : ?>
+				<div class="price-tools">
 				<div class="bill-toggle" role="group" aria-label="<?php esc_attr_e( 'Ödəniş dövrü', 'fixit' ); ?>" hidden>
 					<button type="button" data-bill-set="month" aria-pressed="true"><?php esc_html_e( 'Aylıq ödəniş', 'fixit' ); ?></button>
 					<button type="button" data-bill-set="year" aria-pressed="false"><?php esc_html_e( 'İllik ödəniş', 'fixit' ); ?><?php if ( $save ) : ?><span class="bill-toggle__save"><?php echo esc_html( $save ); ?></span><?php endif; ?></button>
+				</div>
+				<div class="cur-toggle" role="group" aria-label="<?php esc_attr_e( 'Valyuta', 'fixit' ); ?>" hidden>
+					<?php foreach ( fixit_fx_currencies() as $fixit_cur ) : ?>
+						<button type="button" data-cur-set="<?php echo esc_attr( $fixit_cur ); ?>" aria-pressed="<?php echo 'AZN' === $fixit_cur ? 'true' : 'false'; ?>"><?php echo esc_html( $fixit_cur ); ?></button>
+					<?php endforeach; ?>
+				</div>
 				</div>
 			<?php endif; ?>
 
@@ -266,13 +282,13 @@ function fixit_pricing_section() {
 									<span data-bill="month">
 										<?php
 										/* translators: %s: qiymət */
-										echo esc_html( sprintf( __( 'cihaz başına %s', 'fixit' ), fixit_pricing_money( $tier['price'] ) ) );
+										echo sprintf( esc_html__( 'cihaz başına %s', 'fixit' ), fixit_pricing_money_html( $tier['price'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- hər iki hissə escape olunub
 										?>
 									</span>
 									<span data-bill="year">
 										<?php
 										/* translators: 1: aylıq məbləğ, 2: ödənilən ay sayı */
-										echo esc_html( sprintf( __( '%1$s × %2$d ay', 'fixit' ), fixit_pricing_money( $tier['month'] ), $p['months'] ) );
+										echo sprintf( esc_html__( '%1$s × %2$d ay', 'fixit' ), fixit_pricing_money_html( $tier['month'] ), (int) $p['months'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- hər iki hissə escape olunub
 										?>
 										<?php if ( $save ) : ?>
 											<em class="price-save"><?php echo esc_html( $save ); ?></em>
@@ -299,6 +315,12 @@ function fixit_pricing_section() {
 					</article>
 				<?php endforeach; ?>
 			</div>
+
+			<?php if ( $p['show'] ) : ?>
+				<p class="price-fx" hidden
+					data-tpl="<?php echo esc_attr__( 'Qiymətlər AZN ilə müəyyən olunur. {cur} məbləği Azərbaycan Mərkəzi Bankının {date} tarixli məzənnəsi ilə təxminidir: 1 {cur} = {rate} AZN.', 'fixit' ); ?>"
+					data-fail="<?php echo esc_attr__( 'Məzənnəni hazırda almaq olmadı, qiymətlər AZN ilə göstərilir.', 'fixit' ); ?>"></p>
+			<?php endif; ?>
 
 			<div class="price-custom reveal">
 				<span class="price-custom__icon"><?php fixit_icon( 'users' ); ?></span>

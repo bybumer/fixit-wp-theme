@@ -408,12 +408,64 @@
 	   9. Fixit Remote: aylıq / illik seçimi və qiymət kalkulyatoru
 	   Hesab inc/remote-pricing.php → fixit_pricing_quote() ilə eynidir:
 	   hər paket üçün «paket + 10-luq əlavələr» hesablanır, ən ucuzu seçilir.
-	   Aylıq = kompüter × qiymət; illik = aylıq × data-months.
+	   Aylıq = cihaz × qiymət; illik = aylıq × data-months.
+	   Valyuta: qiymətlər AZN-dədir ([data-azn]); USD / RUB seçiləndə
+	   AMB məzənnəsi ilə (/wp-json/fixit/v1/rates) brauzerdə çevrilir.
 	   --------------------------------------------- */
 	var priceSection = doc.querySelector('.price-section');
 	var billToggle = priceSection ? priceSection.querySelector('.bill-toggle') : null;
+	var curToggle = priceSection ? priceSection.querySelector('.cur-toggle') : null;
+	var fxNote = priceSection ? priceSection.querySelector('.price-fx') : null;
 	var calc = doc.querySelector('[data-price-calc]');
 	var renderCalc = null;
+	var currency = 'AZN';
+	var fx = null;
+
+	// Ayırıcılar serverdən gəlir (fixit_pricing_separators): PHP ilə eyni format.
+	var sep = ['.', ','];
+	try { sep = JSON.parse((priceSection && priceSection.getAttribute('data-sep')) || '[".", ","]'); } catch (e) {}
+
+	var fmtNum = function (v, decimals) {
+		var parts = v.toFixed(decimals).split('.');
+		parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, sep[1]);
+		return parts.join(sep[0]);
+	};
+
+	// AZN məbləği seçilmiş valyutada. Çevrilmiş məbləğ «≈» ilə: təxminidir.
+	var money = function (azn) {
+		if (currency === 'AZN' || !fx || !fx.rates[currency]) {
+			var whole = Math.abs(azn - Math.round(azn)) < 0.005;
+			return fmtNum(whole ? Math.round(azn) : azn, whole ? 0 : 2) + '\u00a0AZN';
+		}
+		var v = azn / fx.rates[currency];
+		var d = (currency === 'RUB' || v >= 1000) ? 0 : 2;
+		return '\u2248\u00a0' + fmtNum(d ? v : Math.round(v), d) + '\u00a0' + currency;
+	};
+
+	var paintMoney = function () {
+		priceSection.querySelectorAll('[data-azn]').forEach(function (el) {
+			el.textContent = money(parseFloat(el.getAttribute('data-azn')) || 0);
+		});
+		if (fxNote) {
+			if (currency === 'AZN' || !fx) {
+				fxNote.hidden = true;
+			} else {
+				var r = fx.rates[currency];
+				fxNote.textContent = (fxNote.getAttribute('data-tpl') || '')
+					.split('{cur}').join(currency)
+					.replace('{date}', fx.date)
+					.replace('{rate}', fmtNum(r, r < 1 ? 4 : 2));
+				fxNote.hidden = false;
+			}
+		}
+		if (renderCalc) renderCalc();
+	};
+
+	var fxFailed = function () {
+		if (!fxNote) return;
+		fxNote.textContent = fxNote.getAttribute('data-fail') || '';
+		fxNote.hidden = false;
+	};
 
 	var billing = function () {
 		return priceSection && priceSection.getAttribute('data-billing') === 'year' ? 'year' : 'month';
@@ -448,17 +500,6 @@
 		var outBig = calc.querySelector('[data-calc="big"]');
 		var outAlt = calc.querySelector('[data-calc="alt"]');
 		var attr = function (n) { return calc.getAttribute('data-' + n) || ''; };
-
-		// Ayırıcılar serverdən gəlir (fixit_pricing_separators): PHP ilə eyni format.
-		var sep = ['.', ','];
-		try { sep = JSON.parse(calc.getAttribute('data-sep') || '[".", ","]'); } catch (e) {}
-
-		var money = function (v) {
-			var whole = Math.abs(v - Math.round(v)) < 0.005;
-			var parts = (whole ? Math.round(v).toString() : v.toFixed(2)).split('.');
-			parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, sep[1]);
-			return parts.join(sep[0]) + '\u00a0AZN';
-		};
 
 		var quote = function (n) {
 			var best = null;
@@ -510,6 +551,39 @@
 			renderCalc();
 		} else {
 			renderCalc = null;
+		}
+	}
+
+	if (curToggle) {
+		var curButtons = Array.prototype.slice.call(curToggle.querySelectorAll('[data-cur-set]'));
+		var setCurrency = function (code) {
+			var apply = function () {
+				currency = code;
+				curButtons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-cur-set') === code ? 'true' : 'false'); });
+				try { window.localStorage.setItem('fixit-cur', code); } catch (e) {}
+				paintMoney();
+			};
+			if (code === 'AZN' || fx) { apply(); return; }
+			var url = priceSection.getAttribute('data-rates');
+			if (!url || !window.fetch) { fxFailed(); return; }
+			fetch(url, { credentials: 'omit' })
+				.then(function (r) { return r.ok ? r.json() : null; })
+				.then(function (d) {
+					if (d && d.rates && d.rates[code]) { fx = d; apply(); } else { fxFailed(); }
+				})
+				.catch(fxFailed);
+		};
+
+		curToggle.hidden = false;
+		curButtons.forEach(function (btn) {
+			btn.addEventListener('click', function () { setCurrency(btn.getAttribute('data-cur-set')); });
+		});
+
+		// Ziyarətçinin əvvəlki seçimi (yalnız bu brauzerdə).
+		var savedCur = null;
+		try { savedCur = window.localStorage.getItem('fixit-cur'); } catch (e) {}
+		if (savedCur && savedCur !== 'AZN' && curButtons.some(function (b) { return b.getAttribute('data-cur-set') === savedCur; })) {
+			setCurrency(savedCur);
 		}
 	}
 

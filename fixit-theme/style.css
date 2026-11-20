@@ -4,7 +4,7 @@ Theme URI: https://fixit.az
 Author: FIXIT
 Author URI: https://fixit.az
 Description: FIXIT şirkəti üçün hazırlanmış peşəkar İKT xidmətləri teması. Tam responsiv, işıqlı/qaranlıq rejim, daxili əlaqə formu, SEO və sürət üçün optimallaşdırılmışdır.
-Version: 1.16.2
+Version: 1.16.3
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -1168,6 +1168,24 @@ html[data-theme="dark"] .svc__tagline{color:var(--accent-400)}
 html[data-theme="dark"] .bill-toggle__save{color:#4ade80}
 .bill-toggle button[aria-pressed="true"] .bill-toggle__save{background:rgba(255,255,255,.22);color:#fff}
 
+/* Valyuta: AZN / USD / RUB (ödəniş dövrünün yanında) */
+.price-tools{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin:-12px 0 34px}
+.price-tools .bill-toggle{margin:0}
+.cur-toggle{
+  display:flex;padding:5px;gap:2px;
+  background:var(--bg-elev);border:1px solid var(--surface-line);border-radius:999px;box-shadow:var(--shadow-sm);
+}
+.cur-toggle[hidden]{display:none}
+.cur-toggle button{
+  border:0;background:none;cursor:pointer;padding:10px 14px;border-radius:999px;
+  font:inherit;font-weight:700;font-size:.88rem;letter-spacing:.02em;color:var(--text-soft);transition:background .2s,color .2s;
+}
+.cur-toggle button:hover{color:var(--text)}
+.cur-toggle button[aria-pressed="true"]{color:var(--brand-600);background:color-mix(in srgb,var(--brand-500) 12%,transparent)}
+html[data-theme="dark"] .cur-toggle button[aria-pressed="true"]{color:var(--brand-400)}
+.price-fx{margin:14px auto 0;max-width:760px;text-align:center;font-size:.85rem;color:var(--text-mute)}
+.price-fx[hidden]{display:none}
+
 .price-section .section-head{max-width:820px}
 
 /* Paket kartları */
@@ -1291,6 +1309,7 @@ html[data-theme="dark"] .price-save{color:#4ade80}
   .price-calc__row input[type=number]{width:100%}
   .price-license{padding:20px}
   .bill-toggle button{padding:9px 14px;font-size:.88rem}
+  .cur-toggle button{padding:9px 11px}
 }
 @media (max-width:520px){
   .price-card{flex:1 1 100%}

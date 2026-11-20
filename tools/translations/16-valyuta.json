@@ -1,0 +1,14 @@
+{
+ "Valyuta": {
+  "en": "Currency",
+  "ru": "Валюта"
+ },
+ "Qiymətlər AZN ilə müəyyən olunur. {cur} məbləği Azərbaycan Mərkəzi Bankının {date} tarixli məzənnəsi ilə təxminidir: 1 {cur} = {rate} AZN.": {
+  "en": "Prices are set in AZN. The {cur} amount is approximate, at the Central Bank of Azerbaijan rate of {date}: 1 {cur} = {rate} AZN.",
+  "ru": "Цены установлены в AZN. Сумма в {cur} приблизительная, по курсу Центрального банка Азербайджана на {date}: 1 {cur} = {rate} AZN."
+ },
+ "Məzənnəni hazırda almaq olmadı, qiymətlər AZN ilə göstərilir.": {
+  "en": "The exchange rate is not available right now, so prices are shown in AZN.",
+  "ru": "Курс сейчас недоступен, цены показаны в AZN."
+ }
+}

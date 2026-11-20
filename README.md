@@ -293,6 +293,13 @@ illik = aylıq × (12 − hədiyyə) olur və «İllik ödəniş» düyməsinin 
 qənaət faizi görünür. Kartlarda paketin adı, kimə uyğun olduğu, qiymət və
 kompüter sayı var; altında «Hər paketə daxildir» siyahısı.
 
+**Valyuta (AZN / USD / RUB):** qiymətlər AZN-də yazılır; «Aylıq / İllik»
+seçiminin yanında valyuta düymələri var. USD və ya RUB seçiləndə brauzer
+məbləğləri Azərbaycan Mərkəzi Bankının gündəlik rəsmi məzənnəsi ilə çevirir
+(«≈» işarəsi ilə) və altda məzənnəni və tarixi yazır. Məzənnə `inc/currency.php`:
+`cbar.az/currencies/GG.AA.İİİİ.xml`, 6 saatlıq keş, AMB cavab verməsə son bilinən
+məzənnə; `/wp-json/fixit/v1/rates`. Seçim ziyarətçinin brauzerində yadda qalır.
+
 Rəqəmlər admin paneldə dəyişir. **Qiymətlər saytda yalnız «Qiymətləri saytda
 göstər» seçiləndən sonra görünür**, o vaxta qədər paketlər «qiymət sorğu ilə»
 kimi göstərilir və sınaq məktubunda qiymət olmur.

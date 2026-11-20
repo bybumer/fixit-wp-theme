@@ -3401,6 +3401,10 @@ msgid "İllik ödəniş"
 msgstr "Yearly"
 
 #: inc/remote-pricing.php
+msgid "Valyuta"
+msgstr "Currency"
+
+#: inc/remote-pricing.php
 msgid "Ən çox seçilən"
 msgstr "Most popular"
 
@@ -3423,6 +3427,14 @@ msgstr "we send the quote together with the trial"
 #: inc/remote-pricing.php
 msgid "%s cihaza qədər"
 msgstr "Up to %s devices"
+
+#: inc/remote-pricing.php
+msgid "Qiymətlər AZN ilə müəyyən olunur. {cur} məbləği Azərbaycan Mərkəzi Bankının {date} tarixli məzənnəsi ilə təxminidir: 1 {cur} = {rate} AZN."
+msgstr "Prices are set in AZN. The {cur} amount is approximate, at the Central Bank of Azerbaijan rate of {date}: 1 {cur} = {rate} AZN."
+
+#: inc/remote-pricing.php
+msgid "Məzənnəni hazırda almaq olmadı, qiymətlər AZN ilə göstərilir."
+msgstr "The exchange rate is not available right now, so prices are shown in AZN."
 
 #: inc/remote-pricing.php
 msgid "Fərdi təklif"

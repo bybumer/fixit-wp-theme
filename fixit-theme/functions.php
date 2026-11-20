@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.16.2' );
+define( 'FIXIT_VERSION', '1.16.3' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -175,6 +175,7 @@ require_once get_template_directory() . '/inc/product-demo.php';  // Məhsul: de
 require_once get_template_directory() . '/inc/product-data.php';  // Məhsul səhifələrinin detallı məzmunu
 require_once get_template_directory() . '/inc/remote-download.php'; // fixit.az/yukle: Fixit Remote-un yüklənməsi və sayı
 require_once get_template_directory() . '/inc/remote-admin.php';    // Admin: Fixit Remote — son versiya və yükləmə sayı
+require_once get_template_directory() . '/inc/currency.php';      // Valyuta məzənnələri (AMB): qiymətlərin USD / RUB ekvivalenti
 require_once get_template_directory() . '/inc/remote-pricing.php';  // Fixit Remote: qiymət cədvəli (agent sayına görə)
 require_once get_template_directory() . '/inc/remote-trial.php';    // Fixit Remote: 14 günlük sınaq müraciəti, məktub, admin izləmə
 require_once get_template_directory() . '/inc/remote-trial-admin.php'; // Admin: sınaq müraciətləri, qiymət və sınaq ayarları
