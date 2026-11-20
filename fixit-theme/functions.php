@@ -108,10 +108,10 @@ function fixit_ver( $rel ) {
 }
 
 function fixit_assets() {
-	// Google Fonts — Plus Jakarta Sans.
+	// Google Fonts: IBM Plex Sans (mətn) və IBM Plex Mono (etiketlər, rəqəmlər).
 	wp_enqueue_style(
 		'fixit-fonts',
-		'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap',
+		'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap',
 		array(),
 		null
 	);
