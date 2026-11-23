@@ -242,9 +242,9 @@
 		if (ldErrors) this.add('schema_invalid', url, ldErrors + ' JSON-LD');
 		if (!types.length && !ldErrors) this.add('schema_missing', url);
 		if (item.type === 'fixit_product') {
-			var app = objs.filter(function (o) { var t = [].concat(o['@type']); return t.indexOf('SoftwareApplication') > -1 || t.indexOf('Product') > -1; })[0];
-			if (!app) this.add('schema_product', url);
-			else if (!app.offers && !app.aggregateRating) this.add('schema_rich', url, 'offers / aggregateRating');
+			var apps = objs.filter(function (o) { var t = [].concat(o['@type']); return t.indexOf('SoftwareApplication') > -1 || t.indexOf('Product') > -1; });
+			if (!apps.length) this.add('schema_product', url);
+			else if (!apps.some(function (o) { return o.offers || o.aggregateRating; })) this.add('schema_rich', url, 'offers / aggregateRating');
 		}
 		if (item.type !== 'front' && types.indexOf('BreadcrumbList') === -1) this.add('breadcrumb_missing', url);
 		var site = objs.filter(function (o) { return [].concat(o['@type']).indexOf('WebSite') > -1; })[0];
@@ -271,7 +271,7 @@
 		}
 
 		// Şəkillər
-		var noAlt = 0, noSize = 0, oldFmt = 0;
+		var noAlt = 0, noSize = 0;
 		Array.prototype.forEach.call(doc.querySelectorAll('img'), function (img) {
 			if (img.closest('#wpadminbar')) return;
 			var src = img.getAttribute('src') || img.getAttribute('data-src') || '';
@@ -280,13 +280,11 @@
 			if (!img.hasAttribute('width') || !img.hasAttribute('height')) noSize++;
 			var abs = norm(src, url);
 			if (abs && new URL(abs).hostname === plan.host) {
-				if (/\.(png|jpe?g)$/i.test(new URL(abs).pathname)) oldFmt++;
 				if (!/\.svg$/i.test(abs)) (self.images[abs] = self.images[abs] || []).push(url);
 			}
 		});
 		if (noAlt) this.add('img_alt', url, String(noAlt));
 		if (noSize) this.add('img_size', url, String(noSize));
-		if (oldFmt) this.add('img_format', url, String(oldFmt));
 
 		// Qarışıq məzmun və skriptlər
 		if (location.protocol === 'https:') {
@@ -307,7 +305,8 @@
 		var words = text.split(' ').filter(function (w) { return /\p{L}/u.test(w); });
 		p.words = words.length;
 		p.text = text.toLocaleLowerCase(item.lang).slice(0, 30000);
-		if (p.words < 250 && !p.noindex) this.add('thin_content', url, p.words + ' / 250');
+		// Əlaqə səhifəsinin qısa olması normaldır, Google onu buna görə aşağı salmır.
+		if (p.words < 250 && !p.noindex && item.tpl !== 'template-contact.php') this.add('thin_content', url, p.words + ' / 250');
 		if (item.lang !== plan['default'] && item.lang !== 'az') {
 			var az = words.filter(function (w) { return AZ_LETTERS.test(w); });
 			if (az.length >= 5 && az.length / Math.max(1, words.length) > 0.015) {
@@ -415,6 +414,12 @@
 		await pool(imgs, 4, async function (u) {
 			var r = await probe(u);
 			progress(++done, imgs.length);
+			// WebP-yə keçmək yalnız 20 KB-dan böyük PNG/JPEG üçün mənalıdır.
+			if (r.length > 20000 && /\.(png|jpe?g)$/i.test(new URL(u).pathname)) {
+				self.images[u].filter(function (v, i, a) { return a.indexOf(v) === i; }).forEach(function (pg) {
+					self.add('img_format', pg, short(u) + ' (' + Math.round(r.length / 1024) + ' KB)');
+				});
+			}
 			if (r.length > 300000) {
 				self.images[u].filter(function (v, i, a) { return a.indexOf(v) === i; }).forEach(function (pg) {
 					self.add('img_heavy', pg, short(u) + ' (' + Math.round(r.length / 1024) + ' KB)');
@@ -471,20 +476,32 @@
 			var kws = (plan.keywords && plan.keywords[lang]) || [];
 			var pages = ok.filter(function (p) { return p.lang === lang && !p.noindex; });
 			var home = pages.filter(function (p) { return p.type === 'front'; })[0];
+			// Söz formaları: «Bakı» → «Bakıda», «удаленная» → «удалённая».
+			// Açar sözün hər sözü mətndəki hansısa sözün əvvəli olmalıdır.
+			var fold = function (t) { return String(t || '').toLocaleLowerCase(lang).replace(/ё/g, 'е'); };
+			var hit = function (hay, k) {
+				hay = fold(hay);
+				if (!hay) return false;
+				if (hay.indexOf(k) > -1) return true;
+				var words = hay.split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+				return k.split(/[^\p{L}\p{N}]+/u).filter(Boolean).every(function (part) {
+					return words.some(function (w) { return w.indexOf(part) === 0; });
+				});
+			};
 			kws.forEach(function (kw) {
-				var k = clean(kw).toLocaleLowerCase(lang);
+				var k = fold(clean(kw));
 				if (!k) return;
 				var best = null;
 				pages.forEach(function (p) {
 					var where = [];
 					var score = 0;
 					var path = '';
-					try { path = decodeURIComponent(new URL(p.url).pathname).replace(/[-/]/g, ' ').toLocaleLowerCase(lang); } catch (e) {}
-					if ((p.title || '').toLocaleLowerCase(lang).indexOf(k) > -1) { where.push(S.inTitle); score += 4; }
-					if ((p.h1 || []).join(' ').toLocaleLowerCase(lang).indexOf(k) > -1) { where.push(S.inH1); score += 3; }
-					if ((p.desc || '').toLocaleLowerCase(lang).indexOf(k) > -1) { where.push(S.inDesc); score += 1; }
-					if (path.indexOf(k) > -1) { where.push(S.inUrl); score += 1; }
-					if ((p.text || '').indexOf(k) > -1) { where.push(S.inBody); score += 1; }
+					try { path = decodeURIComponent(new URL(p.url).pathname).replace(/[-/]/g, ' '); } catch (e) {}
+					if (hit(p.title, k)) { where.push(S.inTitle); score += 4; }
+					if (hit((p.h1 || []).join(' '), k)) { where.push(S.inH1); score += 3; }
+					if (hit(p.desc, k)) { where.push(S.inDesc); score += 1; }
+					if (hit(path, k)) { where.push(S.inUrl); score += 1; }
+					if (hit(p.text, k)) { where.push(S.inBody); score += 1; }
 					if (score && (!best || score > best.score)) best = { url: p.url, where: where, score: score };
 				});
 				self.keywords.push({ lang: lang, keyword: kw, url: best ? best.url : '', where: best ? best.where : [], score: best ? best.score : 0 });

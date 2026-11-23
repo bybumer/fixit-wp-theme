@@ -1,0 +1,309 @@
+{
+ "fixit.az saytının məxfilik siyasəti: formalardan gələn məlumatlar, kukilər, analitika və məlumatınızla bağlı hüquqlarınız.": {
+  "en": "Privacy policy of fixit.az: data sent through forms, cookies, analytics and your rights over your data.",
+  "ru": "Политика конфиденциальности fixit.az: данные из форм, файлы cookie, аналитика и ваши права на данные."
+ },
+ "Fixit Remote serverinin qurulması addım-addım: serveri hazırlayın, paketi quraşdırın, administratoru yaradın və kompüterləri qoşun.": {
+  "en": "Setting up the Fixit Remote server step by step: prepare the server, install the package, create the administrator and connect your computers.",
+  "ru": "Установка сервера Fixit Remote по шагам: подготовьте сервер, установите пакет, создайте администратора и подключите компьютеры."
+ },
+ "FIXIT Sorğu Sistemi: helpdesk və ticket sistemi": {
+  "en": "FIXIT Helpdesk: helpdesk ticket system for IT teams",
+  "ru": "FIXIT Служба заявок: система заявок и задач"
+ },
+ "Fixit Remote: uzaqdan dəstək proqramı": {
+  "en": "Fixit Remote: self-hosted remote desktop and support",
+  "ru": "Fixit Remote: программа удаленного доступа"
+ },
+ "FIXIT Şəbəkə Monitorinqi: SNMP ilə cihaz monitorinqi": {
+  "en": "FIXIT Network Monitoring: SNMP network monitoring tool",
+  "ru": "FIXIT Мониторинг сети: SNMP-мониторинг устройств"
+ },
+ "Kompüter servisi Bakıda: təmir və texniki xidmət": {
+  "en": "Computer repair and maintenance in Baku",
+  "ru": "Ремонт и обслуживание компьютеров в Баку"
+ },
+ "Video müşahidə sistemləri: layihə və quraşdırma": {
+  "en": "CCTV systems: design and installation in Baku",
+  "ru": "Системы видеонаблюдения: проект и установка"
+ },
+ "Şirkətlər üçün İT dəstək xidməti Bakıda": {
+  "en": "IT support services for businesses in Baku",
+  "ru": "ИТ-поддержка для компаний в Баку"
+ },
+ "IP telefoniya ofis üçün: 3CX və Yeastar": {
+  "en": "IP telephony for offices: 3CX and Yeastar",
+  "ru": "IP-телефония для офиса: 3CX и Yeastar"
+ },
+ "Korporativ e-poçt sistemləri şirkətlər üçün": {
+  "en": "Corporate email systems for businesses",
+  "ru": "Корпоративная почта для компаний"
+ },
+ "Bulud serverlər: qurulum, yedəkləmə, idarə": {
+  "en": "Cloud servers: setup, backup and management",
+  "ru": "Облачные серверы: настройка и резервное копирование"
+ },
+ "%s Bakıda": {
+  "en": "%s in Baku, Azerbaijan",
+  "ru": "%s в Баку"
+ },
+ "İT xidmətləri Bakıda: dəstək, servis, video müşahidə": {
+  "en": "IT services in Azerbaijan: support, repair, CCTV",
+  "ru": "ИТ услуги в Баку: поддержка, сервис, видеонаблюдение"
+ },
+ "Məhsullar: helpdesk, uzaqdan dəstək, monitorinq": {
+  "en": "Products: helpdesk, remote support, network monitoring",
+  "ru": "Продукты: система заявок, удаленный доступ, мониторинг"
+ },
+ "Haqqımızda: Bakı və Cəlilabadda İT şirkəti": {
+  "en": "About us: IT company in Baku and Jalilabad",
+  "ru": "О нас: ИТ-компания в Баку и Джалилабаде"
+ },
+ "Əlaqə: Bakı və Cəlilabad ofisləri, telefon": {
+  "en": "Contact: offices in Baku and Jalilabad, phone",
+  "ru": "Контакты: офисы в Баку и Джалилабаде, телефон"
+ },
+ "Uzaqdan qoşulma: fərdi istifadə üçün pulsuz": {
+  "en": "Remote support software, free for personal use",
+  "ru": "Удаленная поддержка, бесплатно для частных лиц"
+ },
+ "Məxfilik siyasəti: fixit.az saytı və kukilər": {
+  "en": "Privacy policy: fixit.az website and cookies",
+  "ru": "Политика конфиденциальности сайта fixit.az"
+ },
+ "Fərdi istifadə üçün pulsuz": {
+  "en": "Free for personal use",
+  "ru": "Бесплатно для личного использования"
+ },
+ "Google-un başa düşməsi üçün bu formada yazın: «Həftənin 5 günü, 09:00 – 18:00».": {
+  "en": "Write it in this form so Google can read it: «Həftənin 5 günü, 09:00 – 18:00» (number of days, then opening and closing time)."
+ },
+ "Baş ofisin koordinatları": {
+  "en": "Head office coordinates"
+ },
+ "Google Xəritədə ofisin üstünə sağ klikləyin, ilk sətirdəki rəqəmləri köçürüb bura yapışdırın. Məs: 40.40930, 49.86710. Google bunu xəritədə və «yaxınlıqda» axtarışında işlədir.": {
+  "en": "Right-click the office in Google Maps, copy the numbers in the first line and paste them here. Example: 40.40930, 49.86710. Google uses this on the map and in «near me» searches."
+ },
+ "Xidmət haqqında": {
+  "en": "About the service",
+  "ru": "Об услуге"
+ },
+ "Nələr daxildir": {
+  "en": "What is included",
+  "ru": "Что входит"
+ },
+ "Digər xidmətlərimiz": {
+  "en": "Our other services",
+  "ru": "Другие наши услуги"
+ },
+ "Əlaqə məlumatları": {
+  "en": "Contact details",
+  "ru": "Контактные данные"
+ },
+ "Qurulum addımları": {
+  "en": "Setup steps",
+  "ru": "Шаги установки"
+ },
+ "Şirkətlər üçün gördüyümüz işlər": {
+  "en": "What we do for businesses",
+  "ru": "Что мы делаем для компаний"
+ },
+ "Diaqnostika üçün pul ödəməliyəm?": {
+  "en": "Do I have to pay for diagnostics?",
+  "ru": "Нужно ли платить за диагностику?"
+ },
+ "Xeyr, ilkin analiz pulsuzdur. Cihaza baxırıq, nasazlığın səbəbini və təmirin qiymətini deyirik. Razılıq verməsəniz, heç bir iş görülmür.": {
+  "en": "No, the initial analysis is free. We look at the device and tell you the cause of the fault and the cost of the repair. If you do not agree, no work is done.",
+  "ru": "Нет, первичный анализ бесплатный. Мы осматриваем устройство и сообщаем причину неисправности и стоимость ремонта. Без вашего согласия никакие работы не выполняются."
+ },
+ "Təmir nə qədər vaxt aparır?": {
+  "en": "How long does a repair take?",
+  "ru": "Сколько времени занимает ремонт?"
+ },
+ "Nasazlıqdan və lazım olan hissənin olub-olmamasından asılıdır. Müddəti analizdən sonra qiymətlə birlikdə bildiririk.": {
+  "en": "It depends on the fault and on whether the needed part is available. We tell you the time together with the price after the analysis.",
+  "ru": "Зависит от неисправности и от наличия нужной детали. Срок мы сообщаем после анализа вместе с ценой."
+ },
+ "Təmir zamanı fayllarım silinə bilər?": {
+  "en": "Can my files be deleted during the repair?",
+  "ru": "Могут ли мои файлы удалиться во время ремонта?"
+ },
+ "Sistemi yenidən qurmaq lazım gələrsə, bunu əvvəlcədən deyirik və vacib faylların nüsxəsini çıxarmağı təklif edirik. Razılığınız olmadan diskdəki məlumata toxunulmur.": {
+  "en": "If the system has to be reinstalled, we tell you in advance and offer to copy your important files. Nobody touches the data on the disk without your consent.",
+  "ru": "Если систему нужно переустановить, мы заранее предупреждаем и предлагаем сохранить копию важных файлов. Без вашего согласия данные на диске не трогаем."
+ },
+ "Ofisdəki bütün kompüterlərə baxırsınız?": {
+  "en": "Do you look after all the computers in an office?",
+  "ru": "Вы обслуживаете все компьютеры в офисе?"
+ },
+ "Bəli. Şirkətin kompüterlərinə müntəzəm texniki baxış və gündəlik kömək İT dəstək xidmətinə daxildir.": {
+  "en": "Yes. Regular maintenance and day-to-day help for company computers are part of our IT support service.",
+  "ru": "Да. Регулярное обслуживание и ежедневная помощь по компьютерам компании входят в услугу ИТ-поддержки."
+ },
+ "Kameralara telefondan baxmaq olar?": {
+  "en": "Can I watch the cameras on my phone?",
+  "ru": "Можно ли смотреть камеры с телефона?"
+ },
+ "Bəli. Quraşdırmadan sonra sistemi telefon tətbiqinə qoşuruq. Canlı görüntüyə, arxivə və hadisə bildirişlərinə internet olan istənilən yerdən baxa bilərsiniz.": {
+  "en": "Yes. After installation we connect the system to a phone app. You can watch live video, the archive and event alerts from anywhere with internet access.",
+  "ru": "Да. После установки мы подключаем систему к приложению на телефоне. Онлайн-видео, архив и уведомления о событиях доступны из любого места, где есть интернет."
+ },
+ "Arxiv neçə gün saxlanılır?": {
+  "en": "How many days of recordings are kept?",
+  "ru": "Сколько дней хранится архив?"
+ },
+ "Kameraların sayından, görüntünün keyfiyyətindən və diskin həcmindən asılıdır. Layihədə ehtiyacınıza uyğun disk seçirik və neçə günlük arxiv alınacağını əvvəlcədən hesablayırıq.": {
+  "en": "It depends on the number of cameras, the image quality and the disk size. In the project we choose a disk that fits your needs and calculate in advance how many days of archive you will get.",
+  "ru": "Зависит от количества камер, качества изображения и объёма диска. В проекте мы подбираем диск под ваши задачи и заранее рассчитываем, на сколько дней хватит архива."
+ },
+ "Köhnə kameralarımızı yeni sistemə qoşmaq olar?": {
+  "en": "Can our old cameras be connected to the new system?",
+  "ru": "Можно ли подключить старые камеры к новой системе?"
+ },
+ "Çox vaxt olar. Kameraların modelinə baxırıq: uyğun gələnləri yeni qeydiyyatçıya qoşuruq, uyğun gəlməyənlərin yerinə nə qoymağın sərfəli olduğunu deyirik.": {
+  "en": "Usually yes. We check the camera models, connect the compatible ones to the new recorder and tell you what is worth installing instead of the rest.",
+  "ru": "Чаще всего да. Мы проверяем модели камер, подходящие подключаем к новому регистратору, а для остальных подсказываем выгодную замену."
+ },
+ "NVR, DVR və XVR nə ilə fərqlənir?": {
+  "en": "What is the difference between NVR, DVR and XVR?",
+  "ru": "Чем отличаются NVR, DVR и XVR?"
+ },
+ "DVR analoq kameralarla, NVR IP kameralarla işləyir. XVR hər iki növü qəbul edir və analoq sistemi tədricən IP kameralara keçirmək istəyənlər üçün rahatdır.": {
+  "en": "A DVR works with analogue cameras and an NVR with IP cameras. An XVR accepts both, which is handy if you want to move an analogue system to IP cameras step by step.",
+  "ru": "DVR работает с аналоговыми камерами, NVR с IP-камерами. XVR принимает оба типа и удобен, если аналоговую систему нужно постепенно перевести на IP-камеры."
+ },
+ "Bu xidmət hansı şirkətlər üçündür?": {
+  "en": "Which companies is this service for?",
+  "ru": "Для каких компаний эта услуга?"
+ },
+ "Ştatında İT mütəxəssisi olmayan və ya mövcud mütəxəssisinə kömək lazım olan şirkətlər üçün. Kompüterlər, şəbəkə, printerlər, poçt və serverlərlə bağlı gündəlik işləri üzərimizə götürürük.": {
+  "en": "For companies without an IT specialist on staff, or whose specialist needs help. We take over the daily work around computers, the network, printers, email and servers.",
+  "ru": "Для компаний, где нет штатного ИТ-специалиста или ему нужна помощь. Мы берём на себя ежедневную работу с компьютерами, сетью, принтерами, почтой и серверами."
+ },
+ "Problem yarananda necə müraciət edirik?": {
+  "en": "How do we reach you when something goes wrong?",
+  "ru": "Как обращаться, если возникла проблема?"
+ },
+ "Zəng edirsiniz və ya yazırsınız. Uzaqdan həll oluna bilən işləri uzaqdan görürük, lazım olanda mütəxəssis ofisinizə gəlir.": {
+  "en": "You call or write to us. Anything that can be fixed remotely we fix remotely, and when needed an engineer comes to your office.",
+  "ru": "Вы звоните или пишете нам. Всё, что можно решить удалённо, решаем удалённо, а при необходимости специалист приезжает в офис."
+ },
+ "Qiymət necə müəyyən olunur?": {
+  "en": "How is the price set?",
+  "ru": "Как определяется цена?"
+ },
+ "Xidmət aylıq abunə ilə göstərilir. Əvvəlcə infrastrukturu yoxlayırıq, sonra kompüter və serverlərin sayına, işin həcminə görə aylıq təklif hazırlayırıq.": {
+  "en": "The service works as a monthly subscription. First we review your infrastructure, then prepare a monthly quote based on the number of computers and servers and the amount of work.",
+  "ru": "Услуга оказывается по ежемесячной подписке. Сначала мы проверяем инфраструктуру, затем готовим ежемесячное предложение по количеству компьютеров и серверов и объёму работ."
+ },
+ "Aylıq yoxlanışda nəyə baxırsınız?": {
+  "en": "What do you check during the monthly review?",
+  "ru": "Что вы проверяете при ежемесячном осмотре?"
+ },
+ "Kompüterlərin, serverlərin, ehtiyat nüsxələrin və şəbəkə avadanlığının ümumi vəziyyətinə. Gördüyümüz riskləri və nəyi yaxşılaşdırmağın mümkün olduğunu sizinlə bölüşürük.": {
+  "en": "The general state of computers, servers, backups and network equipment. We share the risks we see and what can be improved.",
+  "ru": "Общее состояние компьютеров, серверов, резервных копий и сетевого оборудования. Делимся замеченными рисками и тем, что можно улучшить."
+ },
+ "3CX və Yeastar arasında necə seçim edək?": {
+  "en": "How do we choose between 3CX and Yeastar?",
+  "ru": "Как выбрать между 3CX и Yeastar?"
+ },
+ "3CX geniş inteqrasiya imkanı olan çevik platformadır, buludda və ya öz serverinizdə işləyir. Yeastar kiçik və orta ofislər üçün hazır, sadə həlldir. Seçimi işçi sayına və zənglərin həcminə görə birlikdə edirik.": {
+  "en": "3CX is a flexible platform with wide integration options that runs in the cloud or on your own server. Yeastar is a ready, simple solution for small and medium offices. We choose together based on headcount and call volume.",
+  "ru": "3CX гибкая платформа с широкими возможностями интеграции, работает в облаке или на вашем сервере. Yeastar готовое и простое решение для небольших и средних офисов. Выбираем вместе, исходя из числа сотрудников и объёма звонков."
+ },
+ "İşçilər ofisdən kənarda da ofis nömrəsindən danışa bilər?": {
+  "en": "Can staff use the office number outside the office?",
+  "ru": "Могут ли сотрудники звонить с офисного номера вне офиса?"
+ },
+ "Bəli. Telefon tətbiqi və ya kompüter proqramı ilə işçi harada olsa da ofis xəttindən zəng edə və zəngləri qəbul edə bilər.": {
+  "en": "Yes. With the phone app or the desktop client an employee can make and take calls on the office line from anywhere.",
+  "ru": "Да. Через приложение на телефоне или программу на компьютере сотрудник может звонить и принимать звонки на офисной линии из любого места."
+ },
+ "Zənglər yazılır?": {
+  "en": "Are calls recorded?",
+  "ru": "Записываются ли звонки?"
+ },
+ "İstəsəniz, zənglərin qeydi açılır. Hesabatlarda kimin neçə zəng qəbul etdiyi və buraxılmış zənglər görünür.": {
+  "en": "If you want, call recording is turned on. Reports show how many calls each person answered and which calls were missed.",
+  "ru": "По вашему желанию включается запись звонков. В отчётах видно, кто сколько звонков принял и какие звонки пропущены."
+ },
+ "Mövcud analoq telefonlarımızı saxlamaq olar?": {
+  "en": "Can we keep our existing analogue phones?",
+  "ru": "Можно ли оставить имеющиеся аналоговые телефоны?"
+ },
+ "Bəli, adapter vasitəsilə analoq aparatları yeni sistemə qoşmaq olur. Hansılarını saxlamağın sərfəli olduğunu yerində baxıb deyirik.": {
+  "en": "Yes, analogue handsets can be connected to the new system through an adapter. We check on site and tell you which ones are worth keeping.",
+  "ru": "Да, аналоговые аппараты подключаются к новой системе через адаптер. На месте подскажем, какие из них выгодно оставить."
+ },
+ "Köhnə məktubları itirmədən keçmək olar?": {
+  "en": "Can we switch without losing old emails?",
+  "ru": "Можно ли перейти, не потеряв старые письма?"
+ },
+ "Bəli. Köhnə qutulardakı məktubları yeni sistemə köçürürük. Keçidin vaxtını sizinlə razılaşdırırıq ki, iş yazışması yarımçıq qalmasın.": {
+  "en": "Yes. We move the messages from the old mailboxes to the new system and agree the switch time with you, so work correspondence is not interrupted.",
+  "ru": "Да. Мы переносим письма из старых ящиков в новую систему и согласуем с вами время перехода, чтобы рабочая переписка не прерывалась."
+ },
+ "Poçtu telefonda oxumaq olar?": {
+  "en": "Can I read email on my phone?",
+  "ru": "Можно ли читать почту на телефоне?"
+ },
+ "Bəli. Sistem telefon və planşetlərlə, həmçinin Outlook kimi poçt proqramları ilə işləyir. Məktublar bütün cihazlarda eyni görünür.": {
+  "en": "Yes. The system works with phones and tablets as well as email programs like Outlook. Your messages look the same on every device.",
+  "ru": "Да. Система работает с телефонами и планшетами, а также с почтовыми программами вроде Outlook. Письма одинаково видны на всех устройствах."
+ },
+ "Spam və viruslardan necə qorunur?": {
+  "en": "How is it protected from spam and viruses?",
+  "ru": "Как защищается от спама и вирусов?"
+ },
+ "Gələn məktublar spam və virus filtrindən keçir. Şübhəli məktublar ayrıca qovluğa düşür, istəsəniz onlara baxıb geri qaytara bilərsiniz.": {
+  "en": "Incoming mail passes through spam and virus filters. Suspicious messages go to a separate folder, where you can review them and restore any you need.",
+  "ru": "Входящие письма проходят фильтр спама и вирусов. Подозрительные попадают в отдельную папку, откуда их можно просмотреть и вернуть."
+ },
+ "Ünvanlar şirkətin domeni ilə olacaq?": {
+  "en": "Will the addresses use our company domain?",
+  "ru": "Адреса будут на домене компании?"
+ },
+ "Bəli, ünvanlar ad@sirketiniz.az formasında olur. Domeniniz yoxdursa, onu almağa da kömək edirik.": {
+  "en": "Yes, addresses look like name@yourcompany.az. If you do not have a domain yet, we help you get one.",
+  "ru": "Да, адреса имеют вид имя@вашакомпания.az. Если домена ещё нет, поможем его зарегистрировать."
+ },
+ "Bulud server fiziki serverdən nə ilə fərqlənir?": {
+  "en": "How is a cloud server different from a physical one?",
+  "ru": "Чем облачный сервер отличается от физического?"
+ },
+ "Avadanlıq almaq və saxlamaq lazım gəlmir. Prosessor, yaddaş və disk ehtiyaca görə artırılır və ya azaldılır, server internet olan istənilən yerdən idarə olunur.": {
+  "en": "You do not need to buy or maintain hardware. CPU, memory and disk are scaled up or down as needed, and the server is managed from anywhere with internet access.",
+  "ru": "Не нужно покупать и обслуживать оборудование. Процессор, память и диск увеличиваются или уменьшаются по мере необходимости, а сервер управляется из любого места, где есть интернет."
+ },
+ "Məlumatların ehtiyat nüsxəsi çıxarılır?": {
+  "en": "Is the data backed up?",
+  "ru": "Делается ли резервная копия данных?"
+ },
+ "Bəli. Avtomatik yedəkləmə qurulur, lazım olanda məlumatı nüsxədən bərpa edirik.": {
+  "en": "Yes. Automatic backup is set up, and when needed we restore the data from a copy.",
+  "ru": "Да. Настраивается автоматическое резервное копирование, при необходимости восстанавливаем данные из копии."
+ },
+ "Mövcud serverimizi buluda köçürmək olar?": {
+  "en": "Can our existing server be moved to the cloud?",
+  "ru": "Можно ли перенести наш сервер в облако?"
+ },
+ "Bəli. Əvvəlcə serverdə işləyən proqramlara və məlumatın həcminə baxırıq, sonra köçürmənin planını və vaxtını sizinlə razılaşdırırıq.": {
+  "en": "Yes. First we look at the programs running on the server and the amount of data, then agree the migration plan and timing with you.",
+  "ru": "Да. Сначала смотрим, какие программы работают на сервере и какой объём данных, затем согласуем с вами план и время переноса."
+ },
+ "Bulud server hansı işlər üçün uyğundur?": {
+  "en": "What is a cloud server good for?",
+  "ru": "Для каких задач подходит облачный сервер?"
+ },
+ "Mühasibat və ERP proqramları, fayl serveri, sayt, poçt və uzaqdan iş üçün masaüstü serverləri. Sizə hansının sərfəli olduğunu ehtiyacınızı öyrəndikdən sonra deyirik.": {
+  "en": "Accounting and ERP software, a file server, websites, email and remote desktop servers for working from home. Once we know your needs, we tell you which option pays off.",
+  "ru": "Бухгалтерские и ERP-программы, файловый сервер, сайт, почта и серверы удалённых рабочих столов. Что выгодно именно вам, скажем после того, как узнаем ваши задачи."
+ },
+ "Böyük şəkil WebP və ya AVIF deyil": {
+  "en": "Large image is not WebP or AVIF"
+ },
+ "PNG/JPEG şəkil 20 KB-dan böyükdür. WebP adətən 25-35% kiçik olur, səhifə tez açılır.": {
+  "en": "A PNG/JPEG image is larger than 20 KB. WebP is usually 25-35% smaller, so the page opens faster."
+ }
+}

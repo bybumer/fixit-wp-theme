@@ -43,6 +43,7 @@ $fixit_remote_url = function_exists( 'fixit_product_url' ) ? fixit_product_url( 
 				<a href="<?php echo esc_url( $fixit_remote_url . '#trial' ); ?>"><?php esc_html_e( 'Linki almaq', 'fixit' ); ?></a>
 			</div>
 
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Qurulum addımları', 'fixit' ); ?></h2>
 			<ol class="guide-steps">
 				<?php foreach ( fixit_trial_guide_steps() as $fixit_step ) : ?>
 					<li>

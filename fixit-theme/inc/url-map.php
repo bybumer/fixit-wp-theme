@@ -101,7 +101,9 @@ function fixit_product_by_key( $key ) {
  * nişanı və s.) işə düşmür.
  */
 function fixit_url_migrate() {
-	if ( (int) get_option( 'fixit_url_rev' ) >= 1 ) {
+	// 2: WordPress-in özünün yaratdığı qaralama (məs. «Privacy Policy») yeni
+	// ünvanı tutanda səhifə köhnə ünvanda qalırdı; ikinci keçid onu da köçürür.
+	if ( (int) get_option( 'fixit_url_rev' ) >= 2 ) {
 		return;
 	}
 
@@ -122,8 +124,19 @@ function fixit_url_migrate() {
 	foreach ( $sets as $type => $map ) {
 		foreach ( $map as $old => $new ) {
 			$post = get_page_by_path( $old, OBJECT, $type );
-			if ( ! $post || get_page_by_path( $new, OBJECT, $type ) ) {
+			if ( ! $post ) {
 				continue;
+			}
+			$taken = get_page_by_path( $new, OBJECT, $type );
+			if ( $taken && 'publish' === $taken->post_status ) {
+				continue;
+			}
+			if ( $taken ) {
+				// Dərc olunmamış səhifə ünvanı tutur: ona başqa ad veririk.
+				$free = wp_unique_post_slug( $new . '-draft', $taken->ID, 'publish', $type, $taken->post_parent );
+				$wpdb->update( $wpdb->posts, array( 'post_name' => $free ), array( 'ID' => $taken->ID ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+				clean_post_cache( $taken->ID );
+				$renamed[] = $type . ':' . $new . '→' . $free;
 			}
 			$wpdb->update( $wpdb->posts, array( 'post_name' => $new ), array( 'ID' => $post->ID ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			clean_post_cache( $post->ID );
@@ -143,7 +156,7 @@ function fixit_url_migrate() {
 	}
 
 	flush_rewrite_rules( false );
-	update_option( 'fixit_url_rev', 1 );
+	update_option( 'fixit_url_rev', 2 );
 	update_option( 'fixit_url_migrated', array( 'time' => time(), 'renamed' => $renamed ), false );
 	delete_option( 'fixit_url_migrating' );
 

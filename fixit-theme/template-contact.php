@@ -39,11 +39,12 @@ $fixit_products  = fixit_get_products();
 
 		<!-- Sol: məlumatlar -->
 		<div class="reveal">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Əlaqə məlumatları', 'fixit' ); ?></h2>
 			<div class="info-card">
 				<div class="info-row">
 					<span class="ico"><?php fixit_icon( 'phone' ); ?></span>
 					<div>
-						<h4><?php esc_html_e( 'Telefon', 'fixit' ); ?></h4>
+						<h3><?php esc_html_e( 'Telefon', 'fixit' ); ?></h3>
 						<a href="tel:<?php echo esc_attr( fixit_tel( $fixit_phone ) ); ?>"><?php echo esc_html( $fixit_phone ); ?></a>
 						<?php if ( $fixit_phone_alt ) : ?>
 							<small><a href="tel:<?php echo esc_attr( fixit_tel( $fixit_phone_alt ) ); ?>"><?php echo esc_html( $fixit_phone_alt ); ?></a></small>
@@ -54,7 +55,7 @@ $fixit_products  = fixit_get_products();
 				<div class="info-row">
 					<span class="ico"><?php fixit_icon( 'mail' ); ?></span>
 					<div>
-						<h4><?php esc_html_e( 'E-poçt', 'fixit' ); ?></h4>
+						<h3><?php esc_html_e( 'E-poçt', 'fixit' ); ?></h3>
 						<a href="mailto:<?php echo esc_attr( $fixit_email ); ?>"><?php echo esc_html( $fixit_email ); ?></a>
 					</div>
 				</div>
@@ -63,7 +64,7 @@ $fixit_products  = fixit_get_products();
 					<div class="info-row">
 						<span class="ico"><?php fixit_icon( 'whatsapp' ); ?></span>
 						<div>
-							<h4>WhatsApp</h4>
+							<h3>WhatsApp</h3>
 							<a href="https://wa.me/<?php echo esc_attr( fixit_tel( $fixit_whatsapp ) ); ?>" target="_blank" rel="noopener noreferrer">
 								<?php esc_html_e( 'Birbaşa yazın', 'fixit' ); ?>
 							</a>

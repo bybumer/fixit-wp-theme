@@ -102,8 +102,33 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 	</div>
 </section>
 
+<!-- Xidmətlər: hər birinin öz səhifəsinə keçid -->
+<?php $fixit_about_services = fixit_get_services(); ?>
+<?php if ( $fixit_about_services ) : ?>
+	<section class="section">
+		<div class="container">
+			<div class="section-head section-head--center reveal">
+				<span class="eyebrow"><?php esc_html_e( 'Xidmətlərimiz', 'fixit' ); ?></span>
+				<h2><?php esc_html_e( 'Şirkətlər üçün gördüyümüz işlər', 'fixit' ); ?></h2>
+			</div>
+
+			<div class="grid grid--3">
+				<?php foreach ( $fixit_about_services as $fixit_svc ) : ?>
+					<?php $fixit_svc_icon = get_post_meta( $fixit_svc->ID, '_fixit_icon', true ); ?>
+					<a class="card reveal" href="<?php echo esc_url( get_permalink( $fixit_svc ) ); ?>">
+						<span class="card__icon"><?php fixit_icon( $fixit_svc_icon ? $fixit_svc_icon : 'shield' ); ?></span>
+						<h3><?php echo esc_html( fixit_t_title( $fixit_svc ) ); ?></h3>
+						<p><?php echo esc_html( wp_strip_all_tags( fixit_t_short( $fixit_svc ) ) ); ?></p>
+						<span class="card__link"><?php esc_html_e( 'Ətraflı', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?></span>
+					</a>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+<?php endif; ?>
+
 <!-- Ofislər -->
-<section class="section">
+<section class="section section--soft">
 	<div class="container">
 		<div class="section-head section-head--center reveal">
 			<span class="eyebrow"><?php esc_html_e( 'Ofislərimiz', 'fixit' ); ?></span>
@@ -115,7 +140,7 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 				<div class="info-row">
 					<span class="ico"><?php fixit_icon( 'pin' ); ?></span>
 					<div>
-						<h4><?php esc_html_e( 'Baş ofis', 'fixit' ); ?></h4>
+						<h3><?php esc_html_e( 'Baş ofis', 'fixit' ); ?></h3>
 						<p><?php echo esc_html( fixit_get( 'fixit_address_main' ) ); ?></p>
 						<small><?php echo esc_html( fixit_get( 'fixit_hours_main' ) ); ?></small>
 					</div>
@@ -126,7 +151,7 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 				<div class="info-row">
 					<span class="ico"><?php fixit_icon( 'pin' ); ?></span>
 					<div>
-						<h4><?php esc_html_e( 'Cəlilabad filialı', 'fixit' ); ?></h4>
+						<h3><?php esc_html_e( 'Cəlilabad filialı', 'fixit' ); ?></h3>
 						<p><?php echo esc_html( fixit_get( 'fixit_address_br' ) ); ?></p>
 						<small><?php echo esc_html( fixit_get( 'fixit_hours_br' ) ); ?></small>
 					</div>

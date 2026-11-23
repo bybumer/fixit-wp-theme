@@ -107,6 +107,7 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | İstəyiniz | Yer |
 |---|---|
 | Telefon, e-poçt, ünvan, iş saatları | Admin → **Görünüş → Fərdiləşdir → FIXIT tema ayarları → Əlaqə** |
+| Baş ofisin xəritə koordinatları (Google xəritə və «yaxınlıqda» axtarışı üçün) | Eyni yerdə → **Baş ofisin koordinatları** (Google Xəritədə sağ klik → ilk sətir) |
 | Facebook / Instagram / TikTok linkləri | Fərdiləşdir → **Sosial şəbəkələr** |
 | Ana səhifədəki böyük başlıq və statistika | Fərdiləşdir → **Ana səhifə (Hero)** |
 | Loqo | Fərdiləşdir → **Sayt kimliyi → Loqo** |
@@ -137,7 +138,8 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Səhifənin SEO başlığı və təsviri | Yazını açın → aşağıdakı **SEO** qutusu |
 | SEO vəziyyətinə baxmaq | Admin → **FIXIT → SEO** |
 | Bütün saytın SEO auditi, hədəf açar sözlər | Admin → **FIXIT → SEO auditi** (bax: **9. Nə edilib**) |
-| Sual-cavab mətnləri | `inc/faq.php` |
+| Sual-cavab mətnləri | `inc/faq.php` (xidmət səhifələrininki `fixit_faq_service()`) |
+| Səhifələrin açar sözlü standart başlığı (EN/RU daxil) | `inc/seo.php` → `fixit_seo_default_title()`; admin paneldə yazılan SEO başlığı ondan üstündür (yalnız AZ) |
 | Məhsul/xidmət/rəyin EN və RU mətni | Yazını açın → **Tərcümələr (EN / RU)** qutusu |
 | Səhifə adının (menyuda) EN və RU variantı | Səhifəni açın → **Tərcümələr (EN / RU)** qutusu |
 | Hero başlığı, ünvan, iş saatlarının EN/RU mətni | Fərdiləşdir → **Tərcümələr (EN / RU)** |
@@ -434,6 +436,11 @@ bu səhifəni göstərir). Formaların altında ona keçid var.
 - **Admin paneldə SEO izləmə lövhəsi** (menyu: *FIXIT → SEO*):
   sayt ayarlarının yoxlanışı (indeksləşmə, HTTPS, sitemap, loqo, favicon…),
   hər səhifə üzrə bal, başlıq/təsvir uzunluğu və Google önizləməsi
+- **Xidmət səhifələri** (`single-fixit_service.php`, 1.16.7-dən): mətn, nələr daxildir,
+  iş qaydası, sual-cavab (FAQ sxemi ilə), digər xidmətlər; EN/RU-da tərcümə olunmuş
+  mətn göstərilir. Ana səhifədəki və footerdəki xidmət linkləri bu səhifələrə aparır
+- Cloudflare e-poçt ünvanlarını `/cdn-cgi/l/email-protection` linkinə çevirməsin deyə
+  səhifənin gövdəsi `<!--email_off-->` ilə əhatə olunub (header.php / footer.php)
 - **SEO auditi** (menyu: *FIXIT → SEO auditi*, `inc/seo-audit.php` +
   `assets/js/seo-audit.js`): «Auditi başlat» saytın bütün səhifələrini üç dildə
   brauzerdən gəzir və ~55 qayda ilə yoxlayır: başlıq/təsvir uzunluğu və

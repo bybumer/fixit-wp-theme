@@ -201,7 +201,7 @@ $fixit_release     = fixit_remote_release();
 						</div>
 
 						<div class="app-card__text">
-							<h4><?php echo esc_html( $fixit_app['os'] ); ?></h4>
+							<h3><?php echo esc_html( $fixit_app['os'] ); ?></h3>
 							<?php if ( $fixit_app['url'] ) : ?>
 								<a class="btn btn--primary btn--sm" href="<?php echo esc_url( $fixit_app['url'] ); ?>" target="_blank" rel="noopener nofollow">
 									<?php
@@ -286,7 +286,7 @@ $fixit_release     = fixit_remote_release();
 					<li>
 						<span class="tick"><?php fixit_icon( 'check' ); ?></span>
 						<div>
-							<h4><?php echo esc_html( $fixit_note[0] ); ?></h4>
+							<h3><?php echo esc_html( $fixit_note[0] ); ?></h3>
 							<p><?php echo esc_html( $fixit_note[1] ); ?></p>
 						</div>
 					</li>

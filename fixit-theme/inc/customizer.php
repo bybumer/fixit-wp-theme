@@ -127,7 +127,8 @@ function fixit_customize_register( $wp_customize ) {
 	$add( 'fixit_email', __( 'E-poçt', 'fixit' ), 'fixit_contact' );
 	$add( 'fixit_whatsapp', __( 'WhatsApp nömrəsi', 'fixit' ), 'fixit_contact', 'text', __( 'Yalnız rəqəmlər, ölkə kodu ilə. Məs: 994102252090', 'fixit' ) );
 	$add( 'fixit_address_main', __( 'Baş ofis ünvanı', 'fixit' ), 'fixit_contact' );
-	$add( 'fixit_hours_main', __( 'Baş ofis iş saatları', 'fixit' ), 'fixit_contact' );
+	$add( 'fixit_hours_main', __( 'Baş ofis iş saatları', 'fixit' ), 'fixit_contact', 'text', __( 'Google-un başa düşməsi üçün bu formada yazın: «Həftənin 5 günü, 09:00 – 18:00».', 'fixit' ) );
+	$add( 'fixit_geo_main', __( 'Baş ofisin koordinatları', 'fixit' ), 'fixit_contact', 'text', __( 'Google Xəritədə ofisin üstünə sağ klikləyin, ilk sətirdəki rəqəmləri köçürüb bura yapışdırın. Məs: 40.40930, 49.86710. Google bunu xəritədə və «yaxınlıqda» axtarışında işlədir.', 'fixit' ) );
 	$add( 'fixit_address_br', __( 'Filial ünvanı', 'fixit' ), 'fixit_contact' );
 	$add( 'fixit_hours_br', __( 'Filial iş saatları', 'fixit' ), 'fixit_contact' );
 	$add( 'fixit_form_email', __( 'Form mesajlarının gedəcəyi e-poçt', 'fixit' ), 'fixit_contact' );

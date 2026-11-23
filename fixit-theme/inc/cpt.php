@@ -349,6 +349,12 @@ function fixit_client_logo( $client ) {
 		return '';
 	}
 
+	// Yanında WebP nüsxəsi varsa o göstərilir (daha yüngüldür).
+	$webp = preg_replace( '/\.(png|jpe?g)$/i', '.webp', $file );
+	if ( $webp !== $file && file_exists( get_template_directory() . '/assets/img/clients/' . $webp ) ) {
+		$file = $webp;
+	}
+
 	return sprintf(
 		'<img src="%1$s" alt="%2$s" loading="lazy" width="260" height="130">',
 		esc_url( get_template_directory_uri() . '/assets/img/clients/' . $file ),

@@ -76,9 +76,12 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 						</div>
 					<?php endif; ?>
 
-					<div style="margin-top:22px">
+					<div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
 						<a class="btn btn--primary" href="<?php echo esc_url( $fixit_contact_url ); ?>">
 							<?php fixit_icon( 'send' ); ?><?php esc_html_e( 'Bu xidmət üçün müraciət', 'fixit' ); ?>
+						</a>
+						<a class="btn btn--ghost" href="<?php echo esc_url( get_permalink( $fixit_svc ) ); ?>">
+							<?php esc_html_e( 'Ətraflı', 'fixit' ); ?><?php fixit_icon( 'arrow-r' ); ?>
 						</a>
 					</div>
 				</div>

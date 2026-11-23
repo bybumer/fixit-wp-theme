@@ -101,3 +101,138 @@ function fixit_render_faq( $faqs ) {
 	}
 	echo '</div>';
 }
+
+/**
+ * Xidmət səhifəsinin sualları (xidmətin slug-una görə).
+ *
+ * Yeni xidmət əlavə olunanda bura onun da sualları yazılır, yoxsa səhifədə
+ * sual bloku görünmür.
+ *
+ * @param string $slug Xidmətin slug-u.
+ * @return array
+ */
+function fixit_faq_service( $slug ) {
+	switch ( $slug ) {
+		case 'komputer-servisi':
+			return array(
+				array(
+					__( 'Diaqnostika üçün pul ödəməliyəm?', 'fixit' ),
+					__( 'Xeyr, ilkin analiz pulsuzdur. Cihaza baxırıq, nasazlığın səbəbini və təmirin qiymətini deyirik. Razılıq verməsəniz, heç bir iş görülmür.', 'fixit' ),
+				),
+				array(
+					__( 'Təmir nə qədər vaxt aparır?', 'fixit' ),
+					__( 'Nasazlıqdan və lazım olan hissənin olub-olmamasından asılıdır. Müddəti analizdən sonra qiymətlə birlikdə bildiririk.', 'fixit' ),
+				),
+				array(
+					__( 'Təmir zamanı fayllarım silinə bilər?', 'fixit' ),
+					__( 'Sistemi yenidən qurmaq lazım gələrsə, bunu əvvəlcədən deyirik və vacib faylların nüsxəsini çıxarmağı təklif edirik. Razılığınız olmadan diskdəki məlumata toxunulmur.', 'fixit' ),
+				),
+				array(
+					__( 'Ofisdəki bütün kompüterlərə baxırsınız?', 'fixit' ),
+					__( 'Bəli. Şirkətin kompüterlərinə müntəzəm texniki baxış və gündəlik kömək İT dəstək xidmətinə daxildir.', 'fixit' ),
+				),
+			);
+
+		case 'video-musahide-sistemleri':
+			return array(
+				array(
+					__( 'Kameralara telefondan baxmaq olar?', 'fixit' ),
+					__( 'Bəli. Quraşdırmadan sonra sistemi telefon tətbiqinə qoşuruq. Canlı görüntüyə, arxivə və hadisə bildirişlərinə internet olan istənilən yerdən baxa bilərsiniz.', 'fixit' ),
+				),
+				array(
+					__( 'Arxiv neçə gün saxlanılır?', 'fixit' ),
+					__( 'Kameraların sayından, görüntünün keyfiyyətindən və diskin həcmindən asılıdır. Layihədə ehtiyacınıza uyğun disk seçirik və neçə günlük arxiv alınacağını əvvəlcədən hesablayırıq.', 'fixit' ),
+				),
+				array(
+					__( 'Köhnə kameralarımızı yeni sistemə qoşmaq olar?', 'fixit' ),
+					__( 'Çox vaxt olar. Kameraların modelinə baxırıq: uyğun gələnləri yeni qeydiyyatçıya qoşuruq, uyğun gəlməyənlərin yerinə nə qoymağın sərfəli olduğunu deyirik.', 'fixit' ),
+				),
+				array(
+					__( 'NVR, DVR və XVR nə ilə fərqlənir?', 'fixit' ),
+					__( 'DVR analoq kameralarla, NVR IP kameralarla işləyir. XVR hər iki növü qəbul edir və analoq sistemi tədricən IP kameralara keçirmək istəyənlər üçün rahatdır.', 'fixit' ),
+				),
+			);
+
+		case 'it-destek-xidmeti':
+			return array(
+				array(
+					__( 'Bu xidmət hansı şirkətlər üçündür?', 'fixit' ),
+					__( 'Ştatında İT mütəxəssisi olmayan və ya mövcud mütəxəssisinə kömək lazım olan şirkətlər üçün. Kompüterlər, şəbəkə, printerlər, poçt və serverlərlə bağlı gündəlik işləri üzərimizə götürürük.', 'fixit' ),
+				),
+				array(
+					__( 'Problem yarananda necə müraciət edirik?', 'fixit' ),
+					__( 'Zəng edirsiniz və ya yazırsınız. Uzaqdan həll oluna bilən işləri uzaqdan görürük, lazım olanda mütəxəssis ofisinizə gəlir.', 'fixit' ),
+				),
+				array(
+					__( 'Qiymət necə müəyyən olunur?', 'fixit' ),
+					__( 'Xidmət aylıq abunə ilə göstərilir. Əvvəlcə infrastrukturu yoxlayırıq, sonra kompüter və serverlərin sayına, işin həcminə görə aylıq təklif hazırlayırıq.', 'fixit' ),
+				),
+				array(
+					__( 'Aylıq yoxlanışda nəyə baxırsınız?', 'fixit' ),
+					__( 'Kompüterlərin, serverlərin, ehtiyat nüsxələrin və şəbəkə avadanlığının ümumi vəziyyətinə. Gördüyümüz riskləri və nəyi yaxşılaşdırmağın mümkün olduğunu sizinlə bölüşürük.', 'fixit' ),
+				),
+			);
+
+		case 'ip-telefoniya':
+			return array(
+				array(
+					__( '3CX və Yeastar arasında necə seçim edək?', 'fixit' ),
+					__( '3CX geniş inteqrasiya imkanı olan çevik platformadır, buludda və ya öz serverinizdə işləyir. Yeastar kiçik və orta ofislər üçün hazır, sadə həlldir. Seçimi işçi sayına və zənglərin həcminə görə birlikdə edirik.', 'fixit' ),
+				),
+				array(
+					__( 'İşçilər ofisdən kənarda da ofis nömrəsindən danışa bilər?', 'fixit' ),
+					__( 'Bəli. Telefon tətbiqi və ya kompüter proqramı ilə işçi harada olsa da ofis xəttindən zəng edə və zəngləri qəbul edə bilər.', 'fixit' ),
+				),
+				array(
+					__( 'Zənglər yazılır?', 'fixit' ),
+					__( 'İstəsəniz, zənglərin qeydi açılır. Hesabatlarda kimin neçə zəng qəbul etdiyi və buraxılmış zənglər görünür.', 'fixit' ),
+				),
+				array(
+					__( 'Mövcud analoq telefonlarımızı saxlamaq olar?', 'fixit' ),
+					__( 'Bəli, adapter vasitəsilə analoq aparatları yeni sistemə qoşmaq olur. Hansılarını saxlamağın sərfəli olduğunu yerində baxıb deyirik.', 'fixit' ),
+				),
+			);
+
+		case 'korporativ-mail-sistemleri':
+			return array(
+				array(
+					__( 'Köhnə məktubları itirmədən keçmək olar?', 'fixit' ),
+					__( 'Bəli. Köhnə qutulardakı məktubları yeni sistemə köçürürük. Keçidin vaxtını sizinlə razılaşdırırıq ki, iş yazışması yarımçıq qalmasın.', 'fixit' ),
+				),
+				array(
+					__( 'Poçtu telefonda oxumaq olar?', 'fixit' ),
+					__( 'Bəli. Sistem telefon və planşetlərlə, həmçinin Outlook kimi poçt proqramları ilə işləyir. Məktublar bütün cihazlarda eyni görünür.', 'fixit' ),
+				),
+				array(
+					__( 'Spam və viruslardan necə qorunur?', 'fixit' ),
+					__( 'Gələn məktublar spam və virus filtrindən keçir. Şübhəli məktublar ayrıca qovluğa düşür, istəsəniz onlara baxıb geri qaytara bilərsiniz.', 'fixit' ),
+				),
+				array(
+					__( 'Ünvanlar şirkətin domeni ilə olacaq?', 'fixit' ),
+					__( 'Bəli, ünvanlar ad@sirketiniz.az formasında olur. Domeniniz yoxdursa, onu almağa da kömək edirik.', 'fixit' ),
+				),
+			);
+
+		case 'bulud-serverler':
+			return array(
+				array(
+					__( 'Bulud server fiziki serverdən nə ilə fərqlənir?', 'fixit' ),
+					__( 'Avadanlıq almaq və saxlamaq lazım gəlmir. Prosessor, yaddaş və disk ehtiyaca görə artırılır və ya azaldılır, server internet olan istənilən yerdən idarə olunur.', 'fixit' ),
+				),
+				array(
+					__( 'Məlumatların ehtiyat nüsxəsi çıxarılır?', 'fixit' ),
+					__( 'Bəli. Avtomatik yedəkləmə qurulur, lazım olanda məlumatı nüsxədən bərpa edirik.', 'fixit' ),
+				),
+				array(
+					__( 'Mövcud serverimizi buluda köçürmək olar?', 'fixit' ),
+					__( 'Bəli. Əvvəlcə serverdə işləyən proqramlara və məlumatın həcminə baxırıq, sonra köçürmənin planını və vaxtını sizinlə razılaşdırırıq.', 'fixit' ),
+				),
+				array(
+					__( 'Bulud server hansı işlər üçün uyğundur?', 'fixit' ),
+					__( 'Mühasibat və ERP proqramları, fayl serveri, sayt, poçt və uzaqdan iş üçün masaüstü serverləri. Sizə hansının sərfəli olduğunu ehtiyacınızı öyrəndikdən sonra deyirik.', 'fixit' ),
+				),
+			);
+	}
+
+	return array();
+}

@@ -20,6 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<?php
+/*
+ * Cloudflare e-poçt ünvanlarını «/cdn-cgi/l/email-protection» linkinə çevirir.
+ * Axtarış robotları bunu işləməyən link sayır, mailto: isə JavaScript olmadan
+ * açılmır. Bu şərh Cloudflare-ə səhifədəki ünvanlara toxunmamağı deyir.
+ */
+?>
+<!--email_off-->
 
 <a class="skip-link" href="#main"><?php esc_html_e( 'Əsas məzmuna keç', 'fixit' ); ?></a>
 

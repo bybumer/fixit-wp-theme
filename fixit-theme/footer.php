@@ -52,7 +52,7 @@ $fixit_services = fixit_get_services( 6 );
 					<?php if ( $fixit_services ) : ?>
 						<?php foreach ( $fixit_services as $fixit_svc ) : ?>
 							<li>
-								<a href="<?php echo esc_url( fixit_page_url( 'template-services.php' ) . '#service-' . $fixit_svc->ID ); ?>">
+								<a href="<?php echo esc_url( get_permalink( $fixit_svc ) ); ?>">
 									<?php echo esc_html( fixit_t_title( $fixit_svc ) ); ?>
 								</a>
 							</li>
@@ -154,5 +154,6 @@ $fixit_dl_short = preg_replace( '#^https?://(www\.)?#', '', untrailingslashit( $
 </div>
 
 <?php wp_footer(); ?>
+<!--/email_off-->
 </body>
 </html>

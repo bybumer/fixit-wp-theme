@@ -187,6 +187,100 @@ function fixit_template_description( $post_id ) {
 
 		case 'template-ticket-privacy.php':
 			return __( 'FIXIT Ticket mobil tətbiqinin məxfilik siyasəti: hansı məlumatlar işlənir, harada saxlanılır və hesab necə silinir. Reklam və izləmə yoxdur.', 'fixit' );
+
+		case 'template-privacy.php':
+			return __( 'fixit.az saytının məxfilik siyasəti: formalardan gələn məlumatlar, kukilər, analitika və məlumatınızla bağlı hüquqlarınız.', 'fixit' );
+
+		case 'template-remote-guide.php':
+			return __( 'Fixit Remote serverinin qurulması addım-addım: serveri hazırlayın, paketi quraşdırın, administratoru yaradın və kompüterləri qoşun.', 'fixit' );
+	}
+
+	return '';
+}
+
+/**
+ * Avtomatik təsviri Google-un göstərdiyi uzunluğa salır.
+ *
+ * Mümkünsə cümlənin sonunda kəsir, alınmasa sözün sonunda və «…» qoyur.
+ *
+ * @param string $text Təsvir.
+ */
+function fixit_seo_trim_desc( $text ) {
+	$text = trim( (string) preg_replace( '/\s+/u', ' ', (string) $text ) );
+	if ( mb_strlen( $text ) <= FIXIT_DESC_MAX ) {
+		return $text;
+	}
+
+	$cut  = mb_substr( $text, 0, FIXIT_DESC_MAX );
+	$stop = mb_strrpos( $cut, '. ' );
+	if ( false !== $stop && $stop + 1 >= FIXIT_DESC_MIN ) {
+		return mb_substr( $cut, 0, $stop + 1 );
+	}
+
+	$cut   = mb_substr( $cut, 0, FIXIT_DESC_MAX - 1 );
+	$space = mb_strrpos( $cut, ' ' );
+	if ( false !== $space && $space >= FIXIT_DESC_MIN ) {
+		$cut = mb_substr( $cut, 0, $space );
+	}
+
+	return rtrim( $cut, ' ,.;:' ) . '…';
+}
+
+/**
+ * Açar sözlü standart başlıq. Admin paneldə SEO başlığı yazılmayanda işlədilir.
+ *
+ * Mətnlər tərcümə olunur, ona görə EN və RU səhifələrin də öz başlığı var.
+ * Brendin adını WordPress özü sona əlavə edir.
+ *
+ * @param WP_Post|null $post Səhifə.
+ * @return string
+ */
+function fixit_seo_default_title( $post ) {
+	if ( ! $post instanceof WP_Post ) {
+		return '';
+	}
+
+	if ( 'fixit_product' === $post->post_type ) {
+		$map = array(
+			'sorgu-sistemi'      => __( 'FIXIT Sorğu Sistemi: helpdesk və ticket sistemi', 'fixit' ),
+			'remote'             => __( 'Fixit Remote: uzaqdan dəstək proqramı', 'fixit' ),
+			'sebeke-monitorinqi' => __( 'FIXIT Şəbəkə Monitorinqi: SNMP ilə cihaz monitorinqi', 'fixit' ),
+		);
+		$key = fixit_product_key( $post );
+		return isset( $map[ $key ] ) ? $map[ $key ] : '';
+	}
+
+	if ( 'fixit_service' === $post->post_type ) {
+		$map = array(
+			'komputer-servisi'           => __( 'Kompüter servisi Bakıda: təmir və texniki xidmət', 'fixit' ),
+			'video-musahide-sistemleri'  => __( 'Video müşahidə sistemləri: layihə və quraşdırma', 'fixit' ),
+			'it-destek-xidmeti'          => __( 'Şirkətlər üçün İT dəstək xidməti Bakıda', 'fixit' ),
+			'ip-telefoniya'              => __( 'IP telefoniya ofis üçün: 3CX və Yeastar', 'fixit' ),
+			'korporativ-mail-sistemleri' => __( 'Korporativ e-poçt sistemləri şirkətlər üçün', 'fixit' ),
+			'bulud-serverler'            => __( 'Bulud serverlər: qurulum, yedəkləmə, idarə', 'fixit' ),
+		);
+		if ( isset( $map[ $post->post_name ] ) ) {
+			return $map[ $post->post_name ];
+		}
+		/* translators: %s: xidmətin adı */
+		return sprintf( __( '%s Bakıda', 'fixit' ), fixit_t_title( $post ) );
+	}
+
+	if ( 'page' === $post->post_type ) {
+		switch ( get_post_meta( $post->ID, '_wp_page_template', true ) ) {
+			case 'template-services.php':
+				return __( 'İT xidmətləri Bakıda: dəstək, servis, video müşahidə', 'fixit' );
+			case 'template-products.php':
+				return __( 'Məhsullar: helpdesk, uzaqdan dəstək, monitorinq', 'fixit' );
+			case 'template-about.php':
+				return __( 'Haqqımızda: Bakı və Cəlilabadda İT şirkəti', 'fixit' );
+			case 'template-contact.php':
+				return __( 'Əlaqə: Bakı və Cəlilabad ofisləri, telefon', 'fixit' );
+			case 'template-remote.php':
+				return __( 'Uzaqdan qoşulma: fərdi istifadə üçün pulsuz', 'fixit' );
+			case 'template-privacy.php':
+				return __( 'Məxfilik siyasəti: fixit.az saytı və kukilər', 'fixit' );
+		}
 	}
 
 	return '';
@@ -206,31 +300,31 @@ function fixit_meta_description() {
 		}
 
 		if ( is_front_page() ) {
-			return wp_strip_all_tags( fixit_get( 'fixit_hero_text' ) );
+			return fixit_seo_trim_desc( wp_strip_all_tags( fixit_get( 'fixit_hero_text' ) ) );
 		}
 
 		$from_template = fixit_template_description( $id );
 		if ( $from_template ) {
-			return $from_template;
+			return fixit_seo_trim_desc( $from_template );
 		}
 
 		$excerpt = fixit_is_default_lang() ? get_the_excerpt( $id ) : fixit_t_short( $id );
 		if ( $excerpt ) {
-			return wp_strip_all_tags( $excerpt );
+			return fixit_seo_trim_desc( wp_strip_all_tags( $excerpt ) );
 		}
 
 		$content = fixit_is_default_lang() ? get_post_field( 'post_content', $id ) : fixit_t_content( $id );
 		if ( $content ) {
-			return wp_trim_words( wp_strip_all_tags( $content ), 28, '…' );
+			return fixit_seo_trim_desc( wp_trim_words( wp_strip_all_tags( $content ), 28, '…' ) );
 		}
 	}
 
 	if ( is_front_page() || is_home() ) {
-		return wp_strip_all_tags( fixit_get( 'fixit_hero_text' ) );
+		return fixit_seo_trim_desc( wp_strip_all_tags( fixit_get( 'fixit_hero_text' ) ) );
 	}
 
 	$tagline = get_bloginfo( 'description' );
-	return $tagline ? $tagline : wp_strip_all_tags( fixit_get( 'fixit_hero_text' ) );
+	return $tagline ? $tagline : fixit_seo_trim_desc( wp_strip_all_tags( fixit_get( 'fixit_hero_text' ) ) );
 }
 
 /**
@@ -246,6 +340,11 @@ function fixit_document_title( $parts ) {
 	if ( $custom ) {
 		$parts['title'] = $custom;
 		unset( $parts['tagline'] );
+	} elseif ( ! is_front_page() ) {
+		$default = fixit_seo_default_title( get_queried_object() );
+		if ( $default ) {
+			$parts['title'] = $default;
+		}
 	}
 
 	return $parts;
@@ -405,7 +504,21 @@ function fixit_seo_meta() {
 	<meta property="og:description" content="<?php echo esc_attr( $desc ); ?>">
 	<meta property="og:url" content="<?php echo esc_url( $url ); ?>">
 	<meta property="og:site_name" content="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-	<meta property="og:locale" content="az_AZ">
+	<?php
+	// Hər dilin öz og:locale-i, digər dillər alternativ kimi.
+	$og_locales = array(
+		'az' => 'az_AZ',
+		'en' => 'en_US',
+		'ru' => 'ru_RU',
+	);
+	$og_current = fixit_lang();
+	?>
+	<meta property="og:locale" content="<?php echo esc_attr( isset( $og_locales[ $og_current ] ) ? $og_locales[ $og_current ] : 'az_AZ' ); ?>">
+	<?php foreach ( $og_locales as $og_lang => $og_locale ) : ?>
+		<?php if ( $og_lang !== $og_current && isset( fixit_langs()[ $og_lang ] ) ) : ?>
+			<meta property="og:locale:alternate" content="<?php echo esc_attr( $og_locale ); ?>">
+		<?php endif; ?>
+	<?php endforeach; ?>
 	<?php if ( $image ) : ?>
 		<meta property="og:image" content="<?php echo esc_url( $image ); ?>">
 		<meta name="twitter:image" content="<?php echo esc_url( $image ); ?>">
@@ -440,21 +553,49 @@ function fixit_schema_organization() {
 		'foundingDate' => fixit_get( 'fixit_year_since' ),
 		'areaServed'   => array( 'AZ' ),
 		'address'      => array(
-			array(
-				'@type'           => 'PostalAddress',
-				'streetAddress'   => fixit_get( 'fixit_address_main' ),
-				'addressLocality' => 'Bakı',
-				'addressCountry'  => 'AZ',
-			),
-			array(
-				'@type'           => 'PostalAddress',
-				'streetAddress'   => fixit_get( 'fixit_address_br' ),
-				'addressLocality' => 'Cəlilabad',
-				'addressCountry'  => 'AZ',
-			),
+			'@type'           => 'PostalAddress',
+			'streetAddress'   => fixit_get( 'fixit_address_main' ),
+			'addressLocality' => 'Bakı',
+			'addressCountry'  => 'AZ',
 		),
 		'sameAs'       => $socials,
 	);
+
+	// Xəritədə görünmək üçün: koordinat və iş saatları.
+	$geo = fixit_seo_geo();
+	if ( $geo ) {
+		$schema['geo'] = array(
+			'@type'     => 'GeoCoordinates',
+			'latitude'  => $geo[0],
+			'longitude' => $geo[1],
+		);
+		$schema['hasMap'] = 'https://www.google.com/maps?q=' . $geo[0] . ',' . $geo[1];
+	}
+	$hours = fixit_seo_opening_hours( get_theme_mod( 'fixit_hours_main', fixit_default( 'fixit_hours_main' ) ) );
+	if ( $hours ) {
+		$schema['openingHoursSpecification'] = $hours;
+	}
+
+	// Filial ayrıca bölmə kimi: öz ünvanı və iş saatları ilə.
+	$branch_address = fixit_get( 'fixit_address_br' );
+	if ( $branch_address ) {
+		$branch = array(
+			'@type'     => 'ProfessionalService',
+			'name'      => get_bloginfo( 'name' ) . ' ' . __( 'Cəlilabad filialı', 'fixit' ),
+			'telephone' => fixit_tel( fixit_get( 'fixit_phone' ) ),
+			'address'   => array(
+				'@type'           => 'PostalAddress',
+				'streetAddress'   => $branch_address,
+				'addressLocality' => 'Cəlilabad',
+				'addressCountry'  => 'AZ',
+			),
+		);
+		$branch_hours = fixit_seo_opening_hours( get_theme_mod( 'fixit_hours_br', fixit_default( 'fixit_hours_br' ) ) );
+		if ( $branch_hours ) {
+			$branch['openingHoursSpecification'] = $branch_hours;
+		}
+		$schema['department'] = array( $branch );
+	}
 
 	$logo = fixit_share_image();
 	if ( $logo ) {
@@ -500,6 +641,53 @@ function fixit_schema_organization() {
 }
 
 /**
+ * Baş ofisin koordinatları (Fərdiləşdir → Əlaqə məlumatları).
+ *
+ * @return array|null [enlik, uzunluq]
+ */
+function fixit_seo_geo() {
+	$raw = trim( (string) get_theme_mod( 'fixit_geo_main', '' ) );
+	if ( ! preg_match( '/(-?\d{1,2}\.\d+)\s*[,;\s]\s*(-?\d{1,3}\.\d+)/', $raw, $m ) ) {
+		return null;
+	}
+	$lat = (float) $m[1];
+	$lng = (float) $m[2];
+	if ( abs( $lat ) > 90 || abs( $lng ) > 180 ) {
+		return null;
+	}
+	return array( round( $lat, 6 ), round( $lng, 6 ) );
+}
+
+/**
+ * İş saatları mətnindən («Həftənin 5 günü, 09:00 – 18:00») schema bloku.
+ *
+ * Günlərin sayı 5 olanda B.e.–Cümə, 6 olanda Şənbə ilə, 7 olanda hər gün.
+ * Mətn başqa formadadırsa heç nə yazılmır.
+ *
+ * @param string $text İş saatları.
+ * @return array|null
+ */
+function fixit_seo_opening_hours( $text ) {
+	$text = (string) $text;
+	if ( ! preg_match( '/(\d{1,2}):(\d{2})\s*[–—-]\s*(\d{1,2}):(\d{2})/u', $text, $t ) ) {
+		return null;
+	}
+	if ( ! preg_match( '/(?<![\d:])([5-7])(?![\d:])/', $text, $d ) ) {
+		return null;
+	}
+	$week = array( 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' );
+
+	return array(
+		array(
+			'@type'     => 'OpeningHoursSpecification',
+			'dayOfWeek' => array_slice( $week, 0, (int) $d[1] ),
+			'opens'     => sprintf( '%02d:%s', (int) $t[1], $t[2] ),
+			'closes'    => sprintf( '%02d:%s', (int) $t[3], $t[4] ),
+		),
+	);
+}
+
+/**
  * Sayt kartı — ad və axtarış imkanı.
  */
 function fixit_schema_website() {
@@ -537,6 +725,11 @@ function fixit_schema_breadcrumb() {
 	// Məhsul səhifəsi: Ana səhifə → Məhsullar → Məhsul.
 	if ( is_singular( 'fixit_product' ) ) {
 		$trail[] = array( __( 'Məhsullar', 'fixit' ), fixit_page_url( 'template-products.php' ) );
+	}
+
+	// Xidmət səhifəsi: Ana səhifə → Xidmətlər → Xidmət.
+	if ( is_singular( 'fixit_service' ) ) {
+		$trail[] = array( __( 'Xidmətlər', 'fixit' ), fixit_page_url( 'template-services.php' ) );
 	}
 
 	$trail[] = array( get_the_title(), get_permalink() );
@@ -578,6 +771,18 @@ function fixit_schema_software() {
 		'publisher'           => array( '@id' => home_url( '/#organization' ) ),
 	);
 
+	// Fixit Remote fərdi istifadə üçün pulsuzdur: qiyməti 0 olan təklif.
+	if ( 'remote' === fixit_product_key( $post ) ) {
+		$schema['operatingSystem'] = 'Windows, macOS';
+		$schema['offers']          = array(
+			'@type'         => 'Offer',
+			'price'         => '0',
+			'priceCurrency' => 'AZN',
+			'description'   => __( 'Fərdi istifadə üçün pulsuz', 'fixit' ),
+			'url'           => fixit_page_url( 'template-remote.php' ),
+		);
+	}
+
 	$gallery = function_exists( 'fixit_product_gallery_ids' ) ? fixit_product_gallery_ids( $post->ID ) : array();
 	if ( $gallery ) {
 		$schema['screenshot'] = wp_get_attachment_image_url( $gallery[0], 'full' );
@@ -589,6 +794,31 @@ function fixit_schema_software() {
 	}
 
 	return $schema;
+}
+
+/**
+ * Xidmət səhifəsi — xidmət kartı.
+ */
+function fixit_schema_service() {
+	if ( ! is_singular( 'fixit_service' ) ) {
+		return null;
+	}
+
+	$post = get_queried_object();
+
+	return array(
+		'@context'    => 'https://schema.org',
+		'@type'       => 'Service',
+		'name'        => fixit_t_title( $post ),
+		'serviceType' => fixit_t_title( $post ),
+		'description' => wp_strip_all_tags( fixit_t_short( $post ) ),
+		'url'         => get_permalink( $post ),
+		'provider'    => array( '@id' => home_url( '/#organization' ) ),
+		'areaServed'  => array(
+			'@type' => 'Country',
+			'name'  => 'Azerbaijan',
+		),
+	);
 }
 
 /**
@@ -630,6 +860,7 @@ function fixit_output_schema() {
 		fixit_schema_website(),
 		fixit_schema_breadcrumb(),
 		fixit_schema_software(),
+		fixit_schema_service(),
 		fixit_schema_faq(),
 	);
 

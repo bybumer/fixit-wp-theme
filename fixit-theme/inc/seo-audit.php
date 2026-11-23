@@ -75,6 +75,7 @@ function fixit_seo_audit_plan() {
 				'type'  => $post->ID === $front ? 'front' : $post->post_type,
 				'id'    => $post->ID,
 				'title' => get_the_title( $post ),
+				'tpl'   => (string) get_post_meta( $post->ID, '_wp_page_template', true ),
 			);
 		}
 	}
@@ -90,7 +91,7 @@ function fixit_seo_audit_plan() {
 		'notfound' => home_url( '/seo-audit-404-' . strtolower( wp_generate_password( 8, false, false ) ) . '/' ),
 		'keywords' => fixit_seo_keywords(),
 		// Bu ünvanlar qəsdən yönləndirir (yükləmə, köhnə Azərbaycanca ünvanlar) — daxili link kimi problem sayılmır.
-		'skip'     => array( '/download/', '/yukle/', '/trial-package/', '/sinaq-paketi/', '/wp-admin/', '/wp-login.php', '/feed/', '/wp-json/', '/comments/feed/' ),
+		'skip'     => array( '/download/', '/yukle/', '/trial-package/', '/sinaq-paketi/', '/wp-admin/', '/wp-login.php', '/feed/', '/wp-json/', '/comments/feed/', '/cdn-cgi/' ),
 	);
 }
 
@@ -234,7 +235,7 @@ function fixit_seo_audit_rules() {
 		'breadcrumb_missing'  => array( 'notice', __( 'Naviqasiya zənciri (BreadcrumbList) yoxdur', 'fixit' ), __( 'Google axtarış nəticəsində ünvanın yerinə səhifənin yolunu göstərir.', 'fixit' ) ),
 		'website_lang'        => array( 'notice', __( 'WebSite sxeminin dili səhifənin dilinə uyğun deyil', 'fixit' ), __( 'inLanguage səhifənin dili olmalıdır.', 'fixit' ) ),
 		'img_size'            => array( 'notice', __( 'Şəkillərin ölçüsü (width/height) göstərilməyib', 'fixit' ), __( 'Səhifə yüklənəndə məzmun sıçrayır (CLS).', 'fixit' ) ),
-		'img_format'          => array( 'notice', __( 'Şəkillər WebP və ya AVIF deyil', 'fixit' ), __( 'WebP faylları adətən 25-35% kiçikdir, səhifə tez açılır.', 'fixit' ) ),
+		'img_format'          => array( 'notice', __( 'Böyük şəkil WebP və ya AVIF deyil', 'fixit' ), __( 'PNG/JPEG şəkil 20 KB-dan böyükdür. WebP adətən 25-35% kiçik olur, səhifə tez açılır.', 'fixit' ) ),
 		'heavy_html'          => array( 'notice', __( 'HTML çox böyükdür (350 KB-dan çox)', 'fixit' ), __( 'Böyük HTML gec yüklənir, xüsusən mobil şəbəkədə.', 'fixit' ) ),
 		'blocking_js'         => array( 'notice', __( 'Səhifənin açılmasını ləngidən skriptlər', 'fixit' ), __( '<head>-də async və ya defer olmayan skriptlər.', 'fixit' ) ),
 		'url_format'          => array( 'notice', __( 'Ünvanda böyük hərf və ya qeyri-latın simvol', 'fixit' ), __( 'Ünvan kiçik latın hərfləri və defislə olmalıdır.', 'fixit' ) ),

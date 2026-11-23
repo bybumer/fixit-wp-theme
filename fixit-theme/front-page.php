@@ -265,7 +265,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 					$fixit_short = wp_trim_words( $fixit_svc->post_content, 22 );
 				}
 				?>
-				<a class="card reveal" href="<?php echo esc_url( $fixit_services_url . '#service-' . $fixit_svc->ID ); ?>">
+				<a class="card reveal" href="<?php echo esc_url( get_permalink( $fixit_svc ) ); ?>">
 					<span class="card__icon"><?php fixit_icon( $fixit_icon_key ? $fixit_icon_key : 'shield' ); ?></span>
 					<h3><?php echo esc_html( fixit_t_title( $fixit_svc ) ); ?></h3>
 					<p><?php echo esc_html( $fixit_short ); ?></p>
@@ -449,7 +449,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 					<li>
 						<span class="tick"><?php fixit_icon( 'check' ); ?></span>
 						<div>
-							<h4><?php echo esc_html( $fixit_reason[0] ); ?></h4>
+							<h3><?php echo esc_html( $fixit_reason[0] ); ?></h3>
 							<p><?php echo esc_html( $fixit_reason[1] ); ?></p>
 						</div>
 					</li>
@@ -508,7 +508,7 @@ $fixit_phone        = fixit_get( 'fixit_phone' );
 				?>
 				<div class="step reveal">
 					<div class="step__num"><?php echo esc_html( sprintf( '%02d', $fixit_n ) ); ?></div>
-					<h4><?php echo esc_html( $fixit_step[0] ); ?></h4>
+					<h3><?php echo esc_html( $fixit_step[0] ); ?></h3>
 					<p><?php echo esc_html( $fixit_step[1] ); ?></p>
 				</div>
 			<?php endforeach; ?>

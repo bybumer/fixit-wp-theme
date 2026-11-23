@@ -829,6 +829,10 @@ msgid "İT xərclərini analiz edib optimallaşdırırıq, artıq xərcə yol ve
 msgstr "We analyse and optimise IT costs so nothing is spent needlessly."
 
 #: template-about.php
+msgid "Şirkətlər üçün gördüyümüz işlər"
+msgstr "What we do for businesses"
+
+#: template-about.php
 msgid "Ofislərimiz"
 msgstr "Our offices"
 
@@ -863,6 +867,10 @@ msgstr "Get in touch with us"
 #: template-contact.php
 msgid "Peşəkar xidmətlərimiz üçün bizə yazın və ya zəng edin. Sizin məmnuniyyətiniz bizim prioritetimizdir."
 msgstr "Write or call us about our professional services. Your satisfaction is our priority."
+
+#: template-contact.php
+msgid "Əlaqə məlumatları"
+msgstr "Contact details"
 
 #: template-contact.php
 msgid "Birbaşa yazın"
@@ -2156,6 +2164,198 @@ msgstr "Is the Helpdesk only for customer requests?"
 msgid "Xeyr. Sistemdə iki modul var: Ticket — müştəridən gələn müraciətlər, Task — komandanın daxili işləri (lövhə, checklist, son tarix, təkrarlanan işlər). İkisini birlikdə və ya ayrıca işlədə bilərsiniz."
 msgstr "No. The system has two modules: Ticket for requests coming from customers, and Task for your team's internal work (board, checklists, due dates, recurring tasks). You can use them together or separately."
 
+#: inc/faq.php
+msgid "Diaqnostika üçün pul ödəməliyəm?"
+msgstr "Do I have to pay for diagnostics?"
+
+#: inc/faq.php
+msgid "Xeyr, ilkin analiz pulsuzdur. Cihaza baxırıq, nasazlığın səbəbini və təmirin qiymətini deyirik. Razılıq verməsəniz, heç bir iş görülmür."
+msgstr "No, the initial analysis is free. We look at the device and tell you the cause of the fault and the cost of the repair. If you do not agree, no work is done."
+
+#: inc/faq.php
+msgid "Təmir nə qədər vaxt aparır?"
+msgstr "How long does a repair take?"
+
+#: inc/faq.php
+msgid "Nasazlıqdan və lazım olan hissənin olub-olmamasından asılıdır. Müddəti analizdən sonra qiymətlə birlikdə bildiririk."
+msgstr "It depends on the fault and on whether the needed part is available. We tell you the time together with the price after the analysis."
+
+#: inc/faq.php
+msgid "Təmir zamanı fayllarım silinə bilər?"
+msgstr "Can my files be deleted during the repair?"
+
+#: inc/faq.php
+msgid "Sistemi yenidən qurmaq lazım gələrsə, bunu əvvəlcədən deyirik və vacib faylların nüsxəsini çıxarmağı təklif edirik. Razılığınız olmadan diskdəki məlumata toxunulmur."
+msgstr "If the system has to be reinstalled, we tell you in advance and offer to copy your important files. Nobody touches the data on the disk without your consent."
+
+#: inc/faq.php
+msgid "Ofisdəki bütün kompüterlərə baxırsınız?"
+msgstr "Do you look after all the computers in an office?"
+
+#: inc/faq.php
+msgid "Bəli. Şirkətin kompüterlərinə müntəzəm texniki baxış və gündəlik kömək İT dəstək xidmətinə daxildir."
+msgstr "Yes. Regular maintenance and day-to-day help for company computers are part of our IT support service."
+
+#: inc/faq.php
+msgid "Kameralara telefondan baxmaq olar?"
+msgstr "Can I watch the cameras on my phone?"
+
+#: inc/faq.php
+msgid "Bəli. Quraşdırmadan sonra sistemi telefon tətbiqinə qoşuruq. Canlı görüntüyə, arxivə və hadisə bildirişlərinə internet olan istənilən yerdən baxa bilərsiniz."
+msgstr "Yes. After installation we connect the system to a phone app. You can watch live video, the archive and event alerts from anywhere with internet access."
+
+#: inc/faq.php
+msgid "Arxiv neçə gün saxlanılır?"
+msgstr "How many days of recordings are kept?"
+
+#: inc/faq.php
+msgid "Kameraların sayından, görüntünün keyfiyyətindən və diskin həcmindən asılıdır. Layihədə ehtiyacınıza uyğun disk seçirik və neçə günlük arxiv alınacağını əvvəlcədən hesablayırıq."
+msgstr "It depends on the number of cameras, the image quality and the disk size. In the project we choose a disk that fits your needs and calculate in advance how many days of archive you will get."
+
+#: inc/faq.php
+msgid "Köhnə kameralarımızı yeni sistemə qoşmaq olar?"
+msgstr "Can our old cameras be connected to the new system?"
+
+#: inc/faq.php
+msgid "Çox vaxt olar. Kameraların modelinə baxırıq: uyğun gələnləri yeni qeydiyyatçıya qoşuruq, uyğun gəlməyənlərin yerinə nə qoymağın sərfəli olduğunu deyirik."
+msgstr "Usually yes. We check the camera models, connect the compatible ones to the new recorder and tell you what is worth installing instead of the rest."
+
+#: inc/faq.php
+msgid "NVR, DVR və XVR nə ilə fərqlənir?"
+msgstr "What is the difference between NVR, DVR and XVR?"
+
+#: inc/faq.php
+msgid "DVR analoq kameralarla, NVR IP kameralarla işləyir. XVR hər iki növü qəbul edir və analoq sistemi tədricən IP kameralara keçirmək istəyənlər üçün rahatdır."
+msgstr "A DVR works with analogue cameras and an NVR with IP cameras. An XVR accepts both, which is handy if you want to move an analogue system to IP cameras step by step."
+
+#: inc/faq.php
+msgid "Bu xidmət hansı şirkətlər üçündür?"
+msgstr "Which companies is this service for?"
+
+#: inc/faq.php
+msgid "Ştatında İT mütəxəssisi olmayan və ya mövcud mütəxəssisinə kömək lazım olan şirkətlər üçün. Kompüterlər, şəbəkə, printerlər, poçt və serverlərlə bağlı gündəlik işləri üzərimizə götürürük."
+msgstr "For companies without an IT specialist on staff, or whose specialist needs help. We take over the daily work around computers, the network, printers, email and servers."
+
+#: inc/faq.php
+msgid "Problem yarananda necə müraciət edirik?"
+msgstr "How do we reach you when something goes wrong?"
+
+#: inc/faq.php
+msgid "Zəng edirsiniz və ya yazırsınız. Uzaqdan həll oluna bilən işləri uzaqdan görürük, lazım olanda mütəxəssis ofisinizə gəlir."
+msgstr "You call or write to us. Anything that can be fixed remotely we fix remotely, and when needed an engineer comes to your office."
+
+#: inc/faq.php
+msgid "Qiymət necə müəyyən olunur?"
+msgstr "How is the price set?"
+
+#: inc/faq.php
+msgid "Xidmət aylıq abunə ilə göstərilir. Əvvəlcə infrastrukturu yoxlayırıq, sonra kompüter və serverlərin sayına, işin həcminə görə aylıq təklif hazırlayırıq."
+msgstr "The service works as a monthly subscription. First we review your infrastructure, then prepare a monthly quote based on the number of computers and servers and the amount of work."
+
+#: inc/faq.php
+msgid "Aylıq yoxlanışda nəyə baxırsınız?"
+msgstr "What do you check during the monthly review?"
+
+#: inc/faq.php
+msgid "Kompüterlərin, serverlərin, ehtiyat nüsxələrin və şəbəkə avadanlığının ümumi vəziyyətinə. Gördüyümüz riskləri və nəyi yaxşılaşdırmağın mümkün olduğunu sizinlə bölüşürük."
+msgstr "The general state of computers, servers, backups and network equipment. We share the risks we see and what can be improved."
+
+#: inc/faq.php
+msgid "3CX və Yeastar arasında necə seçim edək?"
+msgstr "How do we choose between 3CX and Yeastar?"
+
+#: inc/faq.php
+msgid "3CX geniş inteqrasiya imkanı olan çevik platformadır, buludda və ya öz serverinizdə işləyir. Yeastar kiçik və orta ofislər üçün hazır, sadə həlldir. Seçimi işçi sayına və zənglərin həcminə görə birlikdə edirik."
+msgstr "3CX is a flexible platform with wide integration options that runs in the cloud or on your own server. Yeastar is a ready, simple solution for small and medium offices. We choose together based on headcount and call volume."
+
+#: inc/faq.php
+msgid "İşçilər ofisdən kənarda da ofis nömrəsindən danışa bilər?"
+msgstr "Can staff use the office number outside the office?"
+
+#: inc/faq.php
+msgid "Bəli. Telefon tətbiqi və ya kompüter proqramı ilə işçi harada olsa da ofis xəttindən zəng edə və zəngləri qəbul edə bilər."
+msgstr "Yes. With the phone app or the desktop client an employee can make and take calls on the office line from anywhere."
+
+#: inc/faq.php
+msgid "Zənglər yazılır?"
+msgstr "Are calls recorded?"
+
+#: inc/faq.php
+msgid "İstəsəniz, zənglərin qeydi açılır. Hesabatlarda kimin neçə zəng qəbul etdiyi və buraxılmış zənglər görünür."
+msgstr "If you want, call recording is turned on. Reports show how many calls each person answered and which calls were missed."
+
+#: inc/faq.php
+msgid "Mövcud analoq telefonlarımızı saxlamaq olar?"
+msgstr "Can we keep our existing analogue phones?"
+
+#: inc/faq.php
+msgid "Bəli, adapter vasitəsilə analoq aparatları yeni sistemə qoşmaq olur. Hansılarını saxlamağın sərfəli olduğunu yerində baxıb deyirik."
+msgstr "Yes, analogue handsets can be connected to the new system through an adapter. We check on site and tell you which ones are worth keeping."
+
+#: inc/faq.php
+msgid "Köhnə məktubları itirmədən keçmək olar?"
+msgstr "Can we switch without losing old emails?"
+
+#: inc/faq.php
+msgid "Bəli. Köhnə qutulardakı məktubları yeni sistemə köçürürük. Keçidin vaxtını sizinlə razılaşdırırıq ki, iş yazışması yarımçıq qalmasın."
+msgstr "Yes. We move the messages from the old mailboxes to the new system and agree the switch time with you, so work correspondence is not interrupted."
+
+#: inc/faq.php
+msgid "Poçtu telefonda oxumaq olar?"
+msgstr "Can I read email on my phone?"
+
+#: inc/faq.php
+msgid "Bəli. Sistem telefon və planşetlərlə, həmçinin Outlook kimi poçt proqramları ilə işləyir. Məktublar bütün cihazlarda eyni görünür."
+msgstr "Yes. The system works with phones and tablets as well as email programs like Outlook. Your messages look the same on every device."
+
+#: inc/faq.php
+msgid "Spam və viruslardan necə qorunur?"
+msgstr "How is it protected from spam and viruses?"
+
+#: inc/faq.php
+msgid "Gələn məktublar spam və virus filtrindən keçir. Şübhəli məktublar ayrıca qovluğa düşür, istəsəniz onlara baxıb geri qaytara bilərsiniz."
+msgstr "Incoming mail passes through spam and virus filters. Suspicious messages go to a separate folder, where you can review them and restore any you need."
+
+#: inc/faq.php
+msgid "Ünvanlar şirkətin domeni ilə olacaq?"
+msgstr "Will the addresses use our company domain?"
+
+#: inc/faq.php
+msgid "Bəli, ünvanlar ad@sirketiniz.az formasında olur. Domeniniz yoxdursa, onu almağa da kömək edirik."
+msgstr "Yes, addresses look like name@yourcompany.az. If you do not have a domain yet, we help you get one."
+
+#: inc/faq.php
+msgid "Bulud server fiziki serverdən nə ilə fərqlənir?"
+msgstr "How is a cloud server different from a physical one?"
+
+#: inc/faq.php
+msgid "Avadanlıq almaq və saxlamaq lazım gəlmir. Prosessor, yaddaş və disk ehtiyaca görə artırılır və ya azaldılır, server internet olan istənilən yerdən idarə olunur."
+msgstr "You do not need to buy or maintain hardware. CPU, memory and disk are scaled up or down as needed, and the server is managed from anywhere with internet access."
+
+#: inc/faq.php
+msgid "Məlumatların ehtiyat nüsxəsi çıxarılır?"
+msgstr "Is the data backed up?"
+
+#: inc/faq.php
+msgid "Bəli. Avtomatik yedəkləmə qurulur, lazım olanda məlumatı nüsxədən bərpa edirik."
+msgstr "Yes. Automatic backup is set up, and when needed we restore the data from a copy."
+
+#: inc/faq.php
+msgid "Mövcud serverimizi buluda köçürmək olar?"
+msgstr "Can our existing server be moved to the cloud?"
+
+#: inc/faq.php
+msgid "Bəli. Əvvəlcə serverdə işləyən proqramlara və məlumatın həcminə baxırıq, sonra köçürmənin planını və vaxtını sizinlə razılaşdırırıq."
+msgstr "Yes. First we look at the programs running on the server and the amount of data, then agree the migration plan and timing with you."
+
+#: inc/faq.php
+msgid "Bulud server hansı işlər üçün uyğundur?"
+msgstr "What is a cloud server good for?"
+
+#: inc/faq.php
+msgid "Mühasibat və ERP proqramları, fayl serveri, sayt, poçt və uzaqdan iş üçün masaüstü serverləri. Sizə hansının sərfəli olduğunu ehtiyacınızı öyrəndikdən sonra deyirik."
+msgstr "Accounting and ERP software, a file server, websites, email and remote desktop servers for working from home. Once we know your needs, we tell you which option pays off."
+
 #: inc/product-data.php
 msgid "Müştəri müraciətləri və komandanın daxili işləri — bir platformada"
 msgstr "Customer requests and your team's internal work — on one platform"
@@ -3181,8 +3381,84 @@ msgid "FIXIT Ticket mobil tətbiqinin məxfilik siyasəti: hansı məlumatlar i�
 msgstr "Privacy policy of the FIXIT Ticket mobile app: what data is processed, where it is stored and how to delete an account. No ads or tracking."
 
 #: inc/seo.php
+msgid "fixit.az saytının məxfilik siyasəti: formalardan gələn məlumatlar, kukilər, analitika və məlumatınızla bağlı hüquqlarınız."
+msgstr "Privacy policy of fixit.az: data sent through forms, cookies, analytics and your rights over your data."
+
+#: inc/seo.php
+msgid "Fixit Remote serverinin qurulması addım-addım: serveri hazırlayın, paketi quraşdırın, administratoru yaradın və kompüterləri qoşun."
+msgstr "Setting up the Fixit Remote server step by step: prepare the server, install the package, create the administrator and connect your computers."
+
+#: inc/seo.php
+msgid "FIXIT Sorğu Sistemi: helpdesk və ticket sistemi"
+msgstr "FIXIT Helpdesk: helpdesk ticket system for IT teams"
+
+#: inc/seo.php
+msgid "Fixit Remote: uzaqdan dəstək proqramı"
+msgstr "Fixit Remote: self-hosted remote desktop and support"
+
+#: inc/seo.php
+msgid "FIXIT Şəbəkə Monitorinqi: SNMP ilə cihaz monitorinqi"
+msgstr "FIXIT Network Monitoring: SNMP network monitoring tool"
+
+#: inc/seo.php
+msgid "Kompüter servisi Bakıda: təmir və texniki xidmət"
+msgstr "Computer repair and maintenance in Baku"
+
+#: inc/seo.php
+msgid "Video müşahidə sistemləri: layihə və quraşdırma"
+msgstr "CCTV systems: design and installation in Baku"
+
+#: inc/seo.php
+msgid "Şirkətlər üçün İT dəstək xidməti Bakıda"
+msgstr "IT support services for businesses in Baku"
+
+#: inc/seo.php
+msgid "IP telefoniya ofis üçün: 3CX və Yeastar"
+msgstr "IP telephony for offices: 3CX and Yeastar"
+
+#: inc/seo.php
+msgid "Korporativ e-poçt sistemləri şirkətlər üçün"
+msgstr "Corporate email systems for businesses"
+
+#: inc/seo.php
+msgid "Bulud serverlər: qurulum, yedəkləmə, idarə"
+msgstr "Cloud servers: setup, backup and management"
+
+#: inc/seo.php
+msgid "%s Bakıda"
+msgstr "%s in Baku, Azerbaijan"
+
+#: inc/seo.php
+msgid "İT xidmətləri Bakıda: dəstək, servis, video müşahidə"
+msgstr "IT services in Azerbaijan: support, repair, CCTV"
+
+#: inc/seo.php
+msgid "Məhsullar: helpdesk, uzaqdan dəstək, monitorinq"
+msgstr "Products: helpdesk, remote support, network monitoring"
+
+#: inc/seo.php
+msgid "Haqqımızda: Bakı və Cəlilabadda İT şirkəti"
+msgstr "About us: IT company in Baku and Jalilabad"
+
+#: inc/seo.php
+msgid "Əlaqə: Bakı və Cəlilabad ofisləri, telefon"
+msgstr "Contact: offices in Baku and Jalilabad, phone"
+
+#: inc/seo.php
+msgid "Uzaqdan qoşulma: fərdi istifadə üçün pulsuz"
+msgstr "Remote support software, free for personal use"
+
+#: inc/seo.php
+msgid "Məxfilik siyasəti: fixit.az saytı və kukilər"
+msgstr "Privacy policy: fixit.az website and cookies"
+
+#: inc/seo.php
 msgid "İKT xidmətləri və məhsulları"
 msgstr "ICT services and products"
+
+#: inc/seo.php
+msgid "Fərdi istifadə üçün pulsuz"
+msgstr "Free for personal use"
 
 #: inc/contact-form.php
 msgid "Mesajlar"
@@ -3783,6 +4059,10 @@ msgstr "You download the server package with the personal link we email you when
 #: template-remote-guide.php
 msgid "Linki almaq"
 msgstr "Get the link"
+
+#: template-remote-guide.php
+msgid "Qurulum addımları"
+msgstr "Setup steps"
 
 #: template-remote-guide.php
 msgid "Problem olarsa"
@@ -5765,10 +6045,6 @@ msgid "Yalnız rəqəmlər, ölkə kodu ilə. Məs: 994102252090"
 msgstr "Digits only, with the country code. E.g. 994102252090"
 
 #: tools/translations
-msgid "Əlaqə məlumatları"
-msgstr "Contact details"
-
-#: tools/translations
 msgid "Əlavə telefon"
 msgstr "Additional phone"
 
@@ -7471,3 +7747,35 @@ msgstr "Resize the image or convert it to WebP so the page opens faster."
 #: tools/translations
 msgid "Ən uyğun səhifə"
 msgstr "Best page"
+
+#: tools/translations
+msgid "Google-un başa düşməsi üçün bu formada yazın: «Həftənin 5 günü, 09:00 – 18:00»."
+msgstr "Write it in this form so Google can read it: «Həftənin 5 günü, 09:00 – 18:00» (number of days, then opening and closing time)."
+
+#: tools/translations
+msgid "Baş ofisin koordinatları"
+msgstr "Head office coordinates"
+
+#: tools/translations
+msgid "Google Xəritədə ofisin üstünə sağ klikləyin, ilk sətirdəki rəqəmləri köçürüb bura yapışdırın. Məs: 40.40930, 49.86710. Google bunu xəritədə və «yaxınlıqda» axtarışında işlədir."
+msgstr "Right-click the office in Google Maps, copy the numbers in the first line and paste them here. Example: 40.40930, 49.86710. Google uses this on the map and in «near me» searches."
+
+#: tools/translations
+msgid "Xidmət haqqında"
+msgstr "About the service"
+
+#: tools/translations
+msgid "Nələr daxildir"
+msgstr "What is included"
+
+#: tools/translations
+msgid "Digər xidmətlərimiz"
+msgstr "Our other services"
+
+#: tools/translations
+msgid "Böyük şəkil WebP və ya AVIF deyil"
+msgstr "Large image is not WebP or AVIF"
+
+#: tools/translations
+msgid "PNG/JPEG şəkil 20 KB-dan böyükdür. WebP adətən 25-35% kiçik olur, səhifə tez açılır."
+msgstr "A PNG/JPEG image is larger than 20 KB. WebP is usually 25-35% smaller, so the page opens faster."

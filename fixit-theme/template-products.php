@@ -147,7 +147,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 					<li>
 						<span class="tick"><?php fixit_icon( $fixit_term[0] ); ?></span>
 						<div>
-							<h4><?php echo esc_html( $fixit_term[1] ); ?></h4>
+							<h3><?php echo esc_html( $fixit_term[1] ); ?></h3>
 							<p><?php echo esc_html( $fixit_term[2] ); ?></p>
 						</div>
 					</li>
@@ -213,7 +213,7 @@ $fixit_phone       = fixit_get( 'fixit_phone' );
 				?>
 				<div class="step reveal">
 					<div class="step__num"><?php echo esc_html( sprintf( '%02d', $fixit_bn ) ); ?></div>
-					<h4><?php echo esc_html( $fixit_bs[0] ); ?></h4>
+					<h3><?php echo esc_html( $fixit_bs[0] ); ?></h3>
 					<p><?php echo esc_html( $fixit_bs[1] ); ?></p>
 				</div>
 			<?php endforeach; ?>
