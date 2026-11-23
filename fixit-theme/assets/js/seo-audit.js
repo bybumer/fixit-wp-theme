@@ -73,7 +73,23 @@
 		await Promise.all(workers);
 	}
 
-	async function getPage(url) {
+	function wait(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+	// Hostinq bəzən çoxlu keşsiz sorğuya qısa müddət 500/503 qaytarır.
+	// Belə cavab «qırıq link» deyil: fasilə verib iki dəfə yenidən yoxlayırıq.
+	function transient(r) { return !r.status || r.status >= 500; }
+
+	async function getPage(url, attempt) {
+		attempt = attempt || 0;
+		var res = await getPageOnce(url);
+		if (transient(res) && attempt < 2) {
+			await wait(1500 * (attempt + 1));
+			return getPage(url, attempt + 1);
+		}
+		return res;
+	}
+
+	async function getPageOnce(url) {
 		var t0 = performance.now();
 		try {
 			var r = await fetch(url, { credentials: 'omit', cache: 'no-store', redirect: 'follow', signal: timeout(25000) });
@@ -89,11 +105,21 @@
 	}
 
 	// Daxili link / şəkil: yönləndirməni izləmədən status.
-	async function probe(url, method) {
+	async function probe(url, method, attempt) {
+		attempt = attempt || 0;
+		var res = await probeOnce(url, method);
+		if (transient(res) && attempt < 2) {
+			await wait(1500 * (attempt + 1));
+			return probe(url, method, attempt + 1);
+		}
+		return res;
+	}
+
+	async function probeOnce(url, method) {
 		try {
 			var r = await fetch(url, { method: method || 'HEAD', credentials: 'omit', cache: 'no-store', redirect: 'manual', signal: timeout(20000) });
 			if (r.type === 'opaqueredirect') return { redirect: true, status: 301 };
-			if (r.status === 405 && (method || 'HEAD') === 'HEAD') return probe(url, 'GET');
+			if (r.status === 405 && (method || 'HEAD') === 'HEAD') return probeOnce(url, 'GET');
 			return { status: r.status, length: parseInt(r.headers.get('content-length') || '0', 10) || 0 };
 		} catch (e) {
 			return { status: 0, error: String(e && e.message || e) };
@@ -389,7 +415,7 @@
 		var unknown = targets.filter(function (u) { return !self.byUrl[u]; });
 		var status = {};
 		var done = 0;
-		await pool(unknown.slice(0, 250), 4, async function (u) {
+		await pool(unknown.slice(0, 250), 3, async function (u) {
 			status[u] = await probe(u);
 			progress(++done, unknown.length);
 		});
