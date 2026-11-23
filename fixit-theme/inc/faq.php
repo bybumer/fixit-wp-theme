@@ -37,7 +37,7 @@ function fixit_faq_home() {
 		),
 		array(
 			__( 'Bakıdan kənarda xidmət göstərirsiniz?', 'fixit' ),
-			__( 'Bəli. Baş ofisimiz Bakıda, filialımız isə Cəlilabaddadır. Regionlarda layihə əsaslı iş və uzaqdan dəstək təmin edirik.', 'fixit' ),
+			__( 'Bəli. Ofisimiz Bakıdadır, regionlarda layihə əsaslı işləyir və uzaqdan dəstək veririk.', 'fixit' ),
 		),
 	);
 }

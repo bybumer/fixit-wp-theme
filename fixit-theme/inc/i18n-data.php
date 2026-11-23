@@ -60,7 +60,6 @@ function fixit_title_translations() {
 		),
 		'Bakı, Nərimanov ray.'                   => array( 'en' => 'Baku, Narimanov district', 'ru' => 'Баку, Наримановский район' ),
 		'Həftənin 5 günü, 09:00 – 18:00'         => array( 'en' => '5 days a week, 09:00 – 18:00', 'ru' => '5 дней в неделю, 09:00 – 18:00' ),
-		'Cəlilabad ray., Heydər Əliyev pr. 284A' => array( 'en' => 'Jalilabad district, 284A Heydar Aliyev Ave.', 'ru' => 'Джалилабадский район, пр. Гейдара Алиева, 284A' ),
 		'Həftənin 7 günü, 09:00 – 20:00'         => array( 'en' => '7 days a week, 09:00 – 20:00', 'ru' => '7 дней в неделю, 09:00 – 20:00' ),
 
 		// Sayt adı və şüarı (Ayarlar → Ümumi).
@@ -72,7 +71,6 @@ function fixit_title_translations() {
 
 		// Şəhərlər (rəylərdə).
 		'Bakı'                          => array( 'en' => 'Baku', 'ru' => 'Баку' ),
-		'Cəlilabad'                     => array( 'en' => 'Jalilabad', 'ru' => 'Джалилабад' ),
 	);
 
 	$out = array();

@@ -65,8 +65,8 @@ msgid "Bütün hüquqlar qorunur."
 msgstr "All rights reserved."
 
 #: footer.php
-msgid "Bakı · Cəlilabad"
-msgstr "Baku · Jalilabad"
+msgid "Bakı, Azərbaycan"
+msgstr "Baku, Azerbaijan"
 
 #: footer.php
 msgid "Zəng et"
@@ -833,20 +833,16 @@ msgid "Şirkətlər üçün gördüyümüz işlər"
 msgstr "What we do for businesses"
 
 #: template-about.php
-msgid "Ofislərimiz"
-msgstr "Our offices"
+msgid "Ofisimiz"
+msgstr "Our office"
 
 #: template-about.php
 msgid "Bizi harada tapa bilərsiniz?"
 msgstr "Where to find us"
 
 #: template-about.php
-msgid "Baş ofis"
-msgstr "Head office"
-
-#: template-about.php
-msgid "Cəlilabad filialı"
-msgstr "Jalilabad branch"
+msgid "Bakı ofisi"
+msgstr "Baku office"
 
 #: template-about.php
 msgid "Komandamızla tanış olmaq istəyirsiniz?"
@@ -875,10 +871,6 @@ msgstr "Contact details"
 #: template-contact.php
 msgid "Birbaşa yazın"
 msgstr "Message us directly"
-
-#: template-contact.php
-msgid "Ofislər"
-msgstr "Offices"
 
 #: template-contact.php
 msgid "Müraciət göndərin"
@@ -2105,8 +2097,8 @@ msgid "Bakıdan kənarda xidmət göstərirsiniz?"
 msgstr "Do you provide service outside Baku?"
 
 #: inc/faq.php
-msgid "Bəli. Baş ofisimiz Bakıda, filialımız isə Cəlilabaddadır. Regionlarda layihə əsaslı iş və uzaqdan dəstək təmin edirik."
-msgstr "Yes. Our head office is in Baku and our branch is in Jalilabad. In the regions we work on a project basis and provide remote support."
+msgid "Bəli. Ofisimiz Bakıdadır, regionlarda layihə əsaslı işləyir və uzaqdan dəstək veririk."
+msgstr "Yes. Our office is in Baku, and in the regions we work on a project basis and provide remote support."
 
 #: inc/faq.php
 msgid "Qiymətlər necə hesablanır?"
@@ -3361,12 +3353,12 @@ msgid "Sorğu Sistemi (Ticket + Task), Fixit Remote və Şəbəkə Monitorinqi: 
 msgstr "Helpdesk (Ticket + Task), Fixit Remote and Network Monitoring: software built by our team, on your own server or in our cloud. Online demos available."
 
 #: inc/seo.php
-msgid "2017-ci ildən İT sahəsində fəaliyyət göstəririk: 40-dan çox şirkətlə əməkdaşlıq, 30-dan çox tamamlanmış layihə. Bakı və Cəlilabadda xidmətinizdəyik."
-msgstr "We have worked in IT since 2017: over 40 companies served and more than 30 completed projects. We are at your service in Baku and Jalilabad."
+msgid "2017-ci ildən İT sahəsində fəaliyyət göstəririk: 40-dan çox şirkətlə əməkdaşlıq, 30-dan çox tamamlanmış layihə. Ofisimiz Bakıdadır."
+msgstr "We have worked in IT since 2017: over 40 companies served and more than 30 completed projects. Our office is in Baku."
 
 #: inc/seo.php
-msgid "FIXIT ilə əlaqə: %s. Bakı və Cəlilabad ofisləri, iş saatları və müraciət formu. İKT xidmətləri üçün bizə yazın."
-msgstr "Contact FIXIT: %s. Offices in Baku and Jalilabad, working hours and a request form. Write to us about ICT services."
+msgid "FIXIT ilə əlaqə: %s. Bakıdakı ofisimizin ünvanı, iş saatları və müraciət formu. İKT xidmətləri üçün bizə yazın."
+msgstr "Contact FIXIT: %s. Our Baku office address, working hours and a request form. Write to us about ICT services."
 
 #: inc/seo.php
 msgid "Fixit Remote ilə olduğunuz yerdən istənilən kompüterə qoşulun: ekranı görün, siçanı və klaviaturanı idarə edin. Fərdi istifadə pulsuzdur, qeydiyyat tələb olunmur."
@@ -3437,12 +3429,12 @@ msgid "Məhsullar: helpdesk, uzaqdan dəstək, monitorinq"
 msgstr "Products: helpdesk, remote support, network monitoring"
 
 #: inc/seo.php
-msgid "Haqqımızda: Bakı və Cəlilabadda İT şirkəti"
-msgstr "About us: IT company in Baku and Jalilabad"
+msgid "Haqqımızda: Bakıda İT şirkəti, 2017-ci ildən"
+msgstr "About us: IT company in Baku since 2017"
 
 #: inc/seo.php
-msgid "Əlaqə: Bakı və Cəlilabad ofisləri, telefon"
-msgstr "Contact: offices in Baku and Jalilabad, phone"
+msgid "Əlaqə: Bakı ofisi, telefon və iş saatları"
+msgstr "Contact: Baku office, phone and opening hours"
 
 #: inc/seo.php
 msgid "Uzaqdan qoşulma: fərdi istifadə üçün pulsuz"
@@ -4173,8 +4165,8 @@ msgid "1. Məlumatı kim işləyir"
 msgstr "1. Who processes the data"
 
 #: template-privacy.php
-msgid "Sayt FIXIT-ə məxsusdur (Bakı və Cəlilabad, Azərbaycan). Fərdi məlumatlarınızın işlənməsi ilə bağlı bütün suallar üçün:"
-msgstr "The site belongs to FIXIT (Baku and Jalilabad, Azerbaijan). For any questions about how your personal data is processed:"
+msgid "Sayt FIXIT-ə məxsusdur (Bakı, Azərbaycan). Fərdi məlumatlarınızın işlənməsi ilə bağlı bütün suallar üçün:"
+msgstr "The site belongs to FIXIT (Baku, Azerbaijan). For any questions about how your personal data is processed:"
 
 #: template-privacy.php
 msgid "Məlumatları Azərbaycan Respublikasının «Fərdi məlumatlar haqqında» Qanununa uyğun işləyirik."
@@ -4361,6 +4353,14 @@ msgid "Komandamızın hazırladığı sistemlər sizin serverinizdə işləyir. 
 msgstr "The systems built by our team run on your own server. An online demo is available for each of them."
 
 #: tools/translations
+msgid "Ofislər"
+msgstr "Offices"
+
+#: tools/translations
+msgid "Baş ofis"
+msgstr "Head office"
+
+#: tools/translations
 msgid "Saytın necə istifadə olunduğunu ölçmək və reklamlarımızı yaxşılaşdırmaq üçün analitika kukilərindən istifadə edirik. Razılıq versəniz, bu kukilər yalnız bu məqsəd üçün işlənəcək."
 msgstr "We use analytics cookies to measure how the site is used and to improve our ads. If you agree, these cookies will be used only for this purpose."
 
@@ -4371,6 +4371,10 @@ msgstr "Accept"
 #: tools/translations
 msgid "İmtina"
 msgstr "Decline"
+
+#: tools/translations
+msgid "Ofislərimiz"
+msgstr "Our offices"
 
 #: tools/translations
 msgid "Qiymət niyə saytda göstərilmir?"
@@ -5729,10 +5733,6 @@ msgid "Xidmət və məhsul məzmunu"
 msgstr "Service and product content"
 
 #: tools/translations
-msgid "Yerli axtarışda (xəritədə) görünmək üçün Bakı və Cəlilabad ofislərini qeydə alın — İT xidmətlərində ən çox müraciət oradan gəlir."
-msgstr "Register the Baku and Jalilabad offices to appear in local search (on the map): most IT service enquiries come from there."
-
-#: tools/translations
 msgid "Yüklənib — sosial şəbəkə paylaşımlarında da işlədilir."
 msgstr "Uploaded. It is also used when shared on social networks."
 
@@ -5983,14 +5983,6 @@ msgstr "Headline"
 #: tools/translations
 msgid "FIXIT tema ayarları"
 msgstr "FIXIT theme settings"
-
-#: tools/translations
-msgid "Filial iş saatları"
-msgstr "Branch office hours"
-
-#: tools/translations
-msgid "Filial ünvanı"
-msgstr "Branch address"
 
 #: tools/translations
 msgid "Form mesajlarının gedəcəyi e-poçt"
@@ -7779,3 +7771,7 @@ msgstr "Large image is not WebP or AVIF"
 #: tools/translations
 msgid "PNG/JPEG şəkil 20 KB-dan böyükdür. WebP adətən 25-35% kiçik olur, səhifə tez açılır."
 msgstr "A PNG/JPEG image is larger than 20 KB. WebP is usually 25-35% smaller, so the page opens faster."
+
+#: tools/translations
+msgid "Yerli axtarışda (xəritədə) görünmək üçün Bakı ofisini Google Biznes Profilində qeydə alın. İT xidmətləri üçün müraciətlərin çoxu oradan gəlir."
+msgstr "Register the Baku office in Google Business Profile to appear in local search (on the map). Most IT service enquiries come from there."

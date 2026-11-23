@@ -170,12 +170,12 @@ function fixit_template_description( $post_id ) {
 			return __( 'Sorğu Sistemi (Ticket + Task), Fixit Remote və Şəbəkə Monitorinqi: komandamızın hazırladığı proqramlar, öz serverinizdə və ya bizim buludda. Onlayn demo var.', 'fixit' );
 
 		case 'template-about.php':
-			return __( '2017-ci ildən İT sahəsində fəaliyyət göstəririk: 40-dan çox şirkətlə əməkdaşlıq, 30-dan çox tamamlanmış layihə. Bakı və Cəlilabadda xidmətinizdəyik.', 'fixit' );
+			return __( '2017-ci ildən İT sahəsində fəaliyyət göstəririk: 40-dan çox şirkətlə əməkdaşlıq, 30-dan çox tamamlanmış layihə. Ofisimiz Bakıdadır.', 'fixit' );
 
 		case 'template-contact.php':
 			return sprintf(
 				/* translators: %s: telefon nömrəsi */
-				__( 'FIXIT ilə əlaqə: %s. Bakı və Cəlilabad ofisləri, iş saatları və müraciət formu. İKT xidmətləri üçün bizə yazın.', 'fixit' ),
+				__( 'FIXIT ilə əlaqə: %s. Bakıdakı ofisimizin ünvanı, iş saatları və müraciət formu. İKT xidmətləri üçün bizə yazın.', 'fixit' ),
 				fixit_get( 'fixit_phone' )
 			);
 
@@ -273,9 +273,9 @@ function fixit_seo_default_title( $post ) {
 			case 'template-products.php':
 				return __( 'Məhsullar: helpdesk, uzaqdan dəstək, monitorinq', 'fixit' );
 			case 'template-about.php':
-				return __( 'Haqqımızda: Bakı və Cəlilabadda İT şirkəti', 'fixit' );
+				return __( 'Haqqımızda: Bakıda İT şirkəti, 2017-ci ildən', 'fixit' );
 			case 'template-contact.php':
-				return __( 'Əlaqə: Bakı və Cəlilabad ofisləri, telefon', 'fixit' );
+				return __( 'Əlaqə: Bakı ofisi, telefon və iş saatları', 'fixit' );
 			case 'template-remote.php':
 				return __( 'Uzaqdan qoşulma: fərdi istifadə üçün pulsuz', 'fixit' );
 			case 'template-privacy.php':
@@ -574,27 +574,6 @@ function fixit_schema_organization() {
 	$hours = fixit_seo_opening_hours( get_theme_mod( 'fixit_hours_main', fixit_default( 'fixit_hours_main' ) ) );
 	if ( $hours ) {
 		$schema['openingHoursSpecification'] = $hours;
-	}
-
-	// Filial ayrıca bölmə kimi: öz ünvanı və iş saatları ilə.
-	$branch_address = fixit_get( 'fixit_address_br' );
-	if ( $branch_address ) {
-		$branch = array(
-			'@type'     => 'ProfessionalService',
-			'name'      => get_bloginfo( 'name' ) . ' ' . __( 'Cəlilabad filialı', 'fixit' ),
-			'telephone' => fixit_tel( fixit_get( 'fixit_phone' ) ),
-			'address'   => array(
-				'@type'           => 'PostalAddress',
-				'streetAddress'   => $branch_address,
-				'addressLocality' => 'Cəlilabad',
-				'addressCountry'  => 'AZ',
-			),
-		);
-		$branch_hours = fixit_seo_opening_hours( get_theme_mod( 'fixit_hours_br', fixit_default( 'fixit_hours_br' ) ) );
-		if ( $branch_hours ) {
-			$branch['openingHoursSpecification'] = $branch_hours;
-		}
-		$schema['department'] = array( $branch );
 	}
 
 	$logo = fixit_share_image();

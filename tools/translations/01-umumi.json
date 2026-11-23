@@ -63,10 +63,6 @@
   "en": "All rights reserved.",
   "ru": "Все права защищены."
  },
- "Bakı · Cəlilabad": {
-  "en": "Baku · Jalilabad",
-  "ru": "Баку · Джалилабад"
- },
  "Zəng et": {
   "en": "Call us",
   "ru": "Позвонить"
@@ -247,14 +243,6 @@
   "en": "Helpdesk (Ticket + Task), Fixit Remote and Network Monitoring — software built by our own team and running on your server. An online demo is available.",
   "ru": "Служба заявок (Ticket + Task), Fixit Remote и Мониторинг сети — программные продукты нашей команды, работающие на вашем сервере. Доступно онлайн-демо."
  },
- "2017-ci ildən İT sahəsində fəaliyyət göstəririk: 40-dan çox şirkətlə əməkdaşlıq, 30-dan çox tamamlanmış layihə. Bakı və Cəlilabadda xidmətinizdəyik.": {
-  "en": "We have worked in IT since 2017: over 40 companies served and more than 30 completed projects. We are at your service in Baku and Jalilabad.",
-  "ru": "Работаем в сфере IT с 2017 года: более 40 компаний-клиентов и свыше 30 завершённых проектов. Мы к вашим услугам в Баку и Джалилабаде."
- },
- "FIXIT ilə əlaqə: %s. Bakı və Cəlilabad ofisləri, iş saatları və müraciət formu. İKT xidmətləri üçün bizə yazın.": {
-  "en": "Contact FIXIT: %s. Offices in Baku and Jalilabad, working hours and a request form. Write to us about ICT services.",
-  "ru": "Связь с FIXIT: %s. Офисы в Баку и Джалилабаде, часы работы и форма заявки. Напишите нам по вопросам ИКТ-услуг."
- },
  "İKT xidmətləri və məhsulları": {
   "en": "ICT services and products",
   "ru": "ИКТ-услуги и продукты"
@@ -318,10 +306,6 @@
  "Baş ofis": {
   "en": "Head office",
   "ru": "Главный офис"
- },
- "Cəlilabad filialı": {
-  "en": "Jalilabad branch",
-  "ru": "Филиал в Джалилабаде"
  },
  "Müraciət göndərin": {
   "en": "Send a request",

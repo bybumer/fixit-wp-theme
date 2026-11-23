@@ -55,14 +55,6 @@
   "en": "Products: helpdesk, remote support, network monitoring",
   "ru": "Продукты: система заявок, удаленный доступ, мониторинг"
  },
- "Haqqımızda: Bakı və Cəlilabadda İT şirkəti": {
-  "en": "About us: IT company in Baku and Jalilabad",
-  "ru": "О нас: ИТ-компания в Баку и Джалилабаде"
- },
- "Əlaqə: Bakı və Cəlilabad ofisləri, telefon": {
-  "en": "Contact: offices in Baku and Jalilabad, phone",
-  "ru": "Контакты: офисы в Баку и Джалилабаде, телефон"
- },
  "Uzaqdan qoşulma: fərdi istifadə üçün pulsuz": {
   "en": "Remote support software, free for personal use",
   "ru": "Удаленная поддержка, бесплатно для частных лиц"
@@ -305,5 +297,44 @@
  },
  "PNG/JPEG şəkil 20 KB-dan böyükdür. WebP adətən 25-35% kiçik olur, səhifə tez açılır.": {
   "en": "A PNG/JPEG image is larger than 20 KB. WebP is usually 25-35% smaller, so the page opens faster."
+ },
+ "Ofisimiz": {
+  "en": "Our office",
+  "ru": "Наш офис"
+ },
+ "Bakı ofisi": {
+  "en": "Baku office",
+  "ru": "Офис в Баку"
+ },
+ "Bakı, Azərbaycan": {
+  "en": "Baku, Azerbaijan",
+  "ru": "Баку, Азербайджан"
+ },
+ "2017-ci ildən İT sahəsində fəaliyyət göstəririk: 40-dan çox şirkətlə əməkdaşlıq, 30-dan çox tamamlanmış layihə. Ofisimiz Bakıdadır.": {
+  "en": "We have worked in IT since 2017: over 40 companies served and more than 30 completed projects. Our office is in Baku.",
+  "ru": "Работаем в сфере IT с 2017 года: более 40 компаний-клиентов и свыше 30 завершённых проектов. Наш офис находится в Баку."
+ },
+ "FIXIT ilə əlaqə: %s. Bakıdakı ofisimizin ünvanı, iş saatları və müraciət formu. İKT xidmətləri üçün bizə yazın.": {
+  "en": "Contact FIXIT: %s. Our Baku office address, working hours and a request form. Write to us about ICT services.",
+  "ru": "Связь с FIXIT: %s. Адрес нашего офиса в Баку, часы работы и форма заявки. Напишите нам по вопросам ИКТ-услуг."
+ },
+ "Haqqımızda: Bakıda İT şirkəti, 2017-ci ildən": {
+  "en": "About us: IT company in Baku since 2017",
+  "ru": "О нас: ИТ-компания в Баку с 2017 года"
+ },
+ "Əlaqə: Bakı ofisi, telefon və iş saatları": {
+  "en": "Contact: Baku office, phone and opening hours",
+  "ru": "Контакты: офис в Баку, телефон и часы работы"
+ },
+ "Bəli. Ofisimiz Bakıdadır, regionlarda layihə əsaslı işləyir və uzaqdan dəstək veririk.": {
+  "en": "Yes. Our office is in Baku, and in the regions we work on a project basis and provide remote support.",
+  "ru": "Да. Наш офис находится в Баку, в регионах работаем по проектам и оказываем удалённую поддержку."
+ },
+ "Sayt FIXIT-ə məxsusdur (Bakı, Azərbaycan). Fərdi məlumatlarınızın işlənməsi ilə bağlı bütün suallar üçün:": {
+  "en": "The site belongs to FIXIT (Baku, Azerbaijan). For any questions about how your personal data is processed:",
+  "ru": "Сайт принадлежит компании FIXIT (Баку, Азербайджан). По всем вопросам обработки персональных данных:"
+ },
+ "Yerli axtarışda (xəritədə) görünmək üçün Bakı ofisini Google Biznes Profilində qeydə alın. İT xidmətləri üçün müraciətlərin çoxu oradan gəlir.": {
+  "en": "Register the Baku office in Google Business Profile to appear in local search (on the map). Most IT service enquiries come from there."
  }
 }

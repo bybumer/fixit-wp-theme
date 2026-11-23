@@ -15,7 +15,7 @@ $fixit_phone     = fixit_get( 'fixit_phone' );
 $fixit_phone_alt = fixit_get( 'fixit_phone_alt' );
 $fixit_email     = fixit_get( 'fixit_email' );
 $fixit_whatsapp  = fixit_get( 'fixit_whatsapp' );
-$fixit_map       = fixit_get( 'fixit_map_embed' );
+$fixit_map       = fixit_map_embed_url();
 $fixit_services  = fixit_get_services();
 $fixit_products  = fixit_get_products();
 ?>
@@ -74,23 +74,14 @@ $fixit_products  = fixit_get_products();
 			</div>
 
 			<div class="info-card">
-				<h3><?php esc_html_e( 'Ofislər', 'fixit' ); ?></h3>
+				<h3><?php esc_html_e( 'Ofisimiz', 'fixit' ); ?></h3>
 
 				<div class="info-row">
 					<span class="ico"><?php fixit_icon( 'pin' ); ?></span>
 					<div>
-						<h4><?php esc_html_e( 'Baş ofis', 'fixit' ); ?></h4>
+						<h4><?php esc_html_e( 'Bakı ofisi', 'fixit' ); ?></h4>
 						<p><?php echo esc_html( fixit_get( 'fixit_address_main' ) ); ?></p>
 						<small><?php fixit_icon( 'clock' ); ?> <?php echo esc_html( fixit_get( 'fixit_hours_main' ) ); ?></small>
-					</div>
-				</div>
-
-				<div class="info-row">
-					<span class="ico"><?php fixit_icon( 'pin' ); ?></span>
-					<div>
-						<h4><?php esc_html_e( 'Cəlilabad filialı', 'fixit' ); ?></h4>
-						<p><?php echo esc_html( fixit_get( 'fixit_address_br' ) ); ?></p>
-						<small><?php fixit_icon( 'clock' ); ?> <?php echo esc_html( fixit_get( 'fixit_hours_br' ) ); ?></small>
 					</div>
 				</div>
 			</div>

@@ -131,29 +131,18 @@ $fixit_contact_url = fixit_page_url( 'template-contact.php' );
 <section class="section section--soft">
 	<div class="container">
 		<div class="section-head section-head--center reveal">
-			<span class="eyebrow"><?php esc_html_e( 'Ofislərimiz', 'fixit' ); ?></span>
+			<span class="eyebrow"><?php esc_html_e( 'Ofisimiz', 'fixit' ); ?></span>
 			<h2><?php esc_html_e( 'Bizi harada tapa bilərsiniz?', 'fixit' ); ?></h2>
 		</div>
 
-		<div class="grid grid--2">
+		<div style="max-width:560px;margin-inline:auto">
 			<div class="info-card reveal">
 				<div class="info-row">
 					<span class="ico"><?php fixit_icon( 'pin' ); ?></span>
 					<div>
-						<h3><?php esc_html_e( 'Baş ofis', 'fixit' ); ?></h3>
+						<h3><?php esc_html_e( 'Bakı ofisi', 'fixit' ); ?></h3>
 						<p><?php echo esc_html( fixit_get( 'fixit_address_main' ) ); ?></p>
 						<small><?php echo esc_html( fixit_get( 'fixit_hours_main' ) ); ?></small>
-					</div>
-				</div>
-			</div>
-
-			<div class="info-card reveal">
-				<div class="info-row">
-					<span class="ico"><?php fixit_icon( 'pin' ); ?></span>
-					<div>
-						<h3><?php esc_html_e( 'Cəlilabad filialı', 'fixit' ); ?></h3>
-						<p><?php echo esc_html( fixit_get( 'fixit_address_br' ) ); ?></p>
-						<small><?php echo esc_html( fixit_get( 'fixit_hours_br' ) ); ?></small>
 					</div>
 				</div>
 			</div>

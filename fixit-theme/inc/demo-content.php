@@ -842,7 +842,7 @@ function fixit_create_reviews() {
 		array(
 			'text'   => 'Fixit-in xidmətləri mükəmməl idi. Kompüterlərin təmiri sürətli və keyfiyyətli oldu.',
 			'author' => 'Elçin Məmmədov',
-			'city'   => 'Cəlilabad',
+			'city'   => 'Bakı',
 		),
 		array(
 			'text'   => 'Fixit-in kameraların quraşdırılması xidməti çox peşəkardır. Təhlükəsizlik sistemimiz indi daha etibarlıdır. Hər kəsə tövsiyə edirəm!',

@@ -84,7 +84,6 @@ $fixit_services = fixit_get_services( 6 );
 						<li><?php fixit_icon( 'mail' ); ?><a href="mailto:<?php echo esc_attr( $fixit_email ); ?>"><?php echo esc_html( $fixit_email ); ?></a></li>
 					<?php endif; ?>
 					<li><?php fixit_icon( 'pin' ); ?><span><?php echo esc_html( fixit_get( 'fixit_address_main' ) ); ?></span></li>
-					<li><?php fixit_icon( 'pin' ); ?><span><?php echo esc_html( fixit_get( 'fixit_address_br' ) ); ?></span></li>
 					<li><?php fixit_icon( 'clock' ); ?><span><?php echo esc_html( fixit_get( 'fixit_hours_main' ) ); ?></span></li>
 				</ul>
 			</div>
@@ -93,7 +92,7 @@ $fixit_services = fixit_get_services( 6 );
 		<div class="footer__bottom">
 			<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> FIXIT. <?php esc_html_e( 'Bütün hüquqlar qorunur.', 'fixit' ); ?></span>
 			<?php fixit_footer_legal_links(); ?>
-			<span><?php esc_html_e( 'Bakı · Cəlilabad', 'fixit' ); ?></span>
+			<span><?php esc_html_e( 'Bakı, Azərbaycan', 'fixit' ); ?></span>
 		</div>
 	</div>
 </footer>

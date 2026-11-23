@@ -23,13 +23,11 @@ function fixit_defaults() {
 		'fixit_whatsapp'     => '994102252090',
 		'fixit_address_main' => 'Bakı, Nərimanov ray.',
 		'fixit_hours_main'   => 'Həftənin 5 günü, 09:00 – 18:00',
-		'fixit_address_br'   => 'Cəlilabad ray., Heydər Əliyev pr. 284A',
-		'fixit_hours_br'     => 'Həftənin 7 günü, 09:00 – 20:00',
 		'fixit_facebook'     => 'https://www.facebook.com/fixitservicesaz',
 		'fixit_instagram'    => '',
 		'fixit_tiktok'       => 'https://www.tiktok.com/@fixit.az',
 		'fixit_linkedin'     => '',
-		'fixit_map_embed'    => 'https://www.google.com/maps?q=Cəlilabad+Heydər+Əliyev+prospekti+284A&output=embed',
+		'fixit_map_embed'    => 'https://www.google.com/maps?q=Nərimanov+rayonu,+Bakı&output=embed',
 		'fixit_form_email'   => 'info@fixit.az',
 		'fixit_hero_title'   => 'Biznesiniz üçün <span>etibarlı İKT</span> infrastrukturu',
 		'fixit_hero_text'    => 'Kompüter servisi, video müşahidə, bulud serverlər, korporativ mail və IP telefoniya — bütün texnoloji ehtiyaclarınız üçün vahid tərəfdaş.',
@@ -129,8 +127,6 @@ function fixit_customize_register( $wp_customize ) {
 	$add( 'fixit_address_main', __( 'Baş ofis ünvanı', 'fixit' ), 'fixit_contact' );
 	$add( 'fixit_hours_main', __( 'Baş ofis iş saatları', 'fixit' ), 'fixit_contact', 'text', __( 'Google-un başa düşməsi üçün bu formada yazın: «Həftənin 5 günü, 09:00 – 18:00».', 'fixit' ) );
 	$add( 'fixit_geo_main', __( 'Baş ofisin koordinatları', 'fixit' ), 'fixit_contact', 'text', __( 'Google Xəritədə ofisin üstünə sağ klikləyin, ilk sətirdəki rəqəmləri köçürüb bura yapışdırın. Məs: 40.40930, 49.86710. Google bunu xəritədə və «yaxınlıqda» axtarışında işlədir.', 'fixit' ) );
-	$add( 'fixit_address_br', __( 'Filial ünvanı', 'fixit' ), 'fixit_contact' );
-	$add( 'fixit_hours_br', __( 'Filial iş saatları', 'fixit' ), 'fixit_contact' );
 	$add( 'fixit_form_email', __( 'Form mesajlarının gedəcəyi e-poçt', 'fixit' ), 'fixit_contact' );
 	$add( 'fixit_map_embed', __( 'Xəritə embed linki', 'fixit' ), 'fixit_contact', 'url' );
 
@@ -211,9 +207,28 @@ function fixit_translatable_mods() {
 		'fixit_hero_text'    => __( 'Başlıq altı mətn', 'fixit' ),
 		'fixit_address_main' => __( 'Baş ofis ünvanı', 'fixit' ),
 		'fixit_hours_main'   => __( 'Baş ofis iş saatları', 'fixit' ),
-		'fixit_address_br'   => __( 'Filial ünvanı', 'fixit' ),
-		'fixit_hours_br'     => __( 'Filial iş saatları', 'fixit' ),
 	);
+}
+
+/**
+ * Əlaqə səhifəsindəki xəritənin ünvanı.
+ *
+ * Köhnə Cəlilabad xəritəsi saxlanılıbsa və ya standart dəyər dəyişməyibsə,
+ * koordinat yazılanda xəritə ofisin dəqiq nöqtəsini göstərir.
+ */
+function fixit_map_embed_url() {
+	$url = (string) fixit_get( 'fixit_map_embed' );
+	$old = '' === $url || false !== stripos( rawurldecode( $url ), 'lilabad' );
+
+	if ( $old || fixit_default( 'fixit_map_embed' ) === $url ) {
+		$geo = function_exists( 'fixit_seo_geo' ) ? fixit_seo_geo() : null;
+		if ( $geo ) {
+			return 'https://www.google.com/maps?q=' . $geo[0] . ',' . $geo[1] . '&output=embed';
+		}
+		return fixit_default( 'fixit_map_embed' );
+	}
+
+	return $url;
 }
 
 /**

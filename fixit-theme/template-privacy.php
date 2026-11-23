@@ -63,7 +63,7 @@ $fixit_cookies = array(
 
 			<h2><?php esc_html_e( '1. Məlumatı kim işləyir', 'fixit' ); ?></h2>
 			<p>
-				<?php esc_html_e( 'Sayt FIXIT-ə məxsusdur (Bakı və Cəlilabad, Azərbaycan). Fərdi məlumatlarınızın işlənməsi ilə bağlı bütün suallar üçün:', 'fixit' ); ?>
+				<?php esc_html_e( 'Sayt FIXIT-ə məxsusdur (Bakı, Azərbaycan). Fərdi məlumatlarınızın işlənməsi ilə bağlı bütün suallar üçün:', 'fixit' ); ?>
 				<a href="mailto:<?php echo esc_attr( $fixit_email ); ?>"><?php echo esc_html( $fixit_email ); ?></a>,
 				<a href="tel:<?php echo esc_attr( fixit_tel( $fixit_phone ) ); ?>"><?php echo esc_html( $fixit_phone ); ?></a>.
 			</p>

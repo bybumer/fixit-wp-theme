@@ -456,7 +456,7 @@ function fixit_seo_admin_page() {
 				<span class="fixit-dot ok"></span>
 				<div>
 					<strong><?php esc_html_e( 'Google Biznes Profili', 'fixit' ); ?></strong>
-					<p><?php esc_html_e( 'Yerli axtarışda (xəritədə) görünmək üçün Bakı və Cəlilabad ofislərini qeydə alın — İT xidmətlərində ən çox müraciət oradan gəlir.', 'fixit' ); ?></p>
+					<p><?php esc_html_e( 'Yerli axtarışda (xəritədə) görünmək üçün Bakı ofisini Google Biznes Profilində qeydə alın. İT xidmətləri üçün müraciətlərin çoxu oradan gəlir.', 'fixit' ); ?></p>
 				</div>
 				<a class="button button-small" href="https://business.google.com" target="_blank" rel="noopener"><?php esc_html_e( 'Aç', 'fixit' ); ?></a>
 			</div>
