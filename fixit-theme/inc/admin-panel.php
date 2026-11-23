@@ -163,6 +163,28 @@ function fixit_panel_page() {
 				);
 			}
 
+			if ( function_exists( 'fixit_rs_fetch' ) ) {
+				$rs = get_option( 'fixit_rs_last' );
+				if ( is_array( $rs ) && isset( $rs['at'] ) ) {
+					fixit_panel_card(
+						__( 'Fixit Remote sessiyaları', 'fixit' ),
+						(string) (int) $rs['today'],
+						/* translators: 1: bu gün aktiv cihaz, 2: son yoxlamada gedən sessiya, 3: vaxt */
+						sprintf( __( 'bu gün sessiya · %1$d aktiv cihaz · son yoxlama %3$s: %2$d gedən sessiya', 'fixit' ), (int) $rs['active'], (int) $rs['sessions'], wp_date( 'H:i', (int) $rs['at'] ) ),
+						admin_url( 'admin.php?page=fixit-remote-sessions' ),
+						'ok'
+					);
+				} else {
+					fixit_panel_card(
+						__( 'Fixit Remote sessiyaları', 'fixit' ),
+						'—',
+						'' !== (string) get_option( 'fixit_rs_token', '' ) ? __( 'Canlı rəqəmlər üçün səhifəni açın.', 'fixit' ) : __( 'id.fixit.az statistika açarı yazılmayıb.', 'fixit' ),
+						admin_url( 'admin.php?page=fixit-remote-sessions' ),
+						'warn'
+					);
+				}
+			}
+
 			if ( is_array( $audit ) && isset( $audit['score'] ) ) {
 				$score = (int) $audit['score'];
 				fixit_panel_card(

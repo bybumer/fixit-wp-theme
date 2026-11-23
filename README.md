@@ -115,6 +115,7 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Məhsul adı, qısa təsvir, əsas xüsusiyyətlər | Admin → **Məhsullar** |
 | Məhsulun demo ünvanı, demo rejimi, **ekran görüntüləri** | Admin → Məhsullar → məhsulu açın → **Demo və ekran görüntüləri** |
 | Fixit Remote-un son versiyası, faylları, neçə dəfə yükləndiyi | Admin → **Fixit Remote** (başlanğıc səhifəsində də vidcet var). Saytdakı «Yüklə» düymələri həmişə ən son versiyanı verir, heç nə dəyişmək lazım deyil |
+| Pulsuz (ictimai) Fixit Remote-un sessiyaları: hazırda onlayn cihaz və gedən sessiyalar (30 san-dən bir yenilənir), günlər üzrə sessiya, müddət, aktiv cihaz, yeni quraşdırma | Admin → **Fixit Remote → Sessiyalar** (`inc/remote-sessions.php`). Mənbə id.fixit.az `/api/stats` (mərkəz 1.17.4+); açar mərkəzdə `FIXITREMOTE_STATS_TOKEN` (update.env), saytda «Bağlantı» bölməsində, şifrəli saxlanılır. Lokal sınaq: `define( 'FIXIT_REMOTE_STATS_SERVER', 'http://host.docker.internal:PORT' );` |
 | Saytın ümumi vəziyyəti: yeni müraciətlər, SEO balı, SMTP, versiya, məzənnələr | Admin → **FIXIT → İcmal** |
 | Admin panelin dili (EN / AZ) | Yuxarı zolaqda dil düyməsi (bax: **6. Dillər**) |
 | Demoya kim gəldi, hansı rolu seçdi, nə etdi | Admin → **FIXIT → Demo statistikası** (bir dəfəlik: «Ayarlar» → açar yarat → demo serverinin `.env`-inə `DEMO_STATS_TOKEN`; bax Fixit-Ticket-System `DEPLOY-DEMO.md` §9) |

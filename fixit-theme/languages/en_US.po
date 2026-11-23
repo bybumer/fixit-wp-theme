@@ -7775,3 +7775,231 @@ msgstr "A PNG/JPEG image is larger than 20 KB. WebP is usually 25-35% smaller, s
 #: tools/translations
 msgid "Yerli axtarışda (xəritədə) görünmək üçün Bakı ofisini Google Biznes Profilində qeydə alın. İT xidmətləri üçün müraciətlərin çoxu oradan gəlir."
 msgstr "Register the Baku office in Google Business Profile to appear in local search (on the map). Most IT service enquiries come from there."
+
+#: tools/translations
+msgid "Canlı rəqəmlər üçün səhifəni açın."
+msgstr "Open the page to see live numbers."
+
+#: tools/translations
+msgid "Fixit Remote sessiyaları"
+msgstr "Fixit Remote sessions"
+
+#: tools/translations
+msgid "bu gün sessiya · %1$d aktiv cihaz · son yoxlama %3$s: %2$d gedən sessiya"
+msgstr "sessions today · %1$d active devices · last check %3$s: %2$d sessions running"
+
+#: tools/translations
+msgid "id.fixit.az statistika açarı yazılmayıb."
+msgstr "The id.fixit.az statistics key has not been set."
+
+#: tools/translations
+msgid "%1$d saat %2$d dəq"
+msgstr "%1$d h %2$d min"
+
+#: tools/translations
+msgid "%d dəq"
+msgstr "%d min"
+
+#: tools/translations
+msgid "%d gün"
+msgstr "%d days"
+
+#: tools/translations
+msgid "%d san"
+msgstr "%d sec"
+
+#: tools/translations
+msgid "30 saniyədən bir özü yenilənir"
+msgstr "Refreshes every 30 seconds"
+
+#: tools/translations
+msgid "Aktiv cihaz"
+msgstr "Active devices"
+
+#: tools/translations
+msgid "Açar yanlışdır: saytdakı açar mərkəzdəki FIXITREMOTE_STATS_TOKEN ilə eyni deyil."
+msgstr "Wrong key: the key on the site does not match FIXITREMOTE_STATS_TOKEN on the central server."
+
+#: tools/translations
+msgid "Açarı sil"
+msgstr "Remove the key"
+
+#: tools/translations
+msgid "Bakı vaxtı ilə"
+msgstr "Baku time"
+
+#: tools/translations
+msgid "Bağlantı"
+msgstr "Connection"
+
+#: tools/translations
+msgid "Bağlantı ayarları saxlanıldı."
+msgstr "Connection settings saved."
+
+#: tools/translations
+msgid "Başlayıb"
+msgstr "Started"
+
+#: tools/translations
+msgid "Bu gün aktiv cihaz"
+msgstr "Active devices today"
+
+#: tools/translations
+msgid "Bu gün sessiya"
+msgstr "Sessions today"
+
+#: tools/translations
+msgid "Bu gün yeni quraşdırma"
+msgstr "New installs today"
+
+#: tools/translations
+msgid "Gün"
+msgstr "Day"
+
+#: tools/translations
+msgid "Günlük sessiya qrafiki"
+msgstr "Daily sessions chart"
+
+#: tools/translations
+msgid "Hazırda aktiv sessiya"
+msgstr "Sessions running now"
+
+#: tools/translations
+msgid "Hazırda aktiv sessiya yoxdur."
+msgstr "No sessions are running right now."
+
+#: tools/translations
+msgid "Hazırda gedən sessiyalar"
+msgstr "Sessions running now"
+
+#: tools/translations
+msgid "Hazırda onlayn cihaz"
+msgstr "Devices online now"
+
+#: tools/translations
+msgid "Müqayisə üçün, şirkət agentləri (mərkəz üzərindən): %1$s onlayn, %2$s sessiya."
+msgstr "For comparison, company agents (through the central server): %1$s online, %2$s sessions."
+
+#: tools/translations
+msgid "Mərkəz bu statistikanı hələ vermir: id.fixit.az 1.17.4 və ya daha yeni versiyaya yenilənməlidir."
+msgstr "The central server does not provide these statistics yet: id.fixit.az must be updated to 1.17.4 or newer."
+
+#: tools/translations
+msgid "Mərkəz gözlənilməz cavab verdi (HTTP %d)."
+msgstr "The central server sent an unexpected response (HTTP %d)."
+
+#: tools/translations
+msgid "Mərkəzdə statistika açarı qurulmayıb (FIXITREMOTE_STATS_TOKEN)."
+msgstr "The statistics key is not configured on the central server (FIXITREMOTE_STATS_TOKEN)."
+
+#: tools/translations
+msgid "Mərkəzdəki FIXITREMOTE_STATS_TOKEN"
+msgstr "FIXITREMOTE_STATS_TOKEN from the central server"
+
+#: tools/translations
+msgid "Mərkəzin statistika açarı yazılmayıb. Aşağıdakı «Bağlantı» bölməsində yazın."
+msgstr "The central server statistics key has not been set. Enter it in the «Connection» section below."
+
+#: tools/translations
+msgid "Mərkəzin ünvanı"
+msgstr "Central server address"
+
+#: tools/translations
+msgid "Mərkəzə qoşulmaq alınmadı: %s"
+msgstr "Could not connect to the central server: %s"
+
+#: tools/translations
+msgid "Pik onlayn"
+msgstr "Peak online"
+
+#: tools/translations
+msgid "Pik sessiya"
+msgstr "Peak sessions"
+
+#: tools/translations
+msgid "Pulsuz (ictimai) Fixit Remote proqramı ilə id.fixit.az üzərindən edilən qoşulmalar. Şirkət serverlərinin öz daxili sessiyaları burada görünmür."
+msgstr "Connections made with the free (public) Fixit Remote app through id.fixit.az. Internal sessions on company servers are not shown here."
+
+#: tools/translations
+msgid "Qoşulan"
+msgstr "Viewers"
+
+#: tools/translations
+msgid "Qoşulma icazəsi"
+msgstr "Connections allowed"
+
+#: tools/translations
+msgid "Rejim"
+msgstr "Mode"
+
+#: tools/translations
+msgid "Saxla"
+msgstr "Save"
+
+#: tools/translations
+msgid "Serverdə /etc/fixitremote-central/update.env faylındakı FIXITREMOTE_STATS_TOKEN dəyəri. Saytda şifrələnmiş saxlanılır və bir daha göstərilmir."
+msgstr "The FIXITREMOTE_STATS_TOKEN value from /etc/fixitremote-central/update.env on the server. It is stored encrypted on the site and never shown again."
+
+#: tools/translations
+msgid "Sessiya"
+msgstr "Sessions"
+
+#: tools/translations
+msgid "Sessiya, müddət, aktiv cihaz və pik %s tarixindən yığılır; yeni quraşdırma və qoşulma icazəsi daha əvvəldən var."
+msgstr "Sessions, duration, active devices and peaks are collected from %s; new installs and allowed connections go back further."
+
+#: tools/translations
+msgid "Sessiya: qarşı tərəf qəbul etdikdən sonra açılmış qoşulma (rədd olunan və cavabsız qalan sayılmır). Aktiv cihaz: gün ərzində proqramı açıq olan kompüterlər. Qoşulma icazəsi: ID və parol (və ya istək) qəbul olunub, sessiya açılmaya da bilər."
+msgstr "Session: a connection opened after the other side accepted it (refused and unanswered requests are not counted). Active device: a computer that had the app running during the day. Connection allowed: the ID and password (or the request) were accepted; a session may not have opened."
+
+#: tools/translations
+msgid "Sessiyalar, günlər üzrə"
+msgstr "Sessions by day"
+
+#: tools/translations
+msgid "Son %1$d gün: %2$s sessiya, %3$s · %4$s yeni quraşdırma"
+msgstr "Last %1$d days: %2$s sessions, %3$s · %4$s new installs"
+
+#: tools/translations
+msgid "Statistika açarı"
+msgstr "Statistics key"
+
+#: tools/translations
+msgid "Yalnız baxış"
+msgstr "View only"
+
+#: tools/translations
+msgid "Yazılıb. Dəyişmək üçün yenisini yapışdırın."
+msgstr "Saved. Paste a new one to change it."
+
+#: tools/translations
+msgid "Yeni quraşdırma"
+msgstr "New installs"
+
+#: tools/translations
+msgid "açar yazılmayıb"
+msgstr "key not set"
+
+#: tools/translations
+msgid "açar yazılıb"
+msgstr "key set"
+
+#: tools/translations
+msgid "cəmi cihaz: %s"
+msgstr "devices in total: %s"
+
+#: tools/translations
+msgid "pik eyni anda: %s"
+msgstr "peak at once: %s"
+
+#: tools/translations
+msgid "Çox sorğu. Bir dəqiqədən sonra yenidən baxın."
+msgstr "Too many requests. Try again in a minute."
+
+#: tools/translations
+msgid "İdarə"
+msgstr "Control"
+
+#: tools/translations
+msgid "İdarə olunan cihaz"
+msgstr "Devices controlled"
