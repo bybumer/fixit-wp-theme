@@ -22,15 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
    1. Menyu
    ============================================================ */
 function fixit_seo_admin_menu() {
-	add_menu_page(
-		__( 'FIXIT SEO', 'fixit' ),
-		__( 'FIXIT SEO', 'fixit' ),
-		'edit_posts',
-		'fixit-seo',
-		'fixit_seo_admin_page',
-		'dashicons-chart-area',
-		19
-	);
+	add_submenu_page( 'fixit', __( 'FIXIT SEO', 'fixit' ), __( 'SEO', 'fixit' ), 'edit_posts', 'fixit-seo', 'fixit_seo_admin_page' );
 }
 add_action( 'admin_menu', 'fixit_seo_admin_menu' );
 

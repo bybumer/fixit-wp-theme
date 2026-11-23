@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Birbaşa girişi bağla.
 }
 
-define( 'FIXIT_VERSION', '1.16.5' );
+define( 'FIXIT_VERSION', '1.16.6' );
 
 /*
  * Fixit Remote yükləmə ünvanları.
@@ -187,6 +187,8 @@ require_once get_template_directory() . '/inc/demo-content.php';  // İlk quraş
 require_once get_template_directory() . '/inc/faq.php';           // Sual-cavab məzmunu (səhifə + schema)
 require_once get_template_directory() . '/inc/seo.php';           // Meta teqlər və Schema.org
 require_once get_template_directory() . '/inc/seo-admin.php';     // Admin paneldə SEO izləmə lövhəsi
+require_once get_template_directory() . '/inc/seo-audit.php';     // SEO auditi: bütün sayt, üç dil, hesabat
+require_once get_template_directory() . '/inc/admin-panel.php';   // FIXIT menyusu və icmal səhifəsi
 require_once get_template_directory() . '/inc/demo-stats.php';    // Admin paneldə demo.fixit.az ziyarət statistikası
 require_once get_template_directory() . '/inc/analytics.php';     // GA4, Meta Pixel, LinkedIn Insight, Clarity (yalnız razılıqla)
 require_once get_template_directory() . '/inc/consent.php';       // Kuki razılığı zolağı, məxfilik keçidləri

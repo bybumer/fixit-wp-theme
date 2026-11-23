@@ -6,7 +6,7 @@
  * mail() funksiyası ilə yox, sizin poçt serverinizdən gedir: məktub spama düşmür,
  * göndərənin ünvanı şirkətin ünvanı olur.
  *
- * Ayarlar: Parametrlər → E-poçt (SMTP). Parol bazada şifrələnmiş saxlanılır (açar
+ * Ayarlar: FIXIT → E-poçt (SMTP). Parol bazada şifrələnmiş saxlanılır (açar
  * wp-config.php-dəki duzlardan alınır, baza tək ələ keçsə parol oxunmur). İstəsəniz
  * parolu wp-config.php-də verə bilərsiniz, onda bazaya heç yazılmır:
  *
@@ -234,14 +234,14 @@ function fixit_smtp_succeeded() {
 add_action( 'wp_mail_succeeded', 'fixit_smtp_succeeded' );
 
 /* ============================================================
-   Admin: Parametrlər → E-poçt (SMTP)
+   Admin: FIXIT → E-poçt (SMTP)
    ============================================================ */
 
 /**
  * Menyu.
  */
 function fixit_smtp_menu() {
-	add_options_page( __( 'E-poçt (SMTP)', 'fixit' ), __( 'E-poçt (SMTP)', 'fixit' ), 'manage_options', 'fixit-smtp', 'fixit_smtp_page' );
+	add_submenu_page( 'fixit', __( 'E-poçt (SMTP)', 'fixit' ), __( 'E-poçt (SMTP)', 'fixit' ), 'manage_options', 'fixit-smtp', 'fixit_smtp_page' );
 }
 add_action( 'admin_menu', 'fixit_smtp_menu' );
 
@@ -249,7 +249,7 @@ add_action( 'admin_menu', 'fixit_smtp_menu' );
  * Ayar səhifəsinin ünvanı.
  */
 function fixit_smtp_page_url() {
-	return admin_url( 'options-general.php?page=fixit-smtp' );
+	return admin_url( 'admin.php?page=fixit-smtp' );
 }
 
 /**

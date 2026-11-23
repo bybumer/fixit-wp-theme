@@ -79,15 +79,7 @@ function fixit_demo_stats_token( $product = 'ticket' ) {
    1. Menyu və başlanğıc vidceti
    ============================================================ */
 function fixit_demo_stats_menu() {
-	add_menu_page(
-		__( 'Demo statistikası', 'fixit' ),
-		__( 'Demo statistikası', 'fixit' ),
-		'manage_options',
-		'fixit-demo-stats',
-		'fixit_demo_stats_page',
-		'dashicons-visibility',
-		24
-	);
+	add_submenu_page( 'fixit', __( 'Demo statistikası', 'fixit' ), __( 'Demo statistikası', 'fixit' ), 'manage_options', 'fixit-demo-stats', 'fixit_demo_stats_page' );
 }
 add_action( 'admin_menu', 'fixit_demo_stats_menu' );
 

@@ -446,7 +446,7 @@ function fixit_trial_action_box( $post ) {
 		$checks[] = array( 'warn', __( 'Saytın imza açarı yaradılmayıb: məktubda yükləmə linki olmayacaq', 'fixit' ) );
 	}
 	if ( function_exists( 'fixit_smtp_ready' ) && ! fixit_smtp_ready() ) {
-		$checks[] = array( 'warn', __( 'SMTP qurulmayıb: məktub spama düşə bilər (Parametrlər → E-poçt)', 'fixit' ) );
+		$checks[] = array( 'warn', __( 'SMTP qurulmayıb: məktub spama düşə bilər (FIXIT → E-poçt)', 'fixit' ) );
 	}
 	?>
 	<ul style="margin:0 0 12px">

@@ -6747,3 +6747,727 @@ msgstr "max: %d"
 #: tools/translations
 msgid "Səhifə: %d"
 msgstr "Pages: %d"
+
+#: tools/translations
+msgid "Admin panelin dili"
+msgstr "Admin panel language"
+
+#: tools/translations
+msgid "WordPress-in Azərbaycan dili paketi quraşdırıla bilmədi: WordPress-in öz menyuları ingiliscə qalacaq, FIXIT səhifələri azərbaycancadır."
+msgstr "The WordPress Azerbaijani language pack could not be installed: WordPress's own menus stay in English, FIXIT pages are in Azerbaijani."
+
+#: tools/translations
+msgid "WordPress-in Azərbaycan dili paketi quraşdırıldı."
+msgstr "The WordPress Azerbaijani language pack was installed."
+
+#: tools/translations
+msgid "WordPress-in Azərbaycan dili paketi yoxdur və onu quraşdırmağa icazəniz yoxdur: WordPress-in öz menyuları ingiliscə qalacaq."
+msgstr "The WordPress Azerbaijani language pack is not installed and you are not allowed to install it: WordPress's own menus stay in English."
+
+#: tools/translations
+msgid "%1$s · 100 RUB = %2$s AZN"
+msgstr "%1$s · 100 RUB = %2$s AZN"
+
+#: tools/translations
+msgid "%1$s · kritik %2$d · xəbərdarlıq %3$d"
+msgstr "%1$s · critical %2$d · warnings %3$d"
+
+#: tools/translations
+msgid "FIXIT"
+msgstr "FIXIT"
+
+#: tools/translations
+msgid "FIXIT icmalı"
+msgstr "FIXIT overview"
+
+#: tools/translations
+msgid "Fixit Remote yükləmələri"
+msgstr "Fixit Remote downloads"
+
+#: tools/translations
+msgid "Hələ işlədilməyib. Saytın bütün səhifələrini yoxlayın."
+msgstr "Not run yet. Check all pages of the site."
+
+#: tools/translations
+msgid "Hər istifadəçi özü seçir. Saytın ön hissəsinin dilinə təsir etmir."
+msgstr "Each user chooses their own. It does not affect the language of the public site."
+
+#: tools/translations
+msgid "Menyular"
+msgstr "Menus"
+
+#: tools/translations
+msgid "Mərkəz saytın açarını tanıyır"
+msgstr "The central server recognizes the site key"
+
+#: tools/translations
+msgid "Məzənnə (AMB)"
+msgstr "Exchange rate (CBAR)"
+
+#: tools/translations
+msgid "SEO auditi"
+msgstr "SEO audit"
+
+#: tools/translations
+msgid "SEO balının dəyişməsi"
+msgstr "SEO score over time"
+
+#: tools/translations
+msgid "Sayta bax"
+msgstr "View site"
+
+#: tools/translations
+msgid "Saytın əsas göstəriciləri bir yerdə. Rəqəmlər saxlanmış məlumatdandır, səhifə açılanda xarici xidmətə sorğu getmir."
+msgstr "The site's key figures in one place. The numbers come from stored data; opening this page does not query external services."
+
+#: tools/translations
+msgid "Sınaq paketi (id.fixit.az)"
+msgstr "Trial package (id.fixit.az)"
+
+#: tools/translations
+msgid "Tema"
+msgstr "Theme"
+
+#: tools/translations
+msgid "Tez keçidlər"
+msgstr "Quick links"
+
+#: tools/translations
+msgid "Xəta"
+msgstr "Error"
+
+#: tools/translations
+msgid "Yeni versiya var: %s"
+msgstr "New version available: %s"
+
+#: tools/translations
+msgid "son 7 gündə · bu gün %1$d · 30 gündə %2$d"
+msgstr "last 7 days · today %1$d · 30 days %2$d"
+
+#: tools/translations
+msgid "son 7 gündə · cəmi %d"
+msgstr "last 7 days · total %d"
+
+#: tools/translations
+msgid "yoxlanmamış · cəmi %d"
+msgstr "to review · total %d"
+
+#: tools/translations
+msgid "Əlaqə, loqo, ana səhifə mətni"
+msgstr "Contacts, logo, home page text"
+
+#: tools/translations
+msgid "Ən son versiyadır (son yoxlamaya görə)"
+msgstr "Up to date (as of the last check)"
+
+#: tools/translations
+msgid "SMTP qurulmayıb: məktub spama düşə bilər (FIXIT → E-poçt)"
+msgstr "SMTP is not set up: the email may end up in spam (FIXIT → Email)"
+
+#: tools/translations
+msgid "SEO"
+msgstr "SEO"
+
+#: tools/translations
+msgid "/en/ səhifəsində lang=\"en\", /ru/ səhifəsində lang=\"ru\" olmalıdır."
+msgstr "A /en/ page must have lang=\"en\" and a /ru/ page lang=\"ru\"."
+
+#: tools/translations
+msgid "<head>-də async və ya defer olmayan skriptlər."
+msgstr "Scripts in <head> without async or defer."
+
+#: tools/translations
+msgid "A səhifəsi B-ni göstərirsə, B də A-nı göstərməlidir, yoxsa Google bağlantını nəzərə almır."
+msgstr "If page A points to B, B must point back to A, otherwise Google ignores the link."
+
+#: tools/translations
+msgid "AZ: az_AZ, EN: en_US, RU: ru_RU olmalıdır."
+msgstr "It should be AZ: az_AZ, EN: en_US, RU: ru_RU."
+
+#: tools/translations
+msgid "Alt mətn şəkil axtarışında və əlçatanlıqda vacibdir."
+msgstr "Alt text matters for image search and accessibility."
+
+#: tools/translations
+msgid "Ana səhifədə şirkət sxemi yoxdur"
+msgstr "No company schema on the home page"
+
+#: tools/translations
+msgid "Audit bitəndə «Claude üçün hesabatı kopyala» düyməsini basın və mətni Claude-a göndərin: problemləri birlikdə düzəldək."
+msgstr "When the audit finishes, click “Copy report for Claude” and send the text to Claude, and we will fix the issues together."
+
+#: tools/translations
+msgid "Audit dayandı"
+msgstr "The audit stopped"
+
+#: tools/translations
+msgid "Auditi başlat"
+msgstr "Start audit"
+
+#: tools/translations
+msgid "Az mətnli səhifə çətin sıralanır. Faydalı məzmun əlavə edin."
+msgstr "A page with little text is hard to rank. Add useful content."
+
+#: tools/translations
+msgid "Azərbaycanda (xəritədə) görünmək üçün sxemdə ünvan, telefon (+994), koordinat, iş saatları və sosial profillər olmalıdır."
+msgstr "To appear in Azerbaijan (on the map), the schema needs the address, phone (+994), coordinates, opening hours and social profiles."
+
+#: tools/translations
+msgid "Açar söz"
+msgstr "Keyword"
+
+#: tools/translations
+msgid "Açar söz heç bir səhifənin başlığında və ya H1-ində yoxdur"
+msgstr "The keyword is not in any page's title or H1"
+
+#: tools/translations
+msgid "Açar sözlər yadda saxlanıldı. Auditi yenidən işlədin."
+msgstr "Keywords saved. Run the audit again."
+
+#: tools/translations
+msgid "Açar sözləri yadda saxla"
+msgstr "Save keywords"
+
+#: tools/translations
+msgid "Ağır şəkillər (300 KB-dan çox)"
+msgstr "Heavy images (over 300 KB)"
+
+#: tools/translations
+msgid "Başlıq (title) yoxdur"
+msgstr "No title"
+
+#: tools/translations
+msgid "Başlıq axtarış nəticəsində görünən əsas mətndir."
+msgstr "The title is the main text shown in search results."
+
+#: tools/translations
+msgid "Başlıq səviyyələri ardıcıl deyil"
+msgstr "Heading levels are out of order"
+
+#: tools/translations
+msgid "Başlıq tərcümə olunmayıb"
+msgstr "Title not translated"
+
+#: tools/translations
+msgid "Başlıq çox qısadır (30 simvoldan az)"
+msgstr "Title is too short (under 30 characters)"
+
+#: tools/translations
+msgid "Başlıq çox uzundur (65 simvoldan çox)"
+msgstr "Title is too long (over 65 characters)"
+
+#: tools/translations
+msgid "Başlığa əsas açar sözü və brendi əlavə edin."
+msgstr "Add the main keyword and the brand to the title."
+
+#: tools/translations
+msgid "Bir neçə H1"
+msgstr "Several H1s"
+
+#: tools/translations
+msgid "Brauzer belə resursu bloklaya bilər, Google bunu təhlükəsizlik problemi sayır."
+msgstr "Browsers may block such a resource, and Google treats it as a security issue."
+
+#: tools/translations
+msgid "Bu axtarış üçün ayrıca səhifə və ya başlıq lazımdır, yoxsa üstə qalxmaq çətindir."
+msgstr "This search needs its own page or heading, otherwise it is hard to rank."
+
+#: tools/translations
+msgid "Bu problemləri düzəlt. Əvvəl kritikləri, sonra xəbərdarlıqları."
+msgstr "Fix these issues. Critical ones first, then warnings."
+
+#: tools/translations
+msgid "Böyük HTML gec yüklənir, xüsusən mobil şəbəkədə."
+msgstr "Large HTML loads slowly, especially on mobile networks."
+
+#: tools/translations
+msgid "Canonical başqa səhifəni göstərir"
+msgstr "Canonical points to another page"
+
+#: tools/translations
+msgid "Canonical eyni məzmunun bir neçə ünvanda indekslənməsinin qarşısını alır."
+msgstr "Canonical prevents the same content from being indexed at several addresses."
+
+#: tools/translations
+msgid "Canonical işləməyən səhifəni göstərir"
+msgstr "Canonical points to a broken page"
+
+#: tools/translations
+msgid "Canonical link yoxdur"
+msgstr "No canonical link"
+
+#: tools/translations
+msgid "Canonical ünvanı 200 qaytarmalıdır."
+msgstr "The canonical address must return 200."
+
+#: tools/translations
+msgid "Cavab"
+msgstr "Response"
+
+#: tools/translations
+msgid "Claude üçün hesabatı kopyala"
+msgstr "Copy report for Claude"
+
+#: tools/translations
+msgid "Daxili link yönləndirməyə aparır"
+msgstr "Internal link leads to a redirect"
+
+#: tools/translations
+msgid "Dil versiyaları bir-birinə hreflang ilə bağlanmalıdır: Google hər ölkədə düzgün dili göstərir."
+msgstr "Language versions must be linked with hreflang so that Google shows the right language in each country."
+
+#: tools/translations
+msgid "Dil versiyasının ünvanı 200 qaytarmalıdır."
+msgstr "The language version's address must return 200."
+
+#: tools/translations
+msgid "EN və ya RU səhifəsində Azərbaycan hərfləri (ə, ğ, ı) olan sözlər var."
+msgstr "The EN or RU page contains words with Azerbaijani letters (ə, ğ, ı)."
+
+#: tools/translations
+msgid "EN və ya RU səhifəsinin başlığı AZ səhifəsi ilə eynidir."
+msgstr "The EN or RU page has the same title as the AZ page."
+
+#: tools/translations
+msgid "Eyni başlıq bir neçə səhifədə"
+msgstr "Same title on several pages"
+
+#: tools/translations
+msgid "Eyni meta təsvir bir neçə səhifədə"
+msgstr "Same meta description on several pages"
+
+#: tools/translations
+msgid "FIXIT SEO auditi"
+msgstr "FIXIT SEO audit"
+
+#: tools/translations
+msgid "Google axtarış nəticəsində ünvanın yerinə səhifənin yolunu göstərir."
+msgstr "Google shows the page path instead of the URL in search results."
+
+#: tools/translations
+msgid "Google belə səhifəni çətin tapır və az əhəmiyyətli sayır."
+msgstr "Google finds such a page with difficulty and considers it less important."
+
+#: tools/translations
+msgid "Google proqram üçün zəngin nəticəni yalnız offers və ya aggregateRating olanda göstərir."
+msgstr "Google shows rich results for software only when offers or aggregateRating are present."
+
+#: tools/translations
+msgid "Google uzun başlığı kəsir. Vacib sözləri əvvələ yazın."
+msgstr "Google cuts long titles. Put the important words first."
+
+#: tools/translations
+msgid "Google uzun təsviri kəsir."
+msgstr "Google cuts long descriptions."
+
+#: tools/translations
+msgid "Google özü təsadüfi mətn seçəcək. 120-160 simvolluq təsvir yazın."
+msgstr "Google will pick some text on its own. Write a 120-160 character description."
+
+#: tools/translations
+msgid "H1"
+msgstr "H1"
+
+#: tools/translations
+msgid "H1 başlığı yoxdur"
+msgstr "No H1 heading"
+
+#: tools/translations
+msgid "HTML çox böyükdür (350 KB-dan çox)"
+msgstr "HTML is too large (over 350 KB)"
+
+#: tools/translations
+msgid "HTTPS səhifədə HTTP resursu"
+msgstr "HTTP resource on an HTTPS page"
+
+#: tools/translations
+msgid "Harada var"
+msgstr "Found in"
+
+#: tools/translations
+msgid "Hazırdır"
+msgstr "Done"
+
+#: tools/translations
+msgid "Hesabat kopyalandı. Onu Claude-a göndərin."
+msgstr "The report was copied. Send it to Claude."
+
+#: tools/translations
+msgid "Heç bir səhifədən link verilməyən səhifə"
+msgstr "Page with no internal links pointing to it"
+
+#: tools/translations
+msgid "Hədəf açar sözlər"
+msgstr "Target keywords"
+
+#: tools/translations
+msgid "Hər səhifədə az, en, ru və x-default olmalıdır."
+msgstr "Every page must have az, en, ru and x-default."
+
+#: tools/translations
+msgid "Hər səhifədə bir H1 olmalıdır: axtarış sistemi səhifənin mövzusunu ondan anlayır."
+msgstr "Every page needs one H1: search engines use it to understand the page topic."
+
+#: tools/translations
+msgid "Hər səhifənin başlığı unikal olmalıdır."
+msgstr "Every page needs a unique title."
+
+#: tools/translations
+msgid "Hər səhifənin təsviri unikal olmalıdır."
+msgstr "Every page needs a unique description."
+
+#: tools/translations
+msgid "JSON yüklə"
+msgstr "Download JSON"
+
+#: tools/translations
+msgid "JSON-LD oxunmur: Google onu nəzərə almayacaq."
+msgstr "The JSON-LD cannot be parsed, so Google will ignore it."
+
+#: tools/translations
+msgid "Kritik"
+msgstr "Critical"
+
+#: tools/translations
+msgid "Link 404 və ya başqa xəta verən səhifəyə aparır."
+msgstr "The link leads to a page that returns 404 or another error."
+
+#: tools/translations
+msgid "Linki birbaşa son ünvana dəyişin (məsələn, köhnə Azərbaycanca ünvanlar)."
+msgstr "Point the link directly to the final address (for example, old Azerbaijani addresses)."
+
+#: tools/translations
+msgid "Linklər və şəkillər yoxlanılır"
+msgstr "Checking links and images"
+
+#: tools/translations
+msgid "Meta təsvir qısadır (70 simvoldan az)"
+msgstr "Meta description is short (under 70 characters)"
+
+#: tools/translations
+msgid "Meta təsvir uzundur (165 simvoldan çox)"
+msgstr "Meta description is long (over 165 characters)"
+
+#: tools/translations
+msgid "Meta təsvir yoxdur"
+msgstr "No meta description"
+
+#: tools/translations
+msgid "Müştərinin Google-da yazdığı sözlər: hər sətirdə bir. Audit hər söz üçün ən uyğun səhifəni tapır və sözün başlıqda, H1-də, təsvirdə və mətndə olub-olmadığını göstərir. Azərbaycan bazarı üçün AZ və RU, qlobal bazar üçün EN sözləri yazın."
+msgstr "The words customers type into Google, one per line. The audit finds the best page for each one and shows whether the word is in the title, H1, description and text. Enter AZ and RU words for the Azerbaijani market and EN words for the global market."
+
+#: tools/translations
+msgid "Məhsul sxemində reytinq və ya qiymət yoxdur"
+msgstr "The product schema has no rating or price"
+
+#: tools/translations
+msgid "Məhsul səhifəsində məhsul sxemi yoxdur"
+msgstr "No product schema on the product page"
+
+#: tools/translations
+msgid "Məsələn, H2-dən sonra birbaşa H4 gəlir."
+msgstr "For example, an H4 directly after an H2."
+
+#: tools/translations
+msgid "Mətn azdır (250 sözdən az)"
+msgstr "Thin content (under 250 words)"
+
+#: tools/translations
+msgid "Naviqasiya zənciri (BreadcrumbList) yoxdur"
+msgstr "No breadcrumbs (BreadcrumbList)"
+
+#: tools/translations
+msgid "Nəticə yadda saxlanıldı."
+msgstr "The result was saved."
+
+#: tools/translations
+msgid "Nəticə yadda saxlanılmadı"
+msgstr "The result was not saved"
+
+#: tools/translations
+msgid "Olmayan səhifə 404 qaytarmır"
+msgstr "A missing page does not return 404"
+
+#: tools/translations
+msgid "Olmayan ünvan 404 statusu verməlidir, yoxsa Google boş səhifələri indeksləyir."
+msgstr "A missing address must return a 404 status, otherwise Google indexes empty pages."
+
+#: tools/translations
+msgid "Organization və ya LocalBusiness sxemi brendin Google-da tanınmasına kömək edir."
+msgstr "An Organization or LocalBusiness schema helps Google recognize the brand."
+
+#: tools/translations
+msgid "Problem"
+msgstr "Issues"
+
+#: tools/translations
+msgid "Problem tapılmadı."
+msgstr "No issues found."
+
+#: tools/translations
+msgid "SEO balı"
+msgstr "SEO score"
+
+#: tools/translations
+msgid "Saytın bütün səhifələri üç dildə (AZ, EN, RU) ziyarətçi və Google kimi, girişsiz açılır və yoxlanılır: başlıq, təsvir, H1, canonical, hreflang, dil, sosial şəbəkə məlumatı, struktur məlumat (yerli biznes sxemi daxil), şəkillər, linklər, tərcümə olunmamış mətn, sürət, robots.txt, sitemap və hədəf açar sözlər. Həm Azərbaycan, həm qlobal axtarış üçün."
+msgstr "Every page of the site is opened in three languages (AZ, EN, RU) without logging in, the way visitors and Google see it, and checked: title, description, H1, canonical, hreflang, language, social sharing data, structured data (including the local business schema), images, links, untranslated text, speed, robots.txt, sitemap and target keywords. For both Azerbaijani and global search."
+
+#: tools/translations
+msgid "Sitemap Google-a bütün səhifələri tez tapmağa kömək edir."
+msgstr "The sitemap helps Google find all pages quickly."
+
+#: tools/translations
+msgid "Sitemap tapılmadı"
+msgstr "Sitemap not found"
+
+#: tools/translations
+msgid "Sitemap-də işləməyən və ya yönləndirilən ünvan"
+msgstr "Broken or redirecting address in the sitemap"
+
+#: tools/translations
+msgid "Sitemap-də yalnız 200 qaytaran son ünvanlar olmalıdır."
+msgstr "The sitemap should only contain final addresses that return 200."
+
+#: tools/translations
+msgid "Sitemap: https://.../wp-sitemap.xml sətrini əlavə edin."
+msgstr "Add the line Sitemap: https://.../wp-sitemap.xml."
+
+#: tools/translations
+msgid "Siyahıdakı ünvan yönləndirilir"
+msgstr "Listed address redirects"
+
+#: tools/translations
+msgid "SoftwareApplication və ya Product sxemi lazımdır."
+msgstr "A SoftwareApplication or Product schema is needed."
+
+#: tools/translations
+msgid "Son audit"
+msgstr "Last audit"
+
+#: tools/translations
+msgid "Sosial şəbəkə məlumatı (Open Graph) natamamdır"
+msgstr "Social sharing data (Open Graph) is incomplete"
+
+#: tools/translations
+msgid "Status"
+msgstr "Status"
+
+#: tools/translations
+msgid "Struktur məlumat (JSON-LD) yoxdur"
+msgstr "No structured data (JSON-LD)"
+
+#: tools/translations
+msgid "Struktur məlumat Google-da zəngin nəticə (ulduz, sual-cavab, naviqasiya) almağa kömək edir."
+msgstr "Structured data helps get rich results on Google (stars, FAQ, breadcrumbs)."
+
+#: tools/translations
+msgid "Struktur məlumatda xəta"
+msgstr "Error in structured data"
+
+#: tools/translations
+msgid "Söz"
+msgstr "Words"
+
+#: tools/translations
+msgid "Sürət Google-un sıralama siqnalıdır. Keşi və hostinqi yoxlayın."
+msgstr "Speed is a Google ranking signal. Check the cache and the hosting."
+
+#: tools/translations
+msgid "Səhifə 4xx və ya 5xx statusu ilə cavab verir: Google onu indeksləməyəcək."
+msgstr "The page responds with a 4xx or 5xx status, so Google will not index it."
+
+#: tools/translations
+msgid "Səhifə axtarışdan gizlədilib (noindex)"
+msgstr "Page is hidden from search (noindex)"
+
+#: tools/translations
+msgid "Səhifə gec cavab verir (2,5 saniyədən çox)"
+msgstr "Page responds slowly (over 2.5 seconds)"
+
+#: tools/translations
+msgid "Səhifə sitemap-də yoxdur"
+msgstr "Page is not in the sitemap"
+
+#: tools/translations
+msgid "Səhifə xəta qaytarır"
+msgstr "Page returns an error"
+
+#: tools/translations
+msgid "Səhifə yüklənəndə məzmun sıçrayır (CLS)."
+msgstr "Content jumps while the page loads (CLS)."
+
+#: tools/translations
+msgid "Səhifə öz ünvanını canonical kimi göstərməlidir, yoxsa indekslənməyə bilər."
+msgstr "The page should list its own address as canonical, otherwise it may not be indexed."
+
+#: tools/translations
+msgid "Səhifədə yalnız bir H1 olmalıdır."
+msgstr "A page should have only one H1."
+
+#: tools/translations
+msgid "Səhifələr yoxlanılır"
+msgstr "Checking pages"
+
+#: tools/translations
+msgid "Səhifənin açılmasını ləngidən skriptlər"
+msgstr "Render-blocking scripts"
+
+#: tools/translations
+msgid "Səhifənin öz ünvanı başqa ünvana yönləndirilir."
+msgstr "The page's own address redirects to another address."
+
+#: tools/translations
+msgid "Tərcümə olunmamış mətn"
+msgstr "Untranslated text"
+
+#: tools/translations
+msgid "Təsvirdə nə təklif etdiyinizi və fərqinizi yazın."
+msgstr "Describe what you offer and what makes you different."
+
+#: tools/translations
+msgid "WebP faylları adətən 25-35% kiçikdir, səhifə tez açılır."
+msgstr "WebP files are usually 25-35% smaller, so the page opens faster."
+
+#: tools/translations
+msgid "WebSite sxeminin dili səhifənin dilinə uyğun deyil"
+msgstr "The WebSite schema language does not match the page language"
+
+#: tools/translations
+msgid "Xəbərdarlıq"
+msgstr "Warning"
+
+#: tools/translations
+msgid "Yerli SEO: şirkət sxemində çatışmayan sahələr"
+msgstr "Local SEO: missing fields in the company schema"
+
+#: tools/translations
+msgid "başlıq"
+msgstr "title"
+
+#: tools/translations
+msgid "heç bir səhifədə"
+msgstr "on no page"
+
+#: tools/translations
+msgid "hreflang işləməyən ünvanı göstərir"
+msgstr "hreflang points to a broken address"
+
+#: tools/translations
+msgid "hreflang natamamdır"
+msgstr "hreflang is incomplete"
+
+#: tools/translations
+msgid "hreflang qarşılıqlı deyil"
+msgstr "hreflang is not reciprocal"
+
+#: tools/translations
+msgid "hreflang yoxdur"
+msgstr "No hreflang"
+
+#: tools/translations
+msgid "html lang ünvanın dilinə uyğun deyil"
+msgstr "html lang does not match the URL language"
+
+#: tools/translations
+msgid "inLanguage səhifənin dili olmalıdır."
+msgstr "inLanguage should be the page language."
+
+#: tools/translations
+msgid "mətn"
+msgstr "text"
+
+#: tools/translations
+msgid "og:locale səhifənin dilinə uyğun deyil"
+msgstr "og:locale does not match the page language"
+
+#: tools/translations
+msgid "og:title, og:description və og:image paylaşımda görünür."
+msgstr "og:title, og:description and og:image are shown when the page is shared."
+
+#: tools/translations
+msgid "robots meta və ya X-Robots-Tag «noindex» deyir: səhifə Google-da görünməyəcək."
+msgstr "The robots meta or X-Robots-Tag says “noindex”, so the page will not appear on Google."
+
+#: tools/translations
+msgid "robots.txt axtarış robotlarına sitemap-in yerini göstərir."
+msgstr "robots.txt tells search robots where the sitemap is."
+
+#: tools/translations
+msgid "robots.txt bütün saytı bağlayır"
+msgstr "robots.txt blocks the whole site"
+
+#: tools/translations
+msgid "robots.txt tapılmadı"
+msgstr "robots.txt not found"
+
+#: tools/translations
+msgid "robots.txt, sitemap və 404 yoxlanılır"
+msgstr "Checking robots.txt, sitemap and 404"
+
+#: tools/translations
+msgid "robots.txt-də Sitemap sətri yoxdur"
+msgstr "No Sitemap line in robots.txt"
+
+#: tools/translations
+msgid "san"
+msgstr "s"
+
+#: tools/translations
+msgid "təsvir"
+msgstr "description"
+
+#: tools/translations
+msgid "və daha %d"
+msgstr "and %d more"
+
+#: tools/translations
+msgid "«Disallow: /» axtarış robotlarının saytı oxumasına mane olur."
+msgstr "“Disallow: /” prevents search robots from reading the site."
+
+#: tools/translations
+msgid "Ünvan"
+msgstr "URL"
+
+#: tools/translations
+msgid "Ünvan kiçik latın hərfləri və defislə olmalıdır."
+msgstr "URLs should use lowercase Latin letters and hyphens."
+
+#: tools/translations
+msgid "Ünvanda böyük hərf və ya qeyri-latın simvol"
+msgstr "Uppercase or non-Latin characters in the URL"
+
+#: tools/translations
+msgid "Ünvanların siyahısı alınır…"
+msgstr "Getting the list of URLs…"
+
+#: tools/translations
+msgid "ünvan"
+msgstr "URL"
+
+#: tools/translations
+msgid "İndekslənməli səhifə sitemap-də olmalıdır."
+msgstr "A page that should be indexed must be in the sitemap."
+
+#: tools/translations
+msgid "İşləməyən daxili link"
+msgstr "Broken internal link"
+
+#: tools/translations
+msgid "Şəkillər WebP və ya AVIF deyil"
+msgstr "Images are not WebP or AVIF"
+
+#: tools/translations
+msgid "Şəkillərin alt mətni yoxdur"
+msgstr "Images without alt text"
+
+#: tools/translations
+msgid "Şəkillərin ölçüsü (width/height) göstərilməyib"
+msgstr "Image dimensions (width/height) not set"
+
+#: tools/translations
+msgid "Şəkli kiçildin və ya WebP-yə çevirin: səhifə tez açılsın."
+msgstr "Resize the image or convert it to WebP so the page opens faster."
+
+#: tools/translations
+msgid "Ən uyğun səhifə"
+msgstr "Best page"

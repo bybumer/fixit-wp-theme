@@ -114,7 +114,9 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Məhsul adı, qısa təsvir, əsas xüsusiyyətlər | Admin → **Məhsullar** |
 | Məhsulun demo ünvanı, demo rejimi, **ekran görüntüləri** | Admin → Məhsullar → məhsulu açın → **Demo və ekran görüntüləri** |
 | Fixit Remote-un son versiyası, faylları, neçə dəfə yükləndiyi | Admin → **Fixit Remote** (başlanğıc səhifəsində də vidcet var). Saytdakı «Yüklə» düymələri həmişə ən son versiyanı verir, heç nə dəyişmək lazım deyil |
-| Demoya kim gəldi, hansı rolu seçdi, nə etdi | Admin → **Demo statistikası** (bir dəfəlik: «Ayarlar» → açar yarat → demo serverinin `.env`-inə `DEMO_STATS_TOKEN`; bax Fixit-Ticket-System `DEPLOY-DEMO.md` §9) |
+| Saytın ümumi vəziyyəti: yeni müraciətlər, SEO balı, SMTP, versiya, məzənnələr | Admin → **FIXIT → İcmal** |
+| Admin panelin dili (EN / AZ) | Yuxarı zolaqda dil düyməsi (bax: **6. Dillər**) |
+| Demoya kim gəldi, hansı rolu seçdi, nə etdi | Admin → **FIXIT → Demo statistikası** (bir dəfəlik: «Ayarlar» → açar yarat → demo serverinin `.env`-inə `DEMO_STATS_TOKEN`; bax Fixit-Ticket-System `DEPLOY-DEMO.md` §9) |
 | Sorğu Sistemi-nin hazır ekran görüntülərini demodan yenidən çəkmək | `python tools/demo-ekranlar.py` (Chrome + Node 22+; admin qalereyası boşdursa bunlar göstərilir) |
 | Fixit Remote-un ekran görüntülərini demodan yenidən çəkmək | `python tools/remote-ekranlar.py` (eyni tələblər; başlıqlar `inc/product-data.php` → `remote` → `screens`) |
 | Fixit Remote-un qiymətləri, paketləri, qiymətləri saytda göstərmək, sınaq bələdçisinin göndərilmə qaydası | Admin → **Fixit Remote → Qiymətlər və sınaq** (qiymətlər yalnız «Qiymətləri saytda göstər» seçiləndə görünür) |
@@ -122,10 +124,10 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Sınaq məktubundakı qurulum addımları | `inc/remote-trial.php` → `fixit_trial_guide_steps()` (bələdçi səhifəsi də buradan götürür) |
 | Saytın məxfilik siyasəti, kukilər cədvəli | `template-privacy.php` (yeni kuki və ya xidmət əlavə olunanda bura da yazılır) |
 | Məhsul səhifəsinin detallı bölmələri (imkan qrupları, iş prinsipi, təhlükəsizlik, suallar) | `inc/product-data.php` |
-| Demo sorğuları | Admin → **Form mesajları** ("Növ: Demo") |
+| Demo sorğuları | Admin → **FIXIT → Form mesajları** ("Növ: Demo") |
 | Məhsulların satış şərtləri, qiymət mətni, FAQ | `template-products.php` |
 | Müştəri rəyləri | Admin → **Müştəri rəyləri** |
-| Formdan gələn müraciətlər | Admin → **Form mesajları** |
+| Formdan gələn müraciətlər | Admin → **FIXIT → Form mesajları** |
 | Menyu | Görünüş → **Menyular** |
 | Rəng palitrası | `style.css` faylının başındakı `:root` bloku |
 | Ana səhifədəki bölmələrin sırası | `front-page.php` (hər bölmə şərhlə ayrılıb) |
@@ -133,7 +135,8 @@ brauzeri yeniləmək kifayətdir, heç nə köçürmək lazım deyil.
 | Tərəfdaş/texnologiya adları | `front-page.php` → `$fixit_brands` massivi |
 | Yeni ikon | `inc/icons.php` → massivə bir sətir |
 | Səhifənin SEO başlığı və təsviri | Yazını açın → aşağıdakı **SEO** qutusu |
-| SEO vəziyyətinə baxmaq | Admin → **FIXIT SEO** |
+| SEO vəziyyətinə baxmaq | Admin → **FIXIT → SEO** |
+| Bütün saytın SEO auditi, hədəf açar sözlər | Admin → **FIXIT → SEO auditi** (bax: **9. Nə edilib**) |
 | Sual-cavab mətnləri | `inc/faq.php` |
 | Məhsul/xidmət/rəyin EN və RU mətni | Yazını açın → **Tərcümələr (EN / RU)** qutusu |
 | Səhifə adının (menyuda) EN və RU variantı | Səhifəni açın → **Tərcümələr (EN / RU)** qutusu |
@@ -221,12 +224,16 @@ qayıtmaq köhnə kodu yeni versiya nömrəsi ilə dərc etmək deməkdir.
 
 ## 6. Dillər (AZ / EN / RU)
 
-### Admin panel ingiliscədir (1.16.5-dən)
+### Admin panelin dili: EN və ya AZ (1.16.6-dan)
 
 Arxa hissə (WordPress admin paneli, temanın admin səhifələri, giriş səhifəsi)
-saytın və istifadəçinin dil ayarından asılı olmayaraq ingiliscədir
-(`inc/admin-locale.php`: `switch_to_locale('en_US')`; AJAX, REST və cron-a
-toxunulmur). Temanın admin mətnləri Azərbaycan dilində yazılıb, ingiliscə
+standart olaraq ingiliscədir. Hər istifadəçi yuxarı zolaqdakı dil düyməsi ilə
+**Azərbaycanca**-ya keçə bilər; seçim istifadəçinin profilində
+(`fixit_admin_lang`) və giriş səhifəsi üçün kukidə saxlanılır. AZ ilk dəfə
+seçiləndə WordPress-in Azərbaycan dil paketi avtomatik quraşdırılır; paket
+yüklənə bilməsə WordPress-in öz mətnləri ingiliscə qalır, temanınkı yenə
+azərbaycanca olur (`inc/admin-locale.php`; AJAX, REST və cron-a toxunulmur,
+saytın ön hissəsi dəyişmir). Temanın admin mətnləri Azərbaycan dilində yazılıb, ingiliscə
 tərcüməsi `tools/translations/17-admin-remote.json`, `18-admin-site.json`,
 `19-admin-demo-stats.json`-dadır: yeni admin mətni əlavə edəndə onun `en`
 tərcüməsini də yazın. Sahibə gedən bildirişlər (yeni müraciət, sınaq müraciəti,
@@ -373,7 +380,7 @@ panel ilk açılanda bazadan silinir.
 
 ### E-poçt (SMTP)
 
-Admin → **Parametrlər → E-poçt (SMTP)** (`inc/smtp.php`). Saytın bütün məktubları
+Admin → **FIXIT → E-poçt (SMTP)** (`inc/smtp.php`; köhnə ünvan yeniyə yönləndirilir). Saytın bütün məktubları
 (sınaq bələdçisi, müraciət bildirişləri, əlaqə forması) bu poçt qutusundan gedir;
 göndərən ünvan həmin qutudur (`wp_mail_from` + `phpmailer_init`). Hazır seçimlər:
 Hostinger (smtp.hostinger.com:465 SSL), Google Workspace/Gmail (587 TLS, «App
@@ -424,9 +431,22 @@ bu səhifəni göstərir). Formaların altında ona keçid var.
     **sual-cavab (FAQ)** — Google-da zəngin nəticə şansı verir
   - Şablona görə hazır təsvirlər: səhifə boş olsa belə təsvirsiz qalmır
   - Axtarış nəticələri və 404 səhifəsi indeksləşmir
-- **Admin paneldə SEO izləmə lövhəsi** (menyu: *FIXIT SEO*):
+- **Admin paneldə SEO izləmə lövhəsi** (menyu: *FIXIT → SEO*):
   sayt ayarlarının yoxlanışı (indeksləşmə, HTTPS, sitemap, loqo, favicon…),
   hər səhifə üzrə bal, başlıq/təsvir uzunluğu və Google önizləməsi
+- **SEO auditi** (menyu: *FIXIT → SEO auditi*, `inc/seo-audit.php` +
+  `assets/js/seo-audit.js`): «Auditi başlat» saytın bütün səhifələrini üç dildə
+  brauzerdən gəzir və ~55 qayda ilə yoxlayır: başlıq/təsvir uzunluğu və
+  təkrarı, H1 və başlıq sırası, canonical, `hreflang` (tamlıq və qarşılıqlı
+  keçid), `og:locale`, struktur məlumatlar (Organization/LocalBusiness: Bakı
+  ünvanı, +994 telefon, koordinat, iş saatları, sosial profillər), şəkillər
+  (alt, ölçü, WebP, həcm), qırıq və yönləndirilən daxili linklər, heç yerdən
+  keçid olmayan səhifələr, robots.txt, sitemap, «soft 404», az mətnli
+  səhifələr, EN/RU səhifələrdə tərcümə olunmamış mətn və hər dil üçün hədəf
+  açar sözlər (aşağıda dəyişdirilir). Nəticə: 100 ballıq qiymət, kritik /
+  xəbərdarlıq / qeyd siyahısı, son 12 auditin tarixçəsi (İcmalda da görünür).
+  «Claude üçün hesabatı kopyala» hesabatı Markdown kimi kopyalayır, onu
+  söhbətə yapışdırıb düzəlişləri istəmək olar; «JSON yüklə» xam məlumatdır
 - **Üç dil (AZ / EN / RU):** dil keçidi, ölkəyə görə avtomatik seçim,
   hər dil üçün ayrıca ünvan, `hreflang` teqləri, admin paneldə tərcümə qutuları
 - **Təhlükəsizlik** (`inc/security.php`, plaginsiz):
